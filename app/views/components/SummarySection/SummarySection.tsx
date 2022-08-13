@@ -1,7 +1,7 @@
 const SummarySection = () => {
     return (
         
-      <section className="py-26 bg-white relative overflow-hidden">
+      <section className="py-26 relative overflow-hidden">
       <img
         className="absolute top-0 right-0 md:h-full w-1/3"
         src="nigodo-assets/background-elements/pattern-smash-rotate-indigo-light-right.svg"

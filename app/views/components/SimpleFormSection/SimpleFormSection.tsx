@@ -1,7 +1,7 @@
 const SimpleFormSection = () => {
 
     return (
-        <section className="py-26 relative overflow-hidden bg-purple-800">
+        <section className="py-26 relative overflow-hidden">
         <img
           className="absolute top-0 w-1/2 md:w-1/3 md:h-full"
           src="nigodo-assets/background-elements/pattern-smash-dots-orange-left.svg"

@@ -1,22 +1,22 @@
-import type { NextPage } from 'next'
+import type { IPage } from "@typings/Page"
+
 import PageLayout from "@layouts/PageLayout"
+
 import Header from "@components/Header"
 import Footer from "@components/Footer"
 import ContactSection from "@components/ContactSection"
 import ImageMasonry from "@components/ImageMasonry/ImageMasonry"
-import ContentGrid from '@components/ContentGrid'
+import ContentGrid from "@components/ContentGrid"
 import FeaturedSection from "@components/FeaturedSection"
 import SummarySection from "@components/SummarySection"
-import SimpleFormSection from '@views/components/SimpleFormSection'
-import FeaturedImages from '@views/components/FeaturedImages'
-import FeaturedMedia from '@views/components/FeaturedMedia'
-import DataSection from "@views/components/DataSection"
-import StatsSection from '@views/components/StatsSection'
+import SimpleFormSection from "@components/SimpleFormSection"
+import FeaturedImages from "@components/FeaturedImages"
+import FeaturedMedia from "@components/FeaturedMedia"
+import DataSection from "@components/DataSection"
+import StatsSection from "@components/StatsSection"
 
 
-
-
-const HomePage: NextPage = () => {
+const HomePage: IPage = () => {
 
   return (
     <PageLayout>
