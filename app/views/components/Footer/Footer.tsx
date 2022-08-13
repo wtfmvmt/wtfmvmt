@@ -82,7 +82,7 @@ const Footer = () => {
           <div className="container px-4 pt-16 pb-24 mx-auto">
             <div className="flex flex-wrap justify-between">
               <div className="w-full lg:w-auto mb-12 lg:mb-0">
-                <p className="text-center text-lg font-extrabold font-serif">
+                <p className="text-center text-lg font-extrabold">
                   © 2022 WeTheFuture. All rights reserved.
                 </p>
               </div>

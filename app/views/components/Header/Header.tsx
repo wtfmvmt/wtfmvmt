@@ -2,23 +2,7 @@ const Header = () => {
 
     return (
         <section className="relative pb-24 overflow-hidden">
-            <div className="absolute top-0 right-0 flex w-full h-3/4 md:h-2/3 bg-purple-300 bg-purple-600">
-                <img
-                    className="w-64 md:w-80 2xl:w-auto self-start"
-                    src="nigodo-assets/background-elements/pattern-dots-orange-left.svg"
-                    alt=""
-                />
-                <img
-                    className="w-64 md:w-80 2xl:w-auto self-end ml-auto"
-                    src="nigodo-assets/background-elements/pattern-dots-orange-right.svg"
-                    alt=""
-                />
-                <img
-                    className="absolute bottom-0 transform translate-y-1/2"
-                    src="nigodo-assets/background-elements/pattern-horizontal-orange.svg"
-                    alt=""
-                />
-            </div>
+
             <nav className="flex mb-20 justify-between items-center py-6 px-10 relative text-white">
                 <a className="text-lg font-bold" href="#">
                     <img
@@ -102,7 +86,7 @@ const Header = () => {
                         </a>
                     </div>
                     <img
-                        className="block w-full h-128 lg:h-140 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg"
+                        className="block w-full h-96 lg:h-140 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg"
                         src="https://images.unsplash.com/photo-1591197172062-c718f82aba20?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHw2fHxjb21tdW5pdHl8ZW58MHx8fHwxNjYwMzUzNTk2&ixlib=rb-1.2.1&q=80&w=1920"
                         alt=""
                     />

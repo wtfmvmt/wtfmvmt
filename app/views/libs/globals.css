@@ -3,6 +3,12 @@
     --font-primary: var(--bebas-neue)
 }
 
+body {
+    border: 0;
+    background: url('/assets/images/banner.jpg') #000000 no-repeat center center fixed;
+    background-size: cover;
+}
+
 
 * {
     font-family: var(--font-primary)
