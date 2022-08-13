@@ -3,7 +3,7 @@ const ContactSection = () => {
 
     return (
 
-        <section className="py-26 bg-orange-200">
+        <section className="py-26">
             <div className="container px-4 mx-auto">
                 <div className="flex flex-wrap -mx-4 mb-16 items-center">
                     <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">

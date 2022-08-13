@@ -1,7 +1,7 @@
 const ImageMasonry = () => {
 
     return (
-        <section className="py-26 bg-orange-200 relative overflow-hidden">
+        <section className="py-26 relative overflow-hidden">
             <img
                 className="absolute top-0 left-0 w-full md:h-full"
                 src="https://img  s.unsplash.com/photo-1657216328532-e03aaa13c089?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzMnx8cGF0dGVybiUyMHB1cnBsZSUyMGZsYXR8ZW58MHx8fHwxNjYwMzUwODY4&ixlib=rb-1.2.1&q=80&w=1920"
