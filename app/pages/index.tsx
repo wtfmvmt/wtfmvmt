@@ -6,17 +6,17 @@ const Home: NextPage = () => {
     <>
       <section className="relative pb-24 overflow-hidden">
         <div className="absolute top-0 right-0 flex w-full h-3/4 md:h-2/3 bg-purple-300 bg-purple-600">
-          <img layout='fill'
+          <img 
             className="w-64 md:w-80 2xl:w-auto self-start"
             src="nigodo-assets/background-elements/pattern-dots-orange-left.svg"
             alt=""
           />
-          <img layout='fill'
+          <img 
             className="w-64 md:w-80 2xl:w-auto self-end ml-auto"
             src="nigodo-assets/background-elements/pattern-dots-orange-right.svg"
             alt=""
           />
-          <img layout='fill'
+          <img 
             className="absolute bottom-0 transform translate-y-1/2"
             src="nigodo-assets/background-elements/pattern-horizontal-orange.svg"
             alt=""
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         </div>
         <nav className="flex mb-20 justify-between items-center py-6 px-10 relative text-white">
           <a className="text-lg font-bold" href="#">
-            <img layout='fill'
+            <img 
               className="h-32"
               src="https://static.shuffle.dev/uploads/files/c5/c588f2e6e97dec56040c09794a6a944110e98d9d/Untitled-design.png"
               alt=""
@@ -104,9 +104,9 @@ const Home: NextPage = () => {
                 RSVP for Latest Event
               </a>
             </div>
-            <img layout='fill'
+            <img 
               className="block w-full h-128 lg:h-140 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg"
-              src="https://img layout='fill' s.unsplash.com/photo-1591197172062-c718f82aba20?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHw2fHxjb21tdW5pdHl8ZW58MHx8fHwxNjYwMzUzNTk2&ixlib=rb-1.2.1&q=80&w=1920"
+              src="https://img  s.unsplash.com/photo-1591197172062-c718f82aba20?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHw2fHxjb21tdW5pdHl8ZW58MHx8fHwxNjYwMzUzNTk2&ixlib=rb-1.2.1&q=80&w=1920"
               alt=""
             />
           </div>
@@ -116,7 +116,7 @@ const Home: NextPage = () => {
           <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 bg-white border-r overflow-y-auto">
             <div className="flex items-center mb-8">
               <a className="mr-auto text-2xl font-bold leading-none" href="#">
-                <img layout='fill'
+                <img 
                   className="h-6"
                   src="nigodo-assets/logo-nigodo.svg"
                   alt=""
@@ -194,9 +194,9 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="py-26 bg-orange-200 relative overflow-hidden">
-        <img layout='fill'
+        <img 
           className="absolute top-0 left-0 w-full md:h-full"
-          src="https://img layout='fill' s.unsplash.com/photo-1657216328532-e03aaa13c089?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzMnx8cGF0dGVybiUyMHB1cnBsZSUyMGZsYXR8ZW58MHx8fHwxNjYwMzUwODY4&ixlib=rb-1.2.1&q=80&w=1920"
+          src="https://img  s.unsplash.com/photo-1657216328532-e03aaa13c089?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzMnx8cGF0dGVybiUyMHB1cnBsZSUyMGZsYXR8ZW58MHx8fHwxNjYwMzUwODY4&ixlib=rb-1.2.1&q=80&w=1920"
           alt=""
         />
         <div className="container px-4 mx-auto relative">
@@ -209,15 +209,15 @@ const Home: NextPage = () => {
               VR Events, Meetups, Project Workshops, Community Service @data
             </p>
           </div>
-          <img layout='fill'
+          <img 
             className="block w-full h-112 lg:h-156 mb-16 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg"
-            src="https://img layout='fill' s.unsplash.com/photo-1469488865564-c2de10f69f96?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwyfHxoaXBwaWVzfGVufDB8fHx8MTY2MDM1MzU2Mg&ixlib=rb-1.2.1&q=80&w=1920"
+            src="https://img  s.unsplash.com/photo-1469488865564-c2de10f69f96?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwyfHxoaXBwaWVzfGVufDB8fHx8MTY2MDM1MzU2Mg&ixlib=rb-1.2.1&q=80&w=1920"
             alt=""
           />
           <div className="flex flex-wrap -mx-4">
             <div className="w-full lg:w-1/3 px-4 mb-12 lg:mb-0">
               <div className="h-full max-w-md mx-auto py-12 px-8 bg-white border-3 border-indigo-900 shadow-md rounded-2xl text-center">
-                <img layout='fill'
+                <img 
                   className="block mx-auto mb-4"
                   src="nigodo-assets/features/icon-message.svg"
                   alt=""
@@ -233,7 +233,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-full lg:w-1/3 px-4 mb-12 lg:mb-0">
               <div className="h-full max-w-md mx-auto py-12 px-8 bg-white border-3 border-indigo-900 shadow-md rounded-2xl text-center">
-                <img layout='fill'
+                <img 
                   className="block mx-auto mb-4"
                   src="nigodo-assets/features/icon-bar.svg"
                   alt=""
@@ -249,7 +249,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-full lg:w-1/3 px-4">
               <div className="h-full max-w-md mx-auto py-12 px-8 bg-white border-3 border-indigo-900 shadow-md rounded-2xl text-center">
-                <img layout='fill'
+                <img 
                   className="block mx-auto mb-4"
                   src="nigodo-assets/features/icon-people.svg"
                   alt=""
@@ -267,12 +267,12 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="py-26 bg-white relative overflow-hidden">
-        <img layout='fill'
+        <img 
           className="absolute top-0 right-0 md:h-full w-1/3"
           src="nigodo-assets/background-elements/pattern-smash-rotate-indigo-light-right.svg"
           alt=""
         />
-        <img layout='fill'
+        <img 
           className="absolute top-0 left-0 md:h-full w-1/2 md:w-3/5"
           src="nigodo-assets/background-elements/pattern-dots-2-indigo-light-left.svg"
           alt=""
@@ -292,9 +292,9 @@ const Home: NextPage = () => {
             </div>
             <div className="w-full lg:w-1/2 px-4">
               <div className="relative">
-                <img layout='fill'
+                <img 
                   className="block w-full h-80 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg"
-                  src="https://img layout='fill' s.unsplash.com/photo-1634269395970-1d5c5f116c6a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzOHx8aGlwcGllc3xlbnwwfHx8fDE2NjAzNTYwOTk&ixlib=rb-1.2.1&q=80&w=1920"
+                  src="https://img  s.unsplash.com/photo-1634269395970-1d5c5f116c6a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzOHx8aGlwcGllc3xlbnwwfHx8fDE2NjAzNTYwOTk&ixlib=rb-1.2.1&q=80&w=1920"
                   alt=""
                 />
                 <a
@@ -388,12 +388,12 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="py-26 relative overflow-hidden bg-purple-800">
-        <img layout='fill'
+        <img 
           className="absolute top-0 w-1/2 md:w-1/3 md:h-full"
           src="nigodo-assets/background-elements/pattern-smash-dots-orange-left.svg"
           alt=""
         />
-        <img layout='fill'
+        <img 
           className="absolute top-0 right-0 w-1/2 md:w-1/3 md:h-full"
           src="nigodo-assets/background-elements/pattern-smash-dots-orange-right.svg"
           alt=""
@@ -435,12 +435,12 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="py-26 bg-white relative overflow-hidden">
-        <img layout='fill'
+        <img 
           className="absolute top-0 right-0 w-1/2 md:h-full"
           src="nigodo-assets/background-elements/pattern-dots-2-indigo-light-right.svg"
           alt=""
         />
-        <img layout='fill'
+        <img 
           className="absolute top-0 left-0 w-1/2 md:h-full"
           src="nigodo-assets/background-elements/pattern-dots-2-indigo-light-left.svg"
           alt=""
@@ -452,7 +452,7 @@ const Home: NextPage = () => {
           <div className="flex flex-wrap bg-white border-3 border-indigo-900 rounded-2xl shadow-md">
             <div className="w-1/2 lg:w-1/3 xl:w-1/6 border-b-3 border-indigo-900 xl:border-0">
               <div className="flex items-center justify-center h-44 p-6 xl:border-r-3 border-indigo-900">
-                <img layout='fill'
+                <img 
                   className="block mx-auto h-8"
                   src="nigodo-assets/logo-clouds/microsoft.svg"
                   alt=""
@@ -461,7 +461,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-1/2 lg:w-1/3 xl:w-1/6 border-b-3 border-indigo-900 xl:border-0">
               <div className="flex items-center justify-center h-44 p-6 xl:border-r-3 border-indigo-900">
-                <img layout='fill'
+                <img 
                   className="block mx-auto h-8"
                   src="nigodo-assets/logo-clouds/google.svg"
                   alt=""
@@ -470,7 +470,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-1/2 lg:w-1/3 xl:w-1/6 border-b-3 border-indigo-900 xl:border-0">
               <div className="flex items-center justify-center h-44 p-6 xl:border-r-3 border-indigo-900">
-                <img layout='fill'
+                <img 
                   className="block mx-auto h-8"
                   src="nigodo-assets/logo-clouds/spotify.svg"
                   alt=""
@@ -479,7 +479,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-1/2 lg:w-1/3 xl:w-1/6 border-b-3 border-indigo-900 lg:border-0">
               <div className="flex items-center justify-center h-44 p-6 xl:border-r-3 border-indigo-900">
-                <img layout='fill'
+                <img 
                   className="block mx-auto h-8"
                   src="nigodo-assets/logo-clouds/slack.svg"
                   alt=""
@@ -488,7 +488,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-1/2 lg:w-1/3 xl:w-1/6">
               <div className="flex items-center justify-center h-44 p-6 xl:border-r-3 border-indigo-900">
-                <img layout='fill'
+                <img 
                   className="block mx-auto h-9"
                   src="nigodo-assets/logo-clouds/sass.svg"
                   alt=""
@@ -497,7 +497,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-1/2 lg:w-1/3 xl:w-1/6">
               <div className="flex items-center justify-center h-44 p-6">
-                <img layout='fill'
+                <img 
                   className="block mx-auto h-8"
                   src="nigodo-assets/logo-clouds/hubspot.svg"
                   alt=""
@@ -508,12 +508,12 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="py-26 relative overflow-hidden bg-purple-800">
-        <img layout='fill'
+        <img 
           className="absolute top-0 left-0 w-1/2 mt-4 md:mt-16"
           src="nigodo-assets/background-elements/pattern-dots-2-orange-left.svg"
           alt=""
         />
-        <img layout='fill'
+        <img 
           className="absolute bottom-0 right-0 mb-20"
           src="nigodo-assets/background-elements/pattern-smash-rotate-orange-right.svg"
           alt=""
@@ -569,9 +569,9 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-1/2 px-4 mb-8">
               <div className="md:flex bg-white border-3 border-indigo-900 shadow-md rounded-2xl overflow-hidden">
                 <div className="w-full md:w-1/2">
-                  <img layout='fill'
+                  <img 
                     className="h-72 lg:h-full w-full block object-cover"
-                    src="https://img layout='fill' s.unsplash.com/photo-1481833761820-0509d3217039?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHw1fHxjYWZlfGVufDB8fHx8MTY2MDM1NDg5Ng&ixlib=rb-1.2.1&q=80&w=1920"
+                    src="https://img  s.unsplash.com/photo-1481833761820-0509d3217039?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHw1fHxjYWZlfGVufDB8fHx8MTY2MDM1NDg5Ng&ixlib=rb-1.2.1&q=80&w=1920"
                     alt=""
                   />
                 </div>
@@ -593,7 +593,7 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-1/2 px-4 mb-8">
               <div className="md:flex bg-white border-3 border-indigo-900 shadow-md rounded-2xl overflow-hidden">
                 <div className="w-full md:w-1/2">
-                  <img layout='fill'
+                  <img 
                     className="h-72 lg:h-full w-full block object-cover"
                     src="nigodo-assets/blog/laptops2.jpeg"
                     alt=""
@@ -618,7 +618,7 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-1/2 px-4 mb-8">
               <div className="md:flex bg-white border-3 border-indigo-900 shadow-md rounded-2xl overflow-hidden">
                 <div className="w-full md:w-1/2">
-                  <img layout='fill'
+                  <img 
                     className="h-72 lg:h-full w-full block object-cover"
                     src="nigodo-assets/blog/office1.jpeg"
                     alt=""
@@ -643,7 +643,7 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-1/2 px-4 mb-8">
               <div className="md:flex bg-white border-3 border-indigo-900 shadow-md rounded-2xl overflow-hidden">
                 <div className="w-full md:w-1/2">
-                  <img layout='fill'
+                  <img 
                     className="h-72 lg:h-full w-full block object-cover"
                     src="nigodo-assets/blog/office2.jpeg"
                     alt=""
@@ -668,7 +668,7 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-1/2 px-4 mb-8">
               <div className="md:flex bg-white border-3 border-indigo-900 shadow-md rounded-2xl overflow-hidden">
                 <div className="w-full md:w-1/2">
-                  <img layout='fill'
+                  <img 
                     className="h-72 lg:h-full w-full block object-cover"
                     src="nigodo-assets/blog/laptops.jpeg"
                     alt=""
@@ -693,7 +693,7 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-1/2 px-4 mb-8">
               <div className="md:flex bg-white border-3 border-indigo-900 shadow-md rounded-2xl overflow-hidden">
                 <div className="w-full md:w-1/2">
-                  <img layout='fill'
+                  <img 
                     className="h-72 lg:h-full w-full block object-cover"
                     src="nigodo-assets/blog/laptops2.jpeg"
                     alt=""
@@ -815,7 +815,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-6 lg:px-12 pt-10 pb-12">
                   <div className="flex mb-4 items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -825,7 +825,7 @@ const Home: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex mb-4 items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -835,7 +835,7 @@ const Home: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex mb-4 items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -845,7 +845,7 @@ const Home: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -889,7 +889,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-6 lg:px-12 pt-10 pb-12">
                   <div className="flex mb-4 items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -899,7 +899,7 @@ const Home: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex mb-4 items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -909,7 +909,7 @@ const Home: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex mb-4 items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -919,7 +919,7 @@ const Home: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -958,7 +958,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-6 lg:px-12 pt-10 pb-12">
                   <div className="flex mb-4 items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -968,7 +968,7 @@ const Home: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex mb-4 items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -978,7 +978,7 @@ const Home: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex mb-4 items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -988,7 +988,7 @@ const Home: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex items-start">
-                    <img layout='fill'
+                    <img 
                       className="block w-6 h-6 mr-2 object-contain"
                       src="nigodo-assets/circle-icon-green.svg"
                       alt=""
@@ -1004,9 +1004,9 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="py-26 bg-orange-200 relative overflow-hidden">
-        <img layout='fill'
+        <img 
           className="absolute top-0 left-0 w-full md:h-full"
-          src="https://img layout='fill' s.unsplash.com/photo-1657216328532-e03aaa13c089?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzMnx8cGF0dGVybiUyMHB1cnBsZSUyMGZsYXR8ZW58MHx8fHwxNjYwMzUwODY4&ixlib=rb-1.2.1&q=80&w=1920"
+          src="https://img  s.unsplash.com/photo-1657216328532-e03aaa13c089?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzMnx8cGF0dGVybiUyMHB1cnBsZSUyMGZsYXR8ZW58MHx8fHwxNjYwMzUwODY4&ixlib=rb-1.2.1&q=80&w=1920"
           alt=""
         />
         <div className="container px-4 mx-auto relative">
@@ -1081,9 +1081,9 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className="w-full xl:w-1/2 px-4">
-              <img layout='fill'
+              <img 
                 className="block w-full h-128 object-cover border-3 border-indigo-900 rounded-2xl shadow-md"
-                src="https://img layout='fill' s.unsplash.com/photo-1556484687-30636164638b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwyMnx8Y29tbXVuaXR5fGVufDB8fHx8MTY2MDM1MzUzMQ&ixlib=rb-1.2.1&q=80&w=1920"
+                src="https://img  s.unsplash.com/photo-1556484687-30636164638b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwyMnx8Y29tbXVuaXR5fGVufDB8fHx8MTY2MDM1MzUzMQ&ixlib=rb-1.2.1&q=80&w=1920"
                 alt=""
               />
             </div>
@@ -1091,9 +1091,9 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="py-26 bg-orange-200 relative overflow-hidden">
-        <img layout='fill'
+        <img 
           className="absolute top-0 left-0 w-full md:h-full"
-          src="https://img layout='fill' s.unsplash.com/photo-1657216328532-e03aaa13c089?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzMnx8cGF0dGVybiUyMHB1cnBsZSUyMGZsYXR8ZW58MHx8fHwxNjYwMzUwODY4&ixlib=rb-1.2.1&q=80&w=1920"
+          src="https://img  s.unsplash.com/photo-1657216328532-e03aaa13c089?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzMnx8cGF0dGVybiUyMHB1cnBsZSUyMGZsYXR8ZW58MHx8fHwxNjYwMzUwODY4&ixlib=rb-1.2.1&q=80&w=1920"
           alt=""
         />
         <div className="container px-4 mx-auto relative">
@@ -1191,17 +1191,17 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="py-26 bg-orange-200 relative overflow-hidden">
-        <img layout='fill'
+        <img 
           className="absolute top-0 left-0 w-full md:h-full"
-          src="https://img layout='fill' s.unsplash.com/photo-1657216328532-e03aaa13c089?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzMnx8cGF0dGVybiUyMHB1cnBsZSUyMGZsYXR8ZW58MHx8fHwxNjYwMzUwODY4&ixlib=rb-1.2.1&q=80&w=1920"
+          src="https://img  s.unsplash.com/photo-1657216328532-e03aaa13c089?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzMnx8cGF0dGVybiUyMHB1cnBsZSUyMGZsYXR8ZW58MHx8fHwxNjYwMzUwODY4&ixlib=rb-1.2.1&q=80&w=1920"
           alt=""
         />
-        <img layout='fill'
+        <img 
           className="absolute bottom-0 right-0"
           src="nigodo-assets/background-elements/pattern-two-smashes-orange-right.svg"
           alt=""
         />
-        <img layout='fill'
+        <img 
           className="hidden md:block absolute bottom-0 left-0"
           src="nigodo-assets/background-elements/pattern-two-smashes-orange-left.svg"
           alt=""
@@ -1241,9 +1241,9 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-2/3 px-4 mb-8">
               <div className="h-full flex flex-col border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                 <div className="mb-auto h-full">
-                  <img layout='fill'
+                  <img 
                     className="block h-96 lg:h-full w-full object-cover"
-                    src="https://img layout='fill' s.unsplash.com/photo-1563245110-4ba1be9ae814?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwyMXx8YmxhY2slMjBhcnRpc3R8ZW58MHx8fHwxNjYwMzUwNjkw&ixlib=rb-1.2.1&q=80&w=1920"
+                    src="https://img  s.unsplash.com/photo-1563245110-4ba1be9ae814?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwyMXx8YmxhY2slMjBhcnRpc3R8ZW58MHx8fHwxNjYwMzUwNjkw&ixlib=rb-1.2.1&q=80&w=1920"
                     alt=""
                   />
                 </div>
@@ -1260,7 +1260,7 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-1/3 px-4 mb-8">
               <div className="mb-8 border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                 <div>
-                  <img layout='fill'
+                  <img 
                     className="block w-full h-96 lg:h-64 object-cover"
                     src="nigodo-assets/team/photo-3.jpg"
                     alt=""
@@ -1273,9 +1273,9 @@ const Home: NextPage = () => {
               </div>
               <div className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                 <div>
-                  <img layout='fill'
+                  <img 
                     className="block w-full h-96 lg:h-64 object-cover"
-                    src="https://img layout='fill' s.unsplash.com/photo-1611432579402-7037e3e2c1e4?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzfHxibGFjayUyMHdvbWFufGVufDB8fHx8MTY2MDM1NjAwOQ&ixlib=rb-1.2.1&q=80&w=1920"
+                    src="https://img  s.unsplash.com/photo-1611432579402-7037e3e2c1e4?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzfHxibGFjayUyMHdvbWFufGVufDB8fHx8MTY2MDM1NjAwOQ&ixlib=rb-1.2.1&q=80&w=1920"
                     alt=""
                   />
                 </div>
@@ -1288,7 +1288,7 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-1/3 px-4 mb-8">
               <div className="mb-8 border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                 <div>
-                  <img layout='fill'
+                  <img 
                     className="block w-full h-96 lg:h-64 object-cover"
                     src="nigodo-assets/team/photo-1.jpg"
                     alt=""
@@ -1305,7 +1305,7 @@ const Home: NextPage = () => {
               </div>
               <div className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                 <div>
-                  <img layout='fill'
+                  <img 
                     className="block w-full h-96 lg:h-64 object-cover"
                     src="nigodo-assets/team/photo-2.jpg"
                     alt=""
@@ -1320,7 +1320,7 @@ const Home: NextPage = () => {
             <div className="w-full lg:w-2/3 px-4 mb-8">
               <div className="h-full flex flex-col border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                 <div className="mb-auto h-full">
-                  <img layout='fill'
+                  <img 
                     className="block h-96 lg:h-full w-full object-cover"
                     src="nigodo-assets/team/photo-3.jpg"
                     alt=""
@@ -1513,7 +1513,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className="w-full lg:w-2/3 px-4">
-              <img layout='fill'
+              <img 
                 className="block object-cover border-3 border-indigo-900 rounded-2xl shadow-md"
                 src="nigodo-assets/contact/map.png"
                 alt=""
@@ -1529,7 +1529,7 @@ const Home: NextPage = () => {
               <div className="flex flex-wrap justify-between items-center">
                 <div className="w-full md:w-1/3 mb-12">
                   <a className="inline-block mx-auto mb-8" href="#">
-                    <img layout='fill'
+                    <img 
                       className="h-12 h-40"
                       src="https://static.shuffle.dev/uploads/files/c5/c588f2e6e97dec56040c09794a6a944110e98d9d/Untitled-design.png"
                       alt=""
@@ -1542,12 +1542,12 @@ const Home: NextPage = () => {
                 <div className="w-full md:w-1/3 mb-12 md:text-right">
                   <div className="mb-4">
                     <a className="inline-block w-auto" href="#">
-                      <img layout='fill' src="nigodo-assets/footers/google-play.svg" alt="" />
+                      <img  src="nigodo-assets/footers/google-play.svg" alt="" />
                     </a>
                   </div>
                   <div>
                     <a className="inline-block w-auto" href="#">
-                      <img layout='fill' src="nigodo-assets/footers/app-store.svg" alt="" />
+                      <img  src="nigodo-assets/footers/app-store.svg" alt="" />
                     </a>
                   </div>
                 </div>
