@@ -1,0 +1,9 @@
+:root {
+    --bebas-neue: 'Bebas Neue', cursive;
+    --font-primary: var(--bebas-neue)
+}
+
+
+* {
+    font-family: var(--font-primary)
+}

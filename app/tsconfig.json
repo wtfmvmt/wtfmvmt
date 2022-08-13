@@ -23,11 +23,12 @@
       "@includes/*":["views/includes/*"],
       "@components/*":["views/components/*"],
       "@styles/*":["views/styles/*"],
+      "@libs/*":["views/libs/*"],
       "@configs/*":["models/configs/*"],
       "@typings/*":["models/typings/*"],
       "@utils/*":["utils/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.js"],
   "exclude": ["node_modules"]
 }

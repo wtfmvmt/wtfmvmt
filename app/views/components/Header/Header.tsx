@@ -83,14 +83,14 @@ const Header = () => {
             </nav>
             <div className="container px-4 mx-auto relative">
                 <div className="max-w-5xl mx-auto text-center">
-                    <span className="text-xl md:text-2xl font-extrabold text-orange-500 font-serif text-blue-200">
+                    <span className="text-xl md:text-2xl font-extrabold text-orange-500 text-blue-200">
                         Circa 2020
                     </span>
-                    <h1 className="max-w-4xl mx-auto text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading mt-1 mb-6 font-serif text-white shadow-2xl">
+                    <h1 className="max-w-4xl mx-auto text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading mt-1 mb-6 text-white shadow-2xl">
                         WeTheFuture is a community of artists, builders and thinkers focused on
                         building a better future
                     </h1>
-                    <p className="text-xl md:text-2xl font-extrabold leading-8 mb-12 font-serif text-purple-200">
+                    <p className="text-xl md:text-2xl font-extrabold leading-8 mb-12 text-purple-200">
                         We are the Futures {"{"}Builders | Artist | Engineers | Providers{"}"}
                     </p>
                     <div className="flex flex-wrap mb-20 justify-center">

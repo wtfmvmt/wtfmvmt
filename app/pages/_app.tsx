@@ -1,9 +1,9 @@
-import '../styles/globals.css'
-import '../styles/tailwind.css'
-import type { AppProps } from 'next/app'
+import type { IApplication } from "@typings/Application"
+import "@libs/globals.css"
+import "@libs/tailwind.css"
 
-function MyApp({ Component, pageProps }: AppProps) {
+function Application({ Component, pageProps }: IApplication) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default Application
