@@ -2,7 +2,6 @@ import type { IPage } from "@typings/Page"
 
 import PageLayout from "@layouts/PageLayout"
 
-import Header from "@components/Header"
 import Footer from "@components/Footer"
 import ContactSection from "@components/ContactSection"
 import ImageMasonry from "@components/ImageMasonry/ImageMasonry"
@@ -14,9 +13,14 @@ import FeaturedImages from "@components/FeaturedImages"
 import FeaturedMedia from "@components/FeaturedMedia"
 import DataSection from "@components/DataSection"
 import StatsSection from "@components/StatsSection"
+import { useEffect } from "react"
 
 
 const HomePage: IPage = () => {
+
+  useEffect(() => {
+    window.location.href = "/coming-soon"
+  }, [])
 
   return (
     <PageLayout>
@@ -31,7 +35,6 @@ const HomePage: IPage = () => {
       <ContentGrid />
       <ImageMasonry />
       <ContactSection />
-      <Footer />
     </PageLayout>
 
   )
