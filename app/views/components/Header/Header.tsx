@@ -1,17 +1,17 @@
 import Headroom from "react-headroom"
 
-const Header = () => {
+const Header = ({ favicon, navLinks, cta }) => {
 
     return (
         <section className="relative pb-24 overflow-hidden">
             <Headroom>
                 <nav style={{
-                    backdropFilter: 'blur(10px) saturate(120%)',
-                }}className="flex mb-20 justify-between items-center py-6 px-10 relative text-white">
-                    <a className="text-lg font-bold" href="#">
+                    backdropFilter: 'blur(5px) saturate(140%)',
+                }} className="flex mb-20 justify-between items-center py-6 px-10 relative text-white">
+                    <a className="text-lg font-bold" href={favicon.href}>
                         <img
                             className="h-14"
-                            src="https://static.shuffle.dev/uploads/files/c5/c588f2e6e97dec56040c09794a6a944110e98d9d/Untitled-design.png"
+                            src={favicon.src}
                             alt=""
                             width="auto"
                         />
@@ -30,42 +30,28 @@ const Header = () => {
                         </button>
                     </div>
                     <ul className="hidden xl:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <li>
-                            <a
-                                className="text-lg mr-10 2xl:mr-16 font-extrabold hover:text-indigo-800 text-white"
-                                href="#"
-                            >
-                                Vision
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="text-lg mr-10 2xl:mr-16 font-extrabold hover:text-indigo-800"
-                                href="#"
-                            >
-                                Community
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="text-lg mr-10 2xl:mr-16 font-extrabold hover:text-indigo-800"
-                                href="#"
-                            >
-                                Events
-                            </a>
-                        </li>
-                        <li>
-                            <a className="text-lg font-extrabold hover:text-indigo-800" href="#">
-                                Projects
-                            </a>
-                        </li>
+                        {
+                            navLinks.map((navLink, index) => {
+                                return (
+                                    <li key={index}>
+                                        <a
+                                            className="text-lg mr-10 2xl:mr-16 font-extrabold hover:text-purple-800 text-white"
+                                            href={navLink.href}
+                                        >
+                                            {navLink.name}
+                                        </a>
+                                    </li>
+                                )
+                            })
+                        }
+
                     </ul>
                     <div className="hidden xl:flex items-center">
                         <a
                             className="inline-block py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
-                            href="#"
+                            href={cta.href}
                         >
-                            Connect with Us
+                           {cta.name}
                         </a>
                     </div>
                 </nav>

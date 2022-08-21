@@ -1,7 +1,7 @@
-const Footer = () => {
+const Footer = ({ copyright }) => {
 
     return (
-        <section>
+        <section style={{ backdropFilter: 'blur(4px)'}}>
         <div className="pt-26 border-3 border-l-0 border-r-0 border-purple-900">
           <div className="pb-16 border-b-3 border-indigo-900">
             <div className="container px-4 mx-auto">
@@ -83,7 +83,7 @@ const Footer = () => {
             <div className="flex flex-wrap justify-between">
               <div className="w-full lg:w-auto mb-12 lg:mb-0">
                 <p className="text-center text-lg font-extrabold">
-                  © 2022 WeTheFuture. All rights reserved.
+                 {copyright}
                 </p>
               </div>
               <div className="w-full lg:w-auto flex items-center justify-center">

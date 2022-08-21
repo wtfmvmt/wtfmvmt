@@ -1,6 +1,7 @@
 const meta = {
     title: 'WeTheFuture',
-    description: ''
+    description: '',
+    copyright: ''
 }
 
 export default meta

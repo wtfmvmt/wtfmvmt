@@ -22,6 +22,7 @@
       "@layouts/*":["views/layouts/*"],
       "@includes/*":["views/includes/*"],
       "@components/*":["views/components/*"],
+      "@pages/*":["models/data/pages/*"],
       "@styles/*":["views/styles/*"],
       "@libs/*":["views/libs/*"],
       "@configs/*":["models/configs/*"],
