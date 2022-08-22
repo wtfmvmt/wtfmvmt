@@ -1,10 +1,10 @@
 import Meta from "@includes/Meta"
 
-const RootLayout = ({ children }) => {
+const RootLayout = ({ children, metaData }) => {
 
     return (
         <>
-        <Meta/>
+        <Meta {...metaData}/>
             {children}
         </>
     )

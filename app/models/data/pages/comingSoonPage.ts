@@ -7,7 +7,18 @@ const comingSoonPage = {
             `We hope to inspire others to join us in this endeavor by showcasing the work of our community and providing a platform for collaboration.`,
             `Our network is made up of artists, creators and visionaries who are working together to create a better future.`,
             `We believe that art and creativity can inspire change and help make the world a better place.`],
-        submit: 'Stay Updated'
+        submit: 'Stay Updated',
+        message: {
+            text: 'Thank you for subscribing!',
+            icon: '☮️'
+        },
+        cta: {
+            name: 'Subscribe',
+            href: '#'
+        },
+        socials: [
+            "https://www.facebook.com/artsy.design",
+        ]
     }
 }
 

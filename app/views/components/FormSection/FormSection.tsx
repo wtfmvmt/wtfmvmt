@@ -1,7 +1,7 @@
 import Countdown from "@views/components/Countdown";
 import ReactTypingEffect from 'react-typing-effect';
 
-const FormSection = ({ label, heading, description, submit }) => {
+const FormSection = ({ label, heading, description, message, submit, cta }) => {
 
     return (
         <section className="pb-10">
@@ -27,27 +27,25 @@ const FormSection = ({ label, heading, description, submit }) => {
                                     <input
                                         className="inline-block w-full p-4 text-lg font-extrabold placeholder-indigo-900 shadow border-2 border-indigo-900 rounded outline-none"
                                         type="email"
-                                        placeholder="hello@shuffle.dev"
+                                        placeholder="my@email.com"
                                     />
                                 </div>
                                 <div className="w-full md:w-auto lg:w-auto px-2">
                                     <a
                                         className="inline-flex w-full md:w-auto items-center justify-center h-full py-4 px-5 leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 rounded transition duration-200"
-                                        href="#"
+                                        href={cta.href}
                                     >
-                                        Get Started
+                                        {cta.name}
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div className="flex items-start md:items-center justify-center">
-                            <img
-                                className="block w-6 h-6 mr-2 object-contain"
-                                src="nigodo-assets/circle-icon-green.svg"
-                                alt=""
-                            />
+                            <span className="block w-6 h-6 mr-2 object-contain">
+                                {message.icon}
+                            </span>
                             <span className="md:text-lg font-extrabold">
-                                Start your free 14-day trial today, no credit card required.
+                                {message.text}
                             </span>
                         </div>
                     </div>

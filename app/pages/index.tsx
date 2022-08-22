@@ -17,7 +17,9 @@ import SummarySection from "@components/SummarySection"
 const HomePage: IPage = () => {
 
   return (
-    <PageLayout>
+    <PageLayout metaData={{
+      pageTitle: 'HQ'
+    }}>
       <FeaturedSection />
       <SummarySection />
       <SimpleFormSection />
