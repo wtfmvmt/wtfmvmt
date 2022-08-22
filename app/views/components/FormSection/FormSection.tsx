@@ -16,7 +16,7 @@ const FormSection = ({ label, heading, description, submit }) => {
                             {heading}
                         </h1>
                         <p className="text-xl md:text-2xl font-extrabold leading-8 mb-8">
-                            <ReactTypingEffect  speed={300} eraseSpeed={10} typingDelay={20} text={description} />
+                            <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={20} text={description} />
                         </p>
                         <p className="text-xl md:text-2xl font-extrabold leading-8 mb-8">
                             <Countdown date={'2022-09-01T01:09:00'} />

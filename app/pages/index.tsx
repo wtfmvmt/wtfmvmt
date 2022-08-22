@@ -2,29 +2,22 @@ import type { IPage } from "@typings/Page"
 
 import PageLayout from "@layouts/PageLayout"
 
-import Footer from "@components/Footer"
 import ContactSection from "@components/ContactSection"
-import ImageMasonry from "@components/ImageMasonry/ImageMasonry"
 import ContentGrid from "@components/ContentGrid"
-import FeaturedSection from "@components/FeaturedSection"
-import SummarySection from "@components/SummarySection"
-import SimpleFormSection from "@components/SimpleFormSection"
+import DataSection from "@components/DataSection"
 import FeaturedImages from "@components/FeaturedImages"
 import FeaturedMedia from "@components/FeaturedMedia"
-import DataSection from "@components/DataSection"
+import FeaturedSection from "@components/FeaturedSection"
+import ImageMasonry from "@components/ImageMasonry/ImageMasonry"
+import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
-import { useEffect } from "react"
+import SummarySection from "@components/SummarySection"
 
 
 const HomePage: IPage = () => {
 
-  useEffect(() => {
-    window.location.href = "/coming-soon"
-  }, [])
-
   return (
     <PageLayout>
-      <Header />
       <FeaturedSection />
       <SummarySection />
       <SimpleFormSection />
