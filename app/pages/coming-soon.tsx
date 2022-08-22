@@ -7,8 +7,7 @@ const ComingSoonPage: IPage = () => {
 
     return (
         <PageLayout>
-            <FormSection {...comingSoonPage.formSection}/>
-          
+            <FormSection {...comingSoonPage.formSection} />
         </PageLayout>
     )
 }
