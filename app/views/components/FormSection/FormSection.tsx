@@ -10,16 +10,16 @@ const FormSection = ({ label, heading, description, submit }) => {
                 <div className="container px-4 mx-auto relative">
                     <div className="max-w-4xl mx-auto text-center">
                         <span className="text-xl md:text-2xl font-extrabold text-orange-500">
-                           {label}
+                            {label}
                         </span>
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold font-heading mt-1 mb-8">
-                          {heading}
+                            {heading}
                         </h1>
                         <p className="text-xl md:text-2xl font-extrabold leading-8 mb-8">
-                           <ReactTypingEffect typingDelay={200} text={description}/>
+                            <ReactTypingEffect  speed={300} eraseSpeed={10} typingDelay={20} text={description} />
                         </p>
                         <p className="text-xl md:text-2xl font-extrabold leading-8 mb-8">
-                          <Countdown/>
+                            <Countdown date={'2022-09-01T01:09:00'} />
                         </p>
                         <div className="max-w-2xl mx-auto">
                             <div className="flex flex-wrap -mx-2 mb-4 justify-center">
@@ -123,7 +123,7 @@ const FormSection = ({ label, heading, description, submit }) => {
                             className="block mb-6 text-center leading-6 text-lg font-extrabold hover:text-indigo-800"
                             href="#"
                         >
-                          {submit}
+                            {submit}
                         </a>
                         <a
                             className="block py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
