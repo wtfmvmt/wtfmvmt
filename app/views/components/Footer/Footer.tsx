@@ -92,7 +92,7 @@ const Footer = ({ copyright, impressum }) => {
 
             {/* Icons Row */}
             <div className="w-full lg:w-auto flex items-center justify-center">
-        
+
 
             </div>
           </div>
