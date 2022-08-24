@@ -1,5 +1,7 @@
 import Countdown from "@views/components/Countdown";
 import ReactTypingEffect from 'react-typing-effect';
+import { Watch } from 'react-loader-spinner'
+
 
 const FormSection = ({ label, heading, description, message, submit, cta }) => {
 
@@ -9,7 +11,10 @@ const FormSection = ({ label, heading, description, message, submit, cta }) => {
             <div className="py-16 md:py-24 lg:pt-40 lg:pb-52 px-2 md:px-6 mx-4 md:mx-10  border-3 border-indigo-900 shadow-md rounded-2xl">
                 <div className="container px-4 mx-auto relative">
                     <div className="max-w-4xl mx-auto text-center">
+                  
                         <span className="text-xl md:text-2xl font-extrabold text-orange-500">
+                            
+
                             {label}
                         </span>
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold font-heading mt-1 mb-8">
