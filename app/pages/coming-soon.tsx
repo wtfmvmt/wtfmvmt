@@ -6,7 +6,9 @@ import comingSoonPage from "@models/data/pages/comingSoonPage";
 const ComingSoonPage: IPage = () => {
 
     return (
-        <PageLayout>
+        <PageLayout metaData={{
+            pageTitle: 'Coming Soon'
+        }}>
             <FormSection {...comingSoonPage.formSection} />
         </PageLayout>
     )
