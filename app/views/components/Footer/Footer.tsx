@@ -1,5 +1,4 @@
 
-
 const Footer = ({ copyright, impressum }) => {
 
   return (
@@ -33,6 +32,8 @@ const Footer = ({ copyright, impressum }) => {
                 </div>
               </div>
               <div className="w-full">
+
+                {/* Links */}
                 <div className="flex flex-wrap items-center -mb-6">
                   <a
                     className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
@@ -91,8 +92,7 @@ const Footer = ({ copyright, impressum }) => {
 
 
             {/* Icons Row */}
-            <div className="w-full lg:w-auto flex items-center justify-center">
-
+            <div className="w-full lg:w-auto flex items-center p-4 justify-center">
 
             </div>
           </div>
@@ -103,3 +103,18 @@ const Footer = ({ copyright, impressum }) => {
 }
 
 export default Footer
+
+/*
+
+       <InstagramIcon />
+              <TwitterIcon />
+              <FacebookIcon />
+              <FreeBreakfastIcon />
+
+
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FreeBreakfastIcon from '@mui/icons-material/FreeBreakfast';
+
+*/
