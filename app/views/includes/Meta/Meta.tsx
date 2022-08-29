@@ -1,10 +1,12 @@
 import Head from "next/head"
+import meta from "@configs/meta"
+
 
 const Meta = ({ pageTitle }) => {
 
     return (
         <Head>
-            <title>WeTheFuture | {pageTitle || "Home"}</title>
+            <title>{meta.title} | {pageTitle || "Home"}</title>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={"true"} />
             <link

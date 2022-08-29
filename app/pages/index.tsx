@@ -12,14 +12,39 @@ import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 import Hero from "@components/Hero"
+import { useEffect } from "react"
 
 const HomePage: IPage = () => {
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.location.href = "/coming-soon"
+    }, 300000)
+  }, [])
 
   return (
     <PageLayout metaData={{
       pageTitle: 'HQ'
     }}>
-      <Hero/>
+      <Hero actionLinks={{
+        heading: 'Sign Up Forms',
+        links: [
+          {
+            name: 'For Artists',
+            url: 'forms/artists'
+          },
+          {
+            name: 'For Newbies',
+            url: 'forms/newbies'
+          },
+          {
+            name: 'For Investors',
+            url: 'forms/investors'
+          }
+        ]
+
+      }} />
       <FeaturedSection />
       <SummarySection />
       <SimpleFormSection />
