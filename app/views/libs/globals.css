@@ -1,7 +1,11 @@
 :root {
     --bebas-neue: 'Bebas Neue', cursive;
-    --font-primary: var(--bebas-neue);
+    --anton: 'Nova Mono', sans-serif;
+    --major-mono-display: 'Major Mono Display', monospace;
+
     --bannerImage: url('/images/banner.jpg');
+    --font-primary: var(--major-mono-display);
+
 }
 
 body {

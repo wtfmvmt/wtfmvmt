@@ -2,7 +2,7 @@ import Headroom from "react-headroom"
 
 
 
-const Banner = () => {
+const Banner = ({ message }) => {
     return (
         <div className="py-2 bg-black">
             <div className="flex items-center justify-center">
@@ -33,7 +33,7 @@ const Banner = () => {
                     />
                 </svg>
                 <p className="text-xs font-bold font-heading text-blue-100">
-                    Hi, you’ re new here! Get 20% off card!
+                    {message}
                 </p>
             </div>
         </div>
@@ -44,7 +44,7 @@ const Header = ({ favicon, navLinks, cta }) => {
     return (
         <section className="relative pb-24 overflow-hidden">
             <Headroom>
-                <Banner />
+                <Banner message={"Newbie Interest Meeting on 09/06/2022!"}/>
                 <nav style={{ backdropFilter: 'blur(12px)'}}className="flex justify-between border-b">
                     <a className="hidden xl:flex items-center px-12 border-r" href="#">
                         <svg
