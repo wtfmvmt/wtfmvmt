@@ -29,7 +29,7 @@ const Hero = ({ actionLinks }) => {
                                                             className="flex items-center text-lg font-bold font-heading hover:text-blue-300"
                                                             href={link.url}
                                                         >
-                                                            
+                                                            {link.icon}
                                                             <span>{link.name}</span>
                                                         </a>
                                                     </li>

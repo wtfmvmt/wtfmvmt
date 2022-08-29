@@ -1,3 +1,4 @@
+
 export type DataPage = {
     init: Function,
     data: object,
