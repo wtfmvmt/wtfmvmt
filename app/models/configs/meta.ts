@@ -1,5 +1,5 @@
 const meta = {
-    title: 'WeTheFuture',
+    title: 'WTFMVMT',
     description: '',
     copyright: ''
 }

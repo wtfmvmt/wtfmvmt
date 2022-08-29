@@ -1,7 +1,6 @@
 import type { IPage } from "@typings/Page"
 
 import PageLayout from "@layouts/PageLayout"
-
 import ContactSection from "@components/ContactSection"
 import ContentGrid from "@components/ContentGrid"
 import DataSection from "@components/DataSection"
@@ -12,7 +11,7 @@ import ImageMasonry from "@components/ImageMasonry/ImageMasonry"
 import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
-
+import Hero from "@components/Hero"
 
 const HomePage: IPage = () => {
 
@@ -20,6 +19,7 @@ const HomePage: IPage = () => {
     <PageLayout metaData={{
       pageTitle: 'HQ'
     }}>
+      <Hero/>
       <FeaturedSection />
       <SummarySection />
       <SimpleFormSection />

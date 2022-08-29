@@ -1,3 +1,8 @@
+export type HeroProps = {
+    heading: string,
+    description: object,
+    cta: object,
+}
 const Hero = () => {
 
     return (
