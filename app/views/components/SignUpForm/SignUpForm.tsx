@@ -140,7 +140,6 @@ const SignUpForm = () => {
                                                 type="radio"
                                                 name="deliveryType"
                                                 defaultValue=""
-                                                defaultChecked=""
                                             />
                                             <span className="ml-4 text-sm font-bold font-heading">
                                                 Standard delivery
@@ -190,7 +189,6 @@ const SignUpForm = () => {
                                             type="radio"
                                             name="paymentType"
                                             defaultValue=""
-                                            defaultChecked=""
                                         />
                                         <span className="ml-5 text-sm">Credit card</span>
                                     </label>
