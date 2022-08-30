@@ -28,7 +28,6 @@ const footer = {
         },
         
     ],
-    links: [],
     logo: {
         url: '/',
         src: '/assets/images/logo.png',

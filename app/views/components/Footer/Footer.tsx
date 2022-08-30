@@ -9,15 +9,15 @@ export type Link = {
   icon?: string
 }
 
+export type Social = {
+  name: string,
+  url: string,
+}
+
 export type FooterProps = {
   copyright: string,
   impressum: string,
-  socials?: [
-    {
-      name: string,
-      url: string,
-    }
-  ],
+  socials?: Social[],
   links?: Link[],
   logo?: {
     src: string,
