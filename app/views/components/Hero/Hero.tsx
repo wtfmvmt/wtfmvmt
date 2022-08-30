@@ -1,11 +1,12 @@
 import { Fade } from "react-awesome-reveal"
+import Carousel from '@brainhubeu/react-carousel';
 
 export type HeroProps = {
     heading: string,
     description: object,
     cta: object,
 }
-const Hero = ({ actionLinks }) => {
+const Hero = ({ actionLinks, cta }) => {
 
     return (
         <section>
@@ -58,16 +59,17 @@ const Hero = ({ actionLinks }) => {
                         </div>
                         <div className="w-full lg:w-2/3 px-4">
                             <div className="flex flex-wrap h-full">
+                                
                                 <div className="w-full md:w-7/12">
                                     <img
-                                        className="h-64 md:h-full w-full object-cover"
+                                        className="kenburns-bottom-right h-64 md:h-full w-full object-cover"
                                         src="https://scontent.ftpa1-1.fna.fbcdn.net/v/t39.30808-6/277566995_1426748454414950_1657349356422612304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=6L5P1IbKlsQAX-GFkuW&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT9hr40EE1p6DuwfNM8t0f_eWujgf5wx-lGLvkYow-Rg6Q&oe=63111278"
                                         alt=""
                                     />
                                 </div>
                                 <div className="w-full md:w-5/12">
                                     <img
-                                        className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
+                                        className="kenburns-bottom-right md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
                                         src="https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
                                         alt=""
                                     />
@@ -179,9 +181,9 @@ const Hero = ({ actionLinks }) => {
                     </h4>
                     <a
                         className="inline-block bg-purple-900 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
-                        href="/"
+                        href={cta.url}
                     >
-                        Join the Community
+                        {cta.name}
                     </a>
                 </div>
             </div>

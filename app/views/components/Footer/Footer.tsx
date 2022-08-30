@@ -69,7 +69,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                 <div className="flex flex-wrap items-center -mb-6">
 
                   {
-                    links.map((link, index) => {
+                   links && links.map((link, index) => {
 
                       return (
                         <a

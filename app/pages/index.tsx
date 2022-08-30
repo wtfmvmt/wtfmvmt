@@ -31,37 +31,46 @@ const HomePage: IPage = () => {
     <PageLayout metaData={{
       pageTitle: 'HQ'
     }}>
-      <Hero actionLinks={{
-        heading: 'Sign Up Forms',
-        links: [
-          {
-            name: 'For Newbies',
-            url: 'forms/newbies',
-            icon: <ChildCareIcon />
-          },
-          {
-            name: 'For Artists',
-            url: 'forms/artists',
-            icon: <PaletteIcon />
-          },
-          {
-            name: 'For Builders',
-            url: 'forms/newbies',
-            icon: <BuildCircleIcon />
-          },
-          {
-            name: 'For Vendors',
-            url: 'forms/investors',
-            icon: <StorefrontIcon />
-          },
-          {
-            name: 'For Mentors',
-            url: 'forms/newbies',
-            icon: <SchoolIcon />
-          },
-        ]
+      <Hero
 
-      }} />
+        actionLinks={{
+          heading: 'Sign Up Forms',
+
+          links: [
+            {
+              name: 'For Newbies',
+              url: 'forms/newbies',
+              icon: <ChildCareIcon />
+            },
+            {
+              name: 'For Artists',
+              url: 'forms/artists',
+              icon: <PaletteIcon />
+            },
+            {
+              name: 'For Builders',
+              url: 'forms/newbies',
+              icon: <BuildCircleIcon />
+            },
+            {
+              name: 'For Vendors',
+              url: 'forms/investors',
+              icon: <StorefrontIcon />
+            },
+            {
+              name: 'For Mentors',
+              url: 'forms/newbies',
+              icon: <SchoolIcon />
+            },
+          ]
+
+        }}
+        cta={{
+
+          name: 'Sign Up',
+          url: 'forms/newbies',
+        }}
+      />
 
       <FeaturedSection />
       <SummarySection />

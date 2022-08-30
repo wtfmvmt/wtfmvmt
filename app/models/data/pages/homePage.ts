@@ -28,6 +28,10 @@ const homePage: DataPage = {
             return {
 
                 heading: '',
+                cta: {
+                    name: 'Join the Movement',
+                    url: '/join'
+                },
                 actionLinks: {
                     heading: '',
                     links: [

@@ -1,11 +1,13 @@
 import PageLayout from "@views/layouts/PageLayout"
+
+
 const FormsPage = () => {
 
     return (
         <PageLayout metaData={{ pageTitle: 'Forms' }}>
             <section className="relative py-20  overflow-x-hidden">
                 <div className="relative container mx-auto px-4">
-                    <h2 className="mb-14 text-5xl font-bold font-heading">Checkout</h2>
+                    <h2 className="mb-14 text-5xl font-bold font-heading">Support the MVMT</h2>
                     <div className="flex flex-wrap -mx-4">
                         <div className="w-full lg:w-1/2 px-4">
                             <form action="">
@@ -13,14 +15,14 @@ const FormsPage = () => {
                                     <span className="inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-blue-300 text-white">
                                         1
                                     </span>
-                                    <h3 className="text-2xl font-bold font-heading">Delivery</h3>
+                                    <h3 className="text-2xl font-bold font-heading">Email</h3>
                                 </div>
                                 <div className="mb-12">
                                     <label className="font-bold font-heading text-gray-600" htmlFor="">
                                         E-mail address
                                     </label>
                                     <input
-                                        className="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
+                                        className="block w-full mt-4 py-4 px-4  border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
                                         type="email"
                                     />
                                 </div>
@@ -29,7 +31,7 @@ const FormsPage = () => {
                                         2
                                     </span>
                                     <h3 className="text-2xl font-bold font-heading">
-                                        Shipping informations
+                                        You
                                     </h3>
                                 </div>
                                 <div className="mb-12">
@@ -42,7 +44,7 @@ const FormsPage = () => {
                                                 First name
                                             </label>
                                             <input
-                                                className="block w-full mt-4 py-4 px-4 bg-white border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
+                                                className="block w-full mt-4 py-4 px-4  border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
                                                 type="text"
                                             />
                                         </div>
@@ -127,7 +129,7 @@ const FormsPage = () => {
                                         3
                                     </span>
                                     <h3 className="text-2xl font-bold font-heading">
-                                        Shipping methods
+                                        Interests
                                     </h3>
                                 </div>
                                 <div className="mb-12">
@@ -154,7 +156,7 @@ const FormsPage = () => {
                                             </span>
                                         </div>
                                     </div>
-                                    <div className="py-3 px-8 bg-white rounded-full">
+                                    <div className="py-3 px-8 rounded-full">
                                         <div className="flex flex-wrap items-center">
                                             <label
                                                 className="inline-flex mb-1 pr-4 py-2 items-center sm:border-r"
@@ -178,7 +180,7 @@ const FormsPage = () => {
                                     <span className="inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-pink-300 text-white">
                                         4
                                     </span>
-                                    <h3 className="text-2xl font-bold font-heading">Payment</h3>
+                                    <h3 className="text-2xl font-bold font-heading">Affiliation</h3>
                                 </div>
                                 <div>
                                     <div className="flex flex-wrap -mx-4 mb-10">
@@ -268,9 +270,9 @@ const FormsPage = () => {
                     </div>
                 </div>
                 <div className="lg:absolute lg:top-0 lg:right-0 w-full lg:w-2/5 mb-12 lg:mb-0">
-                    <div className="py-16 px-6 md:px-14 bg-white">
+                    <div className="py-16 px-6 md:px-14">
                         <div className="flex mb-12 items-center">
-                            <h2 className="text-4xl font-bold font-heading">Order summary</h2>
+                            <h2 className="text-4xl font-bold font-heading">Summary</h2>
                             <span className="inline-flex ml-4 w-8 h-8 items-center justify-center rounded-full bg-orange-300 text-white">
                                 2
                             </span>
@@ -471,7 +473,7 @@ const FormsPage = () => {
                             className="block w-full py-4 bg-orange-300 hover:bg-orange-400 text-center text-white font-bold font-heading uppercase rounded-md transition duration-200"
                             href="#"
                         >
-                            Confirm Order
+                           Subscribe
                         </a>
                     </div>
                 </div>
