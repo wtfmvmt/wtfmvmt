@@ -24,7 +24,7 @@ const HomePage: IPage = () => {
   useEffect(() => {
     setTimeout(() => {
       window.location.href = "/coming-soon"
-    }, 300000)
+    }, 30000000)
   }, [])
 
   return (
@@ -62,6 +62,7 @@ const HomePage: IPage = () => {
         ]
 
       }} />
+
       <FeaturedSection />
       <SummarySection />
       <SimpleFormSection />
@@ -72,9 +73,15 @@ const HomePage: IPage = () => {
       <ContentGrid />
       <ImageMasonry />
       <ContactSection />
+
     </PageLayout>
 
   )
 }
 
 export default HomePage
+
+
+/*
+
+*/

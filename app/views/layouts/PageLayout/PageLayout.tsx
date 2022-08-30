@@ -3,7 +3,7 @@ import Footer from "@components/Footer"
 import Header from "@components/Header"
 import DrawerMenu from "@views/includes/DrawerMenu";
 import { Fade } from "react-awesome-reveal";
-
+import footer from "@db/footer"
 
 const PageLayout = ({ children, metaData }) => {
 
@@ -15,7 +15,7 @@ const PageLayout = ({ children, metaData }) => {
             <Fade>
                 {children}
             </Fade>
-            <Footer impressum={"Conscious Creators for The Future"} copyright={" © 2022 WeTheFuture. All rights reserved."} />
+            <Footer {...footer}  />
         </RootLayout>
     )
 }

@@ -1,5 +1,31 @@
 
-const Footer = ({ copyright, impressum }) => {
+import Image from "next/image"
+
+import { SocialIcon } from 'react-social-icons';
+
+export type Link = {
+  name: string,
+  url: string,
+  icon?: string
+}
+
+export type FooterProps = {
+  copyright: string,
+  impressum: string,
+  socials?: [
+    {
+      name: string,
+      url: string,
+    }
+  ],
+  links?: Link[],
+  logo?: {
+    src: string,
+    url: string
+  }
+}
+
+const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {
 
   return (
     <section style={{ backdropFilter: 'blur(4px)' }}>
@@ -8,13 +34,18 @@ const Footer = ({ copyright, impressum }) => {
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap justify-between items-center">
               <div className="w-full md:w-1/3 mb-12">
-                <a className="inline-block mx-auto mb-8" href="#">
-                  <img
+
+
+                <a className="inline-block mx-auto mb-8" href={logo.url}>
+                  <Image
+                    height={"70px"}
+                    width={"70px"}
                     className="h-12 h-40"
-                    src="https://static.shuffle.dev/uploads/files/c5/c588f2e6e97dec56040c09794a6a944110e98d9d/Untitled-design.png"
-                    alt=""
+                    src={logo.src}
+                    alt={"logo"}
                   />
                 </a>
+
                 <p className="max-w-xs text-lg font-extrabold leading-8">
                   {impressum}
                 </p>
@@ -31,69 +62,61 @@ const Footer = ({ copyright, impressum }) => {
                   </a>
                 </div>
               </div>
+
               <div className="w-full">
 
                 {/* Links */}
                 <div className="flex flex-wrap items-center -mb-6">
-                  <a
-                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
-                    href="#"
-                  >
-                    Projects
-                  </a>
-                  <a
-                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
-                    href="#"
-                  >
-                    Vision
-                  </a>
-                  <a
-                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
-                    href="#"
-                  >
-                    Services
-                  </a>
-                  <a
-                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
-                    href="#"
-                  >
-                    Resources
-                  </a>
-                  <a
-                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
-                    href="#"
-                  >
-                    Carrers
-                  </a>
-                  <a
-                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
-                    href="#"
-                  >
-                    Help
-                  </a>
-                  <a
-                    className="inline-block mb-6 text-lg font-extrabold hover:text-indigo-800"
-                    href="#"
-                  >
-                    Privacy
-                  </a>
+
+                  {
+                    links.map((link, index) => {
+
+                      return (
+                        <a
+                          key={index}
+                          className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-900"
+                          href={link.url}
+                        >
+                          {link.name}
+                        </a>
+                      )
+                    })
+                  }
+
                 </div>
+
+
               </div>
             </div>
           </div>
-        </div>
-        <div className="container px-4 pt-16 pb-24 mx-auto">
-          <div className="flex flex-wrap justify-between">
-            <div className="w-full lg:w-auto mb-12 lg:mb-0">
-              <p className="text-center text-lg font-extrabold">
-                {copyright}
-              </p>
-            </div>
+          <div className="container px-4 pt-16 pb-24 mx-auto">
+            <div className="flex flex-wrap justify-between">
+              <div className="w-full lg:w-auto mb-12 lg:mb-0">
+                <p className="text-center text-lg font-extrabold">
+                  {copyright}
+                </p>
+              </div>
 
 
-            {/* Icons Row */}
-            <div className="w-full lg:w-auto flex items-center p-4 justify-center">
+              {/* Icons Row */}
+              <div className="w-full lg:w-auto flex items-center justify-center">
+                {
+                  socials.map((social, index) => {
+                    return (
+                      <a
+                      key={index}
+                        className="inline-block text-white hover:text-indigo-800 mr-8"
+                        href="#"
+                      >
+                        <SocialIcon bgColor={""} url={social.url} />
 
+                      </a>
+
+                    )
+                  })
+                }
+                
+              </div>
             </div>
           </div>
         </div>

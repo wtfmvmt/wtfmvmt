@@ -2,6 +2,32 @@ import Headroom from "react-headroom"
 import Avatar from "@mui/material/Avatar"
 
 
+const SearchIcon = () => (
+    <svg
+        className="w-8 h-10 mr-2"
+        width={18}
+        height={18}
+        viewBox="0 0 18 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M17.5 17.1309L12.5042 11.9551"
+            stroke="white"
+            strokeMiterlimit={10}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M7.27524 13.8672C10.8789 13.8672 13.8002 10.945 13.8002 7.34033C13.8002 3.73565 10.8789 0.813477 7.27524 0.813477C3.67159 0.813477 0.750244 3.73565 0.750244 7.34033C0.750244 10.945 3.67159 13.8672 7.27524 13.8672Z"
+            stroke="white"
+            strokeMiterlimit={10}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+)
+
 const Banner = ({ message }) => {
     return (
         <div className="py-2 bg-black">
@@ -39,66 +65,48 @@ const Banner = ({ message }) => {
         </div>
     )
 }
+
+const BurgerIcon = () => (
+    <a className="hidden xl:flex items-center px-12 border-r" href="#">
+        <svg
+            width={18}
+            height={18}
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path d="M18 15.4688H0V17.7207H18V15.4688Z" fill="white" />
+            <path d="M11.0226 7.87402H0V10.126H11.0226V7.87402Z" fill="white" />
+            <path d="M18 0.279297H0V2.53127H18V0.279297Z" fill="white" />
+        </svg>
+    </a>
+)
 const Header = ({ favicon, navLinks, cta }) => {
 
     return (
         <section className="relative pb-24 overflow-hidden">
             <Headroom>
-                <Banner message={"Newbie Interest Meeting on 09/06/2022!"}/>
-                <nav style={{ backdropFilter: 'blur(12px)'}}className="flex justify-between border-b">
-                    <a className="hidden xl:flex items-center px-12 border-r" href="#">
-                        <svg
-                            width={18}
-                            height={18}
-                            viewBox="0 0 18 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M18 15.4688H0V17.7207H18V15.4688Z" fill="white" />
-                            <path d="M11.0226 7.87402H0V10.126H11.0226V7.87402Z" fill="white" />
-                            <path d="M18 0.279297H0V2.53127H18V0.279297Z" fill="white" />
-                        </svg>
-                    </a>
+                <Banner message={"Newbie Interest Meeting on 09/06/2022!"} />
+                <nav style={{ backdropFilter: 'blur(12px)' }} className="flex justify-between border-b">
+                    <BurgerIcon />
                     <div className="px-12 py-6 flex w-full items-center">
                         <a className="flex-shrink-0 text-3xl font-bold font-heading" href="#">
                             <img
                                 className="h-9"
-                                src="yofte-assets/logos/yofte-logo.svg"
+                                src="/assets/icons/180x180.png"
                                 alt=""
                                 width="auto"
                             />
                         </a>
-                        <div className="hidden xl:flex mx-auto py-3 pl-6 pr-3 bg-white border border-gray-200 rounded-lg">
-                            <svg
-                                className="w-8 h-10 mr-2"
-                                width={18}
-                                height={18}
-                                viewBox="0 0 18 18"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M17.5 17.1309L12.5042 11.9551"
-                                    stroke="black"
-                                    strokeMiterlimit={10}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                                <path
-                                    d="M7.27524 13.8672C10.8789 13.8672 13.8002 10.945 13.8002 7.34033C13.8002 3.73565 10.8789 0.813477 7.27524 0.813477C3.67159 0.813477 0.750244 3.73565 0.750244 7.34033C0.750244 10.945 3.67159 13.8672 7.27524 13.8672Z"
-                                    stroke="black"
-                                    strokeMiterlimit={10}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
+                        <div className="hidden xl:flex mx-auto py-3 pl-6 pr-3  text-white border border-gray-200 rounded-lg">
+                            <SearchIcon />
                             <input
-                                className="w-full border-0 focus:ring-transparent focus:outline-none py-2"
+                                className="w-full b border-0 focus:ring-transparent bg-transparent focus:outline-none py-2"
                                 type="text"
                                 placeholder=""
                             />
                             <select
-                                className="pl-6 pr-6 border-0 border-l border-gray-100 focus:border-gray-100 focus:ring-transparent focus:outline-none cursor-pointer"
+                                className="pl-6 pr-6 border-0 border-l bg-transparent border-gray-100 focus:border-gray-100 focus:ring-transparent focus:outline-none cursor-pointer"
                                 name=""
                                 id=""
                             >
@@ -108,61 +116,21 @@ const Header = ({ favicon, navLinks, cta }) => {
                             </select>
                         </div>
                         <div className="hidden xl:flex items-center">
-                            <a className="mr-10 hover:text-gray-600" href="#">
-                                <svg
-                                    width={23}
-                                    height={20}
-                                    viewBox="0 0 23 20"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M11.4998 19.2061L2.70115 9.92527C1.92859 9.14433 1.41864 8.1374 1.24355 7.04712C1.06847 5.95684 1.23713 4.8385 1.72563 3.85053V3.85053C2.09464 3.10462 2.63366 2.45803 3.29828 1.96406C3.9629 1.47008 4.73408 1.14284 5.5483 1.00931C6.36252 0.875782 7.19647 0.939779 7.98144 1.19603C8.7664 1.45228 9.47991 1.89345 10.0632 2.48319L11.4998 3.93577L12.9364 2.48319C13.5197 1.89345 14.2332 1.45228 15.0182 1.19603C15.8031 0.939779 16.6371 0.875782 17.4513 1.00931C18.2655 1.14284 19.0367 1.47008 19.7013 1.96406C20.3659 2.45803 20.905 3.10462 21.274 3.85053V3.85053C21.7625 4.8385 21.9311 5.95684 21.756 7.04712C21.581 8.1374 21.071 9.14433 20.2984 9.92527L11.4998 19.2061Z"
-                                        stroke="currentColor"
-                                        strokeWidth="1.5"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    />
-                                </svg>
+
+                            <a className="flex items-center hover:text-gray-600" href="/">
+                                🔔
                             </a>
-                            <a className="flex items-center hover:text-gray-600" href="#">
-                                <svg
-                                    className="mr-3"
-                                    width={23}
-                                    height={23}
-                                    viewBox="0 0 23 23"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M18.1159 8.72461H2.50427C1.99709 8.72461 1.58594 9.12704 1.58594 9.62346V21.3085C1.58594 21.8049 1.99709 22.2074 2.50427 22.2074H18.1159C18.6231 22.2074 19.0342 21.8049 19.0342 21.3085V9.62346C19.0342 9.12704 18.6231 8.72461 18.1159 8.72461Z"
-                                        stroke="currentColor"
-                                        strokeWidth="1.5"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    />
-                                    <path
-                                        d="M6.34473 6.34469V4.95676C6.34473 3.85246 6.76252 2.79338 7.5062 2.01252C8.24988 1.23165 9.25852 0.792969 10.3102 0.792969C11.362 0.792969 12.3706 1.23165 13.1143 2.01252C13.858 2.79338 14.2758 3.85246 14.2758 4.95676V6.34469"
-                                        stroke="currentColor"
-                                        strokeWidth="1.5"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    />
-                                </svg>
-                                <span className="inline-block w-6 h-6 text-center bg-gray-100 rounded-full font-semibold font-heading">
-                                    3
-                                </span>
-                            </a>
+                            <span>10</span>
                         </div>
                     </div>
                     <a
                         className="hidden xl:flex items-center px-12 border-l font-semibold font-heading hover:text-gray-600"
                         href="/"
                     >
-                      <Avatar src="/assets/icons/180x180.png"/>
+                        <Avatar src="/assets/icons/180x180.png" />
                         <span>WTFMVMT</span>
                     </a>
-                    <a className="xl:hidden flex mr-6 items-center text-gray-900" href="#">
+                    <a className="xl:hidden flex mr-6 items-center text-white" href="#">
                         <svg
                             className="mr-2"
                             width={23}

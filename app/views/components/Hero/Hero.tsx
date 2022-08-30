@@ -174,11 +174,14 @@ const Hero = ({ actionLinks }) => {
                     <h2 className="mb-8 text-5xl xl:text-6xl font-bold font-heading">
                         WTFMVMT
                     </h2>
+                    <h4 className="mb-8 text-sm font-bold">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum minima nam laborum sunt odio, eveniet est eligendi laboriosam non voluptatem doloremque suscipit repudiandae sapiente ducimus natus, a illum expedita officiis.
+                    </h4>
                     <a
-                        className="inline-block bg-orange-300 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
-                        href="#"
+                        className="inline-block bg-purple-900 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
+                        href="/"
                     >
-                        Shop Now
+                        Join the Community
                     </a>
                 </div>
             </div>
