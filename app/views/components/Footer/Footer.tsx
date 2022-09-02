@@ -28,7 +28,7 @@ export type FooterProps = {
 const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {
 
   return (
-    <section style={{ backdropFilter: 'blur(4px)' }}>
+    <section className="bg-black bg-opacity-20">
       <div className="pt-26 border-3 border-l-0 border-r-0">
         <div className="pb-16 border-b-3 border-indigo-900">
           <div className="container px-4 mx-auto">
@@ -41,7 +41,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                     height={"70px"}
                     width={"70px"}
                     className="h-12 h-40"
-                    src={logo.src}
+                    src={"/assets/images/logo-transparent.png"}
                     alt={"logo"}
                   />
                 </a>

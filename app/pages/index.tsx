@@ -75,7 +75,7 @@ const HomePage: IPage = () => {
       <FeaturedSection />
       <SummarySection />
       <SimpleFormSection />
-      <FeaturedImages />
+
       <FeaturedMedia />
       <DataSection />
       <StatsSection />

@@ -95,7 +95,7 @@ const Header = ({ favicon, navLinks, cta }) => {
                         <a className="flex-shrink-0 text-3xl font-bold font-heading" href="#">
                             <img
                                 className="h-9"
-                                src="/assets/icons/180x180.png"
+                                src="/assets/images/logo-transparent.png"
                                 alt=""
                                 width="auto"
                             />
@@ -129,7 +129,7 @@ const Header = ({ favicon, navLinks, cta }) => {
                         className="hidden xl:flex items-center px-12 border-l font-semibold font-heading hover:text-gray-600"
                         href="/"
                     >
-                        <Avatar src="/assets/icons/180x180.png" />
+                        <Avatar src="/assets/images/logo-transparent.png" />
                         <span>WTFMVMT</span>
                     </a>
                     <a className="xl:hidden flex mr-6 items-center text-white" href="#">
