@@ -1,5 +1,6 @@
 import { Fade } from "react-awesome-reveal"
 import Carousel from '@brainhubeu/react-carousel';
+import Icon from "@components/Icon"
 
 export type HeroProps = {
     heading: string,

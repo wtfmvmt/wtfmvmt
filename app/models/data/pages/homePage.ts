@@ -1,17 +1,20 @@
-
-export type DataPage = {
-    init: Function,
-    data: object,
-    query: object
-}
-
+import type { DataPage } from '@typings/DataPage';
+import resolveDataPage from '@controllers/utils/resolveDataPage';
+import { Icons } from "@typings/Icons"
 
 const homePage: DataPage = {
 
     init: () => {
 
+        try {
+            resolveDataPage(homePage);
+        }
+        catch (E) {
+            console.log(E);
+        }
+
         return {
-            ...homePage.data,
+            ...homePage.data, ...homePage.query
         }
     },
 
@@ -30,8 +33,10 @@ const homePage: DataPage = {
                 heading: '',
                 cta: {
                     name: 'Join the Movement',
-                    url: '/join'
+                    url: '/join',
+                    icon: Icons.SchoolIcon
                 },
+
                 actionLinks: {
                     heading: '',
                     links: [

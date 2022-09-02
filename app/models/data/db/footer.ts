@@ -1,6 +1,6 @@
 const footer = {
     impressum: "Conscious Creators for The Future",
-    copyright: " © 2022 WeTheFuture. All rights reserved.",
+    copyright: " © 2022 WTFMVMT. All rights reserved.",
     socials: [
         {
             name: "Facebook",
@@ -22,10 +22,7 @@ const footer = {
             name: "LinkedIn",
             url: "https://www.linkedin.com/company/wtfmvmt/",
         },
-        {
-            name: "Medium",
-            url: "https://medium.com/@wtfmvmt",
-        },
+   
         
     ],
     logo: {

@@ -89,8 +89,3 @@ const HomePage: IPage = () => {
 }
 
 export default HomePage
-
-
-/*
-
-*/
