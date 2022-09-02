@@ -100,7 +100,7 @@ const Header = ({ favicon, navLinks, cta }) => {
                                 width="auto"
                             />
                         </a>
-                        <div className="hidden xl:flex mx-auto py-3 pl-6 pr-3  text-white border border-gray-200 rounded-lg">
+                        <div className="hidden xl:hidden mx-auto py-3 pl-6 pr-3  text-white border border-gray-200 rounded-lg">
                             <SearchIcon />
                             <input
                                 className="w-full b border-0 focus:ring-transparent bg-transparent focus:outline-none py-2"
