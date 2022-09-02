@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.10.2",
     "@mui/material": "^5.10.2",
+    "distortion-effect-carousel": "^1.1.0",
     "next": "^12.0.10",
     "react": "18.2.0",
     "react-awesome-reveal": "^4.0.1",
