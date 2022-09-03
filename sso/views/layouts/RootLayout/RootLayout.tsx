@@ -7,7 +7,7 @@ const RootLayout = ({ children, metaData }: ILayout) => {
   return (
 
     <>
-    <Meta {...metaData}/>
+      <Meta {...metaData} />
       {children}
     </>
   )
