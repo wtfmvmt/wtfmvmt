@@ -6,11 +6,10 @@ const Notifications = () => {
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2 px-6 md:pl-12 lg:pr-0 mb-10 md:mb-0">
               <h3 className="mb-2 text-6xl font-medium text-white">
-                <span className="text-green-300">7 Days</span>
-                <span>Free Demo</span>
+                <span className="text-green-300">Up Next</span>
               </h3>
               <p className="text-xl font-medium text-blue-100">
-                No charge for seven days
+                Interest Meeting / Expansion
               </p>
             </div>
             <div className="relative w-full md:w-1/2 px-12">

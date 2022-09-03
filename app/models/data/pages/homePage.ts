@@ -1,6 +1,5 @@
 import type { DataPage } from '@typings/DataPage';
 import resolveDataPage from '@controllers/utils/resolveDataPage';
-import { Icons } from "@typings/Icons"
 import header from "@configs/header"
 import footer from "@configs/footer"
 
@@ -15,8 +14,7 @@ const homePage: DataPage = {
         } finally {
             const [headerData, footerData] = [header.init(), footer.init()];
             return {
-                ...homePage.data, ...homePage.query, 
-                ...headerData, ...footerData
+                ...homePage.data, ...homePage.query,
             }
         }
     },
@@ -27,11 +25,11 @@ const homePage: DataPage = {
             metaData: {
                 pageTitle: 'Home'
             },
-    
-            Header: {...header.init()},
-            Footer: {...footer.init()},
+
+            Header: { ...header.init() },
+            Footer: { ...footer.init() },
         },
-      
+
         Banner: {
             message: {
                 name: 'Interest Meeting',
@@ -50,7 +48,7 @@ const homePage: DataPage = {
                 cta: {
                     name: 'Join the Movement',
                     url: '/join',
-                    icon: Icons.SchoolIcon
+                    icon: "SchoolIcon"
                 },
 
                 actionLinks: {

@@ -19,21 +19,21 @@ import { useEffect } from "react"
 const HomePage: IPage = ({ pageData }) => {
 
   useEffect(() => {
-    console.log(pageData.json())
+    console.log(pageData)
   }, [pageData])
 
   return (
     <PageLayout {...pageData.Layout}>
       <Hero {...pageData.Hero} />
       <FeaturedSection {...pageData.FeaturedSection} />
-      <SummarySection {...SummarySection} />
-      <SimpleFormSection {...SimpleFormSection} />
-      <FeaturedMedia {...FeaturedMedia} />
-      <DataSection {...DataSection} />
-      <StatsSection {...StatsSection} />
-      <ContentGrid {...ContentGrid} />
-      <ImageMasonry {...ImageMasonry} />
-      <ContactSection {...ContactSection} />
+      <SummarySection {...pageData.SummarySection} />
+      <SimpleFormSection {...pageData.SimpleFormSection} />
+      <FeaturedMedia {...pageData.FeaturedMedia} />
+      <DataSection {...pageData.DataSection} />
+      <StatsSection {...pageData.StatsSection} />
+      <ContentGrid {...pageData.ContentGrid} />
+      <ImageMasonry {...pageData.ImageMasonry} />
+      <ContactSection {...pageData.ContactSection} />
     </PageLayout>
   )
 }
@@ -50,12 +50,10 @@ export async function getStaticProps() {
     console.log(err)
   })
 
-
   return {
-
     props: {
-
       pageData: pageQuery
-    }
+    },
+    revalidate: 6
   }
 }

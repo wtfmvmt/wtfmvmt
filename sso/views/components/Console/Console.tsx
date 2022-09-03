@@ -35,17 +35,11 @@ export type Console = {
     headings?: object
 }
 
-const Console = ({ banner, headings }: Console) => {
+
+const SideNav = () => {
 
     return (
-
-        <section className="py-8">
-            <div className="container px-4 mx-auto">
-                <Banner {...banner} />
-
-                <div className="flex flex-wrap -mx-4">
-                    <div className="w-full lg:w-3/12 px-4 mb-8 lg:mb-0">
-                        <div className="p-2 bg-white rounded">
+        <div className="p-4 bg-black bg-opacity-90 rounded">
                             <ul className="text-sm">
                                 <li>
                                     <a
@@ -187,6 +181,19 @@ const Console = ({ banner, headings }: Console) => {
                                 </li>
                             </ul>
                         </div>
+    )
+}
+const Console = ({ banner, headings }: Console) => {
+
+    return (
+
+        <section className="py-8">
+            <div className="container px-4 mx-auto">
+                <Banner {...banner} />
+
+                <div className="flex flex-wrap -mx-4">
+                    <div className="w-full lg:w-3/12 px-4 mb-8 lg:mb-0">
+                        <SideNav/>
                     </div>
                     <div className="w-full lg:w-9/12 px-4">
                         <div className="flex items-center mb-8 px-3">
@@ -212,7 +219,7 @@ const Console = ({ banner, headings }: Console) => {
                             </div>
                         </div>
                         <ul>
-                            <li className="py-5 px-6 mb-3 bg-black bg-opacity-60 shadow rounded">
+                            <li className="py-7 px-8 mb-4 bg-black bg-opacity-80 shadow rounded">
                                 <button className="w-full flex justify-between items-center">
                                     <h3 className="text-sm font-bold">
                                         Website
@@ -232,7 +239,7 @@ const Console = ({ banner, headings }: Console) => {
                                         </svg>
                                     </span>
                                 </button>
-                                <p className="hidden mt-3 pr-6 text-sm text-gray-500">
+                                <p className=" mt-3 pr-6 text-sm text-gray-500">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
                                     urna lacus. Pellentesque in lacus eu est suscipit volutpat eu eget
                                     diam. Donec eget justo et diam condimentum bibendum. Donec
@@ -241,151 +248,8 @@ const Console = ({ banner, headings }: Console) => {
                                     pellentesque imperdiet neque vitae fringilla.
                                 </p>
                             </li>
-                            <li className="py-5 px-6 mb-3 bg-white shadow rounded">
-                                <button className="w-full flex justify-between items-center">
-                                    <h3 className="text-sm font-bold">
-                                        What is the most frequently asked question?
-                                    </h3>
-                                    <span>
-                                        <svg
-                                            width={10}
-                                            height={6}
-                                            viewBox="0 0 10 6"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M9.08317 0.666657C8.74984 0.333323 8.24984 0.333323 7.91651 0.666657L4.99984 3.58332L2.08317 0.666657C1.74984 0.333323 1.24984 0.333323 0.916504 0.666657C0.583171 0.99999 0.583171 1.49999 0.916504 1.83332L4.41651 5.33332C4.58317 5.49999 4.74984 5.58332 4.99984 5.58332C5.24984 5.58332 5.4165 5.49999 5.58317 5.33332L9.08317 1.83332C9.41651 1.49999 9.41651 0.99999 9.08317 0.666657Z"
-                                                fill="#8594A5"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <p className="hidden mt-3 pr-6 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
-                                    urna lacus. Pellentesque in lacus eu est suscipit volutpat eu eget
-                                    diam. Donec eget justo et diam condimentum bibendum. Donec
-                                    convallis tellus sem, at lobortis nulla sagittis in. Proin
-                                    facilisis a enim eget luctus. Sed et maximus libero. Nulla
-                                    pellentesque imperdiet neque vitae fringilla.
-                                </p>
-                            </li>
-                            <li className="py-5 px-6 mb-3 bg-white shadow rounded">
-                                <button className="w-full flex justify-between items-center">
-                                    <h3 className="text-sm font-bold">
-                                        What is the most frequently asked question?
-                                    </h3>
-                                    <span>
-                                        <svg
-                                            width={10}
-                                            height={6}
-                                            viewBox="0 0 10 6"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M9.08317 0.666657C8.74984 0.333323 8.24984 0.333323 7.91651 0.666657L4.99984 3.58332L2.08317 0.666657C1.74984 0.333323 1.24984 0.333323 0.916504 0.666657C0.583171 0.99999 0.583171 1.49999 0.916504 1.83332L4.41651 5.33332C4.58317 5.49999 4.74984 5.58332 4.99984 5.58332C5.24984 5.58332 5.4165 5.49999 5.58317 5.33332L9.08317 1.83332C9.41651 1.49999 9.41651 0.99999 9.08317 0.666657Z"
-                                                fill="#8594A5"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <p className="hidden mt-3 pr-6 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
-                                    urna lacus. Pellentesque in lacus eu est suscipit volutpat eu eget
-                                    diam. Donec eget justo et diam condimentum bibendum. Donec
-                                    convallis tellus sem, at lobortis nulla sagittis in. Proin
-                                    facilisis a enim eget luctus. Sed et maximus libero. Nulla
-                                    pellentesque imperdiet neque vitae fringilla.
-                                </p>
-                            </li>
-                            <li className="py-5 px-6 mb-3 bg-white shadow rounded">
-                                <button className="w-full flex justify-between items-center">
-                                    <h3 className="text-sm font-bold">
-                                        What is the most frequently asked question?
-                                    </h3>
-                                    <span>
-                                        <svg
-                                            width={10}
-                                            height={6}
-                                            viewBox="0 0 10 6"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M9.08317 0.666657C8.74984 0.333323 8.24984 0.333323 7.91651 0.666657L4.99984 3.58332L2.08317 0.666657C1.74984 0.333323 1.24984 0.333323 0.916504 0.666657C0.583171 0.99999 0.583171 1.49999 0.916504 1.83332L4.41651 5.33332C4.58317 5.49999 4.74984 5.58332 4.99984 5.58332C5.24984 5.58332 5.4165 5.49999 5.58317 5.33332L9.08317 1.83332C9.41651 1.49999 9.41651 0.99999 9.08317 0.666657Z"
-                                                fill="#8594A5"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <p className="pr-6 mt-3 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
-                                    urna lacus. Pellentesque in lacus eu est suscipit volutpat eu eget
-                                    diam. Donec eget justo et diam condimentum bibendum. Donec
-                                    convallis tellus sem, at lobortis nulla sagittis in. Proin
-                                    facilisis a enim eget luctus. Sed et maximus libero. Nulla
-                                    pellentesque imperdiet neque vitae fringilla.
-                                </p>
-                            </li>
-                            <li className="py-5 px-6 mb-3 bg-white shadow rounded">
-                                <button className="w-full flex justify-between items-center">
-                                    <h3 className="text-sm font-bold">
-                                        What is the most frequently asked question?
-                                    </h3>
-                                    <span>
-                                        <svg
-                                            width={10}
-                                            height={6}
-                                            viewBox="0 0 10 6"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M9.08317 0.666657C8.74984 0.333323 8.24984 0.333323 7.91651 0.666657L4.99984 3.58332L2.08317 0.666657C1.74984 0.333323 1.24984 0.333323 0.916504 0.666657C0.583171 0.99999 0.583171 1.49999 0.916504 1.83332L4.41651 5.33332C4.58317 5.49999 4.74984 5.58332 4.99984 5.58332C5.24984 5.58332 5.4165 5.49999 5.58317 5.33332L9.08317 1.83332C9.41651 1.49999 9.41651 0.99999 9.08317 0.666657Z"
-                                                fill="#8594A5"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <p className="hidden mt-3 pr-6 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
-                                    urna lacus. Pellentesque in lacus eu est suscipit volutpat eu eget
-                                    diam. Donec eget justo et diam condimentum bibendum. Donec
-                                    convallis tellus sem, at lobortis nulla sagittis in. Proin
-                                    facilisis a enim eget luctus. Sed et maximus libero. Nulla
-                                    pellentesque imperdiet neque vitae fringilla.
-                                </p>
-                            </li>
-                            <li className="py-5 px-6 mb-3 bg-white shadow rounded">
-                                <button className="w-full flex justify-between items-center">
-                                    <h3 className="text-sm font-bold">
-                                        What is the most frequently asked question?
-                                    </h3>
-                                    <span>
-                                        <svg
-                                            width={10}
-                                            height={6}
-                                            viewBox="0 0 10 6"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M9.08317 0.666657C8.74984 0.333323 8.24984 0.333323 7.91651 0.666657L4.99984 3.58332L2.08317 0.666657C1.74984 0.333323 1.24984 0.333323 0.916504 0.666657C0.583171 0.99999 0.583171 1.49999 0.916504 1.83332L4.41651 5.33332C4.58317 5.49999 4.74984 5.58332 4.99984 5.58332C5.24984 5.58332 5.4165 5.49999 5.58317 5.33332L9.08317 1.83332C9.41651 1.49999 9.41651 0.99999 9.08317 0.666657Z"
-                                                fill="#8594A5"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <p className="hidden mt-3 pr-6 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
-                                    urna lacus. Pellentesque in lacus eu est suscipit volutpat eu eget
-                                    diam. Donec eget justo et diam condimentum bibendum. Donec
-                                    convallis tellus sem, at lobortis nulla sagittis in. Proin
-                                    facilisis a enim eget luctus. Sed et maximus libero. Nulla
-                                    pellentesque imperdiet neque vitae fringilla.
-                                </p>
-                            </li>
+                            
+                         
                         </ul>
                     </div>
                 </div>
