@@ -11,7 +11,7 @@ export type BannerProps = {
 const Banner = ({ heading, description, logo }: BannerProps) => {
 
     return (
-        <div className="mb-8 p-8 bg-purple-800 bg-opacity-70 rounded">
+        <div className="mb-8 p-8 bg-black bg-opacity-70 rounded">
             <div className="flex flex-wrap items-center -mx-4">
                 <div className="w-full lg:w-2/3 px-4">
                     <h2 className="text-3xl text-white font-bold">
@@ -40,12 +40,7 @@ const Console = ({ banner, headings }: Console) => {
     return (
 
         <section className="py-8">
-
-
-
             <div className="container px-4 mx-auto">
-
-
                 <Banner {...banner} />
 
                 <div className="flex flex-wrap -mx-4">
@@ -59,7 +54,7 @@ const Console = ({ banner, headings }: Console) => {
                                     >
                                         <span className="mr-3">
                                             <svg
-                                                className="text-indigo-500"
+                                                className="text-black"
                                                 width={20}
                                                 height={20}
                                                 viewBox="0 0 20 20"
@@ -220,7 +215,7 @@ const Console = ({ banner, headings }: Console) => {
                             <li className="py-5 px-6 mb-3 bg-black bg-opacity-60 shadow rounded">
                                 <button className="w-full flex justify-between items-center">
                                     <h3 className="text-sm font-bold">
-Website
+                                        Website
                                     </h3>
                                     <span>
                                         <svg

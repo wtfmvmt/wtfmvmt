@@ -3,7 +3,6 @@ import type { IPage } from "@typings/Page"
 import ContactSection from "@components/ContactSection"
 import ContentGrid from "@components/ContentGrid"
 import DataSection from "@components/DataSection"
-import FeaturedImages from "@components/FeaturedImages"
 import FeaturedMedia from "@components/FeaturedMedia"
 import FeaturedSection from "@components/FeaturedSection"
 import Hero from "@components/Hero"
@@ -12,80 +11,51 @@ import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 import PageLayout from "@layouts/PageLayout"
-import PaletteIcon from '@mui/icons-material/Palette'
+import getDataPage from "@services/getDataPage"
 import { useEffect } from "react"
-import SchoolIcon from '@mui/icons-material/School';
-import BuildCircleIcon from '@mui/icons-material/BuildCircle';
-import ChildCareIcon from '@mui/icons-material/ChildCare';
-import StorefrontIcon from '@mui/icons-material/Storefront';
-const HomePage: IPage = () => {
 
+
+
+const HomePage: IPage = ({ pageData }) => {
 
   useEffect(() => {
-    setTimeout(() => {
-      window.location.href = "/coming-soon"
-    }, 30000000)
-  }, [])
+    console.log(pageData.json())
+  }, [pageData])
 
   return (
-    <PageLayout metaData={{
-      pageTitle: 'HQ'
-    }}>
-      <Hero
-
-        actionLinks={{
-          heading: 'Sign Up Forms',
-
-          links: [
-            {
-              name: 'For Newbies',
-              url: 'forms/newbies',
-              icon: <ChildCareIcon />
-            },
-            {
-              name: 'For Artists',
-              url: 'forms/artists',
-              icon: <PaletteIcon />
-            },
-            {
-              name: 'For Builders',
-              url: 'forms/newbies',
-              icon: <BuildCircleIcon />
-            },
-            {
-              name: 'For Vendors',
-              url: 'forms/investors',
-              icon: <StorefrontIcon />
-            },
-            {
-              name: 'For Mentors',
-              url: 'forms/newbies',
-              icon: <SchoolIcon />
-            },
-          ]
-
-        }}
-        cta={{
-
-          name: 'Sign Up',
-          url: 'forms/newbies',
-        }}
-      />
-
-      <FeaturedSection />
-      <SummarySection />
-      <SimpleFormSection />
-
-      <FeaturedMedia />
-      <DataSection />
-      <StatsSection />
-      <ContentGrid />
-      <ImageMasonry />
-      <ContactSection />
-
+    <PageLayout {...pageData.Layout}>
+      <Hero {...pageData.Hero} />
+      <FeaturedSection {...pageData.FeaturedSection} />
+      <SummarySection {...SummarySection} />
+      <SimpleFormSection {...SimpleFormSection} />
+      <FeaturedMedia {...FeaturedMedia} />
+      <DataSection {...DataSection} />
+      <StatsSection {...StatsSection} />
+      <ContentGrid {...ContentGrid} />
+      <ImageMasonry {...ImageMasonry} />
+      <ContactSection {...ContactSection} />
     </PageLayout>
-
   )
 }
 
 export default HomePage
+
+export async function getStaticProps() {
+
+  let pageQuery = null;
+
+  getDataPage().then(data => {
+    pageQuery = data
+  }).catch(err => {
+    console.log(err)
+  })
+
+
+  return {
+
+    props: {
+
+      pageData: pageQuery
+    }
+  }
+}

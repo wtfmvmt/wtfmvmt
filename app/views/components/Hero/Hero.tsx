@@ -2,6 +2,8 @@ import { Fade } from "react-awesome-reveal"
 import Carousel from '@brainhubeu/react-carousel';
 import Icon from "@components/Icon"
 import DistortionCarousel from "../DistortionCarousel/DistortionCarousel";
+
+
 export type HeroProps = {
     heading: string,
     description: object,
@@ -74,7 +76,7 @@ const Hero = ({ actionLinks, cta }) => {
                                 
                                 </div>
                                 <div className="w-full md:w-5/12">
-                                <DistortionCarousel initalIndex={1} displacmentImage="/assets/images/distortions/2.jpg" images={images} />
+                                <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={images} />
 
                                 
                                 </div>

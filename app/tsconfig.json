@@ -24,11 +24,12 @@
       "@components/*":["views/components/*"],
       "@db/*":["models/data/db/*"],
       "@pages/*":["models/data/pages/*"],
+      "@services/*":["controllers/services/*"],
       "@styles/*":["views/styles/*"],
       "@libs/*":["views/libs/*"],
       "@configs/*":["models/configs/*"],
       "@typings/*":["models/typings/*"],
-      "@utils/*":["utils/*"],
+      "@utils/*":["controllers/utils/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.js"],

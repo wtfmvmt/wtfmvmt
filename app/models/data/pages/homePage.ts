@@ -1,26 +1,42 @@
 import type { DataPage } from '@typings/DataPage';
 import resolveDataPage from '@controllers/utils/resolveDataPage';
 import { Icons } from "@typings/Icons"
+import header from "@configs/header"
+import footer from "@configs/footer"
 
 const homePage: DataPage = {
 
     init: () => {
-
         try {
             resolveDataPage(homePage);
         }
-        catch (E) {
-            console.log(E);
-        }
-
-        return {
-            ...homePage.data, ...homePage.query
+        catch (error) {
+            console.log(error);
+        } finally {
+            const [headerData, footerData] = [header.init(), footer.init()];
+            return {
+                ...homePage.data, ...homePage.query, 
+                ...headerData, ...footerData
+            }
         }
     },
 
     data: {
-        metaData: {
-            pageTitle: 'HQ'
+
+        Layout: {
+            metaData: {
+                pageTitle: 'Home'
+            },
+    
+            Header: {...header.init()},
+            Footer: {...footer.init()},
+        },
+      
+        Banner: {
+            message: {
+                name: 'Interest Meeting',
+                url: '/form'
+            }
         }
     },
 

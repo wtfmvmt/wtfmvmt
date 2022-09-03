@@ -1,6 +1,6 @@
-const resolveDataPage = (queryList) => {
-    Object.keys(queryList).map(key => {
-        queryList[key] = queryList[key]()
+const resolveDataPage = (queryObject) => {
+    Object.keys(queryObject).map(key => {
+        queryObject[key] = queryObject[key]()
     })
 }
 
