@@ -89,7 +89,7 @@ const Header = ({ favicon, navLinks, cta }) => {
         <section className="relative pb-24 overflow-hidden">
             <Headroom>
                 <Banner message={"Newbie Interest Meeting on 09/06/2022!"} />
-                <nav style={{ backdropFilter: 'blur(12px)' }} className="flex justify-between border-b">
+                <nav style={{ backdropFilter: 'blur(10px)' }} className="flex justify-between border-b">
                     <BurgerIcon />
                     <div className="px-12 py-6 flex w-full items-center">
                         <a className="flex-shrink-0 text-3xl font-bold font-heading" href="#">
