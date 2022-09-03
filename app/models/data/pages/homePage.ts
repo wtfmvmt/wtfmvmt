@@ -7,12 +7,11 @@ const homePage: DataPage = {
 
     init: () => {
         try {
-            resolveDataPage(homePage);
+            resolveDataPage(homePage.query);
         }
         catch (error) {
             console.log(error);
         } finally {
-            const [headerData, footerData] = [header.init(), footer.init()];
             return {
                 ...homePage.data, ...homePage.query,
             }
@@ -40,7 +39,7 @@ const homePage: DataPage = {
 
     query: {
 
-        hero: () => {
+        Hero: () => {
 
             return {
 

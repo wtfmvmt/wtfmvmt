@@ -27,12 +27,12 @@ const Hero = ({ actionLinks, cta }) => {
                         <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
                             <div className="px-4 md:px-8 py-12 ">
                                 <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-white uppercase">
-                                    {actionLinks.heading}
+                                    {actionLinks && actionLinks.heading}
                                 </h4>
                                 <ul className="mb-5">
                                     <Fade cascade>
                                         {
-                                            actionLinks.links.map((link, index) => {
+                                          actionLinks && actionLinks.links.map((link, index) => {
                                                 return (
                                                     <li key={index} className="py-5 px-8 border-b">
                                                         <a
@@ -187,9 +187,9 @@ const Hero = ({ actionLinks, cta }) => {
                     </h4>
                     <a
                         className="inline-block bg-purple-900 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
-                        href={cta.url}
+                        href={cta && cta.url}
                     >
-                        {cta.name}
+                        {cta && cta.name}
                     </a>
                 </div>
             </div>

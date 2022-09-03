@@ -1,7 +1,7 @@
 
 const getDataPage = async () => {
 
-    const res = await fetch('http://localhost:3001/api/pages/',
+    const res = await fetch("http://localhost:3001/api/pages/",
 
         {
             method: 'GET',
@@ -11,16 +11,11 @@ const getDataPage = async () => {
             }
         })
     try {
-        
-        const queryData = await res.json().then(data => {
-            return data
-        })
-
+        const queryData = await res.json()
         return queryData
-       
     } catch (error) {
         console.log(error)
-        return null
+        return `${error}`
     }
 
 }

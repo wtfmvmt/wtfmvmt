@@ -21,7 +21,7 @@ export type FooterProps = {
   links?: Link[],
   logo?: {
     src: string,
-    url: string
+    url?: string
   }
 }
 
@@ -36,7 +36,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
               <div className="w-full md:w-1/3 mb-12">
 
 
-                <a className="inline-block mx-auto mb-8" href={logo.url}>
+                <a className="inline-block mx-auto mb-8" href={"/"}>
                   <Image
                     height={"70px"}
                     width={"70px"}
@@ -101,7 +101,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
               {/* Icons Row */}
               <div className="w-full lg:w-auto flex items-center justify-center">
                 {
-                  socials.map((social, index) => {
+                 socials && socials.map((social, index) => {
                     return (
                       <a
                       key={index}

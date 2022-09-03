@@ -31,12 +31,12 @@ const footer = {
                 name: "LinkedIn",
                 url: "https://www.linkedin.com/company/wtfmvmt/",
             },
-
-
         ],
         logo: {
-            url: '/',
             src: '/assets/images/logo.png',
+            url: '/'
+            
+
         }
     }
 }

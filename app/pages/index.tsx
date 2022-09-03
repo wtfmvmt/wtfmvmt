@@ -24,36 +24,23 @@ const HomePage: IPage = ({ pageData }) => {
 
   return (
     <PageLayout {...pageData.Layout}>
-      <Hero {...pageData.Hero} />
-      <FeaturedSection {...pageData.FeaturedSection} />
-      <SummarySection {...pageData.SummarySection} />
-      <SimpleFormSection {...pageData.SimpleFormSection} />
-      <FeaturedMedia {...pageData.FeaturedMedia} />
-      <DataSection {...pageData.DataSection} />
-      <StatsSection {...pageData.StatsSection} />
-      <ContentGrid {...pageData.ContentGrid} />
-      <ImageMasonry {...pageData.ImageMasonry} />
-      <ContactSection {...pageData.ContactSection} />
-    </PageLayout>
-  )
+      <Hero {...pageData.Hero}/>
+
+
+      </PageLayout>
+      )
 }
 
-export default HomePage
+      export default HomePage
 
-export async function getStaticProps() {
+      export async function getStaticProps() {
 
-  let pageQuery = null;
+const pageQuery = await getDataPage()
 
-  getDataPage().then(data => {
-    pageQuery = data
-  }).catch(err => {
-    console.log(err)
-  })
-
-  return {
-    props: {
-      pageData: pageQuery
+      return {
+        props: {
+        pageData: pageQuery
     },
-    revalidate: 6
+      revalidate: 6
   }
 }
