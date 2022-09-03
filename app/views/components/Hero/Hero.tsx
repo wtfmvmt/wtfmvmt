@@ -1,12 +1,18 @@
 import { Fade } from "react-awesome-reveal"
 import Carousel from '@brainhubeu/react-carousel';
 import Icon from "@components/Icon"
-
+import DistortionCarousel from "../DistortionCarousel/DistortionCarousel";
 export type HeroProps = {
     heading: string,
     description: object,
     cta: object,
 }
+
+const images = [
+    "https://scontent.ftpa1-1.fna.fbcdn.net/v/t39.30808-6/277566995_1426748454414950_1657349356422612304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=6L5P1IbKlsQAX-GFkuW&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT9hr40EE1p6DuwfNM8t0f_eWujgf5wx-lGLvkYow-Rg6Q&oe=63111278",
+     "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
+
+]
 const Hero = ({ actionLinks, cta }) => {
 
     return (
@@ -62,18 +68,15 @@ const Hero = ({ actionLinks, cta }) => {
                             <div className="flex flex-wrap h-full">
                                 
                                 <div className="w-full md:w-7/12">
-                                    <img
-                                        className="kenburns-bottom-right h-64 md:h-full w-full object-cover"
-                                        src="https://scontent.ftpa1-1.fna.fbcdn.net/v/t39.30808-6/277566995_1426748454414950_1657349356422612304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=6L5P1IbKlsQAX-GFkuW&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT9hr40EE1p6DuwfNM8t0f_eWujgf5wx-lGLvkYow-Rg6Q&oe=63111278"
-                                        alt=""
-                                    />
+
+                                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={images} />
+                             
+                                
                                 </div>
                                 <div className="w-full md:w-5/12">
-                                    <img
-                                        className="kenburns-bottom-right md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                                        src="https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
-                                        alt=""
-                                    />
+                                <DistortionCarousel initalIndex={1} displacmentImage="/assets/images/distortions/2.jpg" images={images} />
+
+                                
                                 </div>
                             </div>
                         </div>

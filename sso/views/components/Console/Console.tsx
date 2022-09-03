@@ -31,10 +31,11 @@ const Banner = ({ heading, description, logo }: BannerProps) => {
 }
 
 export type Console = {
-    banner?: BannerProps
+    banner?: BannerProps,
+    headings?: object
 }
 
-const Console = ({ banner }: Console) => {
+const Console = ({ banner, headings }: Console) => {
 
     return (
 
@@ -71,7 +72,7 @@ const Console = ({ banner }: Console) => {
                                                 />
                                             </svg>
                                         </span>
-                                        <span>Payments</span>
+                                        <span>Quick Links</span>
                                     </a>
                                 </li>
                                 <li>
@@ -209,17 +210,17 @@ const Console = ({ banner }: Console) => {
                                 </svg>
                             </span>
                             <div>
-                                <h2 className="mb-1 text-2xl font-bold">Payment</h2>
+                                <h2 className="mb-1 text-2xl font-bold">Quick Links</h2>
                                 <p className="text-sm text-gray-500 font-medium">
                                     Monitor key metrics, check reporting and review insights
                                 </p>
                             </div>
                         </div>
                         <ul>
-                            <li className="py-5 px-6 mb-3 bg-white shadow rounded">
+                            <li className="py-5 px-6 mb-3 bg-black bg-opacity-60 shadow rounded">
                                 <button className="w-full flex justify-between items-center">
                                     <h3 className="text-sm font-bold">
-                                        What is the most frequently asked question?
+Website
                                     </h3>
                                     <span>
                                         <svg
