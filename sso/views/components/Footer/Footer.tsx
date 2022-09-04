@@ -5,9 +5,8 @@ export type NavLink = {
 
 
 export type FooterProps = {
-
-    title?: string,
-    navLinks: NavLink[]
+    title: string,
+    navLinks?: NavLink[]
 }
 
 

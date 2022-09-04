@@ -1,5 +1,5 @@
 const meta = {
-    title: 'WTFMVMT: Facade'
+    title: 'Facade'
 }
 
 export default meta

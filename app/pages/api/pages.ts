@@ -13,5 +13,5 @@ export default function handler(
 
   const data = homePage.init()
   res.status(200)
-  res.json(JSON.stringify(data))
+  res.json(data)
 }

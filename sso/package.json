@@ -17,7 +17,8 @@
     "react": "18.2.0",
     "react-awesome-reveal": "^4.0.1",
     "react-dom": "18.2.0",
-    "react-headroom": "^3.2.0"
+    "react-headroom": "^3.2.0",
+    "recoil": "^0.7.5"
   },
   "devDependencies": {
     "@types/node": "18.7.14",

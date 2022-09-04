@@ -6,12 +6,16 @@ import Notifications from '@views/components/Notifications'
 
 const HomePage: NextPage = () => {
 
+  const metaData = {
+    pageTitle: 'WTFMVMT'
+  }
+
   const { Banner } = homePage.init()
 
   return (
-    <PageLayout metaData={{ pageTitle: 'WTFMVMT'}}>
+    <PageLayout metaData={metaData}>
       <Console banner={Banner} />
-      <Notifications/>
+      <Notifications />
     </PageLayout>
   )
 }

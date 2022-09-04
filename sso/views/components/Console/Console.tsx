@@ -1,12 +1,4 @@
-
-export type BannerProps = {
-    heading: string,
-    description: string,
-    logo: {
-        src: string,
-        alt?: string
-    }
-}
+import type { BannerProps } from "@typings/Banner"
 
 const Banner = ({ heading, description, logo }: BannerProps) => {
 
@@ -253,5 +245,7 @@ const Console = ({ banner, headings }: Console) => {
 
     )
 }
+
+export { Banner }
 
 export default Console
