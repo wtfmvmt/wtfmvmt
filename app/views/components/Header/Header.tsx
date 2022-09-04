@@ -21,22 +21,22 @@ export type Favicon = {
 
 
 export type BannerProps = {
-    message: string[]
+    messages: string[]
 }
 export type HeaderProps = {
     favicon: Favicon,
     navLinks: NavLink[],
     cta: CallToAction,
-    bannerData: BannerProps
+    banner: BannerProps
 }
 
 
-const Header = ({ favicon, navLinks, cta, bannerData }: HeaderProps) => {
+const Header = ({ favicon, navLinks, cta, banner }: HeaderProps) => {
 
     return (
         <section className="relative pb-20 overflow-hidden">
             <Headroom>
-                <Banner {...bannerData} />
+                <Banner {...banner} />
                 <nav style={{ backdropFilter: 'blur(12px)' }} className="flex justify-between border-b">
                     <BurgerIcon />
                     <div className="px-12 py-6 flex w-full items-center">

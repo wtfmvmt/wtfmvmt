@@ -11,7 +11,7 @@ const getDataPage = async () => {
             }
         })
     try {
-        const queryData = await res.json()
+        const queryData = await JSON.stringify(res.json())
         return queryData
     } catch (error) {
         console.log(error)

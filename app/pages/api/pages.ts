@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import homePage from "@pages/homePage"
 
 type Data = {
-  name: string
+  name: any
 }
 
 export default function handler(
@@ -13,5 +13,5 @@ export default function handler(
 
   const data = homePage.init()
   res.status(200)
-  res.json(data)
+  res.json(JSON.stringify(data))
 }

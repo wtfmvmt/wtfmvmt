@@ -5,13 +5,43 @@ import Footer from "@components/Footer"
 
 const PageLayout = ({ children, metaData }: ILayout) => {
 
+    const navLinks = [
+        {
+            name: 'Home',
+            url: '/'
+        },
+        {
+            name: 'Analytics',
+            url: '/analytics'
+        },
+        {
+
+        }
+    ]
+
+
+    const actionLinks = [
+        {
+            name: 'Login',
+            url: '/login'
+        },
+        {
+            name: 'Sign Up',
+            url: '/signup'
+        },
+        {
+            name: 'Logout',
+            url: '/logout'
+        }
+    ]
+
     return (
         <RootLayout metaData={metaData}>
-            <Header user={{ name: 'Brandon Payne', role: "Owner" }} />
+            <Header actionLinks={actionLinks} navLinks={navLinks} user={{ name: 'Brandon Payne', role: "Owner" }} />
 
             {children}
 
-            <Footer />
+            <Footer title={"WTFMVMT"} />
         </RootLayout>
     )
 }

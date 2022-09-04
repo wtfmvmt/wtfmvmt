@@ -23,24 +23,25 @@ const HomePage: IPage = ({ pageData }) => {
   }, [pageData])
 
   return (
-    <PageLayout {...pageData.Layout}>
-      <Hero {...pageData.Hero}/>
+    <PageLayout {...pageData.layout}>
+      <Hero {...pageData.hero} />
+      <SummarySection/>
 
 
-      </PageLayout>
-      )
+    </PageLayout>
+  )
 }
 
-      export default HomePage
+export default HomePage
 
-      export async function getStaticProps() {
+export async function getStaticProps() {
 
-const pageQuery = await getDataPage()
+  const pageQuery = await getDataPage()
 
-      return {
-        props: {
-        pageData: pageQuery
+  return {
+    props: {
+      pageData: pageQuery
     },
-      revalidate: 6
+    revalidate: 6
   }
 }

@@ -10,11 +10,11 @@ const PageLayout = ({ children, metaData, header, footer }) => {
     return (
         <RootLayout metaData={metaData}>
             <DrawerMenu />
-            <Header {...header}/>
+            <Header {...header} />
             <Fade>
                 {children}
             </Fade>
-            <Footer {...footer}  />
+            <Footer {...footer} />
         </RootLayout>
     )
 }

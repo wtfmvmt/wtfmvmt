@@ -20,26 +20,22 @@ const homePage: DataPage = {
 
     data: {
 
-        Layout: {
+        layout: {
             metaData: {
                 pageTitle: 'Home'
             },
 
-            Header: { ...header.init() },
-            Footer: { ...footer.init() },
+            header: { ...header.init() },
+            footer: { ...footer.init() },
+         
         },
 
-        Banner: {
-            message: {
-                name: 'Interest Meeting',
-                url: '/form'
-            }
-        }
+
     },
 
     query: {
 
-        Hero: () => {
+        hero: () => {
 
             return {
 

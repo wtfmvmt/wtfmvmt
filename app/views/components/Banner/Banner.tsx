@@ -1,10 +1,10 @@
 import ReactTypingEffect from 'react-typing-effect';
 
 export type BannerProps = {
-    message: string[]
+    messages: string[]
 }
 
-const Banner = ({ message }: BannerProps) => {
+const Banner = ({ messages }: BannerProps) => {
     return (
         <div className="py-2 bg-black">
             <div className="flex items-center justify-center">
@@ -34,10 +34,9 @@ const Banner = ({ message }: BannerProps) => {
                         fill="white"
                     />
                 </svg>
+                
                 <p className="text-xs font-bold font-heading text-blue-100">
-                <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={20} text={message} />
-
-                 
+                <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={20} text={messages} />
                 </p>
             </div>
         </div>

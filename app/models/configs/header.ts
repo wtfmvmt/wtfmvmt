@@ -15,15 +15,14 @@ const header: DataPage = {
     },
 
     query: {
-        bannerData: () => {
-
-            return {
-                message: ''
-            }
-        }
+      
     },
 
     data: {
+
+        banner: {
+            messages: ["Attend our Interest Meeting Virtually & Live 09/06", "This site is under construction."]
+        },
         favicon: {
             src: '/assets/images/logo-transparent.png',
             url: '/'
@@ -35,11 +34,12 @@ const header: DataPage = {
                 url: '/'
             },
             {
-                name: 'About',
+                name: 'Artivism',
                 url: '/about'
             },
+
             {
-                name: 'Join',
+                name: 'Community',
                 url: '/join'
             },
             {
@@ -49,7 +49,7 @@ const header: DataPage = {
         ],
 
         cta: {
-            name: 'Join',
+            name: 'Join the MVMT',
             url: '/join'
         },
 
