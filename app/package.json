@@ -24,6 +24,7 @@
     "react-countdown": "^2.3.2",
     "react-dom": "18.2.0",
     "react-headroom": "^3.2.0",
+    "react-js-search": "^0.3.0",
     "react-loader-spinner": "^5.2.0",
     "react-placeholder-image": "^0.1.8",
     "react-responsive-carousel": "^3.2.23",

@@ -7,13 +7,12 @@ import useMenuDrawerState from "@hooks/useMenuDrawerState"
 import type { HeaderProps } from "@typings/Header"
 
 
-const Header = ({ favicon,  cta, banner, title, search }: HeaderProps) => {
+const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
     const MobileNavBurger = () => (
-        <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12 xl:hidden" href="#">
-            <a className="items-center pl-10 pr-2" href="#">
-                <BurgerIcon />
-            </a>
+        <a className="navbar-burger self-center mr-12 xl:hidden" href="#">
+            <BurgerIcon action={() => toggleDrawer()} />
+
         </a>
     )
 
@@ -86,6 +85,14 @@ const Header = ({ favicon,  cta, banner, title, search }: HeaderProps) => {
             </>
         )
     }
+
+    const NavBurger = () => (
+        <div className="hidden xl:flex">
+
+            <BurgerIcon action={() => toggleDrawer()} />
+
+        </div>
+    )
     const { toggleDrawer } = useMenuDrawerState()
 
     return (
@@ -94,7 +101,7 @@ const Header = ({ favicon,  cta, banner, title, search }: HeaderProps) => {
                 <Banner {...banner} />
                 <nav style={{ backdropFilter: 'blur(12px)' }} className="flex justify-between border-b">
 
-                    <BurgerIcon action={() => toggleDrawer()} />
+                    <NavBurger/>
                     <div className="px-12 py-6 flex w-full items-center">
                         <Favicon />
                         <SearchBar />
@@ -108,9 +115,8 @@ const Header = ({ favicon,  cta, banner, title, search }: HeaderProps) => {
 
                     </div>
                     <Title />
+                    <MobileNavBurger />
                 </nav>
-
-
             </Headroom>
         </section>
     )

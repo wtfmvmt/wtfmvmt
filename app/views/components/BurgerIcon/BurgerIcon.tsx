@@ -3,7 +3,7 @@ export type BurgerIcon = {
 }
 
 const BurgerIcon = ({ action }: BurgerIcon) => (
-    <a onClick={() => action() || null} className="hidden xl:flex items-center px-12 border-r">
+    <a onClick={() => action() || null} className="flex items-center px-12 border-r">
         <svg
             width={18}
             height={18}
