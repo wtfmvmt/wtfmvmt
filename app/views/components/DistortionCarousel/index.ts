@@ -1,1 +1,1 @@
-export { default} from "./DistortionCarousel"
+export { default } from "./DistortionCarousel"

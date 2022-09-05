@@ -1,7 +1,8 @@
 import { Fade } from "react-awesome-reveal"
 import Carousel from '@brainhubeu/react-carousel';
 import Icon from "@components/Icon"
-import DistortionCarousel from "../DistortionCarousel/DistortionCarousel";
+import DistortionCarousel from "@components/DistortionCarousel";
+import next from "next";
 
 
 export type HeroProps = {
@@ -12,9 +13,17 @@ export type HeroProps = {
 
 const images = [
     "https://scontent.ftpa1-1.fna.fbcdn.net/v/t39.30808-6/277566995_1426748454414950_1657349356422612304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=6L5P1IbKlsQAX-GFkuW&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT9hr40EE1p6DuwfNM8t0f_eWujgf5wx-lGLvkYow-Rg6Q&oe=63111278",
-     "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
+    "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
 
 ]
+
+const images2 = [
+    "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
+    , "https://scontent.ftpa1-1.fna.fbcdn.net/v/t39.30808-6/277566995_1426748454414950_1657349356422612304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=6L5P1IbKlsQAX-GFkuW&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT9hr40EE1p6DuwfNM8t0f_eWujgf5wx-lGLvkYow-Rg6Q&oe=63111278",
+
+]
+
+
 
 
 const Hero = ({ actionLinks, cta }) => {
@@ -34,7 +43,7 @@ const Hero = ({ actionLinks, cta }) => {
                                 <ul className="mb-5">
                                     <Fade cascade>
                                         {
-                                          actionLinks && actionLinks.links.map((link, index) => {
+                                            actionLinks && actionLinks.links.map((link, index) => {
                                                 return (
                                                     <li key={index} className="py-5 px-8 border-b">
                                                         <a
@@ -46,8 +55,8 @@ const Hero = ({ actionLinks, cta }) => {
                                                         </a>
                                                     </li>
                                                 )
-                                            })}                                   
-                                      
+                                            })}
+
                                     </Fade>
 
                                 </ul>
@@ -70,17 +79,17 @@ const Hero = ({ actionLinks, cta }) => {
                         </div>
                         <div className="w-full lg:w-2/3 px-4">
                             <div className="flex flex-wrap h-full">
-                                
+
                                 <div className="w-full md:w-7/12">
 
                                     <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={images} />
-                             
-                                
+
+
                                 </div>
                                 <div className="w-full md:w-5/12">
-                                <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={images} />
+                                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={images2} />
 
-                                
+
                                 </div>
                             </div>
                         </div>

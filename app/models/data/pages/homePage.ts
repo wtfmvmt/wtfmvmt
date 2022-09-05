@@ -1,5 +1,5 @@
-import type { DataPage } from '@typings/DataPage';
-import resolveDataPage from '@controllers/utils/resolveDataPage';
+import type { DataPage } from "@typings/DataPage";
+import resolveDataPage from "@controllers/utils/resolveDataPage";
 import header from "@configs/header"
 import footer from "@configs/footer"
 
@@ -22,12 +22,10 @@ const homePage: DataPage = {
 
         layout: {
             metaData: {
-                pageTitle: 'Home'
+                pageTitle: "Home"
             },
-
             header: { ...header.init() },
             footer: { ...footer.init() },
-         
         },
 
 
@@ -39,27 +37,31 @@ const homePage: DataPage = {
 
             return {
 
-                heading: '',
+                heading: "",
                 cta: {
-                    name: 'Join the Movement',
-                    url: '/join',
+                    name: "Join the Movement",
+                    url: "/join",
                     icon: "SchoolIcon"
                 },
 
                 actionLinks: {
-                    heading: '',
+                    heading: "",
                     links: [
                         {
-                            name: 'For Artists',
-                            url: 'forms/artists'
+                            name: "For Artists",
+                            url: "forms/artists"
                         },
                         {
-                            name: 'For Newbies',
-                            url: 'forms/newbies'
+                            name: "For Newcomers",
+                            url: "forms/newbies"
                         },
                         {
-                            name: 'For Investors',
-                            url: 'forms/investors'
+                            name: "For Creators",
+                            url: "forms/investors"
+                        },
+                        {
+                            name: "For Vendors",
+                            url: "forms/investors"
                         }
                     ]
                 }
