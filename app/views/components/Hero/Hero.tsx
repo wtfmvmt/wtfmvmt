@@ -38,7 +38,7 @@ const Hero = ({ actionLinks, cta }) => {
                         <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
                             <div className="px-4 md:px-8 py-12 ">
                                 <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-white uppercase">
-                                    {actionLinks && actionLinks.heading}
+                                    { actionLinks.heading}
                                 </h4>
                                 <ul className="mb-5">
                                     <Fade cascade>

@@ -22,8 +22,8 @@ const Meta = ({ pageTitle }) => {
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
             <link
                 rel="apple-touch-icon android-chrome icon"
-                sizes="57x57"
-                href="/assets/icons/57x57.png"
+                sizes="180x180"
+                href="/assets/icons/180x180.png"
             />
             <link
                 rel="apple-touch-icon"

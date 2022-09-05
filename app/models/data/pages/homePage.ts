@@ -37,7 +37,7 @@ const homePage: DataPage = {
 
             return {
 
-                heading: "",
+                heading: "Join the MVMT",
                 cta: {
                     name: "Join the Movement",
                     url: "/join",
@@ -45,7 +45,7 @@ const homePage: DataPage = {
                 },
 
                 actionLinks: {
-                    heading: "",
+                    heading: "Join the MVMT",
                     links: [
                         {
                             name: "For Artists",
