@@ -21,7 +21,7 @@ const header: DataPage = {
     data: {
 
         banner: {
-            messages: ["Attend our Interest Meeting Virtually & Live 09/06", "This site is under construction."]
+            messages: ["Attend our Interest Meeting 09/06", "This site is under construction."]
         },
         favicon: {
             src: '/assets/images/logo-transparent.png',

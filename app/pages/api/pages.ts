@@ -2,16 +2,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import homePage from "@pages/homePage"
 
-type Data = {
-  name: any
-}
-
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<any>
 ) {
 
   const data = homePage.init()
+
   res.status(200)
   res.json(data)
 }

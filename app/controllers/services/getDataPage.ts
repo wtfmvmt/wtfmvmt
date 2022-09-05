@@ -1,17 +1,19 @@
 
 const getDataPage = async () => {
 
-    const res = await fetch("http://localhost:3001/api/pages/",
+    const res = await fetch("http://localhost:3002/api/pages/",
 
         {
             method: 'GET',
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
+                "User-Agent": "*",
+                "Accept": "application/json; charset=UTF-8",
             }
         })
     try {
-        const queryData = await JSON.stringify(res.json())
+        const queryData = await res.json()
         return queryData
     } catch (error) {
         console.log(error)

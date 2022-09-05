@@ -22,10 +22,11 @@ const HomePage: IPage = ({ pageData }) => {
     console.log(pageData)
   }, [pageData])
 
+
   return (
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
-      <SummarySection/>
+      <SummarySection />
 
 
     </PageLayout>
