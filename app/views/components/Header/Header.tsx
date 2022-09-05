@@ -25,7 +25,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                 {
                     search && (
                         <div className="hidden xl:flex mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg">
-                            
+
                             <SearchIcon />
                             <input
                                 className="w-full bg-transparent border-0 focus:ring-transparent focus:outline-none py-2"
@@ -88,21 +88,20 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
     }
 
     const NavBurger = () => (
+
         <div className="hidden xl:flex">
-
             <BurgerIcon action={() => toggleDrawer()} />
-
         </div>
     )
     const { toggleDrawer } = useMenuDrawerState()
 
     return (
-        <section className="relative pb-20 overflow-hidden">
+        <section className="relative pb-20 overflow-hidden w-full">
             <Headroom>
                 <Banner {...banner} />
                 <nav style={{ backdropFilter: 'blur(15px)' }} className="flex justify-between border-b">
 
-                    <NavBurger/>
+                    <NavBurger />
                     <div className="px-12 py-6 flex w-full items-center">
                         <Favicon />
                         <SearchBar />

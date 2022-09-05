@@ -16,7 +16,7 @@ const Meta = ({ pageTitle }) => {
                 />
             </>
 
-            <meta name="theme-color" content="#000000"/>
+            <meta name="theme-color" content="#000000" />
 
 
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
