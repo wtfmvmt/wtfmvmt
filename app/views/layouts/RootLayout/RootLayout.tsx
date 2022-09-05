@@ -1,10 +1,12 @@
 import Meta from "@includes/Meta"
+import CssBaseLine from "@mui/material/CssBaseline"
 
 const RootLayout = ({ children, metaData }) => {
 
     return (
         <>
-        <Meta {...metaData}/>
+            <CssBaseLine />
+            <Meta {...metaData} />
             {children}
         </>
     )
