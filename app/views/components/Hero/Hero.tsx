@@ -12,8 +12,8 @@ export type Link = {
 }
 
 export type ActionLink = {
-    heading: string,
-    links: Link[]
+    name: string,
+    url: string
 }
 
 export type CallToAction = {
@@ -96,19 +96,18 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
         <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
             <div className="px-4 md:px-8 py-12 ">
                 <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-white uppercase">
-                    {actionLinks.heading}
+                  "Action Links"
                 </h4>
                 <ul className="mb-5">
                     <Fade cascade>
                         {
-                            actionLinks.links.map((link, index) => {
+                            actionLinks.map((link, index) => {
                                 return (
                                     <li key={index} className="py-5 px-8 border-b">
                                         <a
                                             className="flex items-center text-lg font-bold font-heading hover:text-blue-300"
                                             href={link.url}
                                         >
-                                            {link.icon}
                                             <span>{link.name}</span>
                                         </a>
                                     </li>
