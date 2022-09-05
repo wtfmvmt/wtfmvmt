@@ -15,10 +15,33 @@ const header: DataPage = {
     },
 
     query: {
-      
+
     },
 
     data: {
+
+        title: {
+            name: 'WTFMVMT',
+            url: '/about'
+        },
+
+        search: [
+            {
+                id: 'Community'
+            },
+            {
+                id: 'Events'
+            },
+            {
+                id: 'Artists'
+            },
+            {
+                id: 'Venues'
+            },
+            {
+                id: 'Blog'
+            }
+        ],
 
         banner: {
             messages: ["Attend our Interest Meeting 09/06", "This site is under construction."]

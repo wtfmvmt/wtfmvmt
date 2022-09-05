@@ -2,6 +2,14 @@ import useMenuDrawerState from "@hooks/useMenuDrawerState"
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { CSSTransition } from 'react-transition-group';
 
+
+
+export type DrawerMenuProps = {
+    favicon: {
+        src: string,
+        url: string
+    }
+}
 const DrawerMenu = () => {
 
     const { open, toggleDrawer } = useMenuDrawerState()
@@ -14,7 +22,7 @@ const DrawerMenu = () => {
                 <div className="transition-all navbar-menu relative z-50">
                     <ClickAwayListener onClickAway={() => toggleDrawer()}>
 
-                        <nav style={{ backdropFilter: 'blur(10px)' }} className="fixed top-0 bg-black bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 border-r overflow-y-auto">
+                        <nav style={{ backdropFilter: 'blur(10px)' }} className="slide-in-blurred-left fixed top-0 bg-black bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 border-r overflow-y-auto">
                             <div className="flex items-center mb-8">
                                 <a className="mr-auto text-2xl font-bold leading-none" href="#">
                                     <img
