@@ -100,7 +100,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
         <section className="relative pb-20 overflow-hidden">
             <Headroom>
                 <Banner {...banner} />
-                <nav style={{ backdropFilter: 'blur(12px)' }} className="flex justify-between border-b">
+                <nav style={{ backdropFilter: 'blur(15px)' }} className="flex justify-between border-b">
 
                     <NavBurger/>
                     <div className="px-12 py-6 flex w-full items-center">
