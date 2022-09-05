@@ -1,5 +1,3 @@
-import type { IPage } from "@typings/Page"
-
 import ContactSection from "@components/ContactSection"
 import ContentGrid from "@components/ContentGrid"
 import DataSection from "@components/DataSection"
@@ -11,9 +9,11 @@ import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 import PageLayout from "@layouts/PageLayout"
-import getDataPage from "@services/getDataPage"
-import { useEffect } from "react"
 import homePage from "@pages/homePage"
+import { useEffect } from "react"
+
+import type { IPage } from "@typings/Page"
+
 
 const HomePage: IPage = ({ pageData }) => {
 
@@ -26,7 +26,12 @@ const HomePage: IPage = ({ pageData }) => {
       <Hero {...pageData.hero} />
       <SummarySection />
       <ContentGrid />
-      <DataSection/>
+      <ImageMasonry/>
+      <FeaturedSection/>
+      <DataSection />
+      <SimpleFormSection/>
+      <StatsSection/>
+      <FeaturedMedia/>
       <ContactSection />
     </PageLayout>
   )
@@ -40,6 +45,6 @@ export async function getStaticProps() {
     props: {
       pageData: homePage.init()
     },
-    revalidate: 6
+    revalidate: 5
   }
 }

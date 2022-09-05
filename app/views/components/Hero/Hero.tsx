@@ -1,8 +1,9 @@
-import { Fade } from "react-awesome-reveal"
-import Carousel from '@brainhubeu/react-carousel';
-import Icon from "@components/Icon"
 import DistortionCarousel from "@components/DistortionCarousel";
 import FacebookIcon from '@mui/icons-material/Facebook';
+import { Fade } from "react-awesome-reveal";
+
+
+
 export type MediaCarousel = string[]
 
 export type Link = {
@@ -34,7 +35,45 @@ export type HeroProps = {
 }
 
 
+
 const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLinks }: HeroProps) => {
+
+    const SocialLinks = () => (
+        <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
+
+            <a
+                className="inline-flex items-center justify-center w-12 h-12 bg-purple-700 rounded-full"
+                href="#"
+            >
+                <FacebookIcon />
+            </a>
+            <a
+                className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
+                href="#"
+            >
+                <FacebookIcon />
+            </a>
+            <a
+                className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
+                href="#"
+            >
+                <FacebookIcon />
+            </a>
+            <a
+                className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
+                href="#"
+            >
+                <FacebookIcon />
+            </a>
+            <a
+                className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
+                href="#"
+            >
+                <FacebookIcon />
+            </a>
+        </div>
+    )
+
 
     const FeaturedGallery = () => (
         <div className="w-full lg:w-2/3 px-4">
@@ -55,38 +94,39 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
         actionLinks &&
 
         <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
-                             <div className="px-4 md:px-8 py-12 ">
-            <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-white uppercase">
-                {actionLinks.heading}
-            </h4>
-            <ul className="mb-5">
-                <Fade cascade>
-                    {
-                        actionLinks.links.map((link, index) => {
-                            return (
-                                <li key={index} className="py-5 px-8 border-b">
-                                    <a
-                                        className="flex items-center text-lg font-bold font-heading hover:text-blue-300"
-                                        href={link.url}
-                                    >
-                                        {link.icon}
-                                        <span>{link.name}</span>
-                                    </a>
-                                </li>
-                            )
-                        })}
+            <div className="px-4 md:px-8 py-12 ">
+                <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-white uppercase">
+                    {actionLinks.heading}
+                </h4>
+                <ul className="mb-5">
+                    <Fade cascade>
+                        {
+                            actionLinks.links.map((link, index) => {
+                                return (
+                                    <li key={index} className="py-5 px-8 border-b">
+                                        <a
+                                            className="flex items-center text-lg font-bold font-heading hover:text-blue-300"
+                                            href={link.url}
+                                        >
+                                            {link.icon}
+                                            <span>{link.name}</span>
+                                        </a>
+                                    </li>
+                                )
+                            })}
 
-                </Fade>
+                    </Fade>
 
-            </ul>
+                </ul>
 
+            </div>
         </div>
-                        </div>
-     
+
     )
 
 
     const FeaturedRow = () => (
+
         <div className="py-12 lg:py-24 ">
             <div className="container mx-auto px-4">
                 <h4 className="lg:ml-16 mb-6 font-bold font-heading text-gray-500 text-xs">
@@ -169,59 +209,23 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
 
     return (
         <section>
-
             <div className="relative py-12 overflow-hidden">
 
                 <div className="relative container mx-auto px-4">
                     <div className="flex flex-wrap -mx-4">
-                        <ActionLinks/>
+                        <ActionLinks />
                         <FeaturedGallery />
                     </div>
                 </div>
             </div>
-            <div className="relative container mx-auto px-4">
-                <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
 
-                    <a
-                        className="inline-flex items-center justify-center w-12 h-12 bg-purple-700 rounded-full"
-                        href="#"
-                    >
-                        <FacebookIcon />
-                    </a>
-                    <a
-                        className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
-                        href="#"
-                    >
-                        <FacebookIcon />
-                    </a>
-                    <a
-                        className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
-                        href="#"
-                    >
-                        <FacebookIcon />
-                    </a>
-                    <a
-                        className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
-                        href="#"
-                    >
-                        <FacebookIcon />
-                    </a>
-                    <a
-                        className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
-                        href="#"
-                    >
-                        <FacebookIcon />
-                    </a>
-                </div>
+            <div className="relative container mx-auto px-4">
+                <SocialLinks />
                 <Heading />
             </div>
-           <FeaturedRow/>
+            <FeaturedRow />
 
         </section>
-
-
-
-
     )
 }
 
