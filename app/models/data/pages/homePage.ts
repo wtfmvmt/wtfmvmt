@@ -53,27 +53,24 @@ const homePage: DataPage = {
                 icon: "SchoolIcon"
             },
 
-            actionLinks: {
-                heading: "Join the MVMT",
-                links: [
-                    {
-                        name: "For Artists",
-                        url: "forms/artists"
-                    },
-                    {
-                        name: "For Newcomers",
-                        url: "forms/newbies"
-                    },
-                    {
-                        name: "For Creators",
-                        url: "forms/investors"
-                    },
-                    {
-                        name: "For Vendors",
-                        url: "forms/investors"
-                    }
-                ]
-            }
+            actionLinks: [
+                {
+                    name: "For Artists",
+                    url: "forms/artists"
+                },
+                {
+                    name: "For Newcomers",
+                    url: "forms/newbies"
+                },
+                {
+                    name: "For Creators",
+                    url: "forms/investors"
+                },
+                {
+                    name: "For Vendors",
+                    url: "forms/investors"
+                }
+            ]
         }
 
 
