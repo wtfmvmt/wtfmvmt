@@ -36,14 +36,14 @@ export type HeaderProps = {
 const Header = ({ favicon, navLinks, cta, banner }: HeaderProps) => {
 
     const MobileNavBurger = () => (
-        <a className="navbar-burger self-center mr-12 xl:hidden" href="#">
+        <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12 xl:hidden" href="#">
             <a className="items-center pl-10 pr-2" href="#">
                 <BurgerIcon />
             </a>
         </a>
     )
 
-    const { toggleMenu } = useMenuDrawerState()
+    const { toggleDrawer } = useMenuDrawerState()
 
     return (
         <section className="relative pb-20 overflow-hidden">
@@ -51,7 +51,8 @@ const Header = ({ favicon, navLinks, cta, banner }: HeaderProps) => {
                 <Banner {...banner} />
 
                 <nav style={{ backdropFilter: 'blur(12px)' }} className="flex justify-between border-b">
-                    <BurgerIcon />
+
+                    <BurgerIcon action={() => toggleDrawer()}  />
                     <div className="px-12 py-6 flex w-full items-center">
                         <a className="flex-shrink-0 text-3xl font-bold font-heading" href="#">
                             <img
@@ -95,7 +96,7 @@ const Header = ({ favicon, navLinks, cta, banner }: HeaderProps) => {
                     </a>
                     <a className="xl:hidden flex mr-6 items-center text-white" href="#">
                         <div className="xl:flex items-center">
-                          <MobileNavBurger/>
+                            <MobileNavBurger />
                         </div>
                     </a>
 

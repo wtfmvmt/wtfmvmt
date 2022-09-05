@@ -3,6 +3,8 @@ import resolveDataPage from "@controllers/utils/resolveDataPage";
 import header from "@configs/header"
 import footer from "@configs/footer"
 
+
+
 const homePage: DataPage = {
 
     init: () => {
@@ -28,45 +30,58 @@ const homePage: DataPage = {
             footer: { ...footer.init() },
         },
 
+        hero: {
+
+            title: 'WTFMVMT',
+            description: 'We are a Community of Conscious Builders for the Future',
+
+            mediaCarousels: [
+                [
+                    "https://scontent.ftpa1-1.fna.fbcdn.net/v/t39.30808-6/277566995_1426748454414950_1657349356422612304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=6L5P1IbKlsQAX-GFkuW&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT9hr40EE1p6DuwfNM8t0f_eWujgf5wx-lGLvkYow-Rg6Q&oe=63111278",
+                    "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
+                ],
+                [
+                    "https://scontent.ftpa1-1.fna.fbcdn.net/v/t39.30808-6/277566995_1426748454414950_1657349356422612304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=6L5P1IbKlsQAX-GFkuW&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT9hr40EE1p6DuwfNM8t0f_eWujgf5wx-lGLvkYow-Rg6Q&oe=63111278",
+                    "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
+                ]
+            ],
+
+            heading: "Join the MVMT",
+            cta: {
+                name: "Join the Movement",
+                url: "/join",
+                icon: "SchoolIcon"
+            },
+
+            actionLinks: {
+                heading: "Join the MVMT",
+                links: [
+                    {
+                        name: "For Artists",
+                        url: "forms/artists"
+                    },
+                    {
+                        name: "For Newcomers",
+                        url: "forms/newbies"
+                    },
+                    {
+                        name: "For Creators",
+                        url: "forms/investors"
+                    },
+                    {
+                        name: "For Vendors",
+                        url: "forms/investors"
+                    }
+                ]
+            }
+        }
+
 
     },
 
     query: {
 
-        hero: () => {
 
-            return {
-
-                heading: "Join the MVMT",
-                cta: {
-                    name: "Join the Movement",
-                    url: "/join",
-                    icon: "SchoolIcon"
-                },
-
-                actionLinks: {
-                    heading: "Join the MVMT",
-                    links: [
-                        {
-                            name: "For Artists",
-                            url: "forms/artists"
-                        },
-                        {
-                            name: "For Newcomers",
-                            url: "forms/newbies"
-                        },
-                        {
-                            name: "For Creators",
-                            url: "forms/investors"
-                        },
-                        {
-                            name: "For Vendors",
-                            url: "forms/investors"
-                        }
-                    ]
-                }
-            }
-        }
 
     }
 }

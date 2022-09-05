@@ -22,7 +22,7 @@ const ContactSection = () => {
                     <div className="w-full lg:w-1/2 px-4">
                         <div className="flex flex-wrap items-center lg:justify-end">
                             <a
-                                className="inline-block w-full md:w-auto mb-2 md:mb-0 md:mr-4 py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
+                                className="inline-block w-full md:w-auto mb-2 md:mb-0 md:mr-4 py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-purple-800 hover:bg-purple-900 border-3 border-purple-900 shadow rounded transition duration-200"
                                 href="#"
                             >
                                 Send us message
@@ -55,7 +55,7 @@ const ContactSection = () => {
                             </div>
                             <div>
                                 <h3 className="text-2xl font-extrabold mb-3">Phone</h3>
-                                <p className="text-xl sm:text-2xl text-orange-400">
+                                <p className="text-xl sm:text-2xl text-red-300">
                                     +7-843-672-431
                                 </p>
                             </div>
@@ -77,7 +77,7 @@ const ContactSection = () => {
                             </div>
                             <div>
                                 <h3 className="text-2xl font-extrabold mb-3">Email</h3>
-                                <p className="text-xl sm:text-2xl text-orange-400">
+                                <p className="text-xl sm:text-2xl text-red-300">
                                     contact@wtfmvmt.com
                                 </p>
                             </div>
@@ -101,7 +101,7 @@ const ContactSection = () => {
                                 <h3 className="text-2xl font-extrabold mb-3">Socials</h3>
                                 <div className="flex items-center justify-center">
                                     <a
-                                        className="inline-block mr-6 text-orange-400 hover:text-orange-500"
+                                        className="inline-block mr-6 text-red-300 hover:text-orange-500"
                                         href="#"
                                     >
                                         <svg
@@ -120,7 +120,7 @@ const ContactSection = () => {
                                         </svg>
                                     </a>
                                     <a
-                                        className="inline-block mr-6 text-orange-400 hover:text-orange-500"
+                                        className="inline-block mr-6 text-red-300 hover:text-orange-500"
                                         href="#"
                                     >
                                         <svg
@@ -139,7 +139,7 @@ const ContactSection = () => {
                                         </svg>
                                     </a>
                                     <a
-                                        className="inline-block mr-6 text-orange-400 hover:text-orange-500"
+                                        className="inline-block mr-6 text-red-300 hover:text-orange-500"
                                         href="#"
                                     >
                                         <svg
@@ -158,7 +158,7 @@ const ContactSection = () => {
                                         </svg>
                                     </a>
                                     <a
-                                        className="inline-block text-orange-400 hover:text-orange-500"
+                                        className="inline-block text-red-300 hover:text-orange-500"
                                         href="#"
                                     >
                                         <svg

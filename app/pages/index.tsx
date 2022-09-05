@@ -13,8 +13,6 @@ import SummarySection from "@components/SummarySection"
 import PageLayout from "@layouts/PageLayout"
 import getDataPage from "@services/getDataPage"
 import { useEffect } from "react"
-
-
 import homePage from "@pages/homePage"
 
 const HomePage: IPage = ({ pageData }) => {
@@ -27,8 +25,9 @@ const HomePage: IPage = ({ pageData }) => {
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
       <SummarySection />
-
-
+      <ContentGrid />
+      <DataSection/>
+      <ContactSection />
     </PageLayout>
   )
 }

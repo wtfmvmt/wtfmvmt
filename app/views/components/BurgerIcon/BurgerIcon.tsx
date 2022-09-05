@@ -1,5 +1,9 @@
-const BurgerIcon = () => (
-    <a className="hidden xl:flex items-center px-12 border-r" href="#">
+export type BurgerIcon = {
+    action?: Function
+}
+
+const BurgerIcon = ({ action }: BurgerIcon) => (
+    <a onClick={() => action() || null} className="hidden xl:flex items-center px-12 border-r">
         <svg
             width={18}
             height={18}
