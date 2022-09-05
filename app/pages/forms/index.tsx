@@ -31,7 +31,7 @@ const IndexFormsPage = () => {
                                 </p>
                                 <form className="flex flex-wrap -mx-4" action="">
                                     <div className="w-full md:w-1/2 px-4 mb-8 md:mb-12">
-                                        <label htmlFor="">
+                                        <label >
                                             <h4 className="mb-5 text-gray-400 uppercase font-bold font-heading">
                                                 Your Email
                                             </h4>
@@ -42,7 +42,7 @@ const IndexFormsPage = () => {
                                         </label>
                                     </div>
                                     <div className="w-full md:w-1/2 px-4 mb-12">
-                                        <label htmlFor="">
+                                        <label >
                                             <h4 className="mb-5 text-gray-400 uppercase font-bold font-heading">
                                                 Password
                                             </h4>
@@ -53,7 +53,7 @@ const IndexFormsPage = () => {
                                         </label>
                                     </div>
                                     <div className="w-full md:w-1/2 px-4 mb-12">
-                                        <label htmlFor="">
+                                        <label >
                                             <h4 className="mb-5 text-gray-400 uppercase font-bold font-heading">
                                                 Password
                                             </h4>
@@ -64,7 +64,7 @@ const IndexFormsPage = () => {
                                         </label>
                                     </div>
                                     <div className="w-full md:w-1/2 px-4 mb-12">
-                                        <label htmlFor="">
+                                        <label >
                                             <h4 className="mb-5 text-gray-400 uppercase font-bold font-heading">
                                                 Password
                                             </h4>
@@ -75,7 +75,7 @@ const IndexFormsPage = () => {
                                         </label>
                                     </div>
                                     <div className="w-full md:w-1/2 px-4 mb-12">
-                                        <label htmlFor="">
+                                        <label >
                                             <h4 className="mb-5 text-gray-400 uppercase font-bold font-heading">
                                                 Password
                                             </h4>
@@ -85,8 +85,8 @@ const IndexFormsPage = () => {
                                             />
                                         </label>
                                     </div>
-                                    <div className="w-full px-4 mb-12" htmlFor="">
-                                        <label className="flex" htmlFor="">
+                                    <div className="w-full px-4 mb-12" >
+                                        <label className="flex" >
                                             <input className="mr-4 mt-1" type="checkbox" />
                                             <span className="text-sm">
                                                 By singning up, you agree to our Terms, Data Policy and
