@@ -23,7 +23,6 @@ const HomePage: IPage = ({ pageData }) => {
     console.log(pageData)
   }, [pageData])
 
-
   return (
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
@@ -37,7 +36,6 @@ const HomePage: IPage = ({ pageData }) => {
 export default HomePage
 
 export async function getStaticProps() {
-
 
   return {
     props: {
