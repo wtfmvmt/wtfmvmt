@@ -42,7 +42,7 @@ const Header = ({ favicon, navLinks, cta, banner }: HeaderProps) => {
                     <div className="px-12 py-6 flex w-full items-center">
                         <a className="flex-shrink-0 text-3xl font-bold font-heading" href="#">
                             <img
-                                className="h-9"
+                                className="h-16"
                                 src="/assets/images/logo-transparent.png"
                                 alt=""
                                 width="auto"
