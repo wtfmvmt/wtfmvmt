@@ -1,7 +1,7 @@
 const menu = {
 
     favicon: {
-        url: '/assets/images/logo-transparent.png'
+        src: '/assets/images/logo-transparent.png'
     },
     links: [
         {

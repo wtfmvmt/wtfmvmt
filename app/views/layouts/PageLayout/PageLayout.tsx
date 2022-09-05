@@ -10,10 +10,6 @@ const PageLayout = ({ children, metaData, header, footer }) => {
 
     return (
         <RootLayout metaData={metaData}>
-            <Zoom>
-
-                
-            </Zoom>
             <DrawerMenu {...menu} />
             <Header {...header} />
             <Fade>
