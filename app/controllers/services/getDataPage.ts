@@ -1,7 +1,7 @@
 
 const getDataPage = async () => {
 
-    const res = await fetch("http://localhost:3002/api/pages/",
+    const res = await fetch("/api/pages/",
 
         {
             method: 'GET',

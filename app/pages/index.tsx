@@ -15,6 +15,7 @@ import getDataPage from "@services/getDataPage"
 import { useEffect } from "react"
 
 
+import homePage from "@pages/homePage"
 
 const HomePage: IPage = ({ pageData }) => {
 
@@ -37,11 +38,10 @@ export default HomePage
 
 export async function getStaticProps() {
 
-  const pageQuery = await getDataPage()
 
   return {
     props: {
-      pageData: pageQuery
+      pageData: homePage.init()
     },
     revalidate: 6
   }
