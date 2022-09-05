@@ -1,6 +1,8 @@
 import DistortionCarousel from "@components/DistortionCarousel";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { Fade } from "react-awesome-reveal";
+import { SocialIcon } from 'react-social-icons';
+import ReactTypingEffect from 'react-typing-effect';
 
 
 
@@ -22,7 +24,12 @@ export type CallToAction = {
 }
 
 export type SocialLink = {
-    name: string,
+    url: string,
+}
+
+
+export type Feature = {
+    title: string
 }
 
 export type HeroProps = {
@@ -30,7 +37,10 @@ export type HeroProps = {
     mediaCarousels: MediaCarousel[]
     description: string,
     cta: CallToAction,
-    actionLinks?: ActionLink[]
+    actionLinks?: {
+        title: string,
+        links: ActionLink[]
+    }
     socialLinks?: SocialLink[]
 }
 
@@ -38,41 +48,27 @@ export type HeroProps = {
 
 const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLinks }: HeroProps) => {
 
-    const SocialLinks = () => (
-        <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
+    const SocialLinks = () => {
 
-            <a
-                className="inline-flex items-center justify-center w-12 h-12 bg-purple-700 rounded-full"
-                href="#"
-            >
-                <FacebookIcon />
-            </a>
-            <a
-                className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
-                href="#"
-            >
-                <FacebookIcon />
-            </a>
-            <a
-                className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
-                href="#"
-            >
-                <FacebookIcon />
-            </a>
-            <a
-                className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
-                href="#"
-            >
-                <FacebookIcon />
-            </a>
-            <a
-                className="inline-flex items-center justify-center w-12 h-12 bg-blue-300 rounded-full"
-                href="#"
-            >
-                <FacebookIcon />
-            </a>
-        </div>
-    )
+        return (
+            <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
+
+                {
+                    socialLinks.map((link, index) => (
+
+                        <a
+                            key={index}
+                            className="mr-2 inline-flex items-center justify-center w-16 h-16 rounded-full"
+                            href="#"
+                        >
+                            <SocialIcon bgColor="white" url={link.url} />
+                        </a>
+                    ))
+                }
+
+            </div>
+        )
+    }
 
 
     const FeaturedGallery = () => (
@@ -96,12 +92,12 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
         <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
             <div className="px-4 md:px-8 py-12 ">
                 <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-white uppercase">
-                  "Action Links"
+                    {actionLinks.title}
                 </h4>
                 <ul className="mb-5">
                     <Fade cascade>
                         {
-                            actionLinks.map((link, index) => {
+                            actionLinks.links.map((link, index) => {
                                 return (
                                     <li key={index} className="py-5 px-8 border-b">
                                         <a
@@ -195,7 +191,10 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
                 {`${title}`}
             </h2>
             <h4 className="mb-8 text-sm font-bold">
-                {description}
+
+            <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={40} text={description} />
+
+     
             </h4>
             <a
                 className="inline-block bg-purple-900 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
@@ -208,6 +207,7 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
 
     return (
         <section>
+
             <div className="relative py-12 overflow-hidden">
 
                 <div className="relative container mx-auto px-4">
@@ -222,6 +222,7 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
                 <SocialLinks />
                 <Heading />
             </div>
+
             <FeaturedRow />
 
         </section>

@@ -101,7 +101,8 @@ const Header = ({ favicon, user, navLinks, actionLinks, actionButtons }: HeaderP
         <section>
             <Headroom>
                 <nav style={{
-                    borderBottom: '1px solid white'
+                    borderBottom: '1px solid white',
+                    backdropFilter: 'blur(10px)'
                 }} className="relative bg-black text-white bg-opacity-70">
                     <div className="p-6 flex items-center">
                         <Favicon />

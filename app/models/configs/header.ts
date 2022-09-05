@@ -44,6 +44,7 @@ const header: DataPage = {
         ],
 
         banner: {
+            icon: 'SearchIcon',
             messages: ["Attend our Interest Meeting 09/06", "This site is under construction."]
         },
         favicon: {

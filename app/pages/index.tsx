@@ -24,15 +24,15 @@ const HomePage: IPage = ({ pageData }) => {
   return (
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
+      <FeaturedSection />
       <SummarySection />
       <ContentGrid />
-      <ImageMasonry/>
-      <FeaturedSection/>
       <DataSection />
-      <SimpleFormSection/>
-      <StatsSection/>
-      <FeaturedMedia/>
-      <ContactSection />
+      <SimpleFormSection />
+      <StatsSection />
+      <FeaturedMedia />
+      <ImageMasonry />
+      <ContactSection {...pageData.contactSection} />
     </PageLayout>
   )
 }

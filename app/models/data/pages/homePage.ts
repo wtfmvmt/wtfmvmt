@@ -2,7 +2,7 @@ import type { DataPage } from "@typings/DataPage";
 import resolveDataPage from "@controllers/utils/resolveDataPage";
 import header from "@configs/header"
 import footer from "@configs/footer"
-
+import meta from "@configs/meta"
 
 
 const homePage: DataPage = {
@@ -30,10 +30,30 @@ const homePage: DataPage = {
             footer: { ...footer.init() },
         },
 
+        contactSection: {
+            socials: meta.socials,
+            phone: meta.phone,
+            email: meta.email,
+            label: 'Contact Us',
+            heading: 'Get in touch with us',
+            cta: {
+                primary: {
+                    name: 'Message Us',
+                    url: '/'
+                },
+                secondary: {
+                    name: 'RSVP our Next Meeting',
+                    url: '/rsvp'
+                }
+
+            }
+
+        },
+
         hero: {
 
-            title: 'WTFMVMT',
-            description: 'We are a Community of Conscious Builders for the Future',
+            title: meta.title,
+            description: ['We are a Community of Conscious Builders for the Future'],
 
             mediaCarousels: [
                 [
@@ -52,25 +72,28 @@ const homePage: DataPage = {
                 url: "/join",
                 icon: "SchoolIcon"
             },
-
-            actionLinks: [
-                {
-                    name: "For Artists",
-                    url: "forms/artists"
-                },
-                {
-                    name: "For Newcomers",
-                    url: "forms/newbies"
-                },
-                {
-                    name: "For Creators",
-                    url: "forms/investors"
-                },
-                {
-                    name: "For Vendors",
-                    url: "forms/investors"
-                }
-            ]
+            socialLinks: meta.socials,
+            actionLinks: {
+                title: 'Join the MVMT',
+                links: [
+                    {
+                        name: "For Artists",
+                        url: "forms/artists"
+                    },
+                    {
+                        name: "For Newcomers",
+                        url: "forms/newbies"
+                    },
+                    {
+                        name: "For Creators",
+                        url: "forms/investors"
+                    },
+                    {
+                        name: "For Vendors",
+                        url: "forms/investors"
+                    }
+                ]
+            }
         }
 
 

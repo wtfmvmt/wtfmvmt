@@ -28,7 +28,7 @@ export type FooterProps = {
 const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {
 
   return (
-    <section className="bg-black bg-opacity-20">
+    <section style={{ borderTop: '1px solid white '}}className="bg-black bg-opacity-20">
       <div className="pt-26 border-3 border-l-0 border-r-0">
         <div className="pb-16 border-b-3 border-indigo-900">
           <div className="container px-4 mx-auto">
@@ -36,13 +36,13 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
               <div className="w-full md:w-1/3 mb-12">
 
 
-                <a className="inline-block mx-auto mb-8" href={"/"}>
+                <a className="inline-block mx-auto mb-8" href={logo.url}>
                   <Image
-                    height={"70px"}
-                    width={"70px"}
+                    height={"75px"}
+                    width={"75px"}
                     className="h-12 h-40"
-                    src={"/assets/images/logo-transparent.png"}
-                    alt={"logo"}
+                    src={logo.src}
+                    alt={"wtfmvmt-logo"}
                   />
                 </a>
 
@@ -50,26 +50,14 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                   {impressum}
                 </p>
               </div>
-              <div className="w-full md:w-1/3 mb-12 md:text-right">
-                <div className="mb-4">
-                  <a className="inline-block w-auto" href="#">
-                    <img src="nigodo-assets/footers/google-play.svg" alt="" />
-                  </a>
-                </div>
-                <div>
-                  <a className="inline-block w-auto" href="#">
-                    <img src="nigodo-assets/footers/app-store.svg" alt="" />
-                  </a>
-                </div>
-              </div>
-
+      
               <div className="w-full">
 
                 {/* Links */}
                 <div className="flex flex-wrap items-center -mb-6">
 
                   {
-                   links && links.map((link, index) => {
+                    links && links.map((link, index) => {
 
                       return (
                         <a
@@ -99,23 +87,23 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
 
 
               {/* Icons Row */}
-              <div className="w-full lg:w-auto flex items-center justify-center">
+              <div className="w-full ml-4 lg:w-auto flex items-center justify-center">
                 {
-                 socials && socials.map((social, index) => {
+                  socials && socials.map((social, index) => {
                     return (
                       <a
-                      key={index}
+                        key={index}
                         className="inline-block text-white hover:text-indigo-800 mr-8"
                         href="#"
                       >
-                        <SocialIcon bgColor={""} url={social.url} />
+                        <SocialIcon bgColor={"white"} url={social.url} />
 
                       </a>
 
                     )
                   })
                 }
-                
+
               </div>
             </div>
           </div>
@@ -126,18 +114,3 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
 }
 
 export default Footer
-
-/*
-
-       <InstagramIcon />
-              <TwitterIcon />
-              <FacebookIcon />
-              <FreeBreakfastIcon />
-
-
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FreeBreakfastIcon from '@mui/icons-material/FreeBreakfast';
-
-*/

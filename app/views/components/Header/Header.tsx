@@ -5,6 +5,7 @@ import SearchIcon from "@components/SearchIcon";
 import BurgerIcon from "@components/BurgerIcon";
 import useMenuDrawerState from "@hooks/useMenuDrawerState"
 import type { HeaderProps } from "@typings/Header"
+import SearchBar from 'react-js-search';
 
 
 const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
@@ -12,7 +13,6 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
     const MobileNavBurger = () => (
         <a className="navbar-burger self-center mr-12 xl:hidden" href="#">
             <BurgerIcon action={() => toggleDrawer()} />
-
         </a>
     )
 
@@ -25,6 +25,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                 {
                     search && (
                         <div className="hidden xl:flex mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg">
+                            
                             <SearchIcon />
                             <input
                                 className="w-full bg-transparent border-0 focus:ring-transparent focus:outline-none py-2"

@@ -1,24 +1,31 @@
 import useMenuDrawerState from "@hooks/useMenuDrawerState"
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { CSSTransition } from 'react-transition-group';
+import CloseIcon from "@mui/icons-material/Close";
+import type { Favicon } from "@typings/Favicon"
 
 
+export type Link = {
+    name: string,
+    url: string
+}
 
 export type DrawerMenuProps = {
-    favicon: {
-        src: string,
-        url: string
-    }
+    favicon: Favicon,
+    links: Link[]
 }
-const DrawerMenu = () => {
+
+const DrawerMenu = ({ favicon, links }: DrawerMenuProps) => {
 
     const { open, toggleDrawer } = useMenuDrawerState()
 
     return (
         <>
-            {
-                open &&
-
+            <CSSTransition
+                in={open}
+                timeout={300}
+                unmountOnExit
+            >
                 <div className="transition-all navbar-menu relative z-50">
                     <ClickAwayListener onClickAway={() => toggleDrawer()}>
 
@@ -32,28 +39,16 @@ const DrawerMenu = () => {
                                         width="auto"
                                     />
                                 </a>
-                                <button className="navbar-close">
-                                    <svg
-                                        className="h-6 w-6 text-gray-500 cursor-pointer hover:text-gray-500"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M6 18L18 6M6 6l12 12"
-                                        />
-                                    </svg>
+
+                                <button onClick={() => toggleDrawer()} className="navbar-close">
+                                    <CloseIcon />
                                 </button>
                             </div>
                             <div className="my-auto">
                                 <ul className="py-10">
                                     <li className="mb-1">
                                         <a
-                                            className="block p-4 text-lg font-extrabold hover:bg-gray-50 rounded"
+                                            className="block p-4 text-lg font-extrabold hover:bg-black rounded"
                                             href="#"
                                         >
                                             Product
@@ -104,7 +99,10 @@ const DrawerMenu = () => {
 
                 </div>
 
-            }
+
+
+            </CSSTransition>
+
         </>
 
     )
