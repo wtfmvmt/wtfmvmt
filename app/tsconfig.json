@@ -21,6 +21,7 @@
       "@controllers/*":["controllers/*"],
       "@layouts/*":["views/layouts/*"],
       "@includes/*":["views/includes/*"],
+      "@hooks/*":["controllers/hooks/*"],
       "@components/*":["views/components/*"],
       "@db/*":["models/data/db/*"],
       "@pages/*":["models/data/pages/*"],
