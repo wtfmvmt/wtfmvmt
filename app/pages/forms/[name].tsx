@@ -6,7 +6,7 @@ const FormPage = ({ formData }) => {
 
     return (
         <PageLayout {...formData.layout}>
-            <FormMaster />
+            <FormMaster {...formData.forms} />
         </PageLayout>
 
     )

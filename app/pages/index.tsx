@@ -24,7 +24,11 @@ const HomePage: IPage = ({ pageData }) => {
   return (
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
-      <FeaturedSection {...pageData.featuredSection}/>
+      <FeaturedSection {...pageData.featuredSection} />
+      <SummarySection {...pageData.summarySection} />
+      <ContentGrid />
+
+
       <ContactSection {...pageData.contactSection} />
     </PageLayout>
   )
@@ -45,7 +49,6 @@ export async function getStaticProps() {
 /*
 
       <FeaturedSection />
-      <SummarySection />
       <ContentGrid />
       <DataSection />
       <SimpleFormSection />

@@ -23,7 +23,25 @@ const forms = {
         forms: [
             {
                 name: 'artists',
+                titleSection: {
+                    heading: 'Artists',
+                    title: 'Welcome Artists & Makers!'
+                }
+            },
+
+            {
+                name: 'newcomers',
+            },
+            {
+                name: 'vendors'
+            },
+            {
+                name: 'businesses'
+            },
+            {
+                name: 'partners'
             }
+
         ]
     }
 }

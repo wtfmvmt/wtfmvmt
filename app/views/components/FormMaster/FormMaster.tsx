@@ -1,7 +1,15 @@
-const FormMaster = () => {
+import TitleSection from "@components/TitleSection"
+
+export type FormMaster = {
+
+}
+
+const FormMaster = ({ titleSection }) => {
 
     return (
         <section className="py-20 ">
+            <TitleSection {...titleSection} />
+
             <div className="container mx-auto px-4">
                 <div className="p-8 lg:p-20">
                     <div className="flex flex-wrap -mx-4">
@@ -11,7 +19,7 @@ const FormMaster = () => {
                                     1
                                 </span>
                                 <h3 className="text-2xl font-bold font-heading">
-                                    Shipping address
+                                    Who Are you
                                 </h3>
                             </div>
                             <form action="">

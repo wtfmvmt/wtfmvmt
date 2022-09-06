@@ -108,7 +108,7 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
                                 return (
                                     <li key={index} className="rounded transition-all hover:bg-black bg-opacity-80 py-5 px-8 border-b">
                                         <a
-                                            className="hvr-wobble-horizontal flex items-center text-lg jello-diagonol-1 font-bold font-heading hover:text-purple-800"
+                                            className="hvr-wobble-horizontal flex items-center text-lg jello-diagonol-1 font-bold font-heading hover:text-purple-400"
                                             href={link.url}
                                         >
                                             <span>{link.name}</span>

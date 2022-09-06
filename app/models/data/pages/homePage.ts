@@ -50,6 +50,20 @@ const homePage: DataPage = {
             }
 
         },
+        summarySection: {
+            heading: 'What we do',
+            title: 'Artivism',
+            sections: [
+                {
+                    title: 'Artivism',
+                    description: 'We are a Community of Conscious Builders for the Future',
+                },
+                {
+                    title: 'Sign Up',
+                    description: 'Sign up to be a part of our community',
+                }
+            ]
+        },
 
         featuredSection: {
             heading: 'Featured',
@@ -59,6 +73,9 @@ const homePage: DataPage = {
                 {
                     title: 'Interest Meeting | 09.06 @1800',
                     description: ''
+                },
+                {
+                    title: 'Hippie Hideout | 09.06 @1800',
                 },
                 {
                     title: 'Hippie Hideout | 09.06 @1800',
@@ -161,14 +178,22 @@ const homePage: DataPage = {
                     },
                     {
                         name: "For Newcomers",
-                        url: "forms/newbies"
+                        url: "forms/newcomers"
                     },
                     {
-                        name: "For Creators",
-                        url: "forms/investors"
+                        name: "For Businesses",
+                        url: "forms/businesses"
+                    },
+                    {
+                        name: "For Partners",
+                        url: "forms/partners"
                     },
                     {
                         name: "For Vendors",
+                        url: "forms/vendors"
+                    },
+                    {
+                        name: "For Freelancers",
                         url: "forms/investors"
                     }
                 ]
