@@ -101,7 +101,6 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                 <Banner {...banner} />
                 <nav style={{ backdropFilter: 'blur(15px)' }} className="flex justify-between border-b">
 
-                    <NavBurger />
                     <div className="px-12 py-6 flex w-full items-center">
                         <Favicon />
                         <SearchBar />
@@ -114,7 +113,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                         </div>
 
                     </div>
-                    <Title />
+                    <NavBurger />
                     <MobileNavBurger />
                 </nav>
             </Headroom>
