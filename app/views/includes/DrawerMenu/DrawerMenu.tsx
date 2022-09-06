@@ -50,7 +50,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                         <li key={index}
                             className="mb-1">
                             <a
-                                className="hover:text-purple-800 block p-4 text-lg font-extrabold hover:bg-black rounded"
+                                className="hover:text-purple-500 block p-4 text-lg font-extrabold hover:bg-black rounded"
                                 href={link.url}
                             >
                                 <span className="hvr-wobble-horizontal ">

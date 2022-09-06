@@ -51,6 +51,22 @@ const homePage: DataPage = {
 
         },
 
+        featuredSection: {
+            heading: 'Featured',
+            title: 'Events & Meetings',
+            description: 'Virutal & Real',
+            features: [
+                {
+                    title: 'Interest Meeting | 09.06 @1800',
+                    description: ''
+                },
+                {
+                    title: 'Hippie Hideout | 09.06 @1800',
+                }
+            ]
+
+        },
+
         hero: {
 
             title: meta.title,
