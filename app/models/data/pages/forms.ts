@@ -1,4 +1,4 @@
 
-const forms = [] 
+const forms = {}
 
 export default forms

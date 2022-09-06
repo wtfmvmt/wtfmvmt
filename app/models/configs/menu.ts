@@ -1,12 +1,20 @@
+import meta from "@configs/meta"
+
 const menu = {
 
     favicon: {
-        src: '/assets/images/logo-transparent.png'
+        src: meta.logo,
+        url: '/'
     },
-    links: [
+    links: meta.links,
+    cta: [
         {
-            name: 'Home',
-            url: '/'
+            name: 'Community',
+            url: '/community'
+        },
+        {
+            name: 'RSVP',
+            url: '/contact'
         }
     ]
 }

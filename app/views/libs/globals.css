@@ -8,7 +8,12 @@
 }
 
 
+
 body {
+        animation-name: bg-slide;
+        animation-duration: 700s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
         overflow-x: hidden;
         width: 100vw;
         border: 0;

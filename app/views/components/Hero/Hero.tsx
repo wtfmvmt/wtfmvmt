@@ -3,8 +3,9 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { Fade } from "react-awesome-reveal";
 import { SocialIcon } from 'react-social-icons';
 import ReactTypingEffect from 'react-typing-effect';
+import Carousel from 'react-spring-3d-carousel-2';
 
-
+import type { Image } from "@typings/Image"
 
 export type MediaCarousel = string[]
 
@@ -29,7 +30,8 @@ export type SocialLink = {
 
 
 export type Feature = {
-    title: string
+    url?: string
+    image: Image
 }
 
 export type HeroProps = {
@@ -37,6 +39,10 @@ export type HeroProps = {
     mediaCarousels: MediaCarousel[]
     description: string,
     cta: CallToAction,
+    features?: {
+        heading: string,
+        featured: Feature[]
+    }
     actionLinks?: {
         title: string,
         links: ActionLink[]
@@ -46,7 +52,7 @@ export type HeroProps = {
 
 
 
-const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLinks }: HeroProps) => {
+const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLinks, features }: HeroProps) => {
 
     const SocialLinks = () => {
 
@@ -74,11 +80,12 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
     const FeaturedGallery = () => (
         <div className="w-full lg:w-2/3 px-4">
             <div className="flex flex-wrap h-full">
-                <div className="w-full md:w-7/12">
+                <div className="w-full md:w-7/12 z-50">
+
                     <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousels[0]} />
 
                 </div>
-                <div className="w-full md:w-5/12">
+                <div className="w-full md:w-5/12 z-50">
                     <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousels[1]} />
                 </div>
             </div>
@@ -99,9 +106,9 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
                         {
                             actionLinks.links.map((link, index) => {
                                 return (
-                                    <li key={index} className="py-5 px-8 border-b">
+                                    <li key={index} className="rounded transition-all hover:bg-black bg-opacity-80 py-5 px-8 border-b">
                                         <a
-                                            className="flex items-center text-lg font-bold font-heading hover:text-blue-300"
+                                            className="hvr-wobble-horizontal flex items-center text-lg jello-diagonol-1 font-bold font-heading hover:text-purple-800"
                                             href={link.url}
                                         >
                                             <span>{link.name}</span>
@@ -124,60 +131,28 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
 
         <div className="py-12 lg:py-24 ">
             <div className="container mx-auto px-4">
-                <h4 className="lg:ml-16 mb-6 font-bold font-heading text-gray-500 text-xs">
-                    TRUSTED BY BRANDS ALL OVER THE WORLD
+                <h4 className="lg:ml-16 mb-6 font-bold font-heading text-gray-200 text-sm">
+                    {features && features.heading}
                 </h4>
                 <div className="flex flex-wrap text-black -mx-3 -mb-3">
-                    <div className="w-full md:w-1/2 lg:w-1/6 p-3">
-                        <div className="h-28 flex items-center bg-white shadow-xl">
-                            <img
-                                className="mx-auto"
-                                src="yofte-assets/brands/exxon.svg"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-                    <div className="w-full md:w-1/2 lg:w-1/6 p-3">
-                        <div className="h-28 flex items-center bg-white shadow-xl">
-                            <img
-                                className="mx-auto"
-                                src="yofte-assets/brands/ea-sports.svg"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-                    <div className="w-full md:w-1/2 lg:w-1/6 p-3">
-                        <div className="h-28 flex items-center bg-white shadow-xl">
-                            <img
-                                className="mx-auto"
-                                src="yofte-assets/brands/eurosport.svg"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-                    <div className="w-full md:w-1/2 lg:w-1/6 p-3">
-                        <div className="h-28 flex items-center bg-white shadow-xl">
-                            <img
-                                className="mx-auto"
-                                src="yofte-assets/brands/nike.svg"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-                    <div className="w-full md:w-1/2 lg:w-1/6 p-3">
-                        <div className="h-28 flex items-center bg-white shadow-xl">
-                            <img className="mx-auto" src="yofte-assets/brands/aol.svg" alt="" />
-                        </div>
-                    </div>
-                    <div className="w-full md:w-1/2 lg:w-1/6 p-3">
-                        <div className="h-28 flex items-center bg-white shadow-xl">
-                            <img
-                                className="mx-auto"
-                                src="yofte-assets/brands/north-face.svg"
-                                alt=""
-                            />
-                        </div>
-                    </div>
+                    {
+                        features && features.featured.map((feature, index) => {
+
+                            return (
+
+                                <div key={index} className="w-full md:w-1/2 lg:w-1/6 p-3">
+                                    <a href={feature.url} className="h-28 flex items-center bg-black bg-opacity-80 shadow-xl">
+                                        <img
+                                            className="mx-auto shawdow-xl h-24"
+                                            src={feature.image.src}
+                                            alt={feature.image.alt}
+                                        />
+                                    </a>
+                                </div>
+                            )
+                        })
+                    }
+
                 </div>
             </div>
         </div>
@@ -192,9 +167,9 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
             </h2>
             <h4 className="mb-8 text-sm font-bold">
 
-            <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={40} text={description} />
+                <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={40} text={description} />
 
-     
+
             </h4>
             <a
                 className="inline-block bg-purple-900 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"

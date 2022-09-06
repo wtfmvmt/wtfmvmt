@@ -1,11 +1,11 @@
 import PageLayout from "@layouts/PageLayout"
 
-import forms from "@pages/forms"
+import formsPage from "@pages/formsPage"
 
-const IndexFormsPage = () => {
+const IndexFormsPage = ({ pageData }) => {
 
     return (
-        <PageLayout metaData={{ pageTitle: 'Forms ' }}>
+        <PageLayout {...pageData.layout}>
             <section className="py-20 overflow-x-hidden">
                 <div className="relative container px-4 mx-auto">
                     <div className="absolute inset-0 bg-opacity-80 my-24 -ml-4" />
@@ -174,11 +174,20 @@ const IndexFormsPage = () => {
                     </div>
                 </div>
             </section>
-
-
         </PageLayout>
 
     )
 }
+
+
+export async function getStaticProps() {
+
+    return {
+        props: {
+            pageData: formsPage.init()
+        }
+    }
+}
+
 
 export default IndexFormsPage

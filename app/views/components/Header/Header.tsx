@@ -30,7 +30,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                             <input
                                 className="w-full bg-transparent border-0 focus:ring-transparent focus:outline-none py-2"
                                 type="text"
-                                placeholder="Seek & Find"
+                                placeholder="Seek ye & Find"
                             />
                             <select
                                 className="flicker-in-1 pl-6 pr-6 border-0 bg-black border-l border-gray-100 focus:border-gray-100 focus:ring-transparent bg-transparent focus:outline-none cursor-pointer"

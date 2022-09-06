@@ -74,6 +74,54 @@ const homePage: DataPage = {
                 icon: "SchoolIcon"
             },
             socialLinks: meta.socials,
+            features: {
+                heading: 'Our Partners',
+                featured: [
+                    {
+                        url: '/',
+                        image: {
+                            src: '/assets/images/mountaintop-entertainment-group-logo.png',
+                            alt: ''
+                        }
+                    },
+                    {
+                        url: 'https://mountaintopentertainmentgroup.com/',
+                        image: {
+                            src: '/assets/images/desirable-solutions-logo.png',
+                            alt: ''
+                        }
+                    },
+                    {
+                        url: '/',
+                        image: {
+                            src: '/assets/images/mountaintop-entertainment-group-logo.png',
+                            alt: ''
+                        }
+                    },
+                    {
+                        url: 'https://mountaintopentertainmentgroup.com/',
+                        image: {
+                            src: '/assets/images/desirable-solutions-logo.png',
+                            alt: ''
+                        }
+                    },
+                    {
+                        url: '/',
+                        image: {
+                            src: '/assets/images/mountaintop-entertainment-group-logo.png',
+                            alt: ''
+                        }
+                    },
+                    {
+                        url: 'https://mountaintopentertainmentgroup.com/',
+                        image: {
+                            src: '/assets/images/desirable-solutions-logo.png',
+                            alt: ''
+                        }
+                    },
+                ]
+
+            },
             actionLinks: {
                 title: 'Join the MVMT',
                 links: [

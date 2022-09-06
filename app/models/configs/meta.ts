@@ -1,9 +1,28 @@
 const meta = {
     title: 'WTFMVMT',
     description: '',
+    logo: 'assets/images/logo-transparent.png',
     copyright: '',
-    phone: '647-123-4567',
+    phone: '321-350-5178',
     email: 'wtfmvmt@gmail.com',
+    links: [
+        {
+            name: 'Forms',
+            url: '/forms',
+        },
+        {
+            name: 'Events',
+            url: '/events',
+        },
+        {
+            name: 'RSVP',
+            url:'/form/rsvp'
+        },
+        {
+            name: 'Contact',
+            url: '/contact',
+        }
+    ],
     socials:[
         {
             name: "Facebook",
