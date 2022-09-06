@@ -1,12 +1,13 @@
-import RootLayout from "@layouts/RootLayout"
+import PageLayout from "@layouts/PageLayout"
 import FormMaster from "@views/components/FormMaster"
+import forms from "@pages/forms"
 
 const FormPage = ({ formData }) => {
 
     return (
-        <RootLayout metaData={{ pageTitle: 'Forms ' }}>
+        <PageLayout {...formData.layout}>
             <FormMaster />
-        </RootLayout>
+        </PageLayout>
 
     )
 }
@@ -15,26 +16,22 @@ export default FormPage
 
 export async function getStaticProps() {
 
-    const data = [
-        {
-            name: 'intro',
-            fields: []
-        }
-    ]
-
-
-
     return {
         props: {
-            formData: data
+            formData: forms.init()
         }
     }
 }
 
+
+
 export async function getStaticPaths() {
 
+    const formData = forms.init()
+
+    const paths = formData.forms.map((form) => ({ params: { name: form.name } }))
     return {
-        paths: ["/artists"],
-        fallback: true
+        paths: paths,
+        fallback: false,
     }
 }

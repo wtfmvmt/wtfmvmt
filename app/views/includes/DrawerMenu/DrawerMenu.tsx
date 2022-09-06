@@ -50,10 +50,12 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                         <li key={index}
                             className="mb-1">
                             <a
-                                className="block p-4 text-lg font-extrabold hover:bg-black rounded"
+                                className="hover:text-purple-800 block p-4 text-lg font-extrabold hover:bg-black rounded"
                                 href={link.url}
                             >
-                                {link.name}
+                                <span className="hvr-wobble-horizontal ">
+                                    {link.name}
+                                </span>
                             </a>
                         </li>
                     ))}
@@ -80,30 +82,30 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
     const CloseDrawerButton = () => {
         return (
             <button onClick={() => toggleDrawer()} className="navbar-close">
-            <CloseIcon />
-        </button>
+                <CloseIcon />
+            </button>
         )
     }
 
     return (
-            <CSSTransition 
-                in={open}
-                timeout={900}
-                unmountOnExit
-            >
-                <div className="transition-all navbar-menu relative z-50">
-                    <ClickAwayListener onClickAway={() => toggleDrawer()}>
-                        <nav style={{ backdropFilter: 'blur(10px)' }} className={`${!open ? "slide-out-blurred-left" : ""} slide-in-blurred-left fixed top-0 bg-black bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 border-r overflow-y-auto`}>
-                            <div className="flex items-center mb-8">
-                                <Favicon/>
-                                <CloseDrawerButton/>
-                            </div>
-                            <Links />
-                            <CTA />
-                        </nav>
-                    </ClickAwayListener>
-                </div>
-            </CSSTransition>
+        <CSSTransition
+            in={open}
+            timeout={900}
+            unmountOnExit
+        >
+            <div className="transition-all navbar-menu relative z-50">
+                <ClickAwayListener onClickAway={() => toggleDrawer()}>
+                    <nav style={{ backdropFilter: 'blur(10px)' }} className={`${!open ? "slide-out-blurred-left" : ""} slide-in-blurred-left fixed top-0 bg-black bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 border-r overflow-y-auto`}>
+                        <div className="flex items-center mb-8">
+                            <Favicon />
+                            <CloseDrawerButton />
+                        </div>
+                        <Links />
+                        <CTA />
+                    </nav>
+                </ClickAwayListener>
+            </div>
+        </CSSTransition>
     )
 }
 
