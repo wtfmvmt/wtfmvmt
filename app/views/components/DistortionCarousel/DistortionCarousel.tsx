@@ -24,7 +24,7 @@ const DistortionCarousel: React.FC<DistortionCarouseProps> = ({
   useEffect(() => {
     setInterval(() => {
       next()
-    }, 7000)
+    }, 5000)
   }, [next])
 
 

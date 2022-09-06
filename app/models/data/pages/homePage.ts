@@ -5,6 +5,7 @@ import footer from "@configs/footer"
 import meta from "@configs/meta"
 
 
+
 const homePage: DataPage = {
 
     init: () => {

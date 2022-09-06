@@ -1,14 +1,14 @@
-import RootLayout from "@layouts/RootLayout"
+import PageLayout from "@layouts/PageLayout"
 
-
+import forms from "@pages/forms"
 
 const IndexFormsPage = () => {
 
     return (
-        <RootLayout metaData={{ pageTitle: 'Forms ' }}>
+        <PageLayout metaData={{ pageTitle: 'Forms ' }}>
             <section className="py-20 overflow-x-hidden">
                 <div className="relative container px-4 mx-auto">
-                    <div className="absolute inset-0 bg-purple-800 bg-opacity-80 my-24 -ml-4" />
+                    <div className="absolute inset-0 bg-opacity-80 my-24 -ml-4" />
                     <div className="relative flex flex-wrap">
                         <div className="w-full md:w-4/6 px-4">
                             <div className="lg:max-w-3xl mx-auto py-20 px-4 md:px-10 lg:px-20">
@@ -176,7 +176,7 @@ const IndexFormsPage = () => {
             </section>
 
 
-        </RootLayout>
+        </PageLayout>
 
     )
 }
