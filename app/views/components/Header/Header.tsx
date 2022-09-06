@@ -105,7 +105,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                         <Favicon />
                         <SearchBar />
 
-                        <div className="hidden xl:flex items-center">
+                        <div className="xl:flex items-center hidden">
                             <a className="flex items-center hover:text-gray-600" href="/">
                                 <NotificationsActiveIcon />
                             </a>
@@ -113,6 +113,8 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                         </div>
 
                     </div>
+                    
+
                     <NavBurger />
                     <MobileNavBurger />
                 </nav>

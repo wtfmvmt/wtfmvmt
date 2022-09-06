@@ -91,7 +91,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                 </div>
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Socials</h3>
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center justify-center flex-wrap">
                         {
                             socials && socials.map((social, index) => {
 

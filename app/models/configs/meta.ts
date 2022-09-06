@@ -1,14 +1,14 @@
 const meta = {
     title: 'WTFMVMT',
-    description: '',
+    description: 'We are a Community of Conscious Builders for the Future',
     logo: '/assets/images/logo-transparent.png',
-    copyright: '',
-    phone: '321-350-5178',
+    copyright: '©️ 2022 WTFMVMT. All Rights Reserved.',
+    phone: '321-350-5177',
     email: 'wtfmvmt@gmail.com',
     links: [
         {
-            name: 'RSVP',
-            url: '/rsvp'
+            name: 'Shop',
+            url: '/shop'
         },
         {
             name: 'Community',

@@ -96,42 +96,56 @@ const homePage: DataPage = {
                     {
                         url: '/',
                         image: {
-                            src: '/assets/images/mountaintop-entertainment-group-logo.png',
+                            src: '/assets/images/serenitys-grace-logo.png',
                             alt: ''
                         }
                     },
                     {
                         url: 'https://mountaintopentertainmentgroup.com/',
                         image: {
-                            src: '/assets/images/desirable-solutions-logo.png',
+                            src: '/assets/images/wtfmedia-logo.png',
                             alt: ''
                         }
                     },
                     {
                         url: '/',
                         image: {
-                            src: '/assets/images/mountaintop-entertainment-group-logo.png',
+                            src: '/assets/images/brandon-payne-logo.png',
                             alt: ''
                         }
                     },
                     {
                         url: 'https://mountaintopentertainmentgroup.com/',
                         image: {
-                            src: '/assets/images/desirable-solutions-logo.png',
+                            src: '/assets/images/mountaintop-entertainment-group-logo.png',
                             alt: ''
                         }
                     },
                     {
                         url: '/',
                         image: {
-                            src: '/assets/images/mountaintop-entertainment-group-logo.png',
+                            src: '/assets/images/desirable-solutions-logo.png',
                             alt: ''
                         }
                     },
                     {
                         url: 'https://mountaintopentertainmentgroup.com/',
                         image: {
-                            src: '/assets/images/desirable-solutions-logo.png',
+                            src: '/assets/images/keith-andes-logo.png',
+                            alt: ''
+                        }
+                    },
+                    {
+                        url: 'https://mountaintopentertainmentgroup.com/',
+                        image: {
+                            src: '/assets/images/diahnn-perry-logo.png',
+                            alt: ''
+                        }
+                    },
+                    {
+                        url: 'https://mountaintopentertainmentgroup.com/',
+                        image: {
+                            src: '/assets/images/divergent-u-logo.png',
                             alt: ''
                         }
                     },

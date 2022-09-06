@@ -17,6 +17,7 @@
     "@notionhq/client": "^2.2.0",
     "@types/react-transition-group": "^4.4.5",
     "@zoomus/websdk": "^2.7.0",
+    "custom-cursor-react": "^1.0.5",
     "distortion-effect-carousel": "^1.1.0",
     "next": "^12.0.10",
     "next-page-transitions": "^1.0.0-beta.2",
