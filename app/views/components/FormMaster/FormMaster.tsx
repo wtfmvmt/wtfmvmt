@@ -192,7 +192,6 @@ const FormMaster = () => {
                                         type="radio"
                                         name="paymentType"
                                         defaultValue=""
-                                        defaultChecked=""
                                     />
                                     <span className="text-sm">Credit card</span>
                                 </label>
