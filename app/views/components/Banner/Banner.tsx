@@ -23,7 +23,7 @@ const Banner = ({ messages, icon }: BannerProps) => {
                         <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={20} text={messages} />
                     </p>
 
-                    <p onClick={() => toggleBanner()} className="absolute right-1 top-1 text-white">
+                    <p onClick={() => toggleBanner()} className="absolute right-1 top-1 text-white pr-4">
                         <CloseIcon />
                     </p>
 
