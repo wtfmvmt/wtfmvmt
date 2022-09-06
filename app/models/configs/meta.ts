@@ -1,29 +1,38 @@
 const meta = {
     title: 'WTFMVMT',
     description: '',
-    logo: 'assets/images/logo-transparent.png',
+    logo: '/assets/images/logo-transparent.png',
     copyright: '',
     phone: '321-350-5178',
     email: 'wtfmvmt@gmail.com',
     links: [
         {
-            name: 'Forms',
-            url: '/forms',
+            name: 'RSVP',
+            url: '/rsvp'
+        },
+        {
+            name: 'Community',
+            url: '/community',
         },
         {
             name: 'Events',
-            url: '/events',
+            url: '/events'
         },
         {
-            name: 'RSVP',
-            url:'/form/rsvp'
+            name: 'Artivism',
+            url: '/artivism',
         },
         {
-            name: 'Contact',
-            url: '/contact',
-        }
+            name: 'Media',
+            url: '/contact'
+        },
+        {
+            name: 'Blog',
+            url: '/blog',
+        },
+
     ],
-    socials:[
+    socials: [
         {
             name: "Facebook",
             url: "https://www.facebook.com/wtfmvmt/",

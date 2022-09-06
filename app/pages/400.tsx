@@ -20,7 +20,6 @@ const Custom400Error = () => {
                     backgroundImage: 'url("yofte-assets/elements/lines-color4.svg")',
                     backgroundSize: "cover"
                 }}
-                alt=""
             >
                 <div className="container mx-auto px-4">
                     <div className="text-center">

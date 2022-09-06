@@ -24,7 +24,7 @@ const HomePage: IPage = ({ pageData }) => {
   return (
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
-
+      <FeaturedSection />
       <ContactSection {...pageData.contactSection} />
     </PageLayout>
   )

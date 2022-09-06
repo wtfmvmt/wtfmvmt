@@ -9,11 +9,11 @@ const menu = {
     links: meta.links,
     cta: [
         {
-            name: 'Community',
+            name: 'Message Us',
             url: '/community'
         },
         {
-            name: 'RSVP',
+            name: 'Surprise Me...',
             url: '/contact'
         }
     ]
