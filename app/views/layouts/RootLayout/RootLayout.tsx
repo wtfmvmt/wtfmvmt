@@ -6,10 +6,14 @@ const RootLayout = ({ children, metaData }) => {
 
     return (
 
-        <>
+        <Box sx={{
+            margin: 'auto',
+            padding: 0,
+            width: '100vw'
+        }}>
             <Meta {...metaData} />
             {children}
-        </>
+        </Box>
 
 
     )
