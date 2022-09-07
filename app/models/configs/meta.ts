@@ -7,11 +7,11 @@ const meta = {
     email: 'wtfmvmt@gmail.com',
     links: [
         {
-            name: 'Shop',
-            url: '/shop'
+            name: 'Vision',
+            url: '/vision'
         },
         {
-            name: 'Community',
+            name: 'Shop',
             url: '/community',
         },
         {

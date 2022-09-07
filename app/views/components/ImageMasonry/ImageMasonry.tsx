@@ -67,10 +67,10 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
     const Masonry = () => {
 
 
-        const Minor = () => {
+        const Minor = ({ key }) => {
             return (
 
-                <div className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
+                <div key={key ? key : 0} className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                     <div>
                         <div className="block h-96 lg:h-full w-full object-cover" >
                             <DistortionCarousel images={masonry.major[1].images} />
@@ -120,79 +120,26 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
 
                 }
 
-
                 <div className="w-full lg:w-1/3 px-4 mb-8">
-                    <div className="mb-8 border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
-                        <div>
-                            <img
-                                className="block w-full h-96 lg:h-64 object-cover"
-                                src="nigodo-assets/team/photo-3.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="px-6 py-4 bg-indigo-900">
-                            <h2 className="text-xl text-white font-extrabold">Elen Benitez</h2>
-                            <span className="text-lg font-bold text-indigo-300">CPO</span>
-                        </div>
-                    </div>
 
-                    <Minor />
+                    {
+                        masonry.minor ? masonry.minor.map((minor, index) => {
+                            return (
+                                <Minor key={index} />
+                            )
+                        }) : <></>
 
-                    <div className="w-full lg:w-1/3 px-4 mb-8">
-                        <div className="mb-8 border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
-                            <div>
-                                <img
-                                    className="block w-full h-96 lg:h-64 object-cover"
-                                    src="nigodo-assets/team/photo-1.jpg"
-                                    alt=""
-                                />
-                            </div>
-                            <div className="px-6 py-4 bg-indigo-900">
-                                <h2 className="text-xl text-white font-extrabold">
-                                    Macauley Herring
-                                </h2>
-                                <span className="text-lg font-bold text-indigo-300">
-                                    Customer Services
-                                </span>
-                            </div>
-                        </div>
+                    }
 
 
+                    {
+                        masonry.major ? masonry.major.map((major, index) => {
+                            return (
+                                <Major key={index} />
+                            )
+                        }) : <></>
 
-                        <div className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
-                            <div>
-                                <img
-                                    className="block w-full h-96 lg:h-64 object-cover"
-                                    src="nigodo-assets/team/photo-2.jpg"
-                                    alt=""
-                                />
-                            </div>
-                            <div className="px-6 py-4 bg-indigo-900">
-                                <h2 className="text-xl text-white font-extrabold">Name</h2>
-                                <span className="text-lg font-bold text-indigo-300">Role</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div className="w-full lg:w-2/3 px-4 mb-8">
-                        <div className="h-full flex flex-col border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
-                            <div className="mb-auto h-full">
-                                <img
-                                    className="block h-96 lg:h-full w-full object-cover"
-                                    src="nigodo-assets/team/photo-3.jpg"
-                                    alt=""
-                                />
-                            </div>
-                            <div className="px-6 py-4 bg-indigo-900">
-                                <h2 className="text-xl text-white font-extrabold">Name</h2>
-                                <span className="text-lg font-bold text-indigo-300">
-                                    IOS Developer
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
+                    }
                 </div>
 
             </div> : <></>

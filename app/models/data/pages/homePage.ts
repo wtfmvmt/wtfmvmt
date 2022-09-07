@@ -47,7 +47,7 @@ const homePage: DataPage = {
                     {
                         title: 'Brandon J. Payne',
                         heading: 'Founder & CEO',
-                        images: ["brandon.jpg"],
+                        images:   [...images.splice(0, images.length / 2).map(image => image.src)],
                     },
                     {
                         title: 'Nia Ashay',
@@ -57,7 +57,24 @@ const homePage: DataPage = {
                 ],
                 minor: [
                     {
-                        title: 'Arianna Gonzalez',
+                        title: 'Brandon J. Payne',
+                        heading: 'Founder & CEO',
+                        images: ["brandon.jpg"],
+                    },
+                    {
+                        title: 'Nia Ashay',
+                        heading: 'Founder & CEO',
+                        images:   [...images.splice(0, images.length / 2).map(image => image.src)],
+                    },
+                    {
+                        title: 'Brandon J. Payne',
+                        heading: 'Founder & CEO',
+                        images: ["brandon.jpg"],
+                    },
+                    {
+                        title: 'Nia Ashay',
+                        heading: 'Founder & CEO',
+                        images:   [...images.splice(0, images.length / 2).map(image => image.src)],
                     }
                 ]
             }
