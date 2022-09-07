@@ -30,13 +30,13 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
             <div className="w-full lg:w-1/2 xl:w-1/3 px-4">
                 <div className="flex flex-wrap lg:justify-end">
                     <a
-                        className="inline-block w-full md:w-auto mb-2 md:mb-0 md:mr-6 py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
+                        className="inline-block w-full md:w-auto mb-6 md:mb-0 md:mr-6 py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
                         href={cta?.primary?.url ? cta.primary.url : "#"}
                     >
                         {cta.primary ? cta.primary.name : "Primary"}
                     </a>
                     <a
-                        className="inline-block w-full md:w-auto py-4 px-6 text-center leading-6 text-lg text-indigo-900 hover:text-white font-extrabold bg-white hover:bg-indigo-800 border-3 border-indigo-900 shadow rounded transition duration-200"
+                        className="mt-4 inline-block w-full md:w-auto py-4 px-6 text-center leading-6 text-lg text-indigo-900 hover:text-white font-extrabold bg-white hover:bg-indigo-800 border-3 border-indigo-900 shadow rounded transition duration-200"
                         href={cta?.secondary?.url ? cta.secondary.url : "#"}
                     >
                         {cta.secondary ? cta.secondary.name : "Secondary"}
@@ -73,7 +73,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                 <div key={key ? key : 0} className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                     <div>
                         <div className="block h-96 lg:h-full w-full object-cover" >
-                            <DistortionCarousel images={masonry.major[1].images} />
+                            <img src={masonry.major[1].images[0]} />
                         </div>
                     </div>
                     <div className="px-6 py-4 bg-indigo-900">

@@ -36,9 +36,10 @@ const homePage: DataPage = {
             title: 'Who we are',
             cta: {
                 primary: {
-                    name: ''
+                    name: 'Read our Vision'
                 },
                 secondary: {
+                    name: 'Join our Community'
                 }
             },
             description: 'Our core team is made up of a group of passionate individuals who are dedicated to making a difference in the world. We are a diverse group of people from different backgrounds, cultures, and experiences. We are united by our common goal of making a positive impact on the world.',
@@ -66,16 +67,7 @@ const homePage: DataPage = {
                         heading: 'Founder & CEO',
                         images:   [...images.splice(0, images.length / 2).map(image => image.src)],
                     },
-                    {
-                        title: 'Brandon J. Payne',
-                        heading: 'Founder & CEO',
-                        images: ["brandon.jpg"],
-                    },
-                    {
-                        title: 'Nia Ashay',
-                        heading: 'Founder & CEO',
-                        images:   [...images.splice(0, images.length / 2).map(image => image.src)],
-                    }
+
                 ]
             }
 
