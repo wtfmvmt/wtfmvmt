@@ -1,4 +1,3 @@
-import { ImageMasonry } from '@components/ImageMasonry/ImageMasonry';
 import type { DataPage } from "@typings/DataPage";
 import resolveDataPage from "@controllers/utils/resolveDataPage";
 import header from "@configs/header"
@@ -48,12 +47,12 @@ const homePage: DataPage = {
                     {
                         title: 'Brandon J. Payne',
                         heading: 'Founder & CEO',
-                        images:   [...images.splice(0, images.length / 2).map(image => image.src)],
+                        images: [...images.splice(0, images.length / 2).map(image => image.src)],
                     },
                     {
                         title: 'Nia Ashay',
                         heading: 'Founder & CEO',
-                        images:   [...images.splice(0, images.length / 2).map(image => image.src)],
+                        images: [...images.splice(0, images.length / 2).map(image => image.src)],
                     }
                 ],
                 minor: [
@@ -65,7 +64,7 @@ const homePage: DataPage = {
                     {
                         title: 'Nia Ashay',
                         heading: 'Founder & CEO',
-                        images:   [...images.splice(0, images.length / 2).map(image => image.src)],
+                        images: [...images.splice(0, images.length / 2).map(image => image.src)],
                     },
 
                 ]

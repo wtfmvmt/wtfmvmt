@@ -15,7 +15,7 @@ import { useEffect } from "react"
 import type { IPage } from "@typings/Page"
 
 
-const HomePage: IPage = ({ pageData }) => {
+const HomePage: IPage = ({ pageDazta }) => {
 
   useEffect(() => {
     console.log(pageData)
