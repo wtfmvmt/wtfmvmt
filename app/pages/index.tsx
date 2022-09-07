@@ -15,7 +15,7 @@ import { useEffect } from "react"
 import type { IPage } from "@typings/Page"
 
 
-const HomePage: IPage = ({ pageDazta }) => {
+const HomePage: IPage = ({ pageData }) => {
 
   useEffect(() => {
     console.log(pageData)
@@ -26,7 +26,11 @@ const HomePage: IPage = ({ pageDazta }) => {
       <Hero {...pageData.hero} />
       <FeaturedSection {...pageData.featuredSection} />
       <SummarySection {...pageData.summarySection} />
-
+      <ContentGrid />
+      <DataSection />
+      <SimpleFormSection />
+      <StatsSection />
+      <FeaturedMedia />
       <ImageMasonry {...pageData.imageMasonry} />
 
       <ContactSection {...pageData.contactSection} />
@@ -46,14 +50,3 @@ export async function getStaticProps() {
   }
 }
 
-/*
-
-      <FeaturedSection />
-      <ContentGrid />
-      <DataSection />
-      <SimpleFormSection />
-      <StatsSection />
-      <FeaturedMedia />
-      <ImageMasonry />
-
-      */
