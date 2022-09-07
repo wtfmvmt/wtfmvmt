@@ -52,7 +52,7 @@ const homePage: DataPage = {
                     {
                         title: 'Nia Ashay',
                         heading: 'Founder & CEO',
-                        images: ["brandon.jpg"],
+                        images:   [...images.splice(0, images.length / 2).map(image => image.src)],
                     }
                 ],
                 minor: [

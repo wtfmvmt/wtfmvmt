@@ -5,7 +5,7 @@ import type { CallToAction } from "@typings/CallToAction"
 export type Content = {
     title: string,
     heading: string,
-    images: Image[]
+    images: string[]
 }
 
 export type ImageMasonryProps = {
@@ -67,18 +67,32 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
     const Masonry = () => {
 
 
-        return (
-            masonry ? <div className="flex flex-wrap -mx-4 -mb-8">
-                
-                <div className="w-full lg:w-2/3 px-4 mb-8">
+        const Minor = () => {
+            return (
+
+                <div className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
+                    <div>
+                        <div className="block h-96 lg:h-full w-full object-cover" >
+                            <DistortionCarousel images={masonry.major[1].images} />
+                        </div>
+                    </div>
+                    <div className="px-6 py-4 bg-indigo-900">
+                        <h2 className="text-xl text-white font-extrabold">Nia Ashay</h2>
+                        <span className="text-lg font-bold text-indigo-300">CTO</span>
+                    </div>
+                </div>
+
+            )
+        }
+
+        const Major = ({ key }) => {
+            return (
+                <div key={key ? key : 0} className="w-full lg:w-2/3 px-4 mb-8">
                     <div className="h-full flex flex-col border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                         <div className="mb-auto h-full">
-                            <img
-                                className="block h-96 lg:h-full w-full object-cover"
-                                src="https://img  s.unsplash.com/photo-1563245110-4ba1be9ae814?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwyMXx8YmxhY2slMjBhcnRpc3R8ZW58MHx8fHwxNjYwMzUwNjkw&ixlib=rb-1.2.1&q=80&w=1920"
-                                alt=""
-                            />
-                            <DistortionCarousel images={[]} />
+                            <div className="block h-96 lg:h-full w-full object-cover" >
+                                <DistortionCarousel images={masonry.major[1].images} />
+                            </div>
                         </div>
                         <div className="px-6 py-4 bg-indigo-900">
                             <h2 className="text-xl text-white font-extrabold">
@@ -90,6 +104,21 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                         </div>
                     </div>
                 </div>
+            )
+        }
+
+
+        return (
+            masonry ? <div className="flex flex-wrap -mx-4 -mb-8">
+
+                {
+                    masonry.major ? masonry.major.map((major, index) => {
+                        return (
+                            <Major key={index} />
+                        )
+                    }) : <></>
+
+                }
 
 
                 <div className="w-full lg:w-1/3 px-4 mb-8">
@@ -106,75 +135,64 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                             <span className="text-lg font-bold text-indigo-300">CPO</span>
                         </div>
                     </div>
-                    <div className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
-                        <div>
-                            <img
-                                className="block w-full h-96 lg:h-64 object-cover"
-                                src="https://img  s.unsplash.com/photo-1611432579402-7037e3e2c1e4?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwzfHxibGFjayUyMHdvbWFufGVufDB8fHx8MTY2MDM1NjAwOQ&ixlib=rb-1.2.1&q=80&w=1920"
-                                alt=""
-                            />
+
+                    <Minor />
+
+                    <div className="w-full lg:w-1/3 px-4 mb-8">
+                        <div className="mb-8 border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
+                            <div>
+                                <img
+                                    className="block w-full h-96 lg:h-64 object-cover"
+                                    src="nigodo-assets/team/photo-1.jpg"
+                                    alt=""
+                                />
+                            </div>
+                            <div className="px-6 py-4 bg-indigo-900">
+                                <h2 className="text-xl text-white font-extrabold">
+                                    Macauley Herring
+                                </h2>
+                                <span className="text-lg font-bold text-indigo-300">
+                                    Customer Services
+                                </span>
+                            </div>
                         </div>
-                        <div className="px-6 py-4 bg-indigo-900">
-                            <h2 className="text-xl text-white font-extrabold">Nia Ashay</h2>
-                            <span className="text-lg font-bold text-indigo-300">CTO</span>
+
+
+
+                        <div className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
+                            <div>
+                                <img
+                                    className="block w-full h-96 lg:h-64 object-cover"
+                                    src="nigodo-assets/team/photo-2.jpg"
+                                    alt=""
+                                />
+                            </div>
+                            <div className="px-6 py-4 bg-indigo-900">
+                                <h2 className="text-xl text-white font-extrabold">Name</h2>
+                                <span className="text-lg font-bold text-indigo-300">Role</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <div className="w-full lg:w-1/3 px-4 mb-8">
-                    <div className="mb-8 border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
-                        <div>
-                            <img
-                                className="block w-full h-96 lg:h-64 object-cover"
-                                src="nigodo-assets/team/photo-1.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="px-6 py-4 bg-indigo-900">
-                            <h2 className="text-xl text-white font-extrabold">
-                                Macauley Herring
-                            </h2>
-                            <span className="text-lg font-bold text-indigo-300">
-                                Customer Services
-                            </span>
+                    <div className="w-full lg:w-2/3 px-4 mb-8">
+                        <div className="h-full flex flex-col border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
+                            <div className="mb-auto h-full">
+                                <img
+                                    className="block h-96 lg:h-full w-full object-cover"
+                                    src="nigodo-assets/team/photo-3.jpg"
+                                    alt=""
+                                />
+                            </div>
+                            <div className="px-6 py-4 bg-indigo-900">
+                                <h2 className="text-xl text-white font-extrabold">Name</h2>
+                                <span className="text-lg font-bold text-indigo-300">
+                                    IOS Developer
+                                </span>
+                            </div>
                         </div>
                     </div>
 
-
-
-                    <div className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
-                        <div>
-                            <img
-                                className="block w-full h-96 lg:h-64 object-cover"
-                                src="nigodo-assets/team/photo-2.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="px-6 py-4 bg-indigo-900">
-                            <h2 className="text-xl text-white font-extrabold">Name</h2>
-                            <span className="text-lg font-bold text-indigo-300">Role</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className="w-full lg:w-2/3 px-4 mb-8">
-                    <div className="h-full flex flex-col border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
-                        <div className="mb-auto h-full">
-                            <img
-                                className="block h-96 lg:h-full w-full object-cover"
-                                src="nigodo-assets/team/photo-3.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="px-6 py-4 bg-indigo-900">
-                            <h2 className="text-xl text-white font-extrabold">Name</h2>
-                            <span className="text-lg font-bold text-indigo-300">
-                                IOS Developer
-                            </span>
-                        </div>
-                    </div>
                 </div>
 
             </div> : <></>
