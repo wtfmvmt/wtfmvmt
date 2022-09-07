@@ -122,6 +122,8 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
 
                 <div className="w-full lg:w-1/3 px-4 mb-8">
 
+            
+
                     {
                         masonry.minor ? masonry.minor.map((minor, index) => {
                             return (
@@ -132,14 +134,6 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                     }
 
 
-                    {
-                        masonry.major ? masonry.major.map((major, index) => {
-                            return (
-                                <Major key={index} />
-                            )
-                        }) : <></>
-
-                    }
                 </div>
 
             </div> : <></>
