@@ -23,8 +23,16 @@ const FormMaster = ({ titleSection, sections }: FormMaster) => {
             <TitleSection {...titleSection} />
 
             <div className="container mx-auto px-4">
+
+
+                
                 <div className="p-8 lg:p-20">
+
+
                     <div className="flex flex-wrap -mx-4">
+
+
+
                         <div className="w-full lg:w-1/3 px-4 mb-10 lg:mb-0">
                             <div className="flex mb-12 items-center">
                                 <span className="flex-shrink-0 inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-blue-300 text-white">
@@ -170,6 +178,9 @@ const FormMaster = ({ titleSection, sections }: FormMaster) => {
                                 </div>
                             </form>
                         </div>
+
+
+
                         <div className="w-full lg:w-1/3 px-4 mb-10 lg:mb-0">
                             <div className="flex mb-12 items-center">
                                 <span className="flex-shrink-0 inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-purple-300 text-white">

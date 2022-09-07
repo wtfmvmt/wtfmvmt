@@ -179,17 +179,10 @@ const homePage: DataPage = {
                         url: "forms/businesses"
                     },
                     {
-                        name: "For Partners",
-                        url: "forms/partners"
-                    },
-                    {
                         name: "For Vendors",
                         url: "forms/vendors"
                     },
-                    {
-                        name: "For Freelancers",
-                        url: "forms/investors"
-                    }
+      
                 ]
             }
         }

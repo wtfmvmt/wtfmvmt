@@ -9,7 +9,7 @@ const menu = {
     links: meta.links,
     cta: [
         {
-            name: 'Suuport Us',
+            name: 'Support Us',
             url: '/community'
         },
         {

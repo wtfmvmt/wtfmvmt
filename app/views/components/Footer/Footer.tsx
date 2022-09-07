@@ -28,7 +28,11 @@ export type FooterProps = {
 const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {
 
   return (
-    <section style={{ borderTop: '1px solid white '}}className="bg-black bg-opacity-20">
+
+
+    <section style={{ borderTop: '1px solid white ' }} className="bg-black bg-opacity-20">
+
+
       <div className="pt-26 border-3 border-l-0 border-r-0">
         <div className="pb-16 border-b-3 border-indigo-900">
           <div className="container px-4 mx-auto">
@@ -50,8 +54,56 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                   {impressum}
                 </p>
               </div>
-      
+
               <div className="w-full">
+
+                
+              <div className="w-full">
+                <div className="flex flex-wrap items-center -mb-6">
+                  <a
+                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
+                    href="#"
+                  >
+                    Product
+                  </a>
+                  <a
+                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
+                    href="#"
+                  >
+                    Features
+                  </a>
+                  <a
+                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
+                    href="#"
+                  >
+                    Pricing
+                  </a>
+                  <a
+                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
+                    href="#"
+                  >
+                    Resources
+                  </a>
+                  <a
+                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
+                    href="#"
+                  >
+                    Carrers
+                  </a>
+                  <a
+                    className="inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-indigo-800"
+                    href="#"
+                  >
+                    Help
+                  </a>
+                  <a
+                    className="inline-block mb-6 text-lg font-extrabold hover:text-indigo-800"
+                    href="#"
+                  >
+                    Privacy
+                  </a>
+                </div>
+              </div>
 
                 {/* Links */}
                 <div className="flex flex-wrap items-center -mb-6">
@@ -105,6 +157,8 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                 }
 
               </div>
+
+
             </div>
           </div>
         </div>

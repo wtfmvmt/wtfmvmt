@@ -38,7 +38,20 @@ const images = [
         src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=JD_E7iWC3I8AX_-dX6H&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8rlhHpB7dC5eJuYioHD1oM0tvV640SrsE6fEfZJl35QA&oe=631D8C66'
     },
     {
-        
+        id: 'group-crowd',
+        src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/277757948_1426749911081471_3947978586681618644_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0debeb&_nc_ohc=_9doV66MydQAX_F0gR4&_nc_ht=scontent-lhr8-1.xx&oh=00_AT-u9PKwsZLGOFXvyU996lRelXztEJMTtZOSHfOHgsR5Bg&oe=631C5B2F'
+    },
+    {
+        id: 'singer-man',
+        src: 'https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/277772535_1426754964414299_7699102423207562608_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0debeb&_nc_ohc=Lef-sckPV0kAX-9nYNI&_nc_ht=scontent-lhr8-2.xx&oh=00_AT8aNGcfVyA0TtR3DhbrNrFqbzAYUgPqEXEzAuMCesthRA&oe=631C2E5D'
+    },
+    {
+        id: 'guitarist-vibes',
+        src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/277775041_1426748824414913_2829996063940886048_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0debeb&_nc_ohc=--VtRVWCT3QAX-Xn1xs&_nc_ht=scontent-lhr8-1.xx&oh=00_AT-_YVeiirLGEIcAdml-pbuy_xcOKC-XGdvTS89sNK35sQ&oe=631DB379'
+    },
+    {
+        id: 'pounce-em',
+        src: 'https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/277741107_1426747757748353_2889737569130073114_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=0debeb&_nc_ohc=0ucBVCZKm9oAX_XObg8&_nc_ht=scontent-lhr8-2.xx&oh=00_AT-6OrHf-6K8NQjI3Vg9w9twDfN2UlOcs9G4rmAvAS30Sg&oe=631DA9A5'
     }
 ]
 export default images

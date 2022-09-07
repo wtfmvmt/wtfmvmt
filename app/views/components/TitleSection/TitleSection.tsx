@@ -4,13 +4,13 @@ import type { Image } from "@typings/Image"
 export type TitleSectionProps = {
   title: string,
   heading: string,
-  image: Image
+  image?: Image
 }
 
 
 const TitleSection = ({ heading, title, image }: TitleSectionProps) => {
 
-  
+
   return (
     <section className="py-20 overflow-x-hidden">
       <div className="container px-4 mx-auto relative">
@@ -31,7 +31,7 @@ const TitleSection = ({ heading, title, image }: TitleSectionProps) => {
             </div>
             <img
               className="relative ml-auto w-full md:w-2/6 h-96"
-              src={image.src}
+              src={image ? image.src : ""}
               alt=""
             />
           </div>
