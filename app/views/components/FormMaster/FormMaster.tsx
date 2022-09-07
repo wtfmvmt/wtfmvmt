@@ -1,10 +1,22 @@
 import TitleSection from "@components/TitleSection"
 
+
+export type Field = {
+    name: string,
+}
+
+export type Section = {
+    title: string,
+    fields: Field[],
+}
+
 export type FormMaster = {
+    titleSection: any,
+    sections: Section[]
 
 }
 
-const FormMaster = ({ titleSection }) => {
+const FormMaster = ({ titleSection, sections }: FormMaster) => {
 
     return (
         <section className="py-20 ">

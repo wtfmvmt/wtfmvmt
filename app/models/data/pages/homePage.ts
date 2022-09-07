@@ -3,7 +3,7 @@ import resolveDataPage from "@controllers/utils/resolveDataPage";
 import header from "@configs/header"
 import footer from "@configs/footer"
 import meta from "@configs/meta"
-
+import images from "@db/images"
 
 
 const homePage: DataPage = {
@@ -90,14 +90,8 @@ const homePage: DataPage = {
             description: ['We are a Community of Conscious Builders for the Future'],
 
             mediaCarousels: [
-                [
-                    "https://scontent.ftpa1-1.fna.fbcdn.net/v/t39.30808-6/277566995_1426748454414950_1657349356422612304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=6L5P1IbKlsQAX-GFkuW&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT9hr40EE1p6DuwfNM8t0f_eWujgf5wx-lGLvkYow-Rg6Q&oe=63111278",
-                    "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
-                ],
-                [
-                    "https://scontent.ftpa1-1.fna.fbcdn.net/v/t39.30808-6/277566995_1426748454414950_1657349356422612304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=6L5P1IbKlsQAX-GFkuW&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT9hr40EE1p6DuwfNM8t0f_eWujgf5wx-lGLvkYow-Rg6Q&oe=63111278",
-                    "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=RdL3PKiQnO4AX8Ir-ki&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT9dL-idE88nbOSurT4TE0nKXD5q9XFBswDUkG4EDcv7yA&oe=6311AEE6"
-                ]
+                [...images.splice(0, images.length / 2).map(image => image.src)],
+                [...images.splice(images.length / 2, images.length).map(image => image.src)]
             ],
 
             heading: "Join the MVMT",

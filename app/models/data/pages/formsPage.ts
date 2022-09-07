@@ -1,14 +1,10 @@
 import header from "@configs/header"
 import footer from "@configs/footer"
 
-
-
 const formsPage = {
 
     init: () => {
-
         return { ...formsPage.data }
-
     },
 
     data: {
@@ -21,10 +17,6 @@ const formsPage = {
 
         }
     },
-
-    query: {
-
-    }
 }
 
 
