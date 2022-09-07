@@ -47,7 +47,7 @@ const meta = {
         },
         {
             name: "Youtube",
-            url: "https://www.youtube.com/channel/UC-q-_X-_XD-yXvQNX-_QZQQ",
+            url: "https://www.youtube.com/channel/UCBtwubo6hqRS3B_kF7aIu8g",
         },
         {
             name: "LinkedIn",

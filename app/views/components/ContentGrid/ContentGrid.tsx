@@ -73,6 +73,8 @@ const ContentGrid = () => {
                             </div>
                         </div>
                     </div>
+
+                    
                     <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
                         <div className="h-full max-w-md mx-auto py-10 px-6 md:px-10 bg-white border-3 border-indigo-900 rounded-2xl shadow-md">
                             <div className="h-full flex flex-col">
@@ -86,6 +88,9 @@ const ContentGrid = () => {
                             </div>
                         </div>
                     </div>
+
+
+
                     <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
                         <div className="h-full max-w-md mx-auto py-10 px-6 md:px-10 bg-white border-3 border-indigo-900 rounded-2xl shadow-md">
                             <div className="h-full flex flex-col">
@@ -98,6 +103,8 @@ const ContentGrid = () => {
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </section>

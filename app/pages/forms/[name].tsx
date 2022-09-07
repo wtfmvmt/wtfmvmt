@@ -6,7 +6,7 @@ const FormPage = ({ formData }) => {
 
     return (
         <PageLayout {...formData.layout}>
-            <FormMaster {...formData.forms} />
+            <FormMaster {...formData.form} />
         </PageLayout>
 
     )
@@ -14,11 +14,18 @@ const FormPage = ({ formData }) => {
 
 export default FormPage
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
+
+    const formData = forms.init()
+
+    const form = formData.forms.find(form => form.name === params.name)
 
     return {
         props: {
-            formData: forms.init()
+            formData: {
+                layout: formData.layout,
+                form: form
+            }
         }
     }
 }

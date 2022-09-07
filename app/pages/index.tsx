@@ -26,7 +26,6 @@ const HomePage: IPage = ({ pageData }) => {
       <Hero {...pageData.hero} />
       <FeaturedSection {...pageData.featuredSection} />
       <SummarySection {...pageData.summarySection} />
-      <ContentGrid />
 
 
       <ContactSection {...pageData.contactSection} />
