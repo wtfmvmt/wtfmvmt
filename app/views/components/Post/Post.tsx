@@ -20,7 +20,7 @@ const Post = () => {
                         John Doe • 19 Jan 2022
                     </p>
                     <h1 className="text-3xl md:text-4xl font-extrabold font-heading mb-4">
-                        Lorem ipsum dolor sit amet
+                       Vision
                     </h1>
                     <p className="text-xl font-extrabold leading-8 mb-6">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
