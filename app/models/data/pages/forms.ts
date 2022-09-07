@@ -2,7 +2,6 @@
 import header from "@configs/header"
 import footer from "@configs/footer"
 
-
 const forms = {
 
     init: () => {
@@ -81,14 +80,7 @@ const forms = {
                     }
                 }
             },
-            {
-                name: 'partners',
-                titleSection: {
-                    heading: 'Partners',
-                    title: 'Welcome Partners & Sponsors!',
-                    description: 'Our membership program was created with the independent individual in mind. No matter where you are on the spectrum,'
-                }
-            }
+       
 
         ]
     }

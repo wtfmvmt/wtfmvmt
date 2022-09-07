@@ -17,7 +17,6 @@ export default FormPage
 export async function getStaticProps({ params }) {
 
     const formData = forms.init()
-
     const form = formData.forms.find(form => form.name === params.name)
 
     return {
@@ -26,7 +25,8 @@ export async function getStaticProps({ params }) {
                 layout: formData.layout,
                 form: form
             }
-        }
+        },
+        revalidate: 5
     }
 }
 
@@ -35,10 +35,10 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
 
     const formData = forms.init()
-
     const paths = formData.forms.map((form) => ({ params: { name: form.name } }))
+
     return {
         paths: paths,
-        fallback: false,
+        fallback: true,
     }
 }
