@@ -1,3 +1,4 @@
+import { ImageMasonry } from '@components/ImageMasonry/ImageMasonry';
 import type { DataPage } from "@typings/DataPage";
 import resolveDataPage from "@controllers/utils/resolveDataPage";
 import header from "@configs/header"
@@ -22,7 +23,6 @@ const homePage: DataPage = {
     },
 
     data: {
-
         layout: {
             metaData: {
                 pageTitle: "Home"
@@ -30,7 +30,39 @@ const homePage: DataPage = {
             header: { ...header.init() },
             footer: { ...footer.init() },
         },
+        imageMasonry: {
 
+            heading: "Our Founders and Team",
+            title: 'Who we are',
+            cta: {
+                primary: {
+                    name: ''
+                },
+                secondary: {
+                }
+            },
+            description: 'Our core team is made up of a group of passionate individuals who are dedicated to making a difference in the world. We are a diverse group of people from different backgrounds, cultures, and experiences. We are united by our common goal of making a positive impact on the world.',
+            masonry: {
+                major: [
+                    {
+                        title: 'Brandon J. Payne',
+                        heading: 'Founder & CEO',
+                        images: ["brandon.jpg"],
+                    },
+                    {
+                        title: 'Nia Ashay',
+                        heading: 'Founder & CEO',
+                        images: ["brandon.jpg"],
+                    }
+                ],
+                minor: [
+                    {
+                        title: 'Arianna Gonzalez',
+                    }
+                ]
+            }
+
+        },
         contactSection: {
             socials: meta.socials,
             phone: meta.phone,
@@ -187,7 +219,7 @@ const homePage: DataPage = {
                         name: "For Vendors",
                         url: "forms/vendors"
                     },
-      
+
                 ]
             }
         }

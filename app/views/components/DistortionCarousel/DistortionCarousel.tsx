@@ -2,24 +2,18 @@ import { useEffect } from 'react';
 import { useDistortionEffectCarousel } from 'distortion-effect-carousel';
 export interface DistortionCarouseProps {
   images: string[];
-  displacmentImage: string;
+  displacmentImage?: string;
   initalIndex?: number
 }
 
-
-
 const DistortionCarousel: React.FC<DistortionCarouseProps> = ({
-  displacmentImage,
-  images, initalIndex = 0
+  displacmentImage = "/assets/images/distortions/1.jpg",
+  images,
 }) => {
   const { ref, next, prev } = useDistortionEffectCarousel({
     images,
-    displacmentImage,
+    displacmentImage
   });
-
-  const LoopCarousel = () => {
-
-  }
 
   useEffect(() => {
     setInterval(() => {
@@ -30,7 +24,6 @@ const DistortionCarousel: React.FC<DistortionCarouseProps> = ({
 
   return (
     <div
-
       onClick={() => next()}
       style={{
         height: '100vh',
