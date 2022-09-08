@@ -48,9 +48,9 @@ const homePage: DataPage = {
                     title: 'WTF is WTF?'
                 },
                 {
-                    
+
                 },
-           
+
             ]
 
         },
@@ -70,16 +70,16 @@ const homePage: DataPage = {
             description: 'Our core team is made up of a group of passionate individuals who are dedicated to making a difference in the world. We are a diverse group of people from different backgrounds, cultures, and experiences. We are united by our common goal of making a positive impact on the world.',
             masonry: {
                 major: [
-                 
+
                     {
                         title: 'Brandon J. Payne',
                         heading: 'Founder & CEO',
-                        images: [...images.filter(img => img.collection  === 'brandon-payne').map(image => image.src)],
+                        images: [...images.filter(img => img.collection === 'brandon-payne').map(image => image.src)],
                     },
                     {
                         title: 'Nia Ashay',
-                        heading: 'Founder & CEO',
-                        images: [...images.splice(0, images.length / 2).map(image => image.src)],
+                        heading: 'CTO & Co-Founder',
+                        images: [...images.filter(img => img.collection === 'nia-ashay').map(image => image.src)],
                     }
                 ],
                 minor: [
@@ -172,13 +172,15 @@ const homePage: DataPage = {
                 heading: 'Featured Affiliates & Partners',
                 featured: [
                     {
-                        url: '/',
+                        name: 'Serenitys Grace',
+                        url: '/parterns/serenitys-grace',
                         image: {
                             src: '/assets/images/serenitys-grace-logo.png',
                             alt: ''
                         }
                     },
                     {
+                        name: "WTF Media",
                         url: 'https://mountaintopentertainmentgroup.com/',
                         image: {
                             src: '/assets/images/wtfmedia-logo.png',
@@ -186,6 +188,7 @@ const homePage: DataPage = {
                         }
                     },
                     {
+                        name: 'Brandon J. Payne, Industries',
                         url: '/',
                         image: {
                             src: '/assets/images/brandon-payne-logo.png',
@@ -193,6 +196,7 @@ const homePage: DataPage = {
                         }
                     },
                     {
+                        name: 'Mountain Top Entertainment Group',
                         url: 'https://mountaintopentertainmentgroup.com/',
                         image: {
                             src: '/assets/images/mountaintop-entertainment-group-logo.png',
@@ -200,6 +204,7 @@ const homePage: DataPage = {
                         }
                     },
                     {
+                        name: 'Desirable Solutions',
                         url: '/',
                         image: {
                             src: '/assets/images/desirable-solutions-logo.png',
@@ -207,6 +212,8 @@ const homePage: DataPage = {
                         }
                     },
                     {
+
+                        name: 'Keith Andes',
                         url: 'https://mountaintopentertainmentgroup.com/',
                         image: {
                             src: '/assets/images/keith-andes-logo.png',
@@ -214,6 +221,7 @@ const homePage: DataPage = {
                         }
                     },
                     {
+                        name: 'Dianh Perry Art',
                         url: 'https://mountaintopentertainmentgroup.com/',
                         image: {
                             src: '/assets/images/diahnn-perry-logo.png',
@@ -221,6 +229,7 @@ const homePage: DataPage = {
                         }
                     },
                     {
+                        name: 'Divergent U',
                         url: 'https://mountaintopentertainmentgroup.com/',
                         image: {
                             src: '/assets/images/divergent-u-logo.png',

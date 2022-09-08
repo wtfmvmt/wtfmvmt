@@ -1,14 +1,6 @@
-import type { Image } from "@typings/Image"
+import type { TitleSectionProps } from "@typings/TitleSection"
 
-
-export type TitleSectionProps = {
-  title: string,
-  heading: string,
-  image?: Image
-}
-
-
-const TitleSection = ({ heading, title, image }: TitleSectionProps) => {
+const TitleSection = ({ heading, title, image, cta }: TitleSectionProps) => {
 
 
   return (
@@ -18,15 +10,15 @@ const TitleSection = ({ heading, title, image }: TitleSectionProps) => {
         <div className="relative overflow-hidden">
           <div className="relative flex flex-wrap items-center">
             <div className="w-full md:w-4/6 p-10 lg:pl-40">
-              <span className="text-xl md:text-2xl text-white">{heading}</span>
+              <span className="text-xl md:text-2xl text-white">{heading ? heading : "Heading"}</span>
               <h2 className="mt-4 mb-14 text-4xl md:text-5xl font-bold font-heading text-white">
-                {title}
+                {title ? title : "Title"}
               </h2>
               <a
-                className="inline-block bg-orange-300 hover:bg-orange-400 text-white font-bold font-heading py-4 px-8 rounded-md uppercase transition duration-200"
-                href="#"
+                className="inline-block hvr-pop bg-purple-500 hover:bg-black text-white font-bold font-heading py-4 px-8 rounded uppercase transition-all"
+                href={cta.url}
               >
-                More
+                {cta.name ? cta.name : "Action Call"}
               </a>
             </div>
             <img

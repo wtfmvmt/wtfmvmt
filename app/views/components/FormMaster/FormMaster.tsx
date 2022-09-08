@@ -1,34 +1,33 @@
+import type { TitleSectionProps } from "@typings/TitleSection"
 import TitleSection from "@components/TitleSection"
 
 
-export type Field = {
-    name: string,
+export type Form = {
+    label: string
 }
 
-export type Section = {
+export type Field = {
     title: string,
-    fields: Field[],
+    forms: Form[]
 }
 
 export type FormMaster = {
-    titleSection: any,
-    sections: Section[]
-
+    name?: string,
+    titleSection: TitleSectionProps,
+    fields: Field[],
 }
 
-const FormMaster = ({ titleSection, sections }: FormMaster) => {
+const FormMaster = ({ titleSection, fields }: FormMaster) => {
+
+
 
     return (
         <section className="py-20 ">
+
             <TitleSection {...titleSection} />
 
             <div className="container mx-auto px-4">
-
-
-                
                 <div className="p-8 lg:p-20">
-
-
                     <div className="flex flex-wrap -mx-4">
 
 
@@ -42,6 +41,7 @@ const FormMaster = ({ titleSection, sections }: FormMaster) => {
                                     Who Are you
                                 </h3>
                             </div>
+
                             <form action="">
                                 <div className="mb-10">
                                     <label
@@ -177,6 +177,10 @@ const FormMaster = ({ titleSection, sections }: FormMaster) => {
                                     </div>
                                 </div>
                             </form>
+
+
+
+                            
                         </div>
 
 
@@ -210,12 +214,15 @@ const FormMaster = ({ titleSection, sections }: FormMaster) => {
                                     </label>
                                 </div>
                             </div>
+
                             <div className="flex mb-12 items-center">
                                 <span className="flex-shrink-0 inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-orange-300 text-white">
                                     3
                                 </span>
                                 <h3 className="text-2xl font-bold font-heading">Payment methods</h3>
                             </div>
+
+
                             <div className="mb-12">
                                 <label className="flex items-center mb-6" htmlFor="">
                                     <input
@@ -290,14 +297,21 @@ const FormMaster = ({ titleSection, sections }: FormMaster) => {
                                 </div>
                             </div>
                         </div>
+
+
+
                         <div className="w-full lg:w-1/3 px-4">
+
+
                             <div className="flex mb-12 items-center">
                                 <span className="flex-shrink-0 inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-pink-300 text-white">
                                     4
                                 </span>
                                 <h3 className="text-2xl font-bold font-heading">Order summary</h3>
                             </div>
-                            <div className="mb-12 p-6 lg:p-12 bg-blue-300">
+
+
+                            <div className="mb-12 p-6 lg:p-12">
                                 <div className="mb-6 pb-8 border-b border-blue-100">
                                     <div className="flex">
                                         <img
@@ -342,6 +356,9 @@ const FormMaster = ({ titleSection, sections }: FormMaster) => {
                                     </span>
                                 </div>
                             </div>
+
+
+
                             <div className="mb-10">
                                 <span className="inline-block mb-4 font-medium">
                                     Apply discount code:
@@ -360,6 +377,8 @@ const FormMaster = ({ titleSection, sections }: FormMaster) => {
                                     </a>
                                 </div>
                             </div>
+
+
                             <div>
                                 <span className="block mb-4 font-medium">Order comment:</span>
                                 <textarea
@@ -377,6 +396,8 @@ const FormMaster = ({ titleSection, sections }: FormMaster) => {
                                     Go to Checkout
                                 </a>
                             </div>
+
+
                         </div>
                     </div>
                 </div>

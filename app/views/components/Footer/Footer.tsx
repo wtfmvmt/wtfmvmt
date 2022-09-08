@@ -18,7 +18,7 @@ export type Social = {
 
 export type FooterProps = {
   copyright: string[],
-  impressum: string[],
+  impressum: string,
   socials?: Social[],
   links?: Link[],
   logo?: {
@@ -47,8 +47,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
         </a>
 
         <p className="max-w-xs text-lg font-extrabold leading-8">
-          <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={40} text={impressum} />
-
+{impressum}
         </p>
       </div>
     )
@@ -80,8 +79,6 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                 })
               }
             </Fade>
-
-
           </div>
         </div>
 

@@ -30,6 +30,7 @@ export type SocialLink = {
 
 
 export type Feature = {
+    name?: string,
     url?: string
     image: Image
 }
@@ -64,7 +65,7 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
 
                         <a
                             key={index}
-                            className="mr-2 inline-flex items-center justify-center w-16 h-16 rounded-full"
+                            className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 rounded-full"
                             href="#"
                         >
                             <SocialIcon bgColor="white" url={link.url} />
@@ -145,13 +146,15 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
 
                             return (
 
-                                <div key={index} className="w-full md:w-1/2 lg:w-1/6 p-3">
-                                    <a href={feature.url} className="h-28 flex items-center bg-black bg-opacity-80 shadow-xl">
+                                <div key={index} className="hvr-pop w-full md:w-1/2 lg:w-1/6 p-3">
+                                    <a href={feature.url} className="h-36 flex justify-center items-center bg-black bg-opacity-80 shadow-xl">
+                                        <h1 className="transition-all opacity-0 hover:opacity-90 absolute text-wrap bottom-0 font-heading items-center text-white font-bold">{feature.name ? feature.name : "Test"}</h1>
                                         <img
-                                            className="mx-auto shawdow-xl h-24"
+                                            className="mx-auto shawdow-xl h-32"
                                             src={feature.image.src}
                                             alt={feature.image.alt}
                                         />
+
                                     </a>
                                 </div>
                             )

@@ -6,6 +6,7 @@ const Meta = ({ pageTitle }) => {
 
     return (
         <Head>
+            
             <title>{meta.title} | {pageTitle || "Home"}</title>
             <>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />

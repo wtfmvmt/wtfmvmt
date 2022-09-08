@@ -61,8 +61,20 @@ const forms = {
                                   As a bronze member, we aim to grow with you in pursuit of your skills and passions.`,
                     image: {
                         src: '/assets/images/newcomer.svg'
+                    },
+                    cta: {
+                        name: 'Join Now',
+                        url: '/membership'
                     }
-                }
+                },
+                fields: [
+                    {
+                        title: 'Who are you?',
+                        forms: [
+
+                        ]
+                    }
+                ]
             },
             {
                 name: 'vendors',

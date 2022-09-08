@@ -1,3 +1,8 @@
+export enum Collections {
+    BRANDON_PAYNE = 'brandon_payne',
+    NIA_ASHAY = 'nia-ashay'
+}
+
 const images = [
     {
         id: 'group-photo',
@@ -67,6 +72,16 @@ const images = [
         id: 'brandon-2',
         src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/117445264_3606461009364054_6715325401420484803_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=DsYqFUK06XUAX-lT_rO&_nc_ht=scontent-ord5-1.xx&oh=00_AT-Msfo8eFG4xRflljMY-9UMU9Npi6fWOOn9P6Twj5drgg&oe=633E6241',
         collection: 'brandon-payne'
+    },
+    {
+        id: 'nia-ashay-dress',
+        src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/88331205_3148269408528669_3020634981559959552_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=FzMkU_kXja4AX8-cZgT&_nc_ht=scontent-ord5-1.xx&oh=00_AT8wa6F3qX4I-f4h-Am4_RvoLPZoz6HCSbVr206tJwH9Yg&oe=634145F9',
+        collection: 'nia-ashay'
+    },
+    {
+        id: 'nia-ashay-2',
+        src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/24131066_1809870669035223_1024262361504824702_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=u_k1duUo7xcAX8BMXKU&_nc_ht=scontent-ord5-1.xx&oh=00_AT-Q8dXEtqbQ2VKAjw-2Fr_lLzWLbodfJ_LIljUW2lmvmA&oe=63413F90',
+        collection: 'nia-ashay'
     }
 ]
 export default images
