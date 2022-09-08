@@ -11,19 +11,6 @@ const meta = {
             name: 'Vision',
             url: '/vision'
         },
-    
-        {
-            name: 'Events',
-            url: '/events'
-        },
-        {
-            name: 'Artivism',
-            url: '/artivism',
-        },
-        {
-            name: 'Shop',
-            url: '/shop',
-        },
         {
             name: 'Media',
             url: '/media'
@@ -36,7 +23,18 @@ const meta = {
             name: 'Blog',
             url: '/blog',
         },
-
+        {
+            name: 'Events',
+            url: '/events'
+        },
+        {
+            name: 'Artivism',
+            url: '/artivism',
+        },
+        {
+            name: 'Shop',
+            url: '/shop',
+        }
 
     ],
     socials: [

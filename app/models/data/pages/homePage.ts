@@ -29,6 +29,48 @@ const homePage: DataPage = {
             header: { ...header.init() },
             footer: { ...footer.init() },
         },
+
+        dataSection: {
+            heading: 'Check out our Media & Publication',
+            title: 'Media & Projects',
+            description: `Our publication & media showcases the experience & knowledge
+                          of artists, designers, and activists who are dedicated to 
+                          creating a better world through service or Artivism.`,
+            data: [
+                {
+                    title: 'WTF is WTF?'
+                },
+                {
+
+                },
+                {
+                    title: 'WTF is WTF?'
+                },
+                {
+                    
+                },
+                {
+                    title: 'WTF is WTF?'
+                },
+                {
+                    
+                },
+                {
+                    title: 'WTF is WTF?'
+                },
+                {
+                    
+                },
+                {
+                    title: 'WTF is WTF?'
+                },
+                {
+                    
+                }
+            ]
+
+        },
+
         imageMasonry: {
 
             heading: "Our Founders and Team",

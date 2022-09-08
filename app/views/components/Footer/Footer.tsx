@@ -71,7 +71,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
 
                     <a key={index}
                       className="hvr-pop first-line:inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-purple-600 p-2 hover:bg-black transition-all hover:bg-opacity-60 hover:rounded"
-                      href={link.url}
+                      href={""}
                     >
                       <Icon />
                       {link.name}

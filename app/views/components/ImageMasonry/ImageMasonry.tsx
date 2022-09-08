@@ -1,5 +1,4 @@
 import DistortionCarousel from "@components/DistortionCarousel"
-import type { Image } from "@typings/Image"
 import type { CallToAction } from "@typings/CallToAction"
 
 export type Content = {
@@ -9,14 +8,16 @@ export type Content = {
     images: string[]
 }
 
+export type Masonry = {
+    minor?: Content[],
+    major?: Content[],
+}
+
 export type ImageMasonryProps = {
     heading?: string,
     title?: string,
     description?: string,
-    masonry?: {
-        major?: Content[],
-        minor?: Content[]
-    },
+    masonry?: Masonry,
     cta?: {
         primary: CallToAction,
         secondary: CallToAction
@@ -142,8 +143,8 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
     }
 
     return (
-        <section className="py-26 relative overflow-hidden">
 
+        <section className="py-26 relative overflow-hidden">
             <div className="container px-4 mx-auto relative">
                 <div className="flex flex-wrap -mx-4 mb-16 items-center justify-between">
                     <Header />
