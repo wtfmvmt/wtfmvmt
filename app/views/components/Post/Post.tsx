@@ -1,3 +1,5 @@
+import type { Image } from "@typings/Image"
+
 
 export type PostProps = {
     date?: string,
@@ -5,7 +7,7 @@ export type PostProps = {
     title: string,
     subTitle: string,
     tags?: string[],
-    cover?: string[],
+    cover?: Image,
     url?: string,
     text?: string
 }
@@ -111,7 +113,7 @@ const Post = ({ date, title, author, subTitle, tags, url, cover, text }: PostPro
                 </div>
                 <img
                     className="block w-full mb-12 h-112 lg:h-140 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg"
-                    src=""
+                    src={cover ? cover.src : ""}
                     alt=""
                 />
 

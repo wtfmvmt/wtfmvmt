@@ -17,6 +17,9 @@ const visionPage = {
             date: '2020-01-01',
             title: 'Our Vision',
             author: 'WTF Team',
+            cover: {
+                src: 'assets/images/group.png',
+            },
             subTitle: 'Our mission for the future',
             tags: ["vision", "mission", "future"],
             text: `We are a community of artists, builders and thinkers who are passionate
