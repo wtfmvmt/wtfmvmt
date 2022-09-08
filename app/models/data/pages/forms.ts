@@ -58,7 +58,10 @@ const forms = {
                     title: 'Welcome Newcomers & Curious Minds!',
                     description: `Our membership program was created with the independent individual in mind. No matter where you are on the spectrum,
                                   we have opportunities for conscious creators of all kind to take advantage of. 
-                                  As a bronze member, we aim to grow with you in pursuit of your skills and passions.`
+                                  As a bronze member, we aim to grow with you in pursuit of your skills and passions.`,
+                    image: {
+                        src: '/assets/images/newcomer.svg'
+                    }
                 }
             },
             {
@@ -80,7 +83,7 @@ const forms = {
                     }
                 }
             },
-       
+
 
         ]
     }

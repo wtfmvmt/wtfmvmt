@@ -1,14 +1,14 @@
 import type { Image } from "@typings/Image"
 
-
 export type Person = {
-    firstName: string,
-    lastName: string,
-    role: string,
-    covers: Image[]
+    firstName?: string,
+    lastName?: string,
+    role?: string,
+    covers?: Image[]
 }
 
 const people: Person[] = [
+
     {
         firstName: 'Brandon',
         lastName: 'Barnes',
@@ -16,10 +16,12 @@ const people: Person[] = [
         covers: [
             {
                 src: '/assets/images/brandon-barnes.jpg',
+                alt: ''
             },
-            [
+            {
                 src: '/assets/images/brandon-barnes.jpg',
-            ]
+                alt: ''
+            }
         ]
     }
 ]
