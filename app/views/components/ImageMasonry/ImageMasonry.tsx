@@ -74,7 +74,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                 <div key={key ? key : 0} className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                     <div>
                         <div className="block h-96 lg:h-full w-full object-cover" >
-                            <img src={images} />
+                            <img src={images[0]} />
                         </div>
                     </div>
                     <div className="px-6 py-4 bg-indigo-900">
