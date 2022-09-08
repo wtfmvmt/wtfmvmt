@@ -12,7 +12,7 @@ const footer = {
 
     data: {
         impressum: meta.impressum,
-        links: meta.links,
+        links: [...meta.links],
         copyright: meta.copyright,
         socials: meta.socials,
         logo: {
