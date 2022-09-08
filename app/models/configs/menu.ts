@@ -6,15 +6,15 @@ const menu = {
         src: meta.logo,
         url: '/'
     },
-    links: meta.links,
+    links: meta.links.splice(0,5),
     cta: [
         {
-            name: 'Forms',
-            url: '/community'
+            name: 'Sponsorships',
+            url: '/partners'
         },
         {
-            name: 'Partners',
-            url: '/partners'
+            name: 'Join Us',
+            url: '/forms'
         }
     ]
 }

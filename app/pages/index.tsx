@@ -1,5 +1,4 @@
 import ContactSection from "@components/ContactSection"
-import ContentGrid from "@components/ContentGrid"
 import DataSection from "@components/DataSection"
 import FeaturedMedia from "@components/FeaturedMedia"
 import FeaturedSection from "@components/FeaturedSection"
@@ -26,6 +25,10 @@ const HomePage: IPage = ({ pageData }) => {
       <Hero {...pageData.hero} />
       <FeaturedSection {...pageData.featuredSection} />
       <SummarySection {...pageData.summarySection} />
+      <DataSection />
+      <SimpleFormSection />
+      <StatsSection />
+      <FeaturedMedia />
       <ImageMasonry {...pageData.imageMasonry} />
       <ContactSection {...pageData.contactSection} />
     </PageLayout>
@@ -44,11 +47,3 @@ export async function getStaticProps() {
   }
 }
 
-/* 
-  <ContentGrid />
-      <DataSection />
-      <SimpleFormSection />
-      <StatsSection />
-      <FeaturedMedia />
-      
-      */

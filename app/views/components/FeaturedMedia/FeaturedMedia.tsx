@@ -16,7 +16,7 @@ const FeaturedMedia = () => {
           <h2 className="text-center text-xl font-extrabold mb-6">
             Our Partnerships
           </h2>
-          <div className="flex flex-wrap bg-white border-3 border-indigo-900 rounded-2xl shadow-md">
+          <div className="flex flex-wrap border-3 border-indigo-900 rounded-2xl shadow-md">
             <div className="w-1/2 lg:w-1/3 xl:w-1/6 border-b-3 border-indigo-900 xl:border-0">
               <div className="flex items-center justify-center h-44 p-6 xl:border-r-3 border-indigo-900">
                 <img

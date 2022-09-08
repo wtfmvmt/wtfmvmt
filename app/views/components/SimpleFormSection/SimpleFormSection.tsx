@@ -1,15 +1,15 @@
 const SimpleFormSection = () => {
 
     return (
-        <section className="py-26 relative overflow-hidden">
+        <section className="py-26  bg-black bg-opacity-60 relative overflow-hidden">
         <img
           className="absolute top-0 w-1/2 md:w-1/3 md:h-full"
-          src="nigodo-assets/background-elements/pattern-smash-dots-orange-left.svg"
+          src="/assets/images/newspaper.svg"
           alt=""
         />
         <img
           className="absolute top-0 right-0 w-1/2 md:w-1/3 md:h-full"
-          src="nigodo-assets/background-elements/pattern-smash-dots-orange-right.svg"
+          src="/assets/images/email.svg"
           alt=""
         />
         <div className="container px-4 mx-auto relative">
@@ -22,7 +22,7 @@ const SimpleFormSection = () => {
               Stay in the loop with everything you need to know.
             </p>
           </div>
-          <div className="max-w-lg mx-auto">
+          <div className="max-w-lg mx-auto mt-10 mb-10">
             <div className="flex flex-wrap -mx-2 justify-center">
               <div className="flex-grow w-full md:w-auto px-2 mb-2">
                 <input

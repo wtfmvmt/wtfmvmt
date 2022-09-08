@@ -5,6 +5,8 @@ import useMenuDrawerState from "@hooks/useMenuDrawerState";
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import type { HeaderProps } from "@typings/Header";
 import Headroom from "react-headroom";
+import AnnouncementIcon from '@mui/icons-material/Announcement';
+import Badge from '@mui/material/Badge';
 
 const top100Films = [
     { label: 'The Shawshank Redemption', year: 1994 },
@@ -17,7 +19,14 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
     const MobileNavBurger = () => (
         <a className="navbar-burger self-center mr-12 xl:hidden" href="#">
-            <BurgerIcon action={() => toggleDrawer()} />
+            <div className="xl:flex items-center">
+                <a className="flex items-center hover:text-gray-600" href="#">
+                    <Badge badgeContent={"1"} color="secondary">
+                        <AnnouncementIcon />
+                    </Badge>
+                    <BurgerIcon action={() => toggleDrawer()} />
+                </a>
+            </div>
         </a>
     )
 
@@ -31,7 +40,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                     search && (
                         <div className="hidden xl:flex mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg">
 
-                         
+
                             <SearchIcon />
                             <input
                                 className="w-full bg-transparent border-0 focus:ring-transparent focus:outline-none py-2"
@@ -99,6 +108,8 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
             <BurgerIcon action={() => toggleDrawer()} />
         </div>
     )
+
+
     const { toggleDrawer } = useMenuDrawerState()
 
     return (
@@ -113,13 +124,12 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
                         <div className="xl:flex items-center hidden">
                             <a className="flex items-center hover:text-gray-600" href="/">
-                                <NotificationsActiveIcon />
+                                <Badge badgeContent={"3"} color="primary">
+                                    <AnnouncementIcon />
+                                </Badge>
                             </a>
-                            <span>0</span>
                         </div>
-
                     </div>
-
 
                     <NavBurger />
                     <MobileNavBurger />

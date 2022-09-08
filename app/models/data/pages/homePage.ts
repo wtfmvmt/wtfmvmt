@@ -143,7 +143,7 @@ const homePage: DataPage = {
             },
             socialLinks: meta.socials,
             features: {
-                heading: 'Our Partners',
+                heading: 'Featured Affiliates & Partners',
                 featured: [
                     {
                         url: '/',

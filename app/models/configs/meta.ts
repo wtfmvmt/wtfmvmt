@@ -2,7 +2,8 @@ const meta = {
     title: 'WTFMVMT',
     description: 'We are a Community of Conscious Builders for the Future',
     logo: '/assets/images/logo-transparent.png',
-    copyright: '©️ 2022 WTFMVMT. All Rights Reserved.',
+    impressum: ["Conscious Creators for The Future"],
+    copyright: ['©️ 2022 WTFMVMT. All Rights Reserved.', 'Powered by WTFMVMT', 'Site by Desirable Solutions'],
     phone: '321-350-5177',
     email: 'wtfmvmt@gmail.com',
     links: [
@@ -10,10 +11,7 @@ const meta = {
             name: 'Vision',
             url: '/vision'
         },
-        {
-            name: 'Shop',
-            url: '/shop',
-        },
+    
         {
             name: 'Events',
             url: '/events'
@@ -23,13 +21,22 @@ const meta = {
             url: '/artivism',
         },
         {
+            name: 'Shop',
+            url: '/shop',
+        },
+        {
             name: 'Media',
             url: '/media'
+        },
+        {
+            name: 'Team',
+            url: '/team'
         },
         {
             name: 'Blog',
             url: '/blog',
         },
+
 
     ],
     socials: [

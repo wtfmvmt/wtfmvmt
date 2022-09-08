@@ -1,5 +1,6 @@
 import meta from "@configs/meta"
 
+
 const footer = {
 
     init: () => {
@@ -10,14 +11,13 @@ const footer = {
     },
 
     data: {
-        impressum: "Conscious Creators for The Future",
-        copyright: " © 2022 WTFMVMT. All rights reserved.",
+        impressum: meta.impressum,
+        links: meta.links,
+        copyright: meta.copyright,
         socials: meta.socials,
         logo: {
             src: '/assets/images/logo-transparent.png',
             url: '/'
-            
-
         }
     }
 }

@@ -3,7 +3,7 @@ import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { CSSTransition } from 'react-transition-group';
 import CloseIcon from "@mui/icons-material/Close";
 import type { Favicon } from "@typings/Favicon"
-
+import Icon from "@components/Icon"
 import type { CallToAction } from "@typings/CallToAction";
 export type Link = {
     name: string,
@@ -53,6 +53,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                                 className="hover:text-purple-500 block p-4 text-lg font-extrabold hover:bg-black rounded"
                                 href={link.url}
                             >
+                                <Icon/>
                                 <span className="hvr-wobble-horizontal ">
                                     {link.name}
                                 </span>

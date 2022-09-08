@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import { SocialIcon } from 'react-social-icons';
 import ReactTypingEffect from 'react-typing-effect';
 import Carousel from 'react-spring-3d-carousel-2';
-
+import Icon from "@components/Icon"
 import type { Image } from "@typings/Image"
 
 export type MediaCarousel = string[]
@@ -78,17 +78,21 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
 
 
     const FeaturedGallery = () => (
+
         <div className="w-full lg:w-2/3 px-4">
+
             <div className="flex flex-wrap h-full">
+
                 <div className="w-full md:w-7/12 z-50">
-
                     <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousels[0]} />
-
                 </div>
+
                 <div className="w-full md:w-5/12 z-50">
                     <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousels[1]} />
                 </div>
+
             </div>
+
         </div>
     )
 
@@ -111,6 +115,7 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
                                             className="hvr-wobble-horizontal flex items-center text-lg jello-diagonol-1 font-bold font-heading hover:text-purple-400"
                                             href={link.url}
                                         >
+                                            <Icon />
                                             <span>{link.name}</span>
                                         </a>
                                     </li>

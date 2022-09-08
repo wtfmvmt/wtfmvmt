@@ -3,7 +3,8 @@ import { SocialIcon } from "react-social-icons"
 import GridIcon from "@components/GridIcon"
 import PhoneIcon from "@components/PhoneIcon"
 import EmailIcon from "@components/EmailIcon"
-
+import { Fade } from "react-awesome-reveal";
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 export type Social = {
     url: string,
@@ -33,9 +34,16 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                 </div>
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Phone</h3>
-                    <p className="text-xl sm:text-2xl text-red-300">
+                    <p className="text-xl sm:text-2xl text-red-300 bg-black bg-opacity-80 p-4 rounded">
                         {phone}
+
+                        <span className="p-2">
+                            <ContentCopyIcon />
+
+                        </span>
+
                     </p>
+
                 </div>
             </div>
 
@@ -52,9 +60,15 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                 </div>
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Email</h3>
-                    <p className="text-xl sm:text-2xl text-red-300">
+                    <p className="text-xl sm:text-2xl text-red-300 bg-black bg-opacity-80 p-4 rounded">
                         {email}
+                        <span className="p-2">
+                            <ContentCopyIcon />
+
+                        </span>
                     </p>
+
+
                 </div>
             </div>
         )
@@ -92,21 +106,27 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Socials</h3>
                     <div className="flex items-center justify-center flex-wrap">
-                        {
-                            socials && socials.map((social, index) => {
+                        <Fade cascade>
 
-                                return (
-                                    <a
-                                        key={index}
-                                        className="mb-8 inline-block mr-6"
-                                        href={social.url}
-                                    >
-                                        <SocialIcon url={social.url} bgColor="white" />
-                                    </a>
+                            {
 
-                                )
-                            })
-                        }
+                                socials && socials.map((social, index) => {
+
+                                    return (
+                                        <a
+                                            key={index}
+                                            className="mb-8 inline-block mr-6 hvr-pop"
+                                            href={social.url}
+                                        >
+                                            <SocialIcon url={social.url} bgColor="white" />
+                                        </a>
+
+
+
+                                    )
+                                })
+                            }
+                        </Fade>
                     </div>
                 </div>
             </div>
@@ -115,7 +135,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
 
     return (
 
-        <section className="py-26">
+        <section className="py-26 mt-4 bg-black bg-opacity-40">
             <div className="container px-4 mx-auto">
                 <div className="flex flex-wrap -mx-4 mb-16 items-center">
                     <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
@@ -146,7 +166,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                     <div className="w-full lg:w-2/3 px-4">
                         <img
                             className="block object-cover border-3 border-indigo-900 rounded-2xl shadow-md"
-                            src="/assets/map.png"
+                            src="/assets/images/contact-us.svg"
                             alt=""
                         />
                     </div>

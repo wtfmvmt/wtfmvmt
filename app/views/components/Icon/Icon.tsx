@@ -1,12 +1,7 @@
-import dynamic from "next/dynamic";
-import React from "react";
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
-
-
-
-const Icon = ({ collecition, id }) => {
-    const IconComponent = dynamic(() => import(`@mui/material-icons/${id}`), { ssr: false })
-    return (<IconComponent /> || <></>)
+const Icon = () => {
+    return <VisibilityIcon />
 }
 
 export default Icon

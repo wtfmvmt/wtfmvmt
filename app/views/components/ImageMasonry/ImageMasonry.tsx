@@ -5,6 +5,7 @@ import type { CallToAction } from "@typings/CallToAction"
 export type Content = {
     title: string,
     heading: string,
+    key?: any,
     images: string[]
 }
 
@@ -67,39 +68,39 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
     const Masonry = () => {
 
 
-        const Minor = ({ key }) => {
+        const Minor = ({ key, title, heading, images }: Content) => {
             return (
 
                 <div key={key ? key : 0} className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                     <div>
                         <div className="block h-96 lg:h-full w-full object-cover" >
-                            <img src={masonry.major[1].images[0]} />
+                            <img src={images} />
                         </div>
                     </div>
                     <div className="px-6 py-4 bg-indigo-900">
-                        <h2 className="text-xl text-white font-extrabold">Nia Ashay</h2>
-                        <span className="text-lg font-bold text-indigo-300">CTO</span>
+                        <h2 className="text-xl text-white font-extrabold">{title ? title : "Brandon J Payne"}</h2>
+                        <span className="text-lg font-bold text-indigo-300">{heading ? heading : "CEO"}</span>
                     </div>
                 </div>
 
             )
         }
 
-        const Major = ({ key }) => {
+        const Major = ({ key, title, heading, images }: Content) => {
             return (
                 <div key={key ? key : 0} className="w-full lg:w-2/3 px-4 mb-8">
-                    <div className="h-full flex flex-col border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
+                    <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl shadow-xl overflow-hidden">
                         <div className="mb-auto h-full">
                             <div className="block h-96 lg:h-full w-full object-cover" >
-                                <DistortionCarousel images={masonry.major[1].images} />
+                                <DistortionCarousel images={images} />
                             </div>
                         </div>
-                        <div className="px-6 py-4 bg-indigo-900">
+                        <div className="px-6 py-4 bg-purple-900 bg-opacity-90">
                             <h2 className="text-xl text-white font-extrabold">
-                                Brandon J. Payne
+                                {title ? title : "Nia Ashay"}
                             </h2>
                             <span className="text-lg font-bold text-indigo-300">
-                                Executive DIrector
+                                {heading ? heading : "CTO"}
                             </span>
                         </div>
                     </div>
@@ -114,7 +115,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                 {
                     masonry.major ? masonry.major.map((major, index) => {
                         return (
-                            <Major key={index} />
+                            <Major {...major} key={index} />
                         )
                     }) : <></>
 
@@ -122,12 +123,12 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
 
                 <div className="w-full lg:w-1/3 px-4 mb-8">
 
-            
+
 
                     {
                         masonry.minor ? masonry.minor.map((minor, index) => {
                             return (
-                                <Minor key={index} />
+                                <Minor {...minor} key={index} />
                             )
                         }) : <></>
 
