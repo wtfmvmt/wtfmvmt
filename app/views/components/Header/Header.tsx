@@ -1,12 +1,17 @@
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import Headroom from "react-headroom";
-import Banner from "@components/Banner"
-import SearchIcon from "@components/SearchIcon";
+import Banner from "@components/Banner";
 import BurgerIcon from "@components/BurgerIcon";
-import useMenuDrawerState from "@hooks/useMenuDrawerState"
-import type { HeaderProps } from "@typings/Header"
-import SearchBar from 'react-js-search';
+import SearchIcon from "@components/SearchIcon";
+import useMenuDrawerState from "@hooks/useMenuDrawerState";
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import type { HeaderProps } from "@typings/Header";
+import Headroom from "react-headroom";
 
+const top100Films = [
+    { label: 'The Shawshank Redemption', year: 1994 },
+    { label: 'The Godfather', year: 1972 },
+    { label: 'The Godfather: Part II', year: 1974 },
+
+];
 
 const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
@@ -26,6 +31,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                     search && (
                         <div className="hidden xl:flex mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg">
 
+                         
                             <SearchIcon />
                             <input
                                 className="w-full bg-transparent border-0 focus:ring-transparent focus:outline-none py-2"
@@ -113,7 +119,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                         </div>
 
                     </div>
-                    
+
 
                     <NavBurger />
                     <MobileNavBurger />

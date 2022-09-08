@@ -12,7 +12,7 @@ const meta = {
         },
         {
             name: 'Shop',
-            url: '/community',
+            url: '/shop',
         },
         {
             name: 'Events',
@@ -24,7 +24,7 @@ const meta = {
         },
         {
             name: 'Media',
-            url: '/contact'
+            url: '/media'
         },
         {
             name: 'Blog',

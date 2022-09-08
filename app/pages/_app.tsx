@@ -2,6 +2,7 @@ import "@libs/dashvars.css"
 import "@libs/globals.css"
 import "@libs/tailwind.css"
 import "@libs/animations.css"
+import "@libs/scrollbars.css"
 
 import { PageTransition } from 'next-page-transitions'
 import { RecoilRoot } from 'recoil'
@@ -14,7 +15,7 @@ function Application({ Component, pageProps }: IApplication) {
   return (
     <RecoilRoot>
       <PageTransition loadingComponent={<></>}
-        timeout={1200} classNames="page-transition">
+        timeout={1400} classNames="page-transition">
         <Component {...pageProps} />
       </PageTransition>
       <style>{`
@@ -23,14 +24,14 @@ function Application({ Component, pageProps }: IApplication) {
           }
           .page-transition-enter-active {
             opacity: 1;
-            transition: opacity 300ms;
+            transition: opacity 450ms;
           }
           .page-transition-exit {
             opacity: 1;
           }
           .page-transition-exit-active {
             opacity: 0;
-            transition: opacity 300ms;
+            transition: opacity 450ms;
           }
         `}</style>
     </RecoilRoot>

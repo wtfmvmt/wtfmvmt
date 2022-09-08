@@ -6,7 +6,7 @@ export default function VisionPage({ pageData }) {
 
     return (
         <PageLayout {...pageData.layout}>
-            <Post />
+            <Post {...pageData.post} />
         </PageLayout>
     )
 }
