@@ -1,22 +1,24 @@
 {
   "name": "wtfmvmt",
-  "version": "1.0.0",
+  "version": "12.0.1",
   "description": "",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
+    "app:dev": "cd app && npm i --force && npm run dev",
+    "readme:g":"npx @appnest/readme generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Inform-Inspire-LLC/wtfmvmt.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jeffrey J. Desir",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Inform-Inspire-LLC/wtfmvmt/issues"
+    "url": "https://github.com/WTFMVMT/wtfmvmt/issues"
   },
-  "homepage": "https://github.com/Inform-Inspire-LLC/wtfmvmt#readme"
+  "homepage": "https://github.com/WTFMVMT/wtfmvmt#readme"
 }
