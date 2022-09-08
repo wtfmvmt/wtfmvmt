@@ -89,7 +89,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
 
         const Major = ({ key, title, heading, images }: Content) => {
             return (
-                <div key={key ? key : 0} className="w-full lg:w-2/3 px-4 mb-8">
+                <div key={key ? key : 0} className="hover:scale-90 transition-all w-full lg:w-2/3 px-4 mb-8">
                     <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl shadow-xl overflow-hidden">
                         <div className="mb-auto h-full">
                             <div className="block h-96 lg:h-full w-full object-cover" >

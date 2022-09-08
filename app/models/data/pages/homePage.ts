@@ -1,9 +1,10 @@
-import type { DataPage } from "@typings/DataPage";
-import resolveDataPage from "@controllers/utils/resolveDataPage";
+import resolveDataPage from "@utils/resolveDataPage";
+import images from "@db/images"
 import header from "@configs/header"
 import footer from "@configs/footer"
 import meta from "@configs/meta"
-import images from "@db/images"
+
+import type { DataPage } from "@typings/DataPage";
 
 
 const homePage: DataPage = {
@@ -49,24 +50,7 @@ const homePage: DataPage = {
                 {
                     
                 },
-                {
-                    title: 'WTF is WTF?'
-                },
-                {
-                    
-                },
-                {
-                    title: 'WTF is WTF?'
-                },
-                {
-                    
-                },
-                {
-                    title: 'WTF is WTF?'
-                },
-                {
-                    
-                }
+           
             ]
 
         },
@@ -265,19 +249,15 @@ const homePage: DataPage = {
                         name: "For Vendors",
                         url: "forms/vendors"
                     },
-
                 ]
             }
         }
-
-
     },
 
     query: {
-
-
-
     }
 }
+
+
 
 export default homePage;
