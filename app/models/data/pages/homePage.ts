@@ -86,10 +86,11 @@ const homePage: DataPage = {
             description: 'Our core team is made up of a group of passionate individuals who are dedicated to making a difference in the world. We are a diverse group of people from different backgrounds, cultures, and experiences. We are united by our common goal of making a positive impact on the world.',
             masonry: {
                 major: [
+                 
                     {
                         title: 'Brandon J. Payne',
                         heading: 'Founder & CEO',
-                        images: [...images.splice(0, images.length / 2).map(image => image.src)],
+                        images: [...images.filter(img => img.collection  === 'brandon-payne').map(image => image.src)],
                     },
                     {
                         title: 'Nia Ashay',
@@ -99,11 +100,10 @@ const homePage: DataPage = {
                 ],
                 minor: [
                     {
-                        title: 'Brandon J. Payne',
-                        heading: 'Founder & CEO',
+                        title: 'Kiara J. Braxton',
+                        heading: 'Marketing Team',
                         images: [...images.splice(0, images.length / 2).map(image => image.src)],
                     },
-
 
                 ]
             }

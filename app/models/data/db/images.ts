@@ -52,6 +52,21 @@ const images = [
     {
         id: 'pounce-em',
         src: 'https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/277741107_1426747757748353_2889737569130073114_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=0debeb&_nc_ohc=0ucBVCZKm9oAX_XObg8&_nc_ht=scontent-lhr8-2.xx&oh=00_AT-6OrHf-6K8NQjI3Vg9w9twDfN2UlOcs9G4rmAvAS30Sg&oe=631DA9A5'
+    },
+    {
+        id: 'brandon-tux',
+        src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/279752328_5523513067658829_6179408988740945140_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=pg3rNX6_Ys0AX-DdC0D&_nc_ht=scontent-ord5-1.xx&oh=00_AT-SnnImal3A7UoBK4T1j5pSVqjP3JA9FaCj4QrkBAEZPg&oe=631E8E85',
+        collection: 'brandon-payne'
+    },
+    {
+        id: 'bradon-side',
+        src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/120032638_3723809597629194_8535491474030731126_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=V1B8fJhUQZIAX-iErdS&_nc_ht=scontent-ord5-1.xx&oh=00_AT-X0v4K7tz9ipUfxKNBVhoMYmbv2Ls8NUpx3vznoBnEyA&oe=6340BCFE',
+        collection: 'brandon-payne'
+    },
+    {
+        id: 'brandon-2',
+        src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/117445264_3606461009364054_6715325401420484803_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=DsYqFUK06XUAX-lT_rO&_nc_ht=scontent-ord5-1.xx&oh=00_AT-Msfo8eFG4xRflljMY-9UMU9Npi6fWOOn9P6Twj5drgg&oe=633E6241',
+        collection: 'brandon-payne'
     }
 ]
 export default images

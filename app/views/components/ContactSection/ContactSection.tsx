@@ -23,6 +23,8 @@ export type ContactSectionProps = {
         secondary: CallToAction
     }
 }
+
+
 const ContactSection = ({ phone, email, socials, label, heading, description, cta }: ContactSectionProps) => {
 
     const Phone = () => {

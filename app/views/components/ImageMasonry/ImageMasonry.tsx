@@ -72,7 +72,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
         const Minor = ({ key, title, heading, images }: Content) => {
             return (
 
-                <div key={key ? key : 0} className="border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
+                <div key={key ? key : 0} className="hover:scale-90 transition-all border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
                     <div>
                         <div className="block h-96 lg:h-full w-full object-cover" >
                             <img src={images[0]} />
