@@ -1,6 +1,6 @@
 import type { TitleSectionProps } from "@typings/TitleSection"
 
-const TitleSection = ({ heading, title, image, cta }: TitleSectionProps) => {
+const TitleSection = ({ heading, title, image, cta, url }: TitleSectionProps) => {
 
 
   return (
@@ -14,12 +14,15 @@ const TitleSection = ({ heading, title, image, cta }: TitleSectionProps) => {
               <h2 className="mt-4 mb-14 text-4xl md:text-5xl font-bold font-heading text-white">
                 {title ? title : "Title"}
               </h2>
-              <a
+
+              {cta ? <a
                 className="inline-block hvr-pop bg-purple-500 hover:bg-black text-white font-bold font-heading py-4 px-8 rounded uppercase transition-all"
                 href={cta.url ? cta.name : "Action"}
               >
                 {cta.name ? cta.name : "Action Call"}
-              </a>
+              </a> : <></>}
+
+              
             </div>
             <img
               className="relative ml-auto w-full md:w-2/6 h-96"

@@ -13,8 +13,8 @@ export type Field = {
 
 export type FormMaster = {
     name?: string,
-    titleSection: TitleSectionProps,
-    fields: Field[],
+    titleSection?: TitleSectionProps,
+    fields?: Field[],
 }
 
 const FormMaster = ({ titleSection, fields }: FormMaster) => {

@@ -22,6 +22,10 @@ const forms = {
                 name: 'artists',
                 titleSection: {
                     url: '/artists',
+                    cta: {
+                        name: 'Join Now',
+                        url: '/membership'
+                    },
                     heading: 'Artists',
                     title: 'Welcome Artists & Musicians!',
                     image: {
@@ -58,9 +62,6 @@ const forms = {
                     url:'/newcomers',
                     heading: 'Newcomers',
                     title: 'Welcome Newcomers & Curious Minds!',
-                    description: `Our membership program was created with the independent individual in mind. No matter where you are on the spectrum,
-                                  we have opportunities for conscious creators of all kind to take advantage of. 
-                                  As a bronze member, we aim to grow with you in pursuit of your skills and passions.`,
                     image: {
                         src: '/assets/images/newcomer.svg'
                     },
@@ -81,19 +82,25 @@ const forms = {
             {
                 name: 'vendors',
                 titleSection: {
+                    cta: {
+                        name: 'Join Now',
+                        url: '/membership'
+                    },
                     url: '/vendors',
                     heading: 'Vendors',
                     title: 'Welcome Vendors & Entrepreneurs!',
-                    description: 'Our membership program was created with the independent individual in mind. No matter where you are on the spectrum,'
                 }
             },
             {
                 name: 'businesses',
                 titleSection: {
+                    cta: {
+                        name: 'Join Now',
+                        url: '/membership'
+                    },
                     url: '/businesses',
                     heading: 'Businesses',
                     title: 'Welcome Businesses & Organizations!',
-                    description: 'Our membership program was created with the independent individual in mind. No matter where you are on the spectrum',
                     image: {
                         src: '/assets/images/business.svg'
                     }
