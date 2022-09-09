@@ -6,15 +6,36 @@ const header = {
 
     actionLinks: [
         {
+            name: 'Website',
+            url: 'https://wtfmvmt.vercel.app'
+        },
+        {
+            name: 'CMS',
+            url: 'https://officeos.notion.site/WTFMVMT-88204edb5000435e86576bf45628c0d3'
+        },
+        {
             name: 'Instagram',
             url: '/login'
         },
         {
             name: 'Facebook',
-            url: '/signup'
+            url: '/login'
         },
         {
-            name: 'LinkedIn',
+            name: 'YouTube',
+            url: '/login'
+        },
+
+        {
+            name: 'Twitter',
+            url: '/logout'
+        },
+        {
+            name: 'Twitch',
+            url: '/logout'
+        },
+        {
+            name: 'Slack',
             url: '/logout'
         }
     ],
@@ -25,11 +46,19 @@ const header = {
             url: '/'
         },
         {
-            name: 'Data',
+            name: 'Projects',
             url: '/analytics'
         },
         {
+            name: 'Data',
+            url: '/marketing'
+        },
+        {
             name: 'Marketing',
+            url: '/marketing'
+        },
+        {
+            name: 'Community',
             url: '/marketing'
         }
     ],

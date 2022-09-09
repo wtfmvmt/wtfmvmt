@@ -15,7 +15,7 @@ const Header = ({ favicon, user, navLinks, actionLinks, actionButtons }: HeaderP
             {navLinks && navLinks.map((link, index) => (
 
                 <li key={index}>
-                    <a className="flex mr-10 items-center text-gray-50 hover:text-gray-100 text-sm" href={link.url}>
+                    <a className="flex mr-10 items-center text-white hover:text-gray-100 text-sm" href={link.url}>
                         <span>{link.name}</span>
                     </a>
                 </li>
@@ -82,7 +82,7 @@ const Header = ({ favicon, user, navLinks, actionLinks, actionButtons }: HeaderP
                 actionLinks && actionLinks.map((link, index) => (
                     <li key={index}>
                         <a
-                            className="flex mr-10 items-center text-sm text-gray-500 hover:text-gray-600"
+                            className="flex mr-10 items-center text-sm text-white hover:scale-90 transitiona-all hover:text-purple-600"
                             href={link.url}
                         >
                             <span>{link.name}</span>
@@ -101,8 +101,8 @@ const Header = ({ favicon, user, navLinks, actionLinks, actionButtons }: HeaderP
         <section>
             <Headroom>
                 <nav style={{
-                    borderBottom: '1px solid white',
-                    backdropFilter: 'blur(10px)'
+                    borderBottom: '1px solid gray',
+                    backdropFilter: 'blur(13px)'
                 }} className="relative bg-black text-white bg-opacity-70">
                     <div className="p-6 flex items-center">
                         <Favicon />

@@ -1,23 +1,23 @@
 const Authenticator = () => {
     return (
-        <section className="py-20 bg-blue-800 overflow-x-hidden">
+        <section className="py-20  overflow-x-hidden">
             <div className="relative container px-4 mx-auto">
                 <div className="relative max-w-4xl mx-auto">
                     <div className="absolute inset-0 border border-gray-300 my-24 -ml-4 -mr-4" />
-                    <div className="relative mx-auto py-28 px-4 bg-blue-800 border border-white text-center">
+                    <div className="relative mx-auto py-28 px-4 border border-white text-center">
                         <a
                             className="inline-block mb-12 text-3xl font-bold font-heading text-white"
                             href="#"
                         >
                             <img
-                                className="h-9"
-                                src="yofte-assets/logos/yofte-logo-white.svg"
+                                className="h-36"
+                                src="/assets/images/facade.svg"
                                 alt=""
                                 width="auto"
                             />
                         </a>
                         <h2 className="mb-14 text-4xl text-white font-bold font-heading">
-                            Sign up with
+                            Facade | WTFMVMT
                         </h2>
                         <div className="relative max-w-xl mx-auto">
                             <img
@@ -76,7 +76,7 @@ const Authenticator = () => {
                                 </h2>
                                 <form action="">
                                     <input
-                                        className="w-full mb-4 px-12 py-6 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
+                                        className="bg-transparent w-full mb-4 px-12 py-6 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
                                         type="text"
                                         placeholder="steven@example.dev"
                                     />
@@ -110,3 +110,5 @@ const Authenticator = () => {
 
     )
 }
+
+export default Authenticator

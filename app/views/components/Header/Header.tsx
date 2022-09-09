@@ -2,11 +2,10 @@ import Banner from "@components/Banner";
 import BurgerIcon from "@components/BurgerIcon";
 import SearchIcon from "@components/SearchIcon";
 import useMenuDrawerState from "@hooks/useMenuDrawerState";
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import type { HeaderProps } from "@typings/Header";
-import Headroom from "react-headroom";
 import AnnouncementIcon from '@mui/icons-material/Announcement';
 import Badge from '@mui/material/Badge';
+import type { HeaderProps } from "@typings/Header";
+import Headroom from "react-headroom";
 
 const top100Films = [
     { label: 'The Shawshank Redemption', year: 1994 },
@@ -86,21 +85,6 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
     }
 
 
-    const Title = () => {
-        return (
-            <>
-
-                {
-                    <a
-                        className="hidden xl:flex items-center px-12 border-l font-semibold font-heading hover:text-gray-600"
-                        href={title.url}
-                    >
-                        <span>{title.name}</span>
-                    </a>
-                }
-            </>
-        )
-    }
 
     const NavBurger = () => (
 

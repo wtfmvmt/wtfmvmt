@@ -20,11 +20,6 @@ const header: DataPage = {
 
     data: {
 
-        title: {
-            name: 'WTFMVMT',
-            url: '/about'
-        },
-
         search: [
             {
                 id: 'Community'
@@ -44,7 +39,6 @@ const header: DataPage = {
         ],
 
         banner: {
-            icon: 'SearchIcon',
             messages: ["Attend our Interest Meeting 09/06", "This site is under construction."]
         },
         favicon: {
@@ -52,30 +46,6 @@ const header: DataPage = {
             url: '/'
         },
 
-        navLinks: [
-            {
-                name: 'Home',
-                url: '/'
-            },
-            {
-                name: 'Artivism',
-                url: '/about'
-            },
-
-            {
-                name: 'Community',
-                url: '/join'
-            },
-            {
-                name: 'Contact',
-                url: '/contact'
-            }
-        ],
-
-        cta: {
-            name: 'Join the MVMT',
-            url: '/join'
-        },
 
     }
 }

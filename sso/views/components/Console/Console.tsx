@@ -1,26 +1,6 @@
 import type { BannerProps } from "@typings/Banner"
+import Notifications from '@views/components/Notifications'
 
-const Banner = ({ heading, description, logo }: BannerProps) => {
-
-    return (
-        <div className="mb-8 p-8 bg-black bg-opacity-70 rounded">
-            <div className="flex flex-wrap items-center -mx-4">
-                <div className="w-full lg:w-2/3 px-4">
-                    <h2 className="text-3xl text-white font-bold">
-                        {heading}
-                    </h2>
-                    <p className="text-indigo-50">
-                        {description}
-                    </p>
-                </div>
-                <div className="w-full lg:w-1/3 px-4 flex items-center">
-                    <img src={logo.src} alt={logo.alt ? logo.alt : "logo"} />
-                </div>
-            </div>
-        </div>
-
-    )
-}
 
 export type Console = {
     banner?: BannerProps,
@@ -181,7 +161,7 @@ const Console = ({ banner, headings }: Console) => {
 
         <section className="py-8">
             <div className="container px-4 mx-auto">
-                <Banner {...banner} />
+            <Notifications />
 
                 <div className="flex flex-wrap -mx-4">
                     <div className="w-full lg:w-3/12 px-4 mb-8 lg:mb-0">
@@ -246,6 +226,5 @@ const Console = ({ banner, headings }: Console) => {
     )
 }
 
-export { Banner }
 
 export default Console
