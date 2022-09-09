@@ -26,9 +26,9 @@ const HomePage: IPage = ({ pageData }) => {
       <FeaturedSection {...pageData.featuredSection} />
       <SummarySection {...pageData.summarySection} />
       <DataSection {...pageData.dataSection} />
-      <SimpleFormSection />
-      <StatsSection {...pageData.statsSection}/>
-      <FeaturedMedia />
+      <SimpleFormSection {...pageData.simpleFormSection} />
+      <StatsSection {...pageData.statsSection} />
+      <FeaturedMedia {...pageData.featuredMedia} />
       <ImageMasonry {...pageData.imageMasonry} />
       <ContactSection {...pageData.contactSection} />
     </PageLayout>

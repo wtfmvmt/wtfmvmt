@@ -1,6 +1,14 @@
+import type { CallToAction } from "@typings/CallToAction"
+
+
 export type Table = {
     title: string,
-    description?: string
+    description?: string,
+    cta: {
+        primary: CallToAction,
+        secondary: CallToAction
+    },
+    features: []
 }
 
 
@@ -40,7 +48,7 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
                     tables.map((table, index) => {
                         return (
 
-                            <div key={index} className="w-full  rounded lg:w-1/3 px-4 mb-12 lg:mb-0">
+                            <div key={index} className="hover:scale-90 transition-all w-full  rounded lg:w-1/3 px-4 mb-12 lg:mb-0">
 
 
                                 <div className="max-w-md mx-auto border-3 border-black bg-purple-900 bg-opacity-40 rounded-2xl shadow-md">

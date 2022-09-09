@@ -144,7 +144,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
 
     return (
 
-        <section className="py-26 relative overflow-hidden">
+        <section className="py-26 relative overflow-hidden bg-black bg-opacity-70">
             <div className="container px-4 mx-auto relative">
                 <div className="flex flex-wrap -mx-4 mb-16 items-center justify-between">
                     <Header />

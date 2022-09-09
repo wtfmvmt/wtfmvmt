@@ -29,8 +29,8 @@ const FeaturedSection = ({ heading, title, description, features }: FeaturedSect
           features ? features.map((feature, index) => {
             return (
 
-              <div key={index} className="m-4 hover:scale-90 transition-all shadow-2xl w-full lg:w-1/3 px-4">
-                <div className="h-full hvr-pop max-w-md mx-auto py-12 px-8 bg-black bg-opacity-75 border-3 border-indigo-900 shadow-md rounded-2xl text-center">
+              <div key={index} className="hover:scale-90 transition-all shadow-2xl w-full lg:w-1/3 px-4">
+                <div className="h-full hvr-pop max-w-md mx-auto py-12 px-8 bg-black bg-opacity-75 border-3 border-indigo-900 shadow-md rounded-2xl text-center mt-2">
                   <img
                     className="block mx-auto mb-4"
                     src="/assets/images/events.svg"

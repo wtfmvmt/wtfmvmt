@@ -47,7 +47,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
         </a>
 
         <p className="max-w-xs text-lg font-extrabold leading-8">
-{impressum}
+          {impressum}
         </p>
       </div>
     )
@@ -126,7 +126,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
 
   return (
 
-    <section style={{ borderTop: '1px dashed gray' }} className="bg-black bg-opacity-50">
+    <section style={{ borderTop: '1px solid gray' }} className="bg-black bg-opacity-50">
 
       <div className="pt-26 border-3 border-l-0 border-r-0">
         <div className="pb-16 border-b-3 border-indigo-900">

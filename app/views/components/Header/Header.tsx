@@ -7,22 +7,28 @@ import Badge from '@mui/material/Badge';
 import type { HeaderProps } from "@typings/Header";
 import Headroom from "react-headroom";
 
-const top100Films = [
-    { label: 'The Shawshank Redemption', year: 1994 },
-    { label: 'The Godfather', year: 1972 },
-    { label: 'The Godfather: Part II', year: 1974 },
-
-];
+const notifications = {
+    queue: '3'
+}
 
 const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
+
+    const Notifier = () => {
+        return (
+            <div className="hidden">
+                <Badge badgeContent={notifications.queue} color="secondary">
+                    <AnnouncementIcon />
+                </Badge>
+            </div>
+        )
+    }
+
 
     const MobileNavBurger = () => (
         <a className="navbar-burger self-center mr-12 xl:hidden" href="#">
             <div className="xl:flex items-center">
                 <a className="flex items-center hover:text-gray-600" href="#">
-                    <Badge badgeContent={"1"} color="secondary">
-                        <AnnouncementIcon />
-                    </Badge>
+                    <Notifier />
                     <BurgerIcon action={() => toggleDrawer()} />
                 </a>
             </div>
@@ -108,9 +114,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
                         <div className="xl:flex items-center hidden">
                             <a className="flex items-center hover:text-gray-600" href="/">
-                                <Badge badgeContent={"3"} color="primary">
-                                    <AnnouncementIcon />
-                                </Badge>
+                                <Notifier />
                             </a>
                         </div>
                     </div>
