@@ -16,7 +16,7 @@ const TitleSection = ({ heading, title, image, cta }: TitleSectionProps) => {
               </h2>
               <a
                 className="inline-block hvr-pop bg-purple-500 hover:bg-black text-white font-bold font-heading py-4 px-8 rounded uppercase transition-all"
-                href={cta.url}
+                href={cta.url ? cta.name : "Action"}
               >
                 {cta.name ? cta.name : "Action Call"}
               </a>

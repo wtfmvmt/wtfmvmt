@@ -1,4 +1,5 @@
 import type { HeaderProps } from "@typings/Header"
+import ClickAwayListener from '@mui/base/ClickAwayListener';
 
 import useMenuDrawerState from "@hooks/useMenuDrawerState"
 
