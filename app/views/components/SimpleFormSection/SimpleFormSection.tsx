@@ -15,7 +15,7 @@ const SimpleFormSection = () => {
 
   return (
 
-    <section className="py-26  bg-black bg-opacity-60 relative overflow-hidden">
+    <section className="py-26  bg-black bg-opacity-70 relative overflow-hidden">
       <img
         className="absolute top-0 right-0 w-1/2 md:w-1/3 md:h-full"
         src="/assets/images/email.svg"
@@ -35,7 +35,7 @@ const SimpleFormSection = () => {
           <div className="flex flex-wrap -mx-2 justify-center">
             <div className="flex-grow w-full md:w-auto px-2 mb-2">
               <input
-                className="inline-block w-full p-4 text-lg font-extrabold placeholder-indigo-900 shadow border-2 border-indigo-900 rounded outline-none"
+                className="bg-transparent inline-block w-full p-4 text-lg font-extrabold placeholder-white shadow-xl border-2 border-white rounded outline-none"
                 type="email"
                 placeholder="Enter your email"
               />

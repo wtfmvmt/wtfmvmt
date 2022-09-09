@@ -82,6 +82,21 @@ const images = [
         id: 'nia-ashay-2',
         src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/24131066_1809870669035223_1024262361504824702_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=u_k1duUo7xcAX8BMXKU&_nc_ht=scontent-ord5-1.xx&oh=00_AT-Q8dXEtqbQ2VKAjw-2Fr_lLzWLbodfJ_LIljUW2lmvmA&oe=63413F90',
         collection: 'nia-ashay'
+    },
+    {
+        id: 'nia-ashay-3',
+        src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/12928298_1204951236193839_3893562001385662498_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=v2jdFPefUqQAX-sPTh-&tn=4LDjFjX8pPdl-T2_&_nc_ht=scontent-ord5-1.xx&oh=00_AT810O1qOs-8P7114yEasZNK-BsbvdnHt_bbXoL2RMahKw&oe=6341345C',
+        collection: 'nia-ashay'
+    },
+    {
+        id: 'nia-ashay-4',
+        src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/242924660_4741670892521838_562015159772743821_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=zO-uziMVt8sAX_g0Z9F&tn=4LDjFjX8pPdl-T2_&_nc_ht=scontent-ord5-1.xx&oh=00_AT9mpChCQiAxbVrjUyTZD_bOh0Ld98K5SnaGPXGzaofSkg&oe=631FF226',
+        collection: 'nia-ashay'
+    },
+    {
+        id: 'nia-ashay-5',
+        src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/42218071_2183603041661982_8002022219934859264_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=R14t8tLjY7UAX_EewQa&tn=4LDjFjX8pPdl-T2_&_nc_ht=scontent-ord5-1.xx&oh=00_AT-Rq4ZmYROJOWpPUj_POWM4wRiO0zTyQNUhGH0JtlTilQ&oe=633FE4FA',
+        collection: 'nia-ashay'
     }
 ]
 export default images

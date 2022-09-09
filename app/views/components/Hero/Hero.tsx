@@ -180,7 +180,7 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
 
             </h4>
             <a
-                className="inline-block bg-purple-900 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
+                className="inline-block hvr-pop bg-purple-900 hover:bg-black text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
                 href={cta && cta.url}
             >
                 {cta && cta.name}

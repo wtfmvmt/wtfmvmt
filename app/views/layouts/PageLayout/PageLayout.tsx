@@ -6,13 +6,15 @@ import { Fade } from "react-awesome-reveal";
 import menu from "@configs/menu"
 import ScrollToTop from "react-scroll-to-top";
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import AnimatedCursor from "react-animated-cursor"
 
 
 const PageLayout = ({ children, metaData, header, footer }) => {
 
     return (
         <RootLayout metaData={metaData}>
-            <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'black'}} />} smooth />
+     
+            <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'black' }} />} smooth />
             <DrawerMenu {...menu} />
             <Header {...header} />
             <Fade>

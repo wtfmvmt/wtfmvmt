@@ -71,7 +71,7 @@ const SummarySection = ({ heading, title, description, sections }: SummarySectio
 
 
             <div className="block w-full h-80 object-cover border-3 border-purple-900 rounded-2xl shadow-xl">
-              <ReactPlayer url='https://www.youtube.com/watch?v=v5yg153jRKU' />
+              <ReactPlayer playIcon={<>▶️</>} pip={true} url='https://www.youtube.com/watch?v=v5yg153jRKU' />
             </div>
           </div>
         </div>

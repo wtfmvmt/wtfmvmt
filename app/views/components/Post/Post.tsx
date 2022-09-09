@@ -1,4 +1,5 @@
 import type { Image } from "@typings/Image"
+import DistortionCarousel from "@components/DistortionCarousel";
 
 
 export type PostProps = {
@@ -7,13 +8,13 @@ export type PostProps = {
     title: string,
     subTitle: string,
     tags?: string[],
-    cover?: Image,
+    covers?: Image[],
     url?: string,
     text?: string
 }
 
 
-const Post = ({ date, title, author, subTitle, tags, url, cover, text }: PostProps) => {
+const Post = ({ date, title, author, subTitle, tags, url, covers, text }: PostProps) => {
 
     const Footer = () => {
 
@@ -111,11 +112,12 @@ const Post = ({ date, title, author, subTitle, tags, url, cover, text }: PostPro
                     }
 
                 </div>
-                <img
-                    className="block w-full mb-12 h-112 lg:h-140 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg"
-                    src={cover ? cover.src : ""}
-                    alt=""
-                />
+                <div className="block w-full mb-12 h-112 lg:h-140 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg">
+                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={covers.map(cover => cover.src)} />
+
+                </div>
+
+         
 
             </>
 

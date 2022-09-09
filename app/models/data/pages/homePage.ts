@@ -54,7 +54,6 @@ const homePage: DataPage = {
             ]
 
         },
-
         imageMasonry: {
 
             heading: "Our Founders and Team",
@@ -131,7 +130,6 @@ const homePage: DataPage = {
                 }
             ]
         },
-
         featuredSection: {
             heading: 'Featured',
             title: 'Events & Meetings',
@@ -149,6 +147,22 @@ const homePage: DataPage = {
                 }
             ]
 
+        },
+        statsSection: {
+            heading: 'Sponsorship Programs',
+            title: 'Let us grow further together',
+            description: 'We are a Community of Conscious Builders for the Future',
+            tables: [
+                {
+                    title: 'Membership',
+                },
+                {
+                    title: 'Affiliate',
+                },
+                {
+                    title: 'Partnership',
+                }
+            ]
         },
 
         hero: {
