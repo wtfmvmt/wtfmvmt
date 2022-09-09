@@ -1,11 +1,13 @@
-let meta = {
+const meta = {
     title: 'WTFMVMT',
     description: 'We are a Community of Conscious Builders for the Future',
     logo: '/assets/images/logo-transparent.png',
-    impressum: "Conscious Creators for The Future",
-    copyright: ['©️ 2022 WTFMVMT. All Rights Reserved.', 'Powered by WTFMVMT Technologies', 'Site by Desirable Solutions'],
+    impressum: "We are Conscious Creators for The Future",
+    copyright: ['©️ 2022 WTFMVMT. All Rights Reserved.',
+        'Powered by WTFMVMT Technologies & Love',
+        'Site by Desirable Solutions'],
     phone: '321-350-5177',
-    email: 'wtfmvmt@gmail.com',
+    email: 'info@wtfmvmt.com',
     links: [
         {
             name: 'Vision',
@@ -37,6 +39,7 @@ let meta = {
         }
 
     ],
+
     socials: [
         {
             name: "Facebook",

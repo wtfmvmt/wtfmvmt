@@ -203,7 +203,7 @@ const homePage: DataPage = {
                     },
                     {
                         name: 'Brandon J. Payne, Industries',
-                        url: '/',
+                        url: 'partners/brandon-j-payne-industries',
                         image: {
                             src: '/assets/images/brandon-payne-logo.png',
                             alt: ''
@@ -211,7 +211,7 @@ const homePage: DataPage = {
                     },
                     {
                         name: 'Mountain Top Entertainment Group',
-                        url: 'https://mountaintopentertainmentgroup.com/',
+                        url: 'partners/mountaintop-entertainment-group',
                         image: {
                             src: '/assets/images/mountaintop-entertainment-group-logo.png',
                             alt: ''
@@ -219,7 +219,7 @@ const homePage: DataPage = {
                     },
                     {
                         name: 'Desirable Solutions',
-                        url: '/',
+                        url: 'partners/desirable-solutions',
                         image: {
                             src: '/assets/images/desirable-solutions-logo.png',
                             alt: ''
@@ -228,7 +228,7 @@ const homePage: DataPage = {
                     {
 
                         name: 'Keith Andes',
-                        url: 'https://mountaintopentertainmentgroup.com/',
+                        url: 'partners/keith-andes',
                         image: {
                             src: '/assets/images/keith-andes-logo.png',
                             alt: ''
@@ -244,7 +244,7 @@ const homePage: DataPage = {
                     },
                     {
                         name: 'Divergent U',
-                        url: 'https://mountaintopentertainmentgroup.com/',
+                        url: 'partners/divergent-u',
                         image: {
                             src: '/assets/images/divergent-u-logo.png',
                             alt: ''

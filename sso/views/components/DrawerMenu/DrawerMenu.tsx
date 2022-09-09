@@ -3,7 +3,7 @@ import ClickAwayListener from '@mui/base/ClickAwayListener';
 
 import useMenuDrawerState from "@hooks/useMenuDrawerState"
 
-export type DrawerMenuProps = HeaderProps | any
+export type DrawerMenuProps = HeaderProps
 
 const DrawerMenu = ({ favicon, navLinks, actionLinks, actionButtons }: DrawerMenuProps) => {
 
