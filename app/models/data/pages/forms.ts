@@ -21,6 +21,7 @@ const forms = {
             {
                 name: 'artists',
                 titleSection: {
+                    url: '/artists',
                     heading: 'Artists',
                     title: 'Welcome Artists & Musicians!',
                     image: {
@@ -54,6 +55,7 @@ const forms = {
             {
                 name: 'newcomers',
                 titleSection: {
+                    url:'/newcomers',
                     heading: 'Newcomers',
                     title: 'Welcome Newcomers & Curious Minds!',
                     description: `Our membership program was created with the independent individual in mind. No matter where you are on the spectrum,
@@ -79,6 +81,7 @@ const forms = {
             {
                 name: 'vendors',
                 titleSection: {
+                    url: '/vendors',
                     heading: 'Vendors',
                     title: 'Welcome Vendors & Entrepreneurs!',
                     description: 'Our membership program was created with the independent individual in mind. No matter where you are on the spectrum,'
@@ -87,6 +90,7 @@ const forms = {
             {
                 name: 'businesses',
                 titleSection: {
+                    url: '/businesses',
                     heading: 'Businesses',
                     title: 'Welcome Businesses & Organizations!',
                     description: 'Our membership program was created with the independent individual in mind. No matter where you are on the spectrum',
