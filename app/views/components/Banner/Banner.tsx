@@ -17,7 +17,7 @@ const Banner = ({ messages, icon }: BannerProps) => {
         <CSSTransition in={open} timeout={900} unmountOnExit>
 
 
-            <div className={`p-3 bg-black ${!open ? "slide-out-blurred-top" : ""}`}>
+            <div className={`p-3 bg-black ${!open ? "slide-out-bck-center" : ""}`}>
                 <div className="flex items-center justify-center">
                     <p className="text-xs font-bold font-heading text-blue-100">
                         <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={20} text={messages} />
