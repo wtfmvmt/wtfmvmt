@@ -7,7 +7,8 @@ import Icon from "@components/Icon"
 import type { CallToAction } from "@typings/CallToAction";
 export type Link = {
     name: string,
-    url: string
+    url: string,
+    icon?: string
 }
 
 export type DrawerMenuProps = {
@@ -53,7 +54,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                                 className="hover:text-purple-500 block p-4 text-lg font-extrabold hover:bg-black rounded"
                                 href={link.url}
                             >
-                                <Icon/>
+                                <Icon id={link.icon}/>
                                 <span className="hvr-wobble-horizontal ">
                                     {link.name}
                                 </span>

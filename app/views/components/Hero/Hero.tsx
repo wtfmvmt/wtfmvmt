@@ -116,7 +116,7 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
                                             className="hvr-wobble-horizontal flex items-center text-lg jello-diagonol-1 font-bold font-heading hover:text-purple-400"
                                             href={link.url}
                                         >
-                                            <Icon />
+                                            <Icon id={link.icon}/>
                                             <span>{link.name}</span>
                                         </a>
                                     </li>

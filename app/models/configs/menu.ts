@@ -2,11 +2,11 @@ import meta from "@configs/meta"
 
 const menu = {
     favicon: {
-        src: meta.logo,
+        src: meta.init().logo,
         url: '/'
     },
 
-    links: meta.links.splice(0,5),
+    links: [...meta.init().links.splice(0,5)],
     cta: [
         {
             name: 'Sponsorships',

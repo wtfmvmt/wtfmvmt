@@ -93,9 +93,9 @@ const homePage: DataPage = {
 
         },
         contactSection: {
-            socials: meta.socials,
-            phone: meta.phone,
-            email: meta.email,
+            socials: meta.init().socials,
+            phone: meta.init().phone,
+            email: meta.init().email,
             label: 'Contact Us',
             heading: 'Get in touch with us',
             cta: {
@@ -176,7 +176,7 @@ const homePage: DataPage = {
         },
         hero: {
 
-            title: meta.title,
+            title: meta.init().title,
             description: ['We are a Community of Conscious Builders for the Future'],
 
             mediaCarousels: [
@@ -190,7 +190,7 @@ const homePage: DataPage = {
                 url: "/join",
                 icon: "SchoolIcon"
             },
-            socialLinks: meta.socials,
+            socialLinks: meta.init().socials,
             features: {
                 heading: 'Featured Affiliates & Partners',
                 featured: [
@@ -267,19 +267,23 @@ const homePage: DataPage = {
                 links: [
                     {
                         name: "For Artists",
-                        url: "forms/artists"
+                        url: "forms/artists",
+                        icon: 'COLOR_LENS'
                     },
                     {
                         name: "For Newcomers",
-                        url: "forms/newcomers"
+                        url: "forms/newcomers",
+                        icon: 'NEW'
                     },
                     {
                         name: "For Businesses",
-                        url: "forms/businesses"
+                        url: "forms/businesses",
+                        icon: 'DOMAIN'
                     },
                     {
                         name: "For Vendors",
-                        url: "forms/vendors"
+                        url: "forms/vendors",
+                        icon: 'VENDOR'
                     },
                 ]
             }
