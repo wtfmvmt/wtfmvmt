@@ -16,7 +16,8 @@ export type Link = {
 
 export type ActionLink = {
     name: string,
-    url: string
+    url: string,
+    icon?: string
 }
 
 export type CallToAction = {
