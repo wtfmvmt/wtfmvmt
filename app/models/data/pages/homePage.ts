@@ -167,6 +167,11 @@ const homePage: DataPage = {
 
         featuredMedia: {
             title: 'Our Beloved Partnerships',
+            features: [
+                {
+                    url: ''
+                }
+            ]
         
         },
         hero: {
