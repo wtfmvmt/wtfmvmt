@@ -3,6 +3,9 @@ import Authenticator from "@views/components/Authenticator"
 import Footer from "@components/Footer"
 import authenticator from "@models/configs/authenticator"
 import footer from "@configs/footer"
+
+
+
 const AuthPage = () => {
 
     return (

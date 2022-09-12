@@ -1,9 +1,9 @@
-import uuid from 'react-uuid';
+import uuid from "@utils/uuid"
 
 
 export type Action = {
     name: string,
-    type: string,
+    type?: string,
     payload?: string,
     authorized?: boolean
 }
@@ -38,14 +38,14 @@ const Authenticator = ({ title, message, users, action }: AuthenticatorProps) =>
                     name="user-types"
                     id="user-types"
                 >
-                   {users.map((user, index) => {
+                    {users.map((user, index) => {
 
-                    return (
-                
-                        <option className='bg-black text-white' key={uuid()} value={3}>{user.name}</option>
-                    )
-                   })}
-                   
+                        return (
+
+                            <option className='bg-black text-white' key={uuid().key} value={3}>{user.name}</option>
+                        )
+                    })}
+
                 </select>
             </div> : <></>
 
@@ -85,7 +85,7 @@ const Authenticator = ({ title, message, users, action }: AuthenticatorProps) =>
 
                                 <form action="">
 
-                                  <Users/>
+                                    <Users />
 
                                     <input
                                         className="bg-transparent w-full mb-10 px-12 py-6 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
@@ -94,7 +94,10 @@ const Authenticator = ({ title, message, users, action }: AuthenticatorProps) =>
                                     />
 
                                     <button className="mt-12 md:mt-16 bg-purple-700 hover:scale-90 transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
-                                        {action ? action.name : "Sign In"}
+                                        <a href="/">
+                                            {action ? action.name : "Sign In"}
+
+                                        </a>
                                     </button>
                                 </form>
 
