@@ -1,5 +1,5 @@
 const meta = {
-    title: 'Facade',
+    title: 'Façade',
     links: [
         {
             name: 'Notion Dashboard',

@@ -1,13 +1,20 @@
-import '@libs/tailwind.css'
+import "@libs/tailwind.css"
 import "@libs/globals.css"
-import type { IApplication } from '@typings/Application'
-import { RecoilRoot } from 'recoil';
 
-function Application({ Component, pageProps }: IApplication) {
+import { RecoilRoot } from "recoil";
+import { SessionProvider } from "next-auth/react"
+
+import type { IApplication } from "@typings/Application"
+
+
+function Application({ Component, pageProps: { session, ...pageProps } }: IApplication) {
 
   return (
     <RecoilRoot>
-      <Component {...pageProps} />
+      <SessionProvider>
+        <Component session={session} {...pageProps} />
+
+      </SessionProvider>
     </RecoilRoot>
   )
 }

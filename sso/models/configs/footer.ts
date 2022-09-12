@@ -1,5 +1,5 @@
 const footer = {
-    title: "WTFMVMT"
+    title: "Façade"
 
 }
 
