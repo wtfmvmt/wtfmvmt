@@ -3,6 +3,7 @@ const authenticator = {
     message: 'Welcome to the WTFMVMT',
     action: {
         name: 'Login',
+        url: '/dashboard'
     },
     users: [
         {

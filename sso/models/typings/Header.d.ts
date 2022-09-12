@@ -8,6 +8,6 @@ export type HeaderProps = {
     user: User,
     favicon: Favicon,
     navLinks?: NavLink[],
-    actionLinks?: actionLink[],
+    actionLinks?: ActionLink[],
     actionButtons?: ActionButton[],
 }

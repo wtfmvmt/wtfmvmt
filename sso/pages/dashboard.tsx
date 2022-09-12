@@ -4,20 +4,20 @@ import type { NextPage } from 'next'
 import homePage from "@pages/homePage"
 import Notifications from '@views/components/Notifications'
 
-const HomePage: NextPage = () => {
+const DashboardPage: NextPage = () => {
 
   const metaData = {
     pageTitle: 'WTFMVMT'
   }
 
-  const { Banner } = homePage.init()
+  const { banner } = homePage.init()
 
   return (
     <PageLayout metaData={metaData}>
-      <Console banner={Banner} />
+      <Console banner={banner} />
       <Notifications />
     </PageLayout>
   )
 }
 
-export default HomePage
+export default DashboardPage

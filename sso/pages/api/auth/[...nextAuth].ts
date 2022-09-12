@@ -1,16 +1,25 @@
-// pages/api/auth/[...nextauth].js
 import NextAuth from "next-auth"
-import AppleProvider from "next-auth/providers/apple"
-import GoogleProvider from "next-auth/providers/google"
-import EmailProvider from "next-auth/providers/email"
+import CredentialsProvider from "next-auth/providers/credentials"
 
 export default NextAuth({
   secret: process.env.SECRET,
   providers: [
 
-    EmailProvider({
-      server: process.env.MAIL_SERVER,
-      from: "<no-reply@example.com>",
-    }),
+    CredentialsProvider({
+      name: 'Credentials',
+
+      credentials: {
+        username: { label: "Username", type: "text", placeholder: "jsmith" },
+        password: { label: "Password", type: "password" }
+      },
+      
+      async authorize(credentials, req) {
+
+
+        return { isAuth: true }
+      }
+    })
   ],
 })
+
+
