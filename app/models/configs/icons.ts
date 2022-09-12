@@ -2,7 +2,6 @@ import Visibility from '@mui/icons-material/Visibility'
 import Store from '@mui/icons-material/Store'
 import LibraryBooks from '@mui/icons-material/LibraryBooks'
 import ColorLens from '@mui/icons-material/ColorLens'
-import StoreFrontIcon from '@mui/icons-material/StoreFront'
 import FiberNew from '@mui/icons-material/FiberNew'
 import Domain from '@mui/icons-material/Domain'
 import Diversity1 from '@mui/icons-material/Diversity1'
@@ -22,7 +21,7 @@ const ICONS = {
     'MEDIA': PermMedia,
     'NEW': FiberNew,
     'DOMAIN': Domain,
-    'VENDOR': StoreFrontIcon,
+    'VENDOR': Domain,
 }
 
 export default ICONS
