@@ -42,7 +42,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
             <>
                 {
-                    search && (
+                    false && (
                         <div className="hidden xl:flex mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg">
 
 

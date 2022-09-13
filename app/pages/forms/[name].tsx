@@ -1,6 +1,6 @@
 import PageLayout from "@layouts/PageLayout"
-import FormMaster from "@views/components/FormMaster"
-import forms from "@pages/forms"
+import FormMaster from "@components/FormMaster"
+import formPages from "@pages/formPages"
 
 const FormPage = ({ formData }) => {
 
@@ -16,7 +16,7 @@ export default FormPage
 
 export async function getStaticProps({ params }) {
 
-    const formData = forms.init()
+    const formData = formPages.init()
     const form = formData.forms.find(form => form.name === params.name)
 
     return {
@@ -34,7 +34,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
 
-    const formData = forms.init()
+    const formData = formPages.init()
     const paths = formData.forms.map((form) => ({ params: { name: form.name } }))
 
     return {

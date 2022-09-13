@@ -8,7 +8,7 @@ import Diversity1 from '@mui/icons-material/Diversity1'
 import Event from '@mui/icons-material/Event'
 import Handshake from '@mui/icons-material/Handshake'
 import PermMedia from '@mui/icons-material/PermMedia'
-
+import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
 
 const ICONS = {
     'VISIBILITY': Visibility,
@@ -21,7 +21,7 @@ const ICONS = {
     'MEDIA': PermMedia,
     'NEW': FiberNew,
     'DOMAIN': Domain,
-    'VENDOR': Domain,
+    'VENDOR': StoreMallDirectoryIcon,
 }
 
 export default ICONS
