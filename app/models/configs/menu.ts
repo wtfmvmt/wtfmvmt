@@ -6,7 +6,7 @@ const menu = {
         url: '/'
     },
 
-    links: [...meta.init().links.splice(0,5)],
+    links: [...meta.init().links],
     cta: [
         {
             name: 'Sponsorships',

@@ -1,4 +1,4 @@
-let meta = {
+const meta = {
 
     init: () => {
 
@@ -56,9 +56,8 @@ let meta = {
                 url: '/events',
                 icon: 'EVENT'
             },
-      
-        ],
 
+        ],
         socials: [
             {
                 name: "Facebook",
