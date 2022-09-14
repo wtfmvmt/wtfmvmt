@@ -5,6 +5,7 @@ import PhoneIcon from "@components/PhoneIcon"
 import EmailIcon from "@components/EmailIcon"
 import { Fade } from "react-awesome-reveal";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export type Social = {
     url: string,
@@ -36,13 +37,14 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                 </div>
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Phone</h3>
-                    <p className="text-xl sm:text-2xl text-red-300 bg-black bg-opacity-80 p-4 rounded">
+                    <p className="hover:scale-90 transition-all text-xl sm:text-2xl text-red-200 bg-black bg-opacity-80 p-4 rounded">
                         {phone}
 
-                        <span className="p-2">
-                            <ContentCopyIcon />
-
-                        </span>
+                        <CopyToClipboard onCopy={() => alert(`Copied!`)} text={phone}>
+                            <span className="p-2">
+                                <ContentCopyIcon />
+                            </span>
+                        </CopyToClipboard>
 
                     </p>
 
@@ -62,15 +64,15 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                 </div>
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Email</h3>
-                    <p className="text-xl sm:text-2xl text-red-300 bg-black bg-opacity-80 p-4 rounded">
+                    <p className="hover:scale-90 transition-all text-xl sm:text-2xl text-red-200 bg-black bg-opacity-80 p-4 rounded">
                         {email}
-                        <span className="p-2">
-                            <ContentCopyIcon />
 
-                        </span>
+                        <CopyToClipboard onCopy={() => alert(`Copied!`)} text={email}>
+                            <span className="p-2">
+                                <ContentCopyIcon />
+                            </span>
+                        </CopyToClipboard>
                     </p>
-
-
                 </div>
             </div>
         )
@@ -84,13 +86,13 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                 <div className="flex flex-wrap items-center lg:justify-end">
                     <a
                         className="inline-block w-full md:w-auto mb-2 md:mb-0 md:mr-4 py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-purple-800 hover:bg-purple-900 border-3 border-purple-900 shadow rounded transition duration-200"
-                        href="#"
+                        href={cta.primary.url}
                     >
                         {cta.primary.name}
                     </a>
                     <a
                         className="inline-block w-full md:w-auto py-4 px-6 text-center leading-6 text-lg text-indigo-900 hover:text-white font-extrabold bg-white hover:bg-indigo-800 border-3 border-indigo-900 shadow rounded transition duration-200"
-                        href="#"
+                        href={cta.secondary.url}
                     >
                         {cta.secondary.name}
                     </a>

@@ -101,11 +101,12 @@ const homePage: DataPage = {
             cta: {
                 primary: {
                     name: 'Message Us',
-                    url: '/'
+                    url: 'facebook.com'
                 },
+
                 secondary: {
                     name: 'RSVP our Next Meeting',
-                    url: '/rsvp'
+                    url: ''
                 }
 
             }
@@ -172,7 +173,7 @@ const homePage: DataPage = {
                     url: ''
                 }
             ]
-        
+
         },
         hero: {
 

@@ -14,7 +14,9 @@ const forms = [
                 src: "/assets/images/woman-artist.svg",
             }
         },
-        fields: []
+        fields: {
+            persona: true,
+        }
     },
 
     {

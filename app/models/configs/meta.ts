@@ -42,8 +42,8 @@ const meta = {
                 icon: 'HANDSHAKE'
             },
             {
-                name: 'Team',
-                url: '/team',
+                name: 'Community',
+                url: '/community',
                 icon: 'DIVERSITY'
             },
             {
