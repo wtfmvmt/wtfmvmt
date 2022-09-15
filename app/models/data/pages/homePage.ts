@@ -84,8 +84,8 @@ const homePage: DataPage = {
                 ],
                 minor: [
                     {
-                        title: 'Kiara J. Braxton',
-                        heading: 'Marketing Team',
+                        title: 'Our Members',
+                        heading: 'Community',
                         images: [...images.splice(0, images.length / 2).map(image => image.src)],
                     },
 
