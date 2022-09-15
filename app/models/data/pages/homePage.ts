@@ -3,6 +3,7 @@ import images from "@db/images"
 import header from "@configs/header"
 import footer from "@configs/footer"
 import meta from "@configs/meta"
+import partners from "@db/partners"
 
 import type { DataPage } from "@typings/DataPage";
 
@@ -155,31 +156,26 @@ const homePage: DataPage = {
             description: 'We are a Community of Conscious Builders for the Future',
             tables: [
                 {
-                    title: 'Membership',
+                    title: 'Member',
                 },
                 {
                     title: 'Affiliate',
                 },
                 {
-                    title: 'Partnership',
+                    title: 'Partner',
                 }
             ]
         },
 
         featuredMedia: {
             title: 'Our Beloved Partnerships',
-            features: [
-                {
-                    url: ''
-                }
-            ]
+            features: [...partners]
 
         },
-        hero: {
 
+        hero: {
             title: meta.init().title,
             description: ['We are a Community of Conscious Builders for the Future'],
-
             mediaCarousels: [
                 [...images.splice(0, images.length / 2).map(image => image.src)],
                 [...images.splice(images.length / 2, images.length).map(image => image.src)]

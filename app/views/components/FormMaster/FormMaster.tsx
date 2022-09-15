@@ -256,7 +256,7 @@ const FormMaster = ({ titleSection, fields }: FormMaster) => {
                 <span className="flex-shrink-0 inline-flex mr-8 items-center justify-center w-12 h-12 rounded-full bg-orange-300 text-white">
                     3
                 </span>
-                <h3 className="text-2xl font-bold font-heading">Payment methods</h3>
+                <h3 className="text-2xl font-bold font-heading">Member Programs</h3>
             </div>
 
 
