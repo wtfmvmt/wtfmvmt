@@ -8,7 +8,9 @@ import { useEffect } from 'react'
 
 const DashboardPage: NextPage = () => {
 
- 
+  useEffect(() => {
+    window.location.href = true ? "/auth" : ""
+  },[])
 
   const metaData = {
     pageTitle: 'WTFMVMT'

@@ -151,18 +151,46 @@ const homePage: DataPage = {
 
         },
         statsSection: {
-            heading: 'Sponsorship Programs',
+            heading: 'Memberships Opportunities',
             title: 'Let us grow further together',
             description: 'We are a Community of Conscious Builders for the Future',
             tables: [
                 {
                     title: 'Member',
+                    pricing: {
+                        rate: '100',
+                        unit: 'month',
+                    },
+                    cta: {
+                        primary: {
+                            name: 'Sign Up'
+                        }
+                    }
+
                 },
                 {
                     title: 'Affiliate',
+                    pricing: {
+                        rate: '250',
+                        unit: 'month',
+                    },
+                    cta: {
+                        primary: {
+                            name: 'Sign Up'
+                        }
+                    }
                 },
                 {
                     title: 'Partner',
+                    pricing: {
+                        rate: '250',
+                        unit: 'month',
+                    },
+                    cta: {
+                        primary: {
+                            name: 'Sign Up'
+                        }
+                    }
                 }
             ]
         },

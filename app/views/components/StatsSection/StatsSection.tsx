@@ -4,11 +4,16 @@ import type { CallToAction } from "@typings/CallToAction"
 export type Table = {
     title: string,
     description?: string,
-    cta: {
+    pricing?: {
+        rate?: string,
+        unit?: string,
+
+    }
+    cta?: {
         primary: CallToAction,
         secondary: CallToAction
     },
-    features: []
+    features?: []
 }
 
 
@@ -40,24 +45,41 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
 
     const Tables = () => {
 
+        const Feature = () => {
+            return (
+                <div className="p-6 lg:px-12 pt-10 pb-12">
+                    {
+                        <div className="flex mb-4 items-start">
+                            <img
+                                className="block w-6 h-6 mr-2 object-contain"
+                                src="nigodo-assets/circle-icon-green.svg"
+                                alt=""
+                            />
+                            <span className="text-lg font-extrabold">
+                                Mauris pellentesque congue libero nec
+                            </span>
+                        </div>
+                    }
+                </div>
+            )
+        }
+
         return (
 
             tables ? <div className="flex flex-wrap -mx-4">
 
                 {
-                    tables.map((table, index) => {
+                    tables.map((table: Table, index: number) => {
                         return (
 
-                            <div key={index} className="hover:scale-90 transition-all w-full  rounded lg:w-1/3 px-4 mb-12 lg:mb-0">
-
-
-                                <div className="max-w-md mx-auto border-3 border-black bg-purple-900 bg-opacity-40 rounded-2xl shadow-md">
+                            <div key={index} className="hover:bg-opacity-100 transition-all w-full rounded lg:w-1/3 px-4 mb-12 lg:mb-0">
+                                <div className="max-w-md hover:bg-opacity-100 mx-auto border-3 border-white bg-purple-600 bg-opacity-70 rounded-2xl shadow-xl">
                                     <div className="px-6 pt-12 lg:px-12 pb-10 border-b-3 border-indigo-900">
                                         <h2 className="text-2xl font-extrabold mb-6">{table?.title}</h2>
                                         <div className="flex items-start mb-6">
                                             <span className="pr-1 text-lg font-extrabold">$</span>
-                                            <span className="text-4xl sm:text-5xl font-extrabold">10</span>
-                                            <span className="pl-1 text-lg font-extrabold self-end">/mo</span>
+                                            <span className="text-4xl sm:text-5xl font-extrabold">{table.pricing?.rate}</span>
+                                            <span className="pl-1 text-lg font-extrabold self-end">/{table.pricing?.unit}</span>
                                         </div>
                                         <p className="text-lg font-extrabold leading-7 mb-8">
                                             {description ? description : "Description"}
@@ -66,57 +88,32 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
                                             className="inline-block w-full py-4 px-6 mb-4 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
                                             href="#"
                                         >
-                                            Get Started
+                                            {table?.cta?.primary?.name ? table?.cta?.primary?.name : "Get Started"}
                                         </a>
                                         <a
                                             className="inline-block w-full py-4 px-6 text-center leading-6 text-lg text-indigo-900 hover:text-white font-extrabold bg-white hover:bg-indigo-800 border-3 border-indigo-900 shadow rounded transition duration-200"
                                             href="#"
                                         >
-                                            Learn More
+                                            {table?.cta?.primary?.name ? table?.cta?.primary?.name : "Get Started"}
                                         </a>
                                     </div>
+
                                     <div className="p-6 lg:px-12 pt-10 pb-12">
-                                        <div className="flex mb-4 items-start">
-                                            <img
-                                                className="block w-6 h-6 mr-2 object-contain"
-                                                src="nigodo-assets/circle-icon-green.svg"
-                                                alt=""
-                                            />
-                                            <span className="text-lg font-extrabold">
-                                                Mauris pellentesque congue libero nec
-                                            </span>
-                                        </div>
-                                        <div className="flex mb-4 items-start">
-                                            <img
-                                                className="block w-6 h-6 mr-2 object-contain"
-                                                src="nigodo-assets/circle-icon-green.svg"
-                                                alt=""
-                                            />
-                                            <span className="text-lg font-extrabold">
-                                                Suspendisse mollis tincidunt
-                                            </span>
-                                        </div>
-                                        <div className="flex mb-4 items-start">
-                                            <img
-                                                className="block w-6 h-6 mr-2 object-contain"
-                                                src="nigodo-assets/circle-icon-green.svg"
-                                                alt=""
-                                            />
-                                            <span className="text-lg font-extrabold">
-                                                Praesent varius justo vel justo pulvinar
-                                            </span>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <img
-                                                className="block w-6 h-6 mr-2 object-contain"
-                                                src="nigodo-assets/circle-icon-green.svg"
-                                                alt=""
-                                            />
-                                            <span className="text-lg font-extrabold">
-                                                Mauris pellentesque congue libero nec
-                                            </span>
-                                        </div>
+                                        {
+                                            <div className="flex mb-4 items-start">
+                                                <img
+                                                    className="block w-6 h-6 mr-2 object-contain"
+                                                    src="nigodo-assets/circle-icon-green.svg"
+                                                    alt=""
+                                                />
+                                                <span className="text-lg font-extrabold">
+                                                    Mauris pellentesque congue libero nec
+                                                </span>
+                                            </div>
+                                        }
                                     </div>
+
+
                                 </div>
                             </div>
                         )
