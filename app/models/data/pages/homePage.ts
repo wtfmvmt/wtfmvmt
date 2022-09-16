@@ -158,7 +158,7 @@ const homePage: DataPage = {
                 {
                     title: 'Member',
                     pricing: {
-                        rate: '100',
+                        rate: '10',
                         unit: 'month',
                     },
                     cta: {
@@ -177,7 +177,7 @@ const homePage: DataPage = {
                 {
                     title: 'Affiliate',
                     pricing: {
-                        rate: '250',
+                        rate: '50',
                         unit: 'month',
                     },
                     features: [
@@ -195,7 +195,7 @@ const homePage: DataPage = {
                 {
                     title: 'Partner',
                     pricing: {
-                        rate: '500',
+                        rate: '200',
                         unit: 'month',
                     },
                     features: [
