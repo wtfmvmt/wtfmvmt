@@ -165,7 +165,13 @@ const homePage: DataPage = {
                         primary: {
                             name: 'Sign Up'
                         }
-                    }
+                    },
+                    features: [
+                        {
+                            name: 'Access to all events',
+
+                        }
+                    ]
 
                 },
                 {
@@ -174,6 +180,12 @@ const homePage: DataPage = {
                         rate: '250',
                         unit: 'month',
                     },
+                    features: [
+                        {
+                            name: 'Access to all events',
+
+                        }
+                    ],
                     cta: {
                         primary: {
                             name: 'Sign Up'
@@ -183,9 +195,15 @@ const homePage: DataPage = {
                 {
                     title: 'Partner',
                     pricing: {
-                        rate: '250',
+                        rate: '500',
                         unit: 'month',
                     },
+                    features: [
+                        {
+                            name: 'Access to all events',
+
+                        }
+                    ],
                     cta: {
                         primary: {
                             name: 'Sign Up'

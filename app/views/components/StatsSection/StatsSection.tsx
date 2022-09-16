@@ -1,5 +1,5 @@
 import type { CallToAction } from "@typings/CallToAction"
-
+import Icon from "@components/Icon"
 
 export type Table = {
     title: string,
@@ -13,7 +13,9 @@ export type Table = {
         primary: CallToAction,
         secondary: CallToAction
     },
-    features?: []
+    features?: {
+        name?: string
+    }[]
 }
 
 
@@ -44,25 +46,6 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
 
 
     const Tables = () => {
-
-        const Feature = () => {
-            return (
-                <div className="p-6 lg:px-12 pt-10 pb-12">
-                    {
-                        <div className="flex mb-4 items-start">
-                            <img
-                                className="block w-6 h-6 mr-2 object-contain"
-                                src="nigodo-assets/circle-icon-green.svg"
-                                alt=""
-                            />
-                            <span className="text-lg font-extrabold">
-                                Mauris pellentesque congue libero nec
-                            </span>
-                        </div>
-                    }
-                </div>
-            )
-        }
 
         return (
 
@@ -100,16 +83,16 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
 
                                     <div className="p-6 lg:px-12 pt-10 pb-12">
                                         {
-                                            <div className="flex mb-4 items-start">
-                                                <img
-                                                    className="block w-6 h-6 mr-2 object-contain"
-                                                    src="nigodo-assets/circle-icon-green.svg"
-                                                    alt=""
-                                                />
-                                                <span className="text-lg font-extrabold">
-                                                    Mauris pellentesque congue libero nec
-                                                </span>
-                                            </div>
+                                            table.features.map((feature, index) => {
+                                                return (
+                                                    <div key={index} className="flex mb-4 items-start">
+                                                        <Icon />
+                                                        <span className="text-lg font-extrabold">
+                                                            {feature.name}
+                                                        </span>
+                                                    </div>
+                                                )
+                                            })
                                         }
                                     </div>
 

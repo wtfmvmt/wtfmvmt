@@ -137,7 +137,7 @@ const DataSection = ({ heading, title, description, filters, data }: DataSection
 
   return (
 
-    <section className="mt-4 mb-6 bg-black bg-opacity-70 py-26 relative overflow-hidden">
+    <section className="mt-4 mb-6 bg-black bg-opacity-10 py-26 relative overflow-hidden">
       <div className="container px-4 mx-auto relative">
         <Header />
         <Filters />

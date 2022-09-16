@@ -15,7 +15,7 @@ const SimpleFormSection = () => {
 
   return (
 
-    <section className="py-26  bg-black bg-opacity-70 relative overflow-hidden">
+    <section className="py-26  bg-black bg-opacity-10 relative overflow-hidden">
       <img
         className="absolute top-0 right-0 w-1/2 md:w-1/3 md:h-full"
         src="/assets/images/email.svg"
