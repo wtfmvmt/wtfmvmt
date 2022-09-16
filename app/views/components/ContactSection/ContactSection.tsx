@@ -28,32 +28,6 @@ export type ContactSectionProps = {
 
 const ContactSection = ({ phone, email, socials, label, heading, description, cta }: ContactSectionProps) => {
 
-    const Phone = () => {
-
-        return (
-            <div className="flex mb-14">
-                <div className="flex-shrink-0 -mt-4 inline-flex items-center justify-center w-16 h-16 mr-8 bg-white rounded-full border-3 border-indigo-900 text-indigo-900 shadow-md">
-                    <PhoneIcon />
-                </div>
-                <div>
-                    <h3 className="text-2xl font-extrabold mb-3">Phone</h3>
-                    <p className="hover:scale-90 transition-all text-xl sm:text-2xl text-red-200 bg-black bg-opacity-80 p-4 rounded">
-                        {phone}
-
-                        <CopyToClipboard onCopy={() => alert(`Copied!`)} text={phone}>
-                            <span className="p-2">
-                                <ContentCopyIcon />
-                            </span>
-                        </CopyToClipboard>
-
-                    </p>
-
-                </div>
-            </div>
-
-        )
-    }
-
 
     const Email = () => {
 
@@ -64,11 +38,11 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                 </div>
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Email</h3>
-                    <p className="hover:scale-90 transition-all text-xl sm:text-2xl text-red-200 bg-black bg-opacity-80 p-4 rounded">
+                    <p className="hover:scale-90 whitespace-nowrap transition-all text-xl sm:text-2xl text-red-200 bg-black bg-opacity-80 p-4 rounded">
                         {email}
 
                         <CopyToClipboard onCopy={() => alert(`Copied!`)} text={email}>
-                            <span className="p-2">
+                            <span className="p-2 whitespace-nowrap">
                                 <ContentCopyIcon />
                             </span>
                         </CopyToClipboard>
@@ -139,7 +113,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
 
     return (
 
-        <section className="py-26 mt-4 bg-black bg-opacity-40">
+        <section className="py-26 mt-4 bg-black bg-opacity-10">
             <div className="container px-4 mx-auto">
                 <div className="flex flex-wrap -mx-4 mb-16 items-center">
                     <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
@@ -161,7 +135,6 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
 
                 <div className="flex flex-wrap -mx-4 items-center">
                     <div className="w-full lg:w-1/3 px-4 mb-16 lg:mb-0">
-                        <Phone />
                         <Email />
                         <Socials />
                     </div>

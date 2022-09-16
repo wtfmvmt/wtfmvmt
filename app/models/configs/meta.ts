@@ -17,6 +17,11 @@ const meta = {
         email: 'info@wtfmvmt.com',
         links: [
             {
+                name: 'Memberships',
+                url: '/memberships',
+
+            },
+            {
                 name: 'Vision',
                 url: '/vision',
                 icon: 'VISIBILITY'

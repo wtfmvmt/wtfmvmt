@@ -1,5 +1,5 @@
 const footer = {
-    title: "Façade"
+    title: "Decentralized & Powered by 🎭Façade."
 
 }
 

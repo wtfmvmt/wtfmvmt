@@ -14,7 +14,7 @@ const Footer = ({ title, navLinks }: FooterProps) => {
 
     return (
         <section className="pt-8 px-6">
-            <h2 className="mb-4 text-2xl font-bold">{title}</h2>
+            <h2 className="mb-4 text-xl font-bold">{title}</h2>
             <div className="flex flex-wrap text-sm text-center">
 
                 {

@@ -46,7 +46,7 @@ const FeaturedMedia = ({ title, features }: FeaturedMediaProps) => {
 
 
   return (
-    <section className="py-26 mt-8 mb-8  bg-black bg-opacity-70 relative overflow-hidden">
+    <section className="py-26 mt-8 mb-8  bg-black bg-opacity-10 relative overflow-hidden">
 
       <div className="container px-4 mx-auto relative">
         <Title />

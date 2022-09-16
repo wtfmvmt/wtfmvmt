@@ -6,7 +6,7 @@ const homePage = {
 
     data: {
 
-        Banner: {
+        banner: {
             heading: "WTFMVMT: Admin Panel",
             description: 'Home for Managing Anayltics, Social Media, Content, Forms, etc...',
             logo: {
