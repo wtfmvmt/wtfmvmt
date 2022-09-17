@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import FacadeService from "@services/facade"
+import FacadeService from "@controllers/services/notion"
 
 export default async function handler(
     req: NextApiRequest,
