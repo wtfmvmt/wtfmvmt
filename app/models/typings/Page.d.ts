@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
 
-export interface IPage extends NextPage {
+export interface IPage<T> extends NextPage{
     
 }

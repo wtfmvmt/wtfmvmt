@@ -3,6 +3,7 @@ import Avatar from "@mui/material/Avatar"
 import type { HeaderProps } from "@typings/Header"
 import Headroom from "react-headroom"
 import useMenuDrawerState from "@hooks/useMenuDrawerState"
+import { Fade } from "react-awesome-reveal"
 
 const Header = ({ favicon, user, navLinks, actionLinks, actionButtons }: HeaderProps) => {
 
@@ -77,20 +78,24 @@ const Header = ({ favicon, user, navLinks, actionLinks, actionButtons }: HeaderP
 
 
         <ul className="flex items-center">
+            <Fade cascade>
 
-            {
-                actionLinks && actionLinks.map((link, index) => (
-                    <li key={index}>
-                        <a
-                            className="flex mr-10 items-center text-sm text-white hover:scale-90 transitiona-all hover:text-purple-600"
-                            href={link.url}
-                        >
-                            <span>{link.name}</span>
-                        </a>
-                    </li>
+                {
+                    actionLinks && actionLinks.map((link, index) => (
+                        <li key={index}>
+                            <a
+                                className="flex mr-10 items-center text-sm text-white hover:scale-90 transitiona-all hover:text-purple-600"
+                                href={link.url}
+                            >
+                                <span>{link.name}</span>
+                            </a>
+                        </li>
 
-                ))
-            }
+                    ))
+                }
+            </Fade>
+
+
 
         </ul>
 

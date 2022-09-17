@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import homePage from "@pages/homePage"
+import homePage from "@models/data/pages/HomePageDB"
 
 export default function handler(
   req: NextApiRequest,

@@ -8,17 +8,17 @@ import partners from "@db/partners"
 import type { DataPage } from "@typings/DataPage";
 
 
-const homePage: DataPage = {
+const HomePageDB: DataPage = {
 
     init: () => {
         try {
-            resolveDataPage(homePage.query);
+            resolveDataPage(HomePageDB.query);
         }
         catch (error) {
             console.log(error);
         } finally {
             return {
-                ...homePage.data, ...homePage.query,
+                ...HomePageDB.data, ...HomePageDB.query,
             }
         }
     },
@@ -158,7 +158,7 @@ const homePage: DataPage = {
                 {
                     title: 'Member',
                     pricing: {
-                        rate: '100',
+                        rate: '10',
                         unit: 'month',
                     },
                     cta: {
@@ -177,7 +177,7 @@ const homePage: DataPage = {
                 {
                     title: 'Affiliate',
                     pricing: {
-                        rate: '250',
+                        rate: '100',
                         unit: 'month',
                     },
                     features: [
@@ -195,7 +195,7 @@ const homePage: DataPage = {
                 {
                     title: 'Partner',
                     pricing: {
-                        rate: '500',
+                        rate: '200',
                         unit: 'month',
                     },
                     features: [
@@ -219,124 +219,132 @@ const homePage: DataPage = {
 
         },
 
-        hero: {
-            title: meta.init().title,
-            description: ['We are a Community of Conscious Builders for the Future'],
-            mediaCarousels: [
-                [...images.splice(0, images.length / 2).map(image => image.src)],
-                [...images.splice(images.length / 2, images.length).map(image => image.src)]
-            ],
 
-            heading: "Join the MVMT",
-            cta: {
-                name: "Join the Movement",
-                url: "/join",
-                icon: "SchoolIcon"
-            },
-            socialLinks: meta.init().socials,
-            features: {
-                heading: 'Featured Affiliates & Partners',
-                featured: [
-                    {
-                        name: 'Serenitys Grace',
-                        url: '/parterns/serenitys-grace',
-                        image: {
-                            src: '/assets/images/serenitys-grace-logo.png',
-                            alt: ''
-                        }
-                    },
-                    {
-                        name: "WTF Media",
-                        url: 'https://mountaintopentertainmentgroup.com/',
-                        image: {
-                            src: '/assets/images/wtfmedia-logo.png',
-                            alt: ''
-                        }
-                    },
-                    {
-                        name: 'Brandon J. Payne, Industries',
-                        url: 'partners/brandon-j-payne-industries',
-                        image: {
-                            src: '/assets/images/brandon-payne-logo.png',
-                            alt: ''
-                        }
-                    },
-                    {
-                        name: 'Mountain Top Entertainment Group',
-                        url: 'partners/mountaintop-entertainment-group',
-                        image: {
-                            src: '/assets/images/mountaintop-entertainment-group-logo.png',
-                            alt: ''
-                        }
-                    },
-                    {
-                        name: 'Desirable Solutions',
-                        url: 'partners/desirable-solutions',
-                        image: {
-                            src: '/assets/images/desirable-solutions-logo.png',
-                            alt: ''
-                        }
-                    },
-                    {
-
-                        name: 'Keith Andes',
-                        url: 'partners/keith-andes',
-                        image: {
-                            src: '/assets/images/keith-andes-logo.png',
-                            alt: ''
-                        }
-                    },
-                    {
-                        name: 'Dianh Perry Art',
-                        url: 'https://mountaintopentertainmentgroup.com/',
-                        image: {
-                            src: '/assets/images/diahnn-perry-logo.png',
-                            alt: ''
-                        }
-                    },
-                    {
-                        name: 'Divergent U',
-                        url: 'partners/divergent-u',
-                        image: {
-                            src: '/assets/images/divergent-u-logo.png',
-                            alt: ''
-                        }
-                    },
-                ]
-
-            },
-            actionLinks: {
-                title: 'Join the MVMT',
-                links: [
-                    {
-                        name: "For Artists",
-                        url: "forms/artists",
-                        icon: 'COLOR_LENS'
-                    },
-                    {
-                        name: "For Newcomers",
-                        url: "forms/newcomers",
-                        icon: 'NEW'
-                    },
-                    {
-                        name: "For Businesses",
-                        url: "forms/businesses",
-                        icon: 'DOMAIN'
-                    },
-                    {
-                        name: "For Vendors",
-                        url: "forms/vendors",
-                        icon: 'VENDOR'
-                    },
-                ]
-            }
-        }
     },
 
     query: {
+
+        hero: () => {
+
+   
+
+            return {
+
+                title: meta.init().title,
+                description: ['We are a Community of Conscious Builders for the Future'],
+                mediaCarousels: [
+                    [...images.splice(0, images.length / 2).map(image => image.src)],
+                    [...images.splice(images.length / 2, images.length).map(image => image.src)]
+                ],
+
+                heading: "Join the MVMT",
+                cta: {
+                    name: "Join the Movement",
+                    url: "/join",
+                    icon: "SchoolIcon"
+                },
+                socialLinks: meta.init().socials,
+                features: {
+                    heading: 'Featured Affiliates & Partners',
+                    featured: [
+                        {
+                            name: 'Serenitys Grace',
+                            url: '/parterns/serenitys-grace',
+                            image: {
+                                src: '/assets/images/serenitys-grace-logo.png',
+                                alt: ''
+                            }
+                        },
+                        {
+                            name: "WTF Media",
+                            url: 'https://mountaintopentertainmentgroup.com/',
+                            image: {
+                                src: '/assets/images/wtfmedia-logo.png',
+                                alt: ''
+                            }
+                        },
+                        {
+                            name: 'Brandon J. Payne, Industries',
+                            url: 'partners/brandon-j-payne-industries',
+                            image: {
+                                src: '/assets/images/brandon-payne-logo.png',
+                                alt: ''
+                            }
+                        },
+                        {
+                            name: 'Mountain Top Entertainment Group',
+                            url: 'partners/mountaintop-entertainment-group',
+                            image: {
+                                src: '/assets/images/mountaintop-entertainment-group-logo.png',
+                                alt: ''
+                            }
+                        },
+                        {
+                            name: 'Desirable Solutions',
+                            url: 'partners/desirable-solutions',
+                            image: {
+                                src: '/assets/images/desirable-solutions-logo.png',
+                                alt: ''
+                            }
+                        },
+                        {
+
+                            name: 'Keith Andes',
+                            url: 'partners/keith-andes',
+                            image: {
+                                src: '/assets/images/keith-andes-logo.png',
+                                alt: ''
+                            }
+                        },
+                        {
+                            name: 'Dianh Perry Art',
+                            url: 'https://mountaintopentertainmentgroup.com/',
+                            image: {
+                                src: '/assets/images/diahnn-perry-logo.png',
+                                alt: ''
+                            }
+                        },
+                        {
+                            name: 'Divergent U',
+                            url: 'partners/divergent-u',
+                            image: {
+                                src: '/assets/images/divergent-u-logo.png',
+                                alt: ''
+                            }
+                        },
+                    ]
+
+                },
+                actionLinks: {
+                    title: 'Join the MVMT',
+                    links: [
+                        {
+                            name: "For Artists",
+                            url: "forms/artists",
+                            icon: 'COLOR_LENS'
+                        },
+                        {
+                            name: "For Newcomers",
+                            url: "forms/newcomers",
+                            icon: 'NEW'
+                        },
+                        {
+                            name: "For Businesses",
+                            url: "forms/businesses",
+                            icon: 'DOMAIN'
+                        },
+                        {
+                            name: "For Vendors",
+                            url: "forms/vendors",
+                            icon: 'VENDOR'
+                        },
+                    ]
+                }
+            }
+        }
     }
 }
 
 
 
-export default homePage;
+export default HomePageDB;

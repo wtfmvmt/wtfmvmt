@@ -6,7 +6,6 @@ import AnnouncementIcon from '@mui/icons-material/Announcement';
 import Badge from '@mui/material/Badge';
 import type { HeaderProps } from "@typings/Header";
 import Headroom from "react-headroom";
-
 const notifications = {
     queue: '3'
 }

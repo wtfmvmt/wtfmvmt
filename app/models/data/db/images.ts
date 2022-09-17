@@ -3,6 +3,29 @@ export enum Collections {
     NIA_ASHAY = 'nia-ashay'
 }
 
+const ImagesDB = {
+
+    config: {
+        store: 'images',
+        storeConfig: { keyPath: 'id', autoIncrement: true },
+        storeSchema: [
+            { name: 'alt', keypath: 'alt', options: { unique: false } },
+            { name: 'src', keypath: 'src', options: { unique: false } }
+        ]
+    },
+
+
+    data: {
+
+    },
+
+    query: {},
+
+    getImages: () => {
+
+    }
+}
+
 const images = [
     {
         id: 'group-photo',
@@ -99,4 +122,14 @@ const images = [
         collection: 'nia-ashay'
     }
 ]
+
+
+
+
+
 export default images
+
+
+
+const { getImages } = ImagesDB
+

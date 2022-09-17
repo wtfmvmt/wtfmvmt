@@ -8,17 +8,17 @@ import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 import PageLayout from "@layouts/PageLayout"
-import homePage from "@pages/homePage"
-import { useEffect } from "react"
+import HomePageDB from "@pages/HomePageDB"
 
 import type { IPage } from "@typings/Page"
+import type { StaticPage } from "@typings/StaticPage"
 
 
-const HomePage: IPage = ({ pageData }) => {
 
-  useEffect(() => {
-    console.log(pageData)
-  }, [pageData])
+const HomePage: IPage<StaticPage> = ({ pageData }) => {
+
+  console.log(pageData)
+
 
   return (
     <PageLayout {...pageData.layout}>
@@ -41,9 +41,9 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pageData: homePage.init()
+      pageData: HomePageDB.init()
     },
-    revalidate: 5
+    revalidate: 10
   }
 }
 
