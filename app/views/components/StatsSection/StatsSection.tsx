@@ -56,7 +56,7 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
                         return (
 
                             <div key={index} className="hover:bg-opacity-100 transition-all w-full rounded lg:w-1/3 px-4 mb-12 lg:mb-0">
-                                <div className="max-w-md hover:bg-opacity-100 mx-auto border-3 border-white bg-purple-600 bg-opacity-70 rounded-2xl shadow-xl">
+                                <div className="transition-all max-w-md hover:bg-opacity-100 mx-auto border-3 border-white bg-purple-800 bg-opacity-70 rounded-2xl shadow-xl">
                                     <div className="px-6 pt-12 lg:px-12 pb-10 border-b-3 border-indigo-900">
                                         <h2 className="text-2xl font-extrabold mb-6">{table?.title}</h2>
                                         <div className="flex items-start mb-6">

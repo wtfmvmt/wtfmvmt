@@ -1,3 +1,5 @@
+import header from "@configs/header"
+
 const homePage = {
     init: () => {
 
@@ -5,6 +7,11 @@ const homePage = {
     },
 
     data: {
+
+        layout: {
+            header: header,
+            
+        },
 
         banner: {
             heading: "WTFMVMT: Admin Panel",

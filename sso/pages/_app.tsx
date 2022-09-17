@@ -13,7 +13,6 @@ function Application({ Component, pageProps: { session, ...pageProps } }: IAppli
     <RecoilRoot>
       <SessionProvider>
         <Component session={session} {...pageProps} />
-
       </SessionProvider>
     </RecoilRoot>
   )

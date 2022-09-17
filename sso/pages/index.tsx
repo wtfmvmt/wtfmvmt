@@ -1,29 +1,32 @@
-import PageLayout from '@layouts/PageLayout'
-import Console from '@views/components/Console'
-import type { NextPage } from 'next'
-import homePage from "@pages/homePage"
-import Notifications from '@views/components/Notifications'
-import { useEffect } from 'react'
+import RootLayout from '@layouts/RootLayout'
+import Authenticator from '@views/components/Authenticator'
+import { signIn } from "next-auth/react"
 
+export type ServerPage = {
+}
 
-const DashboardPage: NextPage = () => {
+export interface IPage<T> { 
+}
 
-  useEffect(() => {
-    window.location.href = true ? "/auth" : ""
-  },[])
+const IndexPage: IPage<ServerPage> = ({ pageData }) => {
 
-  const metaData = {
-    pageTitle: 'WTFMVMT'
-  }
-
-  const { banner } = homePage.init()
 
   return (
-    <PageLayout metaData={metaData}>
-      <Console banner={banner} />
-      <Notifications />
-    </PageLayout>
+    <RootLayout {...pageData.layout}>
+      <Authenticator onSignIn={signIn} />
+    </RootLayout>
   )
 }
 
-export default DashboardPage
+export default IndexPage
+
+
+
+export async function getServerSideProps() {
+
+  return {
+    props: {
+      pageData: []
+    }
+  }
+}
