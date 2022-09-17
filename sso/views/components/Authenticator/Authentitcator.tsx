@@ -25,12 +25,12 @@ const Authenticator = ({ title, message, users, onSignIn }: AuthenticatorProps) 
 
 
     const SignIn = () => {
+
         return (
-            <button className="mt-12 md:mt-16 bg-purple-700 hover:scale-90 transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
-                <a href="/dashboard">
-                    Sign In
-                </a>
-            </button>
+            <a href="/dashboard" className="mt-18 mb-10 md:mt-16 bg-purple-700 hover:scale-90 transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
+                Sign In
+
+            </a>
         )
 
     }
@@ -53,6 +53,31 @@ const Authenticator = ({ title, message, users, onSignIn }: AuthenticatorProps) 
         )
     }
 
+
+    const SignInForm = () => {
+        return (
+            <div className="max-w-md mx-auto">
+
+                <h2 className="mb-10 text-xl text-white font-bold font-heading">
+                    {message ? message : 'Enter your credentials'}
+                </h2>
+
+
+                <form action="">
+
+                    <input
+                        className="bg-transparent w-full mb-10 px-12 py-6 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
+                        type="password"
+                        placeholder="Repeat password"
+                    />
+                    <SignIn />
+                </form>
+
+
+            </div>
+        )
+    }
+
     return (
         <section className="py-20  overflow-x-hidden">
             <div className="relative container px-4 mx-auto ">
@@ -69,25 +94,7 @@ const Authenticator = ({ title, message, users, onSignIn }: AuthenticatorProps) 
 
                         <div className="relative max-w-xl mx-auto">
 
-                            <div className="max-w-md mx-auto">
-
-                                <h2 className="mb-10 text-xl text-white font-bold font-heading">
-                                    {message ? message : 'Enter your credentials'}
-                                </h2>
-
-
-                                <form action="">
-
-                                    <input
-                                        className="bg-transparent w-full mb-10 px-12 py-6 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
-                                        type="password"
-                                        placeholder="Repeat password"
-                                    />
-                                    <SignIn />
-                                </form>
-
-
-                            </div>
+                            <SignInForm />
 
                         </div>
 

@@ -6,16 +6,22 @@ import DrawerMenu from "@components/DrawerMenu"
 import React from "react"
 import header from "@configs/header"
 import footer from "@configs/footer"
+import { Fade } from "react-awesome-reveal"
 
 const PageLayout = ({ children, metaData }: ILayout) => {
 
 
     return (
         <RootLayout metaData={metaData}>
-            <DrawerMenu {...header}/>
+            <DrawerMenu {...header} />
+
             <Header {...header} />
-            {children}
+            <Fade>
+                {children}
+            </Fade>
             <Footer {...footer} />
+
+
         </RootLayout>
     )
 }
