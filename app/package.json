@@ -18,6 +18,7 @@
     "@types/react-transition-group": "^4.4.5",
     "@zoomus/websdk": "^2.7.0",
     "custom-cursor-react": "^1.0.5",
+    "dexie": "^3.2.2",
     "distortion-effect-carousel": "^1.1.0",
     "lodash": "^4.17.21",
     "next": "^12.0.10",
