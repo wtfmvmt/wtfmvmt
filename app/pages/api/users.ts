@@ -6,7 +6,6 @@ export default async function handler(
     res: NextApiResponse<any>
 ) {
 
-    const data = await NotionService.listUsers()
 
-    res.status(200).json(data)
+    res.status(200).json(null)
 }
