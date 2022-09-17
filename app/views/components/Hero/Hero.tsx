@@ -86,11 +86,11 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
             <div className="flex flex-wrap h-full">
 
                 <div className="w-full md:w-7/12 z-50">
-                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousels[0]} />
+                    <DistortionCarousel displacmentImage="/assets/images/distortions/6.jpg" images={mediaCarousels[0]} />
                 </div>
 
-                <div className="w-full md:w-5/12 z-50">
-                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousels[1]} />
+                <div className="w-full md:w-7/12 z-50">
+                    <DistortionCarousel displacmentImage="/assets/images/distortions/6.jpg" images={mediaCarousels[1]} />
                 </div>
 
             </div>
@@ -206,7 +206,6 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
                 <SocialLinks />
                 <Heading />
             </div>
-
             <FeaturedRow />
 
         </section>

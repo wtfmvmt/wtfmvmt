@@ -47,40 +47,7 @@ const images = [
         from: 'facebook',
         src: 'https://scontent-lhr8-2.xx.fbcdn.net/v/t1.6435-9/69388450_745504725872663_3302980874559029248_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=hGHtOM4BvJMAX8KQkkS&_nc_ht=scontent-lhr8-2.xx&oh=00_AT-PP4foNWRSCUnNOv1uwMcQmasLDtYgTftFf3iKBPyByw&oe=633C9015'
     },
-    {
-        id: 'nia-ashay-speaks-hippie',
-        src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/277585246_1426745717748557_5819081321870699081_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=C2H5DLyTAzwAX8X_g-I&_nc_ht=scontent-lhr8-1.xx&oh=00_AT89mUR3K6-Xlg7DLK6jrPuRQIz2zFg0A-fDMsmLwueflA&oe=631C8535',
-        from: 'facebook'
-    },
-    {
-        id: 'woman-sings-black',
-        src: 'https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/277773480_1426747371081725_1545106300100321592_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0debeb&_nc_ohc=_vcf82-vzaEAX-g0HRF&tn=4LDjFjX8pPdl-T2_&_nc_ht=scontent-lhr8-2.xx&oh=00_AT-qNNv2QpKSa3_cmAT60POWpaz1u7G31SyN8dG-PIL6UA&oe=631BF31D',
-        from: 'facebook'
-    },
-    {
-        id: 'man-raps-photo-by-d',
-        src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/277733795_1426744444415351_146257608858182530_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=__2-nilXTBEAX9mCl4Q&tn=4LDjFjX8pPdl-T2_&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8Ga-6ScZGReWA4BaNJAPaQ7_q7qY4tVHuj4izYHbsXlw&oe=631C452F'
-    },
-    {
-        id: 'amen',
-        src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/277671893_1426749901081472_5563598177286957791_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=JD_E7iWC3I8AX_-dX6H&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8rlhHpB7dC5eJuYioHD1oM0tvV640SrsE6fEfZJl35QA&oe=631D8C66'
-    },
-    {
-        id: 'group-crowd',
-        src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/277757948_1426749911081471_3947978586681618644_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0debeb&_nc_ohc=_9doV66MydQAX_F0gR4&_nc_ht=scontent-lhr8-1.xx&oh=00_AT-u9PKwsZLGOFXvyU996lRelXztEJMTtZOSHfOHgsR5Bg&oe=631C5B2F'
-    },
-    {
-        id: 'singer-man',
-        src: 'https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/277772535_1426754964414299_7699102423207562608_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0debeb&_nc_ohc=Lef-sckPV0kAX-9nYNI&_nc_ht=scontent-lhr8-2.xx&oh=00_AT8aNGcfVyA0TtR3DhbrNrFqbzAYUgPqEXEzAuMCesthRA&oe=631C2E5D'
-    },
-    {
-        id: 'guitarist-vibes',
-        src: 'https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/277775041_1426748824414913_2829996063940886048_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0debeb&_nc_ohc=--VtRVWCT3QAX-Xn1xs&_nc_ht=scontent-lhr8-1.xx&oh=00_AT-_YVeiirLGEIcAdml-pbuy_xcOKC-XGdvTS89sNK35sQ&oe=631DB379'
-    },
-    {
-        id: 'pounce-em',
-        src: 'https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/277741107_1426747757748353_2889737569130073114_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=0debeb&_nc_ohc=0ucBVCZKm9oAX_XObg8&_nc_ht=scontent-lhr8-2.xx&oh=00_AT-6OrHf-6K8NQjI3Vg9w9twDfN2UlOcs9G4rmAvAS30Sg&oe=631DA9A5'
-    },
+
     {
         id: 'brandon-tux',
         src: 'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/279752328_5523513067658829_6179408988740945140_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=pg3rNX6_Ys0AX-DdC0D&_nc_ht=scontent-ord5-1.xx&oh=00_AT-SnnImal3A7UoBK4T1j5pSVqjP3JA9FaCj4QrkBAEZPg&oe=631E8E85',
