@@ -27,9 +27,10 @@ const Authenticator = ({ title, message, users, onSignIn }: AuthenticatorProps) 
     const SignIn = () => {
 
         return (
-            <a href="/dashboard" className="mt-18 mb-10 md:mt-16 bg-purple-700 hover:scale-90 transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
-                Sign In
-
+            <a href="/dashboard">
+                <button className="mt-12 md:mt-16 bg-purple-700 hover:scale-90 transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
+                    Sign In
+                </button>
             </a>
         )
 

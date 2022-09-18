@@ -109,7 +109,7 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
 
     return (
 
-        <section className="bg-black bg-opacity-10 py-26">
+        <section className="bg-black bg-opacity-10 py-26 mt-10">
             <div className="container px-4 mx-auto">
                 <Header />
                 <Tables />

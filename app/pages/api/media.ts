@@ -7,6 +7,6 @@ export default async function handler(
     res: NextApiResponse<any>
 ) {
 
-    const data = await NotionService.loadMedia()
+    const data = await NotionService.loadAllMedia()
     res.status(200).json(data)
 }

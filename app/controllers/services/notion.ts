@@ -8,13 +8,20 @@ const NotionService = {
     }),
 
     databases: {
-        media: '56249c8ad5af446995d711fb0c3291ae'
+        media: '56249c8ad5af446995d711fb0c3291ae',
+        events: '824b76cf856345d19debb747fd1cc963'
+    },
+
+    loadAllEvents: async () => {
+        const data = await NotionService.api.databases.query({
+            database_id: NotionService.databases.events,
+        })
+
+        return data
     },
 
 
-
-    loadMedia: async () => {
-
+    loadAllMedia: async () => {
 
         const data = await NotionService.api.databases.query({
             database_id: NotionService.databases.media,
@@ -22,8 +29,6 @@ const NotionService = {
 
         return data
     },
-
-    query: () => null
 }
 
 

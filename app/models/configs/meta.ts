@@ -7,7 +7,7 @@ const meta = {
 
     data: {
         title: 'WTFMVMT',
-        description: 'We are a Community of Conscious Builders for the Future',
+        description: ['We are a Community of Conscious Builders for the Future',],
         logo: '/assets/images/logo-transparent.png',
         impressum: "We are Conscious Creators for The Future",
         copyright: ['©️ 2022 WTFMVMT. All Rights Reserved.',
