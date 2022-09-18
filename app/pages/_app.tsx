@@ -8,7 +8,7 @@ import { PageTransition } from 'next-page-transitions'
 import { RecoilRoot } from 'recoil'
 
 
-import IndexedDBProvider, { useIndexedDBStore } from "use-indexeddb";
+import IndexedDBProvider from "use-indexeddb";
 
 
 import type { IApplication } from "@typings/Application"

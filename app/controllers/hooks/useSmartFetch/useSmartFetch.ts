@@ -7,3 +7,5 @@ const useSmartFetch = ({ apiPath }) => {
 
     return useSWR(apiPath, client.fetcher)
 }
+
+export default useSmartFetch
