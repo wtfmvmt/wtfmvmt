@@ -7,7 +7,28 @@ import "@libs/scrollbars.css"
 import { PageTransition } from 'next-page-transitions'
 import { RecoilRoot } from 'recoil'
 
+
+import IndexedDBProvider, { useIndexedDBStore } from "use-indexeddb";
+
+
 import type { IApplication } from "@typings/Application"
+
+
+const idbConfig = {
+  databaseName: "wtfmvmt-db",
+  version: 3,
+  stores: [
+    {
+      name: "media",
+      id: { keyPath: "id", autoIncrement: true },
+      indices: [
+        { name: "name", keyPath: "name", options: { unique: false } },
+        { name: "type", keyPath: "type" },
+        { name: "source", keyPath: "source" },
+      ],
+    },
+  ],
+};
 
 function Application({ Component, pageProps }: IApplication) {
 
@@ -15,9 +36,9 @@ function Application({ Component, pageProps }: IApplication) {
     <RecoilRoot>
       <PageTransition loadingComponent={<></>}
         timeout={700} classNames="page-transition">
-
-        <Component {...pageProps} />
-
+        <IndexedDBProvider config={idbConfig} loading="Loading..." fallback="Unsupported">
+          <Component {...pageProps} />
+        </IndexedDBProvider>
       </PageTransition>
     </RecoilRoot>
 
