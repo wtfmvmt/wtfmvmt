@@ -10,8 +10,8 @@ const EventsIndexPage: IPage<StaticPage> = ({ pageData }) => {
 
     return (
         <PageLayout {...pageData.layout}>
-            <LogoArray/>
-            <TableRow/>
+            <LogoArray />
+            <TableRow />
 
         </PageLayout>
     )
@@ -29,4 +29,5 @@ export async function getServerSideProps() {
         props: {
             pageData: pageData
         }
+    }
 }
