@@ -13,30 +13,24 @@ import type { DataPage } from "@typings/DataPage";
 
 const HomePageDB: DataPage = {
 
-
-
-
     init: async () => {
-        const { getImages } = MediaDB.methods
-
-        const images = await getImages()
 
 
         try {
-            const queryResponse = await Object.keys(HomePageDB.query).map(async key => {
-                HomePageDB.query[key] = await HomePageDB.query[key]().then(data => data)
+            const { getImages } = MediaDB.methods
+
+            const MediaCarousel = await getImages().then(images => images.map(image => image.src))
+
+            await Object.keys(HomePageDB.query).map(key => {
+                HomePageDB.query[key] = HomePageDB.query[key](MediaCarousel)
             })
-            return {
-                ...HomePageDB.data, ...HomePageDB.query,
-            }
+
+            const staticData = HomePageDB.data
+            return { ...staticData, ...HomePageDB.query }
 
         }
         catch (error) {
             console.log(error);
-        } finally {
-            return {
-                ...HomePageDB.data, ...HomePageDB.query,
-            }
         }
     },
 
@@ -49,7 +43,6 @@ const HomePageDB: DataPage = {
             header: { ...header.init() },
             footer: { ...footer.init() },
         },
-
         dataSection: {
             heading: 'Check out our Media & Publication',
             title: 'Media & Projects',
@@ -73,6 +66,7 @@ const HomePageDB: DataPage = {
             ]
 
         },
+
         imageMasonry: {
 
             heading: "Our Founders and Team",
@@ -241,14 +235,13 @@ const HomePageDB: DataPage = {
     },
 
     query: {
+        hero: (MediaCarousel) => {
 
-        hero: async () => {
-
-            const { getImages } = MediaDB.methods
-
-            const MediaCarousel = await getImages().then(images => images.map(image => image.src || ''))
+            console.log(MediaCarousel)
 
             return {
+
+
 
                 id: 'WTFMVMT-HERO',
                 title: meta.init().title,
@@ -359,6 +352,8 @@ const HomePageDB: DataPage = {
                 }
             }
         }
+
+
     }
 }
 

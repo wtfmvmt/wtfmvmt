@@ -25,7 +25,7 @@ const HomePage: IPage<StaticPage> = ({ pageData }) => {
 
   const { width, height } = useWindowSize()
 
-  
+
   useEffect(() => {
     console.log(`[FacadeData] => `, pageData.test)
   }, [pageData])
@@ -46,15 +46,13 @@ const HomePage: IPage<StaticPage> = ({ pageData }) => {
 
 export default HomePage
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const pageData = await HomePageDB.init().then((data) => data)
 
   return {
     props: {
       pageData: pageData,
-     
-
     }
   }
 }
