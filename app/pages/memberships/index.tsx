@@ -10,8 +10,8 @@ const MembershipsIndexPage: IPage<StaticPage> = ({ pageData }) => {
 
     return (
         <PageLayout {...pageData.layout}>
-            <LogoArray/>
-            <TableRow/>
+            <LogoArray {...pageData.logoArray} />
+            <TableRow {...pageData.tableRow} />
 
         </PageLayout>
     )

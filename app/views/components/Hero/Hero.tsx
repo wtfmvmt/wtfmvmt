@@ -7,6 +7,9 @@ import Carousel from 'react-spring-3d-carousel-2';
 import Icon from "@components/Icon"
 import type { Image } from "@typings/Image"
 
+
+import { Carousel as FallBackCarousel } from 'react-responsive-carousel';
+
 export type MediaCarousel = string[]
 
 export type Link = {
@@ -85,12 +88,8 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
 
             <div className="flex flex-wrap h-full">
 
-                <div className="w-full md:w-7/12 z-50 h-full">
-                    <DistortionCarousel displacmentImage="/assets/images/distortions/6.jpg" images={mediaCarousels[0]} />
-                </div>
-
-                <div className="w-full md:w-5/12 z-50 mt-2">
-                    <DistortionCarousel displacmentImage="/assets/images/distortions/6.jpg" images={mediaCarousels[1]} />
+                <div className="w-full z-50 h-full puff-in-center ">
+                    <DistortionCarousel images={mediaCarousels[0]} />
                 </div>
 
             </div>

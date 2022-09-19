@@ -46,7 +46,7 @@ export default HomePage
 
 export async function getServerSideProps() {
 
-  const pageData = await HomePageDB.init()
+  const pageData = await HomePageDB.init().then((data) => data)
 
   return {
     props: {
