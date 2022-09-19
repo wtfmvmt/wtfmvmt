@@ -21,14 +21,13 @@ const MembershipsIndexPage: IPage<StaticPage> = ({ pageData }) => {
 export default MembershipsIndexPage
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     const pageData = await MembershipsDB.init()
 
     return {
         props: {
             pageData: pageData
-        },
-        revalidate: 3
+        }
     }
 }

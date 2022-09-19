@@ -42,15 +42,14 @@ const HomePage: IPage<StaticPage> = ({ pageData }) => {
 
 export default HomePage
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   const pageData = await HomePageDB.init()
 
   return {
     props: {
       pageData: pageData
-    },
-    revalidate: configs.revalidation
+    }
   }
 }
 

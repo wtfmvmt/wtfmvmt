@@ -12,7 +12,7 @@ export default function VisionPage({ pageData }) {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     return {
         props: {

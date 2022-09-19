@@ -21,14 +21,14 @@ const ArtivismIndexPage: IPage<StaticPage> = ({ pageData }) => {
 export default ArtivismIndexPage
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     const pageData = await MembershipsDB.init()
 
     return {
         props: {
             pageData: pageData
-        },
-        revalidate: 3
+        }
+        
     }
 }
