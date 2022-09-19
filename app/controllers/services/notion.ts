@@ -9,7 +9,8 @@ const NotionService = {
 
     databases: {
         media: '56249c8ad5af446995d711fb0c3291ae',
-        events: '824b76cf856345d19debb747fd1cc963'
+        events: '824b76cf856345d19debb747fd1cc963',
+        partners: ''
     },
 
     loadAllEvents: async () => {
@@ -20,6 +21,14 @@ const NotionService = {
         return data
     },
 
+    loadAllPartners: async () => {
+        const data = await NotionService.api.databases.query({
+            database_id: NotionService.databases.partners,
+        })
+
+        return data
+        
+    },
 
     loadAllMedia: async () => {
 

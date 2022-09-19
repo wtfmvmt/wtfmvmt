@@ -1,30 +1,30 @@
 import useBannerState from "@hooks/useBannerState";
-import CloseIcon from '@mui/icons-material/Close';
-import ReactTypingEffect from 'react-typing-effect';
+import Icon from "@components/Icon"
+import TypedText from "@components/TypedText";
+import Countdown from "@components/Countdown"
+
+import type { BannerProps } from "@typings/Banner";
+
 import { CSSTransition } from 'react-transition-group';
 
-export type BannerProps = {
-    messages: string[],
-    icon?: string
-}
-
-const Banner = ({ messages, icon }: BannerProps) => {
+const Banner = ({ messages, countdown }: BannerProps) => {
 
 
     const { open, toggleBanner } = useBannerState()
 
     return (
-        <CSSTransition in={open} timeout={900} unmountOnExit>
-
+        <CSSTransition in={open} timeout={400} unmountOnExit>
 
             <div className={`p-3 bg-black ${!open ? "slide-out-bck-center" : ""}`}>
                 <div className="flex items-center justify-center">
-                    <p className="text-xs font-bold font-heading text-blue-100">
-                        <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={20} text={messages} />
+                    <p className="text-sm text-center font-bold font-heading text-purple-200">
+                        <TypedText speed={50} eraseSpeed={10} typingDelay={20} text={messages} />
+                        <Countdown url={"/rsvp"} date={Date.now() +  countdown} />
+
                     </p>
 
-                    <p onClick={() => toggleBanner()} className="hover:scale-90 transition-all absolute right-1 top-1 text-white pr-4">
-                        <CloseIcon />
+                    <p onClick={() => toggleBanner()} className="hover:scale-60 transition-all absolute right-1 top-4 text-gray-200 pr-4">
+                        <Icon id="CLOSE" />
                     </p>
 
                 </div>

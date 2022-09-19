@@ -9,6 +9,8 @@ import Event from '@mui/icons-material/Event'
 import Handshake from '@mui/icons-material/Handshake'
 import PermMedia from '@mui/icons-material/PermMedia'
 import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
+import CloseIcon from '@mui/icons-material/Close';
+
 
 const ICONS = {
     'VISIBILITY': Visibility,
@@ -22,6 +24,7 @@ const ICONS = {
     'NEW': FiberNew,
     'DOMAIN': Domain,
     'VENDOR': StoreMallDirectoryIcon,
+    'CLOSE': CloseIcon
 }
 
 export default ICONS

@@ -4,41 +4,21 @@ import "@libs/tailwind.css"
 import "@libs/animations.css"
 import "@libs/scrollbars.css"
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import { PageTransition } from 'next-page-transitions'
 import { RecoilRoot } from 'recoil'
 
-
-import IndexedDBProvider from "use-indexeddb";
-
-
 import type { IApplication } from "@typings/Application"
 
-
-const idbConfig = {
-  databaseName: "wtfmvmt-db",
-  version: 3,
-  stores: [
-    {
-      name: "media",
-      id: { keyPath: "id", autoIncrement: true },
-      indices: [
-        { name: "name", keyPath: "name", options: { unique: false } },
-        { name: "type", keyPath: "type" },
-        { name: "source", keyPath: "source" },
-      ],
-    },
-  ],
-};
 
 function Application({ Component, pageProps }: IApplication) {
 
   return (
     <RecoilRoot>
       <PageTransition loadingComponent={<></>}
-        timeout={700} classNames="page-transition">
-        <IndexedDBProvider config={idbConfig} loading="Loading..." fallback="Unsupported">
+        timeout={333} classNames="page-transition">
           <Component {...pageProps} />
-        </IndexedDBProvider>
       </PageTransition>
     </RecoilRoot>
 

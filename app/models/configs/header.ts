@@ -1,6 +1,6 @@
 import resolveDataPage from "@utils/resolveDataPage"
 import type { DataPage } from "@typings/DataPage"
-
+import search from "@configs/search"
 
 const header: DataPage = {
 
@@ -20,25 +20,9 @@ const header: DataPage = {
 
     data: {
 
-        search: [
-            {
-                id: 'Community'
-            },
-            {
-                id: 'Events'
-            },
-            {
-                id: 'Artists'
-            },
-            {
-                id: 'Venues'
-            },
-            {
-                id: 'Blog'
-            }
-        ],
-
+        search: [...search.collections],
         banner: {
+            countdown: 10000000000,
             messages: ["Attend our Interest Meeting 09/06", "This site is under construction."]
         },
         favicon: {

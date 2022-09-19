@@ -11,7 +11,7 @@ import MediaDB from "@db/media"
 import type { DataPage } from "@typings/DataPage";
 
 
-const HomePageDB: DataPage = {
+const MembershipsDB: DataPage = {
 
 
     init: async () => {
@@ -21,13 +21,13 @@ const HomePageDB: DataPage = {
         const testData = await getImages()
 
         try {
-            resolveDataPage(HomePageDB.query);
+            resolveDataPage(MembershipsDB.query);
         }
         catch (error) {
             console.log(error);
         } finally {
             return {
-                ...HomePageDB.data, ...HomePageDB.query, ...{
+                ...MembershipsDB.data, ...MembershipsDB.query, ...{
                     test: testData
                 }
             }
@@ -356,4 +356,4 @@ const HomePageDB: DataPage = {
 
 
 
-export default HomePageDB;
+export default MembershipsDB;

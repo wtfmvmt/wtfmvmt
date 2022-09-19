@@ -81,15 +81,15 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
 
     const FeaturedGallery = () => (
 
-        <div style={{ perspective: '200px' }} className="w-full lg:w-2/3 px-4">
+        <div className="w-full lg:w-2/3 px-3">
 
-            <div style={{ transformStyle: 'preserve-3d' }} className="flex flex-wrap h-full">
+            <div className="flex flex-wrap h-full">
 
                 <div className="w-full md:w-7/12 z-50 h-full">
                     <DistortionCarousel displacmentImage="/assets/images/distortions/6.jpg" images={mediaCarousels[0]} />
                 </div>
 
-                <div className="h-full w-full md:w-5/12 z-50 mt-20">
+                <div className="w-full md:w-5/12 z-50 mt-2">
                     <DistortionCarousel displacmentImage="/assets/images/distortions/6.jpg" images={mediaCarousels[1]} />
                 </div>
 
@@ -108,7 +108,7 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
                     {actionLinks.title}
                 </h4>
                 <ul className="mb-5">
-                    <Fade cascade>
+                    <Fade triggerOnce cascade>
                         {
                             actionLinks.links.map((link, index) => {
                                 return (

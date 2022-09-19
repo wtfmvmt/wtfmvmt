@@ -12,24 +12,28 @@ import HomePageDB from "@pages/HomePageDB"
 
 import type { IPage } from "@typings/Page"
 import type { StaticPage } from "@typings/StaticPage"
+import { useEffect } from "react"
 
 
+
+const configs = {
+  revalidation: 3
+}
 
 const HomePage: IPage<StaticPage> = ({ pageData }) => {
 
-  console.log(pageData)
 
+  useEffect(() => {
+    console.log(`[FacadeData] => `, pageData.test)
+  }, [pageData])
 
   return (
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
       <FeaturedSection {...pageData.featuredSection} />
       <SummarySection {...pageData.summarySection} />
-      <DataSection {...pageData.dataSection} />
-      <StatsSection {...pageData.statsSection} />
       <SimpleFormSection {...pageData.simpleFormSection} />
-
-      <FeaturedMedia {...pageData.featuredMedia} />
+      <StatsSection {...pageData.statsSection} />
       <ImageMasonry {...pageData.imageMasonry} />
       <ContactSection {...pageData.contactSection} />
     </PageLayout>
@@ -40,11 +44,13 @@ export default HomePage
 
 export async function getStaticProps() {
 
+  const pageData = await HomePageDB.init()
+
   return {
     props: {
-      pageData: HomePageDB.init()
+      pageData: pageData
     },
-    revalidate: 10
+    revalidate: configs.revalidation
   }
 }
 
