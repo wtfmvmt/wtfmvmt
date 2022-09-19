@@ -30,6 +30,7 @@ const LogoArray = ({ logos, title, heading, description }: LogoArrayProps) => {
             </div>
         )
     }
+
     return (
         <section className="py-26">
             <div className="container px-4 mx-auto">
@@ -37,15 +38,15 @@ const LogoArray = ({ logos, title, heading, description }: LogoArrayProps) => {
                     <Header />
                     <div className="w-full lg:w-1/2 px-4">
                         <div className="flex flex-wrap -mx-4">
-                            {logos.map((logo, index) => {
+                            {logos ? logos.map((logo, index) => {
                                 return (
                                     <div key={index} className="w-full md:w-1/2 px-4 mb-8">
-                                        <div className="flex items-center justify-center h-44 p-6 md:px-12 bg-white border-3 border-indigo-900 rounded-2xl shadow-md">
+                                        <div className="flex items-center justify-center h-44 p-6 md:px-12 bg-black bg-opacity-70 hover:bg-opacity-100 transition-all border-3 border-purple-600 rounded-2xl shadow-md">
                                             <img src={logo.image?.src ? logo.image.src : "/"} alt={logo.image.alt ? logo.image.alt : "image"} />
                                         </div>
                                     </div>
                                 )
-                            })}
+                            }) : <></>}
 
                         </div>
                     </div>

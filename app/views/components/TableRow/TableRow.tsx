@@ -32,12 +32,12 @@ const TableRow = ({ tables, heading, title }: TableRow) => {
                                     <div className="mb-4 w-full sm:w-1/2 sm:mb-0">
                                         <h2 className="text-2xl font-extrabold">{table.title ? table.title : "Title"}</h2>
                                         <p className="text-lg font-extrabold leading-7">
-                                            For bigger teams
+                                            {table?.subTitle ? table.subTitle : "subTitle"}
                                         </p>
                                     </div>
                                     <div className="flex w-full sm:w-auto items-start">
                                         <span className="pr-1 text-lg font-extrabold">$</span>
-                                        <span className="text-4xl md:text-5xl font-extrabold">89</span>
+                                        <span className="text-4xl md:text-5xl font-extrabold">{table?.price ? table.price : "PRice"}</span>
                                         <span className="pl-1 text-lg font-extrabold self-end">/mo</span>
                                     </div>
                                 </div>

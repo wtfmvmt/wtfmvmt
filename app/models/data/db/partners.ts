@@ -15,14 +15,7 @@ const partners = [
             alt: ''
         }
     },
-    {
-        name: 'Brandon J. Payne, Industries',
-        url: 'partners/brandon-j-payne-industries',
-        image: {
-            src: '/assets/images/brandon-payne-logo.png',
-            alt: ''
-        }
-    },
+
     {
         name: 'Mountain Top Entertainment Group',
         url: 'partners/mountaintop-entertainment-group',

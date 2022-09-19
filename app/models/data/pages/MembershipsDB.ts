@@ -18,7 +18,13 @@ const MembershipsDB: DataPage = {
 
 
         try {
-            resolveDataPage(MembershipsDB.query);
+            Object.keys(MembershipsDB.query).map(key => {
+                MembershipsDB.query[key] = MembershipsDB.query[key]()
+            })
+            return {
+                ...MembershipsDB.data, ...MembershipsDB.query,
+            }
+
         }
         catch (error) {
             console.log(error);
@@ -52,12 +58,14 @@ const MembershipsDB: DataPage = {
                 tables: [
                     {
                         title: "Membership",
+                        subTitle: 'For Artists & Creators',
+                        price: '10.00',
                         features: [
                             {
                                 name: '50% Discount All Events',
                                 url: '/events'
                             }, {
-                                name: '50% Discount All Events',
+                                name: 'WTFMVMT Programs Access',
                                 url: '/events'
                             },
                             {
@@ -72,6 +80,8 @@ const MembershipsDB: DataPage = {
                     },
                     {
                         title: "Afilliate",
+                        subTitle: 'For Vendors',
+                        price: '100.00',
                         features: [
                             {
                                 name: '50% Discount All Events',
@@ -92,42 +102,31 @@ const MembershipsDB: DataPage = {
                     },
                     {
                         title: "Partner",
+                        subTitle: 'For Businesses',
+                        price: '200.00',
                         features: [
                             {
                                 name: '50% Discount All Events',
                                 url: '/events'
                             }, {
-                                name: '50% Discount All Events',
+                                name: 'Partner Call To Action Page on WTFMVMT',
                                 url: '/events'
                             },
                             {
-                                name: '50% Discount All Events',
+                                name: 'Mentorship Program',
                                 url: '/events'
                             },
-                            {
-                                name: '50% Discount All Events',
-                                url: '/events'
-                            }
+
                         ]
                     },
                     {
                         title: "RSVP",
+                        price: 'Free',
                         features: [
                             {
-                                name: '50% Discount All Events',
-                                url: '/events'
-                            }, {
-                                name: '50% Discount All Events',
+                                name: 'Subscribe to our Events',
                                 url: '/events'
                             },
-                            {
-                                name: '50% Discount All Events',
-                                url: '/events'
-                            },
-                            {
-                                name: '50% Discount All Events',
-                                url: '/events'
-                            }
                         ]
                     }
                 ]
@@ -136,7 +135,13 @@ const MembershipsDB: DataPage = {
 
         logoArray: () => {
             return {
-                logos: [],
+                logos: [
+                    ...partners.map((partner) => ({
+                        image: partner.image,
+                        name: partner.name,
+                        url: partner.url
+                    }))
+                ],
                 title: 'OUr Memeberships Programs',
                 heading: 'OUr Memeberships Programs',
                 description: 'OUr Memeberships Programs',
