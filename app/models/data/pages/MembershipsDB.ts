@@ -67,10 +67,10 @@ const MembershipsDB: DataPage = {
                         features: [
                             {
                                 name: '50% Discount All Events',
-                                url: '/events'
+                                url: '/forms'
                             }, {
                                 name: 'Online Events',
-                                url: '/events'
+                                url: '/forms'
                             },
                             {
                                 name: 'L10 Training',
@@ -100,11 +100,11 @@ const MembershipsDB: DataPage = {
                             },
                             {
                                 name: 'Digital Marketing',
-                                url: '/events'
+                                url: '/forms'
                             },
                             {
                                 name: '50% Discount All Events',
-                                url: '/events'
+                                url: '/forms'
                             }
                         ]
                     },
@@ -115,14 +115,14 @@ const MembershipsDB: DataPage = {
                         features: [
                             {
                                 name: 'Everything inluded plus:',
-                                url: '/events'
+                                url: '/forms'
                             }, {
                                 name: 'Divergent U Membership',
-                                url: '/events'
+                                url: '/forms'
                             },
                             {
                                 name: 'Partner Page',
-                                url: '/events'
+                                url: '/forms'
                             },
 
 
@@ -135,7 +135,7 @@ const MembershipsDB: DataPage = {
                         features: [
                             {
                                 name: 'Subscribe to our Events',
-                                url: '/events'
+                                url: '/forms'
                             },
                         ]
                     }
