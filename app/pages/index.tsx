@@ -50,7 +50,9 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      pageData: pageData
+      pageData: pageData,
+     
+
     }
   }
 }

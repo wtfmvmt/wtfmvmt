@@ -19,7 +19,7 @@ const HomePageDB: DataPage = {
     init: async () => {
         const { getImages } = MediaDB.methods
 
-        console.log(await getImages())
+        const images = await getImages()
 
 
         try {
@@ -29,7 +29,7 @@ const HomePageDB: DataPage = {
             console.log(error);
         } finally {
             return {
-                ...HomePageDB.data, ...HomePageDB.query
+                ...HomePageDB.data, ...HomePageDB.query, ...{ test: images }
             }
         }
     }
