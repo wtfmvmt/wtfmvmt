@@ -18,7 +18,7 @@ const MembershipsDB: DataPage = {
 
 
         try {
-            Object.keys(MembershipsDB.query).map(key => {
+            await Object.keys(MembershipsDB.query).map(key => {
                 MembershipsDB.query[key] = MembershipsDB.query[key]()
             })
             return {
@@ -133,7 +133,9 @@ const MembershipsDB: DataPage = {
             }
         },
 
-        logoArray: () => {
+        logoArray:  () => {
+
+         
             return {
                 logos: [
                     ...partners.map((partner) => ({
