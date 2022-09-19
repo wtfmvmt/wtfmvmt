@@ -78,7 +78,7 @@ const TableRow = ({ tables, heading, title }: TableRow) => {
     const Header = () => {
 
         return (
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
                 <span className="text-lg font-extrabold text-orange-500">
                     {heading ? heading : "Heading"}
                 </span>
@@ -99,18 +99,6 @@ const TableRow = ({ tables, heading, title }: TableRow) => {
     }
     return (
         <section className="py-26 relative overflow-hidden">
-            <img
-                className="absolute top-0 left-0 w-1/2"
-                src="nigodo-assets/background-elements/pattern-smash-dots-orange-left.svg"
-                alt=""
-            />
-            <img
-                className="absolute bottom-0 right-0 w-1/2"
-                src="nigodo-assets/background-elements/pattern-smash-rotate-orange-right.svg"
-                alt=""
-            />
-
-
             <div className="container px-4 mx-auto relative">
                 <Header />
                 <Tables />
