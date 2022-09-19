@@ -23,17 +23,23 @@ const HomePageDB: DataPage = {
 
 
         try {
-            resolveDataPage(HomePageDB.query);
+            const queryResponse = await Object.keys(HomePageDB.query).map(async key => {
+                HomePageDB.query[key] = await HomePageDB.query[key]().then(data => data)
+            })
+            return {
+                ...HomePageDB.data, ...HomePageDB.query,
+            }
+
         }
         catch (error) {
             console.log(error);
         } finally {
             return {
-                ...HomePageDB.data, ...HomePageDB.query, ...{ test: images }
+                ...HomePageDB.data, ...HomePageDB.query,
             }
         }
-    }
-    ,
+    },
+
 
     data: {
         layout: {
@@ -236,9 +242,11 @@ const HomePageDB: DataPage = {
 
     query: {
 
-        hero: () => {
+        hero: async () => {
 
+            const { getImages } = MediaDB.methods
 
+            const MediaCarousel = await getImages().then(images => images.map(image => image.src || ''))
 
             return {
 
@@ -246,9 +254,7 @@ const HomePageDB: DataPage = {
                 title: meta.init().title,
                 description: meta.init().description,
                 mediaCarousels: [
-                    [...images.splice(0, images.length / 2).map(image => image.src)],
-                    [...images.splice(images.length / 2, images.length).map(image => image.src)]
-                ],
+                    [...MediaCarousel]],
 
                 heading: "The Community Development Movement",
                 cta: {

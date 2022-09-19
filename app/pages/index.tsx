@@ -24,6 +24,8 @@ const configs = {
 const HomePage: IPage<StaticPage> = ({ pageData }) => {
 
   const { width, height } = useWindowSize()
+
+  
   useEffect(() => {
     console.log(`[FacadeData] => `, pageData.test)
   }, [pageData])
