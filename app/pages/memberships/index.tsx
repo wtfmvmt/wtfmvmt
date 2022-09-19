@@ -21,7 +21,7 @@ const MembershipsIndexPage: IPage<StaticPage> = ({ pageData }) => {
 export default MembershipsIndexPage
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
     const pageData = await MembershipsDB.init()
 

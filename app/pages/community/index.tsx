@@ -21,7 +21,7 @@ const CommunityIndexPage: IPage<StaticPage> = ({ pageData }) => {
 export default CommunityIndexPage
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
     const pageData = await MembershipsDB.init()
 

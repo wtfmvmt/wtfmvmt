@@ -16,10 +16,6 @@ const HomePageDB: DataPage = {
 
     init: async () => {
 
-        const { getImages } = MediaDB.methods
-
-        const testData = await getImages()
-
         try {
             resolveDataPage(HomePageDB.query);
         }
@@ -27,12 +23,11 @@ const HomePageDB: DataPage = {
             console.log(error);
         } finally {
             return {
-                ...HomePageDB.data, ...HomePageDB.query, ...{
-                    test: testData
-                }
+                ...HomePageDB.data, ...HomePageDB.query
             }
         }
-    },
+    }
+    ,
 
     data: {
         layout: {
@@ -235,7 +230,7 @@ const HomePageDB: DataPage = {
 
     query: {
 
-        hero:  () => {
+        hero: () => {
 
 
             return {

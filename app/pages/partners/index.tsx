@@ -21,7 +21,7 @@ const MediaIndexPage: IPage<StaticPage> = ({ pageData }) => {
 export default MediaIndexPage
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
     const pageData = await MembershipsDB.init()
 
