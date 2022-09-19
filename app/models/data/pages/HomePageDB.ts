@@ -252,7 +252,7 @@ const HomePageDB: DataPage = {
                 heading: "The Community Development Movement",
                 cta: {
                     name: "Join the Movement",
-                    url: "/join",
+                    url: "/memberships",
                     icon: "SchoolIcon"
                 },
                 socialLinks: meta.init().socials,

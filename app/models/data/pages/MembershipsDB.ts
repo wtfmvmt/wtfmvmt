@@ -60,6 +60,10 @@ const MembershipsDB: DataPage = {
                         title: "Membership",
                         subTitle: 'For Artists & Creators',
                         price: '10.00',
+                        cta: {
+                            name: 'Sign Up',
+                            url: '/forms'
+                        },
                         features: [
                             {
                                 name: '50% Discount All Events',
@@ -133,9 +137,9 @@ const MembershipsDB: DataPage = {
             }
         },
 
-        logoArray:  () => {
+        logoArray: () => {
 
-         
+
             return {
                 logos: [
                     ...partners.map((partner) => ({

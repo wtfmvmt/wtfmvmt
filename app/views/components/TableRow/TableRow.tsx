@@ -60,9 +60,9 @@ const TableRow = ({ tables, heading, title }: TableRow) => {
                                 <div className="py-10 px-6 lg:px-12 border-t-3 border-indigo-900">
                                     <a
                                         className="inline-block w-full py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
-                                        href="#"
+                                        href={table.cta?.url ? table.cta.url : "#"}
                                     >
-                                        Get Started
+                                        {table?.cta ? table.cta.name : "Sign Up"}
                                     </a>
                                 </div>
                             </div>
