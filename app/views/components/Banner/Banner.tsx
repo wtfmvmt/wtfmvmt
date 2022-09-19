@@ -19,8 +19,6 @@ const Banner = ({ messages, countdown }: BannerProps) => {
                 <div className="flex items-center justify-center">
                     <p className="text-sm text-center font-bold font-heading text-purple-200">
                         <TypedText speed={50} eraseSpeed={10} typingDelay={20} text={messages} />
-                        <Countdown url={"/rsvp"} date={Date.now() +  countdown} />
-
                     </p>
 
                     <p onClick={() => toggleBanner()} className="hover:scale-60 transition-all absolute right-1 top-4 text-gray-200 pr-4">

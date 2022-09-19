@@ -8,10 +8,10 @@ const MediaDB = {
         getImages: async () => {
 
             const ImagesFilter = (image) => {
-                return image.Types.multi_select.some(image => image?.name ===  "🖼️Photo")
+                return image.Types.multi_select.some(image => image?.name === "🖼️Photo")
             }
 
-            const data = await fetch(`http://localhost:${process.env.PORT || 3000}/api/media`, {
+            const data = await fetch(`${process.env.NODE_ENV === "production" ? "https://wtfmvmt.com/api/media" : `http://localhost:${process.env.PORT || 3000}/api/media`}`, {
                 method: 'GET',
             }).then(res => res.json())
                 .then(data => data.map(data => data.properties))

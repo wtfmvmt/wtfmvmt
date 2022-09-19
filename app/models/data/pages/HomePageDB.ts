@@ -14,7 +14,13 @@ import type { DataPage } from "@typings/DataPage";
 const HomePageDB: DataPage = {
 
 
+
+
     init: async () => {
+        const { getImages } = MediaDB.methods
+
+        console.log(await getImages())
+
 
         try {
             resolveDataPage(HomePageDB.query);
