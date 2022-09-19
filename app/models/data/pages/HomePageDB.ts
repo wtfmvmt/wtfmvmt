@@ -131,17 +131,26 @@ const HomePageDB: DataPage = {
             description: 'We The Future is a brand that focuses on cultivating a creative pipeline through the use of music and the arts; it was conceived in 2015 through the vision of our founder, Brandon Payne',
             sections: [
                 {
-                    title: 'Attend',
+                    title: 'Awareness',
                     description: 'We are a Community of Conscious Builders for the Future',
                 },
                 {
-                    title: 'Follow Up',
+                    title: 'Expression',
                     description: 'Sign up to be a part of our community',
                 },
                 {
-                    title: 'Follow Up',
+                    title: 'Inclusivity',
+                    description: 'Sign up to be a part of our community',
+                },
+                {
+                    title: 'Development',
+                    description: 'Sign up to be a part of our community',
+                },
+                {
+                    title: 'Liberation',
                     description: 'Sign up to be a part of our community',
                 }
+
             ]
         },
         featuredSection: {

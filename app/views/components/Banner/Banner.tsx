@@ -21,7 +21,7 @@ const Banner = ({ messages, countdown }: BannerProps) => {
                         <TypedText speed={50} eraseSpeed={10} typingDelay={20} text={messages} />
                     </p>
 
-                    <p onClick={() => toggleBanner()} className="hover:scale-60 transition-all absolute right-1 top-1 text-gray-200 pr-4">
+                    <p onClick={() => toggleBanner()} className="hover:scale-60 transition-all absolute right-2 top-2 text-gray-200 pr-1">
                         <Icon id="CLOSE" />
                     </p>
 

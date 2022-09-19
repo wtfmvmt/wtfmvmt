@@ -53,8 +53,8 @@ const MembershipsDB: DataPage = {
         tableRow: () => {
 
             return {
-                heading: 'Join the MVMT',
-                title: 'Our Memberships Programs',
+                heading: 'Pricing',
+                title: 'Membership Opportunites',
                 tables: [
                     {
                         title: "Membership",
@@ -69,21 +69,25 @@ const MembershipsDB: DataPage = {
                                 name: '50% Discount All Events',
                                 url: '/events'
                             }, {
-                                name: 'WTFMVMT Programs Access',
+                                name: 'Online Events',
                                 url: '/events'
                             },
                             {
-                                name: '50% Discount All Events',
+                                name: 'L10 Training',
                                 url: '/events'
                             },
                             {
-                                name: '50% Discount All Events',
+                                name: 'MDA (We The Media)',
                                 url: '/events'
-                            }
+                            },
+                            {
+                                name: 'WTFi (We The Finance)',
+                                url: '/events'
+                            },
                         ]
                     },
                     {
-                        title: "Afilliate",
+                        title: "Sponsor",
                         subTitle: 'For Vendors',
                         price: '100.00',
                         features: [
@@ -91,11 +95,11 @@ const MembershipsDB: DataPage = {
                                 name: '50% Discount All Events',
                                 url: '/events'
                             }, {
-                                name: '50% Discount All Events',
+                                name: 'Vendor Slot',
                                 url: '/events'
                             },
                             {
-                                name: '50% Discount All Events',
+                                name: 'Digital Marketing',
                                 url: '/events'
                             },
                             {
@@ -110,21 +114,23 @@ const MembershipsDB: DataPage = {
                         price: '200.00',
                         features: [
                             {
-                                name: '50% Discount All Events',
+                                name: 'Everything inluded plus:',
                                 url: '/events'
                             }, {
-                                name: 'Partner Call To Action Page on WTFMVMT',
+                                name: 'Divergent U Membership',
                                 url: '/events'
                             },
                             {
-                                name: 'Mentorship Program',
+                                name: 'Partner Page',
                                 url: '/events'
                             },
+
 
                         ]
                     },
                     {
                         title: "RSVP",
+                        subTitle: "For Events",
                         price: 'Free',
                         features: [
                             {
@@ -148,14 +154,14 @@ const MembershipsDB: DataPage = {
                         url: partner.url
                     }))
                 ],
-                title: 'OUr Memeberships Programs',
-                heading: 'OUr Memeberships Programs',
-                description: 'OUr Memeberships Programs',
+                title: 'Be A Part Of The MVMT',
+                heading: 'Our Memeberships Programs',
+                description: 'See how you can be a part of the WTFMVMT movement and help us build a better future for the next generation of creatives.'
             }
+
         }
     }
 }
-
 
 
 export default MembershipsDB;
