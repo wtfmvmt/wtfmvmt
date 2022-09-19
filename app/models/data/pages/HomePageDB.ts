@@ -248,7 +248,7 @@ const HomePageDB: DataPage = {
                     [...images.splice(images.length / 2, images.length).map(image => image.src)]
                 ],
 
-                heading: "Join the MVMT",
+                heading: "The Community Development Movement",
                 cta: {
                     name: "Join the Movement",
                     url: "/join",
@@ -320,7 +320,7 @@ const HomePageDB: DataPage = {
 
                 },
                 actionLinks: {
-                    title: 'Join the MVMT',
+                    title: "The Community Development Movement",
                     links: [
                         {
                             name: "For Artists",

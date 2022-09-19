@@ -1,5 +1,5 @@
 export type CountdownProps = {
-    date: number;
+    date: number | string | Date;
     url?: string
   }
   
