@@ -16,9 +16,6 @@ const MembershipsDB: DataPage = {
 
     init: async () => {
 
-        const { getImages } = MediaDB.methods
-
-        const testData = await getImages()
 
         try {
             resolveDataPage(MembershipsDB.query);
@@ -27,9 +24,7 @@ const MembershipsDB: DataPage = {
             console.log(error);
         } finally {
             return {
-                ...MembershipsDB.data, ...MembershipsDB.query, ...{
-                    test: testData
-                }
+                ...MembershipsDB.data, ...MembershipsDB.query, 
             }
         }
     },
