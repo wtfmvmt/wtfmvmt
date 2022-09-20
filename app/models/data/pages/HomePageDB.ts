@@ -1,31 +1,26 @@
-import resolveDataPage from "@utils/resolveDataPage";
-import images from "@db/images"
-import header from "@configs/header"
-import footer from "@configs/footer"
-import meta from "@configs/meta"
-import partners from "@db/partners"
-import { Tags } from "@models/typings/Tags"
-
-import MediaDB from "@db/media"
+import footer from "@configs/footer";
+import header from "@configs/header";
+import meta from "@configs/meta";
+import images from "@db/images";
+import partners from "@db/partners";
+import MediaDB from "@db/media";
 
 import type { DataPage } from "@typings/DataPage";
 
-
+``
 const HomePageDB: DataPage = {
 
     init: async () => {
 
-
         try {
-            const { getImages } = MediaDB.methods
-
-            const MediaCarousel = await getImages().then(images => images.map(image => image.src))
-
-            await Object.keys(HomePageDB.query).map(key => {
-                HomePageDB.query[key] = HomePageDB.query[key](MediaCarousel)
-            })
 
             const staticData = HomePageDB.data
+
+            await Object.keys(HomePageDB.query).map(async key => {
+
+                HomePageDB.query[key] = await HomePageDB.query[key]()
+            })
+
             return { ...staticData, ...HomePageDB.query }
 
         }
@@ -233,31 +228,26 @@ const HomePageDB: DataPage = {
                 }
             ]
         },
-
         featuredMedia: {
             title: 'Our Beloved Partnerships',
             features: [...partners]
 
         },
-
-
     },
 
     query: {
-        hero: (MediaCarousel) => {
 
-            console.log(MediaCarousel)
+        hero: async () => {
+
+            const { getImages } = MediaDB.methods
+            let images = await getImages().then(images => images.map(image => image.src))
 
             return {
-
-
-
                 id: 'WTFMVMT-HERO',
+                version: Date.now(),
                 title: meta.init().title,
                 description: meta.init().description,
-                mediaCarousels: [
-                    [...MediaCarousel]],
-
+                mediaCarousel: [...images],
                 heading: "The Community Development Movement",
                 cta: {
                     name: "Join the Movement",

@@ -21,6 +21,6 @@ body {
 * {
         transition-property: all;
         transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-        font-family: var(--font-primary);
+        font-family: var(--font-primary) !important;
         user-select: none;
 }

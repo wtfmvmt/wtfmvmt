@@ -41,7 +41,7 @@ export type Feature = {
 
 export type HeroProps = {
     title: string,
-    mediaCarousels: MediaCarousel[]
+    mediaCarousel: MediaCarousel
     description: string,
     cta: CallToAction,
     features?: {
@@ -57,7 +57,7 @@ export type HeroProps = {
 
 
 
-const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLinks, features }: HeroProps) => {
+const Hero = ({ mediaCarousel, actionLinks, cta, title, description, socialLinks, features }: HeroProps) => {
 
     const SocialLinks = () => {
 
@@ -89,7 +89,7 @@ const Hero = ({ mediaCarousels, actionLinks, cta, title, description, socialLink
             <div className="flex flex-wrap h-full">
 
                 <div className="w-full z-50 h-full puff-in-center ">
-                    <DistortionCarousel images={mediaCarousels[0]} />
+                    <DistortionCarousel images={mediaCarousel} />
                 </div>
 
             </div>

@@ -41,12 +41,14 @@ export default HomePage
 
 export async function getStaticProps() {
 
-  const pageData = await HomePageDB.init().then((data) => data)
+  const pageData = await HomePageDB.init()
+    .then((db) => db)
 
   return {
     props: {
       pageData: pageData,
-    }
+    },
+    revalidate: 2
   }
 }
 
