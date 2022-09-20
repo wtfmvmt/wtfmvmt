@@ -6,7 +6,6 @@ import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 import PageLayout from "@layouts/PageLayout"
-import HomePageDB from "@pages/HomePageDB"
 
 import type { IPage } from "@typings/Page"
 import type { StaticPage } from "@typings/StaticPage"
@@ -14,14 +13,11 @@ import type { StaticPage } from "@typings/StaticPage"
 import { useEffect } from "react"
 
 
-const configs = {
-  revalidation: 3
-}
 
 const HomePage: IPage<StaticPage> = ({ pageData }) => {
 
   useEffect(() => {
-    console.log(`[FacadeData] => `, pageData.test)
+    console.log(`[Data] => `, pageData)
   }, [pageData])
 
   return (
@@ -41,23 +37,13 @@ export default HomePage
 
 export async function getServerSideProps() {
 
-  const pageData = await HomePageDB.init()
+  const pageData = await fetch(`${process.env.NODE_ENV === "production" ? "https://wtfmvmt.com/api/pages" : `http://localhost:${process.env.PORT || 3000}/api/pages`}`, {
+    method: 'GET',
+  }).then(res => res.json())
 
   return {
     props: {
       pageData: pageData,
     }
-  }
-}
-
-
-const getDataPage = (page: string) => {
-  
-  switch (page) {
-    case 'home':
-      const data = fetch('pages/home', )
-      return HomePageDB
-    default:
-      return null
   }
 }

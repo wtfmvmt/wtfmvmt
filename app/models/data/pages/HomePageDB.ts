@@ -232,7 +232,6 @@ const HomePageDB: DataPage = {
 
         hero: () => {
 
-
             return {
                 id: 'WTFMVMT-HERO',
                 version: Date.now(),

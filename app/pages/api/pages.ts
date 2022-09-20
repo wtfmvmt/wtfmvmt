@@ -1,16 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import HomePageDB from '@models/data/pages/HomePageDB'
 
-
-export default function handler(
+export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<any>
 ) {
-
-    const data = {
-        layout: {
-            title: 'WTFMVMT API',
-        }
-    }
+    const data = await HomePageDB.init()
     res.status(200).json(data)
 }

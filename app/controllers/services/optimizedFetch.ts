@@ -1,16 +1,11 @@
-import { default as StableFetcher } from 'swr'
-import db from "@configs/db"
-import { useCallback as memoizer } from "react"
 
-const optimizedFetch = ({ apiPath }) => {
 
-    const { client } = db
+const optimizedFetch = () => {
 
-    const fetcher = memoizer((apiPath) => {
-        return StableFetcher(apiPath, client.fetcher)
-    }, [apiPath])
 
-    return fetcher
+    return fetch(`${process.env.NODE_ENV === "production" ? "https://wtfmvmt.com/api/media" : `http://localhost:${process.env.PORT || 3000}/api/media`}`, {
+        method: 'GET',
+    })
 }
 
 
