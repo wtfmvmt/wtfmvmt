@@ -197,13 +197,13 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                                             },
                                         }}
                                         sx={{
-                                            width: '1500px',
+                
                                             color: '#FFFFFF',
                                             fontFamily: 'Major Mono Display',
                                             borderWidth: '0px',
                                             outline: 0,
                                             padding: '0.5rem 0.5rem 0 0',
-                                        }} className="w-full bg-transparent border-0 focus:ring-transparent focus:outline-none py-2" label={<span className="text-white">SEEK & FIND</span>} />
+                                        }} className="w-full bg-transparent border-1 border-white focus:ring-transparent focus:outline-none py-2" label={<span className="text-white">SEEK & FIND</span>} />
                                 }
                             />
 
