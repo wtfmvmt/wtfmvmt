@@ -10,21 +10,21 @@ import type { DataPage } from "@typings/DataPage";
 ``
 const HomePageDB: DataPage = {
 
-    init: async () => {
+    init: () => {
 
         try {
 
-            const staticData = HomePageDB.data
-
-            await Object.keys(HomePageDB.query).map(key => {
+            Object.keys(HomePageDB.query).map(key => {
                 HomePageDB.query[key] = HomePageDB.query[key]()
             })
 
-            return { ...staticData, ...HomePageDB.query }
+            return { ...HomePageDB.data, ...HomePageDB.query }
 
         }
         catch (error) {
             console.log(error);
+        } finally {
+            return { ...HomePageDB.data, ...HomePageDB.query }
         }
     },
 
@@ -238,7 +238,7 @@ const HomePageDB: DataPage = {
                 version: Date.now(),
                 title: meta.init().title,
                 description: meta.init().description,
-                mediaCarousel: [...images.map(img => img.src)],
+                mediaCarousel: ["...images.map(img => img.src)"],
                 heading: "The Community Development Movement",
                 cta: {
                     name: "Join the Movement",

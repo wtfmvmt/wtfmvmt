@@ -1,13 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-type Data = {
-  message?: string
-}
 
 export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+    req: NextApiRequest,
+    res: NextApiResponse<any>
 ) {
-  res.status(200).json({ message: 'Welcome to WTFMVMT API! Use wisely!' })
+
+    const data = {
+        layout: {
+            title: 'WTFMVMT API',
+        }
+    }
+    res.status(200).json(data)
 }
