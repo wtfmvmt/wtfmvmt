@@ -14,21 +14,21 @@ import { useEffect } from "react"
 
 
 
-const HomePage: IPage<StaticPage> = ({ pageData }) => {
+const HomePage: IPage<StaticPage> = ({ page }) => {
 
   useEffect(() => {
-    console.log(`[Data] => `, pageData)
-  }, [pageData])
+    console.log(`[Data] => `, page)
+  }, [page])
 
   return (
-    <PageLayout {...pageData.layout}>
-      <Hero {...pageData.hero} />
-      <FeaturedSection {...pageData.featuredSection} />
-      <SummarySection {...pageData.summarySection} />
-      <SimpleFormSection {...pageData.simpleFormSection} />
-      <StatsSection {...pageData.statsSection} />
-      <ImageMasonry {...pageData.imageMasonry} />
-      <ContactSection {...pageData.contactSection} />
+    <PageLayout {...page.layout}>
+      <Hero {...page.data.hero} />
+      <FeaturedSection {...page.data.featuredSection} />
+      <SummarySection {...page.data.summarySection} />
+      <SimpleFormSection {...page.data.simpleFormSection} />
+      <StatsSection {...page.data.statsSection} />
+      <ImageMasonry {...page.data.imageMasonry} />
+      <ContactSection {...page.data.contactSection} />
     </PageLayout>
   )
 }
@@ -37,13 +37,14 @@ export default HomePage
 
 export async function getServerSideProps() {
 
-  const pageData = await fetch(`${process.env.NODE_ENV === "production" ? "https://wtfmvmt.com/api/pages" : `http://localhost:${process.env.PORT || 3000}/api/pages`}`, {
-    method: 'GET',
+  const page = await fetch(`${process.env.NODE_ENV === "production" ? "https://wtfmvmt.com/api/pages" : `http://localhost:${process.env.PORT || 3000}/api/pages`}`, {
+    method: 'POST',
+    body: JSON.stringify({ page: "home" }),
   }).then(res => res.json())
 
   return {
     props: {
-      pageData: pageData,
+      page: page,
     }
   }
 }
