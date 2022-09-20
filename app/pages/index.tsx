@@ -5,7 +5,9 @@ import ImageMasonry from "@components/ImageMasonry"
 import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
+
 import PageLayout from "@layouts/PageLayout"
+import PageService from "@services/pages"
 
 import type { IPage } from "@typings/Page"
 import type { StaticPage } from "@typings/StaticPage"
@@ -37,10 +39,9 @@ export default HomePage
 
 export async function getServerSideProps() {
 
-  const page = await fetch(`${process.env.NODE_ENV === "production" ? "https://wtfmvmt.com/api/pages" : `http://localhost:${process.env.PORT || 3000}/api/pages`}`, {
-    method: 'POST',
-    body: JSON.stringify({ page: "home" }),
-  }).then(res => res.json())
+  const { getPage } = PageService
+
+  const page = await getPage("home")
 
   return {
     props: {
