@@ -50,3 +50,14 @@ export async function getServerSideProps() {
   }
 }
 
+
+const getDataPage = (page: string) => {
+  
+  switch (page) {
+    case 'home':
+      const data = fetch('pages/home', )
+      return HomePageDB
+    default:
+      return null
+  }
+}

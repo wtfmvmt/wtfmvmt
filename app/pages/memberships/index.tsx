@@ -23,7 +23,7 @@ export default MembershipsIndexPage
 
 export async function getStaticProps() {
 
-    const pageData = await MembershipsDB.init().then((db) => db)
+    const pageData = await MembershipsDB.init()
 
     return {
         props: {

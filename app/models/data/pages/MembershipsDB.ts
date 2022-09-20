@@ -14,12 +14,12 @@ import type { DataPage } from "@typings/DataPage";
 const MembershipsDB: DataPage = {
 
 
-    init: async () => {
+    init: () => {
 
 
         try {
-            await Object.keys(MembershipsDB.query).map(key => {
-                
+            Object.keys(MembershipsDB.query).map(key => {
+
                 MembershipsDB.query[key] = MembershipsDB.query[key]()
             })
 
@@ -30,6 +30,11 @@ const MembershipsDB: DataPage = {
         }
         catch (error) {
             console.log(error);
+        } finally {
+            return {
+                ...MembershipsDB.data, ...MembershipsDB.query,
+            }
+
         }
     },
 
