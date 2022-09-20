@@ -16,13 +16,10 @@ const HomePageDB: DataPage = {
 
             const staticData = HomePageDB.data
 
-            await Object.keys(HomePageDB.query).map(async key => {
-
-                HomePageDB.query[key] = await HomePageDB.query[key]()
+            await Object.keys(HomePageDB.query).map(key => {
+                HomePageDB.query[key] = HomePageDB.query[key]()
             })
 
-
-            
             return { ...staticData, ...HomePageDB.query }
 
         }
@@ -50,15 +47,9 @@ const HomePageDB: DataPage = {
                 {
                     title: 'WTF is WTF?'
                 },
-                {
 
-                },
-                {
-                    title: 'WTF is WTF?'
-                },
-                {
 
-                },
+
 
             ]
 
@@ -241,14 +232,13 @@ const HomePageDB: DataPage = {
 
         hero: () => {
 
-            const { getImages } = MediaDB.methods
 
             return {
                 id: 'WTFMVMT-HERO',
                 version: Date.now(),
                 title: meta.init().title,
                 description: meta.init().description,
-                mediaCarousel: ["",""],
+                mediaCarousel: [...images.map(img => img.src)],
                 heading: "The Community Development Movement",
                 cta: {
                     name: "Join the Movement",
