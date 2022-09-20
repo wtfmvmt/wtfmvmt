@@ -183,7 +183,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                                 sx={{ width: 300, border: 0, color: 'white', fontFamily: 'var(--font-primary)' }}
 
                                 renderInput={(params) =>
-                                    <TextField fullWidth variant="standard" {...params}
+                                    <TextField variant="standard" {...params}
                                         InputProps={{
                                             style: {
                                                 outline: 'white',
