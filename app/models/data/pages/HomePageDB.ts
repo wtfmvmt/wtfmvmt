@@ -7,6 +7,7 @@ import MediaDB from "@db/media";
 
 import type { DataPage } from "@typings/DataPage";
 
+``
 const HomePageDB: DataPage = {
 
     init: async () => {
@@ -18,11 +19,11 @@ const HomePageDB: DataPage = {
             await Object.keys(HomePageDB.query).map(async key => {
 
                 HomePageDB.query[key] = await HomePageDB.query[key]()
-                
             })
-            return { ...staticData, ...HomePageDB.query }
-            console.log(HomePageDB.query);
 
+
+            
+            return { ...staticData, ...HomePageDB.query }
 
         }
         catch (error) {
@@ -238,17 +239,16 @@ const HomePageDB: DataPage = {
 
     query: {
 
-        hero: async () => {
+        hero: () => {
 
             const { getImages } = MediaDB.methods
-            let images = await getImages().then(images => images.map(image => image.src))
 
             return {
                 id: 'WTFMVMT-HERO',
                 version: Date.now(),
                 title: meta.init().title,
                 description: meta.init().description,
-                mediaCarousel: [...images],
+                mediaCarousel: ["",""],
                 heading: "The Community Development Movement",
                 cta: {
                     name: "Join the Movement",
