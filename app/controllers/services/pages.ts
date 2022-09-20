@@ -10,16 +10,18 @@ const PageService = {
     },
 
     resolveDataPage: async (db) => {
-        const data = Object.assign({}, db)
         const query = Object.keys(db).map(async (key) => {
             Object.keys(db[key]).map(async (index) => {
                 if (typeof db[key][index] === "function") ({
-                    [db[key][index]]: await db[key][index]().then(data => data)
+                    [db[key][index]]: await db[key][index]()
                 })
             })
         })
 
-        return { ...data, ...query }
+        const data = Object.assign({ ...query }, db)
+
+
+        return { ...data }
     }
 }
 

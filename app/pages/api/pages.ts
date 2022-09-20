@@ -26,7 +26,7 @@ export default async function handler(
     const result = {
         version: Date.now(),
         layout: pages.layout,
-        data: pageIndex.data
+        data: pageData.data
     }
 
     res.status(200).json(result)

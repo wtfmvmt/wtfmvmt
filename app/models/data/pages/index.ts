@@ -8,7 +8,7 @@ const pages = {
 
     layout: {
         metaData: {
-            pageTitle: "Love Thy Neighbor",
+            pageTitle: () => "Love Thy Neighbor",
         },
         header: { ...header.init() },
         footer: { ...footer.init() },

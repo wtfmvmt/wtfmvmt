@@ -1,4 +1,3 @@
-import resolveDataPage from "@utils/resolveDataPage";
 import images from "@db/images"
 import header from "@configs/header"
 import footer from "@configs/footer"
