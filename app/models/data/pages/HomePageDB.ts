@@ -7,7 +7,6 @@ import MediaDB from "@db/media";
 
 import type { DataPage } from "@typings/DataPage";
 
-``
 const HomePageDB: DataPage = {
 
     init: async () => {
@@ -19,9 +18,11 @@ const HomePageDB: DataPage = {
             await Object.keys(HomePageDB.query).map(async key => {
 
                 HomePageDB.query[key] = await HomePageDB.query[key]()
+                
             })
-
             return { ...staticData, ...HomePageDB.query }
+            console.log(HomePageDB.query);
+
 
         }
         catch (error) {

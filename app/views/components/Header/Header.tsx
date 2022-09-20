@@ -187,14 +187,27 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                                 sx={{ width: 300, border: 0, color: 'white', fontFamily: 'var(--font-primary)' }}
 
                                 renderInput={(params) =>
-                                    <TextField fullWidth variant="standard" {...params} sx={{
-                                        width: '1500px',
-                                        color: '#FFFFFF',
-                                        fontFamily: 'Major Mono Display',
-                                        borderWidth: '0px',
-                                        border: 0,
-                                        padding: '0.5rem 0.5rem 0 0',
-                                    }} className="w-full bg-transparent border-0 focus:ring-transparent focus:outline-none py-2" label={<span className="text-white">SEEK & FIND</span>} />
+                                    <TextField fullWidth variant="standard" {...params}
+                                        InputProps={{
+                                            style: {
+                                                outline: 'white',
+                                                border: 'white',
+                                                color: 'white',
+                                            }
+                                        }}
+                                        InputLabelProps={{
+                                            style: {
+                                                border: 'white',
+                                            },
+                                        }}
+                                        sx={{
+                                            width: '1500px',
+                                            color: '#FFFFFF',
+                                            fontFamily: 'Major Mono Display',
+                                            borderWidth: '0px',
+                                            outline: 0,
+                                            padding: '0.5rem 0.5rem 0 0',
+                                        }} className="w-full bg-transparent border-0 focus:ring-transparent focus:outline-none py-2" label={<span className="text-white">SEEK & FIND</span>} />
                                 }
                             />
 
