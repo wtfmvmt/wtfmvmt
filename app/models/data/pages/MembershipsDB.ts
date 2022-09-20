@@ -19,8 +19,10 @@ const MembershipsDB: DataPage = {
 
         try {
             await Object.keys(MembershipsDB.query).map(key => {
+                
                 MembershipsDB.query[key] = MembershipsDB.query[key]()
             })
+
             return {
                 ...MembershipsDB.data, ...MembershipsDB.query,
             }
@@ -28,10 +30,6 @@ const MembershipsDB: DataPage = {
         }
         catch (error) {
             console.log(error);
-        } finally {
-            return {
-                ...MembershipsDB.data, ...MembershipsDB.query,
-            }
         }
     },
 
