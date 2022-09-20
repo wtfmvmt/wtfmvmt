@@ -1,7 +1,6 @@
 
 
-const optimizedFetch = () => {
-
+const nextFetch = () => {
 
     return fetch(`${process.env.NODE_ENV === "production" ? "https://wtfmvmt.com/api/media" : `http://localhost:${process.env.PORT || 3000}/api/media`}`, {
         method: 'GET',
@@ -9,4 +8,4 @@ const optimizedFetch = () => {
 }
 
 
-export default optimizedFetch
+export default nextFetch

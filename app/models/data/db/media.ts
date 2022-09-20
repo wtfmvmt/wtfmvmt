@@ -1,4 +1,4 @@
-import optimizedFetch from "@services/optimizedFetch"
+import optimizedFetch from "@controllers/services/nextFetch"
 
 const MediaDB = {
 
