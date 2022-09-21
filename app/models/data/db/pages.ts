@@ -2,6 +2,8 @@ import footer from "@configs/footer";
 import header from "@configs/header";
 import meta from "@configs/meta";
 import images from "@db/images";
+import media from "@db/media";
+
 import partners from "@db/partners";
 
 const pages = {
@@ -17,12 +19,18 @@ const pages = {
     home: {
         query: {
             hero: () => {
+
+
+                const carouselImages = new Promise(async resolve => {
+                    await resolve(await media.methods.getImages())
+                })
+
                 return {
                     id: 'WTFMVMT-HERO',
                     version: Date.now(),
                     title: meta.init().title,
                     description: meta.init().description,
-                    mediaCarousel: ["...images.map(img => img.src)"],
+                    mediaCarousel: ['carouselImages', carouselImages],
                     heading: "The Community Development Movement",
                     cta: {
                         name: "Join the Movement",
@@ -234,7 +242,7 @@ const pages = {
                             title: 'Liberation',
                             description: 'Sign up to be a part of our community',
                         }
-    
+
                     ]
                 }
             },
