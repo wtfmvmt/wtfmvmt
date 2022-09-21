@@ -1,5 +1,4 @@
 import PageService from "@services/pages"
-import pages from "@pages/index";
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -8,25 +7,16 @@ export default async function handler(
     res: NextApiResponse<any>
 ) {
 
-    if (req.method !== 'POST') {
-        res.status(405).send({ message: '[WTFMVMT: API] => Only POST requests allowed' })
-        return
-    }
+    const { resolveQuery, loadPage, getLayout } = PageService.methods
 
+    const pageKey = JSON.stringify(req.body.pageKey) || "home";
 
-    const { resolveDataPage } = PageService;
+    const pageData = await resolveQuery(loadPage(pageKey).query)
 
-    const pageKey = JSON.parse(req.body).page
-
-    const pageIndex = pages[pageKey]
-
-
-    const pageData = await resolveDataPage(pageIndex)
-   
     const result = {
         version: Date.now(),
-        layout: pages.layout,
-        data: pageData.data
+        layout: getLayout(),
+        data: pageData,
     }
 
     res.status(200).json(result)

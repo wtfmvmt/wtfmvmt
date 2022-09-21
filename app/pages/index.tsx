@@ -6,8 +6,9 @@ import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 
-import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/pages"
+
+import PageLayout from "@layouts/PageLayout"
 
 import type { IPage } from "@typings/Page"
 import type { StaticPage } from "@typings/StaticPage"
@@ -19,7 +20,7 @@ import { useEffect } from "react"
 const HomePage: IPage<StaticPage> = ({ page }) => {
 
   useEffect(() => {
-    console.log(`[Data] => `, page)
+    console.log(`[WTFMVMT:APP@1.0.0] => `, page)
   }, [page])
 
   return (
@@ -39,7 +40,7 @@ export default HomePage
 
 export async function getServerSideProps() {
 
-  const { getPage } = PageService
+  const { getPage } = PageService.methods
 
   const page = await getPage("home")
 
