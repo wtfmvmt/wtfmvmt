@@ -32,7 +32,7 @@ const pages = {
                             version: Date.now(),
                             title: meta.init().title,
                             description: meta.init().description,
-                            mediaCarousel: ['carouselImages', carouselImages],
+                            mediaCarousel: ['carouselImages'],
                             heading: "The Community Development Movement",
                             cta: {
                                 name: "Join the Movement",
