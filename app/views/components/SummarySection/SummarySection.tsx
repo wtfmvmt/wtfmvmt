@@ -13,6 +13,17 @@ export type SummarySectionProps = {
   sections: Section[]
 }
 
+const $SummarySection = ({ heading, title, description, sections }: SummarySectionProps) => {
+
+  const PropsObject = {
+    heading: heading ? heading : "HEADING_PROP_NOT_FOUND",
+    title: title ? title : "TITLE_PROP_NOT_FOUND",
+    description: description ? description : "DESCRIPTION_PROP_NOT_FOUND",
+    sections: sections ? sections : [{ title: "SECTION_TITLE_PROP_NOT_FOUND", description: "SECTION_DESCRIPTION_PROP_NOT_FOUND" }]
+  }
+
+  return PropsObject
+}
 
 const SummarySection = ({ heading, title, description, sections }: SummarySectionProps) => {
 
@@ -91,4 +102,5 @@ const SummarySection = ({ heading, title, description, sections }: SummarySectio
   )
 }
 
+export { $SummarySection }
 export default SummarySection

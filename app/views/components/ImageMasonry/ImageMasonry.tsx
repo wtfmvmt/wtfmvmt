@@ -24,6 +24,31 @@ export type ImageMasonryProps = {
     }
 }
 
+const $ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonryProps) => {
+
+    const PropsObject: ImageMasonryProps = {
+        heading: heading ? heading : "HEADING_PROPERTY_NOT_FOUND",
+        title: title ? title : "TITLE_PROPERTY_NOT_FOUND",
+        description: description ? description : "DESCRIPTION_PROPERTY_NOT_FOUND",
+        masonry: masonry ? masonry : {
+            minor: [{
+                title: "MINOR_PROPERTY_NOT_FOUND",
+                heading: "MINOR_PROPERTY_NOT_FOUND",
+                images: ["MINOR_PROPERTY_NOT_FOUND"]
+            }],
+            major: [{
+                title: "MAJOR_PROPERTY_NOT_FOUND",
+                heading: "MAJOR_PROPERTY_NOT_FOUND",
+                images: ["MAJOR_PROPERTY_NOT_FOUND"]
+            }]
+        },
+
+    }
+
+    return PropsObject
+}
+
+
 const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonryProps) => {
 
 
@@ -33,15 +58,15 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                 <div className="flex flex-wrap lg:justify-end">
                     <a
                         className="inline-block w-full md:w-auto mb-6 md:mb-0 md:mr-6 py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
-                        href={cta?.primary?.url ? cta.primary.url : "#"}
+                        href={cta?.primary?.url ? cta?.primary.url : "#"}
                     >
-                        {cta.primary ? cta.primary.name : "Primary"}
+                        {cta?.primary ? cta?.primary?.name : "Primary"}
                     </a>
                     <a
                         className="mt-4 inline-block w-full md:w-auto py-4 px-6 text-center leading-6 text-lg text-indigo-900 hover:text-white font-extrabold bg-white hover:bg-indigo-800 border-3 border-indigo-900 shadow rounded transition duration-200"
-                        href={cta?.secondary?.url ? cta.secondary.url : "#"}
+                        href={cta?.secondary?.url ? cta?.secondary?.url : "#"}
                     >
-                        {cta.secondary ? cta.secondary.name : "Secondary"}
+                        {cta?.secondary ? cta?.secondary?.name : "Secondary"}
                     </a>
                 </div>
             </div>
@@ -156,4 +181,5 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
     )
 }
 
+export { $ImageMasonry }
 export default ImageMasonry

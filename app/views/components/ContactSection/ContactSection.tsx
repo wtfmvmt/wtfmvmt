@@ -26,6 +26,41 @@ export type ContactSectionProps = {
 }
 
 
+const $ContactSection = ({ socials, phone, email, label, heading, description, cta }: ContactSectionProps) => {
+
+
+    const PropsObject: ContactSectionProps = {
+
+        socials: socials ? socials : [
+            {
+                url: "https://www.facebook.com/kevin.martinez.581",
+                name: "SOCIALS_PROPERTY_NOT_FOUND"
+            }
+        ],
+        phone: phone ? phone : "PHONE_PROPERTY_NOT_FOUND",
+        email: email ? email : "EMAIL_PROPERTY_NOT_FOUND",
+        label: label ? label : "LABEL_PROPERTY_NOT_FOUND",
+        heading: heading ? heading : "HEADING_PROPERTY_NOT_FOUND",
+        description: description ? description : "DESCRIPTION_PROPERTY_NOT_FOUND",
+        cta: cta ? cta : {
+            primary: {
+                name: cta?.primary?.name ? cta?.primary?.name : "PRIMARY_CTA_LABEL_PROPERTY_NOT_FOUND",
+                url: cta?.primary?.url ? cta?.primary?.url : "PRIMARY_CTA_URL_PROPERTY_NOT_FOUND"
+            },
+            secondary: {
+                name: "SECONDARY_CTA_LABEL_PROPERTY_NOT_FOUND",
+                url: "SECONDARY_CTA_URL_PROPERTY_NOT_FOUND"
+            }
+        }
+    }
+
+    return PropsObject
+
+
+}
+
+
+
 const ContactSection = ({ phone, email, socials, label, heading, description, cta }: ContactSectionProps) => {
 
 
@@ -56,24 +91,25 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
     const CallToActions = () => {
         return (
 
-            <div className="w-full lg:w-1/2 px-4">
+            cta ? <div className="w-full lg:w-1/2 px-4">
                 <div className="flex flex-wrap items-center lg:justify-end">
                     <a
                         className="inline-block w-full md:w-auto mb-2 md:mb-0 md:mr-4 py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-purple-800 hover:bg-purple-900 border-3 border-purple-900 shadow rounded transition duration-200"
-                        href={cta.primary.url}
+                        href={cta?.primary?.url}
                     >
-                        {cta.primary.name}
+                        {cta?.primary?.name}
                     </a>
                     <a
                         className="inline-block w-full md:w-auto py-4 px-6 text-center leading-6 text-lg text-indigo-900 hover:text-white font-extrabold bg-white hover:bg-indigo-800 border-3 border-indigo-900 shadow rounded transition duration-200"
-                        href={cta.secondary.url}
+                        href={cta?.secondary?.url}
                     >
-                        {cta.secondary.name}
+                        {cta?.secondary?.name}
                     </a>
                 </div>
-            </div>
+            </div> : <></>
         )
     }
+    
     const Socials = () => {
 
         return (
@@ -155,4 +191,5 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
     )
 }
 
+export { $ContactSection }
 export default ContactSection

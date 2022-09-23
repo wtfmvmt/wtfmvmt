@@ -40,6 +40,8 @@ export type Feature = {
 }
 
 export type HeroProps = {
+    name?: string,
+    version?: string | number,
     title: string,
     mediaCarousel: MediaCarousel
     description: string,
@@ -55,7 +57,21 @@ export type HeroProps = {
     socialLinks?: SocialLink[]
 }
 
+const $Hero = ({ title, mediaCarousel, description, cta, features, actionLinks, socialLinks }: HeroProps) => {
 
+    const PropsObject: HeroProps = {
+        name: 'hero',
+        title: title ? title : "TITLE_PROPERTY_NOT_FOUND",
+        mediaCarousel: mediaCarousel ? mediaCarousel : ["MEDIA_CAROUSEL_PROPERTY_NOT_FOUND"],
+        description: description ? description : "DESCRIPTION_PROPERTY_NOT_FOUND",
+        cta: cta ? cta : { name: "CTA_PROPERTY_NOT_FOUND", url: "#" },
+        features: features ? features : { heading: "FEATURES_PROPERTY_NOT_FOUND", featured: [{ image: { url: "https://via.placeholder.com/150" } }] },
+        actionLinks: actionLinks ? actionLinks : { title: "ACTION_LINKS_PROPERTY_NOT_FOUND", links: [{ name: "ACTION_LINKS_PROPERTY_NOT_FOUND", url: "#" }] },
+        socialLinks: socialLinks ? socialLinks : [{ url: "#" }]
+    }
+
+    return PropsObject
+}
 
 const Hero = ({ mediaCarousel, actionLinks, cta, title, description, socialLinks, features }: HeroProps) => {
 
@@ -211,4 +227,5 @@ const Hero = ({ mediaCarousel, actionLinks, cta, title, description, socialLinks
     )
 }
 
+export { $Hero }
 export default Hero

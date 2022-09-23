@@ -3,14 +3,29 @@ import type { Image } from "@typings/Image"
 
 
 export type SimpleFormSectionProps = {
-
+  name?: string,
   cover: Image,
-  heading: string, 
+  heading: string,
   title: string,
-  description: string, 
+  description: string,
   placeHolder: string,
   cta: CallToAction
 }
+
+const $SimpleFormSection = ({ cover, heading, title, description, placeHolder, cta }: SimpleFormSectionProps) => {
+  const PropsObject = {
+    name: "simepleFormSection",
+    cover: cover ? cover : { src: "COVER_PROP_NOT_FOUND", alt: "COVER_PROP_NOT_FOUND" },
+    heading: heading ? heading : "HEADING_PROP_NOT_FOUND",
+    title: title ? title : "TITLE_PROP_NOT_FOUND",
+    description: description ? description : "DESCRIPTION_PROP_NOT_FOUND",
+    placeHolder: placeHolder ? placeHolder : "PLACEHOLDER_PROP_NOT_FOUND",
+    cta: cta ? cta : { label: "CTA_LABEL_PROP_NOT_FOUND", href: "CTA_HREF_PROP_NOT_FOUND" }
+  }
+  return PropsObject
+}
+
+
 const SimpleFormSection = () => {
 
   return (
@@ -60,4 +75,5 @@ const SimpleFormSection = () => {
   )
 }
 
+export { $SimpleFormSection }
 export default SimpleFormSection

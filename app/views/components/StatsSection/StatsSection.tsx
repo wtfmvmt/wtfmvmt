@@ -26,6 +26,37 @@ export type StatsSectionProps = {
     tables?: Table[]
 }
 
+
+const $StatsSection = ({ heading, title, description, tables }: StatsSectionProps) => {
+
+    const PropsObject: StatsSectionProps = {
+        heading: heading ? heading : "HEADING_PROPERTY_NOT_FOUND",
+        title: title ? title : "TITLE_PROPERTY_NOT_FOUND",
+        description: description ? description : "DESCRIPTION_PROPERTY_NOT_FOUND",
+        tables: tables ? tables : [{
+            title: "TABLE_PROPERTY_NOT_FOUND",
+            description: "TABLE_PROPERTY_NOT_FOUND",
+            pricing: {
+                rate: "TABLE_PROPERTY_NOT_FOUND",
+                unit: "TABLE_PROPERTY_NOT_FOUND"
+            },
+            cta: {
+                primary: {
+                    name: "TABLE_PROPERTY_NOT_FOUND",
+                    url: "TABLE_PROPERTY_NOT_FOUND"
+                },
+                secondary: {
+                    name: "TABLE_PROPERTY_NOT_FOUND",
+                    url: "TABLE_PROPERTY_NOT_FOUND"
+                }
+            },
+        }]
+    }
+
+
+    return PropsObject
+}
+
 const StatsSection = ({ heading, title, description, tables }: StatsSectionProps) => {
 
     const Header = () => {
@@ -122,4 +153,5 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
     )
 }
 
+export { $StatsSection } 
 export default StatsSection
