@@ -42,6 +42,7 @@ export type Feature = {
 export type HeroProps = {
     name?: string,
     version?: string | number,
+    payload?: any,
     title: string,
     mediaCarousel: MediaCarousel
     description: string,
@@ -57,10 +58,11 @@ export type HeroProps = {
     socialLinks?: SocialLink[]
 }
 
-const $Hero = ({ title, mediaCarousel, description, cta, features, actionLinks, socialLinks }: HeroProps) => {
+const $Hero = ({ payload, title, mediaCarousel, description, cta, features, actionLinks, socialLinks }: HeroProps) => {
 
     const PropsObject: HeroProps = {
         name: 'hero',
+        payload: payload ? payload : "No payload",
         title: title ? title : "TITLE_PROPERTY_NOT_FOUND",
         mediaCarousel: mediaCarousel ? mediaCarousel : ["MEDIA_CAROUSEL_PROPERTY_NOT_FOUND"],
         description: description ? description : "DESCRIPTION_PROPERTY_NOT_FOUND",

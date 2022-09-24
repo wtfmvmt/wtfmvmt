@@ -14,6 +14,7 @@ export type Masonry = {
 }
 
 export type ImageMasonryProps = {
+    name?: string,
     heading?: string,
     title?: string,
     description?: string,
@@ -27,6 +28,7 @@ export type ImageMasonryProps = {
 const $ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonryProps) => {
 
     const PropsObject: ImageMasonryProps = {
+        name: "imageMasonry",
         heading: heading ? heading : "HEADING_PROPERTY_NOT_FOUND",
         title: title ? title : "TITLE_PROPERTY_NOT_FOUND",
         description: description ? description : "DESCRIPTION_PROPERTY_NOT_FOUND",

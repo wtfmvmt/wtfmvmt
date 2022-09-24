@@ -10,6 +10,7 @@ import layout from "@configs/layout";
 
 
 
+import media from "@db/media"
 
 const pages = {
     id: 'wtfmvmt-pages',
@@ -27,10 +28,13 @@ const pages = {
                     component: $Hero,
                     props: async () => {
 
-                        return {
+                        const data = await media.methods.getImages()
+
+                        return  {
                             id: 'WTFMVMT-HERO',
                             version: Date.now(),
-                            title: meta.init().title,
+                            payload: data,
+                            title: "WTFMVMT",
                             description: meta.init().description,
                             mediaCarousel: ['carouselImages'],
                             heading: "The Community Development Movement",

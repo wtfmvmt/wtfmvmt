@@ -1,6 +1,6 @@
 import optimizedFetch from "@controllers/services/nextFetch"
 
-const MediaDB = {
+const media = {
 
     id: 'mediaDB',
     version: Date.now(),
@@ -30,4 +30,4 @@ const MediaDB = {
 
 }
 
-export default MediaDB
+export default media
