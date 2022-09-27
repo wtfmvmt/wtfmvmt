@@ -1,75 +1,38 @@
 import pages from "@db/pages"
-
+import NotionService from '@services/notion'
 
 const PageService = {
 
-    data: {
-        layout: pages.layout,
-        pages: pages
+    loadDataPage: (store?: any, pageKey?: string) => {
+        return pages(store, pageKey)
     },
 
-    methods: {
+    getPage: async (pageKey: string) => {
 
-        loadDataPage: (pageKey: string) => {
-            return PageService.data.pages.pages[pageKey ? pageKey : 'home']
-        },
+        const { loadDataPage } = PageService
+        const { loadCentralDogma } = NotionService
 
-        loadLayout: () => {
-            return PageService.data.layout
-        },
+        const centralDogma = (await loadCentralDogma()).results
 
-        getPage: async (pageKey: string) => {
-            const isProduction = process.env.NODE_ENV === "production"
-            return await fetch(`${isProduction ? "https://wtfmvmt.com/api/pages" : `http://localhost:${process.env.PORT || 3000}/api/pages`}`,
-                {
-                    method: 'POST',
-                    body: JSON.stringify({ page: `${pageKey ? pageKey : "home"}` }),
-                }).then(res => res.json())
-        },
+        const { layout, data, id, version } = loadDataPage(centralDogma, pageKey ? pageKey : "home")
 
-        resolveQuery: async (query: any, dependencies: [] = []) => {
 
-            var globalData = await Promise.all(dependencies ? dependencies : [])
-
-            let resultStack = {}
-
-            const QueryProcess = query.map((data) => {
-
-                const { component, props } = data
-
-                Object.keys(props).map(async (prop) => {
-                    if (typeof props[prop] === "function") {
-                        props[prop] = await props[prop]()
-                    } else {
-                        if (props[prop].constructor.name === "AsyncFunction" &&
-                            props[prop] !== undefined &&
-                            props[prop] !== null) {
-                            try {
-                                await props[prop]().then(
-                                    (res) => {
-                                        props[prop] = res
-                                    }
-                                )
-                            } catch (error) {
-                                props[prop] = error
-                            }
-                        } else {
-                            props[prop] = await props[prop]
-                        }
-                    }
-                })
-                return component(props)
-            }
-            )
-
-            QueryProcess.map((data) => {
-                resultStack[data.name] = data
-            })
-
-            return resultStack
+        const page = {
+            id: 'wtfmvmt-pages',
+            db: id,
+            version: version,
+            layout: layout,
+            ...data,
         }
-    }
+
+        return page
+
+    },
+
 }
 
 
+
+
 export default PageService
+

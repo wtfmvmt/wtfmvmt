@@ -1,16 +1,9 @@
 import meta from "@configs/meta"
 
 
-const footer = {
+const footer = () => {
 
-    init: () => {
-
-        return {
-            ...footer.data
-        }
-    },
-
-    data: {
+    return {
         impressum: meta.init().impressum,
         links: meta.init().links,
         copyright: [...meta.init().copyright],

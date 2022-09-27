@@ -7,17 +7,19 @@ import { $ContactSection } from "@components/ContactSection"
 
 import meta from "@configs/meta";
 import layout from "@configs/layout";
-
-
-
 import media from "@db/media"
 
-const pages = {
-    id: 'wtfmvmt-pages',
-    version: Date.now(),
-    layout: layout,
-    dependencies: [],
-    pages: {
+export type PageData = {
+    store: any,
+    pageKey: string,
+}
+
+const pages = ({ store, pageKey }: PageData) => {
+
+    const siteSocialLinks = meta().socials
+
+    const pageData = {
+
         home: {
             metaData: {
                 version: Date.now(),
@@ -30,12 +32,12 @@ const pages = {
 
                         const data = await media.methods.getImages()
 
-                        return  {
+                        return {
                             id: 'WTFMVMT-HERO',
                             version: Date.now(),
                             payload: data,
                             title: "WTFMVMT",
-                            description: meta.init().description,
+                            description: meta().description,
                             mediaCarousel: ['carouselImages'],
                             heading: "The Community Development Movement",
                             cta: {
@@ -43,7 +45,7 @@ const pages = {
                                 url: "/memberships",
                                 icon: "SchoolIcon"
                             },
-                            socialLinks: meta.init().socials,
+                            socialLinks: meta().socials,
                             features: {
                                 heading: 'Featured Affiliates & Partners',
                                 featured: [
@@ -176,6 +178,16 @@ const pages = {
                 }
             ]
         }
+        
+
+    }
+
+
+    return {
+        id: 'wtfmvmt-pages-db',
+        version: Date.now(),
+        layout: layout,
+        data: pageData[pageKey]
     }
 }
 

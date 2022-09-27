@@ -1,22 +1,26 @@
 import meta from "@configs/meta"
 
-const menu = {
-    favicon: {
-        src: meta.init().logo,
-        url: '/'
-    },
+const menu = () => {
+    
 
-    links: [...meta.init().links],
-    cta: [
-        {
-            name: 'Sponsorships',
-            url: '/partners'
+    return {
+        favicon: {
+            src: meta.init().logo,
+            url: '/'
         },
-        {
-            name: 'Join Us',
-            url: '/forms'
-        }
-    ]
+
+        links: [...meta.init().links],
+        cta: [
+            {
+                name: 'Sponsorships',
+                url: '/partners'
+            },
+            {
+                name: 'Join Us',
+                url: '/forms'
+            }
+        ]
+    }
 }
 
 export default menu

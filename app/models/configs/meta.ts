@@ -1,11 +1,6 @@
-const meta = {
+const meta = () => {
 
-    init: () => {
-
-        return { ...meta.data }
-    },
-
-    data: {
+    return {
         title: 'WTFMVMT',
         description: ["The community developers for tomorrow.", 'We are a Community of Conscious Builders for the Future',],
         logo: '/assets/images/logo-transparent.png',
@@ -86,6 +81,7 @@ const meta = {
             },
         ]
     }
+
 }
 
 export default meta

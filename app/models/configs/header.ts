@@ -1,20 +1,8 @@
-import type { DataPage } from "@typings/DataPage"
 import search from "@configs/search"
 
-const header: DataPage = {
+const header = () => {
 
-    init: () => {
-        return {
-            ...header.data
-        }
-    },
-
-    query: {
-
-    },
-
-    data: {
-
+    return {
         search: [...search.collections],
         banner: {
             countdown: 10000000000,
@@ -24,9 +12,8 @@ const header: DataPage = {
             src: '/assets/images/logo-transparent.png',
             url: '/'
         },
-
-
     }
 }
+
 
 export default header
