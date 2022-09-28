@@ -10,11 +10,13 @@ import PermMedia from "@mui/icons-material/PermMedia"
 import Store from "@mui/icons-material/Store"
 import StoreMallDirectoryIcon from "@mui/icons-material/StoreMallDirectory"
 import Visibility from "@mui/icons-material/Visibility"
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 
 const icons = () => {
     return {
         "VISIBILITY": Visibility,
+        "ARROW_DROP_UP": ArrowDropUpIcon,
         "STORE": Store,
         "COLOR_LENS": ColorLens,
         "LIBRARY_BOOKS": LibraryBooks,

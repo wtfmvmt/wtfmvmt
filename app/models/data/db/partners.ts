@@ -1,20 +1,24 @@
-export type Partner = {
+import NotionService from "@services/notion"
 
-}
 
 const partners = () => {
 
+    const { db: { PARTNERS } } = NotionService
+
     return {
         id: 'partnersDataBase',
-        version: `[WTFMVMT: Partners]: ${Date.now()}`,
-        predicates: {
-isPartner: (data) => data?.properties?.Type?.select?.name === "🛍️Product"
-        },
-        filters: {
-            getPartners: (store) => {
-                return store.filter((data) => {
-                    return isPartner(data)
+        version: `[WTFMVMT: Media]: ${Date.now()}`,
+        methods: {
+            getMedia: (store) => {
+
+                const filterStoreData = store.filter((data) => {
+                    return PARTNERS.predicate(data)
+                }).map((data) => {
+                    return { ...PARTNERS.shape(data) }
                 })
+ 
+                return filterStoreData
+
             }
         }
     }

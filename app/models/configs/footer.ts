@@ -1,17 +1,15 @@
 import meta from "@configs/meta"
 
-
 const footer = () => {
 
+    const { impressum, links, socials, copyright, logo } = meta()
+
     return {
-        impressum: meta.init().impressum,
-        links: meta.init().links,
-        copyright: [...meta.init().copyright],
-        socials: meta.init().socials,
-        logo: {
-            src: '/assets/images/logo-transparent.png',
-            url: '/'
-        }
+        impressum,
+        links,
+        copyright,
+        socials,
+        logo,
     }
 }
 

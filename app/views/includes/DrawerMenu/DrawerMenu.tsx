@@ -1,21 +1,11 @@
-import useMenuDrawerState from "@hooks/useMenuDrawerState"
+import Icon from "@components/Icon";
+import useMenuDrawerState from "@hooks/useMenuDrawerState";
+import CloseIcon from "@mui/icons-material/Close";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { CSSTransition } from 'react-transition-group';
-import CloseIcon from "@mui/icons-material/Close";
-import type { Favicon } from "@typings/Favicon"
-import Icon from "@components/Icon"
-import type { CallToAction } from "@typings/CallToAction";
-export type Link = {
-    name: string,
-    url: string,
-    icon?: string
-}
 
-export type DrawerMenuProps = {
-    favicon: Favicon,
-    links: Link[],
-    cta?: CallToAction[]
-}
+import type { DrawerMenuProps } from "@typings/DrawerMenu";
+
 
 const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
 
@@ -54,7 +44,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                                 className="hover:text-purple-500 block p-4 text-lg font-extrabold hover:bg-black rounded"
                                 href={link.url}
                             >
-                                <Icon id={link.icon}/>
+                                <Icon id={link.icon} />
                                 <span className="hvr-wobble-horizontal ">
                                     {link.name}
                                 </span>

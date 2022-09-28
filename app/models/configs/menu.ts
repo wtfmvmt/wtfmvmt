@@ -1,25 +1,19 @@
 import meta from "@configs/meta"
+import links from "@configs/links"
+import { LinkTypes } from "@models/typings/Links"
+
 
 const menu = () => {
-    
+
+    const { logo: siteLogo } = meta()
+
+    const menuLinks = links().find((link) => link.type === LinkTypes.SITE_PAGE)
+
 
     return {
-        favicon: {
-            src: meta.init().logo,
-            url: '/'
-        },
-
-        links: [...meta.init().links],
-        cta: [
-            {
-                name: 'Sponsorships',
-                url: '/partners'
-            },
-            {
-                name: 'Join Us',
-                url: '/forms'
-            }
-        ]
+        favicon: siteLogo,
+        links: menuLinks,
+        cta: []
     }
 }
 

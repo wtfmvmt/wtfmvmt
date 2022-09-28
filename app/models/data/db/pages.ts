@@ -1,22 +1,29 @@
-import { $Hero } from "@components/Hero";
-import { $FeaturedSection } from "@views/components/FeaturedSection";
-import { $SummarySection } from "@views/components/SummarySection";
-import { $StatsSection } from "@components/StatsSection"
-import { $ImageMasonry } from "@components/ImageMasonry"
-import { $ContactSection } from "@components/ContactSection"
 
-import meta from "@configs/meta";
 import layout from "@configs/layout";
+import meta from "@configs/meta";
+import links from "@configs/links"
+
+import { $Hero } from "@components/Hero"
 import media from "@db/media"
+import memberships from "./memberships";
+import blog from "@db/blog"
+import partners from "@db/partners"
 
-export type PageData = {
-    store: any,
-    pageKey: string,
-}
+import { LinkTypes } from "@typings/Links"
+import { MediaTypes } from "@typings/MediaTypes"
 
-const pages = ({ store, pageKey }: PageData) => {
+import type { DataPageProps, IDataPage } from "@typings/DataPage"
 
-    const siteSocialLinks = meta().socials
+
+const pages = ({ store, pageKey }: DataPageProps): IDataPage => {
+
+    const { methods: { getMedia } } = media()
+
+    const { socials: siteSocialLinks, title: siteTitle, description: siteDescriptions } = meta()
+
+    const formLinks = links().find((link) => link.type === LinkTypes.FORM_PAGE)
+
+    const eventsCarousel = getMedia(store).find((media) => media.type === MediaTypes.EVENTS)
 
     const pageData = {
 
@@ -25,168 +32,47 @@ const pages = ({ store, pageKey }: PageData) => {
                 version: Date.now(),
                 pageTitle: 'Home'
             },
-            data: [
-                {
-                    component: $Hero,
-                    props: async () => {
-
-                        const data = await media.methods.getImages()
-
-                        return {
-                            id: 'WTFMVMT-HERO',
-                            version: Date.now(),
-                            payload: data,
-                            title: "WTFMVMT",
-                            description: meta().description,
-                            mediaCarousel: ['carouselImages'],
-                            heading: "The Community Development Movement",
-                            cta: {
-                                name: "Join the Movement",
-                                url: "/memberships",
-                                icon: "SchoolIcon"
-                            },
-                            socialLinks: meta().socials,
-                            features: {
-                                heading: 'Featured Affiliates & Partners',
-                                featured: [
-                                    {
-                                        name: 'Serenitys Grace',
-                                        url: '/parterns/serenitys-grace',
-                                        image: {
-                                            src: '/assets/images/serenitys-grace-logo.png',
-                                            alt: ''
-                                        }
-                                    },
-                                    {
-                                        name: "WTF Media",
-                                        url: 'https://mountaintopentertainmentgroup.com/',
-                                        image: {
-                                            src: '/assets/images/wtfmedia-logo.png',
-                                            alt: ''
-                                        }
-                                    },
-
-                                    {
-                                        name: 'Mountain Top Entertainment Group',
-                                        url: 'partners/mountaintop-entertainment-group',
-                                        image: {
-                                            src: '/assets/images/mountaintop-entertainment-group-logo.png',
-                                            alt: ''
-                                        }
-                                    },
-                                    {
-                                        name: 'Desirable Solutions',
-                                        url: 'partners/desirable-solutions',
-                                        image: {
-                                            src: '/assets/images/desirable-solutions-logo.png',
-                                            alt: ''
-                                        }
-                                    },
-                                    {
-
-                                        name: 'Keith Andes',
-                                        url: 'partners/keith-andes',
-                                        image: {
-                                            src: '/assets/images/keith-andes-logo.png',
-                                            alt: ''
-                                        }
-                                    },
-                                    {
-                                        name: 'Dianh Perry Art',
-                                        url: 'https://mountaintopentertainmentgroup.com/',
-                                        image: {
-                                            src: '/assets/images/diahnn-perry-logo.png',
-                                            alt: ''
-                                        }
-                                    },
-                                    {
-                                        name: 'Divergent U',
-                                        url: 'partners/divergent-u',
-                                        image: {
-                                            src: '/assets/images/divergent-u-logo.png',
-                                            alt: ''
-                                        }
-                                    },
-                                ]
-
-                            },
-                            actionLinks: {
-                                title: "The Community Development Movement",
-                                links: [
-                                    {
-                                        name: "For Artists",
-                                        url: "forms/artists",
-                                        icon: 'COLOR_LENS'
-                                    },
-                                    {
-                                        name: "For Newcomers",
-                                        url: "forms/newcomers",
-                                        icon: 'NEW'
-                                    },
-                                    {
-                                        name: "For Businesses",
-                                        url: "forms/businesses",
-                                        icon: 'DOMAIN'
-                                    },
-                                    {
-                                        name: "For Vendors",
-                                        url: "forms/vendors",
-                                        icon: 'VENDOR'
-                                    },
-                                    {
-                                        name: "Just RSVP",
-                                        url: "rsvp",
-                                        icon: 'VENDOR'
-                                    },
-                                ]
-                            }
-                        }
-                    },
-
-                },
-
-                {
-                    component: $FeaturedSection,
-                    props: {}
-                },
-                {
-                    component: $SummarySection,
-                    props: {}
-                },
-                {
-                    component: $StatsSection,
-                    props: {}
-                },
-                {
-                    component: $ContactSection,
-                    props: {}
-                },
-                {
-                    component: $ImageMasonry,
-                    props: {
-                        cta: {
-                            primary: {
-                                name: "Join the Movement",
-                                url: "/memberships",
-                            },
-                            secondary: {
-                                name: "Learn More",
-                                url: "/about",
-                            }
-                        }
-                    }
-                }
-            ]
+            data: {
+                hero: $Hero({
+                    
+                }),
+                featuredSection: {},
+                summarySection: {},
+                simpleFormSection: {},
+                statsSection: {},
+                imageMasonry: {},
+                contactSection: {}
+            },
+        },
+        artivism: {},
+        blog: {},
+        community: {},
+        events: {
+            metaData: {
+                pageTitle: 'Our Events'
+            }
+        },
+        forms: {},
+        legal: {},
+        media: {},
+        memberships: {},
+        partners: {},
+        rsvp: {},
+        shop: {},
+        vision: {
+            metaData: {
+                pageTitle: 'Our Vision'
+            }
         }
-        
-
     }
+
+    const pageLayout = { ...layout(), ...pageData[pageKey].metaData }
 
 
     return {
-        id: 'wtfmvmt-pages-db',
+        id: `${siteTitle}-pages-db'`,
         version: Date.now(),
-        layout: layout,
+        layout: pageLayout,
         data: pageData[pageKey]
     }
 }

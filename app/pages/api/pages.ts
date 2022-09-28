@@ -1,24 +1,17 @@
-import PageService from "@services/pages"
+import type { NextApiRequest, NextApiResponse } from 'next'
+import meta from "@configs/meta"
 
-import type { NextApiRequest, NextApiResponse } from 'next';
+import NotionService from '@services/notion'
+import PageService from "@services/pages"
 
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<any>
 ) {
 
+    const { getPage } = PageService
     
-    const { resolveQuery, loadDataPage, loadLayout } = PageService.methods
-
-    const pageKey = JSON.stringify(req.body.pageKey) || "home";
-
-    const dataQuery = await resolveQuery(loadDataPage(pageKey).data)
-
-    const pageData = {
-        version: Date.now(),
-        layout: loadLayout(),
-        data: dataQuery,
-    }
+    const pageData = await getPage("home")
 
     res.status(200).json(pageData)
 

@@ -1,10 +1,15 @@
 import pages from "@db/pages"
-import NotionService from '@services/notion'
+import NotionService from "@services/notion"
+import meta from "@configs/meta"
 
-const PageService = {
+import type { DataPageProps } from "@typings/DataPage"
+import type { Service } from "@typings/Service"
 
-    loadDataPage: (store?: any, pageKey?: string) => {
-        return pages(store, pageKey)
+
+const PageService: Service = {
+
+    loadDataPage: (store?: any[], pageKey?: string) => {
+        return pages({ store: store[0], pageKey })
     },
 
     getPage: async (pageKey: string) => {
@@ -14,19 +19,19 @@ const PageService = {
 
         const centralDogma = (await loadCentralDogma()).results
 
-        const { layout, data, id, version } = loadDataPage(centralDogma, pageKey ? pageKey : "home")
+        const { layout, data, id, version } = loadDataPage([centralDogma], pageKey ? pageKey : "home")
 
+        const { title: siteName } = meta()
 
-        const page = {
-            id: 'wtfmvmt-pages',
+        const dataPage: DataPageProps = {
+            id: `${siteName}: [pages] ${id}`,
             db: id,
-            version: version,
-            layout: layout,
+            version,
+            layout,
             ...data,
         }
 
-        return page
-
+        return dataPage
     },
 
 }

@@ -6,6 +6,8 @@ import "@libs/scrollbars.css"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+import RootLayout from "@views/layouts/RootLayout"
+
 import { PageTransition } from 'next-page-transitions'
 import { RecoilRoot } from 'recoil'
 
@@ -17,7 +19,7 @@ function Application({ Component, pageProps }: IApplication) {
   return (
     <RecoilRoot>
       <PageTransition loadingComponent={<></>}
-        timeout={333} classNames="page-transition">
+        timeout={200} classNames="page-transition">
           <Component {...pageProps} />
       </PageTransition>
     </RecoilRoot>

@@ -43,10 +43,10 @@ export type HeroProps = {
     name?: string,
     version?: string | number,
     payload?: any,
-    title: string,
-    mediaCarousel: MediaCarousel
-    description: string,
-    cta: CallToAction,
+    title?: string,
+    mediaCarousel?: MediaCarousel
+    description?: string,
+    cta?: CallToAction,
     features?: {
         heading: string,
         featured: Feature[]
