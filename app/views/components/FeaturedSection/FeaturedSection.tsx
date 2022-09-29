@@ -16,20 +16,6 @@ export type FeaturedSectionProps = {
 
 const imageSrc = images.map((image) => image.src)
 
-
-const $FeaturedSection = ({ heading, title, description, features }: FeaturedSectionProps) => {
-
-  const PropsObject: FeaturedSectionProps = {
-    heading: heading ? heading : "HEADING_PROP_NOT_FOUND",
-    title: title ? title : "TITLE_PROP_NOT_FOUND",
-    description: description ? description : "DESCRIPTION_PROP_NOT_FOUND",
-    features: features ? features : [{ title: "FEATURE_TITLE_PROP_NOT_FOUND", description: "FEATURE_DESCRIPTION_PROP_NOT_FOUND" }]
-  }
-
-  return PropsObject
-}
-
-
 const FeaturedSection = ({ heading, title, description, features }: FeaturedSectionProps) => {
 
   const Features = () => {
@@ -101,7 +87,5 @@ const FeaturedSection = ({ heading, title, description, features }: FeaturedSect
     </section >
   )
 }
-
-export { $FeaturedSection }
 
 export default FeaturedSection

@@ -40,9 +40,12 @@ export type Feature = {
 }
 
 export type HeroProps = {
+<<<<<<< HEAD
     name?: string,
     version?: string | number,
     payload?: any,
+=======
+>>>>>>> parent of c1fb380 ([ begun ])
     title: string,
     mediaCarousel: MediaCarousel
     description: string,
@@ -58,6 +61,7 @@ export type HeroProps = {
     socialLinks?: SocialLink[]
 }
 
+<<<<<<< HEAD
 const $Hero = ({ payload, title, mediaCarousel, description, cta, features, actionLinks, socialLinks }: HeroProps) => {
 
     const PropsObject: HeroProps = {
@@ -74,6 +78,9 @@ const $Hero = ({ payload, title, mediaCarousel, description, cta, features, acti
 
     return PropsObject
 }
+=======
+
+>>>>>>> parent of c1fb380 ([ begun ])
 
 const Hero = ({ mediaCarousel, actionLinks, cta, title, description, socialLinks, features }: HeroProps) => {
 
@@ -229,5 +236,4 @@ const Hero = ({ mediaCarousel, actionLinks, cta, title, description, socialLinks
     )
 }
 
-export { $Hero }
 export default Hero
