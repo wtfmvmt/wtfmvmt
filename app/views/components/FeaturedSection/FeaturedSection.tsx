@@ -1,5 +1,6 @@
+import { Fade } from "react-awesome-reveal"
 import DistortionCarousel from "@components/DistortionCarousel";
-
+import images from "@db/images"
 
 export type Feature = {
   title: string,
@@ -13,6 +14,7 @@ export type FeaturedSectionProps = {
   features: Feature[]
 }
 
+const imageSrc = images.map((image) => image.src)
 
 
 const $FeaturedSection = ({ heading, title, description, features }: FeaturedSectionProps) => {

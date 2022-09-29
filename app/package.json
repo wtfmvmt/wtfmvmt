@@ -1,9 +1,6 @@
 {
   "name": "wtfmvmt-com",
-  "version": "9.6.3",
-  "author": "Jeffrey Desir",
-  "license": "MIT",
-  "copyright": "2022 WTFMVMT. All Rights Reserved",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -19,6 +16,8 @@
     "@mui/material": "^5.10.2",
     "@notionhq/client": "^2.2.0",
     "@types/react-transition-group": "^4.4.5",
+    "@zoomus/websdk": "^2.7.0",
+    "custom-cursor-react": "^1.0.5",
     "dexie": "^3.2.2",
     "distortion-effect-carousel": "^1.1.0",
     "lodash": "^4.17.21",
@@ -28,6 +27,8 @@
     "next-page-transitions": "^1.0.0-beta.2",
     "react": "18.2.0",
     "react-awesome-reveal": "^4.0.1",
+    "react-conditional-render": "^1.1.0",
+    "react-confetti": "^6.1.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-countdown": "^2.3.2",
     "react-dom": "18.2.0",
@@ -43,15 +44,17 @@
     "react-scroll-to-top": "^3.0.0",
     "react-select-search-nextjs": "^3.0.9",
     "react-seo-tools": "^1.0.0",
+    "react-social-icons": "^5.14.0",
     "react-spinners": "^0.13.4",
+    "react-spring-3d-carousel-2": "^1.0.1",
     "react-super-seo": "^1.0.7",
     "react-typing-effect": "^2.0.5",
     "react-use": "^17.4.0",
     "recoil": "^0.7.5",
     "simple-json-filter": "^0.3.0",
     "swr": "^1.3.0",
-    "three": "^0.144.0"
-
+    "three": "^0.144.0",
+    "use-indexeddb": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "18.7.2",

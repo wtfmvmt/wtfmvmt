@@ -1,28 +1,24 @@
-import NotionService from "@services/notion"
+export type Price = {
+    rate?: string,
+    unit?: string
+}
 
 
-const memberships = () => {
+export type Membership = {
+    name?: string,
+    description?: string,
+    pricing?: Price
+}
 
-    const { db: { PARTNERS } } = NotionService
-
-    return {
-        id: 'membershipsDataBase',
-        version: `[WTFMVMT: Media]: ${Date.now()}`,
-        methods: {
-            getMedia: (store) => {
-
-                const filterStoreData = store.filter((data) => {
-                    return PARTNERS.predicate(data)
-                }).map((data) => {
-                    return { ...PARTNERS.shape(data) }
-                })
- 
-                return filterStoreData
-
-            }
+const memberships = [
+    {
+        name: 'Affiliate',
+        description: 'Affiliate Membership',
+        pricing: {
+            rate: ''
         }
     }
+]
 
-}
 
 export default memberships

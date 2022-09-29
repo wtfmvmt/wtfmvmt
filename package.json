@@ -1,13 +1,14 @@
 {
   "name": "wtfmvmt",
-  "version": "9.6.3",
+  "version": "12.0.1",
+  "description": "",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "app:dev": "cd app && npm i --force && npm run dev",
-    "readme:g":"npx @appnest/readme --input DOCUMENTATION.md generate",
+    "readme:g":"npx @appnest/readme generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

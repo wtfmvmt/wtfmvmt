@@ -1,19 +1,26 @@
 import Head from "next/head"
 import meta from "@configs/meta"
-import React from "react"
+
 
 const Meta = ({ pageTitle }) => {
 
-    const siteTitle = meta().title
-
     return (
         <Head>
+            
+            <title>{meta.init().title} | {pageTitle || "Home"}</title>
+            <>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Major+Mono+Display&family=Nova+Mono&display=swap"
+                    rel="stylesheet"
+                />
+            </>
 
-            <title>{siteTitle} | {pageTitle ? pageTitle : "Home"}</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta name="theme-color" content="#000000" />
+
 
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -64,4 +71,4 @@ const Meta = ({ pageTitle }) => {
     )
 }
 
-export default React.memo(Meta)
+export default Meta
