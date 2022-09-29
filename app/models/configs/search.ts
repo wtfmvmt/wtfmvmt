@@ -1,28 +1,30 @@
-const search = {
+const search = () => {
+    return {
 
-    collections: [
-        {
-            id: 'Community'
-        },
-        {
-            id: 'Events'
-        },
-        {
-            id: 'Partners'
-        },
-        {
-            id: 'Memers'
-        },
-        {
-            id: 'Artists'
-        },
-        {
-            id: 'Venues'
-        },
-        {
-            id: 'Blog'
-        }
-    ]
+        collections: [
+            {
+                id: 'Community'
+            },
+            {
+                id: 'Events'
+            },
+            {
+                id: 'Partners'
+            },
+            {
+                id: 'Memers'
+            },
+            {
+                id: 'Artists'
+            },
+            {
+                id: 'Venues'
+            },
+            {
+                id: 'Blog'
+            }
+        ]
+    }
 }
 
 export default search

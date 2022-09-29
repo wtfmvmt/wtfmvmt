@@ -1,12 +1,13 @@
 import header from "@configs/header"
 import footer from "@configs/footer"
 
+const layout = () => {
 
-const layout = {
+    const [headerData, footerData] = [header(), footer()]
 
-    header: {...header.init()},
-    footer: {...footer.init()},
-
+    return {
+        header: headerData,
+        footer: footerData,
+    }
 }
-
 export default layout
