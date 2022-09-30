@@ -1,4 +1,6 @@
-export type Image = {
-    src: string,
-    alt?: string
+export type ImageProps = {
+    src?: string,
+    alt?: string,
+    height?: string | number,
+    width?: string | number,
 }

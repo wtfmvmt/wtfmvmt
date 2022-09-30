@@ -1,14 +1,11 @@
 import DistortionCarousel from "@components/DistortionCarousel";
-import FacebookIcon from '@mui/icons-material/Facebook';
+import Icon from "@components/Icon";
+import type { Image } from "@typings/Image";
 import { Fade } from "react-awesome-reveal";
 import { SocialIcon } from 'react-social-icons';
 import ReactTypingEffect from 'react-typing-effect';
-import Carousel from 'react-spring-3d-carousel-2';
-import Icon from "@components/Icon"
-import type { Image } from "@typings/Image"
 
 
-import { Carousel as FallBackCarousel } from 'react-responsive-carousel';
 
 export type MediaCarousel = string[]
 
@@ -40,12 +37,9 @@ export type Feature = {
 }
 
 export type HeroProps = {
-<<<<<<< HEAD
     name?: string,
     version?: string | number,
     payload?: any,
-=======
->>>>>>> parent of c1fb380 ([ begun ])
     title: string,
     mediaCarousel: MediaCarousel
     description: string,
@@ -61,28 +55,11 @@ export type HeroProps = {
     socialLinks?: SocialLink[]
 }
 
-<<<<<<< HEAD
-const $Hero = ({ payload, title, mediaCarousel, description, cta, features, actionLinks, socialLinks }: HeroProps) => {
 
-    const PropsObject: HeroProps = {
-        name: 'hero',
-        payload: payload ? payload : "No payload",
-        title: title ? title : "TITLE_PROPERTY_NOT_FOUND",
-        mediaCarousel: mediaCarousel ? mediaCarousel : ["MEDIA_CAROUSEL_PROPERTY_NOT_FOUND"],
-        description: description ? description : "DESCRIPTION_PROPERTY_NOT_FOUND",
-        cta: cta ? cta : { name: "CTA_PROPERTY_NOT_FOUND", url: "#" },
-        features: features ? features : { heading: "FEATURES_PROPERTY_NOT_FOUND", featured: [{ image: { url: "https://via.placeholder.com/150" } }] },
-        actionLinks: actionLinks ? actionLinks : { title: "ACTION_LINKS_PROPERTY_NOT_FOUND", links: [{ name: "ACTION_LINKS_PROPERTY_NOT_FOUND", url: "#" }] },
-        socialLinks: socialLinks ? socialLinks : [{ url: "#" }]
-    }
 
-    return PropsObject
-}
-=======
+const Hero = ({ ...props }: HeroProps) => {
 
->>>>>>> parent of c1fb380 ([ begun ])
-
-const Hero = ({ mediaCarousel, actionLinks, cta, title, description, socialLinks, features }: HeroProps) => {
+    const { title, description, cta, features, actionLinks, socialLinks, mediaCarousel } = props
 
     const SocialLinks = () => {
 

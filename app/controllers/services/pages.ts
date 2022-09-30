@@ -13,14 +13,14 @@ const PageService = {
         const { loadCentralDogma } = NotionService
 
         const centralDogma = (await loadCentralDogma()).results
+    },
         loadPage: (pageKey: string) => {
             return PageService.data.pages[pageKey]
         },
 
-        getLayout: () => {
-            return PageService.data.layout
-        },
->>>>>>> parent of c1fb380 ([ begun ])
+            getLayout: () => {
+                return PageService.data.layout
+            },
 
         const { layout, data, id, version } = loadDataPage(centralDogma, pageKey ? pageKey : "home")
 
@@ -31,23 +31,23 @@ const PageService = {
             version: version,
             layout: layout,
             ...data,
-        resolveQuery: async (query) => {
+            resolveQuery: async (query) => {
 
-            return Object.fromEntries(
-                await Object.entries(query).map(([key, value]: [string, Function]) => {
-                    return [key, value()]
-                })
-            )
-        }
+                return Object.fromEntries(
+                    await Object.entries(query).map(([key, value]: [string, Function]) => {
+                        return [key, value()]
+                    })
+                )
+            }
 
         return page
 
-    },
+        },
+
+    }
+
+
 
 }
-
-
-
-
 export default PageService
 

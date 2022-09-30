@@ -4,28 +4,8 @@ import Icon from "@components/Icon"
 import { SocialIcon } from 'react-social-icons';
 import { Fade } from "react-awesome-reveal";
 import ReactTypingEffect from 'react-typing-effect';
+import type { FooterProps } from "@typings/Footer"
 
-export type Link = {
-  name: string,
-  url: string,
-  icon?: string
-}
-
-export type Social = {
-  name: string,
-  url: string,
-}
-
-export type FooterProps = {
-  copyright: string[],
-  impressum: string,
-  socials?: Social[],
-  links?: Link[],
-  logo?: {
-    src: string,
-    url?: string
-  }
-}
 
 const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {
 

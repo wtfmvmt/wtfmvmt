@@ -8,7 +8,6 @@ const meta = () => {
         copyright: ['©️ 2022 WTFMVMT. All Rights Reserved.',
             'Powered by WTFMVMT Technologies & Love',
             'Site by Desirable Solutions'],
-        phone: '321-350-5177',
         email: 'info@wtfmvmt.com',
         links: [
             {
