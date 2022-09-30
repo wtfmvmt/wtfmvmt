@@ -7,19 +7,18 @@ export default async function handler(
     res: NextApiResponse<any>
 ) {
 
-    
-    const { resolveQuery, loadDataPage, loadLayout } = PageService.methods
+    const { resolveQuery, loadPage, getLayout } = PageService.methods
 
     const pageKey = JSON.stringify(req.body.pageKey) || "home";
 
-    const dataQuery = await resolveQuery(loadDataPage(pageKey).data)
+    const pageData = await resolveQuery(loadPage(pageKey).query)
 
-    const pageData = {
+    const result = {
         version: Date.now(),
-        layout: loadLayout(),
-        data: dataQuery,
+        layout: getLayout(),
+        data: pageData,
     }
 
-    res.status(200).json(pageData)
+    res.status(200).json(result)
 
 }

@@ -1,7 +1,11 @@
 const meta = () => {
 
+<<<<<<< HEAD
     const metaObject = {
         
+=======
+    return {
+>>>>>>> main
         title: 'WTFMVMT',
         description: ["The community developers for tomorrow.", 'We are a Community of Conscious Builders for the Future',],
         logo: '/assets/images/logo-transparent.png',
@@ -83,7 +87,10 @@ const meta = () => {
         ]
     }
 
+<<<<<<< HEAD
     return { ...metaObject } ?? null
+=======
+>>>>>>> main
 }
 
 export default meta
