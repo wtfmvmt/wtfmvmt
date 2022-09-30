@@ -2,11 +2,14 @@ import header from "@configs/header"
 import footer from "@configs/footer"
 
 
-const layout = {
+const layout = () => {
+    const layoutObject = {
+        header: header(),
+        footer: footer(),
+    }
 
-    header: {...header.init()},
-    footer: {...footer.init()},
 
+    return layoutObject ?? null
 }
 
 export default layout

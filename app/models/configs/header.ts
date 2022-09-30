@@ -1,32 +1,10 @@
-import type { DataPage } from "@typings/DataPage"
-import search from "@configs/search"
+import type { IConfiguration } from "@typings/Configuration"
 
-const header: DataPage = {
+const header = () => {
 
-    init: () => {
-        return {
-            ...header.data
-        }
-    },
+    const headerObject = {}
 
-    query: {
-
-    },
-
-    data: {
-
-        search: [...search.collections],
-        banner: {
-            countdown: 10000000000,
-            messages: ["Attend our Interest Meeting 09/06", "This site is under construction."]
-        },
-        favicon: {
-            src: '/assets/images/logo-transparent.png',
-            url: '/'
-        },
-
-
-    }
+    return { ...headerObject } ?? null
 }
 
 export default header

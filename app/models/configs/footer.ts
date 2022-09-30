@@ -1,25 +1,10 @@
 import meta from "@configs/meta"
 
 
-const footer = {
+const footer = () => {
 
-    init: () => {
+    const footerObject = {}
 
-        return {
-            ...footer.data
-        }
-    },
-
-    data: {
-        impressum: meta.init().impressum,
-        links: meta.init().links,
-        copyright: [...meta.init().copyright],
-        socials: meta.init().socials,
-        logo: {
-            src: '/assets/images/logo-transparent.png',
-            url: '/'
-        }
-    }
+    return { ...footerObject } ?? null
 }
-
 export default footer

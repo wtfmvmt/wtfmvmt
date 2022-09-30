@@ -3,8 +3,6 @@ import type { NavLink } from "@typings/NavLink"
 import type { CallToAction } from "@typings/CallToAction"
 import type { BannerProps } from "@typings/Banner"
 
-
-
 export type Title = {
     name: string,
     url: string,
