@@ -1,3 +1,3 @@
 import type { FC } from "react"
 
-export interface Component<T> extends FC { }
+export interface IComponent<T> extends FC, JSX.IntrinsicAttributes { }

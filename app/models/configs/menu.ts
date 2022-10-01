@@ -5,11 +5,11 @@ const menu = () => {
 
     return {
         favicon: {
-            src: meta.init().logo,
+            src: meta().logo,
             url: '/'
         },
 
-        links: [...meta.init().links],
+        links: [...meta().links],
         cta: [
             {
                 name: 'Sponsorships',

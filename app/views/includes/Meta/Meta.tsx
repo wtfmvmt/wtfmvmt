@@ -7,7 +7,7 @@ const Meta = ({ pageTitle }) => {
     return (
         <Head>
             
-            <title>{meta.init().title} | {pageTitle || "Home"}</title>
+            <title>{meta().title} | {pageTitle || "Home"}</title>
             <>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

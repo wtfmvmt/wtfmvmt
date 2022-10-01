@@ -1,6 +1,5 @@
 import { Fade } from "react-awesome-reveal"
 import DistortionCarousel from "@components/DistortionCarousel";
-import images from "@db/images"
 
 export type Feature = {
   title: string,
@@ -14,7 +13,6 @@ export type FeaturedSectionProps = {
   features: Feature[]
 }
 
-const imageSrc = images.map((image) => image.src)
 
 const FeaturedSection = ({ heading, title, description, features }: FeaturedSectionProps) => {
 
@@ -80,7 +78,7 @@ const FeaturedSection = ({ heading, title, description, features }: FeaturedSect
       <Header />
 
       <div className="block w-full h-112 lg:h-156 mb-16 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg">
-        <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={imageSrc} />
+        <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={[]} />
       </div>
 
       <Features />

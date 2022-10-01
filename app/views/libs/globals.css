@@ -5,6 +5,10 @@
 }
 
 
+.MuiInput-underline {
+        color: white  !important
+}
+
 
 body {
         overflow-x: hidden;

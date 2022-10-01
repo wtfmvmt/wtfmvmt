@@ -1,53 +1,43 @@
-import pages from "@db/pages"
 import NotionService from '@services/notion'
+
+import pages from "@db/pages"
+import meta from "@configs/meta"
+
 
 const PageService = {
 
     loadDataPage: (store?: any, pageKey?: string) => {
-        return pages(store, pageKey)
+        return pages({ store, pageKey })
     },
 
     getPage: async (pageKey: string) => {
+
+        const { title: siteTitle } = meta()
 
         const { loadDataPage } = PageService
         const { loadCentralDogma } = NotionService
 
         const centralDogma = (await loadCentralDogma()).results
-    },
-        loadPage: (pageKey: string) => {
-            return PageService.data.pages[pageKey]
-        },
-
-            getLayout: () => {
-                return PageService.data.layout
-            },
 
         const { layout, data, id, version } = loadDataPage(centralDogma, pageKey ? pageKey : "home")
 
 
         const page = {
-            id: 'wtfmvmt-pages',
+            id: `${siteTitle}-pages`,
             db: id,
             version: version,
             layout: layout,
             ...data,
-            resolveQuery: async (query) => {
-
-                return Object.fromEntries(
-                    await Object.entries(query).map(([key, value]: [string, Function]) => {
-                        return [key, value()]
-                    })
-                )
-            }
+        }
 
         return page
 
-        },
-
-    }
-
-
+    },
 
 }
+
+
+
+
 export default PageService
 

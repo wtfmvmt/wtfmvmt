@@ -32,14 +32,14 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
     const Email = () => {
 
         return (
-            <div className="flex mb-14">
+            email ? <div className="flex mb-14">
                 <div className="flex-shrink-0 -mt-4 inline-flex items-center justify-center w-16 h-16 mr-8 bg-white rounded-full border-3 border-indigo-900 text-indigo-900 shadow-md">
                     <EmailIcon />
                 </div>
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Email</h3>
                     <p className="hover:scale-90 whitespace-nowrap transition-all text-xl sm:text-2xl text-red-200 bg-black bg-opacity-80 p-4 rounded">
-                        {email}
+                        {email ? email : "EMAIL_PROPERTY_NOT_FOUND"}
 
                         <CopyToClipboard onCopy={() => alert(`Copied!`)} text={email}>
                             <span className="p-2 whitespace-nowrap">
@@ -48,15 +48,15 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                         </CopyToClipboard>
                     </p>
                 </div>
-            </div>
+            </div> : <></>
         )
     }
 
 
-    const CallToActions = () => {
+    const CallToAction = () => {
         return (
 
-            <div className="w-full lg:w-1/2 px-4">
+            cta ? <div className="w-full lg:w-1/2 px-4">
                 <div className="flex flex-wrap items-center lg:justify-end">
                     <a
                         className="inline-block w-full md:w-auto mb-2 md:mb-0 md:mr-4 py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-purple-800 hover:bg-purple-900 border-3 border-purple-900 shadow rounded transition duration-200"
@@ -71,7 +71,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                         {cta.secondary.name}
                     </a>
                 </div>
-            </div>
+            </div> : <></>
         )
     }
     const Socials = () => {
@@ -129,7 +129,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                             </p>
                         </div>
                     </div>
-                    <CallToActions />
+                    <CallToAction />
                 </div>
 
 

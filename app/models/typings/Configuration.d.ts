@@ -1,1 +1,3 @@
-export interface IConfiguration<T> {}
+export interface IConfiguration<T> {
+    (): T;
+}

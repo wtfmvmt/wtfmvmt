@@ -1,18 +1,22 @@
+
 import meta from "@configs/meta"
 
+import type { IConfiguration } from "@typings/Configuration"
+import type { FooterProps } from "@typings/Footer"
 
-const footer = () => {
+const footer: IConfiguration<FooterProps> = () => {
 
-    return {
-        impressum: meta.init().impressum,
-        links: meta.init().links,
-        copyright: [...meta.init().copyright],
-        socials: meta.init().socials,
-        logo: {
-            src: '/assets/images/logo-transparent.png',
-            url: '/'
-        }
+    const { impressum, logo, socials, copyright, links } = meta()
+
+    const footerObject = {
+        impressum,
+        links,
+        copyright,
+        socials,
+        logo,
     }
+
+    return { ...footerObject } ?? null
 }
 
 export default footer

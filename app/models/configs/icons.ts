@@ -13,7 +13,8 @@ import Visibility from "@mui/icons-material/Visibility"
 
 
 const icons = () => {
-    return {
+
+    const iconsData = {
         "VISIBILITY": Visibility,
         "STORE": Store,
         "COLOR_LENS": ColorLens,
@@ -27,6 +28,8 @@ const icons = () => {
         "VENDOR": StoreMallDirectoryIcon,
         "CLOSE": CloseIcon
     }
+
+    return { ...iconsData } ?? null
 }
 
 export default icons

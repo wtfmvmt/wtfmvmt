@@ -1,70 +1,19 @@
 import DistortionCarousel from "@components/DistortionCarousel";
 import Icon from "@components/Icon";
-import type { Image } from "@typings/Image";
-import { Fade } from "react-awesome-reveal";
-import { SocialIcon } from 'react-social-icons';
-import ReactTypingEffect from 'react-typing-effect';
+import FadeAnimation from "@components/FadeAnimation"
+import TypedText from "@components/TypedText"
+import type { HeroProps } from "@typings/Hero";
+import type { IComponent } from "@typings/Component"
 
 
-
-export type MediaCarousel = string[]
-
-export type Link = {
-    name: string,
-    url: string
-}
-
-export type ActionLink = {
-    name: string,
-    url: string,
-    icon?: string
-}
-
-export type CallToAction = {
-    name: string,
-    url: string
-}
-
-export type SocialLink = {
-    url: string,
-}
-
-
-export type Feature = {
-    name?: string,
-    url?: string
-    image: Image
-}
-
-export type HeroProps = {
-    name?: string,
-    version?: string | number,
-    payload?: any,
-    title: string,
-    mediaCarousel: MediaCarousel
-    description: string,
-    cta: CallToAction,
-    features?: {
-        heading: string,
-        featured: Feature[]
-    }
-    actionLinks?: {
-        title: string,
-        links: ActionLink[]
-    }
-    socialLinks?: SocialLink[]
-}
-
-
-
-const Hero = ({ ...props }: HeroProps) => {
+const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
 
     const { title, description, cta, features, actionLinks, socialLinks, mediaCarousel } = props
 
     const SocialLinks = () => {
 
         return (
-            <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
+            socialLinks ? <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
 
                 {
                     socialLinks.map((link, index) => (
@@ -72,14 +21,14 @@ const Hero = ({ ...props }: HeroProps) => {
                         <a
                             key={index}
                             className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 rounded-full"
-                            href="#"
+                            href={link.url}
                         >
-                            <SocialIcon bgColor="white" url={link.url} />
+                            <Icon name={link.icon} />
                         </a>
                     ))
                 }
 
-            </div>
+            </div> : <></>
         )
     }
 
@@ -91,7 +40,7 @@ const Hero = ({ ...props }: HeroProps) => {
             <div className="flex flex-wrap h-full">
 
                 <div className="w-full z-50 h-full puff-in-center ">
-                    <DistortionCarousel images={mediaCarousel} />
+                    <DistortionCarousel images={mediaCarousel ? mediaCarousel : ["", ""]} />
                 </div>
 
             </div>
@@ -101,15 +50,13 @@ const Hero = ({ ...props }: HeroProps) => {
 
     const ActionLinks = () => (
 
-        actionLinks &&
-
-        <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
+        actionLinks ? <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
             <div className="px-4 md:px-8 py-12 ">
                 <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-white uppercase">
                     {actionLinks.title}
                 </h4>
                 <ul className="mb-5">
-                    <Fade triggerOnce cascade>
+                    <FadeAnimation cascade>
                         {
                             actionLinks.links.map((link, index) => {
                                 return (
@@ -125,12 +72,14 @@ const Hero = ({ ...props }: HeroProps) => {
                                 )
                             })}
 
-                    </Fade>
+                    </FadeAnimation>
 
                 </ul>
 
             </div>
-        </div>
+        </div> : <></>
+
+
 
     )
 
@@ -177,7 +126,7 @@ const Hero = ({ ...props }: HeroProps) => {
             </h2>
             <h4 className="mb-8 text-sm font-bold">
 
-                <ReactTypingEffect speed={50} eraseSpeed={10} typingDelay={40} text={description} />
+                <TypedText eraseSpeed={10} typingDelay={40} text={description} />
 
 
             </h4>

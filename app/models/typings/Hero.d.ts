@@ -1,3 +1,5 @@
+
+
 export type MediaCarousel = string[]
 
 export type Link = {
@@ -18,27 +20,29 @@ export type CallToAction = {
 
 export type SocialLink = {
     url: string,
+    name?: string,
+    icon?: string
 }
 
 
 export type Feature = {
     name?: string,
     url?: string
-    image: Image
+    image: any
 }
 
 export type HeroProps = {
-    title?: string,
-    mediaCarousel?: MediaCarousel,
-    description?: string,
-    cta?: CallToAction,
+    title: string,
+    mediaCarousel: MediaCarousel
+    description: string,
+    cta: CallToAction,
     features?: {
-        heading?: string,
-        features?: Feature[]
+        heading: string,
+        featured: Feature[]
     }
     actionLinks?: {
-        heading?: string,
-        actionLinks?: ActionLink[]
+        title: string,
+        links: ActionLink[]
     }
     socialLinks?: SocialLink[]
 }

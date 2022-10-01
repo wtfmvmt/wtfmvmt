@@ -1,15 +1,14 @@
-import ICONS from "@configs/icons"
+import icons from "@configs/icons"
 
 export type IconProps = {
-    id?: string
+    name?: string
 }
 
-const Icon = ({ id }: IconProps) => {
+const Icon = ({ name }: IconProps) => {
 
-    return id ? Object.keys(ICONS).filter((key) => key === id).map((key, index) => {
-        const IconComponent = ICONS[key];
-        return <IconComponent key={index} />
-    })[0] : <ICONS.VISIBILITY className='text-white hvr-pop' />
+    const IconComponent = icons()[name ? name : "VISIBILITY"]
+
+    return <IconComponent />
 
 }
 

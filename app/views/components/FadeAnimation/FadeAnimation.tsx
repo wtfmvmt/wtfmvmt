@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 const FadeAnimation = ({ children, ...overrides }) => {
 
     return (
-        <Fade {...overrides}>
+        <Fade triggerOnce {...overrides}>
             {children}
         </Fade>
     )

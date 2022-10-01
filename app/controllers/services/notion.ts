@@ -1,25 +1,40 @@
 import { Client } from "@notionhq/client"
 
 const NotionService = {
+
     api: new Client({
         auth: process.env.FACADE_API_KEY,
     }),
-    interface: {
-        notion: `${process.env.NODE_ENV === "production" ? "https://naturessecret.co/api/db" : `http://localhost:${process.env.PORT || 3002}/api/db`}`,
+
+    secured: {
+        central_dogma: process.env.CENTRAL_DOGMA_ID,
     },
-    types: {
-        PARTNERS: ""
+
+    db: {
+        MEDIA: {
+            shape: (data: any) => {
+
+                return {
+                    id: data.properties.id.rich_text[0].plain_text,
+                    key: data.properties.key.rich_text[0].plain_text,
+      
+
+                }
+            },
+            predicate: (data: any) => data?.properties?.Type?.select?.name === "📷Media" || false
+        },
 
     },
-    databases: {
-        central_dogma: 'b70f6b0e58b14ba59a4618e95898b817',
-    },
+
     loadCentralDogma: async () => {
-        const { central_dogma } = NotionService.databases
-        const response = await NotionService.api.databases.query({
-            database_id: central_dogma
+
+        const { api, secured } = NotionService
+
+        const centralDogma = await api.databases.query({
+            database_id: secured.central_dogma
         })
-        return response
+
+        return centralDogma
     },
 
 }

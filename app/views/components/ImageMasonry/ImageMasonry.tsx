@@ -25,7 +25,6 @@ export type ImageMasonryProps = {
     }
 }
 
-<<<<<<< HEAD
 const $ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonryProps) => {
 
     const PropsObject: ImageMasonryProps = {
@@ -52,14 +51,12 @@ const $ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMason
 }
 
 
-=======
->>>>>>> parent of c1fb380 ([ begun ])
 const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonryProps) => {
 
 
     const CallToAction = () => {
         return (
-            <div className="w-full lg:w-1/2 xl:w-1/3 px-4">
+            cta ? <div className="w-full lg:w-1/2 xl:w-1/3 px-4">
                 <div className="flex flex-wrap lg:justify-end">
                     <a
                         className="inline-block w-full md:w-auto mb-6 md:mb-0 md:mr-6 py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
@@ -74,7 +71,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                         {cta.secondary ? cta.secondary.name : "Secondary"}
                     </a>
                 </div>
-            </div>
+            </div> : <></>
         )
 
     }
@@ -151,9 +148,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                     }) : <></>
 
                 }
-
                 <div className="w-full lg:w-1/3 px-4 mb-8">
-
 
 
                     {
@@ -164,7 +159,6 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                         }) : <></>
 
                     }
-
 
                 </div>
 

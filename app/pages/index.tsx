@@ -7,10 +7,12 @@ import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 
 import PageService from "@services/pages"
-
 import PageLayout from "@layouts/PageLayout"
 
 import type { IPage } from "@typings/Page"
+
+import meta from "@configs/meta"
+
 import type { StaticPage } from "@typings/StaticPage"
 
 import { useEffect } from "react"
@@ -19,19 +21,22 @@ import { useEffect } from "react"
 
 const HomePage: IPage<StaticPage> = ({ page }) => {
 
+  const { layout, version, data: { hero, summarySection, featuredSection, statsSection, contactSection, imageMasonry } } = page
+  const { title: siteTitle } = meta()
+
   useEffect(() => {
-    console.log(`[WTFMVMT:APP@1.0.0] => `, page)
-  }, [page])
+    console.log(`[${siteTitle}@${version}] => `, page)
+  }, [page, siteTitle, version])
 
   return (
-    <PageLayout {...page.layout}>
-      <Hero {...page.data.hero} />
-      <FeaturedSection {...page.data.featuredSection} />
-      <SummarySection {...page.data.summarySection} />
-      <SimpleFormSection {...page.data.simpleFormSection} />
-      <StatsSection {...page.data.statsSection} />
-      <ImageMasonry {...page.data.imageMasonry} />
-      <ContactSection {...page.data.contactSection} />
+    <PageLayout {...layout}>
+      <Hero {...hero} />
+      <FeaturedSection {...featuredSection} />
+      <SummarySection {...summarySection} />
+      <SimpleFormSection {...statsSection} />
+      <StatsSection {...statsSection} />
+      <ImageMasonry {...imageMasonry} />
+      <ContactSection {...contactSection} />
     </PageLayout>
   )
 }
@@ -40,13 +45,13 @@ export default HomePage
 
 export async function getServerSideProps() {
 
-  const { getPage } = PageService.methods
+  const { getPage } = PageService
 
   const page = await getPage("home")
 
   return {
     props: {
-      page: page,
+      page
     }
   }
 }

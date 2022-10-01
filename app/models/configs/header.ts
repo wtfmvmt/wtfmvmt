@@ -1,9 +1,10 @@
+
 import search from "@configs/search"
 
 const header = () => {
 
-    return {
-        search: [...search.collections],
+    const headerObject = {
+        search: [...search().collections],
         banner: {
             countdown: 10000000000,
             messages: ["Attend our Interest Meeting 09/06", "This site is under construction."]
@@ -13,6 +14,8 @@ const header = () => {
             url: '/'
         },
     }
+
+    return { ...headerObject } ?? null
 }
 
 
