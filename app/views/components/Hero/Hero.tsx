@@ -35,17 +35,17 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
 
     const FeaturedGallery = () => (
 
-        <div className="w-full lg:w-2/3 px-3">
+        mediaCarousel ? <div className="w-full lg:w-2/3 px-3">
 
             <div className="flex flex-wrap h-full">
 
                 <div className="w-full z-50 h-full puff-in-center ">
-                    <DistortionCarousel images={mediaCarousel ? mediaCarousel : ["", ""]} />
+                    <DistortionCarousel images={mediaCarousel} />
                 </div>
 
             </div>
 
-        </div>
+        </div> : <></>
     )
 
     const ActionLinks = () => (
@@ -65,7 +65,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
                                             className="hvr-wobble-horizontal flex items-center text-lg jello-diagonol-1 font-bold font-heading hover:text-purple-400"
                                             href={link.url}
                                         >
-                                            <Icon id={link.icon} />
+                                            <Icon name={link.icon} />
                                             <span>{link.name}</span>
                                         </a>
                                     </li>

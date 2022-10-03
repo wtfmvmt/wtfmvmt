@@ -11,17 +11,19 @@ const NotionService = {
     },
 
     db: {
+
+        PARTNERS: {
+            shape: () =>{},
+            predicate: () =>{},
+        },
         MEDIA: {
             shape: (data: any) => {
-
                 return {
-                    id: data.properties.id.rich_text[0].plain_text,
-                    key: data.properties.key.rich_text[0].plain_text,
-      
-
+                    alt: data?.properties?.Name?.title[0].plain_text,
+                    src: data?.properties?.Media.files.map((file) => file.file.url),
                 }
             },
-            predicate: (data: any) => data?.properties?.Type?.select?.name === "📷Media" || false
+            predicate: (data: any) => data?.properties?.Database?.select?.name === "📷Media" ?? null
         },
 
     },

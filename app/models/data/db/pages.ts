@@ -1,10 +1,19 @@
 import meta from "@configs/meta"
 import layout from "@configs/layout"
 
+import media from "@db/media"
+
+
 const pages = ({ store, pageKey }) => {
+
+    const { getMedia } = media()
+
+    const mediaQuery = getMedia(store)
 
 
     const { title: siteTitle, email: siteEmail, impressum, socials } = meta()
+
+
 
 
     const pageData = {
@@ -17,9 +26,9 @@ const pages = ({ store, pageKey }) => {
                 hero: {
 
                     title: siteTitle,
-                    mediaCarousel: ["", ""],
+                    mediaCarousel: mediaQuery.map((media) => media.src),
                     description: impressum,
-              
+
                     cta: {
                         name: "Join the MVMT",
                         url: "/join"
