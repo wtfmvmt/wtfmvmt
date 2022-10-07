@@ -1,11 +1,10 @@
-import type { CallToAction } from "@models/typings/CallToAction"
-import { SocialIcon } from "react-social-icons"
-import GridIcon from "@components/GridIcon"
-import PhoneIcon from "@components/PhoneIcon"
 import EmailIcon from "@components/EmailIcon"
-import { Fade } from "react-awesome-reveal";
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import GridIcon from "@components/GridIcon"
+import type { CallToAction } from "@models/typings/CallToAction"
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import { Fade } from "react-awesome-reveal"
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { SocialIcon } from "react-social-icons"
 
 export type Social = {
     url: string,

@@ -1,6 +1,5 @@
 import { CallToAction } from "@models/typings/CallToAction"
 import { Fade } from "react-awesome-reveal"
-import Icon from "../Icon"
 export type Feature = {
     name?: string,
     url?: string
@@ -47,7 +46,6 @@ const TableRow = ({ tables, heading, title }: TableRow) => {
 
                                             return (
                                                 <div key={index} className="flex mb-4 items-center">
-                                                    <Icon />
                                                     <a href={feature.url} className="text-lg font-extrabold">
                                                         {feature.name}
                                                     </a>

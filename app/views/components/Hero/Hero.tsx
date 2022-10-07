@@ -1,9 +1,8 @@
 import DistortionCarousel from "@components/DistortionCarousel";
-import Icon from "@components/Icon";
-import FadeAnimation from "@components/FadeAnimation"
-import ReactTypingEffect from 'react-typing-effect';
+import FadeAnimation from "@components/FadeAnimation";
+import type { IComponent } from "@typings/Component";
 import type { HeroProps } from "@typings/Hero";
-import type { IComponent } from "@typings/Component"
+import ReactTypingEffect from 'react-typing-effect';
 
 
 const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
@@ -23,7 +22,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
                             className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 rounded-full"
                             href={link.url}
                         >
-                            <Icon icon={link.icon} />
+                       
                         </a>
                     ))
                 }
@@ -65,7 +64,6 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
                                             className="hvr-wobble-horizontal flex items-center text-lg jello-diagonol-1 font-bold font-heading hover:text-purple-400"
                                             href={link.url}
                                         >
-                                            <Icon icon={link.icon} />
                                             <span>{link.name}</span>
                                         </a>
                                     </li>

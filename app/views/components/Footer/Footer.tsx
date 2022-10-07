@@ -1,9 +1,8 @@
 
-import Image from "next/image"
-import Icon from "@components/Icon"
+import type { FooterProps } from "@typings/Footer";
+import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 import ReactTypingEffect from 'react-typing-effect';
-import type { FooterProps } from "@typings/Footer"
 
 
 const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {
@@ -50,7 +49,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                     <a key={index}
                       className="hvr-pop first-line:inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-purple-600 p-2 hover:bg-black transition-all hover:bg-opacity-60 hover:rounded"
                       href={link?.url}>
-                      <Icon icon={link.icon} />
+                 
                       {link?.name}
                     </a>
                   )
@@ -89,7 +88,6 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                 className="inline-block text-white hover:text-indigo-800 mr-8 hvr-pop transition-all"
                 href={social?.url ?? "#"}
               >
-                <Icon icon={social.icon ?? ""} />
 
               </a>
             )

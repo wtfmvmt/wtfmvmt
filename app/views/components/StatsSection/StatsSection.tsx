@@ -1,5 +1,4 @@
 import type { CallToAction } from "@typings/CallToAction"
-import Icon from "@components/Icon"
 
 export type Table = {
     title: string,
@@ -90,7 +89,6 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
                                             table.features.map((feature, index) => {
                                                 return (
                                                     <div key={index} className="flex mb-4 items-start">
-                                                        <Icon />
                                                         <span className="text-lg font-extrabold">
                                                             {feature.name}
                                                         </span>
