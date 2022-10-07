@@ -6,13 +6,14 @@ import type { FooterProps } from "@typings/Footer"
 
 const footer: IConfiguration<FooterProps> = () => {
 
-    const { impressum, logo, socials, copyright, links } = meta()
+    const { impressum, logo, socials, copyright, links, email } = meta()
 
     const footerObject = {
         impressum,
         links,
         copyright,
         socials,
+        email,
         logo,
     }
 

@@ -12,9 +12,24 @@ const NotionService = {
 
     db: {
 
+        FORMS: {
+            shape: (data) => {
+
+                const shapeObject = {
+                    title: data?.properties?.Name?.title[0]?.plain_text,
+                    url: data?.properties?.URL?.url ?? null,
+                }
+
+
+                return { ...shapeObject }
+            },
+
+            predicate: (data) => data?.properties?.Database?.select?.name === '📜Forms'
+        },
+
         PARTNERS: {
-            shape: () =>{},
-            predicate: () =>{},
+            shape: (data) => { },
+            predicate: (data) => { },
         },
         MEDIA: {
             shape: (data: any) => {

@@ -8,13 +8,14 @@ export type Feature = {
 
 export type FeaturedSectionProps = {
   heading: string,
+  carousel?: string[],
   title: string,
   description: string
   features: Feature[]
 }
 
 
-const FeaturedSection = ({ heading, title, description, features }: FeaturedSectionProps) => {
+const FeaturedSection = ({ heading, title, description, features, carousel }: FeaturedSectionProps) => {
 
   const Features = () => {
 
@@ -60,7 +61,7 @@ const FeaturedSection = ({ heading, title, description, features }: FeaturedSect
 
       <div className="container px-4 mx-auto relative">
         <div className="max-w-5xl mx-auto mb-16 text-center text-white">
-          <span className="text-lg font-extrabold text-orange-500">{heading ? heading : "HEADING"}</span>
+          <span className="text-lg font-extrabold text-purple-500">{heading ? heading : "HEADING"}</span>
           <h1 className="text-3xl md:text-4xl font-extrabold font-heading mt-4 mb-6">
             {title ? title : "TITLE"}
           </h1>
@@ -78,7 +79,7 @@ const FeaturedSection = ({ heading, title, description, features }: FeaturedSect
       <Header />
 
       <div className="block w-full h-112 lg:h-156 mb-16 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg">
-        <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={[]} />
+        <DistortionCarousel displacmentImage="/assets/images/distortions/3.jpg" images={carousel ?? ["#", "#"]} />
       </div>
 
       <Features />

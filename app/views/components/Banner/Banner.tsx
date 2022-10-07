@@ -1,8 +1,7 @@
 import useBannerState from "@hooks/useBannerState";
-import Icon from "@components/Icon"
-import TypedText from "@components/TypedText";
-import Countdown from "@components/Countdown"
+import ReactTypingEffect from 'react-typing-effect';
 
+import CloseIcon from "@mui/icons-material/Close";
 import type { BannerProps } from "@typings/Banner";
 
 import { CSSTransition } from 'react-transition-group';
@@ -18,11 +17,16 @@ const Banner = ({ messages, countdown }: BannerProps) => {
             <div className={`p-3 bg-black ${!open ? "slide-out-bck-center" : ""}`}>
                 <div className="flex items-center justify-center">
                     <p className="text-sm text-center font-bold font-heading text-purple-200">
-                        <TypedText speed={50} eraseSpeed={10} typingDelay={20} text={messages} />
+                        <ReactTypingEffect
+
+                            speed={50}
+                            eraseSpeed={10}
+                            typingDelay={20}
+                            text={messages} />
                     </p>
 
                     <p onClick={() => toggleBanner()} className="hover:scale-60 transition-all absolute right-2 top-2 text-gray-200 pr-1">
-                        <Icon id="CLOSE" />
+                        <CloseIcon />
                     </p>
 
                 </div>

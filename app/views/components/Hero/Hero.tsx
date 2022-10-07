@@ -1,7 +1,7 @@
 import DistortionCarousel from "@components/DistortionCarousel";
 import Icon from "@components/Icon";
 import FadeAnimation from "@components/FadeAnimation"
-import TypedText from "@components/TypedText"
+import ReactTypingEffect from 'react-typing-effect';
 import type { HeroProps } from "@typings/Hero";
 import type { IComponent } from "@typings/Component"
 
@@ -23,7 +23,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
                             className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 rounded-full"
                             href={link.url}
                         >
-                            <Icon name={link.icon} />
+                            <Icon icon={link.icon} />
                         </a>
                     ))
                 }
@@ -60,12 +60,12 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
                         {
                             actionLinks.links.map((link, index) => {
                                 return (
-                                    <li key={index} className="rounded transition-all hover:bg-black bg-opacity-80 py-5 px-8 border-b">
+                                    <li key={index} className="cursor-pointer rounded transition-all hover:bg-black bg-opacity-80 py-5 px-8 border-b">
                                         <a
                                             className="hvr-wobble-horizontal flex items-center text-lg jello-diagonol-1 font-bold font-heading hover:text-purple-400"
                                             href={link.url}
                                         >
-                                            <Icon name={link.icon} />
+                                            <Icon icon={link.icon} />
                                             <span>{link.name}</span>
                                         </a>
                                     </li>
@@ -126,8 +126,12 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
             </h2>
             <h4 className="mb-8 text-sm font-bold">
 
-                <TypedText eraseSpeed={10} typingDelay={40} text={description} />
+                <ReactTypingEffect
 
+                    speed={50}
+                    eraseSpeed={10}
+                    typingDelay={20}
+                    text={description} />
 
             </h4>
             <a

@@ -6,27 +6,24 @@ import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 
-import PageService from "@services/pages"
 import PageLayout from "@layouts/PageLayout"
+import PageService from "@services/pages"
 
 import type { IPage } from "@typings/Page"
-
-import meta from "@configs/meta"
-
-import type { StaticPage } from "@typings/StaticPage"
+import type { ServerSidePageProps } from "@typings/Page"
 
 import { useEffect } from "react"
 
 
 
-const HomePage: IPage<StaticPage> = ({ page }) => {
+const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
 
-  const { layout, version, data: { hero, summarySection, featuredSection, statsSection, contactSection, imageMasonry } } = page
-  const { title: siteTitle } = meta()
+  const { layout, id, version, data:
+    { hero, summarySection, featuredSection, statsSection, contactSection, imageMasonry } } = page
 
   useEffect(() => {
-    console.log(`[${siteTitle}@${version}] => `, page)
-  }, [page, siteTitle, version])
+    console.log(`[${id}@${version}] => `, page)
+  }, [page, id, version])
 
   return (
     <PageLayout {...layout}>

@@ -1,9 +1,9 @@
 import { default as NextImage } from "next/image"
 import type { ImageProps } from "@typings/Image"
-import type { Component } from "@typings/Component"
+import type { IComponent } from "@typings/Component"
 
 
-const Image: Component<ImageProps> = ({ src, alt, height, width }: ImageProps) => {
+const Image: IComponent<ImageProps> = ({ src, alt, height, width }: ImageProps) => {
 
     return <NextImage src={src} alt={alt} height={height} width={width} />
 }

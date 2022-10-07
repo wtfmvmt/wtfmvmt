@@ -1,33 +1,54 @@
-import PageLayout from "@views/layouts/PageLayout"
-import MembershipsDB from "@pages/MembershipsDB"
-import TableRow from "@views/components/TableRow"
-import LogoArray from "@views/components/LogoArray"
+import ContactSection from "@components/ContactSection"
+import FeaturedSection from "@components/FeaturedSection"
+import Hero from "@components/Hero"
+import ImageMasonry from "@components/ImageMasonry"
+import SimpleFormSection from "@components/SimpleFormSection"
+import StatsSection from "@components/StatsSection"
+import SummarySection from "@components/SummarySection"
+
+import PageLayout from "@layouts/PageLayout"
+import PageService from "@services/pages"
+
 import type { IPage } from "@typings/Page"
-import type { StaticPage } from "@typings/StaticPage"
+import type { ServerSidePageProps } from "@typings/Page"
+
+import { useEffect } from "react"
 
 
-const MembershipsIndexPage: IPage<StaticPage> = ({ pageData }) => {
 
-    return (
-        <PageLayout {...pageData.layout}>
-            <LogoArray {...pageData.logoArray} />
-            <TableRow {...pageData.tableRow} />
+const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
 
-        </PageLayout>
-    )
+  const { layout, id, version, data:
+    { hero, summarySection, featuredSection, statsSection, contactSection, imageMasonry } } = page
+
+  useEffect(() => {
+    console.log(`[${id}@${version}] => `, page)
+  }, [page, id, version])
+
+  return (
+    <PageLayout {...layout}>
+      <Hero {...hero} />
+      <FeaturedSection {...featuredSection} />
+      <SummarySection {...summarySection} />
+      <SimpleFormSection {...statsSection} />
+      <StatsSection {...statsSection} />
+      <ImageMasonry {...imageMasonry} />
+      <ContactSection {...contactSection} />
+    </PageLayout>
+  )
 }
 
+export default HomePage
 
-export default MembershipsIndexPage
+export async function getServerSideProps() {
 
+  const { getPage } = PageService
 
-export async function getStaticProps() {
+  const page = await getPage("home")
 
-    const pageData = await MembershipsDB.init()
-
-    return {
-        props: {
-            pageData: pageData
-        }
+  return {
+    props: {
+      page
     }
+  }
 }

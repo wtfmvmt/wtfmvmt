@@ -1,14 +1,16 @@
 import icons from "@configs/icons"
 
 export type IconProps = {
-    name?: string
+    icon?: string
 }
 
-const Icon = ({ name }: IconProps) => {
+const Icon = ({ icon }: IconProps) => {
 
-    const IconComponent = icons()[name ? name : "VISIBILITY"]
+    const data = icons()
 
-    return <IconComponent />
+    const IconComponent = (() => data[icon ? icon : "coffee"])()
+
+    return <IconComponent sx={{ height: '24px'}}  /> ?? <>❌</>
 
 }
 

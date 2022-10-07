@@ -5,7 +5,7 @@ const menu = () => {
 
     return {
         favicon: {
-            src: meta().logo,
+            src: meta().logo.src,
             url: '/'
         },
 

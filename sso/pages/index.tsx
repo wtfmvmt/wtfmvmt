@@ -13,7 +13,7 @@ const IndexPage: IPage<ServerPage> = ({ pageData }) => {
 
   return (
     <RootLayout {...pageData.layout}>
-      <Authenticator onSignIn={signIn} />
+      <Authenticator title="WTFMVMT" onSignIn={signIn} />
     </RootLayout>
   )
 }

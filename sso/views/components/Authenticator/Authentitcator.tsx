@@ -27,10 +27,9 @@ const Authenticator = ({ title, message, users, onSignIn }: AuthenticatorProps) 
     const SignIn = () => {
 
         return (
-            <a href="/dashboard">
-                <button className="mt-12 md:mt-16 bg-purple-700 hover:scale-90 transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
-                    Sign In
-                </button>
+            <a href="https://www.notion.so/officeos/WTFMVMT-88204edb5000435e86576bf45628c0d3" className="mt-12 md:mt-16 bg-purple-700 hover:scale-90 transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
+            
+              Sign In
             </a>
         )
 
@@ -90,7 +89,7 @@ const Authenticator = ({ title, message, users, onSignIn }: AuthenticatorProps) 
 
                         <Favicon />
                         <h2 className="mb-14 text-4xl text-white font-bold font-heading">
-                            {title ? title : 'Facade'}
+                            {title ? title : 'Façade'}
                         </h2>
 
                         <div className="relative max-w-xl mx-auto">

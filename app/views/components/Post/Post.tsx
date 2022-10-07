@@ -1,4 +1,4 @@
-import type { Image } from "@typings/Image"
+import type { ImageProps } from "@typings/Image"
 import DistortionCarousel from "@components/DistortionCarousel";
 
 
@@ -8,7 +8,7 @@ export type PostProps = {
     title: string,
     subTitle: string,
     tags?: string[],
-    covers?: Image[],
+    covers?: ImageProps[],
     url?: string,
     text?: string
 }

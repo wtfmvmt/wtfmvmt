@@ -12,20 +12,20 @@ export type Link = {
 }
 
 export type DrawerMenuProps = {
-    favicon: Favicon,
-    links: Link[],
+    favicon?: Favicon,
+    links?: Link[],
     cta?: CallToAction[]
 }
 
-const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
+const DrawerMenu = ({ favicon, links, cta }) => {
 
     const { open, toggleDrawer } = useMenuDrawerState()
 
     const CTA = () => {
         return (
-            <div className="">
+            cta ? <div className="">
                 {
-                    cta && cta.map((callToAction, index) => {
+                    cta.map((callToAction, index) => {
 
                         return (
                             <a
@@ -35,11 +35,10 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                             >
                                 {callToAction.name}
                             </a>
-
                         )
-                    })
-                }
-            </div>
+                    })}
+
+            </div> : <></>
         )
     }
 
@@ -54,7 +53,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                                 className="hover:text-purple-500 block p-4 text-lg font-extrabold hover:bg-black rounded"
                                 href={link.url}
                             >
-                                <Icon id={link.icon}/>
+                                <Icon icon={link.icon} />
                                 <span className="hvr-wobble-horizontal ">
                                     {link.name}
                                 </span>
@@ -70,10 +69,10 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
     const Favicon = () => {
 
         return (
-            <a className="mr-auto text-2xl font-bold leading-none" href={favicon.url}>
+            <a className="mr-auto text-2xl font-bold leading-none" href={favicon?.url ?? ""}>
                 <img
                     className="h-16"
-                    src={favicon.src}
+                    src={favicon?.src ?? ""}
                     alt="wtfmvmt-logo"
                     width="auto"
                 />
@@ -92,7 +91,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
     return (
         <CSSTransition
             in={open}
-            timeout={900}
+            timeout={234}
             unmountOnExit
         >
             <div className="transition-all navbar-menu relative z-50">

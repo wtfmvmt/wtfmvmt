@@ -1,6 +1,9 @@
-import type { Image } from "@typings/Image"
+import type { ImageProps } from "@typings/Image"
+
+
+
 export type Logo = {
-    image?: Image,
+    image?: ImageProps,
     url?: string,
     name?: string
 }

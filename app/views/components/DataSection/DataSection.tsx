@@ -1,9 +1,9 @@
 import type { CallToAction } from "@models/typings/CallToAction"
-import type { Image } from "@typings/Image"
+import type { ImageProps } from "@typings/Image"
 
 
 export type Content = {
-  cover?: Image,
+  cover?: ImageProps,
   title: string,
   tags?: string[],
   url?: string,

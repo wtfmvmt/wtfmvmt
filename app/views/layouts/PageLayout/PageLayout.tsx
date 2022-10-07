@@ -7,19 +7,15 @@ import menu from "@configs/menu"
 import ScrollToTop from "react-scroll-to-top";
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
-export type Layout = {
-    children?: React.ReactNode,
-    metaData: any,
-    header: any,
-    footer: any
-}
 
 const PageLayout = ({ children, metaData, header, footer }) => {
+
+    const menuConfig = menu()
 
     return (
         <RootLayout metaData={metaData}>
             <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'black' }} />} smooth />
-            <DrawerMenu {...menu} />
+            <DrawerMenu {...menuConfig} />
             <Header {...header} />
             <Fade>
                 {children}

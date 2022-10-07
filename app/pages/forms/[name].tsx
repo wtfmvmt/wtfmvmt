@@ -1,44 +1,54 @@
+import ContactSection from "@components/ContactSection"
+import FeaturedSection from "@components/FeaturedSection"
+import Hero from "@components/Hero"
+import ImageMasonry from "@components/ImageMasonry"
+import SimpleFormSection from "@components/SimpleFormSection"
+import StatsSection from "@components/StatsSection"
+import SummarySection from "@components/SummarySection"
+
 import PageLayout from "@layouts/PageLayout"
-import FormMaster from "@components/FormMaster"
-import formPages from "@pages/formPages"
+import PageService from "@services/pages"
 
-const FormPage = ({ formData }) => {
+import type { IPage } from "@typings/Page"
+import type { ServerSidePageProps } from "@typings/Page"
 
-    return (
-        <PageLayout {...formData.layout}>
-            <FormMaster {...formData.form} />
-        </PageLayout>
+import { useEffect } from "react"
 
-    )
+
+
+const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
+
+  const { layout, id, version, data:
+    { hero, summarySection, featuredSection, statsSection, contactSection, imageMasonry } } = page
+
+  useEffect(() => {
+    console.log(`[${id}@${version}] => `, page)
+  }, [page, id, version])
+
+  return (
+    <PageLayout {...layout}>
+      <Hero {...hero} />
+      <FeaturedSection {...featuredSection} />
+      <SummarySection {...summarySection} />
+      <SimpleFormSection {...statsSection} />
+      <StatsSection {...statsSection} />
+      <ImageMasonry {...imageMasonry} />
+      <ContactSection {...contactSection} />
+    </PageLayout>
+  )
 }
 
-export default FormPage
+export default HomePage
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps() {
 
-    const formData = formPages.init()
-    const form = formData.forms.find(form => form.name === params.name)
+  const { getPage } = PageService
 
-    return {
-        props: {
-            formData: {
-                layout: formData.layout,
-                form: form
-            }
-        },
-        revalidate: 5
+  const page = await getPage("home")
+
+  return {
+    props: {
+      page
     }
-}
-
-
-
-export async function getStaticPaths() {
-
-    const formData = formPages.init()
-    const paths = formData.forms.map((form) => ({ params: { name: form.name } }))
-
-    return {
-        paths: paths,
-        fallback: false,
-    }
+  }
 }

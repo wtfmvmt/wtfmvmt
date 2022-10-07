@@ -141,6 +141,7 @@ const notifications = {
 }
 
 const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
+    const { toggleDrawer } = useMenuDrawerState()
 
     const Notifier = () => {
         return (
@@ -154,7 +155,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
 
     const MobileNavBurger = () => (
-        <a className="navbar-burger self-center mr-12 xl:hidden" href="#">
+        <a className="navbar-burger cursor-pointer self-center mr-12 xl:hidden" href="#">
             <div className="xl:flex items-center">
                 <a className="flex items-center hover:text-gray-600" href="#">
                     <Notifier />
@@ -185,14 +186,16 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                                 renderInput={(params) =>
                                     <TextField variant="standard" {...params}
                                         InputProps={{
-                                            style: {
+                                            sx: {
                                                 outline: 'white',
                                                 border: 'white',
                                                 color: 'white',
+                                                '& .MuiInput-underline:before': { borderBottomColor: 'white' },
+                                                '& .MuiInput-underline:after': { borderBottomColor: 'white' },
                                             }
                                         }}
                                         InputLabelProps={{
-                                            style: {
+                                            sx: {
                                                 border: 'white',
                                             },
                                         }}
@@ -203,6 +206,8 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                                             borderWidth: '0px',
                                             outline: 0,
                                             padding: '0.5rem 0.5rem 0 0',
+                                            '& .MuiInput-underline:before': { borderBottomColor: 'white' },
+                                            '& .MuiInput-underline:after': { borderBottomColor: 'white' },
                                         }} className="w-full bg-transparent border-1 border-white focus:ring-transparent focus:outline-none py-2" label={<span className="text-white">SEEK & FIND</span>} />
                                 }
                             />
@@ -245,29 +250,24 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
         )
     }
 
-
-
     const NavBurger = () => (
 
-        <div className="hidden xl:flex">
+        <div className="cursor-pointer hidden xl:flex">
             <BurgerIcon action={() => toggleDrawer()} />
         </div>
     )
-
-
-    const { toggleDrawer } = useMenuDrawerState()
 
     return (
         <section className="relative pb-20 overflow-hidden w-full">
             <Headroom>
                 <Banner {...banner} />
-                <nav style={{ backdropFilter: 'blur(15px)' }} className="flex justify-between border-b">
+                <nav className="flex justify-between backdrop-blur-2xl border-b">
 
                     <div className="px-12 py-6 flex w-full items-center">
                         <Favicon />
                         <SearchBar />
 
-                        <div className="xl:flex items-center hidden">
+                        <div className="xl:flex items-center ">
                             <a className="flex items-center hover:text-gray-600" href="/">
                                 <Notifier />
                             </a>
