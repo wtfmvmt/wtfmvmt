@@ -14,13 +14,7 @@ const PageLayout = ({ children, metaData, header, footer }) => {
 
     return (
         <RootLayout metaData={metaData}>
-            <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'black' }} />} smooth />
-            <DrawerMenu {...menuConfig} />
-            <Header {...header} />
-            <Fade>
-                {children}
-            </Fade>
-            <Footer {...footer} />
+
         </RootLayout>
     )
 }
