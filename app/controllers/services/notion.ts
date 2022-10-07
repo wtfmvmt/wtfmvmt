@@ -54,7 +54,7 @@ const NotionService = {
                     src: data?.properties?.Media.files.map((file) => file.file.url),
                 }
             },
-            predicate: (data: any) => data?.properties?.Database?.select?.name === "📷Media" ?? null
+            predicate: (data: any) => data?.properties?.Database?.select?.name === "📷Media" && data?.properties?.Media?.files.length > 0
         },
 
     },
