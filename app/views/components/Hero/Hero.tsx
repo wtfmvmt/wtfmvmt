@@ -55,7 +55,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
                     {actionLinks.title}
                 </h4>
                 <ul className="mb-5">
-                    <FadeAnimation cascade>
+                    <FadeAnimation triggerOnce cascade>
                         {
                             actionLinks.links.map((link, index) => {
                                 return (

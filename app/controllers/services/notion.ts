@@ -12,6 +12,22 @@ const NotionService = {
 
     db: {
 
+        MEMBERSHIPS: {
+            shape: (data) => { 
+                const shapeObject = {
+                    title: data?.properties?.Name?.title[0]?.plain_text,
+                    cost: data?.properties?.Cost?.number,
+                    features: data?.properties?.Features?.multi_select.map((feature) => feature.name),
+                }
+
+                return { ...shapeObject } ?? null
+            },
+            predicate: (data) => {
+                return data?.properties?.Database?.select?.name === '👥Memberships'
+
+            },
+        },
+
         FORMS: {
             shape: (data) => {
 

@@ -3,15 +3,17 @@ import layout from "@configs/layout"
 
 import forms from "@db/forms"
 import media from "@db/media"
-
+import memberships from "@db/memberships"
 
 const pages = ({ store, pageKey }) => {
 
     const { getMedia } = media()
     const { getForms } = forms()
+    const { getMemberships } = memberships()
 
     const mediaQuery = getMedia(store)
     const formsQuery = getForms(store)
+    const membershipsQuery = getMemberships(store)
 
 
     const { title: siteTitle, email: siteEmail, impressum, socials } = meta()
@@ -48,11 +50,7 @@ const pages = ({ store, pageKey }) => {
                     heading: "In every community, there is work to be done. In every nation, there are wounds to heal. In every heart, there is the power to do it...",
                     description: 'Join us at our next event',
                     carousel: mediaQuery.map((media) => media.src),
-                    features: [
-                        {
-
-                        }
-                    ]
+                    features: []
 
                 },
 
@@ -86,7 +84,19 @@ const pages = ({ store, pageKey }) => {
 
                 contactSection: {
                     email: siteEmail,
-                }
+                },
+                statsSection: {
+                    title: 'Let\'s Grow the Future Together',
+                    heading: 'Memberships & Opportunities',
+                    description: 'Join our MVMT and help us grow the future together',
+                    tables: membershipsQuery.map((membership) => ({
+                        title: membership.title,
+                        features: membership.features,
+                        pricing: {
+                            rate: membership.cost,
+                        }
+                    })),
+                },
 
             }
         },
