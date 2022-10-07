@@ -32,7 +32,7 @@ const pages = ({ store, pageKey }) => {
                     description: impressum,
                     cta: {
                         name: "Join the MVMT",
-                        url: "/join"
+                        url: "/memberships"
                     },
                     actionLinks: {
                         title: 'The MVMT',
@@ -59,7 +59,33 @@ const pages = ({ store, pageKey }) => {
                 summarySection: {
                     title: 'The MVMT',
                     heading: 'Artvism',
-                    description: "We The Future is a brand that focuses on cultivating a creative pipeline through the use of music and the arts; it was conceived in 2015 through the vision of our founder, Brandon Payne"
+                    description: "We The Future is a brand that focuses on cultivating a creative pipeline through the use of music and the arts; it was conceived in 2015 through the vision of our founder, Brandon Payne",
+                    sections: [
+                        {
+                            title: 'Awareness',
+                            description: 'Awareness is the first step to change. We The Future is a brand that focuses on cultivating a creative pipeline through the use of music and the arts; it was conceived in 2015 through the vision of our founder, Brandon Payne',
+                        },
+                        {
+                            title: 'Expression',
+                            description: 'Expression is the first step to change. We The Future is a brand that focuses on cultivating a creative pipeline through the use of music and the arts; it was conceived in 2015 through the vision of our founder, Brandon Payne',
+                        },
+                        {
+                            title: 'Inclusivity',
+                            description: 'Diversity is the key to creativity. We believe that the more diverse the creative pipeline, the more creative the output. We are committed to creating a space where all are welcome.'
+                        },
+                        {
+                            title: 'Development',
+                            description: 'Development is the first step to change. We The Future is a brand that focuses on cultivating a creative pipeline through the use of music and the arts; it was conceived in 2015 through the vision of our founder, Brandon Payne',
+                        },
+                        {
+                            title: 'Liberation',
+                            description: 'Liberation is the first step to change. We The Future is a brand that focuses on cultivating a creative pipeline through the use of music and the arts; it was conceived in 2015 through the vision of our founder, Brandon Payne',
+                        }
+                    ]
+                },
+
+                contactSection: {
+                    email: siteEmail,
                 }
 
             }
