@@ -78,7 +78,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
   const Socials = () => {
 
     return (
-      <div className="w-full ml-4 lg:w-auto flex items-center justify-center">
+      <div className="w-full ml-4 lg:w-auto flex flex-wrap overflow-clip items-center justify-center">
         {
           socials && socials.map((social, index) => {
 
