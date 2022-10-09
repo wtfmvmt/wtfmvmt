@@ -1,14 +1,14 @@
-import type { IConfiguration } from "@typings/Configuration"
-import type { LayoutDataProps } from "@typings/Layout"
+//import type { IConfiguration } from "@typings/Configuration"
+//import type { LayoutDataProps } from "@typings/Layout"
 
 import header from "@configs/header"
 import footer from "@configs/footer"
 
-const layout: IConfiguration<LayoutDataProps> = () => {
+const layout = ({ headerObject, footerObject }) => {
 
     const layoutObject = {
-        header: header(),
-        footer: footer()
+        header: header(headerObject),
+        footer: footer(footerObject)
     }
 
     return { ...layoutObject } ?? null

@@ -1,17 +1,23 @@
 
+import images from "@configs/images"
+import links from "@configs/links"
 import search from "@configs/search"
 
-const header = () => {
 
+const header = ({ banner }) => {
+
+    const collections = search().collections
+
+    const logoTransparent = images().find((image) => image.id === 'logo-transparent')
+    const homeLinkRelative = links().find((link) => link.name === 'Home')
+
+    
     const headerObject = {
-        search: [...search().collections],
-        banner: {
-            countdown: 10000000000,
-            messages: ["Attend our Interest Meeting 09/06", "This site is under construction."]
-        },
+        search: collections,
+        banner,
         favicon: {
-            src: '/assets/images/logo-transparent.png',
-            url: '/'
+            ...logoTransparent,
+            url: homeLinkRelative
         },
     }
 

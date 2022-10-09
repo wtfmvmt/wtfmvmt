@@ -1,12 +1,10 @@
+// 📃[TODO]: Correct Interface Parameters
+//import type { IConfiguration } from "@typings/Configuration"
+//import type { FooterProps } from "@typings/Footer"
 
-import meta from "@configs/meta"
+const footer = ({ ...props }) => {
 
-import type { IConfiguration } from "@typings/Configuration"
-import type { FooterProps } from "@typings/Footer"
-
-const footer: IConfiguration<FooterProps> = () => {
-
-    const { impressum, logo, socials, copyright, links, email } = meta()
+    const { impressum, logo, socials, copyright, links, email } = props ?? null
 
     const footerObject = {
         impressum,

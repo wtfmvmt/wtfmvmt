@@ -14,7 +14,7 @@ const Banner = ({ messages, countdown }: BannerProps) => {
     return (
         <CSSTransition in={open} timeout={400} unmountOnExit>
 
-            <div className={`p-3 bg-black ${!open ? "slide-out-bck-center" : ""}`}>
+            <div className={`p-3 bg-black bg-opacity-80 backdrop-blur-lg ${!open ? "slide-out-bck-center" : ""}`}>
                 <div className="flex items-center justify-center">
                     <p className="text-sm text-center font-bold font-heading text-purple-200">
                         <ReactTypingEffect
@@ -25,7 +25,7 @@ const Banner = ({ messages, countdown }: BannerProps) => {
                             text={messages} />
                     </p>
 
-                    <p onClick={() => toggleBanner()} className="hover:scale-60 transition-all absolute right-2 top-2 text-gray-200 pr-1">
+                    <p onClick={() => toggleBanner()} className="hover:scale-60 transition-all absolute right-2 top-2 text-gray-200 pr-1 cursor-pointer">
                         <CloseIcon />
                     </p>
 

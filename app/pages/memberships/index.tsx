@@ -16,10 +16,9 @@ import { useEffect } from "react"
 
 
 
-const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
+const MembershipsIndexPage: IPage<ServerSidePageProps> = ({ page }) => {
 
-  const { layout, id, version, data:
-    { hero, summarySection, featuredSection, statsSection, contactSection, imageMasonry } } = page
+  const { layout, id, version, } = page
 
   useEffect(() => {
     console.log(`[${id}@${version}] => `, page)
@@ -27,24 +26,18 @@ const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
 
   return (
     <PageLayout {...layout}>
-      <Hero {...hero} />
-      <FeaturedSection {...featuredSection} />
-      <SummarySection {...summarySection} />
-      <SimpleFormSection {...statsSection} />
-      <StatsSection {...statsSection} />
-      <ImageMasonry {...imageMasonry} />
-      <ContactSection {...contactSection} />
+
     </PageLayout>
   )
 }
 
-export default HomePage
+export default MembershipsIndexPage
 
 export async function getServerSideProps() {
 
   const { getPage } = PageService
 
-  const page = await getPage("home")
+  const page = await getPage("memberships")
 
   return {
     props: {

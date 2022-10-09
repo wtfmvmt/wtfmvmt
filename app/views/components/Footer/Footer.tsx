@@ -4,9 +4,7 @@ import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 import ReactTypingEffect from 'react-typing-effect';
 
-
 const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {
-
 
   const Header = () => {
 
@@ -47,10 +45,9 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                   return (
 
                     <a key={index}
-                      className="hvr-pop first-line:inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-purple-600 p-2 hover:bg-black transition-all hover:bg-opacity-60 hover:rounded"
+                      className="cursor-pointer hvr-pop inline-block first-line:inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-purple-600 p-2 hover:bg-black transition-all hover:bg-opacity-70 hover:rounded"
                       href={link?.url}>
-                 
-                      {link?.name}
+                      <img loading="lazy" alt={link.name} src={link.icon} className="inline-block h-8" />{link?.name}
                     </a>
                   )
                 })
@@ -59,7 +56,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
           </div>
         </div>
 
-      </div> : <></>
+      </div > : <></>
     )
   }
 
@@ -102,7 +99,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
 
   return (
 
-    <section style={{ borderTop: '1px solid gray' }} className="bg-black bg-opacity-10">
+    <section>
 
       <div className="pt-26 border-3 border-l-0 border-r-0">
         <div className="pb-16 border-b-3 border-indigo-900">

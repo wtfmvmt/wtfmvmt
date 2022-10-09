@@ -8,6 +8,7 @@ import type { HeaderProps } from "@typings/Header";
 import Headroom from "react-headroom";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import { useAudio } from 'react-use';
 
 const top100Films = [
     { label: 'The Shawshank Redemption', year: 1994 },
@@ -142,7 +143,10 @@ const notifications = {
 
 const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
     const { toggleDrawer } = useMenuDrawerState()
-
+    const [audio, state, controls, ref] = useAudio({
+        src: "/assets/audio/interface-click-type-a.wav",
+        autoPlay: false,
+    });
     const Notifier = () => {
         return (
             <div className="hidden">
@@ -200,7 +204,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                                             },
                                         }}
                                         sx={{
-                
+
                                             color: '#FFFFFF',
                                             fontFamily: 'Major Mono Display',
                                             borderWidth: '0px',
@@ -253,13 +257,14 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
     const NavBurger = () => (
 
         <div className="cursor-pointer hidden xl:flex">
-            <BurgerIcon action={() => toggleDrawer()} />
+            <BurgerIcon onLeave={() => controls.pause()} onHover={() => controls.play()} action={() => toggleDrawer()} />
         </div>
     )
 
     return (
         <section className="relative pb-20 overflow-hidden w-full">
             <Headroom>
+                {audio}
                 <Banner {...banner} />
                 <nav className="flex justify-between backdrop-blur-2xl border-b">
 

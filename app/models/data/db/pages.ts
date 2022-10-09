@@ -1,24 +1,32 @@
-import meta from "@configs/meta"
 import layout from "@configs/layout"
+import meta from "@configs/meta"
 
+import NotionService from "@services/notion"
 import forms from "@db/forms"
 import media from "@db/media"
 import memberships from "@db/memberships"
+import siteMeta from "@db/siteMeta"
+import sitePages from "@db/sitePages"
+import socialMedia from "@db/socialMedia"
 
 const pages = ({ store, pageKey }) => {
+
+    const { TYPES } = NotionService.enums
 
     const { getMedia } = media()
     const { getForms } = forms()
     const { getMemberships } = memberships()
+    const { getSitePages } = sitePages()
+    const { getSiteMeta } = siteMeta()
+
 
     const mediaQuery = getMedia(store)
     const formsQuery = getForms(store)
     const membershipsQuery = getMemberships(store)
+    const sitePagesQuery = getSitePages(store)
+    const siteMetaQuery = getSiteMeta(store)
 
-
-    const { title: siteTitle, email: siteEmail, impressum, socials } = meta()
-
-
+    const { title: siteTitle, email: siteEmail, impressum, socials, logo } = meta()
 
 
     const pageData = {
@@ -98,9 +106,16 @@ const pages = ({ store, pageKey }) => {
                     })),
                 },
 
+                imageMasonry: {
+                    title: 'Our MVMbers',
+                }
+
             }
         },
-        memberships: {},
+        memberships: {
+            metaData: {},
+            data: {}
+        },
         artivism: {},
         blog: {},
         community: {},
@@ -115,7 +130,31 @@ const pages = ({ store, pageKey }) => {
 
     }
 
-    const layoutData = { ...layout(), metaData: pageData[pageKey].metaData ?? null }
+    const copyrightData = siteMetaQuery.find((meta) => meta.types.includes(TYPES.COPYRIGHT)).values ?? ["", ""]
+    const pageLinkData = sitePagesQuery.map((page) => ({ name: page.name, icon: page.icon, url: page.name.toLowerCase() }))
+    const bannerData = siteMetaQuery.filter((meta) => !meta.types.includes(TYPES.BANNER)).map(meta => meta.values) ?? ["", ""]
+    const impressumData = siteMetaQuery.find((meta) => meta.types.includes(TYPES.IMPRESSUM)).values ?? ["", ""]
+
+    const layoutData = {
+        ...layout({
+            headerObject: {
+                banner: {
+                    countdown: Date.now(),
+                    message: bannerData
+                }
+            },
+            footerObject: {
+                impressum: impressumData,
+                sitePagesQuery,
+                copyright: copyrightData,
+                socials,
+                links: pageLinkData,
+                email: siteEmail,
+                logo,
+            },
+        }),
+        metaData: pageData[pageKey].metaData ?? null
+    }
 
 
     const pageObject = {

@@ -1,9 +1,11 @@
 export type BurgerIcon = {
-    action?: Function
+    action?: Function,
+    onHover?: any,
+    onLeave?: any
 }
 
-const BurgerIcon = ({ action }: BurgerIcon) => (
-    <a onClick={() => action() || null} className="flex items-center px-8">
+const BurgerIcon = ({ action, onLeave, onHover }: BurgerIcon) => (
+    <a onMouseLeave={() => onLeave()} onMouseOver = {() => onHover()} onClick = {() => action() || null} className = "flex items-center px-8" >
         <svg
             width={18}
             height={18}
@@ -15,6 +17,6 @@ const BurgerIcon = ({ action }: BurgerIcon) => (
             <path d="M11.0226 7.87402H0V10.126H11.0226V7.87402Z" fill="white" />
             <path d="M18 0.279297H0V2.53127H18V0.279297Z" fill="white" />
         </svg>
-    </a>
+    </a >
 )
 export default BurgerIcon

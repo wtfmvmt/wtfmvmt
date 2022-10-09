@@ -2,6 +2,13 @@ const links = () => {
 
     const linksArray = [
         {
+            name: 'Home',
+            url: '/',
+            type: 'internal',
+            icon: 'house'
+        },
+
+        {
             name: "Facebook",
             url: "https://www.facebook.com/wtfmvmt/",
             type: 'social',
