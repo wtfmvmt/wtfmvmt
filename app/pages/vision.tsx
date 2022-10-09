@@ -27,13 +27,7 @@ const VisionPage: IPage<ServerSidePageProps> = ({ page }) => {
 
   return (
     <PageLayout {...layout}>
-      <Hero {...hero} />
-      <FeaturedSection {...featuredSection} />
-      <SummarySection {...summarySection} />
-      <SimpleFormSection {...statsSection} />
-      <StatsSection {...statsSection} />
-      <ImageMasonry {...imageMasonry} />
-      <ContactSection {...contactSection} />
+
     </PageLayout>
   )
 }
