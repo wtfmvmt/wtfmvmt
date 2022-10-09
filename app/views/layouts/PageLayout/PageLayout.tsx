@@ -16,7 +16,7 @@ const PageLayout = ({ children, metaData, header, footer, menu }) => {
             <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'purple' }} />} smooth />
             <DrawerMenu {...menu} />
             <Header {...header} />
-            <FadeAnimation triggerOnce cascade>
+            <FadeAnimation duration={333} triggerOnce cascade>
                 {children}
             </FadeAnimation>
             <Footer {...footer} />
