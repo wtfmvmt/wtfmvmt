@@ -152,7 +152,7 @@ const NotionService = {
             shape: (data: any) => {
                 return {
                     alt: data?.properties?.Name?.title[0].plain_text,
-                    src: data?.properties?.Media.files.map((file) => file.file.url),
+                    src: data?.properties?.Media.files.map((file) => file?.file?.url),
                 }
             },
             predicate: (data: any) => {

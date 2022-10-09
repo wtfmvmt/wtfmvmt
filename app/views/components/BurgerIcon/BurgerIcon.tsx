@@ -1,11 +1,9 @@
 export type BurgerIcon = {
     action?: Function,
-    onHover?: any,
-    onLeave?: any
 }
 
-const BurgerIcon = ({ action, onLeave, onHover }: BurgerIcon) => (
-    <a onMouseLeave={() => onLeave()} onMouseOver = {() => onHover()} onClick = {() => action() || null} className = "flex items-center px-8" >
+const BurgerIcon = ({ action }: BurgerIcon) => (
+    <a onClick={() => action() || null} className="flex items-center px-8" >
         <svg
             width={18}
             height={18}

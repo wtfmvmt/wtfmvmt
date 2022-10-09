@@ -27,13 +27,7 @@ const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
 
   return (
     <PageLayout {...layout}>
-      <Hero {...hero} />
-      <FeaturedSection {...featuredSection} />
-      <SummarySection {...summarySection} />
-      <SimpleFormSection {...statsSection} />
-      <StatsSection {...statsSection} />
-      <ImageMasonry {...imageMasonry} />
-      <ContactSection {...contactSection} />
+
     </PageLayout>
   )
 }
@@ -44,7 +38,7 @@ export async function getServerSideProps() {
 
   const { getPage } = PageService
 
-  const page = await getPage("home")
+  const page = await getPage("partners")
 
   return {
     props: {

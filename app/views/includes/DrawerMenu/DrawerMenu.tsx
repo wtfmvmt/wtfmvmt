@@ -42,8 +42,8 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                                 className="hover:text-purple-500 block p-4 text-lg font-extrabold hover:bg-black rounded"
                                 href={link.url}
                             >
-                                <span className="hvr-wobble-horizontal inline-block">
-                                    <Icon className="h-12" icon={link?.icon} />{link.name}
+                                <span className="hvr-wobble-horizontal inline-block overflow-hidden">
+                                    <Icon icon={link?.icon} />{link.name}
                                 </span>
                             </a>
                         </li>
@@ -70,7 +70,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
 
     const CloseDrawerButton = () => {
         return (
-            <button onClick={() => toggleDrawer()} className="navbar-close">
+            <button onClick={() => toggleDrawer()} className="navbar-close hover:scale-90 hover:bg-purple-700 hover:rounded-full transition-all">
                 <CloseIcon />
             </button>
         )
@@ -84,7 +84,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
         >
             <div className="transition-all navbar-menu relative z-50">
                 <ClickAwayListener onClickAway={() => toggleDrawer()}>
-                    <nav style={{ backdropFilter: 'blur(10px)' }} className={`${!open ? "slide-out-blurred-left" : ""} slide-in-blurred-left fixed top-0 bg-black bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 border-r overflow-y-auto`}>
+                    <nav className={`${!open ? "slide-out-blurred-left" : ""} backdrop-blur-xl slide-in-blurred-left fixed top-0 bg-black bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 border-r overflow-y-auto`}>
                         <div className="flex items-center mb-8">
                             <Favicon />
                             <CloseDrawerButton />

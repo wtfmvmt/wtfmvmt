@@ -1,14 +1,14 @@
 import layout from "@configs/layout"
 import meta from "@configs/meta"
 
-import NotionService from "@services/notion"
+import events from "@db/events"
 import forms from "@db/forms"
 import media from "@db/media"
 import memberships from "@db/memberships"
 import siteMeta from "@db/siteMeta"
 import sitePages from "@db/sitePages"
 import socialMedia from "@db/socialMedia"
-import events from "@db/events"
+import NotionService from "@services/notion"
 import shuffle from "@utils/shuffle"
 
 const pages = ({ store, pageKey }) => {
@@ -32,7 +32,7 @@ const pages = ({ store, pageKey }) => {
     const socialMediaQuery = getSocialMedia(store)
     const eventsQuery = getEvents(store)
 
-    const { title: siteTitle, email: siteEmail, impressum, socials, logo } = meta()
+    const { title: siteTitle, email: siteEmail, impressum, logo } = meta()
 
 
     const pageData = {
@@ -107,7 +107,8 @@ const pages = ({ store, pageKey }) => {
                         title: membership.title,
                         features: membership.features,
                         pricing: {
-                            rate: membership.cost,
+                            rate: membership?.cost,
+                            unit: membership?.unit,
                         }
                     })),
                 },
@@ -119,7 +120,9 @@ const pages = ({ store, pageKey }) => {
             }
         },
         memberships: {
-            metaData: {},
+            metaData: {
+                pageTitle: 'Memberships'
+            },
             data: {}
         },
         artivism: {},

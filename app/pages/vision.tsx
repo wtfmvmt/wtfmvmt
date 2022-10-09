@@ -16,7 +16,7 @@ import { useEffect } from "react"
 
 
 
-const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
+const VisionPage: IPage<ServerSidePageProps> = ({ page }) => {
 
   const { layout, id, version, data:
     { hero, summarySection, featuredSection, statsSection, contactSection, imageMasonry } } = page
@@ -38,13 +38,13 @@ const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
   )
 }
 
-export default HomePage
+export default VisionPage
 
 export async function getServerSideProps() {
 
   const { getPage } = PageService
 
-  const page = await getPage("home")
+  const page = await getPage("vision")
 
   return {
     props: {

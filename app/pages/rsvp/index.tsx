@@ -44,7 +44,7 @@ export async function getServerSideProps() {
 
   const { getPage } = PageService
 
-  const page = await getPage("home")
+  const page = await getPage("rsvp")
 
   return {
     props: {
