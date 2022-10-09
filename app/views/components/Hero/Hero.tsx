@@ -3,8 +3,8 @@ import FadeAnimation from "@components/FadeAnimation";
 import type { IComponent } from "@typings/Component";
 import type { HeroProps } from "@typings/Hero";
 import ReactTypingEffect from 'react-typing-effect';
-
-
+import Icon from "@components/Icon";
+import { SocialIcon } from "react-social-icons"
 const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
 
     const { title, description, cta, features, actionLinks, socialLinks, mediaCarousel } = props
@@ -22,7 +22,8 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
                             className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 rounded-full"
                             href={link.url}
                         >
-                       
+                            <SocialIcon bgColor="white" url={link?.url} />
+
                         </a>
                     ))
                 }

@@ -9,9 +9,9 @@ const socialMedia = () => {
     const { title: siteTitle } = meta()
 
     return {
-        id: 'MembershipsDatabase',
-        version: `${siteTitle}: Memberships]@ ${Date.now()}`,
-        getSiteMeta: (store) => {
+        id: 'SocialMediaDatabase',
+        version: `${siteTitle}: Social Media]@ ${Date.now()}`,
+        getSocialMedia: (store) => {
 
             const { SOCIAL_MEDIA } = NotionService.db
 

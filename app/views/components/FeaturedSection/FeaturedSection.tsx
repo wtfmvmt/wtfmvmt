@@ -2,16 +2,16 @@ import { Fade } from "react-awesome-reveal"
 import DistortionCarousel from "@components/DistortionCarousel";
 
 export type Feature = {
-  title: string,
-  description: string
+  title?: string,
+  description?: string
 }
 
 export type FeaturedSectionProps = {
-  heading: string,
+  heading?: string,
   carousel?: string[],
-  title: string,
-  description: string
-  features: Feature[]
+  title?: string,
+  description?: string
+  features?: Feature[]
 }
 
 
@@ -28,18 +28,18 @@ const FeaturedSection = ({ heading, title, description, features, carousel }: Fe
           features ? features.map((feature, index) => {
             return (
 
-              <div key={index} className="hover:scale-90 transition-all shadow-2xl w-full lg:w-1/3 px-4">
-                <div className="h-full hvr-pop max-w-md mx-auto py-12 px-8 bg-black bg-opacity-75 border-3 border-indigo-900 shadow-md rounded-2xl text-center mt-2">
+              <div key={index} className="cursor-pointer hover:translate-y-4 ease-in-out duration-1000 transition-all shadow-2xl w-full lg:w-1/3 px-4">
+                <div className="h-3/4 max-w-md mx-auto py-10 px-6 bg-purple-800 bg-opacity-90 border-3 border-indigo-900 shadow-xl rounded-xl text-center mt-2">
                   <img
                     className="block mx-auto mb-4"
                     src="/assets/images/events.svg"
                     alt=""
                   />
                   <h4 className="text-2xl font-extrabold mb-6">
-                    {feature.title}
+                    {feature?.title}
                   </h4>
                   <p className="text-lg font-extrabold leading-7">
-                    {feature.description}
+                    {feature?.description}
                   </p>
                 </div>
               </div>
@@ -79,7 +79,7 @@ const FeaturedSection = ({ heading, title, description, features, carousel }: Fe
       <Header />
 
       <div className="block w-full h-112 lg:h-156 mb-16 object-cover border-3 border-indigo-900 rounded-2xl shadow-lg">
-        <DistortionCarousel displacmentImage="/assets/images/distortions/3.jpg" images={carousel ?? ["#", "#"]} />
+        <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={carousel ?? ["#", "#"]} />
       </div>
 
       <Features />

@@ -30,7 +30,7 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
     const Header = () => {
         return (
             <div className="text-center mb-16">
-                <span className="text-lg font-extrabold text-indigo-500">
+                <span className="text-lg font-extrabold text-orange-500">
                     {heading ? heading : "Heading"}
                 </span>
                 <h1 className="text-3xl md:text-4xl font-extrabold font-heading mt-4 mb-6">
@@ -54,8 +54,8 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
                     tables.map((table: Table, index: number) => {
                         return (
 
-                            <div key={index} className="hover:bg-opacity-100 transition-all w-full rounded lg:w-1/3 px-4 mb-12 lg:mb-0">
-                                <div className="transition-all max-w-md hover:bg-opacity-100 mx-auto border-3 border-white bg-black bg-opacity-70 rounded-2xl shadow-xl">
+                            <div key={index} className="cursor-pointer hover:-translate-y-4 ease-in-out duration-500 transition-all w-full rounded lg:w-1/3 px-4 mb-12 lg:mb-0">
+                                <div className="transition-all max-w-md hover:bg-opacity-100 mx-auto border-3 border-white bg-purple-900 bg-opacity-90 rounded-2xl shadow-xl">
                                     <div className="px-6 pt-12 lg:px-12 pb-10 border-b-3 border-indigo-900">
                                         <h2 className="text-2xl font-extrabold mb-6">
                                             <a href="/memberships">

@@ -1,25 +1,24 @@
-import RootLayout from "@layouts/RootLayout"
-import Footer from "@components/Footer"
-import Header from "@components/Header"
-import DrawerMenu from "@views/includes/DrawerMenu";
-import { Fade } from "react-awesome-reveal";
-import menu from "@configs/menu"
-import ScrollToTop from "react-scroll-to-top";
+import RootLayout from "@layouts/RootLayout";
+
+
+import Footer from "@components/Footer";
+import Header from "@components/Header";
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import DrawerMenu from "@views/includes/DrawerMenu";
+import FadeAnimation from "@components/FadeAnimation";
+import ScrollToTop from "react-scroll-to-top";
 
 
-const PageLayout = ({ children, metaData, header, footer }) => {
-
-    const menuConfig = menu()
+const PageLayout = ({ children, metaData, header, footer, menu }) => {
 
     return (
         <RootLayout metaData={metaData}>
-            <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'black' }} />} smooth />
-            <DrawerMenu {...menuConfig} />
+            <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'purple' }} />} smooth />
+            <DrawerMenu {...menu} />
             <Header {...header} />
-            <Fade>
+            <FadeAnimation triggerOnce cascade>
                 {children}
-            </Fade>
+            </FadeAnimation>
             <Footer {...footer} />
         </RootLayout>
     )

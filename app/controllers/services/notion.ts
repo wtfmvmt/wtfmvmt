@@ -167,8 +167,8 @@ const NotionService = {
 
                 const shapeObject = {
                     name: data?.properties?.Name?.title[0].plain_text,
-                    url: data?.properties?.URL?.url,
-
+                    url: data?.properties?.URL?.url ?? "#",
+                    icon: data?.properties?.Icon?.select?.name
                 }
                 return { ...shapeObject } ?? null
             },
@@ -176,6 +176,23 @@ const NotionService = {
                 const { enums: { DATABASES: { SOCIAL_MEDIA } },
                     utils: { getDatabase } } = NotionService
                 return getDatabase(data, SOCIAL_MEDIA)
+            }
+        },
+
+        EVENTS: {
+            shape: (data: any) => {
+                type EventProps = {
+                    name?: string,
+                }
+                const shapeObject = {
+                    title: data?.properties?.Name?.title[0].plain_text,
+                }
+                return { ...shapeObject } ?? null
+            },
+            predicate: (data: any) => {
+                const { enums: { DATABASES: { EVENTS } },
+                    utils: { getDatabase } } = NotionService
+                return getDatabase(data, EVENTS)
             }
         },
 

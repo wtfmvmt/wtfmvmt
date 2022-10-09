@@ -8,16 +8,20 @@ import memberships from "@db/memberships"
 import siteMeta from "@db/siteMeta"
 import sitePages from "@db/sitePages"
 import socialMedia from "@db/socialMedia"
+import events from "@db/events"
+import shuffle from "@utils/shuffle"
 
 const pages = ({ store, pageKey }) => {
 
     const { TYPES } = NotionService.enums
 
     const { getMedia } = media()
+    const { getEvents } = events()
     const { getForms } = forms()
     const { getMemberships } = memberships()
     const { getSitePages } = sitePages()
     const { getSiteMeta } = siteMeta()
+    const { getSocialMedia } = socialMedia()
 
 
     const mediaQuery = getMedia(store)
@@ -25,6 +29,8 @@ const pages = ({ store, pageKey }) => {
     const membershipsQuery = getMemberships(store)
     const sitePagesQuery = getSitePages(store)
     const siteMetaQuery = getSiteMeta(store)
+    const socialMediaQuery = getSocialMedia(store)
+    const eventsQuery = getEvents(store)
 
     const { title: siteTitle, email: siteEmail, impressum, socials, logo } = meta()
 
@@ -38,7 +44,7 @@ const pages = ({ store, pageKey }) => {
 
                 hero: {
                     title: siteTitle,
-                    mediaCarousel: mediaQuery.map((media) => media.src),
+                    mediaCarousel: shuffle(mediaQuery.map((media) => media.src)),
                     description: impressum,
                     cta: {
                         name: "Join the MVMT",
@@ -51,15 +57,14 @@ const pages = ({ store, pageKey }) => {
                             url: form.url
                         }))
                     },
-                    socialLinks: socials
+                    socialLinks: socialMediaQuery
                 },
                 featuredSection: {
                     title: 'Open Events',
                     heading: "In every community, there is work to be done. In every nation, there are wounds to heal. In every heart, there is the power to do it...",
                     description: 'Join us at our next event',
-                    carousel: mediaQuery.map((media) => media.src),
-                    features: []
-
+                    carousel: shuffle(mediaQuery.map((media) => media.src)),
+                    features: eventsQuery.map((event) => ({ title: event.name, ...event }))
                 },
 
                 summarySection: {
@@ -92,6 +97,7 @@ const pages = ({ store, pageKey }) => {
 
                 contactSection: {
                     email: siteEmail,
+                    socials: socialMediaQuery
                 },
                 statsSection: {
                     title: 'Let\'s Grow the Future Together',
@@ -143,11 +149,14 @@ const pages = ({ store, pageKey }) => {
                     message: bannerData
                 }
             },
+            menuObject: {
+                links: pageLinkData,
+            },
             footerObject: {
                 impressum: impressumData,
                 sitePagesQuery,
                 copyright: copyrightData,
-                socials,
+                socials: socialMediaQuery,
                 links: pageLinkData,
                 email: siteEmail,
                 logo,

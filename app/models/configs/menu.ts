@@ -1,6 +1,6 @@
 import meta from "@configs/meta"
 
-const menu = () => {
+const menu = ({ links }) => {
     
 
     return {
@@ -9,7 +9,7 @@ const menu = () => {
             url: '/'
         },
 
-        links: [...meta().links],
+        links,
         cta: [
             {
                 name: 'Sponsorships',

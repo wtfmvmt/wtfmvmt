@@ -3,12 +3,14 @@
 
 import header from "@configs/header"
 import footer from "@configs/footer"
+import menu from "@configs/menu"
 
-const layout = ({ headerObject, footerObject }) => {
+const layout = ({ headerObject, footerObject, menuObject }) => {
 
     const layoutObject = {
         header: header(headerObject),
-        footer: footer(footerObject)
+        footer: footer(footerObject),
+        menu: menu(menuObject)
     }
 
     return { ...layoutObject } ?? null

@@ -256,7 +256,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
     const NavBurger = () => (
 
-        <div className="cursor-pointer hidden xl:flex">
+        <div className="cursor-pointer hover:scale-90 duration-700 hidden xl:flex">
             <BurgerIcon onLeave={() => controls.pause()} onHover={() => controls.play()} action={() => toggleDrawer()} />
         </div>
     )

@@ -6,6 +6,11 @@ import { Fade } from "react-awesome-reveal"
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { SocialIcon } from "react-social-icons"
 
+
+
+
+
+
 export type Social = {
     url: string,
     name: string
@@ -93,9 +98,9 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                                         <a
                                             key={index}
                                             className="mb-8 inline-block mr-6 hvr-pop"
-                                            href={social.url}
+                                            href={social?.url}
                                         >
-                                            <SocialIcon url={social.url} bgColor="white" />
+                                            <SocialIcon url={social?.url}  />
                                         </a>
 
 
@@ -112,7 +117,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
 
     return (
 
-        <section className="py-26 mt-4 bg-black bg-opacity-10">
+        <section className="py-26 mt-4">
             <div className="container px-4 mx-auto">
                 <div className="flex flex-wrap -mx-4 mb-16 items-center">
                     <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
