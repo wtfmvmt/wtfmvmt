@@ -2,7 +2,7 @@ import EmailIcon from "@components/EmailIcon"
 import GridIcon from "@components/GridIcon"
 import type { CallToAction } from "@models/typings/CallToAction"
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import { Fade } from "react-awesome-reveal"
+import FadeAnimation from "@components/FadeAnimation" 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { SocialIcon } from "react-social-icons"
 
@@ -88,7 +88,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Socials</h3>
                     <div className="flex items-center justify-center flex-wrap">
-                        <Fade cascade>
+                        <FadeAnimation triggerOnce cascade>
 
                             {
 
@@ -100,7 +100,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                                             className="mb-8 inline-block mr-6 hvr-pop"
                                             href={social?.url}
                                         >
-                                            <SocialIcon url={social?.url}  />
+                                            <SocialIcon bgColor="white" url={social?.url}  />
                                         </a>
 
 
@@ -108,7 +108,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                                     )
                                 })
                             }
-                        </Fade>
+                        </FadeAnimation>
                     </div>
                 </div>
             </div>

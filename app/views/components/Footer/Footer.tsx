@@ -2,8 +2,11 @@
 import type { FooterProps } from "@typings/Footer";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
+import { SocialIcon } from "react-social-icons";
 import ReactTypingEffect from 'react-typing-effect';
-import Icon from "@components/Icon";
+
+
+
 const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {
 
   const Header = () => {
@@ -85,7 +88,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
                 className="inline-block text-white hover:text-indigo-800 mr-8 hvr-pop transition-all"
                 href={social?.url ?? "#"}
               >
-                <Icon icon={"eye"} />
+                <SocialIcon bgColor="white" url={social.url} />
 
               </a>
             )

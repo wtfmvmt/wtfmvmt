@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useDistortionEffectCarousel } from 'distortion-effect-carousel';
 export interface DistortionCarouseProps {
   images: string[];
@@ -15,18 +14,15 @@ const DistortionCarousel: React.FC<DistortionCarouseProps> = ({
     displacmentImage
   });
 
-  useEffect(() => {
-    setInterval(() => {
-      next()
-    }, 5000)
-  }, [next])
+
 
 
   return (
     <div
       onClick={() => next()}
       style={{
-        height: '100vh',
+        height: '99vh',
+        opacity: 0.93
       }}
       ref={ref}
     />
