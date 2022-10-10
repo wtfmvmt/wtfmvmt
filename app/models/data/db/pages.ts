@@ -8,6 +8,8 @@ import memberships from "@db/memberships"
 import siteMeta from "@db/siteMeta"
 import sitePages from "@db/sitePages"
 import socialMedia from "@db/socialMedia"
+import partners from "@db/partners"
+
 
 import NotionService from "@services/notion"
 
@@ -23,6 +25,7 @@ const pages = ({ store, pageKey }) => {
     const { getMemberships } = memberships()
     const { getSitePages } = sitePages()
     const { getSiteMeta } = siteMeta()
+    const { getPartners } = partners()
     const { getSocialMedia } = socialMedia()
 
 
@@ -33,6 +36,7 @@ const pages = ({ store, pageKey }) => {
     const siteMetaQuery = getSiteMeta(store)
     const socialMediaQuery = getSocialMedia(store)
     const eventsQuery = getEvents(store)
+    const partnersQuery = getPartners(store)
 
     const { title: siteTitle, email: siteEmail, impressum, logo } = meta()
 
@@ -63,7 +67,12 @@ const pages = ({ store, pageKey }) => {
                 },
                 logoArray: {
                     title: 'Our Partners',
-                    heading: 'Our Partners',
+                    heading: 'Featured Partners & Leaders',
+                    description: 'Learn more about our partners and their work',
+                    logos: partnersQuery.map((partner) => ({
+                        name: partner?.name,
+                        logo: partner?.cover ?? "#"
+                    }))
                 },
                 featuredSection: {
                     title: 'Open Events',

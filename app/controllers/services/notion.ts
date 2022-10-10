@@ -54,7 +54,7 @@ const NotionService = {
             STORE: "🛒Store",
             VIDEOS: "📺Videos",
             SOCIAL_MEDIA: "📱Social Media",
-            PARTNERS: "👥Partners",
+            PARTNERS: "💖Partners",
             SPONSORS: "👥Sponsors",
             DONORS: "👥Donors",
             VOLUNTEERS: "👥Volunteers",
@@ -163,7 +163,14 @@ const NotionService = {
         },
 
         PARTNERS: {
-            shape: (data) => { },
+            shape: (data) => { 
+                const shapeObject = {
+                    name: data?.properties?.Name?.title[0]?.plain_text,
+                    cover: data?.properties?.Media?.files[0]?.file.url,
+                }
+
+                return { ...shapeObject } ?? null
+            },
 
             predicate: (data) => {
                 const { enums: { DATABASES: { PARTNERS } },
