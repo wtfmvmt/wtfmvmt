@@ -27,7 +27,7 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
             tables ? <div className="flex flex-wrap -mx-4">
 
                 {
-                    tables.map((table: Table, index: number) => {
+                    tables.map((table, index: number) => {
                         return (
 
                             <div key={index} className="cursor-pointer hover:-translate-y-4 ease-in-out duration-500 transition-all w-full rounded lg:w-1/3 px-4 mb-12 lg:mb-0">
@@ -66,7 +66,7 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
                                                 return (
                                                     <div key={index} className="flex mb-4 items-start">
                                                         <span className="text-lg font-extrabold">
-                                                            {feature.name}
+                                                            {feature?.name}
                                                         </span>
                                                     </div>
                                                 )
