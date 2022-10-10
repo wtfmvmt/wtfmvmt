@@ -3,26 +3,23 @@
 }
 .page-transition-enter-active {
   opacity: 1;
-  transition: opacity 450ms;
+  transition: opacity 250ms;
 }
 .page-transition-exit {
   opacity: 1;
 }
 .page-transition-exit-active {
   opacity: 0;
-  transition: opacity 450ms;
+  transition: opacity 250ms;
 }
 
 .slide-in-blurred-left {
-  -webkit-animation: slide-in-blurred-left 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-  animation: slide-in-blurred-left 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  -webkit-animation: slide-in-blurred-left 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-left 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
 
-.slide-in-blurred-left {
-  -webkit-animation: slide-in-blurred-left 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-  animation: slide-in-blurred-left 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-}
+
 
 .slide-out-blurred-left {
   -webkit-animation: slide-out-blurred-left 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;

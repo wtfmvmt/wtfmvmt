@@ -18,7 +18,6 @@ function Application({ Component, pageProps }: IApplication) {
     <RecoilRoot>
       <PageTransition
         loadingComponent={<>Date.now()</>}
-        timeout={20}
         classNames="page-transition">
         <Component {...pageProps} />
       </PageTransition>

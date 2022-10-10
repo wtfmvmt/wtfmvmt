@@ -9,14 +9,10 @@ import LogoArray from "@views/components/LogoArray"
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/pages"
 
-import type { IPage } from "@typings/Page"
-import type { ServerSidePageProps } from "@typings/Page"
 
 import { useEffect } from "react"
 
-
-
-const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
+const HomePage = ({ page }) => {
 
   const { layout, id, version, data:
     { hero, summarySection, featuredSection, statsSection, logoArray, contactSection, imageMasonry } } = page

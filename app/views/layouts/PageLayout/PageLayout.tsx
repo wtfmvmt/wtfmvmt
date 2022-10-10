@@ -1,13 +1,12 @@
 import RootLayout from "@layouts/RootLayout";
 
-
+import React from "react"
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import DrawerMenu from "@views/includes/DrawerMenu";
 import FadeAnimation from "@components/FadeAnimation";
 import ScrollToTop from "react-scroll-to-top";
-
 
 const PageLayout = ({ children, metaData, header, footer, menu }) => {
 
@@ -16,7 +15,7 @@ const PageLayout = ({ children, metaData, header, footer, menu }) => {
             <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'purple' }} />} smooth />
             <DrawerMenu {...menu} />
             <Header {...header} />
-            <FadeAnimation duration={333} triggerOnce cascade>
+            <FadeAnimation duration={200} triggerOnce cascade>
                 {children}
             </FadeAnimation>
             <Footer {...footer} />
@@ -24,4 +23,4 @@ const PageLayout = ({ children, metaData, header, footer, menu }) => {
     )
 }
 
-export default PageLayout
+export default React.memo(PageLayout)

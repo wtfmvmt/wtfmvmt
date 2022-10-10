@@ -1,9 +1,10 @@
-import { Fade } from "react-awesome-reveal"
+import FadeAnimaiton from "@components/FadeAnimation"
 import DistortionCarousel from "@components/DistortionCarousel";
 
 export type Feature = {
   title?: string,
-  description?: string
+  description?: string,
+  cover?: string
 }
 
 export type FeaturedSectionProps = {
@@ -32,7 +33,7 @@ const FeaturedSection = ({ heading, title, description, features, carousel }: Fe
                 <div className="h-3/4 max-w-md mx-auto py-10 px-6 bg-purple-800 bg-opacity-90 border-3 border-indigo-900 shadow-xl rounded-xl text-center mt-2">
                   <img
                     className="block mx-auto mb-4"
-                    src="/assets/images/events.svg"
+                    src={feature?.cover ?? ""}
                     alt=""
                   />
                   <h4 className="text-2xl font-extrabold mb-6">

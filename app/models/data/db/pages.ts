@@ -69,10 +69,7 @@ const pages = ({ store, pageKey }) => {
                     title: 'Our Partners',
                     heading: 'Featured Partners & Leaders',
                     description: 'Learn more about our partners and their work',
-                    logos: partnersQuery.map((partner) => ({
-                        name: partner?.name,
-                        cover: partner?.cover ?? "#"
-                    }))
+                    logos: partnersQuery
                 },
                 featuredSection: {
                     title: 'Open Events',
@@ -119,8 +116,7 @@ const pages = ({ store, pageKey }) => {
                     heading: 'Memberships & Opportunities',
                     description: 'Join our MVMT and help us grow the future together',
                     tables: membershipsQuery.map((membership) => ({
-                        title: membership.title,
-                        features: membership.features,
+                        ...membership,
                         pricing: {
                             rate: membership?.cost,
                         }

@@ -163,10 +163,11 @@ const NotionService = {
         },
 
         PARTNERS: {
-            shape: (data) => { 
+            shape: (data) => {
                 const shapeObject = {
                     name: data?.properties?.Name?.title[0]?.plain_text,
                     cover: data?.properties?.Media?.files[0]?.file.url,
+                    url: data?.properties?.URL?.url,
                 }
 
                 return { ...shapeObject } ?? null
@@ -216,6 +217,7 @@ const NotionService = {
                 }
                 const shapeObject = {
                     title: data?.properties?.Name?.title[0].plain_text,
+                    cover: data?.properties?.Media?.files[0]?.file.url ?? "",
                 }
                 return { ...shapeObject } ?? null
             },
