@@ -257,7 +257,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
     return (
         <section className="relative pb-20 overflow-hidden w-full">
-            <Headroom>
+            <Headroom disableInlineStyles>
 
                 <Banner {...banner} />
                 <nav className="flex justify-between backdrop-blur-2xl border-b">
