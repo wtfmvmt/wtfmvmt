@@ -47,7 +47,7 @@ const LogoArray = ({ logos, title, heading, description }: LogoArrayProps) => {
                                 return (
                                     <div key={index} className="w-full md:w-1/2 px-4 mb-8">
                                         <div className="flex items-center justify-center h-44 p-6 md:px-12 bg-black bg-opacity-70 hover:bg-opacity-100 transition-all border-3 border-purple-600 rounded-2xl shadow-md">
-                                            <img className="object-fill md:h-1/2 sm:h-1/2" src={logo ? logo : "/"} alt={ "image"} />
+                                            <img className="object-fill md:h-1/2 sm:h-1/2" src={logo.cover ? logo.cover : "/"} alt={"image"} />
                                         </div>
                                     </div>
                                 )
