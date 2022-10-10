@@ -45,10 +45,17 @@ const LogoArray = ({ logos, title, heading, description }: LogoArrayProps) => {
                         <div className="flex flex-wrap -mx-4">
                             {logos ? logos.map((logo, index) => {
                                 return (
-                                    <div key={index} className="w-full md:w-1/2 px-4 mb-8">
-                                        <div className="flex items-center justify-center h-44 p-6 md:px-12 bg-black bg-opacity-70 hover:bg-opacity-100 transition-all border-3 border-purple-600 rounded-2xl shadow-md">
-                                            <img className="object-fill md:h-1/2 sm:h-1/2" src={logo.cover ? logo.cover : "/"} alt={"image"} />
-                                        </div>
+                                    <div key={index} className="w-1/2 md:w-1/2 px-4 mb-8">
+                                        <a href={logo?.url ? logo?.url : "#"}>
+                                            <div style={{
+                                                backgroundImage: `url(${logo.cover})`,
+                                                backgroundPosition: "center, center",
+                                                backgroundSize: '50%, 50%',
+                                                backgroundRepeat: 'no-repeat'
+                                            }} className="flex items-center justify-center h-40 p-6 md:px-12 bg-purple-900 bg-opacity-80 hover:-translate-y-4 cursor-pointer duration-500 ease-in-out transition-all border-3 border-purple-600 rounded-2xl shadow-md">
+                                                <h1 className="absolute bottom-4">{logo.name}</h1>
+                                            </div>
+                                        </a>
                                     </div>
                                 )
                             }) : <></>}

@@ -71,7 +71,7 @@ const pages = ({ store, pageKey }) => {
                     description: 'Learn more about our partners and their work',
                     logos: partnersQuery.map((partner) => ({
                         name: partner?.name,
-                        logo: partner?.cover ?? "#"
+                        cover: partner?.cover ?? "#"
                     }))
                 },
                 featuredSection: {
