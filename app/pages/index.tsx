@@ -5,7 +5,7 @@ import ImageMasonry from "@components/ImageMasonry"
 import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
-
+import LogoArray from "@views/components/LogoArray"
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/pages"
 
@@ -19,7 +19,7 @@ import { useEffect } from "react"
 const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
 
   const { layout, id, version, data:
-    { hero, summarySection, featuredSection, statsSection, contactSection, imageMasonry } } = page
+    { hero, summarySection, featuredSection, statsSection, logoArray, contactSection, imageMasonry } } = page
 
   useEffect(() => {
     console.log(`[${id}@${version}] => `, page)
@@ -28,6 +28,7 @@ const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
   return (
     <PageLayout {...layout}>
       <Hero {...hero} />
+      <LogoArray {...logoArray} />
       <FeaturedSection {...featuredSection} />
       <SummarySection {...summarySection} />
       <SimpleFormSection {...statsSection} />

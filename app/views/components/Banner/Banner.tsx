@@ -6,7 +6,7 @@ import type { BannerProps } from "@typings/Banner";
 
 import { CSSTransition } from 'react-transition-group';
 
-const Banner = ({ messages, countdown }: BannerProps) => {
+const Banner = ({ messages }: BannerProps) => {
 
 
     const { open, toggleBanner } = useBannerState()
@@ -25,7 +25,7 @@ const Banner = ({ messages, countdown }: BannerProps) => {
                             text={messages} />
                     </p>
 
-                    <p onClick={() => toggleBanner()} className="hover:scale-60 transition-all absolute right-2 top-2 text-gray-200 pr-1 cursor-pointer">
+                    <p onClick={() => toggleBanner()} className="hover:bg-purple-600 hover:rounded-full transition-all absolute right-2 top-2 text-gray-200 pr-1 cursor-pointer">
                         <CloseIcon />
                     </p>
 

@@ -99,13 +99,13 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
         const Minor = ({ key, title, heading, images }: Content) => {
             return (
 
-                <div key={key ? key : 0} className="hover:scale-90 transition-all border-3 border-indigo-900 rounded-2xl shadow overflow-hidden">
+                <div key={key ? key : 0} className="cursor-pointer hover:-translate-y-4 duration-500 transition-all bg-opacity-10 border-3 border-purple-900 rounded-2xl shadow overflow-hidden">
                     <div>
                         <div className="block h-96 lg:h-full w-full object-cover" >
-                            <img src={images[0]} />
+                            <img src={"https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/251422653_10159592615238430_6146298099290265003_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a26aad&_nc_ohc=kYAIrAJWd00AX8KgygR&_nc_ht=scontent-sin6-3.xx&oh=00_AT-hLwVRQUcTE1vHQncjlxddUjChnlJTwNLXXrocfmb2qA&oe=634809C3"} />
                         </div>
                     </div>
-                    <div className="px-6 py-4 bg-indigo-900">
+                    <div className="px-6 py-4 bg-purple-900">
                         <h2 className="text-xl text-white font-extrabold">{title ? title : "Brandon J Payne"}</h2>
                         <span className="text-lg font-bold text-indigo-300">{heading ? heading : "CEO"}</span>
                     </div>
@@ -116,7 +116,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
 
         const Major = ({ key, title, heading, images }: Content) => {
             return (
-                <div key={key ? key : 0} className="hover:scale-90 transition-all w-full lg:w-2/3 px-4 mb-8">
+                <div key={key ? key : 0} className="cursor-pointer hover:translate-x-4 duration-500 ease-in-out  transition-all w-full lg:w-2/3 px-4 mb-8">
                     <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl shadow-xl overflow-hidden">
                         <div className="mb-auto h-full">
                             <div className="block h-96 lg:h-full w-full object-cover" >

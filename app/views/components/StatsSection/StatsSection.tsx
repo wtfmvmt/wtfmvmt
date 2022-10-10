@@ -1,29 +1,5 @@
-import type { CallToAction } from "@typings/CallToAction"
 
-export type Table = {
-    title: string,
-    description?: string,
-    pricing?: {
-        rate?: string,
-        unit?: string,
-
-    }
-    cta?: {
-        primary: CallToAction,
-        secondary: CallToAction
-    },
-    features?: {
-        name?: string
-    }[]
-}
-
-
-export type StatsSectionProps = {
-    heading?: string,
-    title?: string,
-    description?: string,
-    tables?: Table[]
-}
+import type { StatsSectionProps } from "@typings/StatsSection"
 
 const StatsSection = ({ heading, title, description, tables }: StatsSectionProps) => {
 
@@ -111,7 +87,7 @@ const StatsSection = ({ heading, title, description, tables }: StatsSectionProps
 
     return (
 
-        <section className="bg-black bg-opacity-10 py-26 mt-10">
+        <section className="py-24 mt-10">
             <div className="container px-4 mx-auto">
                 <Header />
                 <Tables />

@@ -164,7 +164,6 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
         </a>
     )
 
-
     const SearchBar = () => {
 
         return (
@@ -252,14 +251,14 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
     const NavBurger = () => (
 
         <div className="cursor-pointer hover:scale-90 duration-700 hidden xl:flex">
-            <BurgerIcon  action={() => toggleDrawer()} />
+            <BurgerIcon action={() => toggleDrawer()} />
         </div>
     )
 
     return (
         <section className="relative pb-20 overflow-hidden w-full">
             <Headroom>
-    
+
                 <Banner {...banner} />
                 <nav className="flex justify-between backdrop-blur-2xl border-b">
 

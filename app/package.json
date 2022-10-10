@@ -35,6 +35,7 @@
     "react-dom": "18.2.0",
     "react-headroom": "^3.2.0",
     "react-indexed-db": "^1.0.12",
+    "react-joyride": "^2.5.3",
     "react-js-search": "^0.3.0",
     "react-loader-spinner": "^5.2.0",
     "react-placeholder-image": "^0.1.8",

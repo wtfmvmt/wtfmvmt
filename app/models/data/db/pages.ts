@@ -8,7 +8,9 @@ import memberships from "@db/memberships"
 import siteMeta from "@db/siteMeta"
 import sitePages from "@db/sitePages"
 import socialMedia from "@db/socialMedia"
+
 import NotionService from "@services/notion"
+
 import shuffle from "@utils/shuffle"
 
 const pages = ({ store, pageKey }) => {
@@ -59,6 +61,10 @@ const pages = ({ store, pageKey }) => {
                     },
                     socialLinks: socialMediaQuery
                 },
+                logoArray: {
+                    title: 'Our Partners',
+                    heading: 'Our Partners',
+                },
                 featuredSection: {
                     title: 'Open Events',
                     heading: "In every community, there is work to be done. In every nation, there are wounds to heal. In every heart, there is the power to do it...",
@@ -108,13 +114,21 @@ const pages = ({ store, pageKey }) => {
                         features: membership.features,
                         pricing: {
                             rate: membership?.cost,
-                            unit: membership?.unit,
                         }
                     })),
                 },
 
                 imageMasonry: {
                     title: 'Our MVMbers',
+                    heading: 'Our Team',
+                    description: 'who we are',
+                    masonry: {
+                        minor: [
+                            {
+                                title: 'Brandon Payne'
+                            }
+                        ]
+                    }
                 }
 
             }
@@ -135,13 +149,16 @@ const pages = ({ store, pageKey }) => {
         partners: {},
         shop: {},
         vision: {},
-        rsvp: {},
+        rsvp: {
+            metaData: {},
+            data: {}
+        },
 
     }
 
     const copyrightData = siteMetaQuery.find((meta) => meta.types.includes(TYPES.COPYRIGHT)).values ?? ["", ""]
     const pageLinkData = sitePagesQuery.map((page) => ({ name: page.name, icon: page.icon, url: page.name.toLowerCase() }))
-    const bannerData = siteMetaQuery.filter((meta) => !meta.types.includes(TYPES.BANNER)).map(meta => meta.values) ?? ["", ""]
+    const bannerData = siteMetaQuery.find((meta) => meta.types.includes(TYPES.BANNER)) ?? ["This site is under construction.", ""]
     const impressumData = siteMetaQuery.find((meta) => meta.types.includes(TYPES.IMPRESSUM)).values ?? ["", ""]
 
     const layoutData = {
@@ -149,7 +166,7 @@ const pages = ({ store, pageKey }) => {
             headerObject: {
                 banner: {
                     countdown: Date.now(),
-                    message: bannerData
+                    messages: bannerData.values
                 }
             },
             menuObject: {
@@ -167,7 +184,6 @@ const pages = ({ store, pageKey }) => {
         }),
         metaData: pageData[pageKey].metaData ?? null
     }
-
 
     const pageObject = {
         id: `${siteTitle} | ${pageKey}--page-data`,

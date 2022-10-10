@@ -19,7 +19,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                         return (
                             <a
                                 key={index}
-                                className="block mb-6 text-center leading-6 text-lg font-extrabold hover:text-indigo-800 border:bg-purple-800"
+                                className="block mb-6 py-4 hover:bg-orange-500 hover:rounded text-center leading-6 text-lg font-extrabold hover:bg-opacity-50 duration-250 ease-in hover:text-black"
                                 href={callToAction.url}
                             >
                                 {callToAction.name}

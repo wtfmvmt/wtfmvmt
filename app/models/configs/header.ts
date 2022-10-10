@@ -17,7 +17,7 @@ const header = ({ banner }) => {
         banner,
         favicon: {
             ...logoTransparent,
-            url: homeLinkRelative
+            url: homeLinkRelative.url
         },
     }
 

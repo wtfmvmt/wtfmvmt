@@ -59,6 +59,7 @@ const NotionService = {
             DONORS: "👥Donors",
             VOLUNTEERS: "👥Volunteers",
             STAFF: "👥Staff",
+            TEAM: "Team",
             BOARD: "👥Board",
             ADVISORS: "👥Advisors",
             SUPPORTERS: "👥Supporters",
@@ -81,6 +82,28 @@ const NotionService = {
     },
 
     db: {
+
+        TEAM: {
+            shape: (data) => {
+
+                const shapeObject = {
+                    name: data?.properties?.Name?.title?.[0]?.plain_text ?? null,
+                    url: data?.properties?.URL?.url ?? null,
+                    icon: data?.icon.external.url ?? null,
+                    date: data?.properties?.Date?.date?.start ?? null,
+                }
+
+                return { ...shapeObject } ?? null
+
+            },
+
+            predicate: (data) => {
+
+                const { enums: { DATABASES: { TEAM } },
+                    utils: { getDatabase } } = NotionService
+                return getDatabase(data, TEAM)
+            },
+        },
 
         SITE_PAGES: {
             shape: (data) => {
@@ -202,8 +225,8 @@ const NotionService = {
                 const { Database, Status, Values, Types, Departments } = getProperties(data)
 
                 return {
-                    database: select(Database).name,
-                    status: status(Status).name,
+                    database: select(Database)?.name,
+                    status: status(Status)?.name,
                     values: multiSelect(Values).map((value) => value.name),
                     types: multiSelect(Types).map((type) => type.name),
                     departments: multiSelect(Departments).map((department) => department.name),

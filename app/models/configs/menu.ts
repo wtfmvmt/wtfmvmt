@@ -11,13 +11,10 @@ const menu = ({ links }) => {
 
         links,
         cta: [
+
             {
-                name: 'Sponsorships',
-                url: '/partners'
-            },
-            {
-                name: 'Join Us',
-                url: '/forms'
+                name: 'Support Us',
+                url: 'https://ko-fi.com/wtfmvmt'
             }
         ]
     }
