@@ -125,13 +125,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
             </h2>
             <h4 className="mb-8 text-sm font-bold">
 
-                <ReactTypingEffect
-
-                    speed={50}
-                    eraseSpeed={10}
-                    typingDelay={20}
-                    text={description} />
-
+                {description}
             </h4>
             <a
                 className="inline-block hvr-pop bg-purple-900 hover:bg-black text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"

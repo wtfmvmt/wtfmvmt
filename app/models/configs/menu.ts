@@ -13,7 +13,7 @@ const menu = ({ links }) => {
         cta: [
 
             {
-                name: 'Support Us',
+                name: '🎃Support Us',
                 url: 'https://ko-fi.com/wtfmvmt'
             }
         ]

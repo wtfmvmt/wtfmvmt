@@ -5,9 +5,9 @@ import type { ImageProps } from "@typings/Image"
 export type SimpleFormSectionProps = {
 
   cover: ImageProps,
-  heading: string, 
+  heading: string,
   title: string,
-  description: string, 
+  description: string,
   placeHolder: string,
   cta: CallToAction
 }
@@ -15,7 +15,7 @@ const SimpleFormSection = () => {
 
   return (
 
-    <section className="py-26  bg-black bg-opacity-10 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
 
       <div className="container px-4 mx-auto relative">
         <div className="text-center text-white">

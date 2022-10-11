@@ -19,7 +19,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
           <Image
             height={"75px"}
             width={"75px"}
-            className="h-12 h-40"
+            className=""
             src={logo.src}
             alt={"wtfmvmt-logo"}
           />
@@ -85,7 +85,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
             return (
               <a
                 key={index}
-                className="inline-block text-white hover:text-indigo-800 mr-8 hvr-pop transition-all"
+                className="inline-block mr-6 rounded-full hover:scale-90 hover:bg-purple-500 transition-all"
                 href={social?.url ?? "#"}
               >
                 <SocialIcon bgColor="white" url={social.url} />

@@ -1,6 +1,6 @@
 import NotionService from '@services/notion'
 
-import pages from "@db/pages"
+import pages from "@pages/index"
 import meta from "@configs/meta"
 
 
