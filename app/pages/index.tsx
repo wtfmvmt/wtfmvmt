@@ -2,24 +2,18 @@ import ContactSection from "@components/ContactSection"
 import FeaturedSection from "@components/FeaturedSection"
 import Hero from "@components/Hero"
 import ImageMasonry from "@components/ImageMasonry"
+import LogoArray from "@components/LogoArray"
 import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
-import LogoArray from "@components/LogoArray"
+import ColumnLists from "@components/ColumnLists"
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/pages"
-
-import { useEffect } from "react"
+import RowList from "@views/components/RowList"
 import { NextPage } from "next"
-
-export type PageProps = {
-  page: {
-    id?: string,
-    version?: string,
-    layout?: any,
-    data?: any
-  }
-}
+import { useEffect } from "react"
+import StatsRow from "@views/components/StatsRow"
+import type { PageProps } from "@typings/Page"
 
 const HomePage: NextPage<PageProps> = ({ page }) => {
 
@@ -35,9 +29,12 @@ const HomePage: NextPage<PageProps> = ({ page }) => {
       <Hero {...hero} />
       <LogoArray {...logoArray} />
       <FeaturedSection {...featuredSection} />
+      <StatsRow />
       <SummarySection {...summarySection} />
       <SimpleFormSection {...statsSection} />
       <StatsSection {...statsSection} />
+      <RowList />
+      <ColumnLists />
       <ImageMasonry {...imageMasonry} />
       <ContactSection {...contactSection} />
     </PageLayout>

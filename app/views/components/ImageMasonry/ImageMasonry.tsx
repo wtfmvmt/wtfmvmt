@@ -105,7 +105,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                             <img src={"https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/251422653_10159592615238430_6146298099290265003_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a26aad&_nc_ohc=kYAIrAJWd00AX8KgygR&_nc_ht=scontent-sin6-3.xx&oh=00_AT-hLwVRQUcTE1vHQncjlxddUjChnlJTwNLXXrocfmb2qA&oe=634809C3"} />
                         </div>
                     </div>
-                    <div className="px-6 py-4 bg-purple-900">
+                    <div className="px-6 py-4">
                         <h2 className="text-xl text-white font-extrabold">{title ? title : "Brandon J Payne"}</h2>
                         <span className="text-lg font-bold text-indigo-300">{heading ? heading : "CEO"}</span>
                     </div>
@@ -168,7 +168,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
 
     return (
 
-        <section className="py-26 relative overflow-hidden bg-black bg-opacity-10">
+        <section className="py-24 relative overflow-hidden">
             <div className="container px-4 mx-auto relative">
                 <div className="flex flex-wrap -mx-4 mb-16 items-center justify-between">
                     <Header />

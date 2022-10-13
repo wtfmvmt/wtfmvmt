@@ -198,7 +198,7 @@ const pages = ({ store, pageKey }) => {
     }
 
 
-    return { ...pageObject } ?? null
+    return { ...pageObject }
 }
 
 export default pages
