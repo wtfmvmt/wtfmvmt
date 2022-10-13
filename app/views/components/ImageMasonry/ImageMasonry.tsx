@@ -116,11 +116,11 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
 
         const Major = ({ key, title, heading, images }: Content) => {
             return (
-                <div key={key ? key : 0} className="cursor-pointer hover:translate-x-4 duration-500 ease-in-out  transition-all w-full lg:w-2/3 px-4 mb-8">
+                <div key={key ? key : 0} className="cursor-pointer hover:translate-y-4 duration-500 ease-in-out  transition-all w-full lg:w-2/3 px-4 mb-8">
                     <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl shadow-xl overflow-hidden">
                         <div className="mb-auto h-full">
                             <div className="block h-96 lg:h-full w-full object-cover" >
-                                <DistortionCarousel images={images} />
+                                <img src={"https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/251422653_10159592615238430_6146298099290265003_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a26aad&_nc_ohc=kYAIrAJWd00AX8KgygR&_nc_ht=scontent-sin6-3.xx&oh=00_AT-hLwVRQUcTE1vHQncjlxddUjChnlJTwNLXXrocfmb2qA&oe=634809C3"} />
                             </div>
                         </div>
                         <div className="px-6 py-4 bg-purple-900 bg-opacity-90">
@@ -138,7 +138,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
 
 
         return (
-            masonry ? <div className="flex flex-wrap -mx-4 -mb-8">
+            masonry ? <div className="flex flex-wrap -mx-4 -mb-8 w-full self-center items-center">
 
                 {
                     masonry.major ? masonry.major.map((major, index) => {
@@ -148,19 +148,7 @@ const ImageMasonry = ({ heading, title, description, masonry, cta }: ImageMasonr
                     }) : <></>
 
                 }
-                <div className="w-full lg:w-1/3 px-4 mb-8">
 
-
-                    {
-                        masonry.minor ? masonry.minor.map((minor, index) => {
-                            return (
-                                <Minor {...minor} key={index} />
-                            )
-                        }) : <></>
-
-                    }
-
-                </div>
 
             </div> : <></>
         )

@@ -1,3 +1,4 @@
+import ColumnLists from "@components/ColumnLists"
 import ContactSection from "@components/ContactSection"
 import FeaturedSection from "@components/FeaturedSection"
 import Hero from "@components/Hero"
@@ -6,14 +7,13 @@ import LogoArray from "@components/LogoArray"
 import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
-import ColumnLists from "@components/ColumnLists"
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/pages"
+import type { PageProps } from "@typings/Page"
 import RowList from "@views/components/RowList"
+import StatsRow from "@views/components/StatsRow"
 import { NextPage } from "next"
 import { useEffect } from "react"
-import StatsRow from "@views/components/StatsRow"
-import type { PageProps } from "@typings/Page"
 
 const HomePage: NextPage<PageProps> = ({ page }) => {
 

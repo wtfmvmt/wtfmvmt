@@ -128,11 +128,18 @@ const pages = ({ store, pageKey }) => {
                     heading: 'Our Team',
                     description: 'who we are',
                     masonry: {
-                        minor: [
+                        major: [
+                            {
+                                title: 'Brandon Payne'
+                            }, {
+                                title: 'Brandon Payne'
+                            },
                             {
                                 title: 'Brandon Payne'
                             }
-                        ]
+                        ],
+
+
                     }
                 }
 
