@@ -7,25 +7,26 @@ import LogoArray from "@components/LogoArray"
 import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
-import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/pages"
-import type { PageProps } from "@typings/Page"
 import RowList from "@views/components/RowList"
 import StatsRow from "@views/components/StatsRow"
+
+
 import { NextPage } from "next"
 import { useEffect } from "react"
+import type { PageProps } from "@typings/Page"
 
-const HomePage: NextPage<PageProps> = ({ page }) => {
 
-  const { layout, id, version,
-    data: { hero, summarySection, featuredSection, statsSection, logoArray, contactSection, imageMasonry } } = page
+const HomePage: NextPage<PageProps> = ({ page: { data, id, version, } }) => {
+
+  const { hero, summarySection, featuredSection, statsSection, logoArray, contactSection, imageMasonry } = data
 
   useEffect(() => {
-    console.log(`[${id}@${version}] => `, page)
-  }, [page, id, version])
+    console.log(`[${id}@${version}] => `, data)
+  }, [data, id, version])
 
   return (
-    <PageLayout {...layout}>
+    <>
       <Hero {...hero} />
       <LogoArray {...logoArray} />
       <FeaturedSection {...featuredSection} />
@@ -37,7 +38,7 @@ const HomePage: NextPage<PageProps> = ({ page }) => {
       <ColumnLists />
       <ImageMasonry {...imageMasonry} />
       <ContactSection {...contactSection} />
-    </PageLayout>
+    </>
   )
 }
 

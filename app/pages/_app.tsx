@@ -4,6 +4,8 @@ import "@libs/tailwind.css"
 import "@libs/animations.css"
 import "@libs/scrollbars.css"
 
+import PageService from "@controllers/services/pages"
+import PageLayout from "@layouts/PageLayout"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { PageTransition } from 'next-page-transitions'
@@ -12,18 +14,27 @@ import { RecoilRoot } from 'recoil'
 import type { IApplication } from "@typings/Application"
 
 
-function Application({ Component, pageProps }: IApplication) {
+function Application({ Component, pageProps, layout }) {
 
   return (
     <RecoilRoot>
-      <PageTransition
-        loadingComponent={<>Date.now()</>}
-        classNames="page-transition">
-        <Component {...pageProps} />
+      <PageTransition loadingDelay={500} loadingComponent={<>Loading Application</>} timeout={200} classNames={"page-transition"}>
+        <PageLayout {...layout}>
+          <Component {...pageProps} />
+        </PageLayout>
       </PageTransition>
     </RecoilRoot>
 
   )
 }
+
+
+
+Application.getInitialProps = async () => {
+  const { getPage } = PageService;
+  const { layout } = await getPage("home");
+  return { layout };
+};
+
 
 export default Application

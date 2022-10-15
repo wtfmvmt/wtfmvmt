@@ -25,9 +25,9 @@ const MembershipsIndexPage: IPage<ServerSidePageProps> = ({ page }) => {
   }, [page, id, version])
 
   return (
-    <PageLayout {...layout}>
+    <>
 
-    </PageLayout>
+    </>
   )
 }
 

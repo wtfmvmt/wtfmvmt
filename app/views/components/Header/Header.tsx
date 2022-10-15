@@ -144,7 +144,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
     const Notifier = () => {
         return (
-            <div className="">
+            <div className="hidden lg:flex">
                 <Badge badgeContent={notifications.queue} color="secondary">
                     <AnnouncementIcon />
                 </Badge>
@@ -156,8 +156,8 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
     const MobileNavBurger = () => (
         <a className="navbar-burger cursor-pointer self-center mr-12 xl:hidden" href="#">
             <div className="xl:flex items-center">
-                <a className="flex items-center hover:text-gray-600" href="#">
-                   
+                <a className="flex items-center hover:text-gray-600">
+
                     <BurgerIcon action={() => toggleDrawer()} />
                 </a>
             </div>
@@ -176,7 +176,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
 
                             <Autocomplete
-                                
+
                                 id="combo-box-demo"
                                 options={top100Films}
                                 sx={{ width: 300, border: 0, color: 'white', fontFamily: 'var(--font-primary)' }}
@@ -259,27 +259,27 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
         <Headroom>
             <section className="relative pb-20 overflow-hidden w-full">
 
-            <Banner {...banner} />
-            <nav className="flex justify-between backdrop-blur-2xl border-b">
+                <Banner {...banner} />
+                <nav className="flex justify-between backdrop-blur-2xl border-b">
 
-                <div className="px-12 py-6 flex w-full items-center">
-                    <Favicon />
-                    <SearchBar />
+                    <div className="px-12 py-6 flex w-full items-center">
+                        <Favicon />
+                        <SearchBar />
 
-                    <div className="xl:flex items-center ">
-                        <a className="flex items-center hover:text-gray-600" href="/">
-                            <Notifier />
-                        </a>
+                        <div className="xl:flex items-center ">
+                            <a className="flex items-center hover:text-gray-600" href="/">
+                                <Notifier />
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-                <NavBurger />
-                <MobileNavBurger />
-            </nav>
-        </section>
-    </Headroom >
+                    <NavBurger />
+                    <MobileNavBurger />
+                </nav>
+            </section>
+        </Headroom >
     )
-    
+
 }
 
 export default Header
