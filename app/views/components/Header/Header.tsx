@@ -7,7 +7,7 @@ import Badge from '@mui/material/Badge';
 import TextField from '@mui/material/TextField';
 import type { HeaderProps } from "@typings/Header";
 import Headroom from "react-headroom";
-
+import useBannerState from "@hooks/useBannerState"
 const top100Films = [
     { label: 'The Shawshank Redemption', year: 1994 },
     { label: 'The Godfather', year: 1972 },
@@ -141,10 +141,13 @@ const notifications = {
 
 const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
     const { toggleDrawer } = useMenuDrawerState()
+    const { toggleBanner } = useBannerState()
+
+
 
     const Notifier = () => {
         return (
-            <div className="hidden lg:flex">
+            <div onClick={() => toggleBanner()} className="hidden lg:flex cursor-pointer">
                 <Badge badgeContent={notifications.queue} color="secondary">
                     <AnnouncementIcon />
                 </Badge>
@@ -154,7 +157,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
 
     const MobileNavBurger = () => (
-        <a className="navbar-burger cursor-pointer self-center mr-12 xl:hidden" href="#">
+        <a className="navbar-burger cursor-pointer self-center mr-12 xl:hidden">
             <div className="xl:flex items-center">
                 <a className="flex items-center hover:text-gray-600">
 
@@ -260,14 +263,14 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
             <section className="relative pb-20 overflow-hidden w-full">
 
                 <Banner {...banner} />
-                <nav className="flex justify-between backdrop-blur-2xl border-b">
+                <nav className="flex justify-between backdrop-blur-lg">
 
                     <div className="px-12 py-6 flex w-full items-center">
                         <Favicon />
                         <SearchBar />
 
                         <div className="xl:flex items-center ">
-                            <a className="flex items-center hover:text-gray-600" href="/">
+                            <a className="flex items-center hover:text-gray-600">
                                 <Notifier />
                             </a>
                         </div>

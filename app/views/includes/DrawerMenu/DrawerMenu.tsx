@@ -79,12 +79,12 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
     return (
         <CSSTransition
             in={open}
-            timeout={234}
+            timeout={500}
             unmountOnExit
         >
             <div className="transition-all navbar-menu relative z-50">
                 <ClickAwayListener onClickAway={() => toggleDrawer()}>
-                    <nav className={`${!open ? "slide-out-blurred-left" : ""} backdrop-blur-xl slide-in-blurred-left fixed top-0 bg-black bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 border-r overflow-y-auto`}>
+                    <nav className={`${!open ? "scale-out-hor-left" : ""} backdrop-blur-md scale-in-hor-left fixed top-0 bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 border-r overflow-y-auto`}>
                         <div className="flex items-center mb-8">
                             <Favicon />
                             <CloseDrawerButton />

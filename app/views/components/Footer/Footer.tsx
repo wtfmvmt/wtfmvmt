@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 import { SocialIcon } from "react-social-icons";
 import ReactTypingEffect from 'react-typing-effect';
-
+import useNotification from "@hooks/useNotification"
 
 
 const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {
@@ -66,7 +66,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
   const Copyright = () => {
     return (
       <div className="w-full lg:w-auto mb-12 lg:mb-0">
-        <p className="text-center text-lg font-extrabold">
+        <p className="text-center text-lg font-extrabold overflow-hidden h-full">
           <ReactTypingEffect speed={50} eraseSpeed={20} typingDelay={40} text={copyright} />
 
         </p>
@@ -78,24 +78,24 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
   const Socials = () => {
 
     return (
-      <div className="w-full ml-4 lg:w-auto flex flex-wrap overflow-clip items-center justify-center">
+      socials ? <div className="w-full ml-4 lg:w-auto flex flex-wrap overflow-clip items-center justify-center">
         {
-          socials && socials.map((social, index) => {
+          socials.map((social, index) => {
 
             return (
               <a
                 key={index}
-                className="inline-block mr-6 rounded-full hover:scale-90 hover:bg-purple-500 transition-all"
+                className="inline-block mt-3 mr-6 rounded-full hover:scale-90 hover:bg-purple-500 transition-all"
                 href={social?.url ?? "#"}
               >
-                <SocialIcon bgColor="white" url={social.url} />
+                <SocialIcon bgColor="white" url={social?.url} />
 
               </a>
             )
           })
         }
 
-      </div>
+      </div> : <></>
     )
   }
 

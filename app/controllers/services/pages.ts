@@ -10,14 +10,26 @@ const PageService = {
         return pages({ store, pageKey })
     },
 
+    getLayout: async (pageKey?: string) => {
+        const { loadDataPage } = PageService
+        const { getCentralDogma } = NotionService
+
+        const centralDogma = (await getCentralDogma())
+
+        const { layout } = loadDataPage(centralDogma, pageKey)
+
+        return layout
+
+    },
+
     getPage: async (pageKey: string) => {
 
         const { title: siteTitle } = meta()
 
         const { loadDataPage } = PageService
-        const { loadCentralDogma } = NotionService
+        const { getCentralDogma } = NotionService
 
-        const centralDogma = (await loadCentralDogma()).results
+        const centralDogma = (await getCentralDogma())
 
         const { layout, data, id, version } = loadDataPage(centralDogma, pageKey ? pageKey : "home")
 

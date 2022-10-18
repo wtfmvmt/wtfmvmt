@@ -251,12 +251,11 @@ const NotionService = {
 
     },
 
-    loadCentralDogma: async () => {
-        //miracle query for @v.x{ < 3 }.y.z
+    getCentralDogma: async () => {
         const { api, secured } = NotionService
-        const centralDogma = await api.databases.query({
+        const centralDogma = (await api.databases.query({
             database_id: secured.central_dogma
-        })
+        }))?.results
 
         return centralDogma
     },

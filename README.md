@@ -1,171 +1,131 @@
 
 # WTFMVMT
 
-🌏WTFMVMT.com is a community platform of artists, builders and thinkers focused on building a better future.
+### We
 
+ [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/naturessecretco/naturessecret.co?color=green&label=activity&logo=github&logoColor=yellow&style=plastic) | ![Website](https://img.shields.io/website?down_color=red&down_message=fuck%21&label=status&logo=git&logoColor=yellow&up_message=systems%20online&url=https%3A%2F%2Fnaturessecret.co)
 
-## Badges
+<img src="./docs/logo.png" />
 
-Add badges from somewhere like: [shields.io](https://shields.io/)
+---
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
-
-
-## Used By
-
-This project is used by the following companies:
-
-- Mountaintop Entertain Group
-- 
-
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-
-
-## Acknowledgements
-
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-
-
-## Authors
-
-- [@octokatherine](https://www.github.com/octokatherine)
-
-
-## Features
-
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
-
-
-## Screenshots
+## 📷Screenshots
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
+---
 
-## API Reference
+## ✨Features
 
-#### Get all items
+* Light/dark mode toggle
+* Live previews
+* Fullscreen mode
+* Cross platform
 
-```http
-  GET /api/items
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Get item
-
-```http
-  GET /api/items/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
+---
 
 
-## Installation
+## 🔨Installation
 
-Install my-project with npm
 
 ```bash
-  npm install my-project
-  cd my-project
+ git clone https://github.com/naturessecretco/naturessecretco.git
+  cd app
+  npm run bootstrap
 ```
+
+---
     
-## Support
+## 🆘Support
 
-For support, email fake@fake.com or join our Slack channel.
+For support, email info@naturessecret.co
 
+---
 
-## Usage/Examples
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
+## ⌚Changelog
 
 
-## Optimizations
-
-What optimizations did you make in your code? E.g. refactors, performance improvements, accessibility
-
-
-## 🛠 Skills
-Javascript, HTML, CSS...
+**Version 1.0.1**
+* Optimized Page Navigation
+* Ingridents Page Added
 
 
-## Feedback
+**Version 1.0.0**
+* Facade Service (v0.0.1) Integrated. Allowing future-proof extensions.
+* API Maintanence 
+
+
+**Version 0.0.9**
+* Views 'Simply-Typed', parametermized as needed for cms data transformations. 
+* Animations optimized. 
+* App Layout polyfilled. 
+
+---
+
+## ➰Feedback
 
 If you have any feedback, please reach out to us at fake@fake.com
 
+---
 
-## Tech Stack
+## ⚙️Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+* React
+* Recoil
+* TailwindCSS
+* NextJs
+* Notion
+* Facade 
+  
+---
 
-**Server:** Node, Express
-
-
-## FAQ
-
-#### Question 1
-
-Answer 1
-
-#### Question 2
-
-Answer 2
+## 🛣️Roadmap
 
 
-## Related
+**Phase E**
+1. Community Marketing 
 
-Here are some related projects
-
-[Awesome README](https://github.com/matiassingers/awesome-readme)
-
-
-## Roadmap
-
-- Additional browser support
-
-- Add more integrations
+**Phase D**
+1. Community Marketing 
 
 
-## Lessons Learned
-
-What did you learn while building this project? What challenges did you face and how did you overcome them?
-
-
-## Contributing
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`.
+**Phase C**
+1. Community Marketing 
 
 
-## Appendix
+**Phase B**
+1. Community Marketing 
 
-Any additional information goes here
+
+📍**Phase A**  
+* 🎉MVP Launch!
+
+---
 
 
-## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+## 🙏🏿Acknowledgements
+
+ > To God Be All the Glory. 
+
+
+
+
+---
+
+## ✒️Authors
+
+- [@desirtech](https://www.github.com/octokatherine)
+- [@desirdesigns](https://www.github.com/octokatherine)
+- [@desirablesolutions](https://www.github.com/octokatherine)
+
+
+---
+
+## 📜License
+
+> This project is under the MIT License☂️. 
+
+**All data & metadata property of WTFMVMT, LLC**<br/>
+**©️ 2022 WTFMVMT. All Rights Reserved.**
 
