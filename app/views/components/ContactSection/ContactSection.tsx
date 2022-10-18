@@ -2,10 +2,11 @@ import EmailIcon from "@components/EmailIcon"
 import GridIcon from "@components/GridIcon"
 import type { CallToAction } from "@models/typings/CallToAction"
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import FadeAnimation from "@components/FadeAnimation" 
+import FadeAnimation from "@components/FadeAnimation"
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { SocialIcon } from "react-social-icons"
 
+import useNotification from "@hooks/useNotification"
 
 
 
@@ -32,7 +33,7 @@ export type ContactSectionProps = {
 
 const ContactSection = ({ phone, email, socials, label, heading, description, cta }: ContactSectionProps) => {
 
-
+    const { sendNotification } = useNotification();
     const Email = () => {
 
         return (
@@ -45,7 +46,10 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                     <p className="hover:scale-90 whitespace-nowrap transition-all text-xl sm:text-2xl text-red-200 bg-black bg-opacity-80 p-4 rounded">
                         {email ? email : "EMAIL_PROPERTY_NOT_FOUND"}
 
-                        <CopyToClipboard onCopy={() => alert(`Copied!`)} text={email}>
+                        <CopyToClipboard onCopy={() => sendNotification({
+                            message: "Email Copied",
+                            duration: 5000
+                        })} text={email}>
                             <span className="p-2 whitespace-nowrap">
                                 <ContentCopyIcon />
                             </span>
@@ -100,7 +104,7 @@ const ContactSection = ({ phone, email, socials, label, heading, description, ct
                                             className="mb-8 inline-block mr-6 hvr-pop"
                                             href={social?.url}
                                         >
-                                            <SocialIcon bgColor="white" url={social?.url}  />
+                                            <SocialIcon bgColor="white" url={social?.url} />
                                         </a>
 
 

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 import { SocialIcon } from "react-social-icons";
 import ReactTypingEffect from 'react-typing-effect';
-import useNotification from "@hooks/useNotification"
 
 
 const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => {

@@ -13,10 +13,34 @@ const notificationState = atom({
 });
 
 const useNotification = () => {
+    const [notification, setNotification] = useRecoilState(notificationState);
 
-    const [open, setOpen] = useRecoilState(notificationState);
 
-  
+    const closeNotification = () => {
+        setNotification({
+            ...notification,
+            isOpen: false,
+        });
+    }
+
+    const toggleNotification = () => {
+        setNotification({
+            ...notification,
+            isOpen: !notification.isOpen,
+        });
+    }
+
+    const sendNotification = ({ message, duration }) => {
+
+        setNotification({
+            isOpen: true,
+            message: message,
+            duration: duration ?? 5000
+        });
+
+    }
+
+    return { notification, sendNotification, toggleNotification, closeNotification };
 
 }
 

@@ -4,32 +4,22 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-const Notifications = ({ message, duration, isOpen }) => {
+import useNotification from '@hooks/useNotification';
 
-    const [open, setOpen] = React.useState(true);
+const Notifications = () => {
 
-    const handleClick = () => {
-        setOpen(true);
-    };
-
-    const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
-        if (reason === 'clickaway') {
-            return;
-        }
-
-        setOpen(false);
-    };
+    const { closeNotification, notification: { message, isOpen, duration } } = useNotification();
 
     const action = (
         <div>
-            <Button color="secondary" size="small" onClick={handleClose}>
-                Where are you?
+            <Button color="secondary" size="small" onClick={closeNotification}>
+                {message}
             </Button>
             <IconButton
                 size="small"
                 aria-label="close"
                 color="inherit"
-                onClick={handleClose}
+                onClick={closeNotification}
             >
                 <CloseIcon fontSize="small" />
             </IconButton>
@@ -39,17 +29,12 @@ const Notifications = ({ message, duration, isOpen }) => {
     return (
         <div>
             <Snackbar
-                open={open}
-                classes="bg-transparent"
-                sx={{
-                    backgroundColor: 'transparent',
-                }}
+                open={isOpen}
                 anchorOrigin={{
                     vertical: 'top',
                     horizontal: 'center',
                 }}
-                autoHideDuration={60000}
-                onClose={handleClose}
+                autoHideDuration={duration}
                 message={message ?? "MESSAGE_NOT_FOUND"}
                 action={action}
             />

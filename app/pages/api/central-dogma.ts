@@ -7,9 +7,13 @@ export default async function handler(
     res: NextApiResponse<any>
 ) {
 
-    const { loadCentralDogma } = NotionService
+    if (req.method !== 'GET') {
+        res.send("Method not allowed")
+    }
 
-    const data = (await loadCentralDogma()).results
+    const { getCentralDogma } = NotionService
+
+    const data = (await getCentralDogma())
 
     res.status(200).json(data)
 }
