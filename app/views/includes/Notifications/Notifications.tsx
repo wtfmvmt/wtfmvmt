@@ -12,9 +12,7 @@ const Notifications = () => {
 
     const action = (
         <div>
-            <Button color="primary" size="small" onClick={closeNotification}>
-                Close me!
-            </Button>
+         
             <IconButton
                 size="small"
                 aria-label="close"
@@ -30,6 +28,8 @@ const Notifications = () => {
         <div>
             <Snackbar
                 open={isOpen}
+                color="secondary"
+                onClose={closeNotification}
                 anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'center',

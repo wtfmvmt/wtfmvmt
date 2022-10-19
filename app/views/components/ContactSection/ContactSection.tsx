@@ -38,19 +38,20 @@ const ContactSection = ({ email, socials, label, heading, description, cta }: Co
 
         return (
             email ? <div className="flex mb-14">
-                <div className="flex-shrink-0 -mt-4 inline-flex items-center justify-center w-16 h-16 mr-8 bg-white rounded-full border-3 border-indigo-900 text-indigo-900 shadow-md">
+                <div className="flex-shrink-0 -mt-4 inline-flex items-center justify-center w-16 h-16 mr-8 bg-white rounded-full border-3 text-purple-900 shadow-md">
                     <EmailIcon />
                 </div>
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Email</h3>
-                    <p className="hover:scale-90 whitespace-nowrap transition-all text-xl sm:text-2xl text-red-200 bg-black bg-opacity-80 p-4 rounded">
+                    <p className="hover:scale-90 cursor-pointer whitespace-nowrap hover:bg-opacity-100 transition-all text-xl sm:text-2xl text-purple-400 bg-black bg-opacity-50 p-4 rounded">
                         {email ? email : "EMAIL_PROPERTY_NOT_FOUND"}
 
                         <CopyToClipboard onCopy={() => sendNotification({
                             message: "Email Copied",
                             duration: 5000
-                        })} text={email}>
-                            <span className="p-2 whitespace-nowrap">
+                        })}
+                            text={email}>
+                            <span className="p-2 whitespace-nowrap cursor-pointer">
                                 <ContentCopyIcon />
                             </span>
                         </CopyToClipboard>
@@ -92,27 +93,25 @@ const ContactSection = ({ email, socials, label, heading, description, cta }: Co
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Socials</h3>
                     <div className="flex items-center justify-center flex-wrap">
-                        <FadeAnimation triggerOnce cascade>
 
-                            {
+                        {
 
-                                socials && socials.map((social, index) => {
+                            socials ? socials.map((social, index) => {
 
-                                    return (
-                                        <a
-                                            key={index}
-                                            className="mb-8 inline-block mr-6 hvr-pop"
-                                            href={social?.url}
-                                        >
-                                            <SocialIcon bgColor="white" url={social?.url} />
-                                        </a>
-
+                                return (
+                                    <a
+                                        key={index}
+                                        className="mb-8 inline-block mr-6 hvr-pop"
+                                        href={social?.url}
+                                    >
+                                        <SocialIcon bgColor="white" url={social?.url} />
+                                    </a>
 
 
-                                    )
-                                })
-                            }
-                        </FadeAnimation>
+
+                                )
+                            }) : <></>
+                        }
                     </div>
                 </div>
             </div>
