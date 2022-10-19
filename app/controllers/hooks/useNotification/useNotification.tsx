@@ -1,7 +1,4 @@
-import {
-    atom,
-    useRecoilState,
-} from 'recoil';
+import { atom, useRecoilState } from 'recoil';
 
 const notificationState = atom({
     key: 'notificationState',

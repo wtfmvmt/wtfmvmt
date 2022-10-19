@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
@@ -12,8 +12,8 @@ const Notifications = () => {
 
     const action = (
         <div>
-            <Button color="secondary" size="small" onClick={closeNotification}>
-                {message}
+            <Button color="primary" size="small" onClick={closeNotification}>
+                Close me!
             </Button>
             <IconButton
                 size="small"
@@ -31,7 +31,7 @@ const Notifications = () => {
             <Snackbar
                 open={isOpen}
                 anchorOrigin={{
-                    vertical: 'top',
+                    vertical: 'bottom',
                     horizontal: 'center',
                 }}
                 autoHideDuration={duration}

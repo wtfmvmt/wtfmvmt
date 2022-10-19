@@ -31,7 +31,7 @@ export type ContactSectionProps = {
 }
 
 
-const ContactSection = ({ phone, email, socials, label, heading, description, cta }: ContactSectionProps) => {
+const ContactSection = ({ email, socials, label, heading, description, cta }: ContactSectionProps) => {
 
     const { sendNotification } = useNotification();
     const Email = () => {

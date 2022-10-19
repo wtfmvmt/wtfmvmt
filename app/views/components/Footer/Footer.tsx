@@ -64,7 +64,7 @@ const Footer = ({ copyright, impressum, socials, links, logo }: FooterProps) => 
 
   const Copyright = () => {
     return (
-      <div className="w-full lg:w-auto mb-12 lg:mb-0">
+      <div className="w-full lg:w-auto mb-12 lg:mb-0 min-w-full">
         <p className="text-center text-lg font-extrabold overflow-hidden h-full">
           <ReactTypingEffect speed={50} eraseSpeed={20} typingDelay={40} text={copyright} />
 
