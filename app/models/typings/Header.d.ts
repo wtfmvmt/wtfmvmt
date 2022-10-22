@@ -3,8 +3,6 @@ import type { NavLink } from "@typings/NavLink"
 import type { CallToAction } from "@typings/CallToAction"
 import type { BannerProps } from "@typings/Banner"
 
-
-
 export type Title = {
     name: string,
     url: string,
@@ -19,9 +17,9 @@ export type SearchQuery = {
 export type Search = SearchQuery[]
 
 export type HeaderProps = {
-    favicon: Favicon,
-    cta: CallToAction,
-    banner: BannerProps,
+    favicon?: Favicon,
+    cta?: CallToAction,
+    banner?: BannerProps,
     title?: Title,
     search?: Search
 }

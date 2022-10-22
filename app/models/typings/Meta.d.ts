@@ -1,4 +1,11 @@
 export type MetaProps = {
     title?: string,
-    socials: any[]
+    version?: number | string,
+    links?: string,
+    description?: string,
+    socials?: string,
+    phone?: string,
+    email?: string,
+    favicon?: string,
+    copyright?: string
 }

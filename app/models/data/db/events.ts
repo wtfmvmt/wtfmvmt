@@ -1,8 +1,8 @@
 import meta from "@configs/meta"
 
-import NotionService from "@services/notion"
 
-const events = () => {
+
+const events = (store: []) => {
 
     const { title: siteTitle } = meta()
 
@@ -11,7 +11,7 @@ const events = () => {
         version: `${siteTitle}: Events]@ ${Date.now()}`,
         getEvents: (store) => {
 
-            const { EVENTS } = NotionService.db
+
 
             return store.filter((data) => {
                 return EVENTS.predicate(data)

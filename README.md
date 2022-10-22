@@ -18,9 +18,8 @@
 ## ✨Features
 
 * Light/dark mode toggle
-* Live previews
-* Fullscreen mode
-* Cross platform
+* Floating Action Navigator
+* PWA Mode for Android & IOS
 
 ---
 
@@ -107,7 +106,6 @@ If you have any feedback, please reach out to us at fake@fake.com
 ## 🙏🏿Acknowledgements
 
  > To God Be All the Glory. 
-
 
 
 

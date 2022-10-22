@@ -40,7 +40,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
             <div className="flex flex-wrap h-full">
 
                 <div className="w-full z-50 h-full puff-in-center ">
-                    <DistortionCarousel images={mediaCarousel} />
+                    <DistortionCarousel images={mediaCarousel.map((media) => media?.src )}/>
                 </div>
 
             </div>

@@ -1,27 +1,27 @@
 
-import images from "@configs/images"
-import links from "@configs/links"
-import search from "@configs/search"
+import type { HeaderProps } from "@typings/Header"
+
+const header = ({ favicon, banner, cta, title, search }: HeaderProps) => {
 
 
-const header = ({ banner }) => {
-
-    const collections = search().collections
-
-    const logoTransparent = images().find((image) => image.id === 'logo-transparent')
-    const homeLinkRelative = links().find((link) => link.name === 'Home')
-
-    
-    const headerObject = {
-        search: collections,
-        banner,
+    const defaultObject: HeaderProps = {
         favicon: {
-            ...logoTransparent,
-            url: homeLinkRelative.url
+            image: {},
+            url: "/"
         },
+
+        banner: {
+            messages: [''],
+        }
+
     }
 
-    return { ...headerObject } ?? null
+    const headerObject: HeaderProps = {
+        favicon: favicon ?? defaultObject?.favicon,
+        banner: banner ?? defaultObject?.banner
+    }
+
+    return { ...headerObject } as HeaderProps
 }
 
 

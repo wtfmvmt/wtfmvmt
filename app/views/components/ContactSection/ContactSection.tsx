@@ -43,7 +43,7 @@ const ContactSection = ({ email, socials, label, heading, description, cta }: Co
                 </div>
                 <div>
                     <h3 className="text-2xl font-extrabold mb-3">Email</h3>
-                    <p className="hover:scale-90 cursor-pointer whitespace-nowrap hover:bg-opacity-100 transition-all text-xl sm:text-2xl text-purple-400 bg-black bg-opacity-50 p-4 rounded">
+                    <p className="hover:scale-90 group cursor-pointer whitespace-nowrap hover:bg-opacity-100 transition-all text-xl sm:text-2xl text-purple-500 bg-black bg-opacity-70 p-4 rounded">
                         {email ? email : "EMAIL_PROPERTY_NOT_FOUND"}
 
                         <CopyToClipboard onCopy={() => sendNotification({
@@ -51,7 +51,7 @@ const ContactSection = ({ email, socials, label, heading, description, cta }: Co
                             duration: 5000
                         })}
                             text={email}>
-                            <span className="p-2 whitespace-nowrap cursor-pointer">
+                            <span className="p-2 whitespace-nowrap cursor-pointer group-hover:scale-110 transition-all">
                                 <ContentCopyIcon />
                             </span>
                         </CopyToClipboard>
@@ -149,7 +149,7 @@ const ContactSection = ({ email, socials, label, heading, description, cta }: Co
 
                     <div className="w-full lg:w-2/3 px-4">
                         <img
-                            className="block object-cover border-3 border-indigo-900 rounded-2xl shadow-md"
+                            className="block object-cover"
                             src="/assets/images/contact-us.svg"
                             alt=""
                         />

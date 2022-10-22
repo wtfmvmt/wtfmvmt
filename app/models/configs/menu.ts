@@ -1,23 +1,27 @@
-import meta from "@configs/meta"
+import { MenuProps } from "@typings/Menu"
 
-const menu = ({ links }) => {
-    
+const menu = ({ links, favicon }: MenuProps) => {
 
-    return {
-        favicon: {
-            src: meta().logo.src,
-            url: '/'
-        },
-
-        links,
-        cta: [
-
+    const defaultObject: MenuProps = {
+        links: [
             {
-                name: '🎃Support Us',
-                url: 'https://ko-fi.com/wtfmvmt'
+                name: "LINK_NOT_FOUND"
             }
-        ]
+        ],
+        favicon: null
+
     }
+
+
+    const menuObject: MenuProps = {
+        links: links ?? defaultObject?.links,
+        favicon: favicon ?? defaultObject?.favicon
+    }
+
+
+    return { ...menuObject } ?? null as MenuProps
+
+
 }
 
 export default menu

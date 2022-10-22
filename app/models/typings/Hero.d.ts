@@ -1,6 +1,9 @@
 
 
-export type MediaCarousel = string[]
+export type MediaCarousel = {
+    src?: string,
+    alt?: string,
+}[]
 
 export type Link = {
     name: string,

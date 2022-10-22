@@ -1,24 +1,18 @@
 //📱Social Media
 
-import meta from "@configs/meta"
+import FacadeService from "@controllers/services/facade"
 
-import NotionService from "@services/notion"
+const socialMedia = (store) => {
 
-const socialMedia = () => {
-
-    const { title: siteTitle } = meta()
+    const { social_media } = FacadeService().types
 
     return {
-        id: 'SocialMediaDatabase',
-        version: `${siteTitle}: Social Media]@ ${Date.now()}`,
-        getSocialMedia: (store) => {
 
-            const { SOCIAL_MEDIA } = NotionService.db
-
+        getSocialMedia: () => {
             return store.filter((data) => {
-                return SOCIAL_MEDIA.predicate(data)
+                return social_media.predicate(data)
             }).map((data) => {
-                return SOCIAL_MEDIA.shape(data)
+                return social_media.shape(data)
             })
         }
 

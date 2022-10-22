@@ -1,19 +1,25 @@
-//import type { IConfiguration } from "@typings/Configuration"
-//import type { LayoutDataProps } from "@typings/Layout"
+import type { LayoutProps } from "@typings/Layout"
 
-import header from "@configs/header"
-import footer from "@configs/footer"
-import menu from "@configs/menu"
+import { default as headerConfig } from "@configs/header"
+import { default as footerConfig } from "@configs/footer"
+import { default as menuConfig } from "@configs/menu"
 
-const layout = ({ headerObject, footerObject, menuObject }) => {
+const layout = ({ header, footer, menu }: LayoutProps) => {
 
-    const layoutObject = {
-        header: header(headerObject),
-        footer: footer(footerObject),
-        menu: menu(menuObject)
+    const defaultObject: LayoutProps = {
+        header: headerConfig({}),
+        footer: footerConfig({}),
+        menu: menuConfig({})
+
     }
 
-    return { ...layoutObject } ?? null
+    const layoutObject: LayoutProps = {
+        header: headerConfig({ ...header }) ?? defaultObject?.header,
+        footer: footerConfig({ ...footer }) ?? defaultObject?.footer,
+        menu: menuConfig({ ...menu }) ?? defaultObject?.menu
+    }
+
+    return { ...layoutObject } ?? null as LayoutProps
 }
 
 

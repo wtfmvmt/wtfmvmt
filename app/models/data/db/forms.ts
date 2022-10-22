@@ -1,23 +1,16 @@
-import meta from "@configs/meta"
-import NotionService from "@services/notion"
+import FacadeService from "@services/facade"
 
+const forms = (store: []) => {
 
-
-const forms = () => {
-
-    const { title: siteTitle } = meta()
+    const { forms } = FacadeService().types
 
     return {
-        id: 'FormsDataBase',
-        version: `${siteTitle}: FormsDataBase]@ ${Date.now()}`,
-        getForms: (store) => {
 
-            const { FORMS } = NotionService.db
-
+        getForms: () => {
             return store.filter((data) => {
-                return FORMS.predicate(data)
+                return forms.predicate(data)
             }).map((data) => {
-                return FORMS.shape(data)
+                return forms.shape(data)
             })
         }
 

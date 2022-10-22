@@ -1,23 +1,15 @@
-import meta from "@configs/meta"
-import NotionService from "@controllers/services/notion"
+import FacadeService from "@controllers/services/facade"
 
+const team = (store: []) => {
 
-
-const team = () => {
-
-    const { title: siteTitle } = meta()
+    const { team } = FacadeService().types
 
     return {
-        id: 'TeamDatabase',
-        version: `${siteTitle}: TEAM]@ ${Date.now()}`,
-        getPartners: (store) => {
-
-            const { TEAM } = NotionService.db
-
+        getTeam: () => {
             return store.filter((data) => {
-                return TEAM.predicate(data)
+                return team.predicate(data)
             }).map((data) => {
-                return TEAM.shape(data)
+                return team.shape(data)
             })
         }
 

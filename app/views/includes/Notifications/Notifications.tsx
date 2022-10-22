@@ -1,8 +1,6 @@
-import React from 'react';
-import Button from '@mui/material/Button';
-import Snackbar from '@mui/material/Snackbar';
-import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
+import Snackbar from '@mui/material/Snackbar';
 
 import useNotification from '@hooks/useNotification';
 
@@ -19,13 +17,13 @@ const Notifications = () => {
                 color="inherit"
                 onClick={closeNotification}
             >
-                <CloseIcon fontSize="small" />
+                <CloseIcon  />
             </IconButton>
         </div>
     );
 
     return (
-        <div>
+        <div className='mb-0'>
             <Snackbar
                 open={isOpen}
                 color="secondary"
@@ -33,6 +31,12 @@ const Notifications = () => {
                 anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'center',
+                }}
+                sx={{
+                    '& .MuiSnackbarContent-root': {
+                        backgroundColor: 'black',
+                        color: 'white',
+                    },
                 }}
                 autoHideDuration={duration}
                 message={message ?? "MESSAGE_NOT_FOUND"}

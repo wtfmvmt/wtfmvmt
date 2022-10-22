@@ -3,7 +3,7 @@ import NotionService from "@controllers/services/notion"
 
 
 
-const partners = () => {
+const partners = (store: []) => {
 
     const { title: siteTitle } = meta()
 

@@ -1,21 +1,16 @@
-import meta from "@configs/meta"
-import NotionService from "@controllers/services/notion"
+import FacadeService from "@services/facade"
 
-const media = () => {
+const media = (store: []) => {
 
-    const { title: siteTitle } = meta()
+    const { media } = FacadeService().types
 
     return {
-        id: 'MediaDatabase',
-        version: `${siteTitle}: MEDIA]@ ${Date.now()}`,
-        getMedia: (store) => {
-
-            const { MEDIA } = NotionService.db
-
+        getEventsMedia: () => {},
+        getMedia: () => {
             return store.filter((data) => {
-                return MEDIA.predicate(data)
+                return media.predicate(data)
             }).map((data) => {
-                return MEDIA.shape(data)
+                return media.shape(data)
             })
         }
 

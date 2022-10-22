@@ -8,22 +8,15 @@ import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 import PageService from "@services/pages"
+import type { PageProps } from "@typings/Page"
 import RowList from "@views/components/RowList"
 import StatsRow from "@views/components/StatsRow"
-
-
 import { NextPage } from "next"
-import { useEffect } from "react"
-import type { PageProps } from "@typings/Page"
 
 
-const HomePage: NextPage<PageProps> = ({ page: { data, id, version, } }) => {
+const HomePage: NextPage<PageProps> = ({ page: { data } }) => {
 
   const { hero, summarySection, featuredSection, statsSection, logoArray, contactSection, imageMasonry } = data
-
-  useEffect(() => {
-    console.log(`[${id}@${version}] => `, data)
-  }, [data, id, version])
 
   return (
     <>
@@ -47,7 +40,6 @@ export default HomePage
 export async function getServerSideProps() {
 
   const { getPage } = PageService
-
   const page = await getPage("home")
 
   return {

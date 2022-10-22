@@ -1,29 +1,85 @@
-import links from "@configs/links"
+import type { MetaProps } from "@typings/Meta"
 
+const meta = ({ title, links, socials, phone, copyright, description, email, favicon }: MetaProps) => {
 
+    const defaultObject: MetaProps = {
+        title: "Natures Secret",
+        version: Date.now(),
+        links: [
 
-const meta = () => {
+            {
+                name: 'Our Products',
+                url: '/products'
+            },
+            {
+                id: 'mission',
+                name: 'Our Mission',
+                url: '/mission'
+            },
+            {
+                name: 'Your Benefits',
+                url: '/benefits'
+            },
 
-    const socialLinks = links().filter((link) => link.type === "social")
-    const pageLinks = links().filter((link) => link.type === "internal")
+            {
+                name: 'Contact Us',
+                url: '/#contact'
+            },
+            {
+                name: 'Support Us',
+                url: '#support'
+            }
+        ],
+        description: "Home to Natures Best Kept Secrets",
+        copyright: "©️ 2022 Natures Secret. All Rights Reserved.",
+        phone: '(404) 491-7058',
+        socials: [
+            {
+                name: 'Facebook',
+                icon: 'FACEBOOK',
+                url: 'https://www.facebook.com/Natures-Secret-108272722018369'
+            },
 
-    const metaObject = {
-        title: 'WTFMVMT',
-        description: ["The community developers for tomorrow.", 'We are a Community of Conscious Builders for the Future',],
-        logo: {
-            src: '/assets/images/logo-transparent.png'
-        },
-        impressum: "We are Conscious Creators for The Future",
-        copyright: ['©️ 2022 WTFMVMT. All Rights Reserved.',
-            'Powered by WTFMVMT Technologies & Love',
-            'Site by Desirable Solutions'],
-        email: 'info@wtfmvmt.com',
-        links: pageLinks,
-        socials: socialLinks
+            {
+                name: 'Twitter',
+                icon: 'TWITTER',
+                url: 'https://twitter.com/naturessecretco'
+            },
+            {
+                name: 'LinkedIn',
+                icon: 'LINKEDIN',
+                url: 'https://www.linkedin.com/company/naturessecretco/?viewAsMember=true'
+            },
+            {
+                name: 'Ko-fi',
+                icon: 'COFFEE',
+                id: 'naturessecret',
+                url: 'https://www.ko-fi.com/naturessecret'
+            }
+        ],
+        email: 'info@naturessecret.co',
+        favicon: {
+            image: {
+                url: '/assets/images/logo.png',
+                alt: 'natures-secret-logo'
+            },
+            url: '/'
+        }
     }
 
+    const metaObject: MetaProps = {
+        title: title ?? defaultObject.title,
+        version: Date.now(),
+        links: links ?? defaultObject.links,
+        description: description ?? defaultObject.description,
+        socials: socials ?? defaultObject.socials,
+        phone: phone ?? defaultObject.phone,
+        email: email ?? defaultObject.email,
+        favicon: favicon ?? defaultObject.favicon,
+        copyright: copyright ?? defaultObject.copyright
+    }
 
-    return { ...metaObject } ?? null
+    return { ...metaObject } as MetaProps
 }
 
 export default meta
