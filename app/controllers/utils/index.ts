@@ -1,3 +1,8 @@
+export type NotionFileProps = {
+    url?: string,
+    name?: string,
+}
+
 const utils = () => {
 
     const utilsObject = {
@@ -54,7 +59,7 @@ const utils = () => {
                 return data?.files?.map(file => ({
                     url: file?.file?.url ?? "URL_NOT_FOUND",
                     name: file?.file?.name ?? "NAME_NOT_FOUND",
-                })) ?? null
+                })) as NotionFileProps ?? null
             },
             url: (data) => {
                 return data?.url ?? "URL_NOT_FOUND"
@@ -62,16 +67,16 @@ const utils = () => {
 
         },
         collections: {
-            shuffle: (arr) =>  {
-                let currentIndex = arr.length,  randomIndex;
+            shuffle: (arr) => {
+                let currentIndex = arr.length, randomIndex;
                 while (currentIndex != 0) {
-                  randomIndex = Math.floor(Math.random() * currentIndex);
-                  currentIndex--;
-                  [arr[currentIndex], arr[randomIndex]] = [
-                    arr[randomIndex], arr[currentIndex]];
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex--;
+                    [arr[currentIndex], arr[randomIndex]] = [
+                        arr[randomIndex], arr[currentIndex]];
                 }
                 return arr;
-              }
+            }
         }
     }
 

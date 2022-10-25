@@ -1,22 +1,15 @@
-import meta from "@configs/meta"
-
-
+import FacadeService from "@services/facade"
 
 const events = (store: []) => {
 
-    const { title: siteTitle } = meta()
+    const { events } = FacadeService().types
 
     return {
-        id: 'EventsDatabase',
-        version: `${siteTitle}: Events]@ ${Date.now()}`,
-        getEvents: (store) => {
-
-
-
+        getEvents: () => {
             return store.filter((data) => {
-                return EVENTS.predicate(data)
+                return events.predicate(data)
             }).map((data) => {
-                return EVENTS.shape(data)
+                return events.shape(data)
             })
         }
 

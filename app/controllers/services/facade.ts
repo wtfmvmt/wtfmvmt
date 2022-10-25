@@ -9,11 +9,30 @@ const FacadeService = () => {
         types: {
 
             forms: {
-                shape: (data) => {},
-                predicate: (data) => {}
+                shape: (data) => { },
+                predicate: (data) => { }
+            },
+            events: {
+                shape: (data) => { },
+                predicate: (data) => { }
             },
 
+
             media: {
+                shape: (data) => {
+                    const { Facebook, Name, Covers, Types, Status } = getProperties(data)
+
+                    return {
+                        name: title(Name),
+                        covers: files(Covers),
+                        status: status(Status),
+                        facebook: url(Facebook),
+                        types: multi_select(Types)
+                    }
+                },
+                predicate: (data) => { }
+            },
+            memberships: {
                 shape: (data) => {
                     const { Facebook, Name, Covers, Types, Status } = getProperties(data)
 
@@ -31,12 +50,13 @@ const FacadeService = () => {
                 name: "🅰️Team",
                 shape: (data: any) => {
 
-                    const { Facebook, Name, Covers, Types, Status } = getProperties(data)
+                    const { Facebook, Name, Media, Values, Types, Status } = getProperties(data)
 
                     return {
                         name: title(Name),
+                        values: multi_select(Values),
                         types: multi_select(Types),
-                        covers: files(Covers),
+                        media: files(Media),
                         status: status(Status),
                         facebook: url(Facebook),
                     }
@@ -56,7 +76,7 @@ const FacadeService = () => {
                 name: "📐Meta",
                 shape: (data: any) => {
 
-                    const { URL, Title, Name, Covers, Types, Values, Description, Status, Phone, Email } = data.properties
+                    const { URL, Title, Name, Covers, Types, Files, Values, Description, Status, Phone, Email } = data.properties
 
                     return {
                         url: url(URL),
@@ -67,6 +87,7 @@ const FacadeService = () => {
                         covers: files(Covers),
                         phone: phone(Phone),
                         email: email(Email),
+                        files: files(Files),
                         types: multi_select(Types),
                         values: multi_select(Values),
                     }

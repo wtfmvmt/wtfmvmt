@@ -1,4 +1,4 @@
 
-export type IconProps = {
+export type IconProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
     action?: Function,
 }

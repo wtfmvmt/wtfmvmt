@@ -1,4 +1,4 @@
-import meta from "@configs/meta"
+import meta from "@models/data/db/meta"
 import NotionService from "@controllers/services/notion"
 
 

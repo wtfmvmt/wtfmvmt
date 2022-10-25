@@ -8,7 +8,12 @@ const menu = ({ links, favicon }: MenuProps) => {
                 name: "LINK_NOT_FOUND"
             }
         ],
-        favicon: null
+        favicon: {
+            image: {
+                src: "IMAGE_NOT_FOUND",
+                alt: 'IMAGE_NOT_FOUND'
+            }
+        }
 
     }
 

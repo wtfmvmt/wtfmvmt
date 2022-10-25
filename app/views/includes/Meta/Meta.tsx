@@ -1,27 +1,14 @@
 import Head from "next/head"
-import meta from "@configs/meta"
+import type { IComponent } from "@models/typings/Component"
+import type { MetaProps } from "@typings/Meta"
 
-
-const Meta = (props) => {
+const Meta: IComponent<MetaProps> = (props: MetaProps) => {
 
     return (
         <Head>
-            
-            <title>{meta().title} | {props.pageTitle || "Home"}</title>
-            <>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Major+Mono+Display&family=Nova+Mono&display=swap"
-                    rel="stylesheet"
-                />
-            </>
-
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+            <title>{props.pageTitle || "Home"}</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta name="theme-color" content="#000000" />
-
-
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
             <link

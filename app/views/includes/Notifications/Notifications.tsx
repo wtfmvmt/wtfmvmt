@@ -1,23 +1,23 @@
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
 import Snackbar from '@mui/material/Snackbar';
-
 import useNotification from '@hooks/useNotification';
+import type { IComponent } from '@models/typings/Component';
 
-const Notifications = () => {
+const Notifications: IComponent<any> = () => {
 
     const { closeNotification, notification: { message, isOpen, duration } } = useNotification();
 
     const action = (
         <div>
-         
+
             <IconButton
                 size="small"
                 aria-label="close"
                 color="inherit"
                 onClick={closeNotification}
             >
-                <CloseIcon  />
+                <CloseIcon />
             </IconButton>
         </div>
     );

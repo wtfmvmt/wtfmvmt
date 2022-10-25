@@ -6,7 +6,7 @@ import type { BannerProps } from "@typings/Banner";
 import { CSSTransition } from 'react-transition-group';
 import React from "react"
 
-const Banner: IComponent<BannerProps> = ({ messages }: BannerProps) => {
+const Banner = ({ messages }: BannerProps) => {
 
     const { open, toggleBanner } = useBannerState()
 

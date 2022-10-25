@@ -30,7 +30,7 @@ const ImageMasonry = ({ heading, title, description, masonry }: ImageMasonryProp
                     <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl shadow-xl overflow-hidden">
                         <div className="mb-auto h-full">
                             <div className="block h-96 lg:h-full w-full object-cover" >
-                                <img src={image?.src} alt={image?.alt ?? "ALT_NOT_FOUND"} />
+                                <img src={image?.src ?? "IMAGE_NOT_FOUND"} alt={image?.alt ?? "ALT_NOT_FOUND"} />
                             </div>
                         </div>
                         <div className="px-6 py-4  bg-opacity-90">

@@ -19,7 +19,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
 
                         <a
                             key={index}
-                            className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 rounded-full"
+                            className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 hover:text-purple-600 p-2 hover:bg-black transition-all hover:bg-opacity-90 hover:rounded"
                             href={link.url}
                         >
                             <SocialIcon bgColor="white" url={link?.url} />
@@ -40,7 +40,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
             <div className="flex flex-wrap h-full">
 
                 <div className="w-full z-50 h-full puff-in-center ">
-                    <DistortionCarousel images={mediaCarousel.map((media) => media?.src )}/>
+                    <DistortionCarousel images={mediaCarousel.map((media) => media?.src)} />
                 </div>
 
             </div>

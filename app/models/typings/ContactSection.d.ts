@@ -1,3 +1,9 @@
+import type { CallToAction } from "@typings/CallToAction"
+
+export type Social = {
+    url: string,
+    name: string
+}
 
 export type ContactSectionProps = {
     socials: Social[]

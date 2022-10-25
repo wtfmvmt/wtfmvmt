@@ -1,9 +1,9 @@
 
-# WTFMVMT
+# WTFMVMT.com
 
 ### 🌏WTFMVMT.com is a community platform of artists, builders and thinkers focused on building a better future.
 
- [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/naturessecretco/naturessecret.co?color=green&label=activity&logo=github&logoColor=yellow&style=plastic) | ![Website](https://img.shields.io/website?down_color=red&down_message=fuck%21&label=status&logo=git&logoColor=yellow&up_message=systems%20online&url=https%3A%2F%2Fnaturessecret.co)
+ [![MIT License](https://img.shields.io/badge/License-MIT-purple.svg)](https://choosealicense.com/licenses/mit/) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/wtfmvmt/wtfmvmt?color=purple&label=activity&logo=github&logoColor=yellow&style=plastic) | ![Website](https://img.shields.io/website?down_color=red&down_message=fuck%21&label=status&logo=git&logoColor=yellow&up_message=systems%20online&url=https%3A%2F%2Fwtfmvmt.com)
 
 <img src="./docs/logo.png" />
 
@@ -17,10 +17,9 @@
 
 ## ✨Features
 
-* Light/dark mode toggle
-* Floating Action Navigator
-* PWA Mode for Android & IOS
-
+* Magic Navigator 
+* Progressive-lazy-load images
+* 
 ---
 
 
@@ -28,7 +27,7 @@
 
 
 ```bash
- git clone https://github.com/naturessecretco/naturessecretco.git
+ git clone https://github.com/wtfmvmt/wtfmvmt.git
   cd app
   npm run bootstrap
 ```
@@ -37,12 +36,17 @@
     
 ## 🆘Support
 
-For support, email info@naturessecret.co
+For support, email info@wtfmvmt.com
 
 ---
 
 ## ⌚Changelog
 
+**🎉Version 3.0.0**
+* Optimized Model Layer for Arbituary API Connections
+* Fully-typed Custom UI Components with defaults
+* API Keys Secured & Encrypted w/ JWT 
+* 
 
 **Version 1.0.1**
 * Optimized Page Navigation
@@ -63,7 +67,7 @@ For support, email info@naturessecret.co
 
 ## ➰Feedback
 
-If you have any feedback, please reach out to us at fake@fake.com
+If you have any feedback, please reach out to us at devops@desirable.solutions
 
 ---
 

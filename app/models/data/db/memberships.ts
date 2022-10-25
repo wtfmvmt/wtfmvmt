@@ -1,21 +1,16 @@
-import meta from "@configs/meta"
-import NotionService from "@services/notion"
+import FacadeService from "@services/facade"
 
-const memberships = () => {
+const memberships = (store: []) => {
 
-    const { title: siteTitle } = meta()
+    const { memberships } = FacadeService().types
 
     return {
-        id: 'MembershipsDatabase',
-        version: `${siteTitle}: Memberships]@ ${Date.now()}`,
-        getMemberships: (store) => {
 
-            const { MEMBERSHIPS } = NotionService.db
-
+        getMemberships: () => {
             return store.filter((data) => {
-                return MEMBERSHIPS.predicate(data)
+                return memberships.predicate(data)
             }).map((data) => {
-                return MEMBERSHIPS.shape(data)
+                return memberships.shape(data)
             })
         }
 

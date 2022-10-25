@@ -1,39 +1,17 @@
 import EmailIcon from "@components/EmailIcon"
 import GridIcon from "@components/GridIcon"
-import type { CallToAction } from "@models/typings/CallToAction"
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import FadeAnimation from "@components/FadeAnimation"
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { SocialIcon } from "react-social-icons"
-
 import useNotification from "@hooks/useNotification"
+import type { IComponent } from "@models/typings/Component"
+import type { ContactSectionProps } from "@typings/ContactSection"
 
 
-
-
-
-export type Social = {
-    url: string,
-    name: string
-}
-
-export type ContactSectionProps = {
-    socials: Social[]
-    phone: string,
-    email: string,
-    label: string,
-    heading: string,
-    description: string,
-    cta: {
-        primary: CallToAction,
-        secondary: CallToAction
-    }
-}
-
-
-const ContactSection = ({ email, socials, label, heading, description, cta }: ContactSectionProps) => {
+const ContactSection: IComponent<ContactSectionProps> = ({ email, socials, label, heading, description, cta }: ContactSectionProps) => {
 
     const { sendNotification } = useNotification();
+    
     const Email = () => {
 
         return (

@@ -3,6 +3,7 @@ export type MetaProps = {
     version?: number | string,
     links?: string,
     description?: string,
+    pageTitle?: string,
     socials?: string,
     phone?: string,
     email?: string,

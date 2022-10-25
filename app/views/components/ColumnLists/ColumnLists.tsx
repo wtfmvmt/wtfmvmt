@@ -1,4 +1,24 @@
-const ColumnLists = () => {
+
+import type { ImageProps } from "@typings/Image"
+import type { IComponent } from "@models/typings/Component"
+
+export type ColumnData = {
+    name?: string,
+    description?: string,
+    icon?: ImageProps
+}
+
+export type ColumnProps = {
+    title?: string,
+    columns?: Array<ColumnData>,
+}
+
+
+export type ColumnListProps = {
+    lists: Array<ColumnProps>
+
+}
+const ColumnLists: IComponent<ColumnListProps> = ({ lists }: ColumnListProps) => {
 
     return (
         <section className="py-20 overflow-x-hidden">
@@ -302,6 +322,7 @@ const ColumnLists = () => {
                         </ul>
                     </div>
                 </div>
+
                 <div className="mt-20 text-center">
                     <a
                         className="inline-block blue-300 hover:blue-400 text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
@@ -310,6 +331,10 @@ const ColumnLists = () => {
                         More
                     </a>
                 </div>
+
+
+
+                
             </div>
         </section>
     )
