@@ -2,12 +2,15 @@ import DistortionCarousel from "@components/DistortionCarousel";
 import FadeAnimation from "@components/FadeAnimation";
 import type { IComponent } from "@typings/Component";
 import type { HeroProps } from "@typings/Hero";
-import ReactTypingEffect from 'react-typing-effect';
-import Icon from "@components/Icon";
-import { SocialIcon } from "react-social-icons"
-const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
+import { SocialIcon } from "react-social-icons";
 
-    const { title, description, cta, features, actionLinks, socialLinks, mediaCarousel } = props
+
+
+
+
+const Hero: IComponent<HeroProps> = ({ title, description, cta, features, actionLinks, socialLinks, mediaCarousel }: HeroProps) => {
+
+
 
     const SocialLinks = () => {
 
@@ -121,18 +124,19 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
 
         <div className="max-w-3xl mx-auto py-24 text-center">
             <h2 className="mb-8 text-5xl xl:text-6xl font-bold font-heading">
-                {`${title}`}
+                {title ? title : "TITLE_NOT_FOUND"}
             </h2>
             <h4 className="mb-8 text-sm font-bold">
-
-                {description}
+                {description ? description : "DESCRIPTION_NOT_FOUND"}
             </h4>
-            <a
-                className="inline-block hvr-pop bg-purple-900 hover:bg-black text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
-                href={cta && cta.url}
-            >
-                {cta && cta.name}
-            </a>
+            {
+                cta ? <a
+                    className="cursor-pointer inline-block hvr-pop bg-purple-900 hover:bg-black text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
+                    href={cta ? cta?.url : "CTA_NOT_FOUND"}
+                >
+                    {cta ? cta?.name : "CTA_NOT_FOUND"}
+                </a> : <>CTA_NOT_FOUND</>
+            }
         </div>
     )
 

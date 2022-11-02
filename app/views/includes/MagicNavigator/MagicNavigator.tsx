@@ -7,7 +7,7 @@ import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import PrintIcon from '@mui/icons-material/Print';
 import ShareIcon from '@mui/icons-material/Share';
-
+import NearMeIcon from '@mui/icons-material/NearMe';
 const actions = [
     { icon: <FileCopyIcon />, name: 'Copy' },
     { icon: <SaveIcon />, name: 'Save' },
@@ -18,20 +18,39 @@ const actions = [
 const MagicNavigator = () => {
 
     return (
-        <Box className="fixed bottom-20 left-8 z-50 sm:flex md:flex">
-            <SpeedDial
-                ariaLabel="SpeedDial basic example"
-                icon={<SpeedDialIcon />}
-            >
-                {actions.map((action) => (
-                    <SpeedDialAction
-                        key={action.name}
-                        icon={action.icon}
-                        tooltipTitle={action.name}
-                    />
-                ))}
-            </SpeedDial>
-        </Box>
+        <SpeedDial
+            className="fixed bottom-10 left-8 z-50 sm:flex md:flex cursor-pointer transition-all ease-in duraiton-500"
+            sx={{ background: 'transparent' }}
+            FabProps={{
+                sx: {
+                    bgcolor: '#000000',
+                    '&:hover': {
+                        bgcolor: 'purple',
+                    }
+                }
+            }}
+
+            ariaLabel="SpeedDial basic example"
+            icon={<NearMeIcon />}
+        >
+            {actions.map((action) => (
+                <SpeedDialAction
+                    className="bg-transparent"
+                    FabProps={{
+                        sx: {
+                            bgcolor: '#000000',
+                            '&:hover': {
+                                bgcolor: 'purple',
+                            }
+                        }
+                    }}
+        
+                    key={action.name}
+                    icon={action.icon}
+                    tooltipTitle={action.name}
+                />
+            ))}
+        </SpeedDial>
     )
 }
 

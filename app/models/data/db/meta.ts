@@ -32,7 +32,8 @@ const meta = (store: []) => {
             return true
         },
         getCallToAction: () => {
-            return metaObject.getMeta().find((meta) => meta?.types?.includes("📣Call to Action")) ?? null
+            const callToActionKey = "🔔Call to Action"
+            return metaObject.getMeta().find((meta) => meta?.types?.includes(callToActionKey)) ?? null
         },
         getMeta: () => {
             return store?.filter((data) => {

@@ -1,27 +1,23 @@
-import meta from "@models/data/db/meta"
-import NotionService from "@controllers/services/notion"
+import FacadeService from "@services/facade"
 
 
 
 const partners = (store: []) => {
 
-    const { title: siteTitle } = meta()
+    const { partners } = FacadeService().types
 
-    return {
-        id: 'PartnersDatabase',
-        version: `${siteTitle}: PARTNERS]@ ${Date.now()}`,
-        getPartners: (store) => {
-
-            const { PARTNERS } = NotionService.db
-
+    const partnersObject = {
+        getPartners: () => {
             return store.filter((data) => {
-                return PARTNERS.predicate(data)
+                return partners.predicate(data)
             }).map((data) => {
-                return PARTNERS.shape(data)
+                return partners.shape(data)
             })
         }
 
     }
+
+    return { ...partnersObject }
 }
 
 export default partners

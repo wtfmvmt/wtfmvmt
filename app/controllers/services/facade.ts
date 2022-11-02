@@ -7,6 +7,24 @@ const FacadeService = () => {
     const serviceObject = {
         version: Date.now(),
         types: {
+            partners: {
+                name: "Partners",
+                shape: (data) => {
+                    const { Facebook, Name, Covers, URL, Types, Status } = getProperties(data)
+
+                    return {
+                        name: title(Name),
+                        covers: files(Covers),
+                        status: status(Status),
+                        url: url(URL),
+                        facebook: url(Facebook),
+                        types: multi_select(Types)
+                    }
+                },
+                predicate: (data) => {
+                    return isDatabase(serviceObject?.types?.partners?.name, data)
+                }
+            },
 
             forms: {
                 name: "📜Forms",
@@ -92,15 +110,13 @@ const FacadeService = () => {
                         status: status(Status),
                         facebook: url(Facebook),
                     }
-
-
                 },
 
                 predicate: (data: any) => {
 
                     const { name } = serviceObject.types.team
 
-                    return isDatabase(data, name)
+                    return isDatabase(name, data)
 
                 }
             },

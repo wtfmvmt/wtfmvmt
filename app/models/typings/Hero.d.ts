@@ -1,14 +1,10 @@
-
+import type { CallToActionProps } from "@typings/CallToAction"
+import type { LinkProps }  from "@typings/Link"
 
 export type MediaCarousel = {
     src?: string,
     alt?: string,
 }[]
-
-export type Link = {
-    name: string,
-    url: string
-}
 
 export type ActionLink = {
     name?: string,
@@ -16,10 +12,6 @@ export type ActionLink = {
     icon?: string
 }
 
-export type CallToAction = {
-    name: string,
-    url: string
-}
 
 export type SocialLink = {
     url: string,
