@@ -5,8 +5,12 @@ const meta = (store: []) => {
     const { meta } = FacadeService().types
 
     const metaObject = {
+        getSearch: () => {
+            const searchKey = "🔎Search"
+            return metaObject.getMeta().find((meta) => meta?.types?.includes(searchKey)) ?? null
+        },
         getTitle: () => {
-            return metaObject.getMeta().find((meta) => meta?.types?.includes("📛Title")) ?? null
+            return metaObject.getMeta().find((meta) => meta?. types?.includes("📛Title")) ?? null
         },
         getCopyright: () => {
             return metaObject.getMeta().find((meta) => meta?.types?.includes("📜Copyright")) ?? null
@@ -14,7 +18,10 @@ const meta = (store: []) => {
         getEmailAddress: () => {
             return metaObject.getMeta().find((meta) => meta?.types?.includes("📧Email")) ?? null
         },
-        getSiteLinks: () => { },
+        getBanner: () => {
+            const bannerKey = "🪧Banner"
+            return metaObject.getMeta().find((meta) => meta?.types?.includes(bannerKey)) ?? null
+        },
         getFavicon: () => {
             return metaObject.getMeta().find((meta) => meta?.types?.includes("🖼️Favicon")) ?? null
         },

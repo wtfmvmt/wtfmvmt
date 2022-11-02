@@ -2,23 +2,31 @@ import utils from "@utils/index"
 
 const FacadeService = () => {
 
-    const { files, url, email, phone, formula, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
+    const { files, url, email, phone, formula, icon, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
 
     const serviceObject = {
         version: Date.now(),
         types: {
 
             forms: {
-                shape: (data) => { },
-                predicate: (data) => { }
+                name: "📜Forms",
+                shape: (data) => {
+                    const { Facebook, Name, Covers, URL, Types, Status } = getProperties(data)
+
+                    return {
+                        name: title(Name),
+                        covers: files(Covers),
+                        status: status(Status),
+                        url: url(URL),
+                        facebook: url(Facebook),
+                        types: multi_select(Types)
+                    }
+                },
+                predicate: (data) => {
+                    return isDatabase(serviceObject?.types?.forms?.name, data)
+                }
             },
             events: {
-                shape: (data) => { },
-                predicate: (data) => { }
-            },
-
-
-            media: {
                 shape: (data) => {
                     const { Facebook, Name, Covers, Types, Status } = getProperties(data)
 
@@ -30,7 +38,31 @@ const FacadeService = () => {
                         types: multi_select(Types)
                     }
                 },
-                predicate: (data) => { }
+                predicate: (data) => {
+
+                }
+            },
+
+
+            media: {
+                name: "📷Media",
+                shape: (data) => {
+
+                    const { Facebook, Name, Media, Covers, Types, Status } = getProperties(data)
+
+                    return {
+                        name: title(Name),
+                        media: files(Media),
+                        covers: files(Covers),
+                        status: status(Status),
+                        facebook: url(Facebook),
+                        types: multi_select(Types)
+                    }
+                },
+                predicate: (data) => {
+                    const { name } = serviceObject.types.media
+                    return isDatabase(name, data)
+                }
             },
             memberships: {
                 shape: (data) => {
@@ -120,10 +152,11 @@ const FacadeService = () => {
                 name: "📎Links",
                 shape: (data: any) => {
 
-                    const { URL, Name, Types } = data.properties
+                    const { properties: { URL, Name, Types }, icon: Icon } = data
 
                     return {
                         url: url(URL),
+                        icon: icon(Icon),
                         name: title(Name),
                         types: multi_select(Types),
                     }

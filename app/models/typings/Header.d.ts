@@ -1,6 +1,6 @@
-import type { Favicon } from "@typings/Favicon"
+import type { FaviconProps } from "@typings/Favicon"
 import type { NavLink } from "@typings/NavLink"
-import type { CallToAction } from "@typings/CallToAction"
+import type { CallToActionProps } from "@typings/CallToAction"
 import type { BannerProps } from "@typings/Banner"
 
 export type Title = {
@@ -9,17 +9,16 @@ export type Title = {
 }
 
 export type SearchQuery = {
-    id: string,
-    reference?: string
+    id?: string,
+    url?: string
 }
 
 
 export type Search = SearchQuery[]
 
 export type HeaderProps = {
-    favicon?: Favicon,
-    cta?: CallToAction,
+    favicon?: FaviconProps,
+    cta?: CallToActionProps,
     banner?: BannerProps,
-    title?: Title,
-    search?: Search
+    search?: SearchQuery[]
 }

@@ -4,7 +4,11 @@ const events = (store: []) => {
 
     const { events } = FacadeService().types
 
-    return {
+    const eventsObject = {
+        getEventsAlbum: () => {
+            const eventsAlbumKey = "📅Event"
+            return eventsObject.getEvents().filter((event) => event.types.includes(eventsAlbumKey))
+         },
         getEvents: () => {
             return store.filter((data) => {
                 return events.predicate(data)
@@ -14,6 +18,7 @@ const events = (store: []) => {
         }
 
     }
+    return { ...eventsObject }
 }
 
 export default events

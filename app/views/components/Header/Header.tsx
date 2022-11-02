@@ -12,7 +12,7 @@ import Headroom from "react-headroom";
 import type { IComponent } from "@models/typings/Component";
 
 
-const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
+const Header = ({ favicon, cta, banner, search }: HeaderProps) => {
 
     const { toggleDrawer } = useMenuDrawerState()
     const { toggleBanner } = useBannerState()
@@ -87,7 +87,14 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
                                 <option key={index} className="bg-black">{item?.id}</option>
                             ))
                         }
-                    </select> : null
+                    </select> : <select
+                        className="flicker-in-1 pl-6 pr-6 border-0 bg-black border-l border-gray-100 focus:border-gray-100 focus:ring-transparent bg-transparent focus:outline-none cursor-pointer"
+                        name=""
+                        id="search-selector"
+                    >
+                        <option  className="bg-black">{"SEARCH_NOT_FOUND"}</option>
+
+                    </select>
                 }
             </div>
         )
@@ -95,11 +102,11 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
 
     const Favicon = () => {
         return (
-            favicon ? <a className="flex-shrink-0 text-3xl font-bold font-heading" href={favicon.url}>
+            favicon ? <a className="flex-shrink-0 text-3xl font-bold font-heading" href={favicon?.url}>
                 <img
                     className="h-16"
-                    src={favicon.src}
-                    alt=""
+                    src={favicon?.image?.src}
+                    alt={favicon?.image?.alt}
                     width="auto"
                 />
             </a> : <>FAVICON_NOT_FOUND</>
@@ -114,7 +121,7 @@ const Header = ({ favicon, cta, banner, title, search }: HeaderProps) => {
             </div>)
     }
 
-    
+
     return (
         <Headroom>
             <section className="relative pb-20 overflow-hidden w-full">

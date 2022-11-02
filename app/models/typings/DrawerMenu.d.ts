@@ -1,11 +1,9 @@
-export type Link = {
-    name: string,
-    url: string,
-    icon?: string
-}
+import type { CallToActionProps } from "@typings/CallToAction"
+import type { FaviconProps } from "@typings/Favicon"
+import type { LinkProps } from "@typings/Link"
 
 export type DrawerMenuProps = {
-    favicon?: Favicon,
-    links?: Link[],
-    cta?: CallToAction[]
+    favicon?: FaviconProps,
+    links?: LinkProps[],
+    cta?: CallToActionProps[]
 }

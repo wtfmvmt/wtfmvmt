@@ -4,8 +4,12 @@ const media = (store: []) => {
 
     const { media } = FacadeService().types
 
-    return {
-        getEventsMedia: () => {},
+    const mediaObject = {
+        getEventsAlbum: () => {
+            const eventsAlbumKey = "📅Event"
+            return mediaObject.getMedia().filter((event) => event.types.includes(eventsAlbumKey))
+         },
+
         getMedia: () => {
             return store.filter((data) => {
                 return media.predicate(data)
@@ -15,6 +19,8 @@ const media = (store: []) => {
         }
 
     }
+
+    return { ...mediaObject }
 }
 
 export default media

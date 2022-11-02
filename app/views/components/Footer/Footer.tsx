@@ -13,7 +13,6 @@ const Footer = ({ copyright, impressum, socials, links, favicon }: FooterProps) 
     return (
       <div className="w-full md:w-1/3 mb-12">
 
-
         <a className="inline-block mx-auto mb-8" href={favicon?.url}>
           <Image
             height={"75px"}
@@ -27,6 +26,24 @@ const Footer = ({ copyright, impressum, socials, links, favicon }: FooterProps) 
         <p className="max-w-xs text-lg font-extrabold leading-8">
           {impressum}
         </p>
+
+        
+        <div className="w-full md:w-1/3 mb-12 md:text-right absolute right-0">
+
+          <div className="mb-4 l">
+            <a className="inline-block w-auto shadow-2xl" href="">
+              <img src="/assets/images/app-store.svg" alt="" />
+            </a>
+          </div>
+
+          <div>
+            <a className="inline-block w-auto shadow-2xl" href="">
+              <img src="/assets/images/google-play.svg" alt="" />
+            </a>
+          </div>
+        </div>
+
+
       </div>
     )
   }
@@ -110,6 +127,7 @@ const Footer = ({ copyright, impressum, socials, links, favicon }: FooterProps) 
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap justify-between items-center">
               <Header />
+
               <Links />
             </div>
           </div>

@@ -6,7 +6,7 @@ import type { DistortionCarouselProps } from '@typings/DistortionCarousel';
 
 
 const DistortionCarousel: IComponent<DistortionCarouselProps> = ({
-  displacmentImage,
+  displacmentImage="/assets/images/distortions/1.jpg",
   images,
 }: DistortionCarouselProps) => {
 

@@ -1,57 +1,67 @@
-import { layout } from "@configs/index"
-import { events, forms, media, partners, meta, socialMedia, team } from "@db/index"
-import type { PageObjectProps, PagesDBProps } from "@typings/Page"
+import layout from "@configs/layout"
+import { events, forms, media, meta, partners, socialMedia, team, links } from "@db/index"
+import { search } from "@notionhq/client/build/src/api-endpoints"
+import type { HeroProps, PageObjectProps, PagesDBProps } from "@typings/index"
+import utils from "@utils/index"
+
 
 const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
 
-    //api queries
+    const { collections: { shuffle } } = utils()
+
     const { getTeam } = team(store)
-    const { getMedia } = media(store)
+    const { getMedia, getEventsAlbum } = media(store)
+    const { getLinks, getSitePages } = links(store)
     const { getSocialMedia } = socialMedia(store)
-    const { getMeta, getCopyright, getSiteLinks, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
+    const { getBanner, getCopyright, getSearch, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
     const { getPartners } = partners(store)
     const { getEvents } = events(store)
     const { getForms } = forms(store)
 
-    //resolver database
     const pageData = {
         home: {
             metaData: {
                 pageTitle: 'Home',
             },
             data: {
-                hero: {
-
+                hero: <HeroProps>{
+                    title: getTitle().values[0],
+                    mediaCarousel: shuffle(getMedia().map((media) => (media?.media[0]?.url ?? null))),
+                    actionLinks: {
+                        title: "Get in touch",
+                        links: getForms().map((form) => ({
+                            name: form?.name,
+                            url: form?.url
+                        }))
+                    },
+                    features: {
+                        title: 'Features',
+                        featured: []
+                    }
                 },
                 logoArray: {},
                 featuredSeaction: {},
                 statsRow: {},
                 summarySection: {},
                 simpleFormSection: {},
+                imageMasonry: {
+                    title: "Our Team & Founder",
+                    heading: "These people behind the scenes are what make the magic happen.",
+                    masonry: getTeam().map((team) => ({
+                        image: {
+                            src: team?.media[0]?.url,
+                        },
+                        title: team?.name,
+                    }))
+
+                },
                 rowList: {},
                 columnLists: {},
-                imageMasonry: {
-                    name: "Our A-Team",
-                    heading: "The sum of our parts",
-                    title: "By Role",
-                    description: "We are a team of passionate and dedicated individuals who are committed to making a difference in the world. We are a team of passionate and dedicated individuals who are committed to making a difference in the world.",
-                    masonry: getTeam().map((member) => ({
-                        image: {
-                            src: member?.media?.url,
-                            alt: member?.media?.name
-                        },
-                        title: member?.name,
-                        heading: member?.values[0],
-
-                    })),
-                },
                 contactSection: {
-                    socials: getSocialMedia().map((social) => ({
-                        url: social?.url,
-                        name: social?.title
-                    })),
-                    email: getEmailAddress()?.values[0],
+                    socials: getSocialMedia(),
+                    email: getEmailAddress().email,
                 }
+
             },
             memberships: {
                 metaData: {
@@ -77,19 +87,20 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
         }
     }
 
-    //resolver response object
     const pageObject: PageObjectProps = {
         version: Date.now(),
         layout: layout({
             header: {
-                favicon: {
-                    image: getFavicon() ?? null,
+                banner: {
+                    messages: getBanner().values
                 },
-                search: [
-                    {
-                        id: "Search",
-                    }
-                ]
+                search: getSearch()?.values?.map((search) => ({ id: search })),
+                favicon: {
+                    image: {
+                        src: getFavicon().files[0]?.url
+                    },
+                    url: '/',
+                }
             },
             footer: {
                 socials: getSocialMedia(),
@@ -100,12 +111,24 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     },
                     url: getFavicon().url ?? null,
                 },
-                links: getSiteLinks(),
+                links: getSitePages(),
                 copyright: getCopyright().values,
                 impressum: getImpressum().values[0]
             },
             menu: {
-                links: getSiteLinks()
+                links: getSitePages().map((link) => ({
+                    name: link?.name,
+                    url: link?.url,
+                })),
+                cta: [
+                    {
+                        name: "Join",
+                    }
+                ],
+                favicon: {
+                    src: getFavicon().files[0]?.url,
+                    url: "/"
+                }
             },
             metaData: pageData[key]?.metaData
         }),
@@ -113,24 +136,8 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
         pages: pageData[key]?.pages,
     }
 
-    return { ...pageObject } as PageObjectProps ?? null
+    return { ...pageObject } as PageObjectProps
 }
 
 export default pages
 
-
-/*      title: getTitle() ?? null,
-                    mediaCarousel: getMedia().map((media) => ({
-                        src: media?.covers[0]?.url,
-                        alt: media?.name,
-                    })),
-                    description: getImpressum() ?? null,
-                    cta: getCallToAction() ?? null,
-                    actionLinks: {
-                        title: getAudienceHook() ?? null,
-                        links: getForms() ?? null
-                    },
-                    socialLinks: getSocialMedia()
-                    
-                    
-                    **/

@@ -55,7 +55,7 @@ const ImageMasonry = ({ heading, title, description, masonry }: ImageMasonryProp
                         return (
                             <Content {...major} key={index} />
                         )
-                    }) : <></>
+                    }) : <>CONTENT_NOT_FOUND</>
 
                 }
 

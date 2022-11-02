@@ -1,25 +1,38 @@
 
 import type { HeaderProps } from "@typings/Header"
 
-const header = ({ favicon, banner, cta, title, search }: HeaderProps) => {
+const header = ({ favicon, banner, cta, search }: HeaderProps) => {
 
 
     const defaultObject: HeaderProps = {
-        title: "TITLE_NOT_FOUND",
         favicon: {
             image: {},
             url: "/"
         },
+        search: [
+            {
+                id: "SEARCH_NOT_FOUND",
+                url: "#SEARCH_NOT_FOUND"
+            },
+            {
+                id: "SEARCH_NOT_FOUND",
+                url: "#SEARCH_NOT_FOUND"
+            },
+            {
+                id: "SEARCH_NOT_FOUND",
+                url: "#SEARCH_NOT_FOUND"
+            }
+        ],
 
         banner: {
-            messages: [''],
+            messages: ['BANNER_NOT_FOUND'],
         }
 
     }
 
     const headerObject: HeaderProps = {
-        title: title ?? defaultObject?.title,
         favicon: favicon ?? defaultObject?.favicon,
+        search: search ?? defaultObject?.search,
         banner: banner ?? defaultObject?.banner
     }
 

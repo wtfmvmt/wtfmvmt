@@ -9,6 +9,10 @@ import type { IComponent } from "@typings/Component";
 import type { LayoutProps } from "@typings/Layout";
 import React from "react";
 import ScrollToTop from "react-scroll-to-top";
+import MagicNavigator from "@views/includes/MagicNavigator";
+
+
+
 
 const PageLayout: IComponent<LayoutProps> =
     ({ metaData, menu, header, footer, children }:
@@ -16,6 +20,7 @@ const PageLayout: IComponent<LayoutProps> =
 
         return (
             <RootLayout metaData={metaData}>
+                <MagicNavigator/>
                 <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'purple' }} />} smooth />
                 <Notifications />
                 <DrawerMenu {...menu} />

@@ -5,7 +5,6 @@ const forms = (store: []) => {
     const { forms } = FacadeService().types
 
     return {
-
         getForms: () => {
             return store.filter((data) => {
                 return forms.predicate(data)

@@ -15,10 +15,10 @@ const actions = [
     { icon: <ShareIcon />, name: 'Share' },
 ];
 
-const FloatingNavigator = () => {
+const MagicNavigator = () => {
 
     return (
-        <Box className="fixed bottom-24 right-8 hidden sm:flex md:flex">
+        <Box className="fixed bottom-20 left-8 z-50 sm:flex md:flex">
             <SpeedDial
                 ariaLabel="SpeedDial basic example"
                 icon={<SpeedDialIcon />}
@@ -35,4 +35,4 @@ const FloatingNavigator = () => {
     )
 }
 
-export default FloatingNavigator;
+export default MagicNavigator;

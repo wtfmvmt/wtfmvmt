@@ -26,6 +26,9 @@ const utils = () => {
             multi_select: (data) => {
                 return data?.multi_select?.map((item) => item?.name ? item?.name : null) ?? null
             },
+            icon: (data) => {
+                return data?.external?.url ?? null
+            },
             email: (data) => {
                 return data?.email ?? null
             },
@@ -59,7 +62,7 @@ const utils = () => {
                 return data?.files?.map(file => ({
                     url: file?.file?.url ?? "URL_NOT_FOUND",
                     name: file?.file?.name ?? "NAME_NOT_FOUND",
-                })) as NotionFileProps ?? null
+                })) as NotionFileProps
             },
             url: (data) => {
                 return data?.url ?? "URL_NOT_FOUND"

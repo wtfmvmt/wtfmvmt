@@ -11,8 +11,8 @@ export type Link = {
 }
 
 export type ActionLink = {
-    name: string,
-    url: string,
+    name?: string,
+    url?: string,
     icon?: string
 }
 
@@ -35,17 +35,17 @@ export type Feature = {
 }
 
 export type HeroProps = {
-    title: string,
-    mediaCarousel: MediaCarousel
-    description: string,
-    cta: CallToAction,
+    title?: string,
+    mediaCarousel?: MediaCarousel
+    description?: string,
+    cta?: CallToAction,
     features?: {
-        heading: string,
-        featured: Feature[]
+        heading?: string,
+        featured?: Feature[]
     }
     actionLinks?: {
-        title: string,
-        links: ActionLink[]
+        title?: string,
+        links?: ActionLink[]
     }
     socialLinks?: SocialLink[]
 }
