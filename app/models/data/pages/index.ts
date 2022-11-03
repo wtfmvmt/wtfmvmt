@@ -28,6 +28,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     title: getTitle().values[0],
                     mediaCarousel: shuffle(getMedia().map((media) => (media?.media[0]?.url ?? null))),
                     description: getImpressum().values[0],
+                    socialLinks: getSocialMedia().map((social) => ({ url: social?.url })),
                     actionLinks: {
                         title: "Get in touch",
                         links: getForms().map((form) => ({
@@ -35,7 +36,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                             url: form?.url
                         }))
                     },
-                  
+
                     features: {
                         title: 'Features',
                         featured: []
@@ -46,9 +47,13 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                 },
                 logoArray: {
                     title: 'Our Partners',
+                    logos: getPartners().map((p) => ({
+                        title: p?.name,
+
+                    }))
                 },
                 featuredSection: {
-                    carousel: []
+                    carousel: shuffle(getMedia().map((m) => m?.media[0]?.url ?? null)),
                 },
                 statsRow: {},
                 summarySection: {},
@@ -57,7 +62,10 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     title: "Our Team & Founder",
                     heading: "These people behind the scenes are what make the magic happen.",
                     masonry: getTeam().map((team) => ({
-                    
+                        image: {
+                            src: team?.media[0]?.url ?? null,
+                        },
+
                         title: team?.name,
                     }))
 

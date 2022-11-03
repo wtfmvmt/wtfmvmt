@@ -22,7 +22,7 @@ const Hero: IComponent<HeroProps> = ({ title, description, cta, features, action
 
                         <a
                             key={index}
-                            className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 hover:text-purple-600 p-2 hover:bg-black transition-all hover:bg-opacity-90 hover:rounded"
+                            className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 hover:text-purple-600 p-2 transition-all hover:bg-opacity-90 hover:rounded"
                             href={link.url}
                         >
                             <SocialIcon bgColor="white" url={link?.url} />

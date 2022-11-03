@@ -1,31 +1,31 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
-import SpeedDialAction from '@mui/material/SpeedDialAction';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
-import ShareIcon from '@mui/icons-material/Share';
 import NearMeIcon from '@mui/icons-material/NearMe';
+import PrintIcon from '@mui/icons-material/Print';
+import SaveIcon from '@mui/icons-material/Save';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import ScrollToTop from "react-scroll-to-top";
+
+
 const actions = [
-    { icon: <FileCopyIcon />, name: 'Copy' },
+    { icon: <ArrowDropUpIcon sx={{ color: 'purple' }} />, name: 'Top' },
     { icon: <SaveIcon />, name: 'Save' },
     { icon: <PrintIcon />, name: 'Print' },
-    { icon: <ShareIcon />, name: 'Share' },
+
 ];
 
 const MagicNavigator = () => {
 
     return (
         <SpeedDial
-            className="fixed bottom-10 left-8 z-50 sm:flex md:flex cursor-pointer transition-all ease-in duraiton-500"
+            className="fixed bottom-10 right-8 z-50 sm:flex md:flex cursor-pointer transition-all ease-in duraiton-500"
             sx={{ background: 'transparent' }}
             FabProps={{
                 sx: {
-                    bgcolor: '#000000',
+                    bgcolor: 'purple',
                     '&:hover': {
-                        bgcolor: 'purple',
+                        bgcolor: 'black',
                     }
                 }
             }}
@@ -44,7 +44,7 @@ const MagicNavigator = () => {
                             }
                         }
                     }}
-        
+
                     key={action.name}
                     icon={action.icon}
                     tooltipTitle={action.name}

@@ -21,7 +21,6 @@ const PageLayout: IComponent<LayoutProps> =
         return (
             <RootLayout metaData={metaData}>
                 <MagicNavigator/>
-                <ScrollToTop component={<ArrowDropUpIcon sx={{ color: 'purple' }} />} smooth />
                 <Notifications />
                 <DrawerMenu {...menu} />
                 <Header {...header} />

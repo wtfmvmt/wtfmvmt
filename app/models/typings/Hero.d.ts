@@ -14,7 +14,7 @@ export type ActionLink = {
 
 
 export type SocialLink = {
-    url: string,
+    url?: string,
     name?: string,
     icon?: string
 }
@@ -28,7 +28,7 @@ export type Feature = {
 
 export type HeroProps = {
     title?: string,
-    mediaCarousel?: MediaCarousel
+    mediaCarousel?: string[],
     description?: string,
     cta?: CallToAction,
     features?: {

@@ -1,13 +1,13 @@
-import type { CallToAction } from "@models/typings/CallToAction"
+import type { CallToActionProps } from "@models/typings/CallToAction"
 import type { ImageProps } from "@typings/Image"
 
 
 export type Content = {
   cover?: ImageProps,
-  title: string,
+  title?: string,
   tags?: string[],
   url?: string,
-  cta?: CallToAction
+  cta?: CallToActionProps
 
 }
 export type Filter = {

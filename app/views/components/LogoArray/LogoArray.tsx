@@ -52,7 +52,7 @@ const LogoArray = ({ logos, title, heading, description }: LogoArrayProps) => {
                                                 backgroundPosition: "center, center",
                                                 backgroundSize: '50%, 50%',
                                                 backgroundRepeat: 'no-repeat'
-                                            }} className="flex items-center justify-center h-40 p-6 md:px-12 bg-purple-900 bg-opacity-80 hover:translate-y-4 cursor-pointer duration-200 ease-in-out transition-all border-3 border-purple-600 rounded-2xl shadow-md">
+                                            }} className="flex items-center justify-center h-40 p-6 md:px-12 bg-purple-900 bg-opacity-80 hover:-translate-y-4 cursor-pointer duration-500 ease-in-out transition-all border-3 border-purple-600 rounded-2xl shadow-2xl">
                                                 <h1 className="text-center">{logo.name}</h1>
                                             </div>
                                         </a>

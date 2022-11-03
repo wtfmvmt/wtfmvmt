@@ -29,8 +29,8 @@ const ImageMasonry = ({ heading, title, description, masonry }: ImageMasonryProp
                 <div key={key ? key : 0} className="cursor-pointer hover:translate-y-4 duration-500 ease-in-out  transition-all w-full lg:w-2/3 px-4 mb-8">
                     <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl shadow-xl overflow-hidden">
                         <div className="mb-auto h-full">
-                            <div className="block h-96 lg:h-full w-full object-cover" >
-                                <img src={image?.src ?? "IMAGE_NOT_FOUND"} alt={image?.alt ?? "ALT_NOT_FOUND"} />
+                            <div className="block h-74 m-auto lg:h-full w-full object-cover" >
+                                <img className='object-cover' loading="lazy" src={image?.src ?? "IMAGE_NOT_FOUND"} alt={image?.alt ?? "ALT_NOT_FOUND"} />
                             </div>
                         </div>
                         <div className="px-6 py-4  bg-opacity-90">

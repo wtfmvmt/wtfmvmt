@@ -1,14 +1,12 @@
-import React from 'react';
 import { useDistortionEffectCarousel } from 'distortion-effect-carousel';
-
-import type { IComponent } from '@models/typings/Component';
-import type { DistortionCarouselProps } from '@typings/DistortionCarousel';
+import React from 'react';
 
 
-const DistortionCarousel: IComponent<DistortionCarouselProps> = ({
+
+const DistortionCarousel = ({
   displacmentImage="/assets/images/distortions/1.jpg",
   images,
-}: DistortionCarouselProps) => {
+}) => {
 
   const { ref, next } = useDistortionEffectCarousel({
     images,
@@ -17,7 +15,7 @@ const DistortionCarousel: IComponent<DistortionCarouselProps> = ({
 
   return (
     <div
-      className='cursor-pointer'
+      className='cursor-pointer rounded-md'
       onClick={() => next()}
       style={{
         height: '100vh',

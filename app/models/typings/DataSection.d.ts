@@ -1,4 +1,4 @@
-import type { CallToAction } from "@models/typings/CallToAction"
+import type { CallToActionProps } from "@models/typings/CallToAction"
 import type { ImageProps } from "@typings/Image"
 
 
@@ -7,19 +7,19 @@ export type Content = {
   title: string,
   tags?: string[],
   url?: string,
-  cta?: CallToAction
+  cta?: CallToActionProps
 
 }
 export type Filter = {
-  name: string,
-  url: string,
+  name?: string,
+  url?: string,
 }
 
 export type DataSectionProps = {
 
-  heading: string,
-  title: string,
-  description: string,
+  heading?: string,
+  title?: string,
+  description?: string,
   filters?: Filter[],
   data?: Content[]
 }

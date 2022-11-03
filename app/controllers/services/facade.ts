@@ -8,12 +8,13 @@ const FacadeService = () => {
         version: Date.now(),
         types: {
             partners: {
-                name: "Partners",
+                name: "💖Partners",
                 shape: (data) => {
-                    const { Facebook, Name, Covers, URL, Types, Status } = getProperties(data)
+                    const { Facebook, Media, Name, Covers, URL, Types, Status } = getProperties(data)
 
                     return {
                         name: title(Name),
+                        media: files(Media),
                         covers: files(Covers),
                         status: status(Status),
                         url: url(URL),
