@@ -8,6 +8,8 @@ class Document extends NextDocument<any> {
             <Html>
                 <Head>
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="manifest" href="/assets/manifest.json" />
+
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
                     <link
                         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Major+Mono+Display&family=Nova+Mono&display=swap"
