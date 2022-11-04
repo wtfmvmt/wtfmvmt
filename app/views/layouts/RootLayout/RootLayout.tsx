@@ -15,7 +15,7 @@ const RootLayout = ({ children, metaData }) => {
 
         <Box sx={ContainerSx}>
             <CssBaseLine />
-            <Meta props={metaData} />
+            <Meta {...metaData} />
             {children}
         </Box>
 

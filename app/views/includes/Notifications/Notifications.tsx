@@ -17,9 +17,11 @@ const Notifications: IComponent<any> = () => {
                 color="inherit"
                 onClick={closeNotification}
             >
-                <CloseIcon />
-            </IconButton>
-        </div>
+                <div className="hover:bg-purple-800 hover:rounded-full duration-500">
+                    <CloseIcon />
+                </div>
+            </IconButton >
+        </div >
     );
 
     return (

@@ -4,7 +4,7 @@ import "@libs/tailwind.css"
 import "@libs/animations.css"
 import "@libs/scrollbars.css"
 
-import PageService from "@controllers/services/pages"
+import PageService from "@services/pages"
 import PageLayout from "@layouts/PageLayout"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -16,7 +16,7 @@ function Application({ Component, pageProps, layout }) {
 
   return (
     <RecoilRoot>
-      <PageTransition loadingDelay={200} loadingComponent={<>Loading Application</>} timeout={500} classNames={"page-transition"}>
+      <PageTransition loadingComponent={<>Loading Application</>} classNames={"page-transition"}>
         <PageLayout {...layout}>
           <Component {...pageProps} />
         </PageLayout>
@@ -26,12 +26,10 @@ function Application({ Component, pageProps, layout }) {
   )
 }
 
-
-
 Application.getInitialProps = async () => {
   const { getPage } = PageService;
   const { layout } = await getPage("home");
-  return { layout };
+  return { layout }
 };
 
 

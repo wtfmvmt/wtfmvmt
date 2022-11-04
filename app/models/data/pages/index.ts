@@ -145,7 +145,9 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     url: "/"
                 }
             },
-            metaData: pageData[key]?.metaData
+            metaData: {
+                title: "WTFMVMT",
+            }
         }),
         data: pageData[key]?.data,
         pages: pageData[key]?.pages,

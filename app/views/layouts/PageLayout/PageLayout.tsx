@@ -4,31 +4,27 @@ import Header from "@components/Header";
 import DrawerMenu from "@includes/DrawerMenu";
 import Notifications from "@includes/Notifications";
 import RootLayout from "@layouts/RootLayout";
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import type { IComponent } from "@typings/Component";
 import type { LayoutProps } from "@typings/Layout";
-import React from "react";
-import ScrollToTop from "react-scroll-to-top";
 import MagicNavigator from "@views/includes/MagicNavigator";
-
-
-
-
+import React from "react";
+import Modal from "@includes/Modal"
+import ScrollToTop from "react-scroll-to-top";
 const PageLayout: IComponent<LayoutProps> =
     ({ metaData, menu, header, footer, children }:
         LayoutProps) => {
 
         return (
             <RootLayout metaData={metaData}>
-                <MagicNavigator/>
+                <MagicNavigator />
+                <Modal />
                 <Notifications />
                 <DrawerMenu {...menu} />
                 <Header {...header} />
-                <FadeAnimation duration={250} triggerOnce cascade>
+                <FadeAnimation duration={333} triggerOnce>
                     {children}
                 </FadeAnimation>
                 <Footer {...footer} />
-
             </RootLayout>
         )
     }

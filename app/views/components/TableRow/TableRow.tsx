@@ -1,4 +1,4 @@
-import { CallToAction } from "@models/typings/CallToAction"
+import { CallToActionProps } from "@typings/CallToAction"
 import { Fade } from "react-awesome-reveal"
 export type Feature = {
     name?: string,
@@ -9,7 +9,7 @@ export type Table = {
     subTitle: string,
     price: string,
     features: Feature[],
-    cta: CallToAction
+    cta: CallToActionProps
 }
 export type TableRow = {
     tables?: Table[],

@@ -1,16 +1,4 @@
-import type { CallToAction } from "@models/typings/CallToAction"
-import type { ImageProps } from "@typings/Image"
 
-
-export type SimpleFormSectionProps = {
-
-  cover: ImageProps,
-  heading: string,
-  title: string,
-  description: string,
-  placeHolder: string,
-  cta: CallToAction
-}
 const SimpleFormSection = () => {
 
   return (

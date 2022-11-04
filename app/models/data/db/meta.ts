@@ -10,7 +10,7 @@ const meta = (store: []) => {
             return metaObject.getMeta().find((meta) => meta?.types?.includes(searchKey)) ?? null
         },
         getTitle: () => {
-            return metaObject.getMeta().find((meta) => meta?. types?.includes("📛Title")) ?? null
+            return metaObject.getMeta().find((meta) => meta?.types?.includes("📛Title")) ?? null
         },
         getCopyright: () => {
             return metaObject.getMeta().find((meta) => meta?.types?.includes("📜Copyright")) ?? null

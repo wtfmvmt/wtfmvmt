@@ -2,11 +2,11 @@ import Head from "next/head"
 import type { IComponent } from "@models/typings/Component"
 import type { MetaProps } from "@typings/Meta"
 
-const Meta: IComponent<MetaProps> = (props: MetaProps) => {
+const Meta: IComponent<MetaProps> = ({ title, pageTitle }: MetaProps) => {
 
     return (
         <Head>
-            <title>{props.pageTitle || "Home"}</title>
+            <title>{title} | {pageTitle}</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta name="theme-color" content="#000000" />
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />

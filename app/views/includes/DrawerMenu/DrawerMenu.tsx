@@ -57,11 +57,12 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
     const Favicon = () => {
 
         return (
-            <a className="mr-auto text-2xl font-bold leading-none" href={favicon?.url ?? ""}>
+            <a className="mr-auto text-2xl font-bold leading-none" href={favicon?.url ?? "FAVICON_NOT_FOUND"}>
                 <img
                     className="h-16"
-                    src={favicon?.src ?? ""}
-                    alt="wtfmvmt-logo"
+                    loading="lazy"
+                    src={favicon?.image?.src ?? "FAVICON_NOT_FOUND"}
+                    alt={favicon?.image?.alt ?? "FAVICON_NOT_FOUND"}
                     width="auto"
                 />
             </a>
@@ -79,7 +80,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
     return (
         <CSSTransition
             in={open}
-            timeout={500}
+            timeout={400}
             unmountOnExit
         >
             <div className="transition-all navbar-menu relative z-50">

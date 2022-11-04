@@ -9,9 +9,9 @@ import ScrollToTop from "react-scroll-to-top";
 
 
 const actions = [
-    { icon: <ArrowDropUpIcon sx={{ color: 'purple' }} />, name: 'Top' },
-    { icon: <SaveIcon />, name: 'Save' },
-    { icon: <PrintIcon />, name: 'Print' },
+    { icon: <ArrowDropUpIcon sx={{ color: 'white' }} />, name: 'Top' },
+    { icon: <SaveIcon sx={{ color: 'white' }} />, name: 'Save' },
+    { icon: <PrintIcon sx={{ color: 'white' }} />, name: 'Print' },
 
 ];
 
