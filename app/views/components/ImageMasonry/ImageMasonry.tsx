@@ -26,10 +26,10 @@ const ImageMasonry = ({ heading, title, description, masonry }: ImageMasonryProp
     const Masonry = () => {
         const Content = ({ key, title, heading, image }: ContentProps) => {
             return (
-                <div key={key ? key : 0} className="cursor-pointer hover:translate-y-4 duration-500 ease-in-out  transition-all w-full lg:w-2/3 px-4 mb-8">
+                <div key={key ? key : 0} className="cursor-pointer hover:-translate-y-4 duration-500 ease-in-out transition-all w-1/2 lg:w-2/3 px-4 mb-8">
                     <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl shadow-xl overflow-hidden">
                         <div className="mb-auto h-full">
-                            <div className="block h-74 m-auto lg:h-full w-full object-cover" >
+                            <div className="block h-80 m-auto lg:h-full w-full object-cover" >
                                 <img className='object-cover' loading="lazy" src={image?.src ?? "IMAGE_NOT_FOUND"} alt={image?.alt ?? "ALT_NOT_FOUND"} />
                             </div>
                         </div>
@@ -51,11 +51,11 @@ const ImageMasonry = ({ heading, title, description, masonry }: ImageMasonryProp
             masonry ? <div className="flex flex-wrap m-auto w-full justify-center items-center">
 
                 {
-                    masonry ? masonry.map((major, index) => {
+                    masonry.map((major, index) => {
                         return (
                             <Content {...major} key={index} />
                         )
-                    }) : <>CONTENT_NOT_FOUND</>
+                    })
 
                 }
 
