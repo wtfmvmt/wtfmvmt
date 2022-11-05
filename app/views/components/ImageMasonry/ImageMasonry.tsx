@@ -26,8 +26,8 @@ const ImageMasonry = ({ heading, title, description, masonry }: ImageMasonryProp
     const Masonry = () => {
         const Content = ({ key, title, heading, image }: ContentProps) => {
             return (
-                <div key={key ? key : 0} className="cursor-pointer hover:-translate-y-4 duration-500 ease-in-out transition-all w-1/2 lg:w-2/3 px-4 mb-8">
-                    <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl shadow-xl overflow-hidden">
+                <div key={key ? key : 0} className="cursor-pointer hover:-translate-y-4 duration-500 ease-in-out transition-all w-full lg:w-2/3 px-4 mb-8">
+                    <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl hover:shadow-2xl shadow-md overflow-hidden w-1/2">
                         <div className="mb-auto h-full">
                             <div className="block h-80 m-auto lg:h-full w-full object-cover" >
                                 <img className='object-cover' loading="lazy" src={image?.src ?? "IMAGE_NOT_FOUND"} alt={image?.alt ?? "ALT_NOT_FOUND"} />

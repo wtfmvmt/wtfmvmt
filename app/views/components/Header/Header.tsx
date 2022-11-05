@@ -9,10 +9,10 @@ import Badge from '@mui/material/Badge';
 import TextField from '@mui/material/TextField';
 import type { HeaderProps } from "@typings/Header";
 import Headroom from "react-headroom";
-import type { IComponent } from "@models/typings/Component";
+import type { ComponentType } from "@typings/Component";
 
 
-const Header = ({ favicon, cta, banner, search }: HeaderProps) => {
+const Header:ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: HeaderProps) => {
 
     const { toggleDrawer } = useMenuDrawerState()
     const { toggleBanner } = useBannerState()

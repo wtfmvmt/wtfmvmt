@@ -141,7 +141,9 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     }
                 ],
                 favicon: {
-                    src: getFavicon().files[0]?.url,
+                    image: {
+                        src: getFavicon().files[0]?.url,
+                    },
                     url: "/"
                 }
             },

@@ -1,6 +1,6 @@
 import DistortionCarousel from "@components/DistortionCarousel";
 import FadeAnimation from "@components/FadeAnimation";
-import type { IComponent } from "@typings/Component";
+import type { ComponentType } from "@typings/Component";
 import type { HeroProps } from "@typings/Hero";
 import { SocialIcon } from "react-social-icons";
 
@@ -8,7 +8,7 @@ import { SocialIcon } from "react-social-icons";
 
 
 
-const Hero: IComponent<HeroProps> = ({ title, description, cta, features, actionLinks, socialLinks, mediaCarousel }: HeroProps) => {
+const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, actionLinks, socialLinks, mediaCarousel }: HeroProps) => {
 
 
 
@@ -143,7 +143,7 @@ const Hero: IComponent<HeroProps> = ({ title, description, cta, features, action
     return (
         <section>
 
-            <div className="relative py-12 overflow-hidden">
+            <div className="relative py-4 -translate-y-11 overflow-hidden">
 
                 <div className="relative container mx-auto px-4">
                     <div className="flex flex-wrap -mx-4">
