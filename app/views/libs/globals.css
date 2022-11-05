@@ -1,7 +1,7 @@
 :root {
         --major-mono-display: 'Major Mono Display', monospace;
 
-        
+        --color-primary: #9200CC;
         --font-primary: var(--major-mono-display);
 }
 

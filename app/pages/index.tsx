@@ -5,7 +5,6 @@ import Hero from "@components/Hero"
 import ImageMasonry from "@components/ImageMasonry"
 import LogoArray from "@components/LogoArray"
 import SimpleFormSection from "@components/SimpleFormSection"
-import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 import PageService from "@services/pages"
 import type { PageProps } from "@typings/Page"
@@ -23,10 +22,9 @@ const HomePage: NextPage<PageProps> = ({ page: { data } }) => {
       <Hero {...hero} />
       <LogoArray {...logoArray} />
       <FeaturedSection {...featuredSection} />
-      <StatsRow />
       <SummarySection {...summarySection} />
+      <StatsRow />
       <SimpleFormSection {...statsSection} />
-      <StatsSection {...statsSection} />
       <RowList />
       <ColumnLists />
       <ImageMasonry {...imageMasonry} />

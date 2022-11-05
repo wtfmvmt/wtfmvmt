@@ -1,9 +1,8 @@
-import { ImageProps } from "@models/typings/Image"
+import { ImageProps } from "@typings/Image"
 
-export type ContentProps = {
+export type MasonProps = {
     title?: string,
     heading?: string,
-    key?: any,
     image?: ImageProps
 }
 
@@ -12,6 +11,6 @@ export type ImageMasonryProps = {
     heading?: string,
     title?: string,
     description?: string,
-    masonry?: ContentProps[]
+    masonry?: MasonProps[]
 }
 
