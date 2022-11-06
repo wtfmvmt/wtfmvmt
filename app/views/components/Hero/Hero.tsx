@@ -43,7 +43,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
             <div className="flex flex-wrap h-full">
 
                 <div className="w-full z-50 h-full puff-in-center ">
-                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousel} />
+                    <DistortionCarousel  displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousel} />
                 </div>
 
             </div>

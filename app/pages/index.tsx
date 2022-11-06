@@ -20,11 +20,10 @@ const HomePage: NextPage<PageProps> = ({ page: { data } }) => {
   return (
     <>
       <Hero {...hero} />
-      <LogoArray {...logoArray} />
       <FeaturedSection {...featuredSection} />
       <SummarySection {...summarySection} />
+      <LogoArray {...logoArray} />
       <StatsRow />
-      <SimpleFormSection {...statsSection} />
       <RowList />
       <ColumnLists />
       <ImageMasonry {...imageMasonry} />

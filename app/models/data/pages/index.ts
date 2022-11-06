@@ -1,6 +1,5 @@
 import layout from "@configs/layout"
-import { events, forms, media, meta, partners, socialMedia, team, links } from "@db/index"
-import { search } from "@notionhq/client/build/src/api-endpoints"
+import { events, forms, links, media, meta, partners, socialMedia, team } from "@db/index"
 import type { HeroProps, PageObjectProps, PagesDBProps } from "@typings/index"
 import utils from "@utils/index"
 
@@ -137,7 +136,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                 })),
                 cta: [
                     {
-                        name: "Join",
+                        name: "Memberships",
                     }
                 ],
                 favicon: {

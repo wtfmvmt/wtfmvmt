@@ -1,5 +1,6 @@
 import type { ImageMasonryProps } from "@typings/ImageMasonry";
 import type { ComponentType } from "@typings/Component"
+import LazyImage from 'react-lazy-blur-image';
 
 const ImageMasonry: ComponentType<ImageMasonryProps> = ({ heading, title, description, masonry }: ImageMasonryProps) => {
 
@@ -36,7 +37,11 @@ const ImageMasonry: ComponentType<ImageMasonryProps> = ({ heading, title, descri
                                     <div className="h-full flex flex-col border-3 border-purple-900 rounded-2xl shadow-2xl overflow-hidden w-full">
                                         <div className="mb-auto h-full w-full">
                                             <div className="block h-64 m-auto lg:h-full" >
-                                                <img className="object-fit" loading="lazy" src={image?.src ?? "IMAGE_NOT_FOUND"} alt={image?.alt ?? "IMAGE_ALT_NOT_FOUND"} />
+                                                <LazyImage
+                                                    placeholder={'http://example.com/placeholder.png'}
+                                                    uri={image?.src}
+                                                    render={(src, style) => <img style={style} className="object-fit" loading="lazy" src={src ?? "IMAGE_NOT_FOUND"} alt={image?.alt ?? "IMAGE_ALT_NOT_FOUND"} />}
+                                                />
                                             </div>
                                         </div>
                                         <div className="px-6 py-4  bg-opacity-90">

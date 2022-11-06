@@ -19,7 +19,8 @@
 
 * Magic Navigator 
 * Progressive-lazy-load images
-* 
+* Notifications
+* WebRTC Social Media
 ---
 
 
@@ -46,7 +47,10 @@ For support, email info@wtfmvmt.com
 * Sitemap Generator
 * Popup-Notifications (Subscription, Confirmation, Configuration...)
 * Google Anayltics Panel
-* Membership Table now Call To Action -> Page
+* User Reviews / Stories
+* Magic Navigator
+* Fine-grained Search Engine Optimization
+
 
 **Mach 0.1.0**
 * Optimized Model Layer for Arbituary API Connections
@@ -77,63 +81,45 @@ If you have any feedback, please reach out to us at devops@desirable.solutions
 
 ---
 
-## ⚙️Tech Stack
-
+## ⚙️Technolgies
 * React
 * Recoil
 * TailwindCSS
-* NextJs
+* NextJS
 * Notion
-* Facade 
+* FacadeOS 
   
 ---
 
 ## 🛣️Roadmap
 
-
-**Phase E**
-1. Community Marketing 
-
-**Phase D**
-1. Community Marketing 
-
-
-**Phase C**
-1. Community Marketing 
-
-
-**Phase B**
-1. Community Marketing 
-
-
-📍**Phase A**  
+📍**Phase 1**  
 * 🎉MVP Launch!
+  
+**Phase 2**
+* Public Beta Launch! 
+
+**Phase 3**
+* Production Platform Launch & Promotion 
 
 ---
-
-
 
 ## 🙏🏿Acknowledgements
 
  > To God Be All the Glory. 
 
-
-
 ---
 
 ## ✒️Authors
 
-- [@desirtech](https://www.github.com/octokatherine)
-- [@desirdesigns](https://www.github.com/octokatherine)
-- [@desirablesolutions](https://www.github.com/octokatherine)
-
+* [@desirtech](https://www.github.com/desirtech)
+* [@desirdesigns](https://www.github.com/desirdesigns)
+* [@desirablesolutions](https://www.github.com/desirablesolutions)
 
 ---
-
 ## 📜License
 
-> This project is under the MIT License☂️. 
+> This project is under the [GNU AGPL:v3](https://choosealicense.com/licenses/agpl-3.0/) License☂️. 
 
-**All data & metadata property of WTFMVMT, LLC**<br/>
-**©️ 2022 WTFMVMT. All Rights Reserved.**
+**©️ 2022 WTFMVMT Technologies. All Rights Reserved.**
 
