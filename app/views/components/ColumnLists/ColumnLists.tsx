@@ -1,23 +1,8 @@
 
-import type { ImageProps } from "@typings/Image"
 import type { ComponentType } from "@models/typings/Component"
 
-export type ColumnData = {
-    name?: string,
-    description?: string,
-    icon?: ImageProps
-}
+import type { ColumnListProps } from "@models/typings/ColumnLists"
 
-export type ColumnProps = {
-    title?: string,
-    columns?: Array<ColumnData>,
-}
-
-
-export type ColumnListProps = {
-    lists: Array<ColumnProps>
-
-}
 const ColumnLists: ComponentType<ColumnListProps> = ({ lists }: ColumnListProps) => {
 
     return (
@@ -189,7 +174,7 @@ const ColumnLists: ComponentType<ColumnListProps> = ({ lists }: ColumnListProps)
 
 
 
-                
+
             </div>
         </section>
     )

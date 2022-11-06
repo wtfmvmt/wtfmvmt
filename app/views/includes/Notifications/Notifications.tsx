@@ -2,9 +2,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
 import Snackbar from '@mui/material/Snackbar';
 import useNotification from '@hooks/useNotification';
-import type { IComponent } from '@models/typings/Component';
+import type { ComponentType } from '@models/typings/Component';
 
-const Notifications: IComponent<any> = () => {
+const Notifications: ComponentType<any> = () => {
 
     const { closeNotification, notification: { message, isOpen, duration } } = useNotification();
 
