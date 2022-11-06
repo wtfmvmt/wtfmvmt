@@ -1,19 +1,21 @@
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
+import BubbleChartIcon from '@mui/icons-material/BubbleChart';
+import ChatIcon from '@mui/icons-material/Chat';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import NearMeIcon from '@mui/icons-material/NearMe';
-import PrintIcon from '@mui/icons-material/Print';
-import SaveIcon from '@mui/icons-material/Save';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import RsvpIcon from '@mui/icons-material/Rsvp';
+import ShareIcon from '@mui/icons-material/Share';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import ScrollToTop from "react-scroll-to-top";
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import ChatIcon from '@mui/icons-material/Chat';
-import BubbleChartIcon from '@mui/icons-material/BubbleChart';
+
 
 const actions = [
     { icon: <BubbleChartIcon sx={{ color: 'white' }} />, name: 'Float' },
     { icon: <ChatIcon sx={{ color: 'white' }} />, name: 'Chat' },
     { icon: <NotificationsIcon sx={{ color: 'white' }} />, name: 'Notifications' },
+    { icon: <ShareIcon sx={{ color: 'white' }} />, name: 'Float' },
+    { icon: <RsvpIcon sx={{ color: 'white' }} />, name: 'Chat' },
+    { icon: <ConnectWithoutContactIcon sx={{ color: 'white' }} />, name: 'Notifications' },
 
 ];
 
