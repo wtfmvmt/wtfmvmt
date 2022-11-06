@@ -1,6 +1,6 @@
 
 import type { ImageProps } from "@typings/Image"
-import type { IComponent } from "@models/typings/Component"
+import type { ComponentType } from "@models/typings/Component"
 
 export type ColumnData = {
     name?: string,
@@ -18,7 +18,7 @@ export type ColumnListProps = {
     lists: Array<ColumnProps>
 
 }
-const ColumnLists: IComponent<ColumnListProps> = ({ lists }: ColumnListProps) => {
+const ColumnLists: ComponentType<ColumnListProps> = ({ lists }: ColumnListProps) => {
 
     return (
         <section className="py-20 overflow-x-hidden">

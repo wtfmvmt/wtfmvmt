@@ -1,12 +1,12 @@
 import useBannerState from "@hooks/useBannerState";
 import ReactTypingEffect from 'react-typing-effect';
-import type { IComponent } from "@models/typings/Component";
+import type { ComponentType } from "@models/typings/Component";
 import CloseIcon from "@mui/icons-material/Close";
 import type { BannerProps } from "@typings/Banner";
 import { CSSTransition } from 'react-transition-group';
 import React from "react"
 
-const Banner = ({ messages }: BannerProps) => {
+const Banner: ComponentType<BannerProps> = ({ messages }: BannerProps) => {
 
     const { open, toggleBanner } = useBannerState()
 

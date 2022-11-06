@@ -1,7 +1,7 @@
-import type { IComponent } from "@typings/Component"
+import type { ComponentType } from "@typings/Component"
 import type { IconProps } from "@typings/Icon"
 
-const BurgerIcon = ({ action }: IconProps) => (
+const BurgerIcon: ComponentType<IconProps> = ({ action }: IconProps) => (
 
     <a onClick={() => action() || null} className="flex items-center px-8 group" >
         <svg
