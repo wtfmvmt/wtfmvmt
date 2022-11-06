@@ -5,6 +5,9 @@
         --font-primary: var(--major-mono-display);
 }
 
+* {
+        outline: red 1px solid !important;
+}
 
 .MuiInput-underline {
         color: white !important
