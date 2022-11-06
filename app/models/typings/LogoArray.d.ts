@@ -1,3 +1,5 @@
+import type { ImageProps } from "@typings/Image"
+
 
 export type Logo = {
     image?: ImageProps,

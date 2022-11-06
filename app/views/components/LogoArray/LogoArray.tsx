@@ -1,23 +1,8 @@
-import type { ImageProps } from "@typings/Image"
+import type { LogoArrayProps } from "@typings/LogoArray"
+import type { ComponentType } from "@typings/Component"
 
 
-
-export type Logo = {
-    cover?: string,
-    url?: string,
-    name?: string
-}
-
-
-export type LogoArrayProps = {
-    logos?: Logo[],
-    title?: string,
-    heading?: string,
-    description?: string,
-}
-
-
-const LogoArray = ({ logos, title, heading, description }: LogoArrayProps) => {
+const LogoArray: ComponentType<LogoArrayProps> = ({ logos, title, heading, description }: LogoArrayProps) => {
 
     const Header = () => {
 
@@ -37,7 +22,7 @@ const LogoArray = ({ logos, title, heading, description }: LogoArrayProps) => {
     }
 
     return (
-        <section className="py-26">
+        <section className="py-26 mt-10">
             <div className="container px-4 mx-auto">
                 <div className="flex flex-wrap -mx-4 items-center">
                     <Header />
@@ -46,19 +31,20 @@ const LogoArray = ({ logos, title, heading, description }: LogoArrayProps) => {
                             {logos ? logos.map((logo, index) => {
                                 return (
                                     <div key={index} className="w-1/2 md:w-1/2 px-4 mb-8">
-                                        <a href={logo?.url ? logo?.url : "#"}>
+                                        <a className="flex flex-col" href={logo?.url ? logo?.url : "LOGO_URL_NOT_FOUND"}>
                                             <div style={{
-                                                backgroundImage: `url(${logo.cover})`,
+                                                backgroundImage: `url(${logo.image?.src})`,
                                                 backgroundPosition: "center, center",
-                                                backgroundSize: '50%, 50%',
-                                                backgroundRepeat: 'no-repeat'
+                                                backgroundSize: '75%, 75%',
+                                                backgroundRepeat: 'no-repeat',
+                                                objectFit: 'contain'
                                             }} className="flex items-center justify-center h-40 p-6 md:px-12 bg-purple-900 bg-opacity-80 hover:-translate-y-4 cursor-pointer duration-500 ease-in-out transition-all border-3 border-purple-600 rounded-2xl shadow-2xl">
-                                                <h1 className="text-center">{logo.name}</h1>
+                                                <h1 className="text-center bottom-10">{logo?.name ?? "LOGO_NAME_NOT_FOUND"}</h1>
                                             </div>
                                         </a>
                                     </div>
                                 )
-                            }) : <></>}
+                            }) : <>LOGOS_NOT_FOUND</>}
 
                         </div>
                     </div>

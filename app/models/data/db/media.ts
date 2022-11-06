@@ -17,7 +17,6 @@ const media = (store: []) => {
                 return media.shape(data)
             })
         }
-
     }
 
     return { ...mediaObject }

@@ -1,20 +1,8 @@
 import ReactPlayer from 'react-player'
+import type { ComponentType } from '@models/typings/Component'
+import type { SummarySectionProps } from '@models/typings/SummarySection'
 
-export type Section = {
-  title: string,
-  description: string
-}
-
-
-export type SummarySectionProps = {
-  heading: string,
-  title: string,
-  description: string,
-  sections: Section[]
-}
-
-
-const SummarySection = ({ heading, title, description, sections }: SummarySectionProps) => {
+const SummarySection: ComponentType<SummarySectionProps> = ({ heading, title, description, sections }: SummarySectionProps) => {
 
 
   const Sections = () => {
@@ -41,12 +29,6 @@ const SummarySection = ({ heading, title, description, sections }: SummarySectio
       </div>
     )
   }
-
-
-
-
-
-
 
   const Header = () => {
 
@@ -79,7 +61,6 @@ const SummarySection = ({ heading, title, description, sections }: SummarySectio
 
     )
   }
-
 
   return (
     <section className="py-26 relative overflow-hidden">

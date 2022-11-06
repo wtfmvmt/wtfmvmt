@@ -5,6 +5,10 @@ const meta = (store: []) => {
     const { meta } = FacadeService().types
 
     const metaObject = {
+        getPillars: () => {
+            const pillarsKey = "💜Pillar"
+            return metaObject.getMeta().filter((meta) => meta?.types?.includes(pillarsKey)) ?? null
+        },
         getSearch: () => {
             const searchKey = "🔎Search"
             return metaObject.getMeta().find((meta) => meta?.types?.includes(searchKey)) ?? null
@@ -26,7 +30,9 @@ const meta = (store: []) => {
             return metaObject.getMeta().find((meta) => meta?.types?.includes("🖼️Favicon")) ?? null
         },
         getImpressum: () => {
-            return metaObject.getMeta().find((meta) => meta?.types?.includes("✒️Impressum")) ?? null
+            const impressumKey = "✒️Impressum"
+            
+            return metaObject.getMeta().find((meta) => meta?.types?.includes(impressumKey)) ?? null
         },
         getAudienceHook: () => {
             return true

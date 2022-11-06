@@ -1,6 +1,6 @@
 import layout from "@configs/layout"
 import { events, forms, links, media, meta, partners, socialMedia, team } from "@db/index"
-import type { HeroProps, PageObjectProps, PagesDBProps } from "@typings/index"
+import type { HeroProps, PageObjectProps, PagesDBProps, LogoArrayProps, SummarySectionProps } from "@typings/index"
 import utils from "@utils/index"
 
 
@@ -12,7 +12,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
     const { getMedia, getEventsAlbum } = media(store)
     const { getLinks, getSitePages } = links(store)
     const { getSocialMedia } = socialMedia(store)
-    const { getBanner, getCopyright, getSearch, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
+    const { getBanner, getCopyright, getSearch, getPillars, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
     const { getPartners } = partners(store)
     const { getEvents } = events(store)
     const { getForms } = forms(store)
@@ -44,10 +44,13 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                         name: getCallToAction().values[0],
                     }
                 },
-                logoArray: {
+                logoArray: <LogoArrayProps>{
                     title: 'Our Partners',
                     logos: getPartners().map((p) => ({
                         title: p?.name,
+                        image: {
+                            src: p?.media[0]?.url
+                        }
 
                     }))
                 },
@@ -55,7 +58,12 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     carousel: shuffle(getMedia().map((m) => m?.media[0]?.url ?? null)),
                 },
                 statsRow: {},
-                summarySection: {},
+                summarySection: <SummarySectionProps>{
+                    sections: getPillars().map((s) => ({
+                        title: s?.name,
+                        description: s?.description
+                    }))
+                },
                 simpleFormSection: {},
                 imageMasonry: {
                     title: "Our Team & Founder",
