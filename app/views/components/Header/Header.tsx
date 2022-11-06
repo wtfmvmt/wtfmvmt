@@ -124,10 +124,10 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
 
     return (
         <Headroom>
-            <section className="relative pb-20 overflow-hidden w-full border-b border-4 border-gray-400">
+            <section className="relative pb-20 overflow-hidden w-full">
 
                 <Banner {...banner} />
-                <nav className="flex justify-between backdrop-blur-md">
+                <nav className="flex justify-between backdrop-blur-sm  border-b border-4 border-gray-400">
 
                     <div className="px-12 py-6 flex w-full items-center">
                         <Favicon />
