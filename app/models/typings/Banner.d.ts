@@ -1,4 +1,4 @@
 
 export type BannerProps = {
-    messages: string[]
+    messages?: string[]
 }
