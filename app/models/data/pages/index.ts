@@ -64,7 +64,6 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                         description: s?.description
                     }))
                 },
-                simpleFormSection: {},
                 imageMasonry: {
                     title: "Our Team & Founder",
                     heading: "These people behind the scenes are what make the magic happen.",

@@ -6,11 +6,9 @@ import SimpleFormSection from "@components/SimpleFormSection"
 import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 
-import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/pages"
 
-import type { IPage } from "@typings/Page"
-import type { ServerSidePageProps } from "@typings/Page"
+import type { IPage, ServerSidePageProps } from "@typings/Page"
 
 import { useEffect } from "react"
 
@@ -26,7 +24,7 @@ const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
   }, [page, id, version])
 
   return (
-    <PageLayout {...layout}>
+    <>
       <Hero {...hero} />
       <FeaturedSection {...featuredSection} />
       <SummarySection {...summarySection} />
@@ -34,7 +32,7 @@ const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
       <StatsSection {...statsSection} />
       <ImageMasonry {...imageMasonry} />
       <ContactSection {...contactSection} />
-    </PageLayout>
+    </>
   )
 }
 
