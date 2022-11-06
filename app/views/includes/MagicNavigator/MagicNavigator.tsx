@@ -7,9 +7,10 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import ScrollToTop from "react-scroll-to-top";
 
-
+import ChatIcon from '@mui/icons-material/Chat';
 const actions = [
     { icon: <ArrowDropUpIcon sx={{ color: 'white' }} />, name: 'Top' },
+    { icon: <ChatIcon sx={{ color: 'white' }} />, name: 'Contact' },
 
 
 ];

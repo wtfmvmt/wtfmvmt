@@ -188,11 +188,11 @@ const FacadeService = () => {
                 name: "📱Social Media",
                 shape: (data: any) => {
 
-                    const { URL, Title, Types, Status } = data.properties
+                    const { URL, Name, Types, Status } = data?.properties
 
                     return {
                         url: url(URL),
-                        title: rich_text(Title),
+                        name: rich_text(Name),
                         types: multi_select(Types),
                         status: status(Status),
                     }

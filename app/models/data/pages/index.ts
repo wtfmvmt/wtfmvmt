@@ -1,6 +1,6 @@
 import layout from "@configs/layout"
 import { events, forms, links, media, meta, partners, socialMedia, team } from "@db/index"
-import type { HeroProps, PageObjectProps, PagesDBProps, LogoArrayProps, SummarySectionProps } from "@typings/index"
+import type { HeroProps, LogoArrayProps, PageObjectProps, PagesDBProps, SummarySectionProps } from "@typings/index"
 import utils from "@utils/index"
 
 
@@ -9,7 +9,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
     const { collections: { shuffle } } = utils()
 
     const { getTeam } = team(store)
-    const { getMedia, getEventsAlbum } = media(store)
+    const { getMedia, getPhotos, getEventsAlbum } = media(store)
     const { getLinks, getSitePages } = links(store)
     const { getSocialMedia } = socialMedia(store)
     const { getBanner, getCopyright, getSearch, getPillars, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
@@ -25,7 +25,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
             data: {
                 hero: <HeroProps>{
                     title: getTitle().values[0],
-                    mediaCarousel: shuffle(getMedia().map((media) => (media?.media[0]?.url ?? null))),
+                    mediaCarousel: shuffle(getPhotos().map((media) => (media?.media[0]?.url ?? null))),
                     description: getImpressum().values[0],
                     socialLinks: getSocialMedia().map((social) => ({ url: social?.url })),
                     actionLinks: {
@@ -55,7 +55,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     }))
                 },
                 featuredSection: {
-                    carousel: shuffle(getMedia().map((m) => m?.media[0]?.url ?? null)),
+                    carousel: shuffle(getPhotos().map((m) => m?.media[0]?.url ?? null)),
                 },
                 statsRow: {},
                 summarySection: <SummarySectionProps>{
