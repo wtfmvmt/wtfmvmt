@@ -6,12 +6,14 @@ import SaveIcon from '@mui/icons-material/Save';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import ScrollToTop from "react-scroll-to-top";
-
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import ChatIcon from '@mui/icons-material/Chat';
-const actions = [
-    { icon: <ArrowDropUpIcon sx={{ color: 'white' }} />, name: 'Top' },
-    { icon: <ChatIcon sx={{ color: 'white' }} />, name: 'Contact' },
+import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 
+const actions = [
+    { icon: <BubbleChartIcon sx={{ color: 'white' }} />, name: 'Float' },
+    { icon: <ChatIcon sx={{ color: 'white' }} />, name: 'Chat' },
+    { icon: <NotificationsIcon sx={{ color: 'white' }} />, name: 'Notifications' },
 
 ];
 
