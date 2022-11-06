@@ -12,7 +12,7 @@ import Headroom from "react-headroom";
 import type { ComponentType } from "@typings/Component";
 
 
-const Header:ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: HeaderProps) => {
+const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: HeaderProps) => {
 
     const { toggleDrawer } = useMenuDrawerState()
     const { toggleBanner } = useBannerState()
@@ -92,7 +92,7 @@ const Header:ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: Hea
                         name=""
                         id="search-selector"
                     >
-                        <option  className="bg-black">{"SEARCH_NOT_FOUND"}</option>
+                        <option className="bg-black">{"SEARCH_NOT_FOUND"}</option>
 
                     </select>
                 }
@@ -124,7 +124,7 @@ const Header:ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: Hea
 
     return (
         <Headroom>
-            <section className="relative pb-20 overflow-hidden w-full">
+            <section className="relative pb-20 overflow-hidden w-full border-b border-4 border-gray-400">
 
                 <Banner {...banner} />
                 <nav className="flex justify-between backdrop-blur-md">
