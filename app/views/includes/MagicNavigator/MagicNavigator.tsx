@@ -1,24 +1,20 @@
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 import ChatIcon from '@mui/icons-material/Chat';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import RsvpIcon from '@mui/icons-material/Rsvp';
 import ShareIcon from '@mui/icons-material/Share';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
-
 const MagicNavigator = () => {
 
     const actions = [
-        { icon: <BubbleChartIcon sx={{ color: 'white' }} />, name: 'Float' },
+        { icon: <KeyboardDoubleArrowUpIcon sx={{ color: 'white' }} />, name: 'Float' },
         { icon: <ChatIcon sx={{ color: 'white' }} />, name: 'Chat' },
         { icon: <NotificationsIcon sx={{ color: 'white' }} />, name: 'Notifications' },
-        { icon: <ShareIcon sx={{ color: 'white' }} />, name: 'Float' },
-        { icon: <RsvpIcon sx={{ color: 'white' }} />, name: 'RSVP' },
+        { icon: <ShareIcon sx={{ color: 'white' }} />, name: 'Share' },
         { icon: <ConnectWithoutContactIcon sx={{ color: 'white' }} />, name: 'Community', },
-
     ];
 
     return (
@@ -27,7 +23,7 @@ const MagicNavigator = () => {
             sx={{ background: 'transparent' }}
             FabProps={{
                 sx: {
-                    bgcolor: '#02DCFF',
+                    bgcolor: '#9200CC',
                     '&:hover': {
                         bgcolor: 'black',
                     }

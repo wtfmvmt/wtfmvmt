@@ -10,12 +10,15 @@ import PageService from "@services/pages"
 import type { PageProps } from "@typings/Page"
 import RowList from "@views/components/RowList"
 import StatsRow from "@views/components/StatsRow"
+import TableRow from "@views/components/TableRow"
 import { NextPage } from "next"
 
 
 const HomePage: NextPage<PageProps> = ({ page: { data } }) => {
 
-  const { hero, summarySection, featuredSection, statsSection, logoArray, contactSection, imageMasonry } = data
+  const { hero, summarySection, featuredSection, tableRow, statsSection, logoArray, contactSection, imageMasonry } = data ?? null
+
+
   console.log(`[WTFMVMT: ${JSON.stringify(data)}]`)
   return (
     <>
@@ -25,6 +28,7 @@ const HomePage: NextPage<PageProps> = ({ page: { data } }) => {
       <LogoArray {...logoArray} />
       <StatsRow />
       <RowList />
+      <TableRow {...tableRow} />
       <ColumnLists />
       <ImageMasonry {...imageMasonry} />
       <ContactSection {...contactSection} />

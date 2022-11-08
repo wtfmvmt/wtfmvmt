@@ -1,22 +1,20 @@
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import RootLayout from "@layouts/RootLayout";
-import type { ComponentType } from "@typings/Component";
+import PositionSx from "@styles/Position";
 import type { LayoutProps } from "@typings/Layout";
 import MagicNavigator from "@views/includes/MagicNavigator";
 import React, { lazy, Suspense } from "react";
+import { PacmanLoader } from "react-spinners";
+import type { NextPage } from "next";
 
 const Modal = lazy(() => import("@includes/Modal"));
 const Notifications = lazy(() => import("@includes/Notifications"));
 const DrawerMenu = lazy(() => import("@includes/DrawerMenu"));
-import { PacmanLoader } from "react-spinners"
-import PositionSx from "@styles/Position";
-
 
 const { absolute_center: { tw: tw_center } } = PositionSx()
 
-
-const PageLayout: ComponentType<LayoutProps> =
+const PageLayout: NextPage<LayoutProps> =
     ({ metaData, menu, header, footer, children }:
         LayoutProps) => {
 

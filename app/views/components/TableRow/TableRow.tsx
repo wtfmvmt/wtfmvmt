@@ -1,23 +1,7 @@
-import { CallToActionProps } from "@typings/CallToAction"
-import { Fade } from "react-awesome-reveal"
-export type Feature = {
-    name?: string,
-    url?: string
-}
-export type Table = {
-    title?: string,
-    subTitle: string,
-    price: string,
-    features: Feature[],
-    cta: CallToActionProps
-}
-export type TableRow = {
-    tables?: Table[],
-    heading?: string,
-    title?: string,
-}
-const TableRow = ({ tables, heading, title }: TableRow) => {
+import type { ComponentType } from "@typings/Component"
+import type { TableRowProps } from "@typings/TableRow"
 
+const TableRow: ComponentType<TableRowProps> = ({ tables, heading, title }: TableRowProps) => {
 
     const Tables = () => {
         return (
@@ -34,24 +18,26 @@ const TableRow = ({ tables, heading, title }: TableRow) => {
                                             {table?.subTitle ? table.subTitle : "subTitle"}
                                         </p>
                                     </div>
+                                    
                                     <div className="flex w-full sm:w-auto items-start">
                                         <span className="pr-1 text-lg font-extrabold">$</span>
                                         <span className="text-4xl md:text-5xl font-extrabold">{table?.price ? table.price : "PRice"}</span>
                                         <span className="pl-1 text-lg font-extrabold self-end">/mo</span>
                                     </div>
                                 </div>
+
                                 <div className="mb-auto py-12 px-6 lg:px-12">
                                     {
-                                        table.features.map((feature, index) => {
+                                        table ? table?.features?.map((feature, index) => {
 
                                             return (
                                                 <div key={index} className="flex mb-4 items-center">
-                                                    <a href={feature.url} className="text-lg font-extrabold">
-                                                        {feature.name}
+                                                    <a href={feature?.url} className="text-lg font-extrabold">
+                                                        {feature?.name}
                                                     </a>
                                                 </div>
                                             )
-                                        })
+                                        }) : <>FEATURES_NOT_FOUND</>
                                     }
 
                                 </div>
@@ -73,16 +59,19 @@ const TableRow = ({ tables, heading, title }: TableRow) => {
             </div>
         )
     }
+
     const Header = () => {
 
         return (
             <div className="text-center mb-10">
+
                 <span className="text-lg font-extrabold text-orange-500">
-                    {heading ? heading : "Heading"}
+                    {heading ? heading : "HEADING_NOT_FOUND"}
                 </span>
                 <h1 className="text-3xl md:text-4xl font-extrabold font-heading mt-4 mb-6">
-                    {title ? title : "Title"}
+                    {title ? title : "TITLE_NOT_FOUND"}
                 </h1>
+
                 <div className="flex items-center justify-center">
                     <span className="sm:text-xl font-extrabold">Billed Monthly</span>
                     <div className="inline-flex w-16 h-10 mx-4 px-px items-center bg-black border-3 border-indigo-900 rounded-full shadow">
@@ -95,6 +84,8 @@ const TableRow = ({ tables, heading, title }: TableRow) => {
 
         )
     }
+
+
     return (
         <section className="py-26 relative overflow-hidden">
             <div className="container px-4 mx-auto relative">

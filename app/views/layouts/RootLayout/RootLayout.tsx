@@ -4,9 +4,10 @@ import Box from "@mui/material/Box"
 import React from "react"
 import Analytics from 'analytics'
 import googleAnalytics from '@analytics/google-analytics'
+import ContainerSx from "@styles/Container"
 
 const analytics = Analytics({
-    app: 'awesome-app',
+    app: 'wtfmvmt',
     plugins: [
         googleAnalytics({
             measurementIds: ['UA-1234567']
@@ -16,21 +17,12 @@ const analytics = Analytics({
 
 const RootLayout = ({ children, metaData }) => {
 
-    const ContainerSx = {
-        margin: 'auto',
-        padding: 0,
-        width: '100vw'
-    }
-
     return (
-
         <Box sx={ContainerSx}>
             <CssBaseLine />
             <Meta {...metaData} />
             {children}
         </Box>
-
-
     )
 }
 

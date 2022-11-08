@@ -54,6 +54,24 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
 
                     }))
                 },
+
+                tableRow: {
+                    title: 'Our Memberships',
+                    tables: [
+                        {
+                            title: ''
+                        },
+                        {
+                            title: ''
+                        },
+                        {
+                            title: ''
+                        },
+                        {
+                            title: ''
+                        }
+                    ]
+                },
                 featuredSection: {
                     carousel: shuffle(getPhotos().map((m) => m?.media[0]?.url ?? null)),
                 },
@@ -84,7 +102,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                 }
 
             },
-  
+
             artivism: {},
             blog: {},
             community: {},
@@ -115,7 +133,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     image: {
                         src: getFavicon().files[0]?.url
                     },
-                    url: '/',
+                    url: getFavicon()?.url
                 }
             },
             footer: {
@@ -146,7 +164,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     image: {
                         src: getFavicon().files[0]?.url,
                     },
-                    url: "/"
+                    url: getFavicon()?.url
                 }
             },
             metaData: {

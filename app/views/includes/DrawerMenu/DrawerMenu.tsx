@@ -1,17 +1,18 @@
 import useMenuDrawerState from "@hooks/useMenuDrawerState";
-import type { DrawerMenuProps } from "@models/typings/DrawerMenu";
+import type { DrawerMenuProps } from "@typings/DrawerMenu";
 import CloseIcon from "@mui/icons-material/Close";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { CSSTransition } from 'react-transition-group';
 
-import Icon from "@components/Icon";
 
 const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
 
     const { open, toggleDrawer } = useMenuDrawerState()
 
     const CTA = () => {
+
         return (
+
             cta ? <div>
                 {
                     cta.map((callToAction, index) => {
@@ -19,10 +20,10 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                         return (
                             <a
                                 key={index}
-                                className="block mb-6 py-4 bg-orange-500 hover:rounded text-center leading-6 text-lg font-extrabold hover:bg-opacity-50 duration-250 ease-in rounded text-gray-800 hover:text-black"
+                                className="block font-major bg-opacity-80 shadow-2xl hover:bg-black hover:text-white duration-300 mb-6 py-4 bg-blue-500 cursor-pointer hover:rounded text-center leading-6 text-lg font-extrabold hover:bg-opacity-50 ease-in-out rounded text-slate-800"
                                 href={callToAction?.url}
                             >
-                               d {callToAction?.name ?? "CTA_NOT_FOUND"}
+                                {callToAction?.name ?? "CTA_NOT_FOUND"}
                             </a>
                         )
                     })}
@@ -82,12 +83,12 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
     return (
         <CSSTransition
             in={open}
-            timeout={400}
+            timeout={333}
             unmountOnExit
         >
             <div className="transition-all navbar-menu relative z-50">
                 <ClickAwayListener onClickAway={() => toggleDrawer()}>
-                    <nav className={`${!open ? "scale-out-hor-left" : ""} backdrop-blur-md scale-in-hor-left fixed top-0 bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 overflow-y-auto`}>
+                    <nav className={`${!open ? "scale-out-hor-left" : ""} backdrop-blur-sm scale-in-hor-left fixed top-0 bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 overflow-y-auto`}>
                         <div className="flex items-center mb-8">
                             <Favicon />
                             <CloseDrawerButton />
