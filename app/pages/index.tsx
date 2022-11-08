@@ -34,7 +34,7 @@ const HomePage: NextPage<PageProps> = ({ page: { data } }) => {
 
 export default HomePage
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const { getPage } = PageService
 
@@ -43,6 +43,7 @@ export async function getServerSideProps() {
   return {
     props: {
       page
-    }
+    },
+    revalidate: 15
   }
 }

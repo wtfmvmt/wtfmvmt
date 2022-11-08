@@ -23,7 +23,7 @@ const PageLayout: ComponentType<LayoutProps> =
         const Loader = () => {
             return (
                 <div className={`${tw_center}`}>
-                    <PacmanLoader color="#36d7b7" />
+                    <PacmanLoader color="#9200CC" />
                 </div>
             )
         }
@@ -31,16 +31,14 @@ const PageLayout: ComponentType<LayoutProps> =
         return (
             <Suspense fallback={<Loader />}>
                 <RootLayout metaData={metaData}>
-                    <Suspense fallback={<Loader />}>
-                        <Header {...header} />
-                        {children}
-                        <MagicNavigator />
-                        <Footer {...footer} />
-                        <Modal />
-                        <Notifications />
-                        <DrawerMenu {...menu} />
-                    </Suspense>
+                    <Header {...header} />
+                    {children}
+                    <Footer {...footer} />
                 </RootLayout>
+                <MagicNavigator />
+                <Modal />
+                <Notifications />
+                <DrawerMenu {...menu} />
             </Suspense>
         )
     }
