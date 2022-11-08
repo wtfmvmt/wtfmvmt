@@ -41,7 +41,7 @@ const ImageMasonry: ComponentType<ImageMasonryProps> = ({ heading, title, descri
                                                 <LazyImage
                                                     placeholder={'http://example.com/placeholder.png'}
                                                     uri={image?.src}
-                                                    render={(src, style) => <img style={style} className="object-fit h-full" loading="lazy" src={src ?? "IMAGE_NOT_FOUND"} alt={image?.alt ?? "IMAGE_ALT_NOT_FOUND"} />}
+                                                    render={(src, style) => <img style={style} className="object-fit h-full" src={src ?? "IMAGE_NOT_FOUND"} alt={image?.alt ?? "IMAGE_ALT_NOT_FOUND"} />}
                                                 />
                                             </div>
                                         </div>

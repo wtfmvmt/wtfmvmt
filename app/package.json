@@ -26,6 +26,7 @@
     "@zoomus/websdk": "^2.7.0",
     "analytics": "^0.8.1",
     "custom-cursor-react": "^1.0.5",
+    "depcheck": "^1.4.3",
     "dexie": "^3.2.2",
     "distortion-effect-carousel": "^1.1.0",
     "dotenv-load": "^2.0.1",
