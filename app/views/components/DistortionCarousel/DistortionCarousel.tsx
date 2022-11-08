@@ -14,7 +14,7 @@ const DistortionCarousel = ({
     resizeDebounce: 750,
     backgroundSize: "cover",
     easing: "easeInOut",
-    speed: 1.5,
+    speed: 1.1,
     commonAngle: Math.PI / 3
   });
 

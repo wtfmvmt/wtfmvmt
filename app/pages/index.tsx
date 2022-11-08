@@ -16,7 +16,7 @@ import { NextPage } from "next"
 const HomePage: NextPage<PageProps> = ({ page: { data } }) => {
 
   const { hero, summarySection, featuredSection, statsSection, logoArray, contactSection, imageMasonry } = data
-
+  console.log(`[WTFMVMT: ${JSON.stringify(data)}]`)
   return (
     <>
       <Hero {...hero} />
@@ -37,7 +37,7 @@ export default HomePage
 export async function getServerSideProps() {
 
   const { getPage } = PageService
-  
+
   const page = await getPage("home")
 
   return {

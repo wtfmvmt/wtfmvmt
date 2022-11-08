@@ -182,8 +182,8 @@ const FacadeService = () => {
                     const { name } = serviceObject.types.links
                     return isDatabase(name, data) ?? null
                 }
-
             },
+
             social_media: {
                 name: "📱Social Media",
                 shape: (data: any) => {
@@ -192,14 +192,14 @@ const FacadeService = () => {
 
                     return {
                         url: url(URL),
-                        name: rich_text(Name),
+                        name: title(Name),
                         types: multi_select(Types),
                         status: status(Status),
                     }
                 },
                 predicate: (data: any) => {
                     const { name } = serviceObject.types.social_media
-                    return isDatabase(name, data) ?? null
+                    return isDatabase(name, data)
                 }
 
             },

@@ -15,7 +15,7 @@ const Banner: ComponentType<BannerProps> = ({ messages }: BannerProps) => {
 
             <div className={`p-3 bg-black bg-opacity-80 backdrop-blur-lg ${!open ? "slide-out-bck-center" : ""}`}>
                 <div className="flex items-center justify-center">
-                    <p className="text-sm text-center font-bold font-heading text-purple-200">
+                    <p className="text-sm font-major text-center font-bold font-heading text-purple-200">
                         <ReactTypingEffect
                             speed={50}
                             eraseSpeed={10}

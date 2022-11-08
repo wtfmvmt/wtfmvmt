@@ -4,15 +4,14 @@ import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
 import ReactTypingEffect from 'react-typing-effect';
 import FadeAnimation from "../FadeAnimation";
+import type { ComponentType } from "@typings/Component"
 
-
-const Footer = ({ copyright, impressum, socials, links, favicon }: FooterProps) => {
+const Footer: ComponentType<FooterProps> = ({ copyright, impressum, socials, links, favicon }: FooterProps) => {
 
   const Header = () => {
 
     return (
       <div className="w-full md:w-1/3 mb-12">
-
         <a className="inline-block mx-auto mb-8" href={favicon?.url}>
           <Image
             height={"75px"}
@@ -23,7 +22,7 @@ const Footer = ({ copyright, impressum, socials, links, favicon }: FooterProps) 
           />
         </a>
 
-        <p className="max-w-xs text-lg font-extrabold leading-8">
+        <p className="max-w-sm text-lg text-slate-200 font-extrabold leading-8 font-share_tech">
           {impressum}
         </p>
 
@@ -38,7 +37,7 @@ const Footer = ({ copyright, impressum, socials, links, favicon }: FooterProps) 
   const Links = () => {
 
     return (
-      links ? <div className="w-full">
+      links ? <div className="w-full text-slate-200 font-share_tech">
 
 
         <div className="w-full">
@@ -50,7 +49,7 @@ const Footer = ({ copyright, impressum, socials, links, favicon }: FooterProps) 
                   return (
 
                     <a key={index}
-                      className="cursor-pointer hvr-pop inline-block first-line:inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-purple-600 p-2 hover:bg-black transition-all hover:bg-opacity-90 hover:rounded"
+                      className="cursor-pointer duration-500 ease-in-out hvr-pop hover:font-major inline-block first-line:inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-purple-600 p-2 hover:bg-black transition-all hover:bg-opacity-90 hover:rounded"
                       href={link?.url}>
                       <img loading="lazy" alt={link.name} src={link.icon} className="inline-block h-8" />{link?.name}
                     </a>
@@ -67,7 +66,7 @@ const Footer = ({ copyright, impressum, socials, links, favicon }: FooterProps) 
 
   const Copyright = () => {
     return (
-      <div className="w-full lg:w-auto mb-12 lg:mb-0 min-w-full max-w-full mt-24">
+      <div className="w-full lg:w-auto mb-12 lg:mb-0 min-w-full max-w-full mt-24 text-slate-200 font-share_tech hover:font-major">
         <p className="text-center text-lg font-extrabold overflow-hidden h-full min-w-full">
           <ReactTypingEffect speed={50} eraseSpeed={20} typingDelay={40} text={copyright} />
 
@@ -122,7 +121,7 @@ const Footer = ({ copyright, impressum, socials, links, favicon }: FooterProps) 
 
           <div className="container px-4 pt-16 pb-24 mx-auto">
             <div className="flex flex-wrap justify-between">
-         
+
               <Socials />
               <Copyright />
             </div>

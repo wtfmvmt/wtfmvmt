@@ -5,6 +5,10 @@ const meta = (store: []) => {
     const { meta } = FacadeService().types
 
     const metaObject = {
+        getTeamHeader: () => {
+            const headerKeys = ["Header", "Team"]
+            return metaObject.getMeta().filter((meta) => meta?.types?.includes(headerKeys)) ?? null
+        },
         getPillars: () => {
             const pillarsKey = "💜Pillar"
             return metaObject.getMeta().filter((meta) => meta?.types?.includes(pillarsKey)) ?? null

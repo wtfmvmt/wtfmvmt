@@ -12,7 +12,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
     const { getMedia, getPhotos, getEventsAlbum } = media(store)
     const { getLinks, getSitePages } = links(store)
     const { getSocialMedia } = socialMedia(store)
-    const { getBanner, getCopyright, getSearch, getPillars, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
+    const { getBanner, getTeamHeader, getCopyright, getSearch, getPillars, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
     const { getPartners } = partners(store)
     const { getEvents } = events(store)
     const { getForms } = forms(store)
@@ -27,9 +27,9 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     title: getTitle().values[0],
                     mediaCarousel: shuffle(getPhotos().map((media) => (media?.media[0]?.url ?? null))),
                     description: getImpressum().values[0],
-                    socialLinks: getSocialMedia().map((social) => ({ url: social?.url })),
+                    socialLinks: getSocialMedia().map((social) => ({ url: social?.url, name: social?.name })),
                     actionLinks: {
-                        title: "Get in touch",
+                        title: "We The Future",
                         links: getForms().map((form) => ({
                             name: form?.name,
                             url: form?.url
@@ -84,12 +84,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                 }
 
             },
-            memberships: {
-                metaData: {
-                    pageTitle: 'Memberships'
-                },
-                data: {}
-            },
+  
             artivism: {},
             blog: {},
             community: {},
@@ -143,9 +138,10 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                 })),
                 cta: [
                     {
-                        name: "Memberships",
+                        name: "Support Us"
                     }
                 ],
+
                 favicon: {
                     image: {
                         src: getFavicon().files[0]?.url,

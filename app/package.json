@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.10.2",
     "@mui/material": "^5.10.2",
+    "@next/bundle-analyzer": "^13.0.2",
     "@next/env": "^12.3.2",
     "@notionhq/client": "^2.2.0",
     "@types/react-transition-group": "^4.4.5",
@@ -82,17 +83,5 @@
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8",
     "typescript": "^4.7.4"
-  },
-  "eslintConfig": {
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
   }
 }

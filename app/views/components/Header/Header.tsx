@@ -19,7 +19,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
 
     const Notifier = () => {
         return (
-            <div onClick={() => toggleBanner()} className="hidden lg:flex cursor-pointer">
+            <div onClick={() => toggleBanner()} className="hidden lg:flex cursor-pointer text-white">
                 <Badge badgeContent={"1"} color="secondary">
                     <AnnouncementIcon />
                 </Badge>
@@ -41,7 +41,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
     const SearchBar = () => {
 
         return (
-            <div className="hidden xl:flex mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg">
+            <div className="hidden xl:flex text-slate-200 mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg font-major">
                 <Autocomplete
                     id="combo-box-demo"
                     options={[]}
@@ -66,13 +66,13 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
                             sx={{
 
                                 color: '#FFFFFF',
-                                fontFamily: 'Major Mono Display',
+                          
                                 borderWidth: '0px',
                                 outline: 0,
                                 padding: '0.5rem 0.5rem 0 0',
                                 '& .MuiInput-underline:before': { borderBottomColor: 'white' },
                                 '& .MuiInput-underline:after': { borderBottomColor: 'white' },
-                            }} className="w-full bg-transparent border-1 border-white focus:ring-transparent focus:outline-none py-2" label={<span className="text-white">SEEK & FIND</span>} />
+                            }} className="w-full bg-transparent border-1 font-share_tech border-white focus:ring-transparent focus:outline-none py-2" label={<span className="text-slate-200 font-major">SEEK & FIND</span>} />
                     }
                 />
 
@@ -124,10 +124,10 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
 
     return (
         <Headroom>
-            <section className="relative pb-20 overflow-hidden w-full">
+            <section className="relative pb-8 overflow-hidden w-full">
 
                 <Banner {...banner} />
-                <nav className="flex justify-between backdrop-blur-sm  border-b border-4 border-gray-400">
+                <nav className="flex justify-between backdrop-blur-sm">
 
                     <div className="px-12 py-6 flex w-full items-center">
                         <Favicon />

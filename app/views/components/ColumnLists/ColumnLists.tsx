@@ -1,17 +1,16 @@
 
-import type { ComponentType } from "@models/typings/Component"
+import type { ComponentType } from "@typings/Component"
+import type { ColumnListProps } from "@typings/ColumnLists"
 
-import type { ColumnListProps } from "@models/typings/ColumnLists"
-
-const ColumnLists: ComponentType<ColumnListProps> = ({ lists }: ColumnListProps) => {
+const ColumnLists: ComponentType<ColumnListProps> = ({ lists, title }: ColumnListProps) => {
 
     return (
-        <section className="py-20 overflow-x-hidden">
-            <div className="container mx-auto px-4">
-                <div className="flex flex-wrap -mx-8">
+        <section className="py-2 overflow-x-hidden text-slate-200 font-share_tech">
+            <div className="container mx-auto">
+                <div className="flex flex-wrap">
 
 
-                    <div className="w-full  mx-20 px-8 mb-12 lg:mb-0">
+                    <div className="w-full mx-20 mb-12 lg:mb-0">
                         <h2 className="pb-10 text-5xl font-bold font-heading">
                             General question
                         </h2>

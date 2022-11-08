@@ -13,6 +13,7 @@ export type ColumnProps = {
 
 
 export type ColumnListProps = {
+    title?: string,
     lists?: ColumnProps[]
 
 }

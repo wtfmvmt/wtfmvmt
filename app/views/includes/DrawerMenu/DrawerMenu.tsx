@@ -12,7 +12,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
 
     const CTA = () => {
         return (
-            cta ? <div className="">
+            cta ? <div>
                 {
                     cta.map((callToAction, index) => {
 
@@ -22,32 +22,34 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                                 className="block mb-6 py-4 bg-orange-500 hover:rounded text-center leading-6 text-lg font-extrabold hover:bg-opacity-50 duration-250 ease-in rounded text-gray-800 hover:text-black"
                                 href={callToAction?.url}
                             >
-                                {callToAction?.name}
+                               d {callToAction?.name ?? "CTA_NOT_FOUND"}
                             </a>
                         )
                     })}
 
-            </div> : <></>
+            </div> : <>CTA_NOT_FOUND</>
         )
     }
 
     const Links = () => {
         return (
-            <div className="my-auto">
+            <div className="my-auto font-share_tech text-gray-200">
                 <ul className="py-10">
-                    {links && links.map((link, index) => (
-                        <li key={index}
-                            className="mb-1">
-                            <a
-                                className="hover:text-purple-500 block p-4 text-lg font-extrabold hover:bg-black rounded"
-                                href={link.url}
-                            >
-                                <span className="hvr-wobble-horizontal inline-block overflow-hidden">
-                                    <Icon icon={link?.icon} />{link.name}
-                                </span>
-                            </a>
-                        </li>
-                    ))}
+                    {
+                        links ? links.map((link, index) => (
+                            <li key={index}
+                                className="mb-1 group">
+                                <a
+                                    className="group-hover:text-purple-500 duration-250 ease-in-out group-hover:font-major block p-4 text-lg font-extrabold group-hover:bg-opacity-50 group-hover:bg-black rounded"
+                                    href={link?.url}
+                                >
+                                    <span className="hvr-wobble-horizontal inline-block overflow-hidden">
+                                        {link?.name}
+                                    </span>
+                                </a>
+                            </li>
+                        )) : <>LINKS_NOT_FOUND</>
+                    }
 
                 </ul>
             </div>
@@ -71,8 +73,8 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
 
     const CloseDrawerButton = () => {
         return (
-            <button onClick={() => toggleDrawer()} className="navbar-close hover:scale-90 hover:bg-purple-700 hover:rounded-full transition-all">
-                <CloseIcon />
+            <button onClick={() => toggleDrawer()} className="navbar-close  hover:scale-90 hover:bg-purple-700 hover:rounded-full transition-all">
+                <CloseIcon sx={{ color: 'white' }} />
             </button>
         )
     }

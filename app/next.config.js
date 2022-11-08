@@ -4,8 +4,6 @@ const withPWA = require("next-pwa");
 
 const nextConfig = {
   reactStrictMode: false,
-  siteUrl: 'https://wtfmvmt.com',
-  generateRobotsTxt: true,
   swcMinify: true,
   images: {
     domains: ['scontent-akl1-1.cdninstagram.com', 's3.us-west-2.amazonaws.com'],

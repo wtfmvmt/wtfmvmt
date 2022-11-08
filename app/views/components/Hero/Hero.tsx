@@ -16,22 +16,11 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
         return (
             socialLinks ? <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
-
                 {
-                    socialLinks.map((link, index) => (
-
-                        <a
-                            key={index}
-                            className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 hover:text-purple-600 p-2 transition-all hover:bg-opacity-90 hover:rounded"
-                            href={link.url}
-                        >
-                            <SocialIcon bgColor="white" url={link?.url} />
-
-                        </a>
-                    ))
+                    socialLinks.map((link, index) => (<SocialIcon key={index} bgColor="white" url={link?.url} className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 hover:text-purple-600 p-2 transition-all hover:bg-opacity-90 hover:rounded" />))
                 }
 
-            </div> : <></>
+            </div> : <>SOCIALS_NOT_FOUND</>
         )
     }
 
@@ -43,7 +32,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
             <div className="flex flex-wrap h-full">
 
                 <div className="w-full z-50 h-full puff-in-center ">
-                    <DistortionCarousel  displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousel} />
+                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousel} />
                 </div>
 
             </div>
@@ -53,22 +42,22 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
     const ActionLinks = () => (
 
-        actionLinks ? <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
+        actionLinks ? <div className="left-0 rounded-lg mt-20 lg:w-1/3 px-4 mb-8 lg:mb-0 bg-black bg-opacity-75 absolute w-full z-50">
             <div className="px-4 md:px-8 py-12 ">
-                <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-white uppercase">
-                    {actionLinks.title}
+                <h4 className="pl-8 mb-2 text-md font-major font-bold font-heading text-slate-200 uppercase">
+                    {actionLinks?.title}
                 </h4>
                 <ul className="mb-5">
                     <FadeAnimation triggerOnce cascade>
                         {
-                            actionLinks.links.map((link, index) => {
+                            actionLinks?.links?.map((link, index) => {
                                 return (
-                                    <li key={index} className="cursor-pointer rounded transition-all hover:bg-black bg-opacity-80 py-5 px-8 border-b">
+                                    <li key={index} className="cursor-pointer rounded transition-all hover:bg-black bg-opacity-80 py-5 px-8 border-b group">
                                         <a
-                                            className="hvr-wobble-horizontal flex items-center text-lg jello-diagonol-1 font-bold font-heading hover:text-purple-400"
-                                            href={link.url}
+                                            className="hvr-wobble-horizontal group-hover:font-major ease-in-out flex items-center text-lg font-share_tech text-slate-200 font-bold font-heading hover:text-purple-400"
+                                            href={link?.url}
                                         >
-                                            <span>{link.name}</span>
+                                            <span>{link?.name}</span>
                                         </a>
                                     </li>
                                 )
@@ -122,11 +111,11 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
     const Heading = () => (
 
-        <div className="max-w-3xl mx-auto py-24 text-center">
+        <div className="max-w-3xl mx-auto py-24 text-center font-major text-slate-200">
             <h2 className="mb-8 text-5xl xl:text-6xl font-bold font-heading">
                 {title ? title : "TITLE_NOT_FOUND"}
             </h2>
-            <h4 className="mb-8 text-sm font-bold">
+            <h4 className="mb-8 text-md font-bold">
                 {description ? description : "DESCRIPTION_NOT_FOUND"}
             </h4>
             {
@@ -144,13 +133,13 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
         <section>
 
             <div className="relative py-4 -translate-y-11 overflow-hidden">
-
-                <div className="relative container mx-auto px-4">
-                    <div className="flex flex-wrap -mx-4">
+                <div className="w-full z-50 h-full puff-in-center ">
+                    <div className="absolute left-0 w-full z-50">
                         <ActionLinks />
-                        <FeaturedGallery />
                     </div>
+                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousel} />
                 </div>
+
             </div>
 
             <div className="relative container mx-auto px-4">

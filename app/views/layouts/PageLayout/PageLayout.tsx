@@ -31,13 +31,15 @@ const PageLayout: ComponentType<LayoutProps> =
         return (
             <Suspense fallback={<Loader />}>
                 <RootLayout metaData={metaData}>
-                    <Header {...header} />
-                    {children}
-                    <MagicNavigator />
-                    <Footer {...footer} />
-                    <Modal />
-                    <Notifications />
-                    <DrawerMenu {...menu} />
+                    <Suspense fallback={<Loader />}>
+                        <Header {...header} />
+                        {children}
+                        <MagicNavigator />
+                        <Footer {...footer} />
+                        <Modal />
+                        <Notifications />
+                        <DrawerMenu {...menu} />
+                    </Suspense>
                 </RootLayout>
             </Suspense>
         )

@@ -17,21 +17,20 @@ function Application({ Component, pageProps, layout }) {
 
   const Loader = () => {
     return (
-      <div style={{ position: 'absolute', margin: 'auto', top: '50%', left: "50%" }}>
+      <div style={{ position: 'absolute', margin: 'auto', bottom: '50%', left: "50%" }}>
         <PacmanLoader size={120} color="#9200CC" />
       </div>
     )
   }
-  
+
   return (
     <RecoilRoot>
-      <PageTransition timeout={365} loadingComponent={<Loader />} classNames={"page-transition"}>
+      <PageTransition timeout={300} loadingComponent={<Loader />} classNames={"page-transition"}>
         <PageLayout {...layout}>
           <Component {...pageProps} />
         </PageLayout>
       </PageTransition>
     </RecoilRoot>
-
   )
 }
 
