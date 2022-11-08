@@ -151,6 +151,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
             },
             metaData: {
                 title: "WTFMVMT",
+                pageTitle: "Home"
             }
         }),
         data: pageData[key]?.data,

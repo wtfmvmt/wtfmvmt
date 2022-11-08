@@ -10,12 +10,13 @@ const Meta: ComponentType<MetaProps> = ({ title, pageTitle }: MetaProps) => {
             <title>{title} | {pageTitle}</title>
             <NextSeo
                 title={title}
-                description="This example uses more of the available config options."
+                themeColor="#000000"
+                description=""
                 canonical="https://www.wtfmvmt.com/"
                 openGraph={{
-                    url: 'https://www.url.ie/a',
-                    title: 'Open Graph Title',
-                    description: 'Open Graph Description',
+                    url: 'https://www.wtfmvmt.com',
+                    title: 'WTFMVMT',
+                    description: '',
                     images: [
                         {
                             url: 'https://www.example.ie/og-image-01.jpg',

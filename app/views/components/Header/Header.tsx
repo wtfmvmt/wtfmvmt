@@ -11,7 +11,7 @@ import type { HeaderProps } from "@typings/Header";
 import Headroom from "react-headroom";
 import type { ComponentType } from "@typings/Component";
 
-
+import NotificationsIcon from '@mui/icons-material/Notifications';
 const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: HeaderProps) => {
 
     const { toggleDrawer } = useMenuDrawerState()
@@ -21,7 +21,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
         return (
             <div onClick={() => toggleBanner()} className="hidden lg:flex cursor-pointer text-white">
                 <Badge badgeContent={"1"} color="secondary">
-                    <AnnouncementIcon />
+                    <NotificationsIcon />
                 </Badge>
             </div>
         )
@@ -116,7 +116,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
     const NavBurger = () => {
         return (
 
-            <div className="cursor-pointer hover:scale-90 duration-700 hidden xl:flex">
+            <div className="cursor-pointer hover:scale-50 duration-500 hidden xl:flex">
                 <BurgerIcon action={() => toggleDrawer()} />
             </div>)
     }
@@ -124,7 +124,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
 
     return (
         <Headroom>
-            <section className="relative pb-8 overflow-hidden w-full">
+            <section className="relative pb-6 overflow-hidden w-full">
 
                 <Banner {...banner} />
                 <nav className="flex justify-between backdrop-blur-sm">

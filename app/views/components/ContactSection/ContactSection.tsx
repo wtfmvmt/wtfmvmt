@@ -21,7 +21,7 @@ const ContactSection: ComponentType<ContactSectionProps> = ({ email, socials, la
                 </div>
                 <div>
                     <h3 className="text-2xl font-major text-slate-200 font-extrabold mb-3">Email</h3>
-                    <p className="hover:scale-90 group cursor-pointer font-share_tech whitespace-nowrap hover:bg-opacity-100 transition-all text-xl sm:text-2xl text-purple-500 bg-black bg-opacity-70 p-4 rounded">
+                    <p className="hover:scale-90 uppercase group cursor-pointer font-share_tech whitespace-nowrap hover:bg-opacity-100 transition-all text-xl sm:text-2xl text-purple-500 bg-black bg-opacity-70 p-4 rounded">
                         {email ? email : "EMAIL_PROPERTY_NOT_FOUND"}
 
                         <CopyToClipboard onCopy={() => sendNotification({

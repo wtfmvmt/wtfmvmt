@@ -13,7 +13,7 @@ const Notifications: ComponentType<any> = () => {
 
             <IconButton
                 size="small"
-                aria-label="close"
+                aria-label="close-wtfmvmt-notification"
                 color="inherit"
                 onClick={closeNotification}
             >
@@ -34,10 +34,13 @@ const Notifications: ComponentType<any> = () => {
                     vertical: 'bottom',
                     horizontal: 'center',
                 }}
+
                 sx={{
                     '& .MuiSnackbarContent-root': {
                         backgroundColor: 'black',
+                        opacity: '0.8',
                         color: 'white',
+                        fontFamily: 'var(--font-primary)'
                     },
                 }}
                 autoHideDuration={duration}

@@ -5,11 +5,7 @@ import type { HeroProps } from "@typings/Hero";
 import { SocialIcon } from "react-social-icons";
 
 
-
-
-
 const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, actionLinks, socialLinks, mediaCarousel }: HeroProps) => {
-
 
 
     const SocialLinks = () => {
@@ -37,12 +33,12 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
             </div>
 
-        </div> : <></>
+        </div> : <>FEATUARED_GALLERY_NOT_FOUND</>
     )
 
     const ActionLinks = () => (
 
-        actionLinks ? <div className="left-0 rounded-lg mt-20 lg:w-1/3 px-4 mb-8 lg:mb-0 bg-black bg-opacity-75 absolute w-full z-50">
+        actionLinks ? <div className="left-0 mt-20 lg:w-1/3 px-4 mb-8 lg:mb-0 bg-black bg-opacity-60 absolute w-full z-50">
             <div className="px-4 md:px-8 py-12 ">
                 <h4 className="pl-8 mb-2 text-md font-major font-bold font-heading text-slate-200 uppercase">
                     {actionLinks?.title}
@@ -54,7 +50,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
                                 return (
                                     <li key={index} className="cursor-pointer rounded transition-all hover:bg-black bg-opacity-80 py-5 px-8 border-b group">
                                         <a
-                                            className="hvr-wobble-horizontal group-hover:font-major ease-in-out flex items-center text-lg font-share_tech text-slate-200 font-bold font-heading hover:text-purple-400"
+                                            className="hvr-wobble-horizontal group-hover:font-major ease-in-out flex items-center text-lg font-share_tech text-slate-200 font-bold font-heading hover:text-blue-300"
                                             href={link?.url}
                                         >
                                             <span>{link?.name}</span>
