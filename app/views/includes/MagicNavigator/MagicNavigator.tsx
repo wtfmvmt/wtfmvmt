@@ -31,7 +31,7 @@ const MagicNavigator = () => {
             }}
 
             ariaLabel="SpeedDial basic example"
-            icon={<AutoFixHighIcon className='text-black group-hover:text-white' />}
+            icon={<AutoFixHighIcon className='text-white group-hover:text-blue-200' />}
         >
             {actions.map((action) => (
                 <SpeedDialAction

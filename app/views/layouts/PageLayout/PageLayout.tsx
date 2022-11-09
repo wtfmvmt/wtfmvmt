@@ -37,6 +37,7 @@ const PageLayout: NextPage<LayoutProps> =
                 <Modal />
                 <Notifications />
                 <DrawerMenu {...menu} />
+
             </Suspense>
         )
     }

@@ -11,26 +11,35 @@ import { PageTransition } from 'next-page-transitions'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { PacmanLoader } from "react-spinners"
 import { RecoilRoot } from 'recoil'
+import { Suspense } from "react"
+import PositionSx from "@styles/Position";
 
+
+
+const { absolute_center: { tw: tw_center } } = PositionSx()
 
 function Application({ Component, pageProps, layout }) {
 
   const Loader = () => {
     return (
-      <div style={{ position: 'absolute', margin: 'auto', bottom: '50%', left: "50%" }}>
-        <PacmanLoader size={120} color="#9200CC" />
+      <div className={`${tw_center}`}>
+        <PacmanLoader color="#9200CC" />
       </div>
     )
   }
 
+
   return (
-    <RecoilRoot>
-      <PageTransition timeout={300} loadingComponent={<Loader />} classNames={"page-transition"}>
-        <PageLayout {...layout}>
-          <Component {...pageProps} />
-        </PageLayout>
-      </PageTransition>
-    </RecoilRoot>
+    <Suspense fallback={<Loader />}>
+      <RecoilRoot>
+        <PageTransition timeout={300} loadingComponent={<Loader />} classNames={"page-transition"}>
+          <PageLayout {...layout}>
+            <Component {...pageProps} />
+          </PageLayout>
+        </PageTransition>
+      </RecoilRoot>
+    </Suspense>
+
   )
 }
 
