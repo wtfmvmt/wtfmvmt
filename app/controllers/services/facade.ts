@@ -46,6 +46,7 @@ const FacadeService = () => {
                 }
             },
             events: {
+                name: "🗓️Events",
                 shape: (data) => {
                     const { Facebook, Name, Covers, Types, Status } = getProperties(data)
 
@@ -58,7 +59,8 @@ const FacadeService = () => {
                     }
                 },
                 predicate: (data) => {
-
+                    const { name } = serviceObject.types.events
+                    return isDatabase(name, data)
                 }
             },
 
@@ -84,6 +86,7 @@ const FacadeService = () => {
                 }
             },
             memberships: {
+                name: "👥Memberships",
                 shape: (data) => {
                     const { Facebook, Name, Covers, Types, Status } = getProperties(data)
 
@@ -95,7 +98,13 @@ const FacadeService = () => {
                         types: multi_select(Types)
                     }
                 },
-                predicate: (data) => { }
+                predicate: (data) => {
+
+                    
+                    const { name } = serviceObject.types.memberships
+
+                    return isDatabase(name, data)
+                 }
             },
             team: {
                 name: "🅰️Team",

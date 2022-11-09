@@ -5,12 +5,12 @@ import type { ColumnListProps } from "@typings/ColumnLists"
 const ColumnLists: ComponentType<ColumnListProps> = ({ lists, title }: ColumnListProps) => {
 
     return (
-        <section className="py-2 overflow-x-hidden text-slate-200 font-share_tech">
-            <div className="container mx-auto">
+        <section className="py-6 w-full overflow-x-hidden text-slate-200 font-share_tech">
+            <div className="container">
                 <div className="flex flex-wrap">
 
 
-                    <div className="w-full mx-20 mb-12 lg:mb-0">
+                    <div className="w-full mx-4 mb-12 lg:mb-0">
                         <h2 className="pb-10 text-5xl font-bold font-heading">
                             General question
                         </h2>

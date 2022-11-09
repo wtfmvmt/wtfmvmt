@@ -6,7 +6,11 @@ const meta = (store: []) => {
 
     const metaObject = {
         getTeamHeader: () => {
-            const headerKeys = ["Header", "Team"]
+            const headerKeys = ["🪦Heading", "Team"]
+            return metaObject.getMeta().filter((meta) => meta?.types?.includes(headerKeys)) ?? null
+        },
+        getEventsHeader: () => {
+            const headerKeys = ["🪦Heading", "📅Event"]
             return metaObject.getMeta().filter((meta) => meta?.types?.includes(headerKeys)) ?? null
         },
         getPillars: () => {

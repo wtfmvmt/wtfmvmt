@@ -1,7 +1,7 @@
 const StatsRow = () => {
 
     return (
-        <section className="py-26">
+        <section className="py-26 text-slate-200 font-major">
             <div className="container px-4 mx-auto">
                 <div className="flex flex-wrap -mx-4 -mb-8">
                     <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">

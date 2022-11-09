@@ -1,5 +1,5 @@
 import layout from "@configs/layout"
-import { events, forms, links, media, meta, partners, socialMedia, team } from "@db/index"
+import { events, forms, links, media, meta, memberships, partners, socialMedia, team } from "@db/index"
 import type { HeroProps, LogoArrayProps, PageObjectProps, PagesDBProps, SummarySectionProps } from "@typings/index"
 import utils from "@utils/index"
 
@@ -9,10 +9,11 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
     const { collections: { shuffle } } = utils()
 
     const { getTeam } = team(store)
-    const { getMedia, getPhotos, getEventsAlbum } = media(store)
+    const { getPhotos } = media(store)
+    const { getMemberships } = memberships(store)
     const { getLinks, getSitePages } = links(store)
     const { getSocialMedia } = socialMedia(store)
-    const { getBanner, getTeamHeader, getCopyright, getSearch, getPillars, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
+    const { getBanner, getTeamHeader, getEventsHeader, getCopyright, getSearch, getPillars, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
     const { getPartners } = partners(store)
     const { getEvents } = events(store)
     const { getForms } = forms(store)
@@ -57,23 +58,12 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
 
                 tableRow: {
                     title: 'Our Memberships',
-                    tables: [
-                        {
-                            title: ''
-                        },
-                        {
-                            title: ''
-                        },
-                        {
-                            title: ''
-                        },
-                        {
-                            title: ''
-                        }
-                    ]
+                    tables: getMemberships().map((membership) => ({ title: membership?.name }))
                 },
                 featuredSection: {
+                    title: getEventsHeader()[0]?.name ?? null,
                     carousel: shuffle(getPhotos().map((m) => m?.media[0]?.url ?? null)),
+                    features: getEvents().map((event) => ({ title: event?.name }))
                 },
                 statsRow: {},
                 summarySection: <SummarySectionProps>{

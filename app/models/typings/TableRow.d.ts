@@ -8,8 +8,8 @@ export type FeatureProps = {
 
 export type TableProps = {
     title?: string,
-    subTitle?: string,
-    price?: string,
+    heading?: string,
+    value?: string | number,
     features?: FeatureProps[],
     cta?: CallToActionProps
 }
