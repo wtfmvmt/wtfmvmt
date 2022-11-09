@@ -1,5 +1,4 @@
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import ChatIcon from '@mui/icons-material/Chat';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -7,12 +6,26 @@ import ShareIcon from '@mui/icons-material/Share';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import useBannerState from '@controllers/hooks/useBannerState';
+
+
 const MagicNavigator = () => {
 
+    const { open, toggleBanner } = useBannerState()
+
     const actions = [
-        { icon: <KeyboardDoubleArrowUpIcon sx={{ color: 'white' }} />, name: 'Float' },
-        { icon: <ChatIcon sx={{ color: 'white' }} />, name: 'Chat' },
-        { icon: <NotificationsIcon sx={{ color: 'white' }} />, name: 'Notifications' },
+        {
+            action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }),
+            icon: <KeyboardDoubleArrowUpIcon sx={{ color: 'white' }} />,
+            name: 'Top'
+        },
+        {
+            icon: <NotificationsIcon sx={{ color: 'white' }} />,
+            name: 'Notifications',
+            action: () => toggleBanner()
+        },
         { icon: <ShareIcon sx={{ color: 'white' }} />, name: 'Share' },
         { icon: <ConnectWithoutContactIcon sx={{ color: 'white' }} />, name: 'Community', },
     ];
@@ -35,7 +48,7 @@ const MagicNavigator = () => {
         >
             {actions.map((action) => (
                 <SpeedDialAction
-                    className="bg-transparent"
+                    className='bg-black'
                     FabProps={{
                         sx: {
                             bgcolor: '#000000',
@@ -45,9 +58,11 @@ const MagicNavigator = () => {
                         }
                     }}
 
+                    tooltipOpen
+                    onClick={() => action?.action()}
                     key={action.name}
                     icon={action.icon}
-                    tooltipTitle={<div className="bg-black font-major">{action?.name}</div>}
+                    tooltipTitle={<div className='font-major text-white m-0 bg-black'>{action?.name}</div>}
                 />
             ))}
         </SpeedDial>

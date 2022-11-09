@@ -4,7 +4,7 @@ import RootLayout from "@layouts/RootLayout";
 import PositionSx from "@styles/Position";
 import type { LayoutProps } from "@typings/Layout";
 import MagicNavigator from "@views/includes/MagicNavigator";
-import React, { lazy, Suspense } from "react";
+import React, { lazy, useEffect, Suspense } from "react";
 import { PacmanLoader } from "react-spinners";
 import type { NextPage } from "next";
 
@@ -17,6 +17,10 @@ const { absolute_center: { tw: tw_center } } = PositionSx()
 const PageLayout: NextPage<LayoutProps> =
     ({ metaData, menu, header, footer, children }:
         LayoutProps) => {
+
+        useEffect(() => {
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }, [])
 
         const Loader = () => {
             return (

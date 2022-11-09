@@ -41,7 +41,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                             <li key={index}
                                 className="mb-1 group">
                                 <a
-                                    className="group-hover:text-purple-500 duration-250 ease-in-out group-hover:font-major block p-4 text-lg font-extrabold group-hover:bg-opacity-50 group-hover:bg-black rounded"
+                                    className="group-hover:text-blue-500 duration-250 ease-in-out group-hover:font-major block p-4 text-lg font-extrabold group-hover:bg-opacity-50 group-hover:bg-black rounded"
                                     href={link?.url}
                                 >
                                     <span className="hvr-wobble-horizontal inline-block overflow-hidden">
@@ -88,7 +88,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
         >
             <div className="transition-all navbar-menu relative z-50">
                 <ClickAwayListener onClickAway={() => toggleDrawer()}>
-                    <nav className={`${!open ? "scale-out-hor-left" : ""} backdrop-blur-sm scale-in-hor-left fixed top-0 bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 overflow-y-auto`}>
+                    <nav className={`${!open ? "scale-out-hor-left" : ""} backdrop-blur-lg scale-in-hor-left fixed top-0 bg-opacity-30 left-0 bottom-0 flex flex-col w-full md:w-5/6 max-w-sm py-8 px-8 overflow-y-auto`}>
                         <div className="flex items-center mb-8">
                             <Favicon />
                             <CloseDrawerButton />
