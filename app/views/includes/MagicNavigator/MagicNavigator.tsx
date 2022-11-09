@@ -15,19 +15,32 @@ const MagicNavigator = () => {
 
     const { open, toggleBanner } = useBannerState()
 
+
+    const ActionButtonSx = {
+        cursor: 'pointer',
+        color: 'white'
+    }
+
+
     const actions = [
         {
             action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }),
-            icon: <KeyboardDoubleArrowUpIcon sx={{ color: 'white' }} />,
+            icon: <KeyboardDoubleArrowUpIcon sx={ActionButtonSx} />,
             name: 'Top'
         },
         {
-            icon: <NotificationsIcon sx={{ color: 'white' }} />,
+            icon: <NotificationsIcon sx={ActionButtonSx} />,
             name: 'Notifications',
             action: () => toggleBanner()
         },
-        { icon: <ShareIcon sx={{ color: 'white' }} />, name: 'Share' },
-        { icon: <ConnectWithoutContactIcon sx={{ color: 'white' }} />, name: 'Community', },
+        {
+            icon: <ShareIcon sx={ActionButtonSx} />,
+            name: 'Share'
+        },
+        {
+            icon: <ConnectWithoutContactIcon sx={ActionButtonSx} />,
+            name: 'Community',
+        },
     ];
 
     return (
@@ -48,7 +61,7 @@ const MagicNavigator = () => {
         >
             {actions.map((action) => (
                 <SpeedDialAction
-                    className='bg-black'
+                    className='bg-black cursor-pointer'
                     FabProps={{
                         sx: {
                             bgcolor: '#000000',
