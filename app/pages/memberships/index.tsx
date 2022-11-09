@@ -15,16 +15,3 @@ const MembershipsIndexPage: IPage<ServerSidePageProps> = () => {
 
 export default MembershipsIndexPage
 
-export async function getStaticProps() {
-
-  const { getPage } = PageService
-
-  const page = getPage("home")
-
-  return {
-    props: {
-      page
-    },
-    revalidate: 10
-  }
-}
