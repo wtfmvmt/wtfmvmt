@@ -53,7 +53,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
                                             className="hvr-wobble-horizontal group-hover:font-major ease-in-out flex items-center text-lg font-share_tech text-slate-200 font-bold font-heading hover:text-blue-300"
                                             href={link?.url}
                                         >
-                                            <span>{link?.name}</span>
+                                            <span><img loading="lazy" src={link?.icon} className="h-8 inline" />{link?.name}</span>
                                         </a>
                                     </li>
                                 )

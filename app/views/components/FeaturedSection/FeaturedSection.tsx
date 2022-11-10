@@ -1,8 +1,10 @@
 import DistortionCarousel from "@components/DistortionCarousel";
 import type { ComponentType } from "@typings/Component";
 import type { FeaturedSectionProps } from "@typings/FeaturedSection";
-
+import ButtonSx from "@views/styles/Button";
 const FeaturedSection: ComponentType<FeaturedSectionProps> = ({ heading, title, description, features, carousel }: FeaturedSectionProps) => {
+
+  const { tw: buttonSxTw } = ButtonSx.root
 
   const Features = () => {
 
@@ -15,8 +17,8 @@ const FeaturedSection: ComponentType<FeaturedSectionProps> = ({ heading, title, 
 
             return (
 
-              <div key={index} className="cursor-pointer hover:-translate-y-4 ease-in-out duration-500 transition-all shadow-2xl w-full lg:w-1/3 px-4">
-                <div className="h-3/4 max-w-md mx-auto py-10 px-6 bg-black bg-opacity-80 backdrop-blur-sm shadow-lg hover:shadow-2xl rounded-lg text-center  text-slate-200 mt-2">
+              <div key={index} className="cursor-pointer transition-all w-full lg:w-1/3 px-4">
+                <div className={buttonSxTw("h-3/4 max-w-md mx-auto py-10 px-6 rounded-lg text-slate-200 text-center mt-2")}>
                   <img
                     className="block mx-auto mb-4"
                     src={feature?.cover ?? ""}
@@ -43,7 +45,7 @@ const FeaturedSection: ComponentType<FeaturedSectionProps> = ({ heading, title, 
 
       <div className="container px-4 mx-auto relative">
         <div className="max-w-5xl mx-auto mb-16 text-center text-white">
-          <span className="text-lg font-major font-extrabold text-purple-900">{heading ? heading : "HEADING_NOT_FOUND"}</span>
+          <span className="text-lg font-major font-extrabold text-blue-400">{heading ? heading : "HEADING_NOT_FOUND"}</span>
           <h1 className="text-3xl font-major md:text-4xl font-extrabold font-heading mt-4 mb-6">
             {title ? title : "TITLE_NOT_FOUND"}
           </h1>

@@ -1,15 +1,16 @@
 import FacadeService from "@services/facade";
+import types from "@db/types"
 
 const meta = (store: []) => {
 
     const { meta } = FacadeService().types
 
     const metaObject = {
-        getTeamHeader: () => {
-            const headerKeys = ["🪦Heading", "Team"]
-            return metaObject.getMeta().filter((meta) => meta?.types?.includes(headerKeys)) ?? null
-        },
         getEventsHeader: () => {
+            const headerKeys = ["🪦Heading", "📅Event"]
+            return metaObject.getMeta().filter((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
+        },
+        getTeamHeader: () => {
             const headerKeys = ["🪦Heading", "📅Event"]
             return metaObject.getMeta().filter((meta) => meta?.types?.includes(headerKeys)) ?? null
         },

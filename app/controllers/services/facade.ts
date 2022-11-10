@@ -10,11 +10,12 @@ const FacadeService = () => {
             partners: {
                 name: "💖Partners",
                 shape: (data) => {
-                    const { Facebook, Media, Name, Covers, URL, Types, Status } = getProperties(data)
+                    const { icon: Icon, properties: { Facebook, Media, Name, Covers, URL, Types, Status } } = data ?? null
 
                     return {
                         name: title(Name),
                         media: files(Media),
+                        icon: icon(Icon),
                         covers: files(Covers),
                         status: status(Status),
                         url: url(URL),
@@ -30,12 +31,13 @@ const FacadeService = () => {
             forms: {
                 name: "📜Forms",
                 shape: (data) => {
-                    const { Facebook, Name, Covers, URL, Types, Status } = getProperties(data)
+                    const { icon: Icon, properties: { Facebook, Name, Covers, URL, Types, Status } } = data ?? null
 
                     return {
                         name: title(Name),
                         covers: files(Covers),
                         status: status(Status),
+                        icon: icon(Icon),
                         url: url(URL),
                         facebook: url(Facebook),
                         types: multi_select(Types)
@@ -48,11 +50,12 @@ const FacadeService = () => {
             events: {
                 name: "🗓️Events",
                 shape: (data) => {
-                    const { Facebook, Name, Covers, Types, Status } = getProperties(data)
+                    const { Facebook, Name, Media, Description, Types, Status } = getProperties(data)
 
                     return {
                         name: title(Name),
-                        covers: files(Covers),
+                        media: files(Media),
+                        description: rich_text(Description),
                         status: status(Status),
                         facebook: url(Facebook),
                         types: multi_select(Types)
@@ -100,11 +103,11 @@ const FacadeService = () => {
                 },
                 predicate: (data) => {
 
-                    
+
                     const { name } = serviceObject.types.memberships
 
                     return isDatabase(name, data)
-                 }
+                }
             },
             team: {
                 name: "🅰️Team",

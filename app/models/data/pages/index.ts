@@ -1,6 +1,6 @@
 import layout from "@configs/layout"
 import { events, forms, links, media, meta, memberships, partners, socialMedia, team } from "@db/index"
-import type { HeroProps, LogoArrayProps, PageObjectProps, PagesDBProps, SummarySectionProps } from "@typings/index"
+import type { HeroProps, LogoArrayProps, PageObjectProps, PagesDBProps, SummarySectionProps, FeaturedSectionProps } from "@typings/index"
 import utils from "@utils/index"
 
 
@@ -33,7 +33,8 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                         title: "We The Future",
                         links: getForms().map((form) => ({
                             name: form?.name,
-                            url: form?.url
+                            url: form?.url,
+                            icon: form?.icon
                         }))
                     },
 
@@ -60,10 +61,16 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     title: 'Our Memberships',
                     tables: getMemberships().map((membership) => ({ title: membership?.name }))
                 },
-                featuredSection: {
-                    title: getEventsHeader()[0]?.name ?? null,
+                featuredSection: <FeaturedSectionProps>{
+                    title: getEventsHeader()[0]?.name,
+                    description: getEventsHeader()[0]?.description,
+                    heading: getEventsHeader()[0]?.values[0],
                     carousel: shuffle(getPhotos().map((m) => m?.media[0]?.url ?? null)),
-                    features: getEvents().map((event) => ({ title: event?.name }))
+                    features: getEvents().map((event) => ({
+                        title: event?.name,
+                        cover: event?.media[0]?.url ?? null,
+                        description: event?.description
+                    }))
                 },
                 statsRow: {},
                 summarySection: <SummarySectionProps>{
@@ -96,7 +103,14 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
             artivism: {},
             blog: {},
             community: {},
-            events: {},
+            events: {
+                metaData: {
+                    pageTitle: "Events"
+                },
+                data: {
+
+                }
+            },
             forms: {},
             legal: {},
             media: {},
@@ -143,6 +157,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                 links: getSitePages().map((link) => ({
                     name: link?.name,
                     url: link?.url,
+                    icon: link?.icon
                 })),
                 cta: [
                     {

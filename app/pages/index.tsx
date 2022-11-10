@@ -16,7 +16,7 @@ import { NextPage } from "next"
 
 const HomePage: NextPage<PageProps> = ({ page: { data } }) => {
 
-  const { hero, summarySection, featuredSection, tableRow, statsSection, logoArray, contactSection, imageMasonry } = data ?? null
+  const { hero, summarySection, featuredSection, tableRow, logoArray, contactSection, imageMasonry } = data ?? null
 
 
   console.log(`[WTFMVMT: ${JSON.stringify(data)}]`)

@@ -8,7 +8,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 export default function Modal() {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(true);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -22,11 +22,15 @@ export default function Modal() {
         <Dialog open={open} onClose={handleClose}>
             <DialogTitle>Subscribe</DialogTitle>
             <DialogContent >
-                <DialogContentText>
+                <DialogContentText className='bg-black text-slate-200 font-major'>
                     To subscribe to this website, please enter your email address here. We
                     will send updates occasionally.
                 </DialogContentText>
                 <TextField
+                    sx={{
+                        bgcolor: 'black',
+                        fontFamily: 'var(--font-primary)'
+                    }}
                     autoFocus
                     margin="dense"
                     id="name"
