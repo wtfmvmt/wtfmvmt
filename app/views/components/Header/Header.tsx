@@ -12,6 +12,15 @@ import Headroom from "react-headroom";
 import type { ComponentType } from "@typings/Component";
 import SearchBar from "@components/SearchBar";
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import Bread from "@components/Header/Bread"
+
+
+
+
+
+
+
+
 const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: HeaderProps) => {
 
     const { toggleDrawer } = useMenuDrawerState()
@@ -62,12 +71,13 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
 
                     <div className="px-12 py-6 flex w-full items-center">
                         <Favicon />
-                        <div className="xl:flex items-center ">
+                        <div className="xl:flex flex-1 items-center justify-center">
                             <a className="flex items-center hover:text-purple-600">
-                                {/*Actions:Slot*/}
+                                <Bread />
                             </a>
                         </div>
                     </div>
+                    
                     <NavBurger />
                     <MobileNavBurger />
                 </nav>

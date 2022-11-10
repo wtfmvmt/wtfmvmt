@@ -19,11 +19,11 @@ export default function Affix(props: {
     const scrollTop = window.scrollY;
 
     if (distanceToBody - scrollTop < props.top + offset) {
-      if (element.current.style.position != 'fixed') {
+      if (element.current.style.position != 'sticky') {
         for (let key in oldStyles) {
           oldStyles[key] = element.current.style[key];
         }
-        element.current.style.position = 'fixed';
+        element.current.style.position = 'sticky';
         element.current.style.width = width + 'px';
         element.current.style.top = props.top + 'px';
       }
@@ -55,7 +55,7 @@ export default function Affix(props: {
   });
 
   return (
-    <div ref={element} style={{ zIndex: 1 }} className={props.className}>
+    <div ref={element} style={{ zIndex: 1 }} className={props.className + " sticky"}>
       {props.children}
     </div>
   );

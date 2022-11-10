@@ -22,12 +22,10 @@ function Application({ Component, pageProps, layout }) {
   return (
     <Suspense fallback={<Loader />}>
       <RecoilRoot>
-        <PageTransition timeout={1000} loadingComponent={<Loader />} classNames={"page-transition"}>
-
+        <PageTransition timeout={1000} showLoading loadingComponent={<Loader />} classNames={"page-transition"}>
           <PageLayout {...layout}>
             <Component {...pageProps} />
           </PageLayout>
-
         </PageTransition>
       </RecoilRoot>
     </Suspense>

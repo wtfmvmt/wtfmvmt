@@ -1,8 +1,10 @@
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
-
-const SearchBar = ({ search }) => {
+export type SearchBarProps = {
+    search?: any
+}
+const SearchBar = ({ search }: SearchBarProps) => {
 
     return (
         <div className="hidden xl:flex text-slate-200 mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg font-major">

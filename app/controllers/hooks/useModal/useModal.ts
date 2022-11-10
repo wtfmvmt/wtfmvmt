@@ -15,7 +15,12 @@ const useModal = () => {
         setOpen(!open);
     }
 
-    return { toggleModal, open }
+    
+    const setModal = () => { 
+        setOpen(!open);
+    }
+
+    return { toggleModal, setModal, open }
 }
 
 export default useModal

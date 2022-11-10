@@ -1,5 +1,5 @@
 import useBannerState from '@controllers/hooks/useBannerState';
-import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import useModal from '@controllers/hooks/useModal';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import OutboundIcon from '@mui/icons-material/Outbound';
@@ -7,9 +7,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShareIcon from '@mui/icons-material/Share';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import useModal from '@controllers/hooks/useModal';
+import type { ComponentType } from '@models/typings/Component';
 
-const MagicNavigator = () => {
+
+
+const MagicNavigator: ComponentType<any> = () => {
 
     const { open, toggleBanner } = useBannerState()
 
@@ -29,6 +31,11 @@ const MagicNavigator = () => {
             name: 'Top'
         },
         {
+            icon: <SearchIcon sx={ActionButtonSx} />,
+            name: 'Search',
+            action: () => toggleModal()
+        },
+        {
             icon: <NotificationsIcon sx={ActionButtonSx} />,
             name: 'Notifications',
             action: () => toggleBanner()
@@ -38,22 +45,17 @@ const MagicNavigator = () => {
             name: 'Share',
             action: () => toggleModal()
         },
-        {
-            icon: <ConnectWithoutContactIcon sx={ActionButtonSx} />,
-            name: 'Community',
-            action: () => toggleModal()
-        },
-        {
-            icon: <SearchIcon sx={ActionButtonSx} />,
-            name: 'Search',
-            action: () => toggleModal()
-        },
+
+
     ];
 
     return (
         <SpeedDial
             className="fixed bottom-10 right-8 z-50 sm:flex md:flex cursor-pointer transition-all ease-in duraiton-500 group"
-            sx={{ background: 'transparent' }}
+            sx={{
+                background: 'transparent',
+                bgOpacity: 0.9
+            }}
             FabProps={{
                 sx: {
                     bgcolor: '#9200CC',
@@ -80,8 +82,8 @@ const MagicNavigator = () => {
 
                     tooltipOpen
                     onClick={() => action?.action()}
-                    key={action.name}
-                    icon={action.icon}
+                    key={action?.name}
+                    icon={action?.icon}
                     tooltipTitle={<div className='font-major text-white m-0 bg-black'>{action?.name}</div>}
                 />
             ))}
