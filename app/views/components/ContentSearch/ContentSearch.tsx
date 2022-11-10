@@ -70,16 +70,16 @@ const ContentSearch: ComponentType<any> =
 
         const Header = () => {
             return (
-                <div className="py-20 border-b-3 border-indigo-900">
+                <div className="py-20 border-b-3 border-indigo-900 text-slate">
                     <div className="container px-4 mx-auto">
                         <div className="max-w-4xl">
-                            <span className="text-xl font-extrabold text-blue-700">
+                            <span className="text-xl font-extrabold text-blue-700 font-major">
                                 {title ? title : "TITLE_NOT_FOUND"}
                             </span>
-                            <h1 className="text-3xl md:text-4xl font-extrabold font-heading mt-2 mb-4">
+                            <h1 className="text-3xl md:text-4xl font-extrabold font-heading mt-2 mb-4 font-major">
                                 {heading ? heading : "HEADING_NOT_FOUND"}
                             </h1>
-                            <p className="max-w-3xl text-xl font-extrabold leading-8">
+                            <p className="max-w-3xl text-xl font-extrabold leading-8 font-share_tech">
                                 {description ? description : "DESCRIPTION_NOT_FOUND"}
                             </p>
                         </div>

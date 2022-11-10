@@ -5,7 +5,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import ShareIcon from '@mui/icons-material/Share';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-
+import OutboundIcon from '@mui/icons-material/Outbound';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import useBannerState from '@controllers/hooks/useBannerState';
@@ -57,7 +57,7 @@ const MagicNavigator = () => {
             }}
 
             ariaLabel="SpeedDial basic example"
-            icon={<AutoFixHighIcon className='text-white group-hover:text-blue-200' />}
+            icon={<OutboundIcon className='text-white group-hover:text-blue-200 group-hover:-rotate-45 duration-2000 ease-in-out will-change-transform' />}
         >
             {actions.map((action) => (
                 <SpeedDialAction

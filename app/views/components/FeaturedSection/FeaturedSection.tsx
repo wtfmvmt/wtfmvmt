@@ -17,17 +17,17 @@ const FeaturedSection: ComponentType<FeaturedSectionProps> = ({ heading, title, 
 
             return (
 
-              <div key={index} className="cursor-pointer transition-all w-full lg:w-1/3 px-4">
-                <div className={buttonSxTw("h-3/4 max-w-md mx-auto py-10 px-6 rounded-lg text-slate-200 text-center mt-2")}>
+              <div key={index} className="cursor-pointer transition-all w-full lg:w-1/3 px-4 m-0 group">
+                <div className={buttonSxTw("h-3/4 m-0 max-w-md mx-auto py-10 px-6 rounded-lg text-slate-200 text-center mt-2")}>
                   <img
-                    className="block mx-auto mb-4"
+                    className="block mx-auto mb-4 object-contain rounded"
                     src={feature?.cover ?? ""}
                     alt=""
                   />
                   <h4 className="text-2xl font-extrabold mb-6 font-major">
                     {feature?.title ?? "FEATURED_TITLE_NOT_FOUND"}
                   </h4>
-                  <p className="text-lg font-extrabold leading-7 font-share_tech">
+                  <p className="text-lg  translate-x-4 group-hover:-translate-x-4 font-extrabold leading-7 font-share_tech opacity-0 group-hover:opacity-100 ease-in-out duration-500">
                     {feature?.description ?? "FEATURED_DESCRIPTION_NOT_FOUND"}
                   </p>
                 </div>
@@ -43,7 +43,7 @@ const FeaturedSection: ComponentType<FeaturedSectionProps> = ({ heading, title, 
 
     return (
 
-      <div className="container px-4 mx-auto relative">
+      <div className="container px-4 mx-auto relative group">
         <div className="max-w-5xl mx-auto mb-16 text-center text-white">
           <span className="text-lg font-major font-extrabold text-blue-400">{heading ? heading : "HEADING_NOT_FOUND"}</span>
           <h1 className="text-3xl font-major md:text-4xl font-extrabold font-heading mt-4 mb-6">
