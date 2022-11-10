@@ -3,7 +3,7 @@ import type { DrawerMenuProps } from "@typings/DrawerMenu";
 import CloseIcon from "@mui/icons-material/Close";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { CSSTransition } from 'react-transition-group';
-
+import SearchBar from "@views/components/SearchBar";
 
 const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
 

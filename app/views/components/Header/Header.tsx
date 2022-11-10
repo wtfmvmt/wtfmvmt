@@ -10,22 +10,13 @@ import TextField from '@mui/material/TextField';
 import type { HeaderProps } from "@typings/Header";
 import Headroom from "react-headroom";
 import type { ComponentType } from "@typings/Component";
-
+import SearchBar from "@components/SearchBar";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: HeaderProps) => {
 
     const { toggleDrawer } = useMenuDrawerState()
     const { toggleBanner } = useBannerState()
 
-    const Notifier = () => {
-        return (
-            <div onClick={() => toggleBanner()} className="hidden lg:flex cursor-pointer text-white">
-                <Badge badgeContent={"1"} color="secondary">
-                    <NotificationsIcon />
-                </Badge>
-            </div>
-        )
-    }
 
     const MobileNavBurger = () => (
         <a className="navbar-burger cursor-pointer self-center mr-12 xl:hidden">
@@ -38,67 +29,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
         </a>
     )
 
-    const SearchBar = () => {
 
-        return (
-            <div className="hidden xl:flex text-slate-200 mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg font-major">
-                <Autocomplete
-                    id="combo-box-demo"
-                    options={[]}
-                    sx={{ width: 300, border: 0, color: 'white', fontFamily: 'var(--font-primary)' }}
-
-                    renderInput={(params) =>
-                        <TextField variant="standard" {...params}
-                            InputProps={{
-                                sx: {
-                                    outline: 'white',
-                                    border: 'white',
-                                    color: 'white',
-                                    '& .MuiInput-underline:before': { borderBottomColor: 'white' },
-                                    '& .MuiInput-underline:after': { borderBottomColor: 'white' },
-                                }
-                            }}
-                            InputLabelProps={{
-                                sx: {
-                                    border: 'white',
-                                },
-                            }}
-                            sx={{
-
-                                color: '#FFFFFF',
-                          
-                                borderWidth: '0px',
-                                outline: 0,
-                                padding: '0.5rem 0.5rem 0 0',
-                                '& .MuiInput-underline:before': { borderBottomColor: 'white' },
-                                '& .MuiInput-underline:after': { borderBottomColor: 'white' },
-                            }} className="w-full bg-transparent border-1 font-share_tech border-white focus:ring-transparent focus:outline-none py-2" label={<span className="text-slate-200 font-major">SEEK & FIND</span>} />
-                    }
-                />
-
-                {
-                    search ? <select
-                        className="flicker-in-1 pl-6 pr-6 border-0 bg-black border-l border-gray-100 focus:border-gray-100 focus:ring-transparent bg-transparent focus:outline-none cursor-pointer"
-                        name=""
-                        id="search-selector"
-                    >
-                        {
-                            search?.map((item, index) => (
-                                <option key={index} className="bg-black">{item?.id}</option>
-                            ))
-                        }
-                    </select> : <select
-                        className="flicker-in-1 pl-6 pr-6 border-0 bg-black border-l border-gray-100 focus:border-gray-100 focus:ring-transparent bg-transparent focus:outline-none cursor-pointer"
-                        name=""
-                        id="search-selector"
-                    >
-                        <option className="bg-black">{"SEARCH_NOT_FOUND"}</option>
-
-                    </select>
-                }
-            </div>
-        )
-    }
 
     const Favicon = () => {
         return (
@@ -131,11 +62,9 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
 
                     <div className="px-12 py-6 flex w-full items-center">
                         <Favicon />
-                        <SearchBar />
-
                         <div className="xl:flex items-center ">
                             <a className="flex items-center hover:text-purple-600">
-                                <Notifier />
+                                {/*Actions:Slot*/}
                             </a>
                         </div>
                     </div>

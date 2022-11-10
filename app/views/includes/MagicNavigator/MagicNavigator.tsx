@@ -1,19 +1,19 @@
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import useBannerState from '@controllers/hooks/useBannerState';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import OutboundIcon from '@mui/icons-material/Outbound';
+import SearchIcon from '@mui/icons-material/Search';
 import ShareIcon from '@mui/icons-material/Share';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import OutboundIcon from '@mui/icons-material/Outbound';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import useBannerState from '@controllers/hooks/useBannerState';
-
+import useModal from '@controllers/hooks/useModal';
 
 const MagicNavigator = () => {
 
     const { open, toggleBanner } = useBannerState()
+
+    const { toggleModal } = useModal()
 
 
     const ActionButtonSx = {
@@ -35,11 +35,18 @@ const MagicNavigator = () => {
         },
         {
             icon: <ShareIcon sx={ActionButtonSx} />,
-            name: 'Share'
+            name: 'Share',
+            action: () => toggleModal()
         },
         {
             icon: <ConnectWithoutContactIcon sx={ActionButtonSx} />,
             name: 'Community',
+            action: () => toggleModal()
+        },
+        {
+            icon: <SearchIcon sx={ActionButtonSx} />,
+            name: 'Search',
+            action: () => toggleModal()
         },
     ];
 
@@ -56,7 +63,7 @@ const MagicNavigator = () => {
                 }
             }}
 
-            ariaLabel="SpeedDial basic example"
+            ariaLabel="WTFMVMT_MAGIC_NAVIGATOR"
             icon={<OutboundIcon className='text-white group-hover:text-blue-200 group-hover:-rotate-45 duration-2000 ease-in-out will-change-transform' />}
         >
             {actions.map((action) => (

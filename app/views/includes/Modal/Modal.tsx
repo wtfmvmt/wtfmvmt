@@ -1,49 +1,38 @@
-import * as React from 'react';
+import useModal from '@controllers/hooks/useModal';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import TextField from '@mui/material/TextField';
+import SearchBar from '@views/components/SearchBar';
 
-export default function Modal() {
-    const [open, setOpen] = React.useState(false);
+const Modal = () => {
+    const { open, toggleModal } = useModal()
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
 
     return (
-        <Dialog open={open} onClose={handleClose}>
-            <DialogTitle>Subscribe</DialogTitle>
-            <DialogContent >
-                <DialogContentText className='bg-black text-slate-200 font-major'>
-                    To subscribe to this website, please enter your email address here. We
-                    will send updates occasionally.
-                </DialogContentText>
-                <TextField
-                    sx={{
-                        bgcolor: 'black',
-                        fontFamily: 'var(--font-primary)'
-                    }}
-                    autoFocus
-                    margin="dense"
-                    id="name"
-                    label="Email Address"
-                    type="email"
-                    fullWidth
-                    variant="standard"
-                />
-            </DialogContent>
-            <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={handleClose}>Subscribe</Button>
-            </DialogActions>
+        <Dialog PaperProps={{
+            sx: { bgColor: 'transparent' }
+        }}
+            open={open} onClose={toggleModal}>
+
+            <div className="bg-black bg-opacity-50 backdrop-blur-md">
+                <DialogTitle><span className='text-slate-200 font-major'>Search</span></DialogTitle>
+                <DialogContent >
+
+                    <SearchBar />
+                </DialogContent>
+
+
+                <DialogActions>
+                    <Button onClick={toggleModal}>Cancel</Button>
+                    <Button onClick={toggleModal}>Subscribe</Button>
+                </DialogActions>
+            </div>
         </Dialog>
     );
 }
+
+export default Modal
