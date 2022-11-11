@@ -59,7 +59,7 @@ const ImageMasonry: ComponentType<ImageMasonryProps> = ({ heading, title, descri
                                                     <h2 className="text-xl text-white font-extrabold">
                                                         {title ? title : "TITLE_NOT_FOUND"}
                                                     </h2>
-                                                    <div className="flex justify-around align-baseline">
+                                                    <div className="flex justify-around align-baseline shadow-2xl">
                                                         <span className="text-lg font-bold text-indigo-300 font-share_tech">
                                                             {heading ? heading : "HEADING_NOT_FOUND"}
                                                         </span>

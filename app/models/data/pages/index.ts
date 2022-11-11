@@ -1,5 +1,6 @@
 import layout from "@configs/layout"
 import { events, forms, links, media, meta, memberships, partners, socialMedia, team } from "@db/index"
+import faqs from "@db/faqs"
 import type { HeroProps, LogoArrayProps, PageObjectProps, PagesDBProps, SummarySectionProps, FeaturedSectionProps } from "@typings/index"
 import utils from "@utils/index"
 
@@ -8,6 +9,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
 
     const { collections: { shuffle } } = utils()
 
+    const { getFAQs } = faqs(store)
     const { getTeam } = team(store)
     const { getPhotos } = media(store)
     const { getMemberships } = memberships(store)
@@ -93,7 +95,14 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
 
                 },
                 rowList: {},
-                columnLists: {},
+                columnList: {
+                    title: "Frequently Asked Questions",
+                    list: getFAQs().map((f) => ({
+                        name: f?.name,
+                        description: f?.description,
+                        icon: f?.icon
+                    }))
+                },
                 contactSection: {
                     socials: getSocialMedia(),
                     email: getEmailAddress().email,

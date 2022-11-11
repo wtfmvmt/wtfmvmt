@@ -7,6 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShareIcon from '@mui/icons-material/Share';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
+import SettingsIcon from '@mui/icons-material/Settings';
 import type { ComponentType } from '@models/typings/Component';
 
 
@@ -43,6 +44,11 @@ const MagicNavigator: ComponentType<any> = () => {
         {
             icon: <ShareIcon sx={ActionButtonSx} />,
             name: 'Share',
+            action: () => toggleModal()
+        },
+        {
+            icon: <SettingsIcon sx={ActionButtonSx} />,
+            name: 'Settings',
             action: () => toggleModal()
         },
 

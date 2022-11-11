@@ -159,14 +159,15 @@ const FacadeService = () => {
                 }
             },
             faqs: {
-                name: "❓FAQ",
+                name: "❓FAQs",
                 shape: (data: any) => {
 
-                    const { URL, Name, Description, Status, Types } = data.properties
+                    const { icon: Icon, properties: { URL, Name, Description, Status, Types } } = data
 
                     return {
-                        question: title(Name),
-                        answer: rich_text(Description),
+                        name: title(Name),
+                        icon: icon(Icon),
+                        description: rich_text(Description),
                         status: status(Status),
                         url: url(URL),
                         types: multi_select(Types),
@@ -174,7 +175,7 @@ const FacadeService = () => {
                 },
                 predicate: (data: any) => {
                     const { name } = serviceObject.types.faqs
-                    return isDatabase(name, data) ?? null
+                    return isDatabase(name, data)
                 }
             },
             links: {

@@ -14,7 +14,7 @@ const Modal = () => {
 
     return (
         <Dialog PaperProps={{
-            sx: { bgColor: 'transparent' }
+            sx: { bgColor: 'black' }
         }}
             open={open} onClose={toggleModal}>
 

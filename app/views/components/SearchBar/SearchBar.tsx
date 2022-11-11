@@ -7,11 +7,11 @@ export type SearchBarProps = {
 const SearchBar = ({ search }: SearchBarProps) => {
 
     return (
-        <div className="hidden xl:flex text-slate-200 mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg font-major">
+        <div className="xl:flex text-slate-200 mx-auto py-3 pl-6 pr-3 border border-gray-200 rounded-lg font-major">
             <Autocomplete
-                id="combo-box-demo"
+                id="WTFMVMT_SEARCH_BARS"
                 options={[]}
-                sx={{ width: 300, border: 0, color: 'white', fontFamily: 'var(--font-primary)' }}
+                sx={{ width: "100%", border: 0, color: 'white', fontFamily: 'var(--font-primary)' }}
                 renderInput={(params) =>
                     <TextField variant="standard" {...params}
                         InputProps={{
@@ -41,26 +41,7 @@ const SearchBar = ({ search }: SearchBarProps) => {
                 }
             />
 
-            {
-                search ? <select
-                    className="flicker-in-1 pl-6 pr-6 border-0 bg-black border-l border-gray-100 focus:border-gray-100 focus:ring-transparent bg-transparent focus:outline-none cursor-pointer"
-                    name=""
-                    id="search-selector"
-                >
-                    {
-                        search?.map((item, index) => (
-                            <option key={index} className="bg-black">{item?.id}</option>
-                        ))
-                    }
-                </select> : <select
-                    className="flicker-in-1 pl-6 pr-6 border-0 bg-black border-l border-gray-100 focus:border-gray-100 focus:ring-transparent bg-transparent focus:outline-none cursor-pointer"
-                    name=""
-                    id="search-selector"
-                >
-                    <option className="bg-black">{"SEARCH_NOT_FOUND"}</option>
 
-                </select>
-            }
         </div>
     )
 }
