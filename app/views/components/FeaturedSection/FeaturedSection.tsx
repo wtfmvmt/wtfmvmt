@@ -1,7 +1,11 @@
-import DistortionCarousel from "@components/DistortionCarousel";
 import type { ComponentType } from "@typings/Component";
 import type { FeaturedSectionProps } from "@typings/FeaturedSection";
 import ButtonSx from "@views/styles/Button";
+import { lazy, Suspense } from "react";
+
+
+const Loader = lazy(() => import("@components/Loader"));
+const DistortionCarousel = lazy(() => import("@components/DistortionCarousel"));
 const FeaturedSection: ComponentType<FeaturedSectionProps> = ({ heading, title, description, features, carousel }: FeaturedSectionProps) => {
 
   const { tw: buttonSxTw } = ButtonSx.root
@@ -59,12 +63,15 @@ const FeaturedSection: ComponentType<FeaturedSectionProps> = ({ heading, title, 
   }
 
   return (
+
     <section className="py-26 relative overflow-hidden">
       <Header />
+      <Suspense fallback={<Loader />}>
+        <div className="block w-full h-112 lg:h-156 mb-16 object-cover">
+          <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={carousel ?? ["IMAGE_NOT_FOUND"]} />
+        </div>
+      </Suspense>
 
-      <div className="block w-full h-112 lg:h-156 mb-16 object-cover">
-        <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={carousel ?? ["IMAGE_NOT_FOUND"]} />
-      </div>
 
       <Features />
     </section >

@@ -80,13 +80,14 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                     }))
                 },
                 imageMasonry: {
-                    title: "Our Team & Founder",
-                    heading: "These people behind the scenes are what make the magic happen.",
+                    title: getTeamHeader()[0]?.name,
+                    description: getTeamHeader()[0]?.description,
+                    heading: getTeamHeader()[0]?.values[0],
                     masonry: getTeam().map((team) => ({
                         image: {
                             src: team?.media[0]?.url ?? null,
                         },
-
+                        heading: team?.types[0],
                         title: team?.name,
                     }))
 

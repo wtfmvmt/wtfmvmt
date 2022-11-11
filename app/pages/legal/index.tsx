@@ -26,21 +26,15 @@ const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
   }, [page, id, version])
 
   return (
-    <PageLayout {...layout}>
-      <Hero {...hero} />
-      <FeaturedSection {...featuredSection} />
-      <SummarySection {...summarySection} />
-      <SimpleFormSection {...statsSection} />
-      <StatsSection {...statsSection} />
-      <ImageMasonry {...imageMasonry} />
-      <ContactSection {...contactSection} />
-    </PageLayout>
+    <>
+
+    </>
   )
 }
 
 export default HomePage
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const { getPage } = PageService
 

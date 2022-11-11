@@ -3,7 +3,8 @@ import { ImageProps } from "@typings/Image"
 export type MasonProps = {
     title?: string,
     heading?: string,
-    image?: ImageProps
+    image?: ImageProps,
+    url?: string
 }
 
 export type ImageMasonryProps = {

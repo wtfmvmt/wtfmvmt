@@ -5,7 +5,7 @@ import {
   
   const bannerState = atom({
     key: 'bannerState', 
-    default: false, 
+    default: true, 
   });
 
   const useBannerState = () => {

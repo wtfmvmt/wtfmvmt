@@ -1,6 +1,4 @@
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
-import { Suspense } from "react"
-import Loader from "@components/Loader"
 class Document extends NextDocument<any> {
 
     render() {

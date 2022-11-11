@@ -11,11 +11,9 @@ import { PageTransition } from 'next-page-transitions'
 import React, { lazy, Suspense } from "react"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { RecoilRoot } from 'recoil'
+import Loader from "@components/Loader"
 
 
-
-
-const Loader = lazy(() => import("@components/Loader"));
 function Application({ Component, pageProps, layout }) {
 
 

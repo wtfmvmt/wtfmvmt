@@ -11,9 +11,10 @@ const meta = (store: []) => {
             return metaObject.getMeta().filter((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
         },
         getTeamHeader: () => {
-            const headerKeys = ["🪦Heading", "📅Event"]
-            return metaObject.getMeta().filter((meta) => meta?.types?.includes(headerKeys)) ?? null
+            const headerKeys = ["🪦Heading", "🕴🏿Team"]
+            return metaObject.getMeta().filter((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
         },
+
         getPillars: () => {
             const pillarsKey = "💜Pillar"
             return metaObject.getMeta().filter((meta) => meta?.types?.includes(pillarsKey)) ?? null
@@ -40,7 +41,7 @@ const meta = (store: []) => {
         },
         getImpressum: () => {
             const impressumKey = "✒️Impressum"
-            
+
             return metaObject.getMeta().find((meta) => meta?.types?.includes(impressumKey)) ?? null
         },
         getAudienceHook: () => {

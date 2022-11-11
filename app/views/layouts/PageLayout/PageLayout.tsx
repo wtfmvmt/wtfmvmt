@@ -1,4 +1,3 @@
-import Footer from "@components/Footer";
 import Header from "@components/Header";
 import Loader from "@components/Loader";
 import RootLayout from "@layouts/RootLayout";
@@ -10,7 +9,7 @@ const Modal = lazy(() => import("@includes/Modal"));
 const Notifications = lazy(() => import("@includes/Notifications"));
 const DrawerMenu = lazy(() => import("@includes/DrawerMenu"));
 const MagicNavigator = lazy(() => import("@includes/MagicNavigator"));
-
+const Footer = lazy(() => import("@components/Footer"));
 
 const PageLayout: NextPage<LayoutProps> = ({ metaData, menu, header, footer, children }: LayoutProps) => {
 
