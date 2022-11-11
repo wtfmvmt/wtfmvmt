@@ -1,22 +1,23 @@
 
 import type { ComponentType } from "@typings/Component"
-import type { ColumnListProps } from "@typings/ColumnLists"
+import type { ColumnListProps } from "@models/typings/ColumnList"
 
-const ColumnList: ComponentType<ColumnListProps> = ({ list, title }: ColumnListProps) => {
+const ColumnList: ComponentType<ColumnListProps> = ({ list, title, cta }: ColumnListProps) => {
 
 
     const CallToAction = () => {
         return (
-            <div className="mt-20 text-center">
+            cta ? <div className="mt-20 text-center">
                 <a
                     className="inline-block blue-300 hover:blue-400 text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
-                    href="#"
+                    href={cta?.url}
                 >
-                    More
+                    {cta?.name}
                 </a>
-            </div>
+            </div> : <>CTA_NOT_FOUND</>
         )
     }
+
     const List = () => {
         return (
             <ul className="mr-6 pr-2">
@@ -46,29 +47,19 @@ const ColumnList: ComponentType<ColumnListProps> = ({ list, title }: ColumnListP
             </ul>
         )
     }
+
     return (
         <section className="py-6 w-full overflow-x-clip text-slate-200 font-major">
             <div className="container">
                 <div className="flex flex-wrap">
-
-
                     <div className="w-full mx-4 mb-12 lg:mb-0 m-auto">
                         <h2 className="pb-5 break-words text-5xl font-bold flex-wrap text-wrap font-heading">
                             {title ? title : "TITLE_NOT_FOUND"}
                         </h2>
-
-
                         <List />
                     </div>
-
-
                 </div>
-
-
-
                 <CallToAction />
-
-
             </div>
         </section>
     )
