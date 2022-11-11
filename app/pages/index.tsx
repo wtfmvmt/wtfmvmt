@@ -1,4 +1,4 @@
-import ColumnLists from "@components/ColumnLists"
+import ColumnLists from "@views/components/ColumnList"
 import ContactSection from "@components/ContactSection"
 import FeaturedSection from "@components/FeaturedSection"
 import Hero from "@components/Hero"

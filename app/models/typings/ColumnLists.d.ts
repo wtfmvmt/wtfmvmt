@@ -6,14 +6,8 @@ export type ColumnData = {
     icon?: ImageProps
 }
 
-export type ColumnProps = {
-    title?: string,
-    columns?: ColumnData[],
-}
-
-
 export type ColumnListProps = {
     title?: string,
-    lists?: ColumnProps[]
+    list?: ColumnData[]
 
 }
