@@ -9,12 +9,6 @@ import { useEffect } from "react"
 
 const HomePage: IPage<ServerSidePageProps> = ({ page }) => {
 
-  const { layout, id, version, data:
-    { hero, summarySection, featuredSection, statsSection, contactSection, imageMasonry } } = page
-
-  useEffect(() => {
-    console.log(`[${id}@${version}] => `, page)
-  }, [page, id, version])
 
   return (
     <>
@@ -29,7 +23,7 @@ export async function getStaticProps() {
 
   const { getPage } = PageService
 
-  const page = await getPage("shop")
+  const page = await getPage("home")
 
   return {
     props: {
