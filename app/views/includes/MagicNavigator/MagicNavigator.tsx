@@ -90,7 +90,7 @@ const MagicNavigator: ComponentType<any> = () => {
                     onClick={() => action?.action()}
                     key={action?.name}
                     icon={action?.icon}
-                    tooltipTitle={<div className='font-major text-white m-0 bg-black'>{action?.name}</div>}
+                    tooltipTitle={<div className='font-major text-black'>{action?.name}</div>}
                 />
             ))}
         </SpeedDial>
