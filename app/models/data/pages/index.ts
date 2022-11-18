@@ -50,10 +50,10 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                 },
                 logoArray: <LogoArrayProps>{
                     title: 'Our Partners',
-                    logos: getPartners().map((p) => ({
-                        title: p?.name,
+                    logos: getPartners().map((partner) => ({
+                        title: partner?.name,
                         image: {
-                            src: p?.media[0]?.url
+                            src: partner?.media[0]?.url
                         }
 
                     }))

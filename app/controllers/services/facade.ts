@@ -2,7 +2,7 @@ import utils from "@utils/index"
 
 const FacadeService = () => {
 
-    const { files, url, email, phone, formula, icon, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
+    const { notion: { files, url, email, phone, formula, icon, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } } = utils()
 
     const serviceObject = {
         version: Date.now(),
@@ -102,10 +102,7 @@ const FacadeService = () => {
                     }
                 },
                 predicate: (data) => {
-
-
                     const { name } = serviceObject.types.memberships
-
                     return isDatabase(name, data)
                 }
             },

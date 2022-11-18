@@ -1,21 +1,27 @@
 import FacadeService from "@services/facade"
 
-const memberships = (store: []) => {
+export type DatabaseStore = any[]
 
-    const { memberships } = FacadeService().types
+const memberships = (store: DatabaseStore) => {
 
-    return {
+    const { types: { memberships } } = FacadeService()
+
+    const membershipsObjects = {
 
         getMemberships: () => {
-            return store.filter((data) => {
-                return memberships.predicate(data)
-            }).map((data) => {
-                return memberships.shape(data)
-            })
+            return store
+                .filter((data) => {
+                    return memberships.predicate(data)
+                })
+                .map((data) => {
+                    return memberships.shape(data)
+                })
         }
-
     }
+
+    return { ...membershipsObjects }
 }
+
 
 export default memberships
 
