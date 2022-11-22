@@ -1,25 +1,3 @@
-.page-transition-enter {
-  opacity: 0.33;
-  backdrop-filter: blur(1000px);
-}
-
-.page-transition-enter-active {
-  opacity: 1;
-  backdrop-filter: blur(0px);
-  transition: all opacity ease-in-out 1500ms;
-}
-
-.page-transition-exit {
-  opacity: 0.33;
-  backdrop-filter: blur(1000px);
-
-}
-
-.page-transition-exit-active {
-  opacity: 0.10;
-  backdrop-filter: blur(1000px);
-  transition: all opacity ease-in-out 1500ms;
-}
 
 .slide-in-blurred-left {
   -webkit-animation: slide-in-blurred-left 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;

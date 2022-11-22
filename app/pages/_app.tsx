@@ -1,31 +1,23 @@
 import "@libs/animations.css"
-import "@libs/dashvars.css"
 import "@libs/globals.css"
 import "@libs/scrollbars.css"
 import "@libs/tailwind.css"
 
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/pages"
-
-import Loader from "@components/Loader"
-import { PageTransition } from 'next-page-transitions'
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import LoadingBar from 'react-top-loading-bar'
 import { RecoilRoot } from 'recoil'
 
 
 function Application({ Component, pageProps, layout }) {
 
-
   return (
-    <>
-      <RecoilRoot>
-        <PageTransition  monkeyPatchScrolling timeout={100} showLoading loadingDelay={0} loadingComponent={<Loader />} classNames={"page-transition"}>
-          <PageLayout {...layout}>
-            <Component {...pageProps} />
-          </PageLayout>
-        </PageTransition>
-      </RecoilRoot>
-    </>
+    <RecoilRoot>
+      <PageLayout {...layout}>
+        <LoadingBar progress={100} />
+        <Component {...pageProps} />
+      </PageLayout>
+    </RecoilRoot>
   )
 }
 
