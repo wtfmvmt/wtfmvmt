@@ -22,12 +22,11 @@ const PageLayout: NextPage<LayoutProps> = ({ metaData, menu, header, footer, chi
                 {children}
                 <Footer {...footer} />
             </RootLayout>
-            <Suspense fallback={<Loader />}>
-                <MagicNavigator />
-                <Modal />
-                <Notifications />
-            </Suspense>
+            <MagicNavigator />
+            <Modal />
             <DrawerMenu {...menu} />
+            <Notifications />
+
         </>
     )
 }
