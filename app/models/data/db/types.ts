@@ -4,6 +4,13 @@ const types = () => {
 
     const { files, url, email, phone, formula, icon, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
 
+
+    const _template = {
+        name: "s",
+        variants: {
+            featured: "",
+        }
+    }
     const typesObject = {
         partners: {
             name: "💖Partners",

@@ -1,11 +1,15 @@
 import layout from "@configs/layout"
-import { events, forms, links, media, meta, memberships, partners, socialMedia, team } from "@db/index"
 import faqs from "@db/faqs"
-import type { HeroProps, LogoArrayProps, PageObjectProps, PagesDBProps, SummarySectionProps, FeaturedSectionProps } from "@typings/index"
+import { events, forms, links, media, memberships, meta, partners, socialMedia, team } from "@db/index"
+import type {
+    FeaturedSectionProps, HeroProps, LogoArrayProps, PageObjectType, PagesDBProps,
+    SummarySectionProps
+} from "@typings/index"
 import utils from "@utils/index"
 
 
-const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
+
+const pages = ({ store, key }: PagesDBProps): PageObjectType => {
 
     const { collections: { shuffle } } = utils()
 
@@ -89,8 +93,8 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
                         image: {
                             src: team?.media[0]?.url ?? null,
                         },
-                        heading: team?.types[0],
-                        title: team?.name,
+                        heading: team?.types[0] ?? null,
+                        title: team?.name ?? null,
                     }))
 
                 },
@@ -135,7 +139,9 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
         }
     }
 
-    const pageObject: PageObjectProps = {
+
+
+    const pageObject: PageObjectType = {
         version: Date.now(),
         layout: layout({
             header: {
@@ -191,7 +197,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectProps => {
         pages: pageData[key]?.pages,
     }
 
-    return { ...pageObject } as PageObjectProps
+    return { ...pageObject } as PageObjectType
 }
 
 export default pages

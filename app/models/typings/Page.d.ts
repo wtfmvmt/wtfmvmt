@@ -22,9 +22,9 @@ export type PagesDBProps = {
   key: string
 }
 
-export type PageObjectProps = {
-  version: number | string,
-  layout: any,
-  data: any,
-  pages: any
+export type PageObjectType = {
+  version?: number | string,
+  layout?: any,
+  data?: any,
+  pages?: any
 }

@@ -1,5 +1,5 @@
 import ContactSection from "@components/ContactSection"
-import FeaturedSection from "@components/FeaturedSection"
+import FeaturedSection from "@views/components/Featured"
 import Hero from "@components/Hero"
 import ImageMasonry from "@components/ImageMasonry"
 import LogoArray from "@components/LogoArray"
