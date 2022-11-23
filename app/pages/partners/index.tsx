@@ -4,8 +4,6 @@ import type { IPage, ServerSidePageProps } from "@typings/Page"
 
 const PartnersIndexPage: IPage<ServerSidePageProps> = ({ page: { data } }) => {
 
-
-
   return (
     <>
 
@@ -27,6 +25,6 @@ export async function getStaticProps() {
     props: {
       page
     },
-    revalidate: 10
+    revalidate: 1
   }
 }

@@ -8,6 +8,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig = {
   reactStrictMode: false,
+  experimental: {
+    appDir: true,
+  },
   swcMinify: true,
   images: {
     domains: ['scontent-akl1-1.cdninstagram.com', 's3.us-west-2.amazonaws.com'],

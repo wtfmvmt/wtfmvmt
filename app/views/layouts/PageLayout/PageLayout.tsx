@@ -16,18 +16,19 @@ const PageLayout: NextPage<LayoutProps> = ({ metaData, menu, header, footer, chi
 
 
     return (
-        <>
+        <Suspense>
             <RootLayout metaData={metaData}>
+                <MagicNavigator />
+                <Modal />
+                <DrawerMenu {...menu} />
+                <Notifications />
                 <Header {...header} />
                 {children}
                 <Footer {...footer} />
             </RootLayout>
-            <MagicNavigator />
-            <Modal />
-            <DrawerMenu {...menu} />
-            <Notifications />
+        </Suspense>
 
-        </>
+
     )
 }
 
