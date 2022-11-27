@@ -1,4 +1,4 @@
-import PageService from "@services/pages"
+import PageService from "@controllers/services/page"
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -7,7 +7,7 @@ export default async function handler(
     res: NextApiResponse<any>
 ) {
 
-    const { getPage } = PageService
+    const { getPage } = PageService()
 
     const pageData = await getPage("home")
 

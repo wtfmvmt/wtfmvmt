@@ -1,3 +1,5 @@
+"use client"
+
 import { useDistortionEffectCarousel } from 'distortion-effect-carousel';
 import React, { useEffect } from 'react';
 

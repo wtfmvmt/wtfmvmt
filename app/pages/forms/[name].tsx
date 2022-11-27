@@ -1,6 +1,6 @@
 import ContactSection from "@components/ContactSection"
 import Hero from "@components/Hero"
-import PageService from "@services/pages"
+import PageService from "@controllers/services/page"
 import type { IPage, ServerSidePageProps } from "@typings/Page"
 
 
@@ -25,7 +25,7 @@ export default FormPage
 
 export async function getServerSideProps() {
 
-  const { getPage } = PageService
+  const { getPage } = PageService()
 
   const page = await getPage("home")
 

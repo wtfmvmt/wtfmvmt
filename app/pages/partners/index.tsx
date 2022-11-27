@@ -1,5 +1,5 @@
 
-import PageService from "@services/pages"
+import PageService from "@controllers/services/page"
 import type { IPage, ServerSidePageProps } from "@typings/Page"
 
 const PartnersIndexPage: IPage<ServerSidePageProps> = ({ page: { data } }) => {
@@ -17,7 +17,7 @@ export default PartnersIndexPage
 
 export async function getStaticProps() {
 
-  const { getPage } = PageService
+  const { getPage } = PageService()
 
   const page = await getPage("home")
 

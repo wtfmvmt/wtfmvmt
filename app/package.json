@@ -1,6 +1,6 @@
 {
   "name": "wtfmvmt-com",
-  "version": "1.0.0",
+  "version": "0.9.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@analytics/google-analytics": "^1.0.3",
-    "@brainhubeu/react-carousel": "^2.0.4",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.10.2",
@@ -28,14 +27,11 @@
     "@types/react-transition-group": "^4.4.5",
     "analytics": "^0.8.1",
     "cross-env": "^7.0.3",
-    "custom-cursor-react": "^1.0.5",
     "depcheck": "^1.4.3",
     "distortion-effect-carousel": "^1.1.0",
     "dotenv-load": "^2.0.1",
     "lodash": "^4.17.21",
     "next": "^13.0.4",
-    "next-auth": "^4.10.3",
-    "next-auth-client": "^1.5.0",
     "next-env": "^1.1.1",
     "next-pwa": "^5.6.0",
     "next-seo": "^5.14.0",
@@ -45,7 +41,6 @@
     "react-countdown": "^2.3.2",
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.0",
-    "react-indexed-db": "^0.0.2",
     "react-lazy-blur-image": "^0.1.2",
     "react-loader-spinner": "^5.2.0",
     "react-placeholder-image": "^0.1.8",
@@ -60,8 +55,7 @@
     "react-twitch-embed": "^3.0.1",
     "react-typing-effect": "^2.0.5",
     "react-use": "^17.4.0",
-    "recoil": "^0.7.5",
-    "three": "^0.144.0"
+    "recoil": "^0.7.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",

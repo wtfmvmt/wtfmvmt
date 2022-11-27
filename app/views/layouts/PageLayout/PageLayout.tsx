@@ -5,28 +5,31 @@ import type { LayoutProps } from "@typings/Layout";
 import type { NextPage } from "next";
 import React, { lazy, Suspense } from "react";
 import Footer from "@components/Footer"
+import Modal from "@includes/Modal"
+import Notifications from "@views/includes/Notifications";
+import DrawerMenu from "@includes/DrawerMenu";
+import MagicNavigator from "@includes/MagicNavigator";
 
 const PageLayout: NextPage<LayoutProps> = ({ metaData, menu, header, footer, children }: LayoutProps) => {
 
 
-    const Modal = lazy(() => import("@includes/Modal"));
-    const Notifications = lazy(() => import("@includes/Notifications"));
-    const DrawerMenu = lazy(() => import("@includes/DrawerMenu"));
-    const MagicNavigator = lazy(() => import("@includes/MagicNavigator"));
-
-
     return (
-        <Suspense>
+
+        <>
+            <MagicNavigator />
+            <Modal />
+            <DrawerMenu {...menu} />
+            <Notifications />
             <RootLayout metaData={metaData}>
-                <MagicNavigator />
-                <Modal />
-                <DrawerMenu {...menu} />
-                <Notifications />
                 <Header {...header} />
                 {children}
                 <Footer {...footer} />
             </RootLayout>
-        </Suspense>
+
+        </>
+
+
+
 
 
     )

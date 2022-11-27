@@ -1,3 +1,5 @@
+"use client"
+
 import type { ComponentType } from "@typings/Component";
 import type { FeaturedProps } from "@typings/Featured";
 import ButtonSx from "@views/styles/Button";
@@ -23,17 +25,17 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
 
             return (
 
-              <div key={index} className="cursor-pointer transition-all w-full lg:w-1/3 px-4 m-0 group">
+              <div key={index} className="w-full px-4 m-0 transition-all cursor-pointer lg:w-1/3 group">
                 <div className={buttonSxTw("h-3/4 m-0 max-w-md mx-auto py-10 px-6 rounded-lg text-slate-200 text-center mt-2")}>
                   <img
-                    className="block mx-auto mb-4 object-contain rounded"
+                    className="block object-contain mx-auto mb-4 rounded"
                     src={feature?.cover ?? ""}
                     alt=""
                   />
-                  <h4 className="text-2xl font-extrabold mb-6 font-major">
+                  <h4 className="mb-6 text-2xl font-extrabold font-major">
                     {feature?.title ?? "FEATURED_TITLE_NOT_FOUND"}
                   </h4>
-                  <p className="text-lg  translate-x-4 group-hover:-translate-x-4 font-extrabold leading-7 font-share_tech opacity-0 group-hover:opacity-100 ease-in-out duration-500">
+                  <p className="text-lg font-extrabold leading-7 duration-500 ease-in-out translate-x-4 opacity-0 group-hover:-translate-x-4 font-share_tech group-hover:opacity-100">
                     {feature?.description ?? "FEATURED_DESCRIPTION_NOT_FOUND"}
                   </p>
                 </div>
@@ -49,13 +51,13 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
 
     return (
 
-      <div className="container px-4 mx-auto relative group">
+      <div className="container relative px-4 mx-auto group">
         <div className="max-w-5xl mx-auto mb-16 text-center text-white">
-          <span className="text-lg font-major font-extrabold text-blue-400">{heading ? heading : "HEADING_NOT_FOUND"}</span>
-          <h1 className="text-3xl font-major md:text-4xl font-extrabold font-heading mt-4 mb-6">
+          <span className="text-lg font-extrabold text-blue-400 font-major">{heading ? heading : "HEADING_NOT_FOUND"}</span>
+          <h1 className="mt-4 mb-6 text-3xl font-extrabold font-major md:text-4xl font-heading">
             {title ? title : "TITLE_NOT_FOUND"}
           </h1>
-          <p className="text-xl font-share_tech font-extrabold leading-8">
+          <p className="text-xl font-extrabold leading-8 font-share_tech">
             {description ? description : "DESCRIPTION_NOT_FOUND"}
           </p>
         </div>
@@ -66,10 +68,10 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
 
   return (
 
-    <section className="py-26 relative overflow-hidden">
+    <section className="relative overflow-hidden py-26">
       <Header />
       <Suspense fallback={<Loader />}>
-        <div className="block w-full h-112 lg:h-156 mb-16 object-cover">
+        <div className="block object-cover w-full mb-16 h-112 lg:h-156">
           <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={carousel ?? ["IMAGE_NOT_FOUND"]} />
         </div>
       </Suspense>

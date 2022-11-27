@@ -1,4 +1,4 @@
-import PageService from "@services/pages"
+import PageService from "@controllers/services/page"
 import ContentSearch from "@views/components/ContentSearch"
 
 import type { IPage, ServerSidePageProps } from "@typings/Page"

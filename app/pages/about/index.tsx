@@ -1,5 +1,5 @@
 import Hero from "@components/Hero"
-import PageService from "@services/pages"
+import PageService from "@controllers/services/page"
 import type { PageProps } from "@typings/Page"
 import { NextPage } from "next"
 
@@ -21,7 +21,7 @@ export default AboutIndexPage
 
 export async function getStaticProps() {
 
-    const { getPage } = PageService
+    const { getPage } = PageService()
 
     const page = await getPage("home")
 

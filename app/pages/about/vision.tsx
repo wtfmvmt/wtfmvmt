@@ -7,7 +7,7 @@ import StatsSection from "@components/StatsSection"
 import SummarySection from "@components/SummarySection"
 
 import PageLayout from "@layouts/PageLayout"
-import PageService from "@services/pages"
+import PageService from "@controllers/services/page"
 
 import type { IPage } from "@typings/Page"
 import type { ServerSidePageProps } from "@typings/Page"
@@ -36,7 +36,7 @@ export default VisionPage
 
 export async function getServerSideProps() {
 
-  const { getPage } = PageService
+  const { getPage } = PageService()
 
   const page = await getPage("vision")
 

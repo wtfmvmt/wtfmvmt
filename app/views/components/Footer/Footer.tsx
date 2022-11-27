@@ -11,18 +11,18 @@ const Footer: ComponentType<FooterProps> = ({ copyright, impressum, socials, lin
   const Header = () => {
 
     return (
-      <div className="w-full md:w-1/3 mb-12">
+      <div className="w-full mb-12 md:w-1/3">
         <a className="inline-block mx-auto mb-8" href={favicon?.url}>
           <Image
-            height={"75px"}
-            width={"75px"}
+            height={75}
+            width={75}
             className=""
             src={favicon?.image?.src ?? "FAVICON_NOT_FOUND"}
             alt={"wtfmvmt-logo"}
           />
         </a>
 
-        <p className="max-w-md text-lg text-slate-200 font-extrabold leading-8 font-share_tech">
+        <p className="max-w-md text-lg font-extrabold leading-8 text-slate-200 font-share_tech">
           {impressum}
         </p>
 
@@ -45,7 +45,7 @@ const Footer: ComponentType<FooterProps> = ({ copyright, impressum, socials, lin
                     return (
 
                       <a key={index}
-                        className="cursor-pointer duration-500 ease-in-out hvr-pop hover:font-major inline-block first-line:inline-block mr-4 sm:mr-8 lg:mr-16 mb-6 text-lg font-extrabold hover:text-blue-300 p-2 hover:bg-black transition-all hover:bg-opacity-90 hover:rounded"
+                        className="inline-block p-2 mb-6 mr-4 text-lg font-extrabold transition-all duration-500 ease-in-out cursor-pointer hvr-pop hover:font-major first-line:inline-block sm:mr-8 lg:mr-16 hover:text-blue-300 hover:bg-black hover:bg-opacity-90 hover:rounded"
                         href={link?.url}>
                         <img loading="lazy" alt={link?.name} src={link?.icon} className="inline-block h-8" />{link?.name}
                       </a>
@@ -62,8 +62,8 @@ const Footer: ComponentType<FooterProps> = ({ copyright, impressum, socials, lin
 
   const Copyright = () => {
     return (
-      <div className="w-full lg:w-auto mb-12 lg:mb-0 min-w-full max-w-full mt-24 text-slate-200 font-share_tech hover:font-major">
-        <p className="text-center text-lg font-extrabold overflow-hidden h-full min-w-full">
+      <div className="w-full max-w-full min-w-full mt-24 mb-12 lg:w-auto lg:mb-0 text-slate-200 font-share_tech hover:font-major">
+        <p className="h-full min-w-full overflow-hidden text-lg font-extrabold text-center">
           <ReactTypingEffect speed={50} eraseSpeed={20} typingDelay={40} text={copyright} />
         </p>
       </div>
@@ -73,14 +73,14 @@ const Footer: ComponentType<FooterProps> = ({ copyright, impressum, socials, lin
   const Socials = () => {
 
     return (
-      socials ? <div className="w-full ml-4 lg:w-auto flex flex-wrap overflow-clip items-center justify-center">
+      socials ? <div className="flex flex-wrap items-center justify-center w-full ml-4 lg:w-auto overflow-clip">
         {
           socials.map((social, index) => {
 
             return (
               <a
                 key={index}
-                className="inline-block mt-3 mr-6 rounded-full hover:scale-90 hover:bg-blue-500 transition-all"
+                className="inline-block mt-3 mr-6 transition-all rounded-full hover:scale-90 hover:bg-blue-500"
                 href={social?.url ?? "SOCIAL_URL_NOT_FOUND"}
               >
                 <SocialIcon bgColor="white" url={social?.url ?? "SOCIAL_URL_NOT_FOUND"} />
@@ -99,7 +99,7 @@ const Footer: ComponentType<FooterProps> = ({ copyright, impressum, socials, lin
       <div className="pt-24">
         <div className="pb-16">
           <div className="container px-4 mx-auto">
-            <div className="flex flex-wrap justify-between items-center">
+            <div className="flex flex-wrap items-center justify-between">
               <Header />
               <Links />
             </div>
@@ -118,7 +118,7 @@ const Footer: ComponentType<FooterProps> = ({ copyright, impressum, socials, lin
         </div>
       </div>
     </section>
-    
+
   )
 }
 
