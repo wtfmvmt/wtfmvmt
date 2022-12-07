@@ -29,10 +29,6 @@ export async function getStaticProps() {
 
 const HomePage = ({ page }) => {
 
-<<<<<<< HEAD
-=======
-  const { hero, summarySection, featuredSection, tableRow, statsSection, logoArray, contactSection, imageMasonry } = data ?? null
->>>>>>> parent of f0f3051... [ Last known good build ]!
 
   const { hero, summarySection, featuredSection, columnList, tableRow, logoArray, contactSection, imageMasonry } = page?.data ?? null
 

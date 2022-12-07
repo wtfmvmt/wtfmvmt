@@ -1,15 +1,10 @@
 import layout from "@configs/layout"
-<<<<<<< HEAD
 import faqs from "@db/faqs"
 import { events, forms, links, media, memberships, meta, partners, socialMedia, team } from "@db/index"
 import type {
     FeaturedSectionProps, HeroProps, LogoArrayProps, PageObjectType, PagesDBProps,
     SummarySectionProps
 } from "@typings/index"
-=======
-import { events, forms, links, media, meta, memberships, partners, socialMedia, team } from "@db/index"
-import type { HeroProps, LogoArrayProps, PageObjectProps, PagesDBProps, SummarySectionProps } from "@typings/index"
->>>>>>> parent of f0f3051... [ Last known good build ]!
 import utils from "@utils/index"
 
 
@@ -24,7 +19,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
     const { getMemberships } = memberships(store)
     const { getLinks, getSitePages } = links(store)
     const { getSocialMedia } = socialMedia(store)
-    const { getBanner, getTeamHeader, getEventsHeader, getCopyright, getSearch, getPillars, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
+    const { getBanner, getTeamHeader, getCopyright, getSearch, getPillars, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
     const { getPartners } = partners(store)
     const { getEvents } = events(store)
     const { getForms } = forms(store)
@@ -72,7 +67,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     tables: getMemberships().map((membership) => ({ title: membership?.name }))
                 },
                 featuredSection: {
-                    title: getEventsHeader()[0]?.name ?? null,
+                    title: null,
                     carousel: shuffle(getPhotos().map((m) => m?.media[0]?.url ?? null)),
                     features: getEvents().map((event) => ({ title: event?.name }))
                 },

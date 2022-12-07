@@ -6,17 +6,8 @@ const meta = (store: []) => {
 
     const metaObject = {
         getTeamHeader: () => {
-<<<<<<< HEAD
             const headerKeys = ["🪦Heading", "🕴🏿Team"]
             return metaObject.getMeta().filter((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
-=======
-            const headerKeys = ["🪦Heading", "Team"]
-            return metaObject.getMeta().filter((meta) => meta?.types?.includes(headerKeys)) ?? null
-        },
-        getEventsHeader: () => {
-            const headerKeys = ["🪦Heading", "📅Event"]
-            return metaObject.getMeta().filter((meta) => meta?.types?.includes(headerKeys)) ?? null
->>>>>>> parent of f0f3051... [ Last known good build ]!
         },
 
         getPillars: () => {

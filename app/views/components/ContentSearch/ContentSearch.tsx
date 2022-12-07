@@ -1,5 +1,4 @@
 
-import Affix from "@components/Affix"
 import type { ComponentType } from "@models/typings/Component"
 
 const ContentSearch: ComponentType<any> =
@@ -10,7 +9,7 @@ const ContentSearch: ComponentType<any> =
             return (
                 <div className="mt-20 text-center">
                     <a
-                        className="inline-block py-4 px-12 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
+                        className="inline-block px-12 py-4 text-lg font-extrabold leading-6 text-center text-white transition duration-200 bg-indigo-800 border-indigo-900 rounded shadow hover:bg-indigo-900 border-3"
                         href="#"
                     >
                         Show more
@@ -27,22 +26,22 @@ const ContentSearch: ComponentType<any> =
                     {
                         content.map((item, index) => {
                             return (
-                                <div key={index} className="w-full sm:w-1/2 px-4 mb-8 hover:scale-90 transition-all">
+                                <div key={index} className="w-full px-4 mb-8 transition-all sm:w-1/2 hover:scale-90">
                                     <a
-                                        className="block bg-black bg-opacity-80 border-3 border-indigo-900 shadow-md rounded-2xl overflow-hidden"
+                                        className="block overflow-hidden bg-black border-indigo-900 shadow-md bg-opacity-80 border-3 rounded-2xl"
                                         href={item?.url ?? "#"}
                                     >
                                         <img
-                                            className="h-72 w-full block object-cover"
+                                            className="block object-cover w-full h-72"
                                             loading="lazy"
                                             src={item?.cover?.src ?? "https://via.placeholder.com/300"}
                                             alt={item?.cover?.alt ?? "Placeholder"}
                                         />
-                                        <div className="px-6 py-8 md:p-10 border-t-3 border-indigo-900">
-                                            <h2 className="text-2xl font-extrabold mb-6 text-gray-200">
+                                        <div className="px-6 py-8 border-indigo-900 md:p-10 border-t-3">
+                                            <h2 className="mb-6 text-2xl font-extrabold text-gray-200">
                                                 {item.title}
                                             </h2>
-                                            <p className="text-xl font-bold mb-6">
+                                            <p className="mb-6 text-xl font-bold">
                                                 {item.description}
                                             </p>
                                             <div className="flex items-center">
@@ -70,13 +69,13 @@ const ContentSearch: ComponentType<any> =
 
         const Header = () => {
             return (
-                <div className="py-20 border-b-3 border-indigo-900 text-slate">
+                <div className="py-20 border-indigo-900 border-b-3 text-slate">
                     <div className="container px-4 mx-auto">
                         <div className="max-w-4xl">
                             <span className="text-xl font-extrabold text-blue-700 font-major">
                                 {title ? title : "TITLE_NOT_FOUND"}
                             </span>
-                            <h1 className="text-3xl md:text-4xl font-extrabold font-heading mt-2 mb-4 font-major">
+                            <h1 className="mt-2 mb-4 text-3xl font-extrabold md:text-4xl font-heading font-major">
                                 {heading ? heading : "HEADING_NOT_FOUND"}
                             </h1>
                             <p className="max-w-3xl text-xl font-extrabold leading-8 font-share_tech">
@@ -93,10 +92,10 @@ const ContentSearch: ComponentType<any> =
 
             return (
 
-                <div className="w-full lg:w-1/3 px-4 mb-16 lg:mb-0">
-                    <Affix top={120} className="w-full lg:w-1/3 px-4 mb-16 lg:mb-0">
+                <div className="w-full px-4 mb-16 lg:w-1/3 lg:mb-0">
+                    <div className="w-full px-4 mb-16 lg:w-1/3 lg:mb-0">
 
-                        <div className="inline-flex max-w-md bg-white p-4 mb-12 items-center border-2 border-indigo-900 rounded shadow">
+                        <div className="inline-flex items-center max-w-md p-4 mb-12 bg-white border-2 border-indigo-900 rounded shadow">
                             <a className="text-indigo-900 hover:text-indigo-800" href="#">
                                 <svg
                                     width={24}
@@ -112,7 +111,7 @@ const ContentSearch: ComponentType<any> =
                                 </svg>
                             </a>
                             <input
-                                className="bg-transparent px-3 text-lg font-extrabold text-indigo-900 placeholder-indigo-900 outline-none"
+                                className="px-3 text-lg font-extrabold text-indigo-900 placeholder-indigo-900 bg-transparent outline-none"
                                 type="search"
                                 placeholder="Search"
                             />
@@ -157,7 +156,7 @@ const ContentSearch: ComponentType<any> =
                             </li>
                         </ul>
 
-                    </Affix>
+                    </div>
 
                 </div>
 
@@ -169,11 +168,11 @@ const ContentSearch: ComponentType<any> =
         return (
             <section className="transition-all">
                 <Header />
-                <div className="pt-12 pb-24 relative">
-                    <div className="container px-4 mx-auto relative">
+                <div className="relative pt-12 pb-24">
+                    <div className="container relative px-4 mx-auto">
                         <div className="flex flex-wrap -mx-4">
                             <SearchBar />
-                            <div className="w-full lg:w-2/3 px-4">
+                            <div className="w-full px-4 lg:w-2/3">
                                 <Content />
                                 <CallToAction />
                             </div>

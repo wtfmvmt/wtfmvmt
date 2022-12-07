@@ -99,11 +99,6 @@ const FacadeService = () => {
                     }
                 },
                 predicate: (data) => {
-<<<<<<< HEAD
-=======
-
-                    
->>>>>>> parent of f0f3051... [ Last known good build ]!
                     const { name } = serviceObject.types.memberships
                     return isDatabase(name, data)
                  }

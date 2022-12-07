@@ -1,19 +1,14 @@
-"use client"
-
 import { useDistortionEffectCarousel } from 'distortion-effect-carousel';
-import React from 'react';
-
-
+import { memo } from 'react';
 
 const DistortionCarousel = ({
   displacmentImage = "/assets/images/distortions/1.jpg",
   images,
 }) => {
-
   const { ref, next } = useDistortionEffectCarousel({
     images,
     displacmentImage,
-    resizeDebounce: 750,
+    resizeDebounce: 150,
     backgroundSize: "cover",
     easing: "easeInOut",
     speed: 1.1,
@@ -22,7 +17,7 @@ const DistortionCarousel = ({
 
   return (
     <div
-      className='cursor-pointer rounded-md'
+      className='rounded-md cursor-pointer'
       onClick={() => next()}
 
       style={{
@@ -34,4 +29,4 @@ const DistortionCarousel = ({
   );
 };
 
-export default React.memo(DistortionCarousel);
+export default memo(DistortionCarousel);
