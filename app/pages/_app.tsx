@@ -12,8 +12,8 @@ function Application({ Component, pageProps }) {
   const { PageLayout } = Component.layout
 
   return (
-
-    <RecoilRoot>
+  <RecoilRoot>
+  
       <PageLayout {...pageProps.page.layout}>
         <Component {...pageProps} />
       </PageLayout>

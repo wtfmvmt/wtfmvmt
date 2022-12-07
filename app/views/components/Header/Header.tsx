@@ -1,23 +1,12 @@
 import Banner from "@components/Banner";
 import BurgerIcon from "@components/BurgerIcon";
-import React from "react"
+import Bread from "@components/Header/Bread";
 import useBannerState from "@hooks/useBannerState";
 import useMenuDrawerState from "@hooks/useMenuDrawerState";
-import AnnouncementIcon from '@mui/icons-material/Announcement';
-import Autocomplete from '@mui/material/Autocomplete';
-import Badge from '@mui/material/Badge';
-import TextField from '@mui/material/TextField';
-import type { HeaderProps } from "@typings/Header";
-import Headroom from "react-headroom";
 import type { ComponentType } from "@typings/Component";
-import SearchBar from "@components/SearchBar";
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import Bread from "@components/Header/Bread"
-
-
-
-
-
+import type { HeaderProps } from "@typings/Header";
+import React from "react";
+import Headroom from "react-headroom";
 
 
 
@@ -28,10 +17,9 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
 
 
     const MobileNavBurger = () => (
-        <a className="navbar-burger cursor-pointer self-center mr-12 xl:hidden">
-            <div className="xl:flex items-center">
+        <a className="self-center mr-12 cursor-pointer navbar-burger lg:hidden">
+            <div className="items-center xl:flex">
                 <a className="flex items-center hover:text-gray-600">
-
                     <BurgerIcon action={() => toggleDrawer()} />
                 </a>
             </div>
@@ -56,7 +44,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
     const NavBurger = () => {
         return (
 
-            <div className="cursor-pointer hover:scale-50 duration-500 hidden xl:flex">
+            <div className="hidden duration-500 cursor-pointer hover:scale-50 xl:flex">
                 <BurgerIcon action={() => toggleDrawer()} />
             </div>)
     }
@@ -64,20 +52,17 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
 
     return (
         <Headroom>
-            <section className="relative pb-6 overflow-hidden w-full">
-
+            <section className="relative w-full pb-6 overflow-hidden">
                 <Banner {...banner} />
                 <nav className="flex justify-between backdrop-blur-sm">
-
-                    <div className="px-12 py-6 flex w-full items-center">
+                    <div className="flex items-center w-full px-12 py-6">
                         <Favicon />
-                        <div className="xl:flex flex-1 items-center justify-center">
+                        <div className="items-center justify-center flex-1 xl:flex">
                             <a className="flex items-center hover:text-purple-600">
                                 <Bread />
                             </a>
                         </div>
                     </div>
-                    
                     <NavBurger />
                     <MobileNavBurger />
                 </nav>
