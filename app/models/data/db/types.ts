@@ -1,7 +1,6 @@
-import utils from "@utils/index"
-
 const types = () => {
 
+<<<<<<< HEAD
     const { files, url, email, phone, formula, icon, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
 
 
@@ -217,6 +216,9 @@ const types = () => {
         },
 
     }
+=======
+    const typesObject = {}
+>>>>>>> parent of f0f3051... [ Last known good build ]!
 }
 
 export default types

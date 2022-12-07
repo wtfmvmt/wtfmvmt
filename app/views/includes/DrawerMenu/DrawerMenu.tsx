@@ -45,7 +45,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                                     href={link?.url}
                                 >
                                     <span className="hvr-wobble-horizontal inline-block overflow-hidden">
-                                        <img loading="lazy" src={link?.icon} className="h-8 inline" /> {link?.name}
+                                        {link?.name}
                                     </span>
                                 </a>
                             </li>
