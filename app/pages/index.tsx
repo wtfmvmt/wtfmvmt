@@ -50,7 +50,7 @@ const HomePage = ({ page }) => {
 
 }
 
-HomePage.layout = { PageLayout }
+HomePage.layout = PageLayout
 
 export default HomePage
 

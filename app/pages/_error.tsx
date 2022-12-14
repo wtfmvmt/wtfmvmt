@@ -1,8 +1,10 @@
-const _Error = () => {
+
+const _ERROR = () => {
     return (
         <>
+            FUCK
         </>
     )
 }
 
-export default _Error
+export default _ERROR
