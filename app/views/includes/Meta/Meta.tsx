@@ -1,6 +1,7 @@
 import type { ComponentType } from "@typings/Component";
 import type { MetaProps } from "@typings/Meta";
 import { NextSeo } from 'next-seo';
+import meta from "@configs/meta"
 
 const Meta: ComponentType<MetaProps> = ({ title, pageTitle }: MetaProps) => {
 
@@ -9,6 +10,7 @@ const Meta: ComponentType<MetaProps> = ({ title, pageTitle }: MetaProps) => {
             title={`${title} | ${pageTitle}`}
             themeColor="#000000"
             description=""
+            additionalLinkTags={meta?.icons ?? null}
             canonical="https://www.wtfmvmt.com/"
             openGraph={{
                 url: 'https://www.wtfmvmt.com',
@@ -36,7 +38,7 @@ const Meta: ComponentType<MetaProps> = ({ title, pageTitle }: MetaProps) => {
             }}
             twitter={{
                 handle: '@wtfmmvt',
-                site: '@wtfmmvt',
+                site: '@wtfmvmt',
                 cardType: 'summary_large_image',
             }}
         />
