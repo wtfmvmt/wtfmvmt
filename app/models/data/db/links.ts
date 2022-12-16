@@ -1,26 +1,29 @@
-import FacadeService from '@services/facade';
+import FacadeService from "@services/facade"
+import { collections } from "@utils/index"
+import type { NotionPageObjectType } from "@typings/Notion"
+import type { DatabaseObjectType } from "@typings/Data"
 
-const links = (store) => {
+const links = (store: NotionPageObjectType): DatabaseObjectType => {
 
-    const linksObject = {
+    const { variants, links } = FacadeService().types.notion
+
+    const { createDatabase, queryDatabase } = collections()
+
+    const dbObject = {
 
         getLinks: () => {
-            const { links } = FacadeService().types
-            return store.filter((data) => {
-                return links.predicate(data)
-            }).map((data) => {
-                return links.shape(data)
-            })
+            return dbObject.db.data
         },
 
-        getSitePages: () => {
-            const sitePageKey = "📃Site Page"
-            return linksObject.getLinks().filter((link) => link.types.includes(sitePageKey))
-        }
-
+        db: createDatabase({
+            id: links.name,
+            predicate: links.predicate,
+            shape: links.shape,
+            data: store
+        })
     }
 
-    return { ...linksObject }
+    return { ...dbObject }
 }
 
 export default links

@@ -1,13 +1,24 @@
 
+
 module.exports = {
   stories: [
+    "../stories/**/Home.stories.mdx",
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)"
   ],
+  webpackFinal: async (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@styles': path.resolve(__dirname, '../views/styles/'),
+      '@components': path.resolve(__dirname, '../views/components/'),
+    }
+  },
   addons: [
     'storybook-tailwind-dark-mode',
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    '@storybook/addon-console',
+    '@storybook/addon-actions/register',
     'storybook-addon-swc',
     "@storybook/addon-interactions",
     '@storybook/addon-measure',

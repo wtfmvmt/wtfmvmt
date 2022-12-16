@@ -1,20 +1,32 @@
-import FacadeService from "@controllers/services/facade"
+import FacadeService from "@services/facade"
+import { collections } from "@utils/index"
+import type { NotionPageObjectType } from "@typings/Notion"
+import type { DatabaseObjectType } from "@typings/Data"
 
-const team = (store: []) => {
 
-    const { team } = FacadeService().types
+const team = (store: NotionPageObjectType): DatabaseObjectType => {
 
-    return {
+    const { team, variants } = FacadeService().types.notion
+
+    const { createDatabase, queryDatabase } = collections()
+
+    const dbObject = {
+
         getTeam: () => {
-            return store.filter((data) => {
-                return team.predicate(data)
-            }).map((data) => {
-                return team.shape(data)
-            })
-        }
+            return dbObject.db.data
+        },
 
+        db: createDatabase({
+            data: store,
+            predicate: team.predicate,
+            shape: team.shape,
+            id: team.name
+        })
     }
+
+    return { ...dbObject }
 }
+
 
 export default team
 

@@ -3,22 +3,22 @@ import { collections } from "@utils/index"
 import type { NotionPageObjectType } from "@typings/Notion"
 import type { DatabaseObjectType } from "@typings/Data"
 
-const memberships = (store: NotionPageObjectType): DatabaseObjectType => {
+const socialMedia = (store: NotionPageObjectType): DatabaseObjectType => {
 
-    const { memberships, variants } = FacadeService().types.notion
+    const { variants, social_media } = FacadeService().types.notion
 
     const { createDatabase, queryDatabase } = collections()
 
     const dbObject = {
 
-        getMemberships: () => {
+        getSocialMedia: () => {
             return dbObject.db.data
         },
 
         db: createDatabase({
-            id: memberships.name,
-            predicate: memberships.predicate,
-            shape: memberships.shape,
+            id: social_media.name,
+            predicate: social_media.predicate,
+            shape: social_media.shape,
             data: store
         })
     }
@@ -26,5 +26,5 @@ const memberships = (store: NotionPageObjectType): DatabaseObjectType => {
     return { ...dbObject }
 }
 
-export default memberships
+export default socialMedia
 

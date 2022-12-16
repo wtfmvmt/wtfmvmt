@@ -1,16 +1,35 @@
-import utils from "@utils/index"
-const types = () => {
-
-    const { files, url, email, phone, formula, icon, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
+import { notion as notionUtilities } from "@utils/index"
 
 
-    const _template = {
-        name: "s",
-        variants: {
-            featured: "",
-        }
-    }
+export const notion = () => {
+    const { files, url, email, phone, formula, icon, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = notionUtilities()
+
     const typesObject = {
+        variants: {
+            heading: "🪦Heading",
+            team_member: "🕴🏿Team Member",
+            search: "🔎Search",
+            pillar: "💜Pillar",
+            favicon: "🖼️Favicon",
+            photo: "🖼️Photo",
+            video: "📺Video",
+            founder: "🪨Founder",
+            copyright: "📜Copyright",
+            artivism: "🎨Artivism",
+            email: "📧Email",
+            event: "📅Event",
+            impressum: "✒️Impressum",
+            banner: "🪧Banner",
+            cta: "🔔Call to Action"
+        },
+
+        estore: {
+            name: "Store",
+            shape: (data) => { },
+            predicate: (data) => { }
+        },
+
+
         partners: {
             name: "💖Partners",
             shape: (data) => {
@@ -27,7 +46,7 @@ const types = () => {
                 }
             },
             predicate: (data) => {
-                return isDatabase(typesObject?.partners?.name, data)
+                return isDatabase(typesObject.partners?.name, data)
             }
         },
 
@@ -46,18 +65,17 @@ const types = () => {
                 }
             },
             predicate: (data) => {
-                return isDatabase(typesObject?.forms?.name, data)
+                return isDatabase(typesObject.forms?.name, data)
             }
         },
         events: {
             name: "🗓️Events",
             shape: (data) => {
-                const { Facebook, Name, Media, Description, Types, Status } = getProperties(data)
+                const { Facebook, Name, Covers, Types, Status } = getProperties(data)
 
                 return {
                     name: title(Name),
-                    media: files(Media),
-                    description: rich_text(Description),
+                    covers: files(Covers),
                     status: status(Status),
                     facebook: url(Facebook),
                     types: multi_select(Types)
@@ -68,6 +86,8 @@ const types = () => {
                 return isDatabase(name, data)
             }
         },
+
+
         media: {
             name: "📷Media",
             shape: (data) => {
@@ -102,10 +122,7 @@ const types = () => {
                 }
             },
             predicate: (data) => {
-
-
                 const { name } = typesObject.memberships
-
                 return isDatabase(name, data)
             }
         },
@@ -159,14 +176,15 @@ const types = () => {
             }
         },
         faqs: {
-            name: "❓FAQ",
+            name: "❓FAQs",
             shape: (data: any) => {
 
-                const { URL, Name, Description, Status, Types } = data.properties
+                const { icon: Icon, properties: { URL, Name, Description, Status, Types } } = data
 
                 return {
-                    question: title(Name),
-                    answer: rich_text(Description),
+                    name: title(Name),
+                    icon: icon(Icon),
+                    description: rich_text(Description),
                     status: status(Status),
                     url: url(URL),
                     types: multi_select(Types),
@@ -174,7 +192,7 @@ const types = () => {
             },
             predicate: (data: any) => {
                 const { name } = typesObject.faqs
-                return isDatabase(name, data) ?? null
+                return isDatabase(name, data)
             }
         },
         links: {
@@ -195,6 +213,7 @@ const types = () => {
                 return isDatabase(name, data) ?? null
             }
         },
+
         social_media: {
             name: "📱Social Media",
             shape: (data: any) => {
@@ -212,10 +231,9 @@ const types = () => {
                 const { name } = typesObject.social_media
                 return isDatabase(name, data)
             }
-
-        },
-
+        }
     }
-}
 
-export default types
+    return { ...typesObject }
+
+}

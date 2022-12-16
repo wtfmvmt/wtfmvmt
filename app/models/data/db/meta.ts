@@ -1,61 +1,95 @@
 import FacadeService from "@services/facade";
+import type { DatabaseObjectType } from "@typings/Data";
+import type { NotionPageObjectType } from "@typings/Notion";
+import { collections } from "@utils/index";
 
-const meta = (store: []) => {
+const meta = (store: NotionPageObjectType): DatabaseObjectType => {
 
-    const { meta } = FacadeService().types
+    const { meta, variants } = FacadeService().types.notion
 
-    const metaObject = {
+    const { createDatabase, queryDatabase } = collections()
+
+    const dbObject = {
+
         getTeamHeader: () => {
-            const headerKeys = ["🪦Heading", "🕴🏿Team"]
-            return metaObject.getMeta().filter((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
+            return dbObject.db.data
         },
 
         getPillars: () => {
-            const pillarsKey = "💜Pillar"
-            return metaObject.getMeta().filter((meta) => meta?.types?.includes(pillarsKey)) ?? null
+            return queryDatabase({
+                keys: [variants.pillar],
+                db: dbObject.db.data,
+                batch: true
+            })
         },
         getSearch: () => {
-            const searchKey = "🔎Search"
-            return metaObject.getMeta().find((meta) => meta?.types?.includes(searchKey)) ?? null
+            return queryDatabase({
+                keys: [variants.search],
+                db: dbObject.db.data,
+
+            })
         },
         getTitle: () => {
-            return metaObject.getMeta().find((meta) => meta?.types?.includes("📛Title")) ?? null
+            return queryDatabase({
+                keys: [variants.pillar],
+                db: dbObject.db.data,
+
+            })
         },
         getCopyright: () => {
-            return metaObject.getMeta().find((meta) => meta?.types?.includes("📜Copyright")) ?? null
+            return queryDatabase({
+                keys: [variants.copyright],
+                db: dbObject.db.data,
+
+            })
         },
         getEmailAddress: () => {
-            return metaObject.getMeta().find((meta) => meta?.types?.includes("📧Email")) ?? null
+            return queryDatabase({
+                keys: [variants.email],
+                db: dbObject.db.data,
+
+            })
         },
         getBanner: () => {
-            const bannerKey = "🪧Banner"
-            return metaObject.getMeta().find((meta) => meta?.types?.includes(bannerKey)) ?? null
+            return queryDatabase({
+                keys: [variants.banner],
+                db: dbObject.db.data,
+
+            })
         },
         getFavicon: () => {
-            return metaObject.getMeta().find((meta) => meta?.types?.includes("🖼️Favicon")) ?? null
+            return queryDatabase({
+                keys: [variants.favicon],
+                db: dbObject.db.data,
+            })
         },
         getImpressum: () => {
-            const impressumKey = "✒️Impressum"
+            return queryDatabase({
+                keys: [variants.impressum],
+                db: dbObject.db.data,
 
-            return metaObject.getMeta().find((meta) => meta?.types?.includes(impressumKey)) ?? null
-        },
-        getAudienceHook: () => {
-            return true
-        },
-        getCallToAction: () => {
-            const callToActionKey = "🔔Call to Action"
-            return metaObject.getMeta().find((meta) => meta?.types?.includes(callToActionKey)) ?? null
-        },
-        getMeta: () => {
-            return store?.filter((data) => {
-                return meta?.predicate(data)
-            }).map((data: []) => {
-                return meta?.shape(data)
             })
-        }
+        },
+
+
+        getCallToAction: () => {
+            return queryDatabase({
+                keys: [variants.cta],
+                db: dbObject.db.data,
+
+            })
+        },
+
+        db: createDatabase({
+            id: meta.name,
+            predicate: meta.predicate,
+            shape: meta.shape,
+            data: store
+        })
+
     }
 
-    return { ...metaObject }
+    return { ...dbObject }
 }
 
 export default meta

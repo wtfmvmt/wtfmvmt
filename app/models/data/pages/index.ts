@@ -1,28 +1,36 @@
 import layout from "@configs/layout"
+import events from "@db/events"
 import faqs from "@db/faqs"
-import { events, forms, links, media, memberships, meta, partners, socialMedia, team } from "@db/index"
-import type {
-    FeaturedSectionProps, HeroProps, LogoArrayProps, PageObjectType, PagesDBProps,
-    SummarySectionProps
-} from "@typings/index"
-import utils from "@utils/index"
+import forms from "@db/forms"
+import links from "@db/links"
+import media from "@db/media"
+import memberships from "@db/memberships"
+import meta from "@db/meta"
+import partners from "@db/partners"
+import socialMedia from "@db/social_media"
+import team from "@db/team"
+import { collections } from "@utils/index"
 
-
+import type { PageObjectType, PagesDBProps } from "@typings/Page"
+import type { HeroProps } from "@typings/Hero"
+import type { LogoArrayProps } from "@typings/LogoArray"
+import type { SummarySectionProps } from "@typings/SummarySection"
 
 const pages = ({ store, key }: PagesDBProps): PageObjectType => {
 
-    const { collections: { shuffle } } = utils()
+    const { shuffle } = collections()
 
     const { getFAQs } = faqs(store)
     const { getTeam } = team(store)
     const { getPhotos } = media(store)
     const { getMemberships } = memberships(store)
-    const { getLinks, getSitePages } = links(store)
+    const { getLinks } = links(store)
     const { getSocialMedia } = socialMedia(store)
-    const { getBanner, getTeamHeader, getCopyright, getSearch, getPillars, getEmailAddress, getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
     const { getPartners } = partners(store)
     const { getEvents } = events(store)
     const { getForms } = forms(store)
+    const { getBanner, getTeamHeader, getCopyright, getSearch, getPillars, getEmailAddress,
+        getFavicon, getTitle, getImpressum, getAudienceHook, getCallToAction } = meta(store)
 
     const pageData = {
         home: {
@@ -31,7 +39,6 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
             },
             data: {
                 hero: <HeroProps>{
-                    title: getTitle().values[0],
                     mediaCarousel: shuffle(getPhotos().map((media) => (media?.media[0]?.url ?? null))),
                     description: getImpressum().values[0],
                     socialLinks: getSocialMedia().map((social) => ({ url: social?.url, name: social?.name })),
@@ -122,10 +129,30 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                 data: {}
             },
 
-        }
+        },
+        memberships: {
+            metaData: {
+                pageTitle: "Memberships",
+            },
+            data: {}
+        },
+        legal: {
+            metaData: {
+                pageTitle: "Legal"
+            }
+        },
+        store: {
+            metaData: {
+                pageTitle: "Store"
+            }
+        },
+        partners: {},
+        blog: {},
+        community: {},
+        media: {},
+        artivism: {},
+        about: {},
     }
-
-
 
     const pageObject: PageObjectType = {
         version: Date.now(),
@@ -134,29 +161,28 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                 banner: {
                     messages: getBanner().values
                 },
-                search: getSearch()?.values?.map((search) => ({ id: search })),
                 favicon: {
                     image: {
-                        src: getFavicon().files[0]?.url
+                        src: getFavicon()?.files[0]?.url ?? null
                     },
-                    url: getFavicon()?.url
+                    url: getFavicon()?.url ?? null
                 }
             },
             footer: {
                 socials: getSocialMedia(),
                 favicon: {
                     image: {
-                        src: getFavicon().files[0]?.url,
-                        alt: getFavicon().files[0]?.name,
+                        src: getFavicon()?.files[0]?.url ?? null,
+                        alt: getFavicon()?.files[0]?.name ?? null,
                     },
                     url: getFavicon().url ?? null,
                 },
-                links: getSitePages(),
+                links: getLinks(),
                 copyright: getCopyright().values,
                 impressum: getImpressum().values[0]
             },
             menu: {
-                links: getSitePages().map((link) => ({
+                links: getLinks().map((link) => ({
                     name: link?.name,
                     url: link?.url,
                 })),
@@ -182,7 +208,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
         pages: pageData[key]?.pages,
     }
 
-    return { ...pageObject } as PageObjectType
+    return { ...pageObject } as PageObjectType ?? null
 }
 
 export default pages

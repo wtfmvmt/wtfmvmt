@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import NotionService from "@services/notion"
 import meta from "@db/meta"
-import media from "@db/media"
 
 export default async function handler(
     req: NextApiRequest,
@@ -12,7 +11,7 @@ export default async function handler(
 
     const data = await getCentralDogma()
 
-    const { getMedia } = media(data)
+    const { getFavicon } = meta(data)
 
-    res.status(200).json(getMedia())
+    res.status(200).json(data)
 }

@@ -6,7 +6,7 @@ const PageService = () => {
    const serviceObject = {
         getLayout: async (pageKey?: string) => {
 
-            const { getCentralDogma } = NotionService
+            const { getCentralDogma } = NotionService()
 
             const centralDogma = (await getCentralDogma())
 
@@ -18,7 +18,7 @@ const PageService = () => {
 
         getPage: async (pageKey: string) => {
 
-            const { getCentralDogma } = NotionService
+            const { getCentralDogma } = NotionService()
 
             const centralDogma = (await getCentralDogma())
 

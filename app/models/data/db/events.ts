@@ -1,24 +1,29 @@
 import FacadeService from "@services/facade"
+import { collections } from "@utils/index"
+import type { NotionPageObjectType } from "@typings/Notion"
+import type { DatabaseObjectType } from "@typings/Data"
 
-const events = (store: []) => {
+const events = (store: NotionPageObjectType): DatabaseObjectType => {
 
-    const { events } = FacadeService().types
+    const { events, variants } = FacadeService().types.notion
 
-    const eventsObject = {
-        getEventsAlbum: () => {
-            const eventsAlbumKey = "📅Event"
-            return eventsObject.getEvents().filter((event) => event.types.includes(eventsAlbumKey))
-         },
+    const { createDatabase, queryDatabase } = collections()
+
+    const dbObject = {
+
         getEvents: () => {
-            return store.filter((data) => {
-                return events.predicate(data)
-            }).map((data) => {
-                return events.shape(data)
-            })
-        }
+            return dbObject.db.data
+        },
 
+        db: createDatabase({
+            id: events.name,
+            shape: events.shape,
+            predicate: events.predicate,
+            data: store
+        })
     }
-    return { ...eventsObject }
+
+    return { ...dbObject }
 }
 
 export default events
