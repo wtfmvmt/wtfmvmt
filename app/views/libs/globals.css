@@ -11,8 +11,9 @@ body {
         overflow-x: hidden !important;
         width: 100vw;
         margin: 'auto';
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
+        background-position: center center;
         background-image: var(--bgImage);
 }
 

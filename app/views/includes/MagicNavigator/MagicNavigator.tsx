@@ -10,13 +10,14 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import SettingsIcon from '@mui/icons-material/Settings';
 import type { ComponentType } from '@models/typings/Component';
 
-
+import useMenuDrawerState from "@hooks/useMenuDrawerState"
 
 const MagicNavigator: ComponentType<any> = () => {
 
     const { open, toggleBanner } = useBannerState()
 
     const { toggleModal } = useModal()
+    const { toggleDrawer } = useMenuDrawerState()
 
 
     const ActionButtonSx = {
@@ -48,8 +49,8 @@ const MagicNavigator: ComponentType<any> = () => {
         },
         {
             icon: <SettingsIcon sx={ActionButtonSx} />,
-            name: 'Settings',
-            action: () => toggleModal()
+            name: 'Menu',
+            action: () => toggleDrawer()
         },
 
 

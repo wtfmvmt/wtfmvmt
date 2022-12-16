@@ -6,21 +6,24 @@ import HomeIcon from '@mui/icons-material/Home';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-    const backgroundColor =
-        theme.palette.mode === 'dark'
-            ? theme.palette.grey[100]
-            : theme.palette.grey[100];
+    const backgroundColor = "#000000AA"
+
     return {
         backgroundColor,
         height: theme.spacing(3),
-        color: "black",
+        color: "white",
+        opacity: 0.50,
+        cursor: "pointer",
         fontFamily: "var(--font-primary)",
         fontWeight: theme.typography.fontWeightRegular,
         '&:hover, &:focus': {
+            opacity: 1.00,
+            boxShadow: theme.shadows[4],
             backgroundColor: emphasize(backgroundColor, 0.06),
         },
         '&:active': {
-            boxShadow: theme.shadows[1],
+            boxShadow: theme.shadows[3],
+            opacity: 1.00,
             backgroundColor: emphasize(backgroundColor, 0.12),
         },
     };
@@ -31,19 +34,41 @@ function handleClick(event: React.MouseEvent<Element, MouseEvent>) {
     console.info('You clicked a breadcrumb.');
 }
 
-export default function Bread() {
+export type BreadcrumProps = {
+    message?: string
+}
+
+export type BreadProps = {
+    breadcrumbs?: BreadcrumProps
+}
+const Bread = ({ breadcrumbs }: BreadProps) => {
+
     return (
         <div className="self-center m-auto font-share_tech hidden lg:flex" role="presentation" onClick={handleClick}>
             <Breadcrumbs aria-label="breadcrumb">
                 <StyledBreadcrumb
                     component="a"
                     href="/"
-                    label={<span className="text-black font-bold">Home</span>}
+                    label={<span className="font-bold">Hippie Hideout 12/24</span>}
                     icon={<HomeIcon fontSize="small" />}
                 />
-           
+                <StyledBreadcrumb
+                    component="a"
+                    href="/"
+                    label={<span className="font-bold">Merry Christmas!</span>}
+                    icon={<HomeIcon fontSize="small" />}
+                />
+                <StyledBreadcrumb
+                    component="a"
+                    href="/"
+                    label={<span className="font-bold">Checkout Vivalapvyne Records!</span>}
+                    icon={<HomeIcon fontSize="small" />}
+                />
+
 
             </Breadcrumbs>
         </div>
-    );
+    )
 }
+
+export default Bread

@@ -21,21 +21,6 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
     }
 
 
-    const FeaturedGallery = () => (
-
-        mediaCarousel ? <div className="w-full lg:w-2/3 px-3">
-
-            <div className="flex flex-wrap h-full">
-
-                <div className="w-full z-50 h-full puff-in-center ">
-                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousel} />
-                </div>
-
-            </div>
-
-        </div> : <>FEATUARED_GALLERY_NOT_FOUND</>
-    )
-
     const ActionLinks = () => (
 
         actionLinks ? <div className="left-0 mt-20 lg:w-1/3 px-4 mb-8 lg:mb-0 bg-black bg-opacity-60 absolute w-full z-50">
