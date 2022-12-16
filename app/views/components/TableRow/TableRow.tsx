@@ -18,7 +18,7 @@ const TableRow: ComponentType<TableRowProps> = ({ tables, heading, title }: Tabl
                                             {table?.heading ? table.heading : "HEADING_NOT_FOUND"}
                                         </p>
                                     </div>
-                                    
+
                                     <div className="flex w-full sm:w-auto items-start">
                                         <span className="pr-1 text-lg font-extrabold">$</span>
                                         <span className="text-4xl md:text-5xl font-extrabold">{table?.value ? table.value : "VALUE_NOT_FOUND"}</span>
@@ -48,7 +48,7 @@ const TableRow: ComponentType<TableRowProps> = ({ tables, heading, title }: Tabl
                                         className="inline-block w-full py-4 px-6 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
                                         href={table.cta?.url ? table.cta.url : "#"}
                                     >
-                                        {table?.cta ? table.cta.name : "Sign Up"}
+                                        {table?.cta ? table.cta.name : "[Client]: CTA_NOT_FOUND"}
                                     </a>
                                 </div>
                             </div>
@@ -73,15 +73,6 @@ const TableRow: ComponentType<TableRowProps> = ({ tables, heading, title }: Tabl
                 <h1 className="text-3xl font-major text-slate-200 md:text-4xl font-extrabold font-heading mt-4 mb-6">
                     {title ? title : "TITLE_NOT_FOUND"}
                 </h1>
-
-                <div className="flex items-center justify-center">
-                    <span className="sm:text-xl font-extrabold">Billed Monthly</span>
-                    <div className="inline-flex w-16 h-10 mx-4 px-px items-center bg-black border-3 border-indigo-900 rounded-full shadow">
-                        <button className="w-7 h-7 border-3 border-indigo-900 bg-green-200 rounded-full" />
-                        <button className="w-7 h-7 rounded-full focus:outline-none" />
-                    </div>
-                    <span className="sm:text-xl font-extrabold">Billed Annually</span>
-                </div>
             </div>
 
         )

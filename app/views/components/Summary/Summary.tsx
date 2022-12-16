@@ -1,8 +1,8 @@
 import ReactPlayer from 'react-player'
 import type { ComponentType } from '@models/typings/Component'
-import type { SummarySectionProps } from '@models/typings/SummarySection'
+import type { SummaryProps } from '@typings/Summary'
 
-const SummarySection: ComponentType<SummarySectionProps> = ({ heading, title, description, sections }: SummarySectionProps) => {
+const Summary: ComponentType<SummaryProps> = ({ video, heading, title, description, sections }: SummaryProps) => {
 
 
   const Sections = () => {
@@ -23,7 +23,7 @@ const SummarySection: ComponentType<SummarySectionProps> = ({ heading, title, de
               </p>
             </div>
           </div>
-        )) : <></>
+        )) : <>[Client]: SECTIONS_NOT_FOUND</>
         }
 
       </div>
@@ -51,9 +51,8 @@ const SummarySection: ComponentType<SummarySectionProps> = ({ heading, title, de
         <div className="w-full lg:w-1/2 px-4">
           <div className="relative">
 
-
             <div className="block w-full h-80 object-cover border-3 border-purple-900 rounded-2xl shadow-xl">
-              <ReactPlayer playIcon={<>▶️</>} pip={true} url='https://www.youtube.com/watch?v=v5yg153jRKU' />
+              <ReactPlayer playIcon={<>▶️</>} pip={true} url={video?.url ?? "#"} />
             </div>
           </div>
         </div>
@@ -72,4 +71,4 @@ const SummarySection: ComponentType<SummarySectionProps> = ({ heading, title, de
   )
 }
 
-export default SummarySection
+export default Summary

@@ -12,7 +12,11 @@ export const notion = () => {
             pillar: "💜Pillar",
             favicon: "🖼️Favicon",
             photo: "🖼️Photo",
+            faqs: "❓FAQ",
+            memberships: "🧑🏿‍🧑🏿‍🧒🏿Memberships",
+            title: "📛Title",
             video: "📺Video",
+            partners: "🫱🏿‍🫲🏿Partners",
             founder: "🪨Founder",
             copyright: "📜Copyright",
             artivism: "🎨Artivism",
@@ -111,10 +115,13 @@ export const notion = () => {
         memberships: {
             name: "👥Memberships",
             shape: (data) => {
-                const { Facebook, Name, Covers, Types, Status } = getProperties(data)
+                const { Facebook, Actions, Name, Values, Price, Covers, Types, Status } = getProperties(data)
 
                 return {
                     name: title(Name),
+                    actions: multi_select(Actions),
+                    price: number(Price),
+                    values: multi_select(Values),
                     covers: files(Covers),
                     status: status(Status),
                     facebook: url(Facebook),
@@ -154,7 +161,7 @@ export const notion = () => {
             name: "📐Meta",
             shape: (data: any) => {
 
-                const { URL, Title, Name, Covers, Types, Files, Values, Description, Status, Phone, Email } = data.properties
+                const { URL, Youtube, Title, Name, Covers, Types, Files, Values, Description, Status, Phone, Email } = data.properties
 
                 return {
                     url: url(URL),
@@ -165,6 +172,7 @@ export const notion = () => {
                     covers: files(Covers),
                     phone: phone(Phone),
                     email: email(Email),
+                    youtube: url(Youtube),
                     files: files(Files),
                     types: multi_select(Types),
                     values: multi_select(Values),

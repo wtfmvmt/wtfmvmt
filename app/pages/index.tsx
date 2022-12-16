@@ -1,16 +1,15 @@
-import ContactSection from "@components/ContactSection"
+import ColumnList from "@components/ColumnList"
+import Contact from "@views/components/Contact"
+import Featured from "@components/Featured"
 import Hero from "@components/Hero"
 import ImageMasonry from "@components/ImageMasonry"
 import LogoArray from "@components/LogoArray"
 import RowList from "@components/RowList"
 import StatsRow from "@components/StatsRow"
-import SummarySection from "@components/SummarySection"
+import Summary from "@components/Summary"
 import TableRow from "@components/TableRow"
 import PageService from "@controllers/services/page"
-import ColumnList from "@components/ColumnList"
-import FeaturedSection from "@components/Featured"
 import PageLayout from "@layouts/PageLayout"
-
 
 export async function getStaticProps() {
 
@@ -30,20 +29,20 @@ export async function getStaticProps() {
 const HomePage = ({ page }) => {
 
 
-  const { hero, summarySection, featuredSection, columnList, tableRow, logoArray, contactSection, imageMasonry } = page?.data ?? null
+  const { hero, summary, rowList, statsRow, featured, columnList, tableRow, logoArray, contact, imageMasonry } = page?.data ?? null
 
   return (
     <>
       <Hero {...hero} />
-      <FeaturedSection {...featuredSection} />
-      <SummarySection {...summarySection} />
+      <Featured {...featured} />
+      <Summary {...summary} />
       <LogoArray {...logoArray} />
-      <StatsRow />
-      <RowList />
+      <StatsRow {...statsRow} />
+      <RowList {...rowList} />
       <TableRow {...tableRow} />
       <ColumnList {...columnList} />
       <ImageMasonry {...imageMasonry} />
-      <ContactSection {...contactSection} />
+      <Contact {...contact} />
     </>
   )
 

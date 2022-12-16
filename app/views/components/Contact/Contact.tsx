@@ -5,10 +5,10 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { SocialIcon } from "react-social-icons"
 import useNotification from "@hooks/useNotification"
 import type { ComponentType } from "@models/typings/Component"
-import type { ContactSectionProps } from "@typings/ContactSection"
+import type { ContactProps } from "@models/typings/ContactProps"
 
 
-const ContactSection: ComponentType<ContactSectionProps> = ({ email, socials, label, heading, description, cta }: ContactSectionProps) => {
+const Contact: ComponentType<ContactProps> = ({ email, socials, label, heading, description, cta }: ContactProps) => {
 
     const { sendNotification } = useNotification();
     
@@ -140,4 +140,4 @@ const ContactSection: ComponentType<ContactSectionProps> = ({ email, socials, la
     )
 }
 
-export default ContactSection
+export default Contact

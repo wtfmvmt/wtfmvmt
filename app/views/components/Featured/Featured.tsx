@@ -5,7 +5,7 @@ import type { FeaturedProps } from "@typings/Featured";
 import DistortionCarousel from "../DistortionCarousel/DistortionCarousel";
 
 
-const FeaturedSection: ComponentType<FeaturedProps> = ({ heading, title, description, features, carousel }: FeaturedProps) => {
+const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, features, carousel }: FeaturedProps) => {
 
   const buttonSxTw = (self) => self
 
@@ -75,4 +75,4 @@ const FeaturedSection: ComponentType<FeaturedProps> = ({ heading, title, descrip
   )
 }
 
-export default FeaturedSection
+export default Featured

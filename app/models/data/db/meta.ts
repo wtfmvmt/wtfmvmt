@@ -11,6 +11,40 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
 
     const dbObject = {
 
+        getEventsHeading: () => {
+            return queryDatabase({
+                keys: [variants.event, variants.heading],
+                db: dbObject.db.data,
+            })
+        },
+
+        getFAQsHeading: () => {
+            return queryDatabase({
+                keys: [variants.heading, variants.faqs],
+                db: dbObject.db.data
+            })
+        },
+
+        getMembershipsHeading: () => {
+            return queryDatabase({
+                keys: [variants.heading, variants.memberships],
+                db: dbObject.db.data
+            })
+        },
+
+        getPartnersHeading: () => {
+            return queryDatabase({
+                keys: [variants.heading, variants.partners],
+                db: dbObject.db.data
+            })
+        },
+        getArtivismHeading: () => {
+            return queryDatabase({
+                keys: [variants.artivism, variants.heading],
+                db: dbObject.db.data
+            })
+        },
+
         getTeamHeader: () => {
             return dbObject.db.data
         },
@@ -31,9 +65,8 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
         },
         getTitle: () => {
             return queryDatabase({
-                keys: [variants.pillar],
+                keys: [variants.title],
                 db: dbObject.db.data,
-
             })
         },
         getCopyright: () => {

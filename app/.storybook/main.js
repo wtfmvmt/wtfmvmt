@@ -6,13 +6,7 @@ module.exports = {
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  webpackFinal: async (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@styles': path.resolve(__dirname, '../views/styles/'),
-      '@components': path.resolve(__dirname, '../views/components/'),
-    }
-  },
+
   addons: [
     'storybook-tailwind-dark-mode',
     "@storybook/addon-links",
