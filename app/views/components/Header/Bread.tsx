@@ -4,6 +4,13 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Chip from '@mui/material/Chip';
 import HomeIcon from '@mui/icons-material/Home';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+
+
+
+
+
+
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
     const backgroundColor = "#000000AA"
@@ -50,19 +57,19 @@ const Bread = ({ breadcrumbs }: BreadProps) => {
                     component="a"
                     href="/"
                     label={<span className="font-bold">Hippie Hideout 12/24</span>}
-                    icon={<HomeIcon fontSize="small" />}
+                    icon={<NotificationsIcon fontSize="small" />}
                 />
                 <StyledBreadcrumb
                     component="a"
                     href="/"
                     label={<span className="font-bold">Merry Christmas!</span>}
-                    icon={<HomeIcon fontSize="small" />}
+                    icon={<NotificationsIcon fontSize="small" />}
                 />
                 <StyledBreadcrumb
                     component="a"
                     href="/"
                     label={<span className="font-bold">Checkout Vivalapvyne Records!</span>}
-                    icon={<HomeIcon fontSize="small" />}
+                    icon={<NotificationsIcon fontSize="small" />}
                 />
 
 

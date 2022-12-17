@@ -64,7 +64,8 @@
     "storybook-addon-swc": "^1.1.9",
     "storybook-addon-toolbar-actions": "^0.4.8",
     "storybook-color-picker": "^3.1.0",
-    "storybook-tailwind-dark-mode": "^1.0.15"
+    "storybook-tailwind-dark-mode": "^1.0.15",
+    "tailwind-merge": "^1.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",

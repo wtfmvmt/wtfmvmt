@@ -45,8 +45,6 @@ const HomePage = ({ page }) => {
       <Contact {...contact} />
     </>
   )
-
-
 }
 
 HomePage.layout = PageLayout
