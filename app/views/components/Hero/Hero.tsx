@@ -4,19 +4,17 @@ import type { ComponentType } from "@typings/Component";
 import type { HeroProps } from "@typings/Hero";
 import { SocialIcon } from "react-social-icons";
 
-
 const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, actionLinks, socialLinks, mediaCarousel }: HeroProps) => {
 
 
     const SocialLinks = () => {
 
         return (
-            socialLinks ? <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
-                {
-                    socialLinks.map((link, index) => (<SocialIcon key={index} bgColor="white" url={link?.url} className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 hover:text-purple-600 p-2 transition-all hover:bg-opacity-90 hover:rounded" />))
-                }
-
-            </div> : <>SOCIALS_NOT_FOUND</>
+            socialLinks ?
+                <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
+                    {socialLinks.map((link, index) => (<SocialIcon key={index} bgColor="white" url={link?.url} className="hvr-pop mr-2 inline-flex items-center justify-center w-16 h-16 hover:text-purple-600 p-2 transition-all hover:bg-opacity-90 hover:rounded" />))}
+                </div>
+                : <>SOCIALS_NOT_FOUND</>
         )
     }
 
@@ -26,7 +24,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
         actionLinks ? <div className="left-0 mt-20 lg:w-1/3 px-4 mb-8 lg:mb-0 bg-black bg-opacity-60 absolute w-full z-50">
             <div className="px-4 md:px-8 py-12 ">
                 <h4 className="pl-8 mb-2 text-md font-major font-bold font-heading text-slate-200 uppercase">
-                    {actionLinks?.title}
+                    {actionLinks?.title ??"[Client]:TITLE_NOT_FOUND"}
                 </h4>
                 <ul className="mb-5">
                     <FadeAnimation triggerOnce cascade>
@@ -61,19 +59,19 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
         <div className="py-12 lg:py-24 ">
             <div className="container mx-auto px-4">
                 <h4 className="lg:ml-16 mb-6 font-bold font-heading text-gray-200 text-sm">
-                    {features && features.heading}
+                   {features?.heading ?? "[Client]:HEADING_NOT_FOUND"}
                 </h4>
                 <div className="flex flex-wrap text-black -mx-3 -mb-3">
                     {
                         features && features.featured.map((feature, index) => {
 
                             return (
-
                                 <div key={index} className="hvr-pop w-full md:w-1/2 lg:w-1/6 p-3">
                                     <a href={feature.url} className="h-36 flex justify-center items-center bg-black bg-opacity-80 shadow-xl">
                                         <h1 className="transition-all opacity-0 hover:opacity-90 absolute text-wrap bottom-0 font-heading items-center text-white font-bold">{feature.name ? feature.name : "Test"}</h1>
                                         <img
                                             className="mx-auto shawdow-xl h-32"
+                                            loading="lazy"
                                             src={feature.image.src}
                                             alt={feature.image.alt}
                                         />
@@ -114,7 +112,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
         <section>
 
             <div className="relative py-4 -translate-y-11 overflow-hidden">
-                <div className="w-full z-50 h-full puff-in-center ">
+                <div className="w-full z-50 h-full">
                     <div className="absolute left-0 w-full z-50">
                         <ActionLinks />
                     </div>

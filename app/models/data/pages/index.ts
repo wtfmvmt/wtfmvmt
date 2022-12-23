@@ -182,7 +182,23 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
             metaData: {
                 pageTitle: "Memberships",
             },
-            data: {}
+            data: {
+                tableRow: {
+                    title: getMembershipsHeading()?.name,
+                    heading: getMembershipsHeading()?.values[0],
+                    tables: getMemberships().map((membership) => ({
+                        title: membership?.name,
+                        value: membership?.price,
+                        cta: {
+                            name: membership?.actions[0] ?? null,
+                            url: membership?.url ?? null
+                        },
+                        features: membership?.values?.map((feature) => ({
+                            name: feature
+                        })) ?? null
+                    }))
+                },
+            }
         },
         legal: {
             metaData: {

@@ -1,6 +1,7 @@
 import ReactPlayer from 'react-player'
 import type { ComponentType } from '@models/typings/Component'
 import type { SummaryProps } from '@typings/Summary'
+import { twMerge } from "tailwind-merge"
 
 const Summary: ComponentType<SummaryProps> = ({ video, heading, title, description, sections }: SummaryProps) => {
 
@@ -36,13 +37,13 @@ const Summary: ComponentType<SummaryProps> = ({ video, heading, title, descripti
 
       <div className="flex flex-wrap -mx-4 mb-16 items-center">
         <div className="w-full lg:w-1/2 px-4 mb-20 lg:mb-0">
-          <span className="text-lg font-extrabold text-indigo-500">
+          <span className={twMerge(`text-lg font-major font-extrabold text-indigo-500`)}>
             {heading ? heading : "HEADING"}
           </span>
-          <h1 className="max-w-xl text-3xl md:text-4xl font-extrabold font-heading mt-2 mb-4">
+          <h1 className="max-w-xl text-3xl font-major md:text-4xl font-extrabold font-heading mt-2 mb-4">
             {title ? title : "TITLE"}
           </h1>
-          <p className="text-xl font-extrabold">
+          <p className="text-xl font-extrabold font-share_tech">
             {description ? description : "DESCRIPTION"}
           </p>
         </div>

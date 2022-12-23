@@ -2,7 +2,6 @@
 import FadeAnimation from "@components/FadeAnimation";
 import type { ComponentType } from "@typings/Component";
 import type { FooterProps } from "@typings/Footer";
-import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
 import ReactTypingEffect from 'react-typing-effect';
 
@@ -13,17 +12,16 @@ const Footer: ComponentType<FooterProps> = ({ copyright, impressum, socials, lin
     return (
       <div className="w-full mb-12 md:w-1/3">
         <a className="inline-block mx-auto mb-8" href={favicon?.url}>
-          <Image
-            height={75}
-            width={75}
-            className=""
+          <img
+            className="h-48"
+            loading="lazy"
             src={favicon?.image?.src ?? "FAVICON_NOT_FOUND"}
             alt={"wtfmvmt-logo"}
           />
         </a>
 
         <p className="max-w-md text-lg font-extrabold leading-8 text-slate-200 font-share_tech">
-          {impressum}
+          {impressum ?? "[Client]: IMPRESSUM_NOT_FOUND"}
         </p>
 
       </div>

@@ -34,12 +34,8 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
             backgroundColor: emphasize(backgroundColor, 0.12),
         },
     };
-}) as typeof Chip; // TypeScript only: need a type cast here because https://github.com/Microsoft/TypeScript/issues/26591
+}) as typeof Chip;
 
-function handleClick(event: React.MouseEvent<Element, MouseEvent>) {
-    event.preventDefault();
-    console.info('You clicked a breadcrumb.');
-}
 
 export type BreadcrumProps = {
     message?: string
@@ -51,7 +47,7 @@ export type BreadProps = {
 const Bread = ({ breadcrumbs }: BreadProps) => {
 
     return (
-        <div className="self-center m-auto font-share_tech hidden lg:flex" role="presentation" onClick={handleClick}>
+        <div className="self-center m-auto font-share_tech hidden lg:flex" role="presentation">
             <Breadcrumbs aria-label="breadcrumb">
                 <StyledBreadcrumb
                     component="a"

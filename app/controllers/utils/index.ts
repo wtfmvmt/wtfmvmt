@@ -119,3 +119,23 @@ export const collections = () => {
     return { ...utilsObject }
 }
 
+
+export const pages = () => {
+
+    const utilsObject = {
+
+        getPageProps: (page) => {
+            return page?.data ?? null
+        },
+
+        setPageProps: ({ pageData, revalidate }) => {
+            return {
+                props: {
+                    page: pageData
+                },
+                revalidate: revalidate ?? 1
+            }
+        }
+    }
+    return { ...utilsObject }
+}

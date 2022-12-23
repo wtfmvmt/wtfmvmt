@@ -1,3 +1,5 @@
+import EncryptedRoute from "../SecureRoute"
+
 const Timeline = () => {
 
 

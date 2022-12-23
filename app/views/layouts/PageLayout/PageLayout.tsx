@@ -1,4 +1,3 @@
-import Footer from "@components/Footer";
 import Header from "@components/Header";
 import DrawerMenu from "@includes/DrawerMenu";
 import MagicNavigator from "@includes/MagicNavigator";
@@ -8,9 +7,13 @@ import type { LayoutProps } from "@typings/Layout";
 import Notifications from "@views/includes/Notifications";
 import type { NextPage } from "next";
 import { memo } from "react";
+import dynamic from 'next/dynamic'
 
 const PageLayout: NextPage<LayoutProps> = ({ metaData, menu, header, footer, children }: LayoutProps) => {
 
+ const Footer = dynamic(() => import('@components/Footer'), {
+            loading: () => <>Hello</>
+        })
 
     return (
 

@@ -8,28 +8,29 @@ import RowList from "@components/RowList"
 import StatsRow from "@components/StatsRow"
 import Summary from "@components/Summary"
 import TableRow from "@components/TableRow"
-import PageService from "@controllers/services/page"
+import PageService from "@services/page"
 import PageLayout from "@layouts/PageLayout"
+import { pages as pagesUtils } from "@utils/index"
 
 export async function getStaticProps() {
 
   const { getPage } = PageService()
 
+  const { setPageProps } = pagesUtils()
+
   const page = await getPage("home")
 
-  return {
-    props: {
-      page
-    },
-    revalidate: 1
-  }
+  return setPageProps({ pageData: page, revalidate: 1})
 }
 
 
 const HomePage = ({ page }) => {
 
+  const { getPageProps } = pagesUtils()
 
-  const { hero, summary, rowList, statsRow, featured, columnList, tableRow, logoArray, contact, imageMasonry } = page?.data ?? null
+  const { hero, summary, rowList, statsRow, featured } = getPageProps(page)
+
+  const { columnList, tableRow, logoArray, contact, imageMasonry } = getPageProps(page)
 
   return (
     <>
