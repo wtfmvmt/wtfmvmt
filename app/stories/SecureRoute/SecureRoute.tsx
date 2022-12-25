@@ -13,9 +13,11 @@ const SecureRoute = ({ children, token, show }: SecureRouteProps) => {
       title: "WTFMVMT",
       heading: "Authentication is required."
     },
+
     authenticatorParams: {
       action: () => { },
       fields: [],
+      actions: [],
       footer: {
         text: "",
         cta: {
@@ -28,6 +30,39 @@ const SecureRoute = ({ children, token, show }: SecureRouteProps) => {
 
 
   const Authenticator = () => {
+
+
+    const Field = ({ name, type, placeholder }) => {
+
+      return (
+        <div className="mb-6">
+          <label className="block mb-2 font-extrabold" htmlFor="">
+            Name
+          </label>
+          <input
+            className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded"
+            type="text"
+            placeholder="David"
+          />
+        </div>
+      )
+    }
+    const Fields = ({ fields }) => {
+
+      return (
+        <div className="mb-6">
+          <label className="block mb-2 font-extrabold" htmlFor="">
+            Name
+          </label>
+          <input
+            className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded"
+            type="text"
+            placeholder="David"
+          />
+        </div>
+      )
+    }
+
     return (
       <form action="">
         <div className="mb-6">

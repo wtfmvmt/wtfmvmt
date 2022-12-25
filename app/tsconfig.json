@@ -75,8 +75,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/_document.js",
-    ".next/types/**/*.ts"
-, "stories/Facebook.stories.mdx"  ],
+    ".next/types/**/*.ts"  ],
   "exclude": [
     "node_modules"
   ]
