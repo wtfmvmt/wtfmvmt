@@ -4,17 +4,21 @@ import "@libs/scrollbars.css"
 import "@libs/tailwind.css"
 import { PageTransition } from 'next-page-transitions'
 import { RecoilRoot } from 'recoil'
-
+import { useRouter } from 'next/router'
+import RiseLoader from "react-spinners/RiseLoader"
 
 function Application({ Component, pageProps }) {
+  const router = useRouter()
 
   return (
     <RecoilRoot>
       {
         Component?.layout ?
           <Component.layout {...pageProps.page.layout}>
-            <PageTransition timeout={500} classNames="page-transition">
-              <Component {...pageProps} />
+            <PageTransition loadingComponent={<RiseLoader color="#9200CC" />
+            }
+              loadingDelay={500} timeout={500} classNames="page-transition">
+              <Component key={router.route}{...pageProps} />
             </PageTransition>
             <style jsx global>{`
             
@@ -38,6 +42,7 @@ function Application({ Component, pageProps }) {
               transition: all ease-in-out 900ms;
             }
             `}</style>
+
           </Component.layout> :
           <Component {...pageProps} />
       }

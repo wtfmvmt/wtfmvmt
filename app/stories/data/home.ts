@@ -6,7 +6,10 @@ export const home = {
             subHeading: 'Visual Database',
             actions: [
                 {
-                    name: 'Open in New Tab'
+                    name: 'Open',
+                    icon: '📂'
+
+
                 }
             ]
         },
@@ -16,7 +19,7 @@ export const home = {
             heading: "This is where all org meta-data is centralized. Copyright, logos, language, etc...",
             actions: [
                 {
-                    name: 'Open in New Tab',
+                    name: 'Open',
                     icon: '📂'
                 }
             ]
