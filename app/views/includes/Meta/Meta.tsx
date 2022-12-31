@@ -3,15 +3,15 @@ import type { MetaProps } from "@typings/Meta";
 import { NextSeo } from 'next-seo';
 import meta from "@configs/meta"
 
-const Meta: ComponentType<MetaProps> = ({ title, pageTitle }: MetaProps) => {
+const Meta: ComponentType<MetaProps> = ({ title, pageTitle, description }: MetaProps) => {
 
     return (
         <NextSeo
-            title={`${title} | ${pageTitle}`}
+            title={`${pageTitle} | ${title ?? meta.title}`}
             themeColor="#000000"
-            description=""
+            description={description ?? meta.description}
             additionalLinkTags={meta?.icons ?? null}
-            canonical="https://www.wtfmvmt.com/"
+            canonical={meta.url}
             openGraph={{
                 url: 'https://www.wtfmvmt.com',
                 title: 'WTFMVMT',

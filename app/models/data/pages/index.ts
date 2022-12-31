@@ -34,8 +34,8 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
     const { getPartners } = partners(store)
     const { getEvents } = events(store)
     const { getForms } = forms(store)
-    const { getBanner, getArtivismHeading, getEventsHeading, getTeamHeader, getCopyright, getSearch, getPillars, getEmailAddress,
-        getFavicon, getTitle, getImpressum, getMembershipsHeading, getFAQsHeading, getPartnersHeading, getAudienceHook, getCallToAction } = meta(store)
+
+    const { getBanner, getArtivismHeading, getEventsHeading, getCopyright, getEmailAddress, getCallToAction, getTeamHeading, getFavicon, getTitle, getImpressum, getMembershipsHeading, getFAQsHeading, getPartnersHeading } = meta(store)
 
     const pageData = {
         home: {
@@ -69,7 +69,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     description: getPartnersHeading()?.description,
                     heading: getPartnersHeading()?.values[0],
                     logos: getPartners().map((partner) => ({
-                        title: partner?.name,
+                        title: partner?.name ?? null,
                         description: partner?.description ?? null,
                         image: {
                             src: partner?.media[0]?.url
@@ -130,13 +130,14 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
 
                 },
                 imageMasonry: {
-                    title: getTeamHeader()[0]?.name,
-                    description: getTeamHeader()[0]?.description,
-                    heading: getTeamHeader()[0]?.values[0],
+                    title: getTeamHeading()?.name ?? null,
+                    description: getTeamHeading()?.description ?? null,
+                    heading: getTeamHeading()?.values[0] ?? null,
                     masonry: getTeam().map((team) => ({
                         image: {
                             src: team?.media[0]?.url ?? null,
                         },
+                        url: team?.url ?? null,
                         heading: team?.types[0] ?? null,
                         title: team?.name ?? null,
                     }))
@@ -162,22 +163,8 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
 
             },
 
-            artivism: {},
-            blog: {},
-            community: {},
-            events: {},
-            forms: {},
-            legal: {},
-            media: {},
-            partners: {},
-            shop: {},
-            vision: {},
-            rsvp: {
-                metaData: {},
-                data: {}
-            },
-
         },
+
         memberships: {
             metaData: {
                 pageTitle: "Memberships",
@@ -200,6 +187,28 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                 },
             }
         },
+
+        events: {
+            metaData: {
+                pageTitle: "Events",
+            },
+            data: {
+                contact: <ContactProps>{
+                    socials: getSocialMedia().map((social) => ({
+                        url: social?.url ?? null
+                    })),
+                    email: getEmailAddress().email,
+                },
+                featured: <FeaturedProps>{
+                    title: getEventsHeading()?.name,
+                    description: getEventsHeading()?.description,
+                    heading: getEventsHeading()?.values[0],
+                    carousel: shuffle(getPhotos().map((m) => m?.media[0]?.url ?? null)),
+                    features: getEvents().map((event) => ({ title: event?.name }))
+                },
+            }
+        },
+
         legal: {
             metaData: {
                 pageTitle: "Legal"
@@ -210,12 +219,49 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                 pageTitle: "Store"
             }
         },
-        partners: {},
+        partners: {
+            metaData: {
+                pageTitle: "Partners",
+                description: "WTFMVMT Partnerships"
+            },
+
+            data: {
+
+            }
+        },
+        stories: {
+            metaData: {
+                pageTitle: "Stories",
+            }
+        },
+        projects: {
+            metaData: {
+                pageTitle: "Projects",
+            }
+        },
         blog: {},
         community: {},
         media: {},
         artivism: {},
+        faqs: {
+            metaData: {
+                pageTitle: "FAQs"
+            },
+            data: {
+                columnList: <ColumnListProps>{
+                    title: getFAQsHeading()?.name,
+                    list: getFAQs().map((question) => ({
+                        name: question?.name,
+                        description: question?.description,
+                        icon: question?.icon
+                    }))
+                },
+            }
+
+        },
+        future: {},
         about: {},
+
     }
 
     const pageObject: PageObjectType = {
@@ -263,12 +309,9 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     url: getFavicon()?.url
                 }
             },
-            metaData: {
-                title: "WTFMVMT",
-                pageTitle: "Home"
-            }
+            metaData: pageData[key]?.metaData,
         }),
-        data: pageData[key]?.data,
+        data: pageData[key]?.data ?? pageData["home"]?.data,
         pages: pageData[key]?.pages,
     }
 

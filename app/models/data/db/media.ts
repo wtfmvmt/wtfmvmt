@@ -12,7 +12,11 @@ const media = (store: NotionPageObjectType): DatabaseObjectType => {
     const dbObject = {
 
         getPhotos: () => {
-            return dbObject.db.data
+            return queryDatabase({
+                keys: [variants.photo],
+                db: dbObject.db.data,
+                batch: true
+            })
         },
 
         getMedia: () => {
@@ -20,7 +24,6 @@ const media = (store: NotionPageObjectType): DatabaseObjectType => {
                 keys: [],
                 db: dbObject.db.data,
                 batch: true
-
             })
         },
 

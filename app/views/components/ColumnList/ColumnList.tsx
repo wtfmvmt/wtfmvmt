@@ -9,7 +9,7 @@ const ColumnList: ComponentType<ColumnListProps> = ({ list, title, cta }: Column
         return (
             cta ? <div className="mt-20 text-center">
                 <a
-                    className="inline-block blue-300 hover:blue-400 text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
+                    className="inline-block px-8 py-5 font-bold text-white uppercase rounded-md blue-300 hover:blue-400 font-heading"
                     href={cta?.url}
                 >
                     {cta?.name}
@@ -20,22 +20,22 @@ const ColumnList: ComponentType<ColumnListProps> = ({ list, title, cta }: Column
 
     const List = () => {
         return (
-            <ul className="mr-6 pr-2">
+            <ul className="pr-2 mr-6">
                 {
                     list ? list.map((item, index) => {
                         return (
                             <li key={index} className="group">
                                 <div className="py-8 border-b">
-                                    <div className="flex justify-between items-center">
+                                    <div className="flex items-center justify-between">
                                         <h3 className="mr-4 text-xl font-bold font-heading">
                                             {item?.name}
                                         </h3>
                                         <div
-                                            className="p-2 inline-block border rounded-xl hover:border-purple-500 cursor-pointer"    >
+                                            className="inline-block p-2 border cursor-pointer rounded-xl hover:border-purple-500"    >
                                             <img loading="lazy" src={item?.icon} className="h-8" alt={item?.name} />
                                         </div>
                                     </div>
-                                    <p className="group-hover:flex text-2xl translate-y-5 group-hover:-translate-y-5 opacity-0 group-hover:opacity-100 group-hover:delay-1000 hidden duration-1000 ease-in-out text-blue-400 font-bold font-share_tech pt-10 pr-20">
+                                    <p className="hidden pt-10 pr-20 text-2xl font-bold text-blue-400 duration-1000 ease-in-out translate-y-5 opacity-0 group-hover:flex group-hover:-translate-y-5 group-hover:opacity-100 group-hover:delay-1000 font-share_tech">
                                         {item?.description}
                                     </p>
                                 </div>
@@ -49,11 +49,11 @@ const ColumnList: ComponentType<ColumnListProps> = ({ list, title, cta }: Column
     }
 
     return (
-        <section className="py-6 w-full overflow-x-clip text-slate-200 font-major">
+        <section className="w-full py-6 overflow-x-clip text-slate-200 font-major">
             <div className="container">
                 <div className="flex flex-wrap">
-                    <div className="w-full mx-4 mb-12 lg:mb-0 m-auto">
-                        <h2 className="pb-5 break-words text-5xl font-bold flex-wrap text-wrap font-heading">
+                    <div className="w-full m-auto mx-4 mb-12 break-words lg:mb-0">
+                        <h2 className="flex-wrap pb-5 text-4xl font-bold break-words text-wrap font-heading">
                             {title ? title : "TITLE_NOT_FOUND"}
                         </h2>
                         <List />

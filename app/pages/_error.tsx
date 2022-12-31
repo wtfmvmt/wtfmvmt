@@ -1,10 +1,13 @@
 
-const _ERROR = () => {
+function _ERROR() {
+
     return (
         <>
-            FUCK
+
         </>
     )
 }
+
+
 
 export default _ERROR

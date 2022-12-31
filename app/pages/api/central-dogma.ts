@@ -12,7 +12,7 @@ export default async function handler(
 
     const data = await getCentralDogma()
 
-    const { getMedia } = media(data)
+  
 
-    res.status(200).json(getMedia())
+    res.status(200).json(data)
 }

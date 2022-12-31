@@ -45,8 +45,11 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
             })
         },
 
-        getTeamHeader: () => {
-            return dbObject.db.data
+        getTeamHeading: () => {
+            return queryDatabase({
+                keys: [variants.team, variants.heading],
+                db: dbObject.db.data,
+            })
         },
 
         getPillars: () => {
@@ -103,8 +106,6 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
 
             })
         },
-
-
         getCallToAction: () => {
             return queryDatabase({
                 keys: [variants.cta],

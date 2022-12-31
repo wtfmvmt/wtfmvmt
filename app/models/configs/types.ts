@@ -1,15 +1,16 @@
 import { notion as notionUtilities } from "@utils/index"
 
-
 export const notion = () => {
     const { files, url, email, phone, formula, icon, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = notionUtilities()
 
     const typesObject = {
+
         variants: {
             heading: "🪦Heading",
             team_member: "🕴🏿Team Member",
             search: "🔎Search",
             pillar: "💜Pillar",
+            team: "🅰️Team",
             favicon: "🖼️Favicon",
             photo: "🖼️Photo",
             faqs: "❓FAQ",
@@ -35,7 +36,7 @@ export const notion = () => {
 
 
         partners: {
-            name: "💖Partners",
+            name: "🫱🏿‍🫲🏿Partners",
             shape: (data) => {
                 const { Facebook, Media, Name, Covers, URL, Types, Status } = getProperties(data)
 
@@ -50,7 +51,8 @@ export const notion = () => {
                 }
             },
             predicate: (data) => {
-                return isDatabase(typesObject.partners?.name, data)
+                const { name } = typesObject.partners
+                return isDatabase(name, data)
             }
         },
 
@@ -180,7 +182,7 @@ export const notion = () => {
             },
             predicate: (data: any) => {
                 const { name } = typesObject.meta
-                return isDatabase(name, data) ?? null
+                return isDatabase(name, data)
             }
         },
         faqs: {

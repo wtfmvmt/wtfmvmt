@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentType } from "@typings/Component";
 import type { FeaturedProps } from "@typings/Featured";
 import DistortionCarousel from "../DistortionCarousel/DistortionCarousel";
@@ -50,7 +48,7 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
       <div className="container relative px-4 mx-auto group">
         <div className="max-w-5xl mx-auto mb-16 text-center text-white">
           <span className="text-lg font-extrabold text-blue-400 font-major">{heading ? heading : "HEADING_NOT_FOUND"}</span>
-          <Heading sx={["mt-4 mb-6"]}>
+          <Heading sx={["mt-4 font-major mb-6"]}>
             {title ?? "[Client]: TITLE_NOT_FOUND"}
           </Heading>
           <p className="text-xl font-extrabold leading-8 font-share_tech">

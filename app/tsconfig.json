@@ -75,7 +75,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/_document.js",
-    ".next/types/**/*.ts"  ],
+    ".next/types/**/*.ts", "stories/ContinuousData/index.ts", "stories/ContinuousData/ContinuousData.tsx"  ],
   "exclude": [
     "node_modules"
   ]

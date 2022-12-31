@@ -1,5 +1,7 @@
 const meta = {
     title: 'WTFMVMT',
+    url: "https://wtfmvmt.com",
+    description: "Conscious Creators for the Future",
     icons: [{
         rel: 'android-chrome',
         href: '/assets/icons/57x57.png',

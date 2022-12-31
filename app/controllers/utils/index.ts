@@ -72,6 +72,7 @@ export const notion = () => {
     return { ...utilsObject }
 }
 
+
 export const collections = () => {
 
     const utilsObject = {
@@ -138,4 +139,18 @@ export const pages = () => {
         }
     }
     return { ...utilsObject }
+}
+
+
+export const formatters = () => {
+
+    const utilsObject = {
+
+        getMedia: () => { },
+        getName: () => { },
+        getURL: () => { }
+    }
+
+    return { ...utilsObject }
+
 }
