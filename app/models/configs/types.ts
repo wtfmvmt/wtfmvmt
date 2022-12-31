@@ -77,11 +77,11 @@ export const notion = () => {
         events: {
             name: "🗓️Events",
             shape: (data) => {
-                const { Facebook, Name, Covers, Types, Status } = getProperties(data)
+                const { Facebook, Name, Media, Types, Status } = getProperties(data)
 
                 return {
                     name: title(Name),
-                    covers: files(Covers),
+                    media: files(Media),
                     status: status(Status),
                     facebook: url(Facebook),
                     types: multi_select(Types)

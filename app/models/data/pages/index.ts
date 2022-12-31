@@ -98,25 +98,28 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     description: getEventsHeading()?.description,
                     heading: getEventsHeading()?.values[0],
                     carousel: shuffle(getPhotos().map((m) => m?.media[0]?.url ?? null)),
-                    features: getEvents().map((event) => ({ title: event?.name }))
+                    features: getEvents().map((event) => ({
+                        title: event?.name,
+                        cover: event?.media[0]?.url ?? null
+                    }))
                 },
                 statsRow: <StatsRowProps>{
                     stats: [
                         {
-                            title: "Team Members",
+                            title: "Team",
                             value: getTeam().length
                         },
                         {
-                            title: "Team Members",
+                            title: "Events",
+                            value: getEvents().length
+                        },
+                        {
+                            title: "Revenue",
                             value: getTeam().length
                         },
                         {
-                            title: "Team Members",
-                            value: getTeam().length
-                        },
-                        {
-                            title: "Team Members",
-                            value: getTeam().length
+                            title: "Partners",
+                            value: getPartners().length
                         }
                     ]
                 },
@@ -163,6 +166,30 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
 
             },
 
+        },
+
+        team: {
+            metaData: {
+                pageTitle: "Team"
+            },
+            data: {
+
+                imageMasonry: {
+                    title: getTeamHeading()?.name ?? null,
+                    description: getTeamHeading()?.description ?? null,
+                    heading: getTeamHeading()?.values[0] ?? null,
+                    masonry: getTeam().map((team) => ({
+                        image: {
+                            src: team?.media[0]?.url ?? null,
+                        },
+                        url: team?.url ?? null,
+                        heading: team?.types[0] ?? null,
+                        title: team?.name ?? null,
+                    }))
+
+                },
+
+            }
         },
 
         memberships: {
@@ -268,6 +295,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
         version: Date.now(),
         layout: layout({
             header: {
+                breadcrumbs: getBanner().values.map((v) => ({ message: v })),
                 banner: {
                     messages: getBanner().values
                 },

@@ -18,6 +18,7 @@ export type Search = SearchQuery[]
 
 export type HeaderProps = {
     favicon?: FaviconProps,
+    breadcrumbs?: any[],
     cta?: CallToActionProps,
     banner?: BannerProps,
     search?: SearchQuery[]

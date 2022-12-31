@@ -1,6 +1,6 @@
+import ImageMasonry from "@components/ImageMasonry"
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/page"
-import TableRow from "@components/TableRow"
 import { pages as pagesUtils } from "@utils/index"
 
 
@@ -10,23 +10,26 @@ export async function getStaticProps() {
 
     const { setPageProps } = pagesUtils()
 
-    const page = await getPage("about")
+    const page = await getPage("team")
 
     return setPageProps({ pageData: page, revalidate: 1 })
 }
 
-function AboutIndexPage({ page }) {
+function TeamIndexPage({ page }) {
 
     const { getPageProps } = pagesUtils()
 
+    const { imageMasonry } = getPageProps(page)
+
     return (
         <>
+            <ImageMasonry {...imageMasonry} />
         </>
     )
 }
 
 
-AboutIndexPage.layout = PageLayout
+TeamIndexPage.layout = PageLayout
 
-export default AboutIndexPage
+export default TeamIndexPage
 

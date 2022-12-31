@@ -24,7 +24,7 @@ const ColumnList: ComponentType<ColumnListProps> = ({ list, title, cta }: Column
                 {
                     list ? list.map((item, index) => {
                         return (
-                            <li key={index} className="group">
+                            <li key={index} className="cursor-pointer group">
                                 <div className="py-8 border-b">
                                     <div className="flex items-center justify-between">
                                         <h3 className="mr-4 text-xl font-bold font-heading">

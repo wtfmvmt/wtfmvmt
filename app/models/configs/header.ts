@@ -1,7 +1,7 @@
 
 import type { HeaderProps } from "@typings/Header"
 
-const header = ({ favicon, banner, cta, search }: HeaderProps) => {
+const header = ({ favicon, banner, cta, search, breadcrumbs }: HeaderProps) => {
 
 
     const defaultObject: HeaderProps = {
@@ -23,6 +23,7 @@ const header = ({ favicon, banner, cta, search }: HeaderProps) => {
                 url: "#SEARCH_NOT_FOUND"
             }
         ],
+        breadcrumbs: [],
 
         banner: {
             messages: ['BANNER_NOT_FOUND'],
@@ -33,6 +34,7 @@ const header = ({ favicon, banner, cta, search }: HeaderProps) => {
     const headerObject: HeaderProps = {
         favicon: favicon ?? defaultObject?.favicon,
         search: search ?? defaultObject?.search,
+        breadcrumbs: breadcrumbs ?? defaultObject?.breadcrumbs,
         banner: banner ?? defaultObject?.banner
     }
 

@@ -11,11 +11,11 @@ const StatsRow: ComponentType<StatsRowProps> = ({ stats }: StatsRowProps) => {
                     {
                         stats ? stats.map((stat, index) => {
                             return (
-                                <div key={index} className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
-                                    <div className="flex items-center justify-center h-44 p-6  border-3 border-indigo-900 rounded-2xl shadow-md text-center">
+                                <div key={index} className="w-full px-4 mb-8 md:w-1/2 lg:w-1/4">
+                                    <div className="flex items-center justify-center p-6 text-center border-indigo-900 shadow-md h-44 border-3 rounded-2xl">
                                         <div>
-                                            <h3 className="text-3xl sm:text-4xl font-extrabold mb-3">
-                                                {stat.value ?? "[Client]: STAT_NOT_FOUND"}
+                                            <h3 className="mb-3 text-3xl font-extrabold sm:text-4xl">
+                                                {stat.title ?? "[Client]: STAT_NOT_FOUND"}
                                             </h3>
                                             <h4 className="text-xl font-extrabold">
                                                 {stat.value ?? "[Client]: STAT_NOT_FOUND"}

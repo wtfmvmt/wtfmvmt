@@ -42,31 +42,36 @@ export type BreadcrumProps = {
 }
 
 export type BreadProps = {
-    breadcrumbs?: BreadcrumProps
+    breadcrumbs?: BreadcrumProps[]
 }
 const Bread = ({ breadcrumbs }: BreadProps) => {
 
     return (
-        <div className="self-center m-auto font-share_tech hidden lg:flex" role="presentation">
+        <div className="self-center hidden m-auto font-share_tech lg:flex" role="presentation">
             <Breadcrumbs aria-label="breadcrumb">
-                <StyledBreadcrumb
-                    component="a"
-                    href="/"
-                    label={<span className="font-bold">Hippie Hideout 12/24</span>}
-                    icon={<NotificationsIcon fontSize="small" />}
-                />
-                <StyledBreadcrumb
-                    component="a"
-                    href="/"
-                    label={<span className="font-bold">Merry Christmas!</span>}
-                    icon={<NotificationsIcon fontSize="small" />}
-                />
-                <StyledBreadcrumb
-                    component="a"
-                    href="/"
-                    label={<span className="font-bold">Checkout Vivalapvyne Records!</span>}
-                    icon={<NotificationsIcon fontSize="small" />}
-                />
+
+                {
+                    breadcrumbs ? breadcrumbs.map((breadcrumb, index) => {
+                        return (
+                            <StyledBreadcrumb key={index}
+                                component="a"
+                                href="/"
+                                label={<span className="font-bold">{breadcrumb?.message}</span>}
+                                icon={<NotificationsIcon fontSize="small" />}
+                            />
+                        )
+                    }) :
+                        <>
+
+                            <StyledBreadcrumb
+                                component="a"
+                                href="/"
+                                label={<span className="font-bold">Home</span>}
+                                icon={<NotificationsIcon fontSize="small" />}
+                            />
+
+                        </>
+                }
 
 
             </Breadcrumbs>

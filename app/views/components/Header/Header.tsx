@@ -5,12 +5,12 @@ import useBannerState from "@hooks/useBannerState";
 import useMenuDrawerState from "@hooks/useMenuDrawerState";
 import type { ComponentType } from "@typings/Component";
 import type { HeaderProps } from "@typings/Header";
-import React from "react";
+import { memo } from "react";
 import Headroom from "react-headroom";
 
 
 
-const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: HeaderProps) => {
+const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search, breadcrumbs }: HeaderProps) => {
 
     const { toggleDrawer } = useMenuDrawerState()
     const { toggleBanner } = useBannerState()
@@ -59,7 +59,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
                         <Favicon />
                         <div className="items-center justify-center flex-1 xl:flex">
                             <a className="flex items-center hover:text-purple-600">
-                                <Bread />
+                                <Bread breadcrumbs={breadcrumbs} />
                             </a>
                         </div>
                     </div>
@@ -72,7 +72,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, cta, banner, search }: He
 
 }
 
-export default React.memo(Header)
+export default memo(Header)
 
 
 
