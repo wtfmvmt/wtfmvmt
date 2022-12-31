@@ -16,6 +16,28 @@ function Application({ Component, pageProps }) {
             <PageTransition timeout={500} classNames="page-transition">
               <Component {...pageProps} />
             </PageTransition>
+            <style jsx global>{`
+            
+            .page-transition-enter {
+              opacity: 0;
+              background-color: black;
+            }
+            
+            .page-transition-enter-active {
+              opacity: 1;
+              transition: all ease-in-out 900ms;
+            }
+            
+            .page-transition-exit {
+              opacity: 1;
+            }
+            
+            .page-transition-exit-active {
+              opacity: 0.5;
+              background-color: black;
+              transition: all ease-in-out 900ms;
+            }
+            `}</style>
           </Component.layout> :
           <Component {...pageProps} />
       }
