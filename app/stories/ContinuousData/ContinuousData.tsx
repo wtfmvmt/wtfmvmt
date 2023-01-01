@@ -1,7 +1,11 @@
 const ContinuousData = () => {
+
+  
   return (
     <section className="py-3">
       <div className="container px-4 mx-auto">
+
+        
         <div className="mb-6 bg-gray-500 rounded-xl">
           <div className="flex flex-wrap">
             <div className="w-full pl-4 border-b border-gray-700 sm:w-1/2 lg:w-1/4 md:pl-8 xl:pl-10 lg:border-b-0 sm:border-r">
@@ -1071,7 +1075,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskee2dw33j)"
                             cy="22.165866563796982"
                             cx="41.80781031336104"
-                     
+
                           />
                           <path
                             id="SvgjsPath1081"
@@ -1086,8 +1090,8 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskee2dw33j)"
                             cy="77.58053297328948"
                             cx="78.16242797715324"
-                   
-                       
+
+
                           />
                           <path
                             id="SvgjsPath1083"
@@ -1102,8 +1106,8 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskee2dw33j)"
                             cy="44.33173312759399"
                             cx="114.51704564094544"
-                          
-                           
+
+
                           />
                           <path
                             id="SvgjsPath1085"
@@ -1118,8 +1122,8 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskee2dw33j)"
                             cy="33.24879984569549"
                             cx="150.87166330473764"
-                         
-                           
+
+
                           />
                           <path
                             id="SvgjsPath1087"
@@ -1134,8 +1138,8 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskee2dw33j)"
                             cy="77.58053297328948"
                             cx="187.22628096852984"
-                        
-                          
+
+
                           />
                           <path
                             id="SvgjsPath1089"
@@ -1150,8 +1154,8 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskee2dw33j)"
                             cy="44.33173312759399"
                             cx="223.58089863232203"
-                          
-                      
+
+
                           />
                           <path
                             id="SvgjsPath1091"
@@ -1166,8 +1170,8 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskee2dw33j)"
                             cy="22.165866563796982"
                             cx="259.93551629611426"
-                            
-                          
+
+
                           />
                           <g
                             id="SvgjsG1077"
@@ -1516,7 +1520,7 @@ const ContinuousData = () => {
                     version="1.1"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     className="apexcharts-svg"
-         
+
                     transform="translate(0, 0)"
                     style={{ background: "transparent" }}
                   >
@@ -1903,7 +1907,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="97.08133307615915"
                             cx="99.67292976379395"
-                  
+
                           />
                           <path
                             id="SvgjsPath1177"
@@ -1919,7 +1923,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="106.78946638377506"
                             cx="172.29645102364677"
-               
+
                           />
                           <path
                             id="SvgjsPath1179"
@@ -1935,7 +1939,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="97.08133307615915"
                             cx="244.9199722834996"
-                     
+
                           />
                           <path
                             id="SvgjsPath1181"
@@ -1951,7 +1955,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="106.78946638377506"
                             cx="317.5434935433524"
-                     
+
                           />
                           <path
                             id="SvgjsPath1183"
@@ -1967,7 +1971,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="93.19807975311278"
                             cx="390.16701480320523"
-                           
+
                           />
                           <path
                             id="SvgjsPath1185"
@@ -1983,7 +1987,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="58.24879984569549"
                             cx="462.7905360630581"
-                    
+
                           />
                           <path
                             id="SvgjsPath1187"
@@ -1999,7 +2003,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="69.89855981483458"
                             cx="535.4140573229109"
-                      
+
                           />
                           <g
                             id="SvgjsG1173"
@@ -2048,7 +2052,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="54.36554652264914"
                             cx="104.51449784778413"
-                        
+
                           />
                           <path
                             id="SvgjsPath1194"
@@ -2064,7 +2068,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="54.36554652264914"
                             cx="177.13801910763695"
-                    
+
                           />
                           <path
                             id="SvgjsPath1196"
@@ -2080,7 +2084,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="58.24879984569549"
                             cx="249.76154036748977"
-                    
+
                           />
                           <path
                             id="SvgjsPath1198"
@@ -2096,7 +2100,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="44.657413215033216"
                             cx="322.38506162734257"
-                     
+
                           />
                           <path
                             id="SvgjsPath1200"
@@ -2112,7 +2116,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="58.24879984569549"
                             cx="395.0085828871954"
-                           
+
                           />
                           <path
                             id="SvgjsPath1202"
@@ -2128,7 +2132,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="15.533013292185473"
                             cx="467.63210414704827"
-                        
+
                           />
                           <path
                             id="SvgjsPath1204"
@@ -2144,7 +2148,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="42.71578655351004"
                             cx="540.2556254069011"
-                       
+
                           />
                           <g
                             id="SvgjsG1190"
@@ -2192,7 +2196,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="15.533013292185473"
                             cx="109.35606593177432"
-                   
+
                           />
                           <path
                             id="SvgjsPath1211"
@@ -2206,7 +2210,7 @@ const ContinuousData = () => {
                             strokeDasharray={0}
                             className="apexcharts-bar-area"
                             clipPath="url(#gridRectMaskw9cf31nk)"
-                      
+
                           />
                           <path
                             id="SvgjsPath1213"
@@ -2222,7 +2226,7 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="15.533013292185473"
                             cx="254.60310845147995"
-                        
+
                           />
                           <path
                             id="SvgjsPath1215"
@@ -2238,8 +2242,8 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="15.533013292185473"
                             cx="327.22662971133275"
-                          
-                     
+
+
                           />
                           <path
                             id="SvgjsPath1217"
@@ -2255,8 +2259,8 @@ const ContinuousData = () => {
                             clipPath="url(#gridRectMaskw9cf31nk)"
                             cy="66.01530649178824"
                             cx="399.8501509711856"
-                        
-                        
+
+
                           />
                           <path
                             id="SvgjsPath1219"
@@ -2859,6 +2863,9 @@ const ContinuousData = () => {
             </div>
           </div>
         </div>
+
+
+        
       </div>
     </section>
 

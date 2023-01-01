@@ -75,7 +75,7 @@ const SecureRoute = ({ children, token, show }: SecureRouteProps) => {
     return (
       <form action="">
         <a
-          className="flex items-center justify-center px-6 py-4 mb-6 text-lg font-extrabold leading-6 transition duration-200 bg-black border-indigo-900 rounded shadow hover:text-white hover:bg-indigo-800 border-3"
+          className="flex items-center justify-center px-4 py-4 mb-4 text-lg font-extrabold leading-6 transition duration-200 bg-black border-purple-800 rounded shadow-xl hover:text-white hover:bg-slate-400 border-3"
           href="#"
         >
           <img
@@ -92,7 +92,7 @@ const SecureRoute = ({ children, token, show }: SecureRouteProps) => {
           <input
             className="inline-block w-full p-4 text-lg font-extrabold leading-6 placeholder-indigo-900 bg-white border-2 border-indigo-900 rounded shadow"
             type="text"
-            placeholder="David"
+            placeholder="King/Queen"
           />
         </div>
 
@@ -106,16 +106,9 @@ const SecureRoute = ({ children, token, show }: SecureRouteProps) => {
             placeholder="**********"
           />
         </div>
-        <button className="inline-block w-full px-6 py-4 mb-6 text-lg font-extrabold leading-6 text-center text-white transition duration-200 bg-indigo-800 border-indigo-900 rounded shadow hover:bg-indigo-900 border-3">
-          Sign In
+        <button onClick={() => alert("Authentication Success")} className="inline-block w-full px-6 py-4 mb-6 text-lg font-extrabold leading-6 text-center text-white transition duration-200 bg-purple-800 rounded shadow border-slate-900 hover:bg-purple-900 border-3">
+          Authenticate
         </button>
-
-        <p className="font-extrabold text-center">
-          Don’t have an account?{" "}
-          <a className="text-indigo-500 hover:underline" href="#">
-            Sign In
-          </a>
-        </p>
       </form>
     )
   }

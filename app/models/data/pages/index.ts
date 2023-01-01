@@ -169,6 +169,21 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
 
         },
 
+        vision: {
+            metaData: {
+                pageTitle: "Vision"
+            },
+            data: {
+                contact: <ContactProps>{
+                    socials: getSocialMedia().map((social) => ({
+                        url: social?.url ?? null
+                    })),
+                    email: getEmailAddress().email,
+                }
+
+            }
+        },
+
         team: {
             metaData: {
                 pageTitle: "Team"
