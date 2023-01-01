@@ -17,7 +17,7 @@ export type CardProps = {
 
 export const Card = ({ title, heading, subHeading, actions, image }: CardProps) => {
     return (
-        <div className="w-full px-3 mb-6 duration-300 ease-in-out bg-black rounded-lg shadow-lg cursor-pointer select-none hover:bg-opacity-90 group bg-opacity-70 backdrop-blur-sm md:w-1/2 lg:w-1/3">
+        <div className="w-full px-3 mb-6 duration-300 ease-in-out bg-purple-900 bg-opacity-50 rounded-lg shadow-lg cursor-pointer select-none hover:scale-90 hover:bg-opacity-80 group backdrop-blur-sm md:w-1/2 lg:w-1/3">
             <div className="relative p-6 text-center bg-gray-500 rounded-xl">
                 {
                     image ? <img

@@ -13,6 +13,7 @@ export const notion = () => {
             team: "🅰️Team",
             favicon: "🖼️Favicon",
             photo: "🖼️Photo",
+            messages: "📩Messages",
             faqs: "❓FAQ",
             memberships: "🧑🏿‍🧑🏿‍🧒🏿Memberships",
             title: "📛Title",
@@ -117,10 +118,11 @@ export const notion = () => {
         memberships: {
             name: "👥Memberships",
             shape: (data) => {
-                const { Facebook, Actions, Name, Values, Price, Covers, Types, Status } = getProperties(data)
+                const { Facebook, Actions, Name, Description, Values, Price, Covers, Types, Status } = getProperties(data)
 
                 return {
                     name: title(Name),
+                    description: rich_text(Description),
                     actions: multi_select(Actions),
                     price: number(Price),
                     values: multi_select(Values),

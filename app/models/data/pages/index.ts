@@ -34,8 +34,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
     const { getPartners } = partners(store)
     const { getEvents } = events(store)
     const { getForms } = forms(store)
-
-    const { getBanner, getArtivismHeading, getEventsHeading, getCopyright, getEmailAddress, getCallToAction, getTeamHeading, getFavicon, getTitle, getImpressum, getMembershipsHeading, getFAQsHeading, getPartnersHeading } = meta(store)
+    const { getBanner, getMessages, getArtivismHeading, getEventsHeading, getCopyright, getEmailAddress, getCallToAction, getTeamHeading, getFavicon, getTitle, getImpressum, getMembershipsHeading, getFAQsHeading, getPartnersHeading } = meta(store)
 
     const pageData = {
         home: {
@@ -83,13 +82,15 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     heading: getMembershipsHeading()?.values[0],
                     tables: getMemberships().map((membership) => ({
                         title: membership?.name,
+                        heading: membership?.description ?? null,
                         value: membership?.price,
                         cta: {
                             name: membership?.actions[0] ?? null,
                             url: membership?.url ?? null
                         },
                         features: membership?.values?.map((feature) => ({
-                            name: feature
+                            name: feature,
+                            ...feature
                         })) ?? null
                     }))
                 },
@@ -295,7 +296,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
         version: Date.now(),
         layout: layout({
             header: {
-                breadcrumbs: getBanner().values.map((v) => ({ message: v })),
+                breadcrumbs: getMessages().values.map((v) => ({ message: v })),
                 banner: {
                     messages: getBanner().values
                 },

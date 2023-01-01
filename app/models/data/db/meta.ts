@@ -92,6 +92,14 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
                 db: dbObject.db.data,
 
             })
+        
+        },
+        getMessages: () => {
+            return queryDatabase({
+                keys: [variants.messages],
+                db: dbObject.db.data,
+            })
+            
         },
         getFavicon: () => {
             return queryDatabase({
