@@ -34,7 +34,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
     const { getPartners } = partners(store)
     const { getEvents } = events(store)
     const { getForms } = forms(store)
-    const { getBanner, getMessages, getArtivismHeading, getEventsHeading, getCopyright, getEmailAddress, getCallToAction, getTeamHeading, getFavicon, getTitle, getImpressum, getMembershipsHeading, getFAQsHeading, getPartnersHeading } = meta(store)
+    const { getBanner, getMessages, getArtivismHeading, getPillars, getEventsHeading, getCopyright, getEmailAddress, getCallToAction, getTeamHeading, getFavicon, getTitle, getImpressum, getMembershipsHeading, getFAQsHeading, getPartnersHeading } = meta(store)
 
     const pageData = {
         home: {
@@ -128,6 +128,10 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     title: getArtivismHeading()?.name,
                     description: getArtivismHeading()?.description,
                     heading: getArtivismHeading()?.values[0] ?? null,
+                    sections: getPillars().map((section, index) => ({
+                        title: section?.name ?? null,
+                        description: section?.description ?? null,
+                    })),
                     video: {
                         url: getArtivismHeading()?.youtube ?? null
                     }
@@ -204,6 +208,12 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     }))
 
                 },
+                contact: <ContactProps>{
+                    socials: getSocialMedia().map((social) => ({
+                        url: social?.url ?? null
+                    })),
+                    email: getEmailAddress().email,
+                }
 
             }
         },
@@ -252,6 +262,16 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
             }
         },
 
+        rsvp: {
+            metaData: {
+                pageTitle: "RSVP",
+            },
+
+
+            data: {
+
+            }
+        },
         legal: {
             metaData: {
                 pageTitle: "Legal"

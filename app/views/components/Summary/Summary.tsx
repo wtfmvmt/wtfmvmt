@@ -10,15 +10,15 @@ const Summary: ComponentType<SummaryProps> = ({ video, heading, title, descripti
 
     return (
 
-      <div className="flex flex-wrap -mx-4 -mb-10">
+      <div className="flex flex-wrap -mx-4 -mb-10 duration-500 ease-in-out border-white rounded shadow-md cursor-pointer border-1 hover:shadow-2xl group">
         {sections ? sections.map((section, index) => (
 
-          <div key={index} className="w-full sm:w-1/2 md:w-1/3 px-4 mb-10">
+          <div key={index} className="w-full px-4 mb-10 sm:w-1/2 md:w-1/3">
             <div className="max-w-xs">
-              <div className="inline-flex items-center justify-center w-18 h-18 mb-6 bg-white rounded-full border-3 border-indigo-900 text-indigo-900 shadow-md">
-                <span className="text-3xl font-extrabold leading-8">{index + 1}</span>
+              <div className="inline-flex items-center justify-center mb-6 text-indigo-900 bg-white border-indigo-900 rounded-full shadow-md w-18 h-18 border-3">
+                <span className="text-3xl font-extrabold leading-8 font-major">{index + 1}</span>
               </div>
-              <h3 className="text-2xl font-extrabold mb-5">{section.title}</h3>
+              <h3 className="mb-5 text-2xl font-extrabold text-white font-major">{section.title}</h3>
               <p className="font-bold leading-6">
                 {section.description}
               </p>
@@ -35,12 +35,12 @@ const Summary: ComponentType<SummaryProps> = ({ video, heading, title, descripti
 
     return (
 
-      <div className="flex flex-wrap -mx-4 mb-16 items-center">
-        <div className="w-full lg:w-1/2 px-4 mb-20 lg:mb-0">
+      <div className="flex flex-wrap items-center mb-16 -mx-4">
+        <div className="w-full px-4 mb-20 lg:w-1/2 lg:mb-0">
           <span className={twMerge(`text-lg font-major font-extrabold text-indigo-500`)}>
             {heading ? heading : "HEADING"}
           </span>
-          <h1 className="max-w-xl text-3xl font-major md:text-4xl font-extrabold font-heading mt-2 mb-4">
+          <h1 className="max-w-xl mt-2 mb-4 text-3xl font-extrabold font-major md:text-4xl font-heading">
             {title ? title : "TITLE"}
           </h1>
           <p className="text-xl font-extrabold font-share_tech">
@@ -49,10 +49,10 @@ const Summary: ComponentType<SummaryProps> = ({ video, heading, title, descripti
         </div>
 
 
-        <div className="w-full lg:w-1/2 px-4">
+        <div className="w-full px-4 lg:w-1/2">
           <div className="relative">
 
-            <div className="block w-full h-80 object-cover border-3 border-purple-900 rounded-2xl shadow-xl">
+            <div className="block object-cover w-full border-purple-900 shadow-xl h-80 border-3 rounded-2xl">
               <ReactPlayer playIcon={<>▶️</>} pip={true} url={video?.url ?? "#"} />
             </div>
           </div>
@@ -63,8 +63,8 @@ const Summary: ComponentType<SummaryProps> = ({ video, heading, title, descripti
   }
 
   return (
-    <section className="py-26 relative overflow-hidden">
-      <div className="container px-4 mx-auto relative">
+    <section className="relative overflow-hidden py-26">
+      <div className="container relative px-4 mx-auto">
         <Header />
         <Sections />
       </div>

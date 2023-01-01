@@ -28,7 +28,7 @@ export const Card = ({ title, heading, subHeading, actions, image }: CardProps) 
                 }
                 <h4 className="mb-3 text-xl font-bold text-white">{title ?? "TITLE_NOT_FOUND"}</h4>
                 <p className="mb-3 text-white">{heading ?? "HEADING_NOT_FOUND"}</p>
-                <span className="inline-block px-2 py-1 mb-6 font-medium text-purple-200 rounded-full text-md">
+                <span className="inline-block px-2 py-1 mb-6 font-medium uppercase rounded-full text-slate-800 text-md">
                     {subHeading ?? "SUB_HEADING_NOT_FOUND"}
                 </span>
                 <div className="flex flex-wrap items-center -mx-2">

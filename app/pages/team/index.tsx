@@ -2,7 +2,7 @@ import ImageMasonry from "@components/ImageMasonry"
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/page"
 import { pages as pagesUtils } from "@utils/index"
-
+import Contact from "@components/Contact"
 
 export async function getStaticProps() {
 
@@ -19,11 +19,12 @@ function TeamIndexPage({ page }) {
 
     const { getPageProps } = pagesUtils()
 
-    const { imageMasonry } = getPageProps(page)
+    const { imageMasonry, contact } = getPageProps(page)
 
     return (
         <>
             <ImageMasonry {...imageMasonry} />
+            <Contact {...contact} />
         </>
     )
 }
