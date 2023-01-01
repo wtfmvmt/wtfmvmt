@@ -58,7 +58,7 @@ const MagicNavigator: ComponentType<any> = () => {
 
     return (
         <SpeedDial
-            className="fixed bottom-10 right-8 z-50 sm:flex md:flex cursor-pointer transition-all ease-in duraiton-500 group"
+            className="fixed z-50 transition-all ease-in cursor-pointer bottom-10 right-8 sm:flex md:flex duraiton-500 group"
             sx={{
                 background: 'transparent',
                 bgOpacity: 0.9
@@ -73,7 +73,7 @@ const MagicNavigator: ComponentType<any> = () => {
             }}
 
             ariaLabel="WTFMVMT_MAGIC_NAVIGATOR"
-            icon={<OutboundIcon className='text-white group-hover:text-blue-200 group-hover:-rotate-45 duration-2000 ease-in-out will-change-transform' />}
+            icon={<OutboundIcon className='text-white ease-in-out rotate-45 group-hover:text-blue-200 group-hover:-rotate-45 duration-2000 will-change-transform' />}
         >
             {actions.map((action) => (
                 <SpeedDialAction
@@ -91,7 +91,7 @@ const MagicNavigator: ComponentType<any> = () => {
                     onClick={() => action?.action()}
                     key={action?.name}
                     icon={action?.icon}
-                    tooltipTitle={<div className='font-major text-black'>{action?.name}</div>}
+                    tooltipTitle={<div className='text-black font-major'>{action?.name}</div>}
                 />
             ))}
         </SpeedDial>
