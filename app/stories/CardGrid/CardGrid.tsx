@@ -64,7 +64,7 @@ const CardGrid = ({ cards }: CardGridProps) => {
     return (
         <section className="py-8">
             <div className="container px-2 mx-auto">
-                <div className="flex flex-wrap gap-2 -mb-6">
+                <div className="flex flex-wrap -mb-6">
                     {
                         cards ? cards.map((card, index) => {
                             return (

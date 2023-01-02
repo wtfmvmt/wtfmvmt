@@ -10,10 +10,10 @@ const Summary: ComponentType<SummaryProps> = ({ video, heading, title, descripti
 
     return (
 
-      <div className="flex flex-wrap -mx-4 -mb-10 duration-500 ease-in-out border-white rounded shadow-md cursor-pointer border-1 hover:shadow-2xl group">
+      <div className="flex flex-wrap -mx-4 -mb-10 duration-500 ease-in-out cursor-pointer group">
         {sections ? sections.map((section, index) => (
 
-          <div key={index} className="w-full px-4 mb-10 sm:w-1/2 md:w-1/3">
+          <div key={index} className="w-full p-1 px-2 mb-10 duration-500 ease-in-out border-2 border-white rounded shadow-black hover:scale-90 hover:shadow-2xl sm:w-1/2 md:w-1/3">
             <div className="max-w-xs">
               <div className="inline-flex items-center justify-center mb-6 text-indigo-900 bg-white border-indigo-900 rounded-full shadow-md w-18 h-18 border-3">
                 <span className="text-3xl font-extrabold leading-8 font-major">{index + 1}</span>
