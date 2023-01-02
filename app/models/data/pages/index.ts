@@ -10,7 +10,6 @@ import partners from "@db/partners"
 import socialMedia from "@db/social_media"
 import team from "@db/team"
 import { collections } from "@utils/index"
-
 import type { PageObjectType, PagesDBProps } from "@typings/Page"
 import type { HeroProps } from "@typings/Hero"
 import type { LogoArrayProps } from "@typings/LogoArray"
@@ -18,7 +17,7 @@ import type { SummaryProps } from "@typings/Summary"
 import type { FeaturedProps } from "@typings/Featured"
 import type { StatsRowProps } from "@typings/StatsRow"
 import type { ColumnListProps } from "@typings/ColumnList"
-
+import type { RowListProps } from "@typings/RowList"
 import type { ContactProps } from "@typings/ContactProps"
 
 const pages = ({ store, key }: PagesDBProps): PageObjectType => {
@@ -151,7 +150,8 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     }))
 
                 },
-                rowList: {
+                rowList: <RowListProps>{
+                    title: "Community Stories",
                     list: new Array(20).map((i) => ({ description: "Love" }))
                 },
                 columnList: <ColumnListProps>{
@@ -160,7 +160,11 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                         name: question?.name,
                         description: question?.description,
                         icon: question?.icon
-                    }))
+                    })),
+                    cta: {
+                        name: 'Learn More',
+                        url: '/faqs'
+                    }
                 },
                 contact: <ContactProps>{
                     socials: getSocialMedia().map((social) => ({
@@ -228,6 +232,8 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     heading: getMembershipsHeading()?.values[0],
                     tables: getMemberships().map((membership) => ({
                         title: membership?.name,
+                        heading: membership?.description ?? null,
+
                         value: membership?.price,
                         cta: {
                             name: membership?.actions[0] ?? null,
@@ -272,16 +278,19 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
 
             }
         },
+
         legal: {
             metaData: {
                 pageTitle: "Legal"
             }
         },
+
         store: {
             metaData: {
                 pageTitle: "Store"
             }
         },
+
         partners: {
             metaData: {
                 pageTitle: "Partners",
@@ -292,20 +301,66 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
 
             }
         },
+
         stories: {
             metaData: {
                 pageTitle: "Stories",
             }
         },
+
         projects: {
             metaData: {
                 pageTitle: "Projects",
             }
         },
-        blog: {},
-        community: {},
-        media: {},
-        artivism: {},
+
+        blog: {
+            metaData: {
+                pageTitle: "Blog",
+            },
+
+            data: {
+
+            }
+        },
+
+        community: {
+            metaData: {
+                pageTitle: "Community",
+            },
+            data: {}
+        },
+
+        media: {
+            metaData: {
+                pageTitle: "Media",
+            },
+            data: {
+
+            }
+        },
+
+        artivism: {
+            metaData: {
+                pageTitle: "Artivism",
+            },
+            data: {
+                summary: <SummaryProps>{
+                    title: getArtivismHeading()?.name,
+                    description: getArtivismHeading()?.description,
+                    heading: getArtivismHeading()?.values[0] ?? null,
+                    sections: getPillars().map((section, index) => ({
+                        title: section?.name ?? null,
+                        description: section?.description ?? null,
+                    })),
+                    video: {
+                        url: getArtivismHeading()?.youtube ?? null
+                    }
+
+                },
+            }
+        },
+
         faqs: {
             metaData: {
                 pageTitle: "FAQs"
@@ -322,9 +377,33 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
             }
 
         },
-        future: {},
-        about: {},
 
+        future: {
+            metaData: {
+                pageTitle: "Future"
+            }
+        },
+
+        about: {
+            metaData: {
+                pageTitle: "About",
+            }
+        },
+
+        forms: {
+            metaData: {
+                pageTitle: "Forms"
+            },
+
+            data: {
+                contact: <ContactProps>{
+                    socials: getSocialMedia().map((social) => ({
+                        url: social?.url ?? null
+                    })),
+                    email: getEmailAddress().email,
+                }
+            }
+        }
     }
 
     const pageObject: PageObjectType = {
@@ -379,7 +458,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
         pages: pageData[key]?.pages,
     }
 
-    return { ...pageObject } as PageObjectType ?? null
+    return pageObject
 }
 
 export default pages

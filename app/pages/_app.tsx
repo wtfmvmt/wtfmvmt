@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import RiseLoader from "react-spinners/RiseLoader"
 
 function Application({ Component, pageProps }) {
+
   const router = useRouter()
 
   return (
@@ -15,15 +16,14 @@ function Application({ Component, pageProps }) {
       {
         Component?.layout ?
           <Component.layout {...pageProps.page.layout}>
-            <PageTransition loadingComponent={<RiseLoader color="#9200CC" />
-            }
-              loadingDelay={500} timeout={500} classNames="page-transition">
-              <Component key={router.route}{...pageProps} />
+            <PageTransition loadingComponent={<RiseLoader color="#9200CC" />}
+              loadingDelay={600} timeout={500} classNames="page-transition">
+              <Component key={router.route} {...pageProps} />
             </PageTransition>
             <style jsx global>{`
             
             .page-transition-enter {
-              opacity: 0;
+              opacity: 0.1;
               background-color: black;
             }
             

@@ -1,5 +1,5 @@
 import ColumnList from "@components/ColumnList"
-import Contact from "@views/components/Contact"
+import Contact from "@components/Contact"
 import Featured from "@components/Featured"
 import Hero from "@components/Hero"
 import ImageMasonry from "@components/ImageMasonry"

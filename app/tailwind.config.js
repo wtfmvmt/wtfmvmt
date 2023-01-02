@@ -10,6 +10,9 @@ module.exports = {
       share_tech: ["Share Tech", "monospace"],
     },
   },
-  plugins: [],
+  plugins: [
+
+    require('@tailwindcss/line-clamp')
+  ],
 
 }

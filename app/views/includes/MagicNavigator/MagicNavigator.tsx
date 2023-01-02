@@ -32,21 +32,13 @@ const MagicNavigator: ComponentType<any> = () => {
             icon: <KeyboardDoubleArrowUpIcon sx={ActionButtonSx} />,
             name: 'Top'
         },
-        {
-            icon: <SearchIcon sx={ActionButtonSx} />,
-            name: 'Search',
-            action: () => toggleModal()
-        },
+      
         {
             icon: <NotificationsIcon sx={ActionButtonSx} />,
             name: 'Notifications',
             action: () => toggleBanner()
         },
-        {
-            icon: <ShareIcon sx={ActionButtonSx} />,
-            name: 'Share',
-            action: () => toggleModal()
-        },
+    
         {
             icon: <SettingsIcon sx={ActionButtonSx} />,
             name: 'Menu',

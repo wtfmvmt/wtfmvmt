@@ -1,6 +1,6 @@
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/page"
-import TableRow from "@components/TableRow"
+import Contact from "@components/Contact"
 import { pages as pagesUtils } from "@utils/index"
 
 
@@ -10,23 +10,26 @@ export async function getStaticProps() {
 
     const { setPageProps } = pagesUtils()
 
-    const page = await getPage("about")
+    const page = await getPage("forms")
 
     return setPageProps({ pageData: page, revalidate: 1 })
 }
 
-function AboutIndexPage({ page }) {
+function FormsIndexPage({ page }) {
 
     const { getPageProps } = pagesUtils()
 
+    const { contact } = getPageProps(page)
+
     return (
         <>
+            <Contact {...contact} />
         </>
     )
 }
 
 
-AboutIndexPage.layout = PageLayout
+FormsIndexPage.layout = PageLayout
 
-export default AboutIndexPage
+export default FormsIndexPage
 

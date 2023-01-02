@@ -1,8 +1,9 @@
-import DistortionCarousel from "@components/DistortionCarousel";
-import FadeAnimation from "@components/FadeAnimation";
-import type { ComponentType } from "@typings/Component";
-import type { HeroProps } from "@typings/Hero";
-import { SocialIcon } from "react-social-icons";
+import DistortionCarousel from "@components/DistortionCarousel"
+import FadeAnimation from "@components/FadeAnimation"
+import type { ComponentType } from "@typings/Component"
+import type { HeroProps } from "@typings/Hero"
+import { SocialIcon } from "react-social-icons"
+import { memo } from "react"
 
 const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, actionLinks, socialLinks, mediaCarousel }: HeroProps) => {
 
@@ -13,7 +14,8 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
                 <div className="top-0 right-0 mt-16 text-center xl:mt-24 xl:mr-8 xl:absolute xl:transform xl:-translate-y-1/2">
                     {socialLinks.map((link, index) => (<SocialIcon key={index} bgColor="white" url={link?.url} className="inline-flex items-center justify-center w-16 h-16 p-2 mr-2 transition-all hvr-pop hover:text-purple-600 hover:bg-opacity-90 hover:rounded" />))}
                 </div>
-                : <>SOCIALS_NOT_FOUND</>
+                :
+                 <>SOCIALS_NOT_FOUND</>
         )
     }
 
@@ -23,7 +25,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
         actionLinks ? <div className="absolute left-0 z-50 w-full px-4 mt-20 mb-8 bg-black lg:w-1/3 lg:mb-0 bg-opacity-60">
             <div className="px-4 py-12 md:px-8 ">
                 <h4 className="pl-8 mb-2 font-bold uppercase text-md font-major font-heading text-slate-200">
-                    {actionLinks?.title ??"[Client]:TITLE_NOT_FOUND"}
+                    {actionLinks?.title ?? "[CLIENT]:TITLE_NOT_FOUND"}
                 </h4>
                 <ul className="mb-5">
                     <FadeAnimation triggerOnce cascade>
@@ -46,7 +48,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
                 </ul>
 
             </div>
-        </div> : <></>
+        </div> : <>[CLIENT]: ACTIONLINKS_NOT_FOUND</>
 
 
 
@@ -57,28 +59,26 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
         <div className="py-12 lg:py-24 ">
             <div className="container px-4 mx-auto">
-                <h4 className="mb-6 text-sm font-bold text-gray-200 lg:ml-16 font-heading">
-                   {features?.heading ?? "[Client]:HEADING_NOT_FOUND"}
-                </h4>
                 <div className="flex flex-wrap -mx-3 -mb-3 text-black">
                     {
-                        features && features.featured.map((feature, index) => {
+                        features?.featured ?
+                            features.featured.map((feature, index) => {
 
-                            return (
-                                <div key={index} className="w-full p-3 hvr-pop md:w-1/2 lg:w-1/6">
-                                    <a href={feature.url} className="flex items-center justify-center bg-black shadow-xl h-36 bg-opacity-80">
-                                        <h1 className="absolute bottom-0 items-center font-bold text-white transition-all opacity-0 hover:opacity-90 text-wrap font-heading">{feature.name ? feature.name : "Test"}</h1>
-                                        <img
-                                            className="h-32 mx-auto shawdow-xl"
-                                            loading="lazy"
-                                            src={feature.image.src}
-                                            alt={feature.image.alt}
-                                        />
+                                return (
+                                    <div key={index} className="w-full p-3 hvr-pop md:w-1/2 lg:w-1/6">
+                                        <a href={feature.url} className="flex items-center justify-center bg-black shadow-xl h-36 bg-opacity-80">
+                                            <h1 className="absolute bottom-0 items-center font-bold text-white transition-all opacity-0 hover:opacity-90 text-wrap font-heading">{feature?.name ? feature?.name : "NAME_NOT_FOUND"}</h1>
+                                            <img
+                                                className="h-32 mx-auto shawdow-xl"
+                                                loading="lazy"
+                                                src={feature?.image?.src}
+                                                alt={feature?.image?.alt}
+                                            />
 
-                                    </a>
-                                </div>
-                            )
-                        })
+                                        </a>
+                                    </div>
+                                )
+                            }) : <>❌[CLIENT]: FEATURES_NOT_FOUND</>
                     }
 
                 </div>
@@ -98,7 +98,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
             </h4>
             {
                 cta ? <a
-                    className="inline-block px-8 py-6 font-bold text-white uppercase transition duration-200 bg-purple-900 rounded-md cursor-pointer hvr-pop hover:bg-black font-heading"
+                    className="inline-block px-8 py-6 font-bold text-white uppercase transition duration-200 bg-purple-900 rounded-md cursor-pointer animate-pulse hvr-pop hover:bg-black font-heading"
                     href={cta ? cta?.url : "CTA_NOT_FOUND"}
                 >
                     {cta ? cta?.name : "CTA_NOT_FOUND"}
@@ -109,7 +109,6 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
     return (
         <section>
-
             <div className="relative py-4 overflow-hidden -translate-y-11">
                 <div className="z-50 w-full h-full">
                     <div className="absolute left-0 z-50 w-full">
@@ -117,17 +116,17 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
                     </div>
                     <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousel} />
                 </div>
-
             </div>
 
             <div className="container relative px-4 mx-auto">
                 <SocialLinks />
                 <Heading />
             </div>
+
             <FeaturedRow />
 
         </section>
     )
 }
 
-export default Hero
+export default memo(Hero)

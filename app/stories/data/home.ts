@@ -7,7 +7,8 @@ export const home = {
             actions: [
                 {
                     name: 'Open',
-                    icon: '📂'
+                    icon: '📂',
+                    url: 'https://www.notion.so/officeos/WTFMVMT-88204edb5000435e86576bf45628c0d3'
                 },
                 {
                     name: 'Copy',

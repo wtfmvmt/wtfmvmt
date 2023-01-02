@@ -1,7 +1,7 @@
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/page"
-import TableRow from "@components/TableRow"
 import { pages as pagesUtils } from "@utils/index"
+import Summary from "@views/components/Summary"
 
 
 export async function getStaticProps() {
@@ -10,23 +10,26 @@ export async function getStaticProps() {
 
     const { setPageProps } = pagesUtils()
 
-    const page = await getPage("about")
+    const page = await getPage("artivism")
 
     return setPageProps({ pageData: page, revalidate: 1 })
 }
 
-function AboutIndexPage({ page }) {
+function ArtivismIndexPage({ page }) {
 
     const { getPageProps } = pagesUtils()
 
+    const { summary } = getPageProps(page)
+
     return (
         <>
+            <Summary {...summary} />
         </>
     )
 }
 
 
-AboutIndexPage.layout = PageLayout
+ArtivismIndexPage.layout = PageLayout
 
-export default AboutIndexPage
+export default ArtivismIndexPage
 
