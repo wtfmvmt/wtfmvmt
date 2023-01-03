@@ -48,7 +48,6 @@
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.0",
     "react-lazy-blur-image": "^0.1.2",
-    "react-loader-spinner": "^5.2.0",
     "react-placeholder-image": "^0.1.8",
     "react-player": "^2.10.1",
     "react-pwa-installer": "^1.1.1",

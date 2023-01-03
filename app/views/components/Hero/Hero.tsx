@@ -1,11 +1,18 @@
-import DistortionCarousel from "@components/DistortionCarousel"
 import FadeAnimation from "@components/FadeAnimation"
 import type { ComponentType } from "@typings/Component"
 import type { HeroProps } from "@typings/Hero"
 import { SocialIcon } from "react-social-icons"
 import { memo } from "react"
+import Loader from "@includes/Loader"
+import dynamic from "next/dynamic"
 
 const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, actionLinks, socialLinks, mediaCarousel }: HeroProps) => {
+
+
+    const DistortionCarousel = dynamic(() => import("@components/DistortionCarousel"), {
+        loading: () => <Loader />,
+        ssr: true
+    })
 
     const SocialLinks = () => {
 
@@ -15,7 +22,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
                     {socialLinks.map((link, index) => (<SocialIcon key={index} bgColor="white" url={link?.url} className="inline-flex items-center justify-center w-16 h-16 p-2 mr-2 transition-all hvr-pop hover:text-purple-600 hover:bg-opacity-90 hover:rounded" />))}
                 </div>
                 :
-                 <>SOCIALS_NOT_FOUND</>
+                <>SOCIALS_NOT_FOUND</>
         )
     }
 

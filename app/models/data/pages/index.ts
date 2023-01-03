@@ -42,7 +42,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
             },
             data: {
                 hero: <HeroProps>{
-                    title: getTitle()?.name ?? null,
+                    title: getTitle()?.values[0] ?? null,
                     mediaCarousel: shuffle(getPhotos().map((media) => (media?.media[0]?.url ?? null))),
                     description: getImpressum().values[0],
                     socialLinks: getSocialMedia().map((social) => ({ url: social?.url, name: social?.name })),

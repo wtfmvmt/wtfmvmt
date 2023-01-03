@@ -1,9 +1,16 @@
 import type { ComponentType } from "@typings/Component";
 import type { FeaturedProps } from "@typings/Featured";
-import DistortionCarousel from "../DistortionCarousel/DistortionCarousel";
 import Heading from "@components/Heading"
+import Loader from "@includes/Loader"
+import dynamic from "next/dynamic";
+
 
 const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, features, carousel }: FeaturedProps) => {
+
+  const DistortionCarousel = dynamic(() => import ("@components/DistortionCarousel"), {
+    loading: () => <Loader/>,
+    ssr: true
+  })
 
   const buttonSxTw = (self) => self
 
