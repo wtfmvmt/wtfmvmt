@@ -1,16 +1,21 @@
 import Header from "@components/Header";
+import Loader from "@includes/Loader";
 import RootLayout from "@layouts/RootLayout";
 import type { ComponentType } from "@typings/Component";
 import type { LayoutProps } from "@typings/Layout";
 import dynamic from "next/dynamic";
 import { memo } from "react";
-import Loader from "@includes/Loader"
 
-const PageLayout: ComponentType<LayoutProps> = ({ metaData, menu, header, footer, children }: LayoutProps) => {
+const PageLayout: ComponentType<LayoutProps> = ({ metaData, menu, header, footer, contact, children }: LayoutProps) => {
+
+    const Contact = dynamic(() => import("@components/Contact"), {
+        loading: () => <Loader />,
+        ssr: false
+    })
 
     const Footer = dynamic(() => import("@components/Footer"), {
         loading: () => <Loader />,
-        ssr: true
+        ssr: false
     })
 
     const Modal = dynamic(() => import("@includes/Modal"), {
@@ -20,7 +25,7 @@ const PageLayout: ComponentType<LayoutProps> = ({ metaData, menu, header, footer
 
     const Notifications = dynamic(() => import("@includes/Notifications"), {
         loading: () => <Loader />,
-        ssr: false
+        ssr: true
     })
 
     const MagicNavigator = dynamic(() => import("@includes/MagicNavigator"), {
@@ -41,7 +46,8 @@ const PageLayout: ComponentType<LayoutProps> = ({ metaData, menu, header, footer
             <DrawerMenu {...menu} />
             <Notifications />
             <Header {...header} />
-            {children}
+            {children ?? null}
+            <Contact {...contact} />
             <Footer {...footer} />
         </RootLayout>
     )

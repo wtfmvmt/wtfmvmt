@@ -166,12 +166,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                         url: '/faqs'
                     }
                 },
-                contact: <ContactProps>{
-                    socials: getSocialMedia().map((social) => ({
-                        url: social?.url ?? null
-                    })),
-                    email: getEmailAddress().email,
-                }
+             
 
             },
 
@@ -182,12 +177,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                 pageTitle: "Vision"
             },
             data: {
-                contact: <ContactProps>{
-                    socials: getSocialMedia().map((social) => ({
-                        url: social?.url ?? null
-                    })),
-                    email: getEmailAddress().email,
-                }
+              
 
             }
         },
@@ -451,6 +441,12 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                     },
                     url: getFavicon()?.url
                 }
+            },
+            contact: {
+                socials: getSocialMedia().map((social) => ({
+                    url: social?.url ?? null
+                })),
+                email: getEmailAddress().email,
             },
             metaData: pageData[key]?.metaData,
         }),

@@ -1,49 +1,58 @@
+import Loader from "@includes/Loader"
 import "@libs/animations.css"
 import "@libs/globals.css"
 import "@libs/scrollbars.css"
 import "@libs/tailwind.css"
 import { PageTransition } from 'next-page-transitions'
-import { RecoilRoot } from 'recoil'
 import { useRouter } from 'next/router'
-import RiseLoader from "react-spinners/RiseLoader"
+import { RecoilRoot } from 'recoil'
 
 function Application({ Component, pageProps }) {
 
   const router = useRouter()
 
+  const transitionParams = {
+    loadingComponent: <Loader />,
+    timeout: 700,
+    classNames: "page-transition"
+  }
+
+  const TransitionStyles = () => (
+    <style jsx global>{`
+    .page-transition-enter {
+      opacity: 0;
+      filter: blur(100px);
+    }
+    
+    .page-transition-enter-active {
+      opacity: 1;
+      filter: blur(0px);
+      transition: all ease-in-out ${transitionParams.timeout}ms;
+    }
+    
+    .page-transition-exit {
+      opacity: 1;
+      filter: blur(0px);
+    }
+    
+    .page-transition-exit-active {
+      opacity: 0;
+      filter: blur(100px);
+      transition: all ease-in-out ${transitionParams.timeout}ms;
+    }
+    `}</style>
+  )
+
   return (
     <RecoilRoot>
       {
         Component?.layout ?
-          <Component.layout {...pageProps.page.layout}>
-            <PageTransition loadingComponent={<RiseLoader color="#9200CC" />}
-              loadingDelay={600} timeout={500} classNames="page-transition">
+          <PageTransition {...transitionParams}>
+            <Component.layout {...pageProps.page.layout}>
               <Component key={router.route} {...pageProps} />
-            </PageTransition>
-            <style jsx global>{`
-            
-            .page-transition-enter {
-              opacity: 0.1;
-              background-color: black;
-            }
-            
-            .page-transition-enter-active {
-              opacity: 1;
-              transition: all ease-in-out 900ms;
-            }
-            
-            .page-transition-exit {
-              opacity: 1;
-            }
-            
-            .page-transition-exit-active {
-              opacity: 0.5;
-              background-color: black;
-              transition: all ease-in-out 900ms;
-            }
-            `}</style>
-
-          </Component.layout> :
+              <TransitionStyles />
+            </Component.layout>
+          </PageTransition> :
           <Component {...pageProps} />
       }
     </RecoilRoot>

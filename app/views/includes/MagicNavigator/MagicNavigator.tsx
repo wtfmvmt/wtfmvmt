@@ -35,7 +35,7 @@ const MagicNavigator: ComponentType<any> = () => {
       
         {
             icon: <NotificationsIcon sx={ActionButtonSx} />,
-            name: 'Notifications',
+            name: 'Banner',
             action: () => toggleBanner()
         },
     
