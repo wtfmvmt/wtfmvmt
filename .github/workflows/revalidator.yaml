@@ -1,0 +1,13 @@
+name: Page Data Revalidator Cron Job
+on:
+  schedule:
+    - cron: '*/55 * * * *'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hourly cron job
+        run: |
+          curl --request POST \
+          --url 'https://wtfmvmt.com/api/revalidate' \
+          --header 'Authorization: Bearer ${{ secrets.REVALIDATION_TOKEN }}'

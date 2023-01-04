@@ -11,7 +11,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
     const DistortionCarousel = dynamic(() => import("@components/DistortionCarousel"), {
         loading: () => <Loader />,
-        ssr: true
+        ssr: false
     })
 
     const SocialLinks = () => {
@@ -19,7 +19,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
         return (
             socialLinks ?
                 <div className="top-0 right-0 mt-16 text-center xl:mt-24 xl:mr-8 xl:absolute xl:transform xl:-translate-y-1/2">
-                    {socialLinks.map((link, index) => (<SocialIcon key={index} bgColor="white" url={link?.url} className="inline-flex items-center justify-center w-16 h-16 p-2 mr-2 transition-all hvr-pop hover:text-purple-600 hover:bg-opacity-90 hover:rounded" />))}
+                    {socialLinks.map((link, index) => (<SocialIcon key={index} bgColor="white" url={link?.url} className="inline-flex items-center justify-center w-16 h-16 p-2 m-2 transition-all hvr-pop hover:opacity-70" />))}
                 </div>
                 :
                 <>SOCIALS_NOT_FOUND</>
@@ -29,13 +29,13 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
     const ActionLinks = () => (
 
-        actionLinks ? <div className="absolute left-0 z-50 w-full px-4 mt-20 mb-8 bg-black lg:w-1/3 lg:mb-0 bg-opacity-60">
+        actionLinks ? <div className="rounded absolute left-0 z-50 w-full px-4 mt-20 mb-8 bg-black lg:w-1/3 lg:mb-0 bg-opacity-30">
             <div className="px-4 py-12 md:px-8 ">
                 <h4 className="pl-8 mb-2 font-bold uppercase text-md font-major font-heading text-slate-200">
                     {actionLinks?.title ?? "[CLIENT]:TITLE_NOT_FOUND"}
                 </h4>
                 <ul className="mb-5">
-                    <FadeAnimation triggerOnce cascade>
+                    <FadeAnimation duration={500} triggerOnce cascade>
                         {
                             actionLinks?.links?.map((link, index) => {
                                 return (

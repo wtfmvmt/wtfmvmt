@@ -21,25 +21,26 @@ function Application({ Component, pageProps }) {
     <style jsx global>{`
     .page-transition-enter {
       opacity: 0;
-      filter: blur(100px);
+      filter: blur(50px), grayscale(80%);
     }
     
     .page-transition-enter-active {
       opacity: 1;
-      filter: blur(0px);
+      filter: blur(50px), grayscale(80%);
       transition: all ease-in-out ${transitionParams.timeout}ms;
     }
     
     .page-transition-exit {
       opacity: 1;
-      filter: blur(0px);
+      filter: blur(0px), grayscale(0%);
     }
     
     .page-transition-exit-active {
       opacity: 0;
-      filter: blur(100px);
+      filter: blur(50px), grayscale(50%), drop-shadow(25px, 25px, 25px, 25px);
       transition: all ease-in-out ${transitionParams.timeout}ms;
     }
+
     `}</style>
   )
 
@@ -47,12 +48,12 @@ function Application({ Component, pageProps }) {
     <RecoilRoot>
       {
         Component?.layout ?
-          <PageTransition {...transitionParams}>
-            <Component.layout {...pageProps.page.layout}>
+          <Component.layout {...pageProps.page.layout}>
+            <PageTransition {...transitionParams}>
               <Component key={router.route} {...pageProps} />
-              <TransitionStyles />
-            </Component.layout>
-          </PageTransition> :
+            </PageTransition>
+            <TransitionStyles />
+          </Component.layout> :
           <Component {...pageProps} />
       }
     </RecoilRoot>

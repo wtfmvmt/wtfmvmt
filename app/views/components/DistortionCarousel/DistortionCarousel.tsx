@@ -8,10 +8,10 @@ const DistortionCarousel = ({
   const { ref, next, prev } = useDistortionEffectCarousel({
     images,
     displacmentImage,
-    resizeDebounce: 100,
+    resizeDebounce: 250,
     backgroundSize: "cover",
     easing: "easeInOut",
-    speed: 1.1,
+    speed: 1.3,
     commonAngle: Math.PI / 3
   });
 
@@ -19,19 +19,17 @@ const DistortionCarousel = ({
     setTimeout(() => {
       setInterval(() => {
         next()
-      }, 7000)
-    }, 3000)
+      }, 8000)
+    }, 2000)
 
   }, [next])
 
   return (
     <div
-      className='rounded-md cursor-pointer'
+      className='cursor-pointer'
       onClick={() => prev()}
-
       style={{
         height: '100vh',
-        opacity: 0.99
       }}
       ref={ref}
     />

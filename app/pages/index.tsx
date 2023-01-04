@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
   const page = await getPage("home")
 
-  return setPageProps({ pageData: page, revalidate: 1})
+  return setPageProps({ pageData: page, revalidate: 1 })
 }
 
 
@@ -30,7 +30,7 @@ const HomePage = ({ page }) => {
 
   const { hero, summary, rowList, statsRow, featured } = getPageProps(page)
 
-  const { columnList, tableRow, logoArray, contact, imageMasonry } = getPageProps(page)
+  const { columnList, tableRow, logoArray, imageMasonry } = getPageProps(page)
 
   return (
     <>
@@ -43,7 +43,6 @@ const HomePage = ({ page }) => {
       <TableRow {...tableRow} />
       <ColumnList {...columnList} />
       <ImageMasonry {...imageMasonry} />
-      <Contact {...contact} />
     </>
   )
 }

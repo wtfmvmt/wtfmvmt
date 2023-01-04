@@ -24,7 +24,6 @@ function TeamIndexPage({ page }) {
     return (
         <>
             <ImageMasonry {...imageMasonry} />
-            <Contact {...contact} />
         </>
     )
 }

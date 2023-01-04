@@ -10,7 +10,7 @@ import partners from "@db/partners"
 import socialMedia from "@db/social_media"
 import team from "@db/team"
 import { collections } from "@utils/index"
-import type { PageObjectType, PagesDBProps } from "@typings/Page"
+import type { PageObjectType, PageQueryProps } from "@typings/Page"
 import type { HeroProps } from "@typings/Hero"
 import type { LogoArrayProps } from "@typings/LogoArray"
 import type { SummaryProps } from "@typings/Summary"
@@ -20,7 +20,7 @@ import type { ColumnListProps } from "@typings/ColumnList"
 import type { RowListProps } from "@typings/RowList"
 import type { ContactProps } from "@typings/ContactProps"
 
-const pages = ({ store, key }: PagesDBProps): PageObjectType => {
+function pages({ store, key }: PageQueryProps) {
 
     const { shuffle } = collections()
 
@@ -166,7 +166,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                         url: '/faqs'
                     }
                 },
-             
+
 
             },
 
@@ -177,7 +177,7 @@ const pages = ({ store, key }: PagesDBProps): PageObjectType => {
                 pageTitle: "Vision"
             },
             data: {
-              
+
 
             }
         },

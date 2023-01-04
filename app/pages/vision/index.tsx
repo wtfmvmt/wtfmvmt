@@ -23,7 +23,6 @@ function VisionIndexPage({ page }) {
 
     return (
         <>
-            <Contact {...contact} />
         </>
     )
 }
