@@ -30,16 +30,16 @@ const LogoArray: ComponentType<LogoArrayProps> = ({ logos, title, heading, descr
                         <div className="flex flex-wrap -mx-4">
                             {logos ? logos.map((logo, index) => {
                                 return (
-                                    <div key={index} className="w-1/2 md:w-1/2 px-4 mb-8">
-                                        <a className="flex flex-col" href={logo?.url ? logo?.url : "LOGO_URL_NOT_FOUND"}>
+                                    <div key={index} className="w-1/2 md:w-1/2 px-4 mb-8 group">
+                                        <a className="flex flex-col h-full" href={logo?.url ? logo?.url : "LOGO_URL_NOT_FOUND"}>
                                             <div style={{
                                                 backgroundImage: `url(${logo.image?.src})`,
                                                 backgroundPosition: "center, center",
-                                                backgroundSize: '75%, 75%',
+                                                backgroundSize: '100%, 100%',
                                                 backgroundRepeat: 'no-repeat',
-                                                objectFit: 'contain'
-                                            }} className="flex items-center justify-center h-40 p-6 md:px-12 bg-black bg-opacity-60 hover:backdrop-blur-none hover:-translate-y-4 cursor-pointer backdrop-blur-md duration-500 ease-in-out transition-all border-3 border-purple-600 rounded-2xl shadow-2xl">
-                                                <h1 className="text-center bottom-4 hidden hover:flex font-major text-slate-200">{logo?.name ?? "LOGO_NAME_NOT_FOUND"}</h1>
+                                                objectFit: 'scale-down'
+                                            }} className="flex items-center justify-center h-full min- p-6 md:px-12 bg-black bg-opacity-40 hover:backdrop-blur-none hover:-translate-y-4 cursor-pointer backdrop-blur-lg duration-500 ease-in-out transition-all border-3 border-purple-600 rounded-xl shadow-2xl">
+                                                <h1 className="absolute opacity-0 group-hover:opacity-100 text-center top-10 font-major text-slate-200">{logo?.name ?? "LOGO_NAME_NOT_FOUND"}</h1>
                                             </div>
                                         </a>
                                     </div>

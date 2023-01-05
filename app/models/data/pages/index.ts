@@ -26,7 +26,7 @@ function pages({ store, key }: PageQueryProps) {
 
     const { getFAQs } = faqs(store)
     const { getTeam } = team(store)
-    const { getPhotos } = media(store)
+    const { getPhotos, getMedia } = media(store)
     const { getMemberships } = memberships(store)
     const { getLinks } = links(store)
     const { getSocialMedia } = socialMedia(store)
@@ -43,21 +43,44 @@ function pages({ store, key }: PageQueryProps) {
             data: {
                 hero: <HeroProps>{
                     title: getTitle()?.values[0] ?? null,
-                    mediaCarousel: shuffle(getPhotos().map((media) => (media?.media[0]?.url ?? null))),
+                    mediaCarousel: getPhotos().map((media) => (media?.media[0]?.url ?? null)),
                     description: getImpressum().values[0],
-                    socialLinks: getSocialMedia().map((social) => ({ url: social?.url, name: social?.name })),
+                    features: {
+                        heading: "Latest Activity",
+                        featured: [
+                            {
+                                name: "Featured"
+                            },
+                            {
+                                name: "Featured"
+                            },
+                            {
+                                name: "Featured"
+                            },
+                            {
+                                name: "Featured"
+                            }, {
+                                name: "Featured"
+                            }
+                            , {
+                                name: "Featured"
+                            }
+                            , {
+                                name: "Featured"
+                            }
+                        ]
+                    },
+                    socialLinks: shuffle(getSocialMedia().map((social) => ({ url: social?.url })).splice(0, getSocialMedia().length - 3)),
                     actionLinks: {
                         title: "We The Future",
                         links: getForms().map((form) => ({
+                            icon: form?.icon,
                             name: form?.name,
                             url: form?.url
                         }))
                     },
 
-                    features: {
-                        title: 'Features',
-                        featured: []
-                    },
+
                     cta: {
                         name: getCallToAction().values[0],
                     }
@@ -67,7 +90,7 @@ function pages({ store, key }: PageQueryProps) {
                     description: getPartnersHeading()?.description,
                     heading: getPartnersHeading()?.values[0],
                     logos: getPartners().map((partner) => ({
-                        title: partner?.name ?? null,
+                        name: partner?.name ?? null,
                         description: partner?.description ?? null,
                         image: {
                             src: partner?.media[0]?.url
@@ -426,6 +449,7 @@ function pages({ store, key }: PageQueryProps) {
             },
             menu: {
                 links: getLinks().map((link) => ({
+                    icon: link?.icon,
                     name: link?.name,
                     url: link?.url,
                 })),

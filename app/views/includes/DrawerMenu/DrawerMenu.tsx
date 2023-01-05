@@ -44,6 +44,7 @@ const DrawerMenu = ({ favicon, links, cta }: DrawerMenuProps) => {
                                     className="group-hover:text-blue-500 duration-250 ease-in-out group-hover:font-major block p-4 text-lg font-extrabold group-hover:bg-opacity-50 group-hover:bg-black rounded"
                                     href={link?.url}
                                 >
+                                    <img src={link?.icon} className="h-8 inline-block" loading="lazy" />
                                     <span className="hvr-wobble-horizontal inline-block overflow-hidden">
                                         {link?.name}
                                     </span>

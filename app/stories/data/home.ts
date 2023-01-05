@@ -93,6 +93,66 @@ export const home = {
         },
 
         {
+            title: 'Headings',
+            subHeading: "Facade Database",
+            heading: "This is where all org meta-data is centralized. Copyright, logos, language, etc...",
+            actions: [
+                {
+                    name: 'Open',
+                    icon: '📂'
+                },
+                {
+                    name: 'Copy',
+                    icon: '📎'
+                }
+            ]
+        },
+        {
+            title: 'Partners',
+            subHeading: "Database",
+            heading: "This is where all org meta-data is centralized. Copyright, logos, language, etc...",
+            actions: [
+                {
+                    name: 'Open',
+                    icon: '📂'
+                },
+                {
+                    name: 'Copy',
+                    icon: '📎'
+                }
+            ]
+        },
+        {
+            title: 'Headings',
+            subHeading: "Facade Database",
+            heading: "This is where all org meta-data is centralized. Copyright, logos, language, etc...",
+            actions: [
+                {
+                    name: 'Open',
+                    icon: '📂'
+                },
+                {
+                    name: 'Copy',
+                    icon: '📎'
+                }
+            ]
+        },
+        {
+            title: 'Partners',
+            subHeading: "Database",
+            heading: "This is where all org meta-data is centralized. Copyright, logos, language, etc...",
+            actions: [
+                {
+                    name: 'Open',
+                    icon: '📂'
+                },
+                {
+                    name: 'Copy',
+                    icon: '📎'
+                }
+            ]
+        },
+        {
             title: 'Templates',
             subHeading: "Database",
             heading: "Where all brand templates are located for canva, facebook, instagram, etc...",

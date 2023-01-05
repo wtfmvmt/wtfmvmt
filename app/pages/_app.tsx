@@ -48,12 +48,13 @@ function Application({ Component, pageProps }) {
     <RecoilRoot>
       {
         Component?.layout ?
-          <Component.layout {...pageProps.page.layout}>
-            <PageTransition {...transitionParams}>
+          <PageTransition {...transitionParams}>
+            <Component.layout {...pageProps.page.layout}>
               <Component key={router.route} {...pageProps} />
-            </PageTransition>
-            <TransitionStyles />
-          </Component.layout> :
+              <TransitionStyles />
+            </Component.layout>
+          </PageTransition>
+          :
           <Component {...pageProps} />
       }
     </RecoilRoot>

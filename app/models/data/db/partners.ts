@@ -23,7 +23,7 @@ const partners = (store: NotionPageObjectType): DatabaseObjectType => {
         })
     }
 
-    return { ...dbObject }
+    return dbObject
 }
 
 export default partners

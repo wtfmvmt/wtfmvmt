@@ -11,7 +11,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
     const DistortionCarousel = dynamic(() => import("@components/DistortionCarousel"), {
         loading: () => <Loader />,
-        ssr: false
+        ssr: true
     })
 
     const SocialLinks = () => {
@@ -29,13 +29,13 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
 
     const ActionLinks = () => (
 
-        actionLinks ? <div className="rounded absolute left-0 z-50 w-full px-4 mt-20 mb-8 bg-black lg:w-1/3 lg:mb-0 bg-opacity-30">
+        actionLinks ? <div className="rounded cursor-pointer hover:bg-opacity-60 duration-700 absolute left-0 z-50 w-full px-4 mt-20 mb-8 bg-black lg:w-1/3 lg:mb-0 bg-opacity-30">
             <div className="px-4 py-12 md:px-8 ">
                 <h4 className="pl-8 mb-2 font-bold uppercase text-md font-major font-heading text-slate-200">
                     {actionLinks?.title ?? "[CLIENT]:TITLE_NOT_FOUND"}
                 </h4>
                 <ul className="mb-5">
-                    <FadeAnimation duration={500} triggerOnce cascade>
+                    <FadeAnimation duration={300} triggerOnce cascade>
                         {
                             actionLinks?.links?.map((link, index) => {
                                 return (
@@ -44,6 +44,7 @@ const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, act
                                             className="flex items-center text-lg font-bold ease-in-out hvr-wobble-horizontal group-hover:font-major font-share_tech text-slate-200 font-heading hover:text-blue-300"
                                             href={link?.url}
                                         >
+                                            <img src={link?.icon} loading="lazy" className="h-8 inline-block"/>
                                             <span>{link?.name}</span>
                                         </a>
                                     </li>

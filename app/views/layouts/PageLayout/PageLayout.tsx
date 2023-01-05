@@ -10,12 +10,12 @@ const PageLayout: ComponentType<LayoutProps> = ({ metaData, menu, header, footer
 
     const Contact = dynamic(() => import("@components/Contact"), {
         loading: () => <Loader />,
-        ssr: false
+        ssr: true
     })
 
     const Footer = dynamic(() => import("@components/Footer"), {
         loading: () => <Loader />,
-        ssr: false
+        ssr: true
     })
 
     const Modal = dynamic(() => import("@includes/Modal"), {

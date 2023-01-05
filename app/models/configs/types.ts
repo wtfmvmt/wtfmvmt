@@ -62,8 +62,11 @@ export const notion = () => {
             shape: (data) => {
                 const { Facebook, Name, Covers, URL, Types, Status } = getProperties(data)
 
+                const { icon: Icon  } = data
+
                 return {
                     name: title(Name),
+                    icon: icon(Icon),
                     covers: files(Covers),
                     status: status(Status),
                     url: url(URL),

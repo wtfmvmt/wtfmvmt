@@ -8,14 +8,14 @@ const Meta: ComponentType<MetaProps> = ({ title, pageTitle, description }: MetaP
     return (
         <NextSeo
             title={`${pageTitle} | ${title ?? meta.title}`}
-            themeColor="#000000"
+            themeColor="#9200CC"
             description={description ?? meta.description}
             additionalLinkTags={meta?.icons ?? null}
             canonical={meta.url}
             openGraph={{
                 url: 'https://www.wtfmvmt.com',
-                title: 'WTFMVMT',
-                description: '',
+                title: meta.title,
+                description: description ?? meta.description,
                 images: [
                     {
                         url: 'https://www.example.ie/og-image-01.jpg',
@@ -31,10 +31,9 @@ const Meta: ComponentType<MetaProps> = ({ title, pageTitle, description }: MetaP
                         alt: 'Og Image Alt Second',
                         type: 'image/jpeg',
                     },
-                    { url: 'https://www.example.ie/og-image-03.jpg' },
-                    { url: 'https://www.example.ie/og-image-04.jpg' },
+            
                 ],
-                siteName: 'WTFMVMT',
+                siteName: meta.title,
             }}
             twitter={{
                 handle: '@wtfmmvt',
