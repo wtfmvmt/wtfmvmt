@@ -11,6 +11,9 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import type { ComponentType } from '@models/typings/Component';
 import RadioIcon from '@mui/icons-material/Radio';
 import useMenuDrawerState from "@hooks/useMenuDrawerState"
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
+
 
 const MagicNavigator: ComponentType<any> = () => {
 
@@ -30,7 +33,7 @@ const MagicNavigator: ComponentType<any> = () => {
         {
             action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }),
             icon: <KeyboardDoubleArrowUpIcon sx={ActionButtonSx} />,
-            name: 'Top'
+            name: 'Up'
         },
 
         {
@@ -38,6 +41,12 @@ const MagicNavigator: ComponentType<any> = () => {
             name: 'Banner',
             action: () => toggleBanner()
         },
+        {
+            icon: <VolumeUpIcon sx={ActionButtonSx} /> ?? <VolumeMuteIcon sx={ActionButtonSx} />,
+            name: 'Sounds',
+            action: () => toggleDrawer()
+        },
+
         {
             icon: <RadioIcon sx={ActionButtonSx} />,
             name: 'Radio',
