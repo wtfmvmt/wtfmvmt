@@ -9,7 +9,7 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import SettingsIcon from '@mui/icons-material/Settings';
 import type { ComponentType } from '@models/typings/Component';
-
+import RadioIcon from '@mui/icons-material/Radio';
 import useMenuDrawerState from "@hooks/useMenuDrawerState"
 
 const MagicNavigator: ComponentType<any> = () => {
@@ -32,14 +32,14 @@ const MagicNavigator: ComponentType<any> = () => {
             icon: <KeyboardDoubleArrowUpIcon sx={ActionButtonSx} />,
             name: 'Top'
         },
-      
+
         {
             icon: <NotificationsIcon sx={ActionButtonSx} />,
             name: 'Banner',
             action: () => toggleBanner()
         },
         {
-            icon: <NotificationsIcon sx={ActionButtonSx} />,
+            icon: <RadioIcon sx={ActionButtonSx} />,
             name: 'Radio',
             action: () => toggleBanner()
         },

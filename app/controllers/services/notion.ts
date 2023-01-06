@@ -13,11 +13,28 @@ const NotionService = () => {
         },
 
         getCentralDogma: async () => {
-            const { api, secured } = serviceObject
-            const centralDogma = (await api.databases.query({
-                database_id: secured.central_dogma
-            }))?.results
-            return centralDogma ?? null
+
+            const queryCentralDogma = async ({ cursor, aggResults }: { cursor?: string | undefined, aggResults?: any[] }) => {
+                const { api, secured } = serviceObject
+
+                let aggregateResults: any[] = []
+
+                const { has_more, next_cursor, results } = await api.databases.query({
+                    database_id: secured.central_dogma,
+                    page_size: 100,
+                    start_cursor: cursor,
+                })
+
+                aggregateResults.push(...results, ...aggResults)
+
+                if (!has_more) {
+                    return aggregateResults
+                } else {
+                    return queryCentralDogma({ cursor: next_cursor, aggResults: aggregateResults })
+                }
+            }
+
+            return await queryCentralDogma({ cursor: undefined, aggResults: [] })
         },
 
     }

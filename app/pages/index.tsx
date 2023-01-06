@@ -1,5 +1,4 @@
 import ColumnList from "@components/ColumnList"
-import Contact from "@components/Contact"
 import Featured from "@components/Featured"
 import Hero from "@components/Hero"
 import ImageMasonry from "@components/ImageMasonry"
@@ -8,13 +7,13 @@ import RowList from "@components/RowList"
 import StatsRow from "@components/StatsRow"
 import Summary from "@components/Summary"
 import TableRow from "@components/TableRow"
-import PageService from "@services/page"
 import PageLayout from "@layouts/PageLayout"
+import FacadeService from "@services/facade"
 import { pages as pagesUtils } from "@utils/index"
 
 export async function getStaticProps() {
 
-  const { getPage } = PageService()
+  const { page: { getPage } } = FacadeService().services
 
   const { setPageProps } = pagesUtils()
 

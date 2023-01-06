@@ -43,7 +43,7 @@ function pages({ store, key }: PageQueryProps) {
             data: {
                 hero: <HeroProps>{
                     title: getTitle()?.values[0] ?? null,
-                    mediaCarousel: getPhotos().map((media) => (media?.media[0]?.url ?? null)),
+                    mediaCarousel: shuffle(getMedia().map((media) => (media?.media[0]?.url ?? null))).splice(0, 20),
                     description: getImpressum().values[0],
                     features: {
                         heading: "Latest Activity",
@@ -59,13 +59,16 @@ function pages({ store, key }: PageQueryProps) {
                             },
                             {
                                 name: "Featured"
-                            }, {
+                            },
+                            {
                                 name: "Featured"
                             }
-                            , {
+                            ,
+                            {
                                 name: "Featured"
                             }
-                            , {
+                            ,
+                            {
                                 name: "Featured"
                             }
                         ]
@@ -120,7 +123,7 @@ function pages({ store, key }: PageQueryProps) {
                     title: getEventsHeading()?.name,
                     description: getEventsHeading()?.description,
                     heading: getEventsHeading()?.values[0],
-                    carousel: shuffle(getPhotos().map((m) => m?.media[0]?.url ?? null)),
+                    carousel: shuffle(getPhotos().map((m) => m?.media[0]?.url ?? null)).splice(0, 20),
                     features: getEvents().map((event) => ({
                         title: event?.name,
                         cover: event?.media[0]?.url ?? null

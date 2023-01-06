@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
 
     if (req.query.secret !== process.env.REVALIDATION_TOKEN) {
@@ -8,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     }
 
     try {
-        await res.revalidate(req.query.path as string);
+        await res.revalidate("/");
         return res.json({
             revalidated: true
         });

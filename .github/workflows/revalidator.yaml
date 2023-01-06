@@ -1,10 +1,10 @@
-name: Page Data Revalidator Cron Job
+name: PageData Revalidator 
 on:
   push:
    branches: 
     - main
   schedule:
-    - cron: '*/55 * * * *'
+    - cron: '*/50 * * * *'
 jobs:
   cron:
     runs-on: ubuntu-latest

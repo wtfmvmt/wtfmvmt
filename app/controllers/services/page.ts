@@ -3,7 +3,7 @@ import pages from "@pages/index"
 
 const PageService = () => {
 
-   const serviceObject = {
+    const serviceObject = {
         getLayout: async (pageKey?: string) => {
 
             const { getCentralDogma } = NotionService()
@@ -20,7 +20,7 @@ const PageService = () => {
 
             const { getCentralDogma } = NotionService()
 
-            const centralDogma = (await getCentralDogma())
+            const centralDogma = await getCentralDogma()
 
             const { layout, data, version } = pages({ store: centralDogma, key: pageKey })
 

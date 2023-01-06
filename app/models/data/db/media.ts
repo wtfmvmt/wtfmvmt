@@ -20,11 +20,7 @@ const media = (store: NotionPageObjectType): DatabaseObjectType => {
         },
 
         getMedia: () => {
-            return queryDatabase({
-                keys: [],
-                db: dbObject.db.data,
-                batch: true
-            })
+            return dbObject.db.data
         },
 
         db: createDatabase({
@@ -35,7 +31,7 @@ const media = (store: NotionPageObjectType): DatabaseObjectType => {
         })
     }
 
-    return { ...dbObject }
+    return dbObject
 }
 
 export default media

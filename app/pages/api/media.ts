@@ -1,13 +1,20 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import NotionService from "@services/notion"
+import meta from "@db/meta"
+import media from "@db/media"
 
-type Data = {
-  message?: string
-}
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse<any>
 ) {
-  res.status(200).json({ message: 'Welcome to WTFMVMT API! Use wisely!' })
+
+    const { getCentralDogma } = NotionService()
+
+    const data = await getCentralDogma()
+
+    const mediaResponse = media(data)
+
+  
+
+    res.status(200).json(mediaResponse.db.data)
 }
