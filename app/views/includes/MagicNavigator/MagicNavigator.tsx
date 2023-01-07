@@ -13,12 +13,17 @@ import RadioIcon from '@mui/icons-material/Radio';
 import useMenuDrawerState from "@hooks/useMenuDrawerState"
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
+import { useState } from "react"
+import useSpotifyPlayer from '@hooks/useSpotifyPlayer';
 
 
 const MagicNavigator: ComponentType<any> = () => {
 
-    const { open, toggleBanner } = useBannerState()
+    const [volumeIconState, setVolumeIconState] = useState(false)
 
+
+    const { open, toggleBanner } = useBannerState()
+    const { toggleSpotifyPlayer } = useSpotifyPlayer()
     const { toggleModal } = useModal()
     const { toggleDrawer } = useMenuDrawerState()
 
@@ -35,22 +40,21 @@ const MagicNavigator: ComponentType<any> = () => {
             icon: <KeyboardDoubleArrowUpIcon sx={ActionButtonSx} />,
             name: 'Up'
         },
-
         {
             icon: <NotificationsIcon sx={ActionButtonSx} />,
             name: 'Banner',
             action: () => toggleBanner()
         },
         {
-            icon: <VolumeUpIcon sx={ActionButtonSx} /> ?? <VolumeMuteIcon sx={ActionButtonSx} />,
+            icon: (volumeIconState && <VolumeUpIcon sx={ActionButtonSx} />) || <VolumeMuteIcon sx={ActionButtonSx} />,
             name: 'Sounds',
-            action: () => toggleDrawer()
+            action: () => setVolumeIconState(!volumeIconState)
         },
 
         {
             icon: <RadioIcon sx={ActionButtonSx} />,
             name: 'Radio',
-            action: () => toggleBanner()
+            action: () => toggleSpotifyPlayer()
         },
         {
             icon: <SettingsIcon sx={ActionButtonSx} />,
@@ -80,6 +84,7 @@ const MagicNavigator: ComponentType<any> = () => {
             ariaLabel="WTFMVMT_MAGIC_NAVIGATOR"
             icon={<OutboundIcon className='text-white ease-in-out rotate-45 group-hover:text-blue-200 group-hover:-rotate-45 duration-2000 will-change-transform' />}
         >
+
             {actions.map((action) => (
                 <SpeedDialAction
                     className='bg-black cursor-pointer'

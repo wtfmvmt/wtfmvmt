@@ -13,4 +13,7 @@ jobs:
         run: |
           curl --request POST \
           --url 'https://wtfmvmt.com/api/revalidate' \
-          --header 'Authorization: Bearer ${{ secrets.REVALIDATION_TOKEN }}'
+          --header 'Authorization: Bearer ${{ secrets.REVALIDATION_TOKEN }}'\
+          \
+          curl --request GET \
+          --url 'https://wtfmvmt.com/' \

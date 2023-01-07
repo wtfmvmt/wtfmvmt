@@ -8,6 +8,11 @@ import { memo } from "react";
 
 const PageLayout: ComponentType<LayoutProps> = ({ metaData, menu, header, footer, contact, children }: LayoutProps) => {
 
+    const SpotifyPlayer = dynamic(() => import("@views/includes/SpotifyPlayer"), {
+        loading: () => <Loader />,
+        ssr: false
+    })
+
     const Contact = dynamic(() => import("@components/Contact"), {
         loading: () => <Loader />,
         ssr: true
@@ -45,6 +50,7 @@ const PageLayout: ComponentType<LayoutProps> = ({ metaData, menu, header, footer
             <Modal />
             <DrawerMenu {...menu} />
             <Notifications />
+            <SpotifyPlayer show={true} />
             <Header {...header} />
             {children ?? null}
             <Contact {...contact} />
