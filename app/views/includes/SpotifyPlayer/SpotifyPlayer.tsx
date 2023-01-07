@@ -19,7 +19,7 @@ const SpotifyPlayer: ComponentType<SpotifyPlayerProps> = () => {
 
     return (
         playerState.show ?
-            <div className="z-50 absolute left-10 bottom-2 cursor-pointer">
+            <div className="z-50 fixed left-10 bottom-2 cursor-pointer">
                 <Spotify link={playerState.link} />
             </div>
             : <></>
