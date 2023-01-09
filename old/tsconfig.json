@@ -1,0 +1,82 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@views/*": [
+        "views/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@controllers/*": [
+        "controllers/*"
+      ],
+      "@layouts/*": [
+        "views/layouts/*"
+      ],
+      "@includes/*": [
+        "views/includes/*"
+      ],
+      "@hooks/*": [
+        "controllers/hooks/*"
+      ],
+      "@components/*": [
+        "views/components/*"
+      ],
+      "@db/*": [
+        "models/data/db/*"
+      ],
+      "@pages/*": [
+        "models/data/pages/*"
+      ],
+      "@services/*": [
+        "controllers/services/*"
+      ],
+      "@styles/*": [
+        "views/styles/*"
+      ],
+      "@libs/*": [
+        "views/libs/*"
+      ],
+      "@configs/*": [
+        "models/configs/*"
+      ],
+      "@typings/*": [
+        "models/typings/*"
+      ],
+      "@utils/*": [
+        "controllers/utils/*"
+      ]
+    },
+    "plugins": [{
+      "name": "next"
+    }]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/_document.js",
+    ".next/types/**/*.ts", "stories/ContinuousData/index.ts", "stories/ContinuousData/ContinuousData.tsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
