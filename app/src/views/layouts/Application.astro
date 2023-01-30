@@ -1,0 +1,25 @@
+---
+import "@libs/globals.css";
+
+import Header from "@includes/static/Header/index.astro";
+import Footer from "@includes/static/Footer/index.astro";
+import Contact from "@includes/static/Contact/index.astro";
+import Meta from "@includes/static/Meta/index.astro";
+
+export interface Props {
+  layout?: {};
+}
+
+const { layout } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <Meta />
+  <body>
+    <Header />
+    <slot />
+    <Contact />
+    <Footer />
+  </body>
+</html>
