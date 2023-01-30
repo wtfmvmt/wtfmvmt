@@ -21,6 +21,5 @@ export default defineConfig({
   integrations: [tailwind(), sitemap({
     canonicalURL: 'https://astrojs.com'
   }), prefetch(), mdx(), react()],
-  output: "server",
-  adapter: vercel(),
+  output: "static",
 });
