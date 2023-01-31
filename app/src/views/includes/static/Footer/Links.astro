@@ -1,0 +1,40 @@
+---
+import type { LinkProps } from "@typings/Link";
+
+export interface Props {
+  title?: string;
+  links?: LinkProps[];
+}
+
+export const defaultProps = {
+  title: "[@props]: TITLE_NOT_FOUND",
+};
+
+
+const { title } = Astro.props;
+---
+
+<div class="w-1/2 px-4 mb-8 lg:w-1/4 xl:w-1/6 lg:mb-0">
+  <h4 class="mb-12">About</h4>
+  <ul>
+    <li class="mb-4">
+      <a class="inline-block font-light text-gray-900" href="#">Story</a>
+    </li>
+    <li class="mb-4">
+      <a class="inline-block font-light text-gray-900" href="#">Creative Team</a
+      >
+    </li>
+    <li class="mb-4">
+      <a class="inline-block font-light text-gray-900" href="#">Founders</a>
+    </li>
+    <li class="mb-4">
+      <a class="inline-block font-light text-gray-900" href="#">Why Us</a>
+    </li>
+    <li class="mb-4">
+      <a class="inline-block font-light text-gray-900" href="#">Our Mission</a>
+    </li>
+    <li>
+      <a class="inline-block font-light text-gray-900" href="#">Idea</a>
+    </li>
+  </ul>
+</div>

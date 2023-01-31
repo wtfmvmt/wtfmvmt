@@ -39,11 +39,12 @@ function pages({ store, key }: PageQueryProps) {
         home: {
             metaData: {
                 pageTitle: 'Home',
+                title: getTitle()?.values[0] 
             },
             data: {
-                hero: <HeroProps>{
+                hero: {
                     title: getTitle()?.values[0] ?? null,
-                    mediaCarousel: shuffle(getMedia().map((media) => (media?.media[0]?.url ?? null))).splice(0, 20),
+                    images: getMedia().map((image) => image?.media[0]?.url),
                     description: getImpressum().values[0],
                     features: {
                         heading: "Latest Activity",
@@ -82,8 +83,6 @@ function pages({ store, key }: PageQueryProps) {
                             url: form?.url
                         }))
                     },
-
-
                     cta: {
                         name: getCallToAction().values[0],
                     }

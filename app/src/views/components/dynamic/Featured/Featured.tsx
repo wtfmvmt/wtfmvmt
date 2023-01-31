@@ -1,6 +1,6 @@
 export default function Featured({ }) {
   return (
-    <section className="py-24 md:py-40 bg-gray-100">
+    <section className="py-24 md:py-40">
       <div className="container px-4 mx-auto">
         <div className="flex items-center mb-24">
           <span className="font-heading text-xl">07</span>

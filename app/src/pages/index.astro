@@ -13,11 +13,11 @@ import Hero from "@components/dynamic/Hero/index";
 
 const { getPage } = PageService();
 
-const { layout } = getPage("home");
+const { layout, data, version } = await getPage("home");
 ---
 
-<Application>
-  <Hero />
+<Application layout={layout}>
+  <Hero {...data.hero} client:load />
   <Featured />
   <Content />
   <DataSection />

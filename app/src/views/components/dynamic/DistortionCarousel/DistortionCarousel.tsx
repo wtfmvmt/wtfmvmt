@@ -8,8 +8,8 @@ const DistortionCarousel = ({
   const { ref, next, prev } = useDistortionEffectCarousel({
     images,
     displacmentImage,
-    resizeDebounce: 250,
-    backgroundSize: "stretch",
+    resizeDebounce: 100,
+    backgroundSize: "cover",
     easing: "easeInOut",
     speed: 1.3,
     commonAngle: Math.PI / 3
@@ -19,17 +19,18 @@ const DistortionCarousel = ({
     setTimeout(() => {
       setInterval(() => {
         next()
-      }, 8000)
+      }, 7000)
     }, 2000)
 
   }, [next])
 
   return (
     <div
-      className='cursor-pointer'
+      className='cursor-pointer z-30'
       onClick={() => prev()}
       style={{
         height: '100vh',
+        objectFit: 'contain'
       }}
       ref={ref}
     />

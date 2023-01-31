@@ -1,14 +1,20 @@
 ---
-import Links from "@includes/static/Header/Links.astro"
+import Links from "@includes/static/Header/Links.astro";
+import Favicon from "@includes/static/Header/Favicon.astro";
+
+export interface Props {
+  links?: LinksProps;
+  favicon?: FaviconProps;
+}
+
+const { links, favicon } = Astro.props;
 ---
 
 <section class="fixed top-0 w-full backdrop-blur-sm z-50">
   <nav class="relative px-6 py-4 sm:px-12">
-    <Links />
+    <Links {...links} />
     <div class="flex items-center 3xl:hidden">
-      <a class="self-center inline-block" href="#">
-        <img src="wrexa-assets/logos/logo-wrexa.svg" alt="" width="auto" />
-      </a>
+      <Favicon {...favicon} />
       <button
         class="flex items-center justify-center ml-auto bg-white rounded-full navbar-burger w-14 h-14 hover:bg-gray-200"
       >
@@ -39,7 +45,7 @@ import Links from "@includes/static/Header/Links.astro"
     <div class="items-end justify-between hidden w-full 3xl:flex">
       <div class="w-auto">
         <a class="self-center inline-block" href="#">
-          <img src="wrexa-assets/logos/logo-wrexa.svg" alt="" width="auto" />
+          <img src="/assets/images/logo-transparent.png" alt="" width="auto" />
         </a>
       </div>
       <div class="w-auto">

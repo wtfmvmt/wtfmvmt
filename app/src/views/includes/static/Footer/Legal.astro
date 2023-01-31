@@ -1,0 +1,21 @@
+---
+export interface Props {
+  tagLine?: string;
+  copyright?: string;
+  message?: string;
+}
+
+const { copyright, message, tagLine } = Astro.props;
+
+export const defaultProps = {
+  copyright: "",
+  message: "",
+};
+---
+
+<div class="w-full px-4 mb-8 lg:w-2/3 xl:w-auto 2xl:mb-0">
+  <span class="text-sm font-light">{copyright ?? defaultProps.copyright}</span>
+  <p class="max-w-xl mt-5 text-xs font-light text-gray-400">
+    {message ?? defaultProps.message}
+  </p>
+</div>
