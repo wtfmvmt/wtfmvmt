@@ -14,9 +14,11 @@
     "@astrojs/react": "^2.0.1",
     "@astrojs/tailwind": "^3.0.0",
     "@astrojs/vercel": "^3.0.0",
+    "@notionhq/client": "^2.2.3",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "astro": "^2.0.2",
+    "distortion-effect-carousel": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.2.4"

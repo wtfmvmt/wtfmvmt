@@ -1,140 +1,142 @@
-import FadeAnimation from "@components/FadeAnimation"
-import type { ComponentType } from "@typings/Component"
-import type { HeroProps } from "@typings/Hero"
-import { SocialIcon } from "react-social-icons"
-import { memo } from "react"
-import Loader from "@includes/Loader"
-import dynamic from "next/dynamic"
-
-const Hero: ComponentType<HeroProps> = ({ title, description, cta, features, actionLinks, socialLinks, mediaCarousel }: HeroProps) => {
-
-
-    const DistortionCarousel = dynamic(() => import("@components/DistortionCarousel"), {
-        loading: () => <Loader />,
-        ssr: true
-    })
-
-    const SocialLinks = () => {
-
-        return (
-            socialLinks ?
-                <div className="top-0 right-0 mt-16 text-center xl:mt-24 xl:mr-8 xl:absolute xl:transform xl:-translate-y-1/2">
-                    {socialLinks.map((link, index) => (<SocialIcon key={index} bgColor="white" url={link?.url} className="inline-flex items-center justify-center w-16 h-16 p-2 m-2 transition-all hvr-pop hover:opacity-70" />))}
+export default function Hero({ }) {
+    return (
+        <section className="pb-40 z-0">
+            <div className="pb-5 relative z-0">
+                <div className="absolute bottom-0 left-0 h-5 w-1/2 bg-white" />
+                <div className="hidden sm:block absolute bottom-0 right-0 h-26 w-26 bg-white">
+                    <div className="absolute bottom-0 left-1/2 mb-8 transform translate-x-1/2">
+                        <div className="h-26 w-px bg-white" />
+                        <div className="h-18 w-px bg-gray-800" />
+                    </div>
                 </div>
-                :
-                <>SOCIALS_NOT_FOUND</>
-        )
-    }
-
-
-    const ActionLinks = () => (
-
-        actionLinks ? <div className="rounded cursor-pointer hover:bg-opacity-60 duration-700 absolute left-0 z-50 w-full px-4 mt-20 mb-8 bg-black lg:w-1/3 lg:mb-0 bg-opacity-30">
-            <div className="px-4 py-12 md:px-8 ">
-                <h4 className="pl-8 mb-2 font-bold uppercase text-md font-major font-heading text-slate-200">
-                    {actionLinks?.title ?? "[CLIENT]:TITLE_NOT_FOUND"}
-                </h4>
-                <ul className="mb-5">
-                    <FadeAnimation duration={300} triggerOnce cascade>
-                        {
-                            actionLinks?.links?.map((link, index) => {
-                                return (
-                                    <li key={index} className="px-8 py-5 transition-all border-b rounded cursor-pointer hover:bg-black bg-opacity-80 group">
+                <div className="sm:mr-26 relative">
+                    <img
+                        className="absolute top-0 left-0 w-full h-full block object-cover"
+                        src="/assets/images/download.png"
+                        alt=""
+                    />
+                    <div className="container px-4 mx-auto relative">
+                        <div className="flex flex-wrap -mx-4">
+                            <div className="w-full lg:w-1/2 px-4 self-end order-last lg:order-first">
+                                <div className="max-w-md mb-12 relative">
+                                    <div className="absolute top-0 right-0 -mt-8 mr-8 flex items-center justify-center w-24 h-24 bg-white rounded-full">
+                                        <img
+                                            className="block w-20 h-20 rounded-full"
+                                            src="wrexa-assets/images/avatar.png"
+                                            alt=""
+                                        />
                                         <a
-                                            className="flex items-center text-lg font-bold ease-in-out hvr-wobble-horizontal group-hover:font-major font-share_tech text-slate-200 font-heading hover:text-blue-300"
-                                            href={link?.url}
+                                            className="absolute bottom-0 right-0 -mr-2 -mb-2 inline-flex items-center justify-center w-12 h-12 bg-green-800 hover:bg-green-900 text-white rounded-full"
+                                            href="#"
                                         >
-                                            <img src={link?.icon} loading="lazy" className="h-8 inline-block"/>
-                                            <span>{link?.name}</span>
-                                        </a>
-                                    </li>
-                                )
-                            })}
-
-                    </FadeAnimation>
-
-                </ul>
-
-            </div>
-        </div> : <>[CLIENT]: ACTIONLINKS_NOT_FOUND</>
-
-
-
-    )
-
-
-    const FeaturedRow = () => (
-
-        <div className="py-12 lg:py-24 ">
-            <div className="container px-4 mx-auto">
-                <div className="flex flex-wrap -mx-3 -mb-3 text-black">
-                    {
-                        features?.featured ?
-                            features.featured.map((feature, index) => {
-
-                                return (
-                                    <div key={index} className="w-full p-3 hvr-pop md:w-1/2 lg:w-1/6">
-                                        <a href={feature.url} className="flex items-center justify-center bg-black shadow-xl h-36 bg-opacity-80">
-                                            <h1 className="absolute bottom-0 items-center font-bold text-white transition-all opacity-0 hover:opacity-90 text-wrap font-heading">{feature?.name ? feature?.name : "NAME_NOT_FOUND"}</h1>
-                                            <img
-                                                className="h-32 mx-auto shawdow-xl"
-                                                loading="lazy"
-                                                src={feature?.image?.src}
-                                                alt={feature?.image?.alt}
-                                            />
-
+                                            <svg
+                                                width={10}
+                                                height={11}
+                                                viewBox="0 0 10 11"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <rect x={4} width="2.4" height="10.4" rx={1} fill="white" />
+                                                <rect
+                                                    x={10}
+                                                    y={4}
+                                                    width="2.4"
+                                                    height="9.6"
+                                                    rx={1}
+                                                    transform="rotate(90 10 4)"
+                                                    fill="white"
+                                                />
+                                            </svg>
                                         </a>
                                     </div>
-                                )
-                            }) : <>❌[CLIENT]: FEATURES_NOT_FOUND</>
-                    }
-
-                </div>
-            </div>
-        </div>
-
-    )
-
-    const Heading = () => (
-
-        <div className="max-w-3xl py-24 mx-auto text-center font-major text-slate-200">
-            <h2 className="mb-8 text-5xl font-bold xl:text-6xl font-heading">
-                {title ? title : "TITLE_NOT_FOUND"}
-            </h2>
-            <h4 className="mb-8 font-bold text-md">
-                {description ? description : "DESCRIPTION_NOT_FOUND"}
-            </h4>
-            {
-                cta ? <a
-                    className="inline-block px-8 py-6 font-bold text-white uppercase transition duration-200 bg-purple-900 rounded-md cursor-pointer animate-pulse hvr-pop hover:bg-black font-heading"
-                    href={cta ? cta?.url : "CTA_NOT_FOUND"}
-                >
-                    {cta ? cta?.name : "CTA_NOT_FOUND"}
-                </a> : <>CTA_NOT_FOUND</>
-            }
-        </div>
-    )
-
-    return (
-        <section>
-            <div className="relative py-4 overflow-hidden -translate-y-11">
-                <div className="z-50 w-full h-full">
-                    <div className="absolute left-0 z-50 w-full">
-                        <ActionLinks />
+                                    <div className="py-14 px-6 sm:px-8 bg-indigo-500 bg-opacity-90 rounded-2xl">
+                                        <h3 className="text-2xl sm:text-3xl text-white mb-8">
+                                            Hello again*
+                                        </h3>
+                                        <form className="mb-8" action="#" method="post">
+                                            <div className="relative flex items-center pl-4 sm:pl-14 pt-3 pb-2 bg-white rounded-full">
+                                                <input
+                                                    className="w-32 md:w-40 block mt-2 bg-transparent outline-none"
+                                                    type="email"
+                                                    placeholder="mat@hello.dev"
+                                                    defaultValue=""
+                                                />
+                                                <label
+                                                    className="absolute top-0 left-0 ml-4 sm:ml-14 mt-3 text-xs font-normal text-gray-400"
+                                                    htmlFor=""
+                                                >
+                                                    Your email
+                                                </label>
+                                                <a
+                                                    className="inline-flex items-center py-2 px-4 ml-auto mr-2 text-sm sm:text-lg font-medium bg-white hover:bg-gray-100 shadow rounded-full"
+                                                    href="#"
+                                                >
+                                                    <svg
+                                                        className="hidden sm:block h-4 w-4 sm:w-8 sm:h-8 mr-3"
+                                                        width={34}
+                                                        height={34}
+                                                        viewBox="0 0 34 34"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <circle
+                                                            cx={17}
+                                                            cy={17}
+                                                            r="15.75"
+                                                            fill="white"
+                                                            stroke="#DDDEE1"
+                                                            strokeWidth="2.5"
+                                                        />
+                                                        <path
+                                                            d="M22.8898 14.1751L21.8252 13.1105C21.7903 13.0755 21.7488 13.0477 21.7031 13.0287C21.6575 13.0098 21.6085 13 21.5591 13C21.5096 13 21.4607 13.0098 21.415 13.0287C21.3693 13.0477 21.3279 13.0755 21.293 13.1105L15.8496 18.8567L12.7295 15.7354C12.658 15.6639 12.561 15.6238 12.4599 15.6238C12.3588 15.6238 12.2618 15.6639 12.1903 15.7354L11.1117 16.8148C11.0402 16.8863 11 16.9833 11 17.0844C11 17.1855 11.0402 17.2825 11.1117 17.354L15.5492 21.8943C15.5902 21.9345 15.6399 21.9645 15.6946 21.9821C15.7492 21.9997 15.8071 22.0043 15.8639 21.9956C15.9223 22.0057 15.9822 22.0018 16.0388 21.9842C16.0954 21.9666 16.147 21.9358 16.1893 21.8943L22.8898 14.7076C22.9604 14.637 23.0001 14.5412 23.0001 14.4413C23.0001 14.3415 22.9604 14.2457 22.8898 14.1751V14.1751Z"
+                                                            fill="#D6D7DA"
+                                                        />
+                                                    </svg>
+                                                    <span>Accept</span>
+                                                </a>
+                                            </div>
+                                        </form>
+                                        <div className="flex flex-wrap sm:justify-center -mx-2">
+                                            <div className="w-auto pb-4 sm:pb-0 px-2">
+                                                <h5 className="text-xs font-medium text-indigo-200 mb-1">
+                                                    Save 10% with code
+                                                </h5>
+                                                <span className="text-2xl font-medium text-white">
+                                                    OXH20
+                                                </span>
+                                            </div>
+                                            <div className="h-px w-full sm:w-px sm:mx-12 sm:h-18 bg-indigo-300" />
+                                            <div className="w-auto pt-4 sm:pt-0 px-2">
+                                                <h5 className="text-xs font-medium text-indigo-200 mb-1">
+                                                    Valid through
+                                                </h5>
+                                                <span className="text-2xl font-medium text-white">
+                                                    5 Feb
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full lg:w-1/2 px-4">
+                                <div className="max-w-xl py-24 md:pt-52 lg:pb-72">
+                                    <h1 className="font-heading text-5xl sm:text-6xl xl:text-7xl text-white mb-16">
+                                        Find your editor and create your home.
+                                    </h1>
+                                    <a
+                                        className="inline-block w-full sm:w-auto px-7 py-4 text-center font-medium bg-indigo-500 hover:bg-indigo-600 text-white rounded transition duration-250"
+                                        href="#"
+                                    >
+                                        Discover Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <DistortionCarousel displacmentImage="/assets/images/distortions/1.jpg" images={mediaCarousel} />
                 </div>
             </div>
-
-            <div className="container relative px-4 mx-auto">
-                <SocialLinks />
-                <Heading />
-            </div>
-
-            <FeaturedRow />
-
         </section>
+
     )
 }
 
-export default memo(Hero)

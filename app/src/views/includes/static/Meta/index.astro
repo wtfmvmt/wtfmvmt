@@ -25,10 +25,7 @@ const { pageTitle, title, url, copyright, description } = Astro.props;
   <meta name="abstract" content="" />
   <link rel="“preconnect”" href="“https://app.snipcart.com”" />
   <link rel="“preconnect”" href="“https://cdn.snipcart.com”" />
-  <link
-    rel="“stylesheet”"
-    href="“https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css”"
-  />
+
   <meta name="topic" content="" />
   <meta name="summary" content="" />
   <meta name="Classification" content="Business" />
@@ -38,7 +35,7 @@ const { pageTitle, title, url, copyright, description } = Astro.props;
   <meta name="reply-to" content="email@hotmail.com" />
   <meta name="owner" content="" />
   <meta name="url" content={url ?? defaultProps.url} />
-  <meta name="identifier-URL" content="http://www.websiteaddress.com" />
+  <meta name="identifier-URL" content={url ?? defaultProps.url} />
   <meta name="directory" content="submission" />
   <meta name="category" content="" />
   <meta name="coverage" content="Worldwide" />
@@ -59,7 +56,7 @@ const { pageTitle, title, url, copyright, description } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="yellow" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="purple" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="width = device-width" />
   <meta name="og:title" content={title ?? defaultProps.title} />
