@@ -26,7 +26,7 @@ const DistortionCarousel = ({
 
   return (
     <div
-      className='cursor-pointer z-30'
+      className='cursor-pointer z-50'
       onClick={() => prev()}
       style={{
         height: '100vh',
