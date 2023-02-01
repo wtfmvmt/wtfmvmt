@@ -11,18 +11,16 @@ import Content from "@components/static/Content/index.astro";
 import DataSection from "@components/static/DataSection/index.astro";
 import Hero from "@components/dynamic/Hero/index";
 
-const { getPage } = PageService();
-
-const { layout, data } = await getPage("home");
 
 Astro.redirect("https://wtfmvmt.desirable.solutions");
 ---
 
-<Application layout={layout}>
+<!--
+
+  <Application layout={layout}>
   <Hero {...data.hero} client:load />
 </Application>
 
-<!--
   <Featured />
   <Content />
   <DataSection />
