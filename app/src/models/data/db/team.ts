@@ -1,5 +1,5 @@
 import FacadeService from "@services/facade"
-import { collections } from "@utils/index"
+import { facade } from "@utils/index"
 import type { NotionPageObjectType } from "@typings/Notion"
 import type { DatabaseObjectType } from "@typings/Data"
 
@@ -8,7 +8,7 @@ const team = (store: NotionPageObjectType): DatabaseObjectType => {
 
     const { team, variants } = FacadeService().types.notion
 
-    const { createDatabase, queryDatabase } = collections()
+    const { createDatabase, queryDatabase } = facade()
 
     const dbObject = {
 
