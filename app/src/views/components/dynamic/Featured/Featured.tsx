@@ -4,7 +4,7 @@ export default function Featured({ }) {
       <div className="container px-4 mx-auto">
         <div className="flex items-center mb-24">
           <span className="font-heading text-xl">07</span>
-          <div className="mx-4 rounded-full bg-gray-200 h-1 w-1" />
+          <div className="mx-4 rounded-full  h-1 w-1" />
           <span className="font-heading text-xl">Our Blog</span>
         </div>
         <div className="text-center">
@@ -16,7 +16,7 @@ export default function Featured({ }) {
               January 13, 2022
             </span>
           </div>
-          <h2 className="font-heading text-4xl sm:text-5xl mb-24">
+          <h2 className="font-heading font-major_mono dark:text-white text-black text-7xl sm:text-5xl mb-24">
             Designed by experts, inspired by real life
           </h2>
         </div>

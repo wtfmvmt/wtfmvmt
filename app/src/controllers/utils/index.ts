@@ -58,11 +58,11 @@ export const notion = () => {
         title: (data) => {
             return data?.title[0]?.plain_text ?? "[Network]: TITLE_NOT_FOUND"
         },
-        files: (data) => {
+        files: (data): NotionFileProps[] => {
             return data?.files?.map(file => ({
-                url: file?.file?.url ?? "[Network]: URL_NOT_FOUND",
+                url: file?.file?.url ?? file?.name ?? "FA",
                 name: file?.file?.name ?? "[Network]: NAME_NOT_FOUND",
-            })) as NotionFileProps
+            }))
         },
         url: (data) => {
             return data?.url ?? "[Network]: URL_NOT_FOUND"

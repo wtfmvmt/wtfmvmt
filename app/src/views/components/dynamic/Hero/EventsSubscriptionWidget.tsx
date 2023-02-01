@@ -1,4 +1,14 @@
-export default function EventsSubscriptionWidget({ }) {
+
+
+export const defaultProps = {
+    title: "[@props]: TITLE_NOT_FOUND"
+}
+
+export interface Props {
+    title?: string;
+}
+
+export default function EventsSubscriptionWidget({ title }) {
     return (
         <div className="w-full lg:w-1/2 px-4 self-end order-last lg:order-first">
             <div className="max-w-md mb-12 relative">
@@ -33,8 +43,8 @@ export default function EventsSubscriptionWidget({ }) {
                     </a>
                 </div>
                 <div className="py-14 px-6 sm:px-8 bg-indigo-500 bg-opacity-90 rounded-2xl">
-                    <h3 className="text-2xl sm:text-3xl text-white mb-8">
-                        Hello again*
+                    <h3 className="text-2xl sm:text-3xl text-white mb-8 font-share_tech">
+                        {title ?? defaultProps.title}
                     </h3>
                     <form className="mb-8" action="#" method="post">
                         <div className="relative flex items-center pl-4 sm:pl-14 pt-3 pb-2 bg-white rounded-full">

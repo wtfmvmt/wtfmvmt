@@ -1,21 +1,58 @@
 ---
+import type { LinkProps } from "@typings/Link";
+
 export interface Props {
   tagLine?: string;
   copyright?: string;
   message?: string;
+  links?: LinkProps[];
 }
 
-const { copyright, message, tagLine } = Astro.props;
-
 export const defaultProps = {
-  copyright: "",
-  message: "",
+  copyright: "[@props]: COPYRIGHT_NOT_FOUND",
+  message: "[@props]: MESSAGE_NOT_FOUND",
+  tagLine: "[@props]: TAG_LINE_NOT_FOUND",
+  links: [
+    ...new Array<LinkProps>(7).map((link) => ({
+      url: `[@props]: `,
+      name: `[@props]: LINK_NAME_NOT_FOUND`,
+    })),
+  ],
 };
+
+const { copyright, message, tagLine, links } = Astro.props;
 ---
 
-<div class="w-full px-4 mb-8 lg:w-2/3 xl:w-auto 2xl:mb-0">
-  <span class="text-sm font-light">{copyright ?? defaultProps.copyright}</span>
-  <p class="max-w-xl mt-5 text-xs font-light text-gray-400">
-    {message ?? defaultProps.message}
-  </p>
+<div class="py-12">
+  <div class="container px-4 mx-auto">
+    <div class="flex flex-wrap items-start justify-between -mx-4">
+      <div class="w-full px-4 mb-8 lg:w-2/3 xl:w-auto 2xl:mb-0">
+        <span
+          class="text-md font-light font-share_tech text-black dark:text-white"
+          >{copyright ?? defaultProps.copyright}</span
+        >
+        <p class="max-w-xl mt-5 text-xs font-light text-gray-400">
+          {message ?? defaultProps.message}
+        </p>
+
+        <p class="max-w-xl mt-5 text-xs font-light text-gray-400">
+          {tagLine ?? defaultProps.tagLine}
+        </p>
+      </div>
+      <div class="w-full px-4 lg:w-1/3 xl:w-auto">
+        <div>
+          {
+            links?.map((link) => (
+              <a
+                class="inline-block mr-4 text-sm font-light text-gray-500 hover:text-gray-600"
+                href={link?.url ?? defaultProps.links[0].url}
+              >
+                {link?.name ?? defaulProps.links[0].name}
+              </a>
+            )) ?? null
+          }
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

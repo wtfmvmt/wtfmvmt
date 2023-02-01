@@ -39,12 +39,14 @@ function pages({ store, key }: PageQueryProps) {
         home: {
             metaData: {
                 pageTitle: 'Home',
-                title: getTitle()?.values[0] 
+                title: getTitle()?.values[0]
             },
             data: {
                 hero: {
                     title: getTitle()?.values[0] ?? null,
-                    images: getMedia().map((image) => image?.media[0]?.url),
+                    images: getMedia()
+                        .map((image) => image?.media[0]?.url)
+                        .filter((image) => image != null),
                     description: getImpressum().values[0],
                     features: {
                         heading: "Latest Activity",

@@ -11,6 +11,7 @@ export const notion = () => {
             search: "🔎Search",
             pillar: "💜Pillar",
             team: "🅰️Team",
+            media: "📷Media",
             favicon: "🖼️Favicon",
             photo: "🖼️Photo",
             messages: "📩Messages",

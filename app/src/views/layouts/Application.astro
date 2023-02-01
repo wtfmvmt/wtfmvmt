@@ -8,6 +8,7 @@ import Meta from "@includes/static/Meta/index.astro";
 import Compass from "@includes/dynamic/Compass/index";
 import ThemeSwitcher from "@includes/static/ThemeSwitcher/index.astro";
 import { PageTransition } from "astro-page-transition";
+import "flowbite";
 
 export interface Props {
   layout?: {
@@ -38,7 +39,7 @@ const { layout } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <Meta {...layout.metaData} />
-  <body class:list={["dark:bg-black bg-white"]}>
+  <body>
     <Header {...layout.header} />
     <slot />
     <Contact {...layout.contact} />
