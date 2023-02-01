@@ -8,7 +8,7 @@ export interface Props {
     title?: string;
 }
 
-export default function EventsSubscriptionWidget({ title }) {
+export default function EventsSubscriptionWidget({ title }: Props) {
     return (
         <div className="w-full lg:w-1/2 px-4 self-end order-last lg:order-first">
             <div className="max-w-md mb-12 relative">

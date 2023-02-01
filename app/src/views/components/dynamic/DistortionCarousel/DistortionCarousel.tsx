@@ -1,5 +1,5 @@
 import { useDistortionEffectCarousel } from 'distortion-effect-carousel';
-import { memo, useEffect } from 'react';
+import { useEffect } from 'react';
 
 const DistortionCarousel = ({
   displacmentImage = "/assets/images/distortions/1.jpg",
@@ -37,4 +37,4 @@ const DistortionCarousel = ({
   );
 };
 
-export default memo(DistortionCarousel);
+export default DistortionCarousel
