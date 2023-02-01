@@ -3,6 +3,7 @@ import Heading from "@components/dynamic/Hero/Heading"
 import EventsSubscriptionWidget from "@components/dynamic/Hero/EventsSubscriptionWidget"
 import type { CallToActionProps } from "@typings/CallToAction";
 import type { ImageProps } from "@typings/Image"
+import { useState, useEffect } from "react"
 export interface Props {
     images?: ImageProps[];
     title?: string;
@@ -21,6 +22,17 @@ export const defaultProps = {
 }
 export default function Hero({ title, subTitle, cta, images }: Props) {
 
+    const [imageIndex, setImageIndex] = useState(0)
+
+
+    useEffect(() => {
+
+        const MAX_REEL_LENGTH = images.length
+
+        setInterval(() => {
+            setImageIndex(imageIndex + 1)
+        }, 4000)
+    }, [imageIndex])
 
     return (
         <section className="pb-40 z-0">
@@ -36,8 +48,7 @@ export default function Hero({ title, subTitle, cta, images }: Props) {
 
 
                     <div className="absolute top-0 left-0 w-full h-screen block object-cover">
-                        <DistortionCarousel images={images ?? defaultProps.images} />
-
+                        <img className="h-full object-cover w-full" src={images[imageIndex] as string} />
                     </div>
 
 
