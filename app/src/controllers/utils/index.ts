@@ -73,10 +73,8 @@ export const notion = () => {
 }
 
 
-export const collections = () => {
-
-    const utilsObject = {
-
+export const array = () => {
+    const _utils = {
         shuffle: (arr) => {
             let currentIndex = arr.length, randomIndex;
             while (currentIndex != 0) {
@@ -86,8 +84,15 @@ export const collections = () => {
                     arr[randomIndex], arr[currentIndex]];
             }
             return arr;
-        },
+        }
+    }
 
+    return _utils
+}
+
+export const facade = () => {
+
+    const _utils = {
         queryDatabase: ({ keys, db, batch = false }: QueryDatabaseProps) => {
             if (batch) {
                 return db.
@@ -101,6 +106,37 @@ export const collections = () => {
                         return element?.types?.includes(key)
                     })) ?? null
             }
+        },
+
+        extractCentralDogmaKeys: ({ data }) => {
+
+            type CentralDogmaProps = {
+                Facebook?: string;
+                Types?: any[];
+
+            }
+            const { files, url, email, phone, formula, icon, rich_text } = notion()
+
+            const { title, multi_select, number, status, select, isDatabase, getProperties } = notion()
+
+            const { properties: { Facebook, Media, Discount, ID, Email, Phone, Price, Value, Name, URL, Types, Status, Description } } = data ?? null
+
+            return {
+                name: title(Name),
+                uuid: formula(ID),
+                id: title(Name).replace(/\s+/g, '-').toLowerCase(),
+                media: files(Media),
+                discount: number(Discount),
+                value: number(Value),
+                email: email(Email),
+                description: rich_text(Description),
+                price: formula(Price),
+                status: status(Status),
+                url: url(URL),
+                facebook: url(Facebook),
+                types: multi_select(Types)
+            }
+
         },
 
         createDatabase: ({ id, data, shape, predicate }: CreateDatabaseProps) => {
@@ -117,7 +153,7 @@ export const collections = () => {
             }
         }
     }
-    return { ...utilsObject }
+    return _utils
 }
 
 
@@ -129,28 +165,8 @@ export const pages = () => {
             return page?.data ?? null
         },
 
-        setPageProps: ({ pageData, revalidate }: { pageData?: any, revalidate?: number | null }) => {
-            return {
-                props: {
-                    page: pageData
-                },
-                revalidate: revalidate ?? 1000
-            }
-        }
+
     }
     return utilsObject
 }
 
-
-export const formatters = () => {
-
-    const utilsObject = {
-
-        getMedia: () => { },
-        getName: () => { },
-        getURL: () => { }
-    }
-
-    return { ...utilsObject }
-
-}

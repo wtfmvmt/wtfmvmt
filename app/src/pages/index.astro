@@ -14,6 +14,8 @@ import Hero from "@components/dynamic/Hero/index";
 const { getPage } = PageService();
 
 const { layout, data } = await getPage("home");
+
+Astro.redirect("https://wtfmvmt.desirable.solutions");
 ---
 
 <Application layout={layout}>

@@ -32,11 +32,11 @@ const { favicon, header, cta, legal } = Astro.props;
   <div class="container px-4 mx-auto w-full">
     <div class="pb-24">
       <div class="flex flex-wrap items-center justify-between mb-20 -mx-4">
-        <Favicon />
-        <CallToAction />
+        <Favicon {...favicon} />
+        <CallToAction {...cta} />
       </div>
-      <Header />
+      <Header {...header} />
     </div>
   </div>
-  <Legal />
+  <Legal {...legal} />
 </section>

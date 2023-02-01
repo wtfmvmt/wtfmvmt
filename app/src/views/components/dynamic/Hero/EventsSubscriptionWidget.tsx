@@ -1,4 +1,5 @@
 
+import type { ImageProps } from "@typings/Image"
 
 export const defaultProps = {
     title: "[@props]: TITLE_NOT_FOUND"
@@ -6,9 +7,13 @@ export const defaultProps = {
 
 export interface Props {
     title?: string;
+    image?: ImageProps;
+    features?: any[];
+    list?: any[];
+    cta?: any;
 }
 
-export default function EventsSubscriptionWidget({ title }: Props) {
+export default function EventsSubscriptionWidget({ title, image, features, list, cta }: Props) {
     return (
         <div className="w-full lg:w-1/2 px-4 self-end order-last lg:order-first">
             <div className="max-w-md mb-12 relative">

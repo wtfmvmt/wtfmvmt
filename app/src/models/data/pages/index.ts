@@ -1,4 +1,3 @@
-import layout from "@configs/layout"
 import events from "@db/events"
 import faqs from "@db/faqs"
 import forms from "@db/forms"
@@ -9,20 +8,20 @@ import meta from "@db/meta"
 import partners from "@db/partners"
 import socialMedia from "@db/social_media"
 import team from "@db/team"
-import { collections } from "@utils/index"
-import type { PageObjectType, PageQueryProps } from "@typings/Page"
-import type { HeroProps } from "@typings/Hero"
-import type { LogoArrayProps } from "@typings/LogoArray"
-import type { SummaryProps } from "@typings/Summary"
-import type { FeaturedProps } from "@typings/Featured"
-import type { StatsRowProps } from "@typings/StatsRow"
 import type { ColumnListProps } from "@typings/ColumnList"
-import type { RowListProps } from "@typings/RowList"
 import type { ContactProps } from "@typings/ContactProps"
+import type { FeaturedProps } from "@typings/Featured"
+import type { LogoArrayProps } from "@typings/LogoArray"
+import type { PageQueryProps } from "@typings/Page"
+import type { RowListProps } from "@typings/RowList"
+import type { StatsRowProps } from "@typings/StatsRow"
+import type { SummaryProps } from "@typings/Summary"
+import { array } from "@utils/index"
 
-function pages({ store, key }: PageQueryProps) {
 
-    const { shuffle } = collections()
+export default function pages({ store, key }: PageQueryProps) {
+
+    const { shuffle } = array()
 
     const { getFAQs } = faqs(store)
     const { getTeam } = team(store)
@@ -35,7 +34,7 @@ function pages({ store, key }: PageQueryProps) {
     const { getForms } = forms(store)
     const { getBanner, getMessages, getArtivismHeading, getPillars, getEventsHeading, getCopyright, getEmailAddress, getCallToAction, getTeamHeading, getFavicon, getTitle, getImpressum, getMembershipsHeading, getFAQsHeading, getPartnersHeading } = meta(store)
 
-    const pageData = {
+    const _data = {
         home: {
             metaData: {
                 pageTitle: 'Home',
@@ -84,6 +83,9 @@ function pages({ store, key }: PageQueryProps) {
                             name: form?.name,
                             url: form?.url
                         }))
+                    },
+                    eventsWidget: {
+                        title: "Join The MVMT!"
                     },
                     cta: {
                         name: getCallToAction().values[0],
@@ -423,9 +425,9 @@ function pages({ store, key }: PageQueryProps) {
         }
     }
 
-    const pageObject: PageObjectType = {
+    const _page = {
         version: Date.now(),
-        layout: layout({
+        layout: {
             header: {
                 breadcrumbs: getMessages().values.map((v) => ({ message: v })),
                 banner: {
@@ -447,9 +449,37 @@ function pages({ store, key }: PageQueryProps) {
                     },
                     url: getFavicon().url ?? null,
                 },
-                links: getLinks(),
-                copyright: getCopyright().values,
-                impressum: getImpressum().values[0]
+                header: {
+                    title: getTitle().values[0],
+                    description: getImpressum().values[0],
+                    links: [
+                        {
+                            title: "Pages",
+                            links: getLinks()
+                        },
+                        {
+                            title: "Pages",
+                            links: getLinks()
+                        },
+                        {
+                            title: "Pages",
+                            links: getLinks()
+                        },
+                        {
+                            title: "Pages",
+                            links: getLinks()
+                        }
+                    ]
+                },
+                links: [],
+                cta: {
+
+                },
+                legal: {
+                    copyright: getCopyright().values,
+                    impressum: getImpressum().values[0]
+                }
+
             },
             menu: {
                 links: getLinks().map((link) => ({
@@ -475,15 +505,15 @@ function pages({ store, key }: PageQueryProps) {
                     url: social?.url ?? null
                 })),
                 email: getEmailAddress().email,
-            },
-            metaData: pageData[key]?.metaData,
-        }),
-        data: pageData[key]?.data ?? pageData["home"]?.data,
-        pages: pageData[key]?.pages,
+            }
+        },
+        metaData: _data[key]?.metaData,
+        data: _data[key]?.data ?? _data["home"]?.data,
+        pages: _data[key]?.pages,
     }
 
-    return pageObject
+    return _page
 }
 
-export default pages
+
 

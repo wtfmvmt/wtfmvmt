@@ -9,6 +9,7 @@ export interface Props {
     title?: string;
     subTitle?: string;
     cta?: CallToActionProps;
+    eventsWidget?: any;
 }
 
 export const defaultProps = {
@@ -20,19 +21,23 @@ export const defaultProps = {
     subTitle: "",
     title: "[@props]: TITLE_NOT_FOUND"
 }
-export default function Hero({ title, subTitle, cta, images }: Props) {
+
+
+export default function Hero({ title, subTitle, cta, images, eventsWidget }: Props) {
 
     const [imageIndex, setImageIndex] = useState(0)
 
 
     useEffect(() => {
-
         const MAX_REEL_LENGTH = images.length
-
         setInterval(() => {
-            setImageIndex(imageIndex + 1)
-        }, 4000)
-    }, [imageIndex])
+            if (imageIndex < MAX_REEL_LENGTH - 1) {
+                setImageIndex(imageIndex + 1)
+            } else {
+                setImageIndex(0)
+            }
+        }, 2000)
+    }, [])
 
     return (
         <section className="pb-40 z-0">
@@ -54,7 +59,7 @@ export default function Hero({ title, subTitle, cta, images }: Props) {
 
                     <div className="container px-4 mx-auto relative">
                         <div className="flex flex-wrap -mx-4">
-                            <EventsSubscriptionWidget />
+                            <EventsSubscriptionWidget {...eventsWidget} />
                             <Heading subTitle={subTitle} title={title} cta={cta} />
                         </div>
                     </div>

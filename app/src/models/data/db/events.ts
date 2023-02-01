@@ -1,5 +1,5 @@
 import FacadeService from "@services/facade"
-import { collections } from "@utils/index"
+import { facade } from "@utils/index"
 import type { NotionPageObjectType } from "@typings/Notion"
 import type { DatabaseObjectType } from "@typings/Data"
 
@@ -7,12 +7,12 @@ const events = (store: NotionPageObjectType): DatabaseObjectType => {
 
     const { events, variants } = FacadeService().types.notion
 
-    const { createDatabase, queryDatabase } = collections()
+    const { createDatabase, queryDatabase } = facade()
 
-    const dbObject = {
+    const _database = {
 
         getEvents: () => {
-            return dbObject.db.data
+            return _database.db.data
         },
 
         db: createDatabase({
@@ -23,7 +23,7 @@ const events = (store: NotionPageObjectType): DatabaseObjectType => {
         })
     }
 
-    return { ...dbObject }
+    return _database
 }
 
 export default events
