@@ -40,7 +40,7 @@ const { layout } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <Meta {...layout.metaData} />
-  <body class="m-0 w-full relative">
+  <body class="m-0 w-full overflow-x-hidden">
     <Header {...layout.header} />
     <slot />
     <Contact {...layout.contact} />

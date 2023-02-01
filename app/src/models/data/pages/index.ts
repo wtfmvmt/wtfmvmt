@@ -47,7 +47,7 @@ function pages({ store, key }: PageQueryProps) {
                     images: getMedia()
                         .map((image) => image?.media[0]?.url)
                         .filter((image) => image != null),
-                    description: getImpressum().values[0],
+                    subTitle: getImpressum()?.values[0] ?? null,
                     features: {
                         heading: "Latest Activity",
                         featured: [

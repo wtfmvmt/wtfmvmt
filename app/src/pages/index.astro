@@ -17,7 +17,7 @@ const { layout, data } = await getPage("home");
 ---
 
 <Application layout={layout}>
-  <Hero {...data.hero} client:load />
+  <Hero {...data.hero} client:only="react" />
 </Application>
 
 <!--

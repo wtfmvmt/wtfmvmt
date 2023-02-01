@@ -6,6 +6,7 @@ import type { ImageProps } from "@typings/Image"
 export interface Props {
     images?: ImageProps[];
     title?: string;
+    subTitle?: string;
     cta?: CallToActionProps;
 }
 
@@ -14,9 +15,11 @@ export const defaultProps = {
         src: `${image}`,
         alt: `${image}`
     }))],
+
+    subTitle: "",
     title: "[@props]: TITLE_NOT_FOUND"
 }
-export default function Hero({ title, cta, images }: Props) {
+export default function Hero({ title, subTitle, cta, images }: Props) {
 
 
     return (
@@ -32,7 +35,7 @@ export default function Hero({ title, cta, images }: Props) {
                 <div className="sm:mr-26 relative">
 
 
-                    <div className="absolute top-0 left-0 w-full h-full block object-fit">
+                    <div className="absolute top-0 left-0 w-full h-screen block object-cover">
                         <DistortionCarousel images={images ?? defaultProps.images} />
 
                     </div>
@@ -41,7 +44,7 @@ export default function Hero({ title, cta, images }: Props) {
                     <div className="container px-4 mx-auto relative">
                         <div className="flex flex-wrap -mx-4">
                             <EventsSubscriptionWidget />
-                            <Heading title={title} cta={cta} />
+                            <Heading subTitle={subTitle} title={title} cta={cta} />
                         </div>
                     </div>
                 </div>
