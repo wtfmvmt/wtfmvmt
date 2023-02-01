@@ -15,17 +15,19 @@ export interface Props {
 }
 
 export const defaultProps = {
-  links: [...new Array<LinkProps>(3).map((link) => ({
-    name: "[@props]",
-    url: "[@props]",
-  }))],
+  links: [
+    ...new Array<LinkProps>(3).map((link) => ({
+      name: "[@props]",
+      url: "[@props]",
+    })),
+  ],
 };
 
 const { favicon, header, cta, legal } = Astro.props;
 ---
 
 <section
-  class="pt-24 cursor-pointer backdrop-blur-lg bg-white dark:bg-black bg-opacity-10 md:pt-32"
+  class="pt-24 cursor-pointer backdrop-blur-lg bg-white dark:bg-black bg-opacity-10 dark:bg-opacity-50 md:pt-32"
 >
   <div class="container px-4 mx-auto">
     <div class="pb-24">
@@ -36,5 +38,5 @@ const { favicon, header, cta, legal } = Astro.props;
       <Header />
     </div>
   </div>
-  <Legal  />
+  <Legal />
 </section>
