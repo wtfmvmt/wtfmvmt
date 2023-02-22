@@ -1,7 +1,18 @@
+---
+
+export interface Props { 
+  title?: string;
+}
+
+export const defaultProps = {
+  title: "Our Beliefs"
+}
+const { title } = Astro.props
+---
 <section class="py-16 overflow-hidden">
   <div class="container mx-auto px-4">
     <div class="max-w-lg mx-auto text-center">
-      <h2 class="font-heading max-w-xl mb-4 text-4xl md:text-5xl text-gray-900 font-black tracking-tight">Process how it works</h2>
+      <h2 class="font-heading max-w-xl mb-4 text-4xl md:text-5xl text-gray-900 font-black tracking-tight">{title ?? defaultProps.title}</h2>
       <p class="mb-12 text-gray-700 font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat tempor condimentum commodo tincidunt sit dictumst. Eu placerat arcu at sem vitae eros.</p>
     </div>
     <div class="py-16 px-8 md:px-16 overflow-hidden rounded-3xl" style="background-image: url('zanrly-assets/images/how-it-works/work.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">

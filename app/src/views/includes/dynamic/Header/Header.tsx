@@ -7,7 +7,24 @@ export const defaultProps = {
     },
     links: [
         {
-            name: "ERROR"
+            name: "Events",
+            url: "#events"
+        },
+        {
+            name: "Memberships",
+            url: "#memberships"
+        },
+        {
+            name: "Partners",
+            url: "#partners"
+        },
+        {
+            name: "About",
+            url: "#about"
+        },
+        {
+            name: "Contact",
+            url: "#contact"
         }
     ]
 }

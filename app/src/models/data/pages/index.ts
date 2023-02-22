@@ -3,6 +3,8 @@ import { pages as pagesUtils } from '@utils/index'
 
 export default async function pagesQuery({ id }) {
 
+    const { generatePage } = pagesUtils()
+
     const sitePagesStore = {
         layout: {
             header: {
@@ -32,9 +34,9 @@ export default async function pagesQuery({ id }) {
                     hero: {
                         heading: "",
                         title: "We the Future MVMT",
-                        subTitle: "",
+                        description: "",
                         cover: {
-                            src: ""
+                            src: "https://res.cloudinary.com/facade-os/image/upload/v1675361093/Fa%C3%A7ade/WTFMVMT/media/Group_Photo_of_WTFMVMT_Members_with_Goofy_Faces_p6flqk.jpg"
                         }
                     },
 

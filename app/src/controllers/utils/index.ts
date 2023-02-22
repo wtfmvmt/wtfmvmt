@@ -2,7 +2,6 @@
 import type { NotionFileProps } from "@typings/Notion"
 import type { QueryDatabaseProps, CreateDatabaseProps } from "@typings/Data"
 
-
 export const notion = () => {
 
     const utilsObject = {
@@ -164,6 +163,17 @@ export const pages = () => {
         getPageProps: (page) => {
             return page?.data ?? null
         },
+        generatePage: ({ store, id }) => {
+            return {
+                id: crypto.randomUUID(),
+                version: Date.now(),
+                layout: {
+                    ...store?.layout,
+                    ...store[id]?.metaData
+                },
+                data: store[id]?.data,
+            }
+        }
 
 
     }

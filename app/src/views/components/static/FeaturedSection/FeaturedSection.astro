@@ -1,18 +1,28 @@
+---
+export interface Props {
+  title?: string;
+}
+
+export const defaultProps = {
+  title: "We are Conscious Creators for the Future",
+  description: "We The Future MVMT was started in 2017 by artist & activist, Brandon J. Payne"
+};
+const { title, description } = Astro.props;
+---
+
 <section class="py-16 overflow-hidden">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-4 backdrop-blur-sm">
     <div
       class="py-16 px-8 md:px-16 rounded-3xl"
       style="background-image: url('zanrly-assets/images/features/people.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
     >
       <h2
-        class="font-heading mb-6 text-4xl md:text-5xl text-white font-black tracking-tight md:max-w-lg"
+        class="font-heading mb-6 text-5xl md:text-5xl text-black font-black tracking-tight md:max-w-lg"
       >
-        Build website animations and interactions visually.
+        {title ?? defaultProps.title}
       </h2>
-      <p class="mb-14 text-lg text-gray-200 font-bold md:max-w-4xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis
-        volutpat velit, quis iaculis velit bibendum a. Maecenas accumsan
-        fermentum nisl.
+      <p class="mb-14 text-lg text-black font-bold md:max-w-4xl">
+       {description ?? defaultProps.description}
       </p>
       <div class="flex flex-wrap -m-2">
         <div class="w-auto p-2">
