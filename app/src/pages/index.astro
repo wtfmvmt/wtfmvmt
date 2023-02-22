@@ -1,29 +1,25 @@
 ---
 import Application from "@layouts/Application.astro";
 
-import PageService from "@services/page";
-import Featured from "@components/dynamic/Featured/index";
-import FeaturedContent from "@components/static/FeaturedContent/index.astro";
-import Summary from "@components/static/Summary/index.astro";
-import LogoCloud from "@components/static/LogoCloud/index.astro";
-import Stats from "@components/static/Stats/index.astro";
-import Content from "@components/static/Content/index.astro";
-import DataSection from "@components/static/DataSection/index.astro";
-import Hero from "@components/dynamic/Hero/index";
-
+import Hero from "@components/dynamic/Hero";
+import FeaturedSection from "@components/static/FeaturedSection/FeaturedSection.astro";
+import ContentRow from "@components/static/ContentRow/ContentRow.astro";
+import Summary from "@components/static/Summary/Summary.astro";
+import FeaturedRow from "@components/static/FeaturedRow/FeaturedRow.astro";
+import LogoCloud from "@components/static/LogoCloud/LogoCloud.astro";
+import PricingTable from "@components/static/PricingTable/PricingTable.astro";
+import DataSection from "@components/static/DataSection/DataSection.astro";
+import SimpleForm from "@components/dynamic/SimpleForm";
 ---
 
-<!--
-
-  <Application layout={layout}>
-  <Hero {...data.hero} client:load />
-</Application>
-
-  <Featured />
-  <Content />
+<Application>
+  <Hero />
+  <FeaturedSection />
   <DataSection />
+  <ContentRow />
   <LogoCloud />
-  <Stats />
+  <FeaturedRow />
+  <PricingTable />
+  <SimpleForm client:visible />
   <Summary />
-  <FeaturedContent />
- -->
+</Application>
