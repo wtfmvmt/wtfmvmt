@@ -4,7 +4,8 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: "Share Tech Mono"
+				sans: "Share Tech Mono",
+				display: "Major Mono Display"
 			}
 		},
 	},

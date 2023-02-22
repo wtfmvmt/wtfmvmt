@@ -1,13 +1,27 @@
-export default function Header() {
+export const defaultProps = {
+    favicon: {
+        image: {
+            src: "",
+            alt: ""
+        }
+    },
+    links: [
+        {
+            name: "ERROR"
+        }
+    ]
+}
+export default function Header({ links, favicon }) {
     return (
         <section className="py-6 fixed w-full">
             <div className="container mx-auto px-4">
-                <div className="flex items-center justify-between px-6 py-3.5 bg-gray-800 rounded-full">
+                <div className="flex items-center justify-between px-6 py-3.5 bg-black bg-opacity-50 backdrop-blur-lg rounded-full">
                     <div className="w-auto">
                         <div className="flex flex-wrap items-center">
                             <div className="w-auto">
                                 <a href="#">
-                                    <img src="zanrly-assets/logos/zanrly-logo-white.svg" alt="" />
+                                    <img src={favicon?.image?.src ?? defaultProps.favicon.image.src}
+                                        alt={favicon?.image?.alt ?? defaultProps.favicon.image.alt} />
                                 </a>
                             </div>
                         </div>
@@ -16,38 +30,30 @@ export default function Header() {
                         <div className="flex flex-wrap items-center">
                             <div className="w-auto hidden lg:block">
                                 <ul className="flex items-center justify-center">
-                                    <li className="mr-9">
-                                        <a
-                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
-                                            href="#"
-                                        >
-                                            Features
-                                        </a>
-                                    </li>
-                                    <li className="mr-9">
-                                        <a
-                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
-                                            href="#"
-                                        >
-                                            Solutions
-                                        </a>
-                                    </li>
-                                    <li className="mr-9">
-                                        <a
-                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
-                                            href="#"
-                                        >
-                                            Resources
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
-                                            href="#"
-                                        >
-                                            Pricing
-                                        </a>
-                                    </li>
+                                    {
+                                        links ?
+                                            links.map((link) => (
+                                                <li className="mr-9">
+                                                    <a
+                                                        className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                                        href="#"
+                                                    >
+                                                        {link.name}
+                                                    </a>
+                                                </li>
+                                            )) :
+                                            defaultProps.links.map((link) => (
+                                                <li className="mr-9">
+                                                    <a
+                                                        className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                                        href="#"
+                                                    >
+                                                        {link.name}
+                                                    </a>
+                                                </li>
+                                            ))
+                                    }
+
                                 </ul>
                             </div>
                         </div>

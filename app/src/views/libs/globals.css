@@ -42,6 +42,7 @@ body {
     scroll-behavior: smooth;
     overflow-x: hidden !important;
     background-size: cover;
+    backdrop-filter: blur(7px);
     background-attachment: fixed;
     background-position: center center;
     background-image: var(--bgImage);
