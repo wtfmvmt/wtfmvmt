@@ -1,32 +1,4 @@
-import { useDistortionEffectCarousel } from 'distortion-effect-carousel';
 
-
-interface MyCarouselProps {
-    images: string[];
-    displacmentImage: string;
-  }
-   
-  const MyCarousel: React.FC<MyCarouselProps> = ({
-    displacmentImage,
-    images,
-  }) => {
-    const { ref, next, prev } = useDistortionEffectCarousel({
-      images,
-      displacmentImage,
-    });
-   
-    // ... do something with next() and prev()
-    return (
-      <div
-        style={{
-          height: '100vh',
-          zIndex: 999999999,
-          objectFit: 'contain'
-        }}
-        ref={ref}
-      />
-    );
-  };
 export default function Hero() {
     return (
         <section className="pt-6 pb-20 overflow-hidden">
@@ -60,11 +32,7 @@ export default function Hero() {
                 <div className="relative">
                     <div className="relative z-20 px-8 max-w-max mx-auto">
                         <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=1060&t=st=1677065393~exp=1677065993~hmac=729dc344a508766169a2b416398b728f981deace3b15a6bb6236c8036e503d4d" alt="" />
-                        <MyCarousel images={[
-                            "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=1060&t=st=1677065393~exp=1677065993~hmac=729dc344a508766169a2b416398b728f981deace3b15a6bb6236c8036e503d4d",
-                            "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=1060&t=st=1677065393~exp=1677065993~hmac=729dc344a508766169a2b416398b728f981deace3b15a6bb6236c8036e503d4d",
-                            "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=1060&t=st=1677065393~exp=1677065993~hmac=729dc344a508766169a2b416398b728f981deace3b15a6bb6236c8036e503d4d"
-                        ]} displacmentImage="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=1060&t=st=1677065393~exp=1677065993~hmac=729dc344a508766169a2b416398b728f981deace3b15a6bb6236c8036e503d4d"/>
+                       
                         <a
                             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 inline-block px-8 py-3.5 text-lg text-center text-gray-900 font-bold -50 hover:-200 focus:ring-4 focus:ring-gray-200 rounded-full"
                             href="#"
