@@ -1,41 +1,115 @@
+---
+export const defaultProps = {
+  heading: "Our Events",
+  description: " ",
+  title: "Events",
+
+  content: [{}],
+};
+
+export interface Props {
+  heading?: string;
+  title?: string;
+  description?: string;
+  content?: any[];
+}
+
+const { heading, title, content, description } = Astro.props;
+---
+
 <section class="py-10 overflow-hidden">
-    <div class="container mx-auto px-4">
-      <div class="py-16 px-8 bg-white rounded-3xl">
-        <div class="max-w-7xl mx-auto">
-          <div class="mb-12 md:max-w-4xl mx-auto text-center"><span class="inline-block mb-4 text-sm text-blue-500 font-bold uppercase tracking-widest">Blog</span>
-            <h2 class="font-heading mb-6 text-4xl md:text-5xl lg:text-6xl text-gray-900 font-black tracking-tight">Resources and stories center</h2>
-            <p class="md:max-w-md mx-auto text-gray-500 font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada tellus vestibulum, commodo pulvinar.</p>
+  <div class="container mx-auto px-4">
+    <div class="py-16 px-8 rounded-3xl">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-12 md:max-w-4xl mx-auto text-center">
+          <span
+            class="inline-block mb-4 text-sm text-blue-500 font-bold uppercase tracking-widest"
+            >{heading ?? defaultProps.heading}</span
+          >
+          <h2
+            class="font-heading mb-6 text-4xl md:text-5xl lg:text-6xl text-gray-900 font-black tracking-tight"
+          >
+            Resources and stories center
+          </h2>
+          <p class="md:max-w-md mx-auto text-gray-500 font-bold">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada
+            tellus vestibulum, commodo pulvinar.
+          </p>
+        </div>
+        <div class="flex flex-wrap -m-4 mb-6">
+          <div class="w-full md:w-1/3 p-4">
+            <div class="h-full bg-gray-100 rounded-3xl">
+              <img
+                class="w-full"
+                src="https://file.notion.so/f/s/c6a39d6e-bedd-4c11-8e98-5748daa8b057/AWVRE_2023_(1).png?spaceId=ccf76a2f-07ec-476d-9c08-0fb14cc6fe0f&table=block&id=f0edcd8d-99ed-48b3-a5a0-6db20dc98bc1&expirationTimestamp=1677195997935&signature=fPiRXHXcwjkY4tA3gqmyneiJYW8fBXSO4sbGxtmoAfs&downloadName=AWVRE+2023+%281%29.png"
+                alt=""
+              />
+              <div class="p-8">
+                <a class="group inline-block mb-4" href="#">
+                  <h3
+                    class="font-heading text-2xl text-gray-900 hover:text-gray-700 group-hover:underline font-black"
+                  >
+                    AWVRE 2023.
+                  </h3></a
+                >
+                <p class="text-sm text-gray-500 font-bold">
+                  Design process • 4 min read
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="flex flex-wrap -m-4 mb-6">
-            <div class="w-full md:w-1/3 p-4">
-              <div class="h-full bg-gray-100 rounded-3xl"><img class="w-full" src="zanrly-assets/images/blog/blog.png" alt="">
-                <div class="p-8"><a class="group inline-block mb-4" href="#">
-                  <h3 class="font-heading text-2xl text-gray-900 hover:text-gray-700 group-hover:underline font-black">You will never believe these bizarre truth of travel.</h3></a>
-                  <p class="text-sm text-gray-500 font-bold">Design process • 4 min read</p>
-                </div>
-              </div>
-            </div>
-            <div class="w-full md:w-1/3 p-4">
-              <div class="h-full bg-gray-100 rounded-3xl"><img class="w-full" src="zanrly-assets/images/blog/blog2.png" alt="">
-                <div class="p-8"><a class="group inline-block mb-4" href="#">
-                  <h3 class="font-heading text-2xl text-gray-900 hover:text-gray-700 group-hover:underline font-black">Five web design blogs you should be reading</h3></a>
-                  <p class="text-sm text-gray-500 font-bold">Technology • 4 min read</p>
-                </div>
-              </div>
-            </div>
-            <div class="w-full md:w-1/3 p-4">
-              <div class="h-full bg-gray-100 rounded-3xl"><img class="w-full" src="zanrly-assets/images/blog/blog3.png" alt="">
-                <div class="p-8"><a class="group inline-block mb-4" href="#">
-                  <h3 class="font-heading text-2xl text-gray-900 hover:text-gray-700 group-hover:underline font-black">80 Best Virtual Reality Blogs and Websites</h3></a>
-                  <p class="text-sm text-gray-500 font-bold">Inspiration • 4 min read</p>
-                </div>
+          <div class="w-full md:w-1/3 p-4">
+            <div class="h-full bg-gray-100 rounded-3xl">
+              <img
+                class="w-full"
+                src="https://file.notion.so/f/s/6c88ff7c-10a4-4542-b2bb-cb8e70268401/Untitled.png?spaceId=ccf76a2f-07ec-476d-9c08-0fb14cc6fe0f&table=block&id=5de8dca1-1605-4c58-8787-d4e93565e372&expirationTimestamp=1677196156226&signature=CciXhQ5vEUS1T3v_tdnwbbvZ3dS6vxe9glKWytQHsWM&downloadName=Untitled.png"
+                alt=""
+              />
+              <div class="p-8">
+                <a class="group inline-block mb-4" href="#">
+                  <h3
+                    class="font-heading text-2xl text-gray-900 hover:text-gray-700 group-hover:underline font-black"
+                  >
+                    Five web design blogs you should be reading
+                  </h3></a
+                >
+                <p class="text-sm text-gray-500 font-bold">
+                  Technology • 4 min read
+                </p>
               </div>
             </div>
           </div>
-          <div class="flex flex-wrap md:justify-center -m-2">
-            <div class="w-full md:w-auto p-2"><a class="block w-full px-12 py-3.5 text-lg text-center text-white font-bold bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 rounded-full" href="#">Read more News</a></div>
+          <div class="w-full md:w-1/3 p-4">
+            <div class="h-full bg-gray-100 rounded-3xl">
+              <img
+                class="w-full"
+                src="https://res.cloudinary.com/facade-os/image/upload/v1675547490/Fa%C3%A7ade/WTFMVMT/media/326777250_897267618080297_8686545792945433951_n_yrswoo.jpg"
+                alt=""
+              />
+              <div class="p-8">
+                <a class="group inline-block mb-4" href="#">
+                  <h3
+                    class="font-heading text-2xl text-gray-900 hover:text-gray-700 group-hover:underline font-black"
+                  >
+                    80 Best Virtual Reality Blogs and Websites
+                  </h3></a
+                >
+                <p class="text-sm text-gray-500 font-bold">
+                  Inspiration • 4 min read
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-wrap md:justify-center -m-2">
+          <div class="w-full md:w-auto p-2">
+            <a
+              class="block w-full px-12 py-3.5 text-lg text-center text-white font-bold bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 rounded-full"
+              href="#">Read more News</a
+            >
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

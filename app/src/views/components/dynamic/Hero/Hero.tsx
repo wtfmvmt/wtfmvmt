@@ -9,9 +9,9 @@ export interface IHero {
 }
 
 export const defaultProps = {
-    heading: "HEADING_NOT_FOUND",
+    heading: "Circa. 2017",
     title: "We The Future MVMT",
-    description: "DESCRIPTION_NOT_FOUND",
+    description: "A thriving ecosystem built AND thriving bartering creative and professional skills and services. - Est. 2017",
     banner: {
         src: "https://res.cloudinary.com/facade-os/image/upload/v1675361093/Fa%C3%A7ade/WTFMVMT/media/Group_Photo_of_WTFMVMT_Members_with_Sincere_Smiles_k79ilq.jpg"
     },
@@ -25,7 +25,7 @@ export default function Hero({ heading, title, description, cta, banner }: IHero
         <section className="pt-6 pb-20 overflow-hidden">
 
             <div className=" overflow-hidden rounded-t-2xl">
-                <div className="px-8 pt-20">
+                <div className="px-8 pt-20 z-50">
                     <div className="md:max-w-2xl text-center mx-auto">
                         <span className="inline-block mb-3 text-sm text-blue-500 font-bold uppercase tracking-widest">
                             {heading ?? defaultProps.heading}
@@ -50,7 +50,7 @@ export default function Hero({ heading, title, description, cta, banner }: IHero
                 </div>
                 <div className="relative">
                     <div className="relative z-20 px-8 max-w-max mx-auto">
-                        <img src={banner?.src ?? defaultProps.banner.src} alt="" />
+                        <img className="rounded-sm" src={banner?.src ?? defaultProps.banner.src} alt="" />
 
                         <a
                             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 inline-block px-8 py-3.5 text-lg text-center text-gray-900 font-bold -50 hover:-200 focus:ring-4 focus:ring-gray-200 rounded-full"
