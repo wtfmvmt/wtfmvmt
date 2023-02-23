@@ -1,19 +1,44 @@
 ---
-const { title, description } = Astro.props;
+export interface Props {
+  tables?: any[];
+  title?: string;
+}
+
+export const defaultProps = {
+  tables: [
+    {
+      name: "Partnerships",
+    },
+    {
+      name: "Partnerships",
+    },
+    {
+      name: "Partnerships",
+    },
+    {
+      name: "Partnerships",
+    },
+    {
+      name: "Partnerships",
+    },
+  ],
+};
+
+const { title, tables } = Astro.props;
 ---
 
 <section class="py-10 overflow-hidden">
   <div class="container mx-auto px-4">
-    <div class="py-16 px-8  rounded-xl">
+    <div class="py-16 px-8 rounded-xl">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-wrap -m-8">
           <div class="w-full md:w-1/2 p-8">
             <div class="flex flex-col justify-between md:max-w-sm h-full">
               <div class="flex-initial mb-8">
                 <h2
-                  class="font-heading mb-8 text-4xl md:text-5xl text-gray-900 font-black tracking-tight"
+                  class="font-heading mb-8 text-4xl md:text-5xl text-gray-900 font-black tracking-tight font-display"
                 >
-                  Affordable pricing plans
+                  Our Memberships & Programs
                 </h2>
                 <p class="text-gray-700 font-bold">
                   Amet minim mollit non deserunt ullamco an aliqua dolor elit

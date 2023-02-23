@@ -11,12 +11,12 @@ export interface IHero {
 export const defaultProps = {
     heading: "Circa. 2017",
     title: "We The Future MVMT",
-    description: "A thriving ecosystem built AND thriving bartering creative and professional skills and services. - Est. 2017",
+    description: "“Headquartered in Orlando FL, The We The Future MVMT (WTFMVMT), founded by artist & activist Brandon J. Payne, is a network of leads & collaborators which highlights organizing ",
     banner: {
         src: "https://res.cloudinary.com/facade-os/image/upload/v1675361093/Fa%C3%A7ade/WTFMVMT/media/Group_Photo_of_WTFMVMT_Members_with_Sincere_Smiles_k79ilq.jpg"
     },
     cta: {
-        name: "CTA_NOT_FOUND"
+        name: "Join the MVMT!"
     }
 }
 
