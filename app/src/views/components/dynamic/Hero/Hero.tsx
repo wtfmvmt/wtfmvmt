@@ -11,7 +11,7 @@ export interface IHero {
 export const defaultProps = {
     heading: "Circa. 2017",
     title: "We The Future MVMT",
-    description: "“Headquartered in Orlando FL, The We The Future MVMT (WTFMVMT), founded by artist & activist Brandon J. Payne, is a network of leads & collaborators which highlights organizing ",
+    description: "We are conscious creators for the future.",
     banner: {
         src: "https://res.cloudinary.com/facade-os/image/upload/v1675361093/Fa%C3%A7ade/WTFMVMT/media/Group_Photo_of_WTFMVMT_Members_with_Sincere_Smiles_k79ilq.jpg"
     },
@@ -39,7 +39,7 @@ export default function Hero({ heading, title, description, cta, banner }: IHero
                         <div className="flex flex-wrap justify-center mb-20 -m-2">
                             <div className="w-full md:w-auto p-2">
                                 <a
-                                    className="block w-full px-8 py-3.5 text-lg text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
+                                    className="block w-full px-8 py-3.5 text-lg text-center text-white font-bold bg-purple-500 hover:bg-purple-600 focus:ring-4 focus:ring-purple-200 rounded-2xl bg-opacity-75"
                                     href="#"
                                 >
                                     {cta?.name ?? defaultProps.cta.name}

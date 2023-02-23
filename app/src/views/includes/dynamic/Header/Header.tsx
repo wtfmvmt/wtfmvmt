@@ -3,7 +3,7 @@ import type { LinkProps } from "@typings/Link";
 export const defaultProps = {
     favicon: {
         image: {
-            src: "https://res.cloudinary.com/facade-os/image/upload/v1677107489/Fa%C3%A7ade/WTFMVMT/meta/WTFMVMT-FULL-logo-transparent-background-BLACK_suvans.png",
+            src: "https://res.cloudinary.com/facade-os/image/upload/v1675203567/Fa%C3%A7ade/WTFMVMT/meta/WTFMVMT-FULL-logo-transparent-background-WHITE_i2x8cb.png",
             alt: ""
         },
         url: "/"
