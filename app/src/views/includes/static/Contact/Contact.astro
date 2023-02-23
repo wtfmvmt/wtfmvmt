@@ -7,13 +7,13 @@ export interface Props {
       secondary?: string;
     };
   };
-  address: {
+  address?: {
     title?: string;
-    mailAddresses: string;
+    mailAddresses?: string;
   };
   email?: {
     title?: string;
-    emailAddresses: {
+    emailAddresses?: {
       primary?: string;
       secondary?: string;
     };
@@ -27,7 +27,7 @@ export const defaultProps = {
   phone: {
     title: "Call Us!",
     phoneNumbers: {
-      primary: " 321 350 5177",
+      primary: "321-350-5177",
     },
   },
   email: {
@@ -122,7 +122,7 @@ const { email, phone, address, title, heading, description } = Astro.props;
               <h3 class="font-heading mb-2 text-xl text-gray-900 font-black">
                 {phone?.title ?? defaultProps.phone.title}
               </h3>
-              <p class="text-gray-500 font-bold"> 321 350 5177</p>
+              <p class="text-gray-500 font-bold">321 350 5177</p>
             </div>
           </div>
           <div class="w-full md:w-1/3 p-4">

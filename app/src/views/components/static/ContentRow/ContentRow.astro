@@ -1,16 +1,33 @@
 ---
+import type { CallToActionProps } from "@typings/CallToAction";
+
 export const defaultProps = {
   heading: "Our Events",
   description: " ",
   title: "Events",
-
+  cta: {
+    name: "See More",
+  },
   content: [
     {
-      cover: {
-        src: "",
-      },
-      url: "",
+      url: "/events/art-and-health-benefit",
       name: "Events",
+      title: "Art & Health Benefit",
+      tag: "Awvre",
+      date: "02-22-2023",
+      cover: {
+        src: "https://file.notion.so/f/s/c6a39d6e-bedd-4c11-8e98-5748daa8b057/AWVRE_2023_(1).png?spaceId=ccf76a2f-07ec-476d-9c08-0fb14cc6fe0f&table=block&id=f0edcd8d-99ed-48b3-a5a0-6db20dc98bc1&expirationTimestamp=1677195997935&signature=fPiRXHXcwjkY4tA3gqmyneiJYW8fBXSO4sbGxtmoAfs&downloadName=AWVRE+2023+%281%29.png",
+      },
+    },
+    {
+      url: "/events/free-love-event",
+      name: "Events",
+      title: "Free Love Event",
+      tag: "Awvre",
+      date: "02-11-2023",
+      cover: {
+        src: "https://file.notion.so/f/s/6c88ff7c-10a4-4542-b2bb-cb8e70268401/Untitled.png?spaceId=ccf76a2f-07ec-476d-9c08-0fb14cc6fe0f&table=block&id=5de8dca1-1605-4c58-8787-d4e93565e372&expirationTimestamp=1677196156226&signature=CciXhQ5vEUS1T3v_tdnwbbvZ3dS6vxe9glKWytQHsWM&downloadName=Untitled.png",
+      },
     },
   ],
 };
@@ -18,11 +35,12 @@ export const defaultProps = {
 export interface Props {
   heading?: string;
   title?: string;
+  cta?: CallToActionProps;
   description?: string;
   content?: any[];
 }
 
-const { heading, title, content, description } = Astro.props;
+const { heading, title, content, description, cta } = Astro.props;
 ---
 
 <section class="py-10 overflow-hidden">
@@ -50,18 +68,21 @@ const { heading, title, content, description } = Astro.props;
                   <div class="w-full md:w-1/3 p-4">
                     <div class="h-full bg-gray-100 rounded-3xl">
                       <img
+                        lazy="loading"
                         class="w-full"
-                        src="https://file.notion.so/f/s/c6a39d6e-bedd-4c11-8e98-5748daa8b057/AWVRE_2023_(1).png?spaceId=ccf76a2f-07ec-476d-9c08-0fb14cc6fe0f&table=block&id=f0edcd8d-99ed-48b3-a5a0-6db20dc98bc1&expirationTimestamp=1677195997935&signature=fPiRXHXcwjkY4tA3gqmyneiJYW8fBXSO4sbGxtmoAfs&downloadName=AWVRE+2023+%281%29.png"
-                        alt=""
+                        src={content?.cover?.src ?? null}
                       />
                       <div class="p-8">
-                        <a class="group inline-block mb-4" href="#">
+                        <a
+                          class="group inline-block mb-4"
+                          href={content?.url ?? null}
+                        >
                           <h3 class="font-heading text-2xl text-gray-900 hover:text-gray-700 group-hover:underline font-black">
-                            AWVRE 2023.
+                            {content?.title ?? null}
                           </h3>
                         </a>
                         <p class="text-sm text-gray-500 font-bold">
-                          Design process • 4 min read
+                          {content?.tag} • {content?.date ?? null}
                         </p>
                       </div>
                     </div>
@@ -71,18 +92,22 @@ const { heading, title, content, description } = Astro.props;
                   <div class="w-full md:w-1/3 p-4">
                     <div class="h-full bg-gray-100 rounded-3xl">
                       <img
+                        lazy="loading"
                         class="w-full"
-                        src="https://file.notion.so/f/s/c6a39d6e-bedd-4c11-8e98-5748daa8b057/AWVRE_2023_(1).png?spaceId=ccf76a2f-07ec-476d-9c08-0fb14cc6fe0f&table=block&id=f0edcd8d-99ed-48b3-a5a0-6db20dc98bc1&expirationTimestamp=1677195997935&signature=fPiRXHXcwjkY4tA3gqmyneiJYW8fBXSO4sbGxtmoAfs&downloadName=AWVRE+2023+%281%29.png"
-                        alt=""
+                        src={content?.cover?.src ?? null}
                       />
+
                       <div class="p-8">
-                        <a class="group inline-block mb-4" href="#">
+                        <a
+                          class="group inline-block mb-4"
+                          href={content?.url ?? null}
+                        >
                           <h3 class="font-heading text-2xl text-gray-900 hover:text-gray-700 group-hover:underline font-black">
-                            AWVRE 2023.
+                            {content?.title ?? null}
                           </h3>
                         </a>
                         <p class="text-sm text-gray-500 font-bold">
-                          Design process • 4 min read
+                          {content?.tag} • {content?.date ?? null}
                         </p>
                       </div>
                     </div>
@@ -95,7 +120,7 @@ const { heading, title, content, description } = Astro.props;
         <div class="w-full md:w-auto p-2">
           <a
             class="block w-full px-12 py-3.5 text-lg text-center text-white font-bold bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 rounded-full"
-            href="#">Read more News</a
+            href="#">{cta?.name ?? defaultProps.cta.name}</a
           >
         </div>
       </div>

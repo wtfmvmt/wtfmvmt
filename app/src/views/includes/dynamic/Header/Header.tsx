@@ -1,4 +1,9 @@
 import type { LinkProps } from "@typings/Link";
+import type { FaviconProps } from "@typings/Favicon";
+import type { IComponent } from "@typings/Component"
+import type { CallToActionProps } from "@typings/CallToAction";
+
+
 
 export const defaultProps = {
     favicon: {
@@ -7,6 +12,15 @@ export const defaultProps = {
             alt: ""
         },
         url: "/"
+    },
+
+    cta: {
+        primary: {
+            name: "Support Us"
+        },
+        secondary: {
+            name: "Contact"
+        }
     },
     links: [
         {
@@ -32,10 +46,41 @@ export const defaultProps = {
     ]
 }
 
-export interface IHeader {
+export interface IHeader extends IComponent {
     links?: LinkProps[];
+    cta?: {
+        primary?: CallToActionProps;
+        secondary?: CallToActionProps;
+    }
+    favicon?: FaviconProps;
 }
-export default function Header({ links, favicon }) {
+
+
+export default function Header({ links, favicon, cta }): IHeader {
+
+    const MobileBurgerButton = () => (
+        <div className="w-auto lg:hidden">
+            <a className="inline-block" href="#">
+                <svg
+                    className="navbar-burger text-purple-500"
+                    width={45}
+                    height={45}
+                    viewBox="0 0 56 56"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <rect width={56} height={56} rx={28} fill="currentColor" />
+                    <path
+                        d="M37 32H19M37 24H19"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+            </a>
+        </div>
+    )
     return (
         <section className="py-6 fixed z-50 w-full top-0">
             <div className="container mx-auto px-4">
@@ -44,7 +89,7 @@ export default function Header({ links, favicon }) {
                         <div className="flex flex-wrap items-center">
                             <div className="w-auto">
                                 <a href={favicon?.url ?? defaultProps.favicon.url}>
-                                    <img className="h-12" src={favicon?.image?.src ?? defaultProps.favicon.image.src}
+                                    <img loading="lazy" className="h-12" src={favicon?.image?.src ?? defaultProps.favicon.image.src}
                                         alt={favicon?.image?.alt ?? defaultProps.favicon.image.alt} />
                                 </a>
                             </div>
@@ -89,42 +134,23 @@ export default function Header({ links, favicon }) {
                                     <div className="w-full md:w-auto p-2">
                                         <a
                                             className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold hover:bg-gray-900 focus:ring-4 focus:ring-gray-500 border border-gray-800 rounded-full"
-                                            href="#"
+                                            href={cta?.primary ? cta?.primary?.name : defaultProps.cta.primary.name}
                                         >
-                                            Log In
+                                            {cta?.primary ? cta?.primary?.name : defaultProps.cta.primary.name}
                                         </a>
                                     </div>
                                     <div className="w-full md:w-auto p-2">
                                         <a
-                                            className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
-                                            href="#"
+                                            className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-purple-500 hover:bg-purple-600 focus:ring-4 focus:ring-purple-200 rounded-full"
+                                            href={cta?.secondary ? cta?.secondary?.name : defaultProps.cta.secondary.name}
+
                                         >
-                                            Get Started
+                                            {cta?.secondary ? cta?.secondary?.name : defaultProps.cta.secondary.name}
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-auto lg:hidden">
-                                <a className="inline-block" href="#">
-                                    <svg
-                                        className="navbar-burger text-blue-500"
-                                        width={45}
-                                        height={45}
-                                        viewBox="0 0 56 56"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <rect width={56} height={56} rx={28} fill="currentColor" />
-                                        <path
-                                            d="M37 32H19M37 24H19"
-                                            stroke="white"
-                                            strokeWidth="1.5"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
-                                </a>
-                            </div>
+                            <MobileBurgerButton />
                         </div>
                     </div>
                 </div>

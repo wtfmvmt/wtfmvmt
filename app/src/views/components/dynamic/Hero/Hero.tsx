@@ -22,15 +22,15 @@ export const defaultProps = {
 
 export default function Hero({ heading, title, description, cta, banner }: IHero) {
     return (
-        <section className="pt-6 pb-20 overflow-hidden">
+        <section className="pt-16 pb-20 overflow-hidden">
 
-            <div className=" overflow-hidden rounded-t-2xl">
+            <div className="overflow-hidden rounded-t-2xl">
            
                 <div className="relative">
-                    <div className="relative z-20 px-8 max-w-max mx-auto">
-                        <img className="rounded-sm" src={banner?.src ?? defaultProps.banner.src} alt="" />
+                    <div className="relative z-20 px-8 max-w-max mx-0">
+                        <img className="rounded-sm object-cover h-full w-full" src={banner?.src ?? defaultProps.banner.src} alt="" />
 
-                        <div className="px-8 pt-20 z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div className="px-8 pt-20 mt-20 z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div className="md:max-w-2xl text-center mx-auto">
                         <span className="inline-block mb-3 text-sm text-blue-500 font-bold uppercase tracking-widest">
                             {heading ?? defaultProps.heading}
