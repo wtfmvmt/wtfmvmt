@@ -25,7 +25,12 @@ export default function Hero({ heading, title, description, cta, banner }: IHero
         <section className="pt-6 pb-20 overflow-hidden">
 
             <div className=" overflow-hidden rounded-t-2xl">
-                <div className="px-8 pt-20 z-50">
+           
+                <div className="relative">
+                    <div className="relative z-20 px-8 max-w-max mx-auto">
+                        <img className="rounded-sm" src={banner?.src ?? defaultProps.banner.src} alt="" />
+
+                        <div className="px-8 pt-20 z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div className="md:max-w-2xl text-center mx-auto">
                         <span className="inline-block mb-3 text-sm text-blue-500 font-bold uppercase tracking-widest">
                             {heading ?? defaultProps.heading}
@@ -48,16 +53,6 @@ export default function Hero({ heading, title, description, cta, banner }: IHero
                         </div>
                     </div>
                 </div>
-                <div className="relative">
-                    <div className="relative z-20 px-8 max-w-max mx-auto">
-                        <img className="rounded-sm" src={banner?.src ?? defaultProps.banner.src} alt="" />
-
-                        <a
-                            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 inline-block px-8 py-3.5 text-lg text-center text-gray-900 font-bold -50 hover:-200 focus:ring-4 focus:ring-gray-200 rounded-full"
-                            href=""
-                        >
-                            Latest
-                        </a>
                     </div>
                     <div className="absolute left-0 top-0 w-full h-1/2 -100">
                         <div className="h-full  rounded-b-3xl" />
@@ -69,3 +64,4 @@ export default function Hero({ heading, title, description, cta, banner }: IHero
 
     )
 }
+
