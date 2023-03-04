@@ -1,4 +1,10 @@
 (load:docs/TITLE.md)
+(load:docs/LOGO.md)
+(load:docs/FEATURES.md)
+(load:docs/INSTALLATION.md)
+(load:docs/TECHNOLOGIES.md)
+(load:docs/ROADMAP.md)
+(load:docs/AUTHORS.md)
 (load:docs/CHANGELOG.md)
-
+(load:docs/ACKNOWLEDGEMENTS.md)
 (load:docs/LICENSE.md)
