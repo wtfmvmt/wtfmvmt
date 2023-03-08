@@ -1,6 +1,15 @@
 
 import { pages as pagesUtils } from '@utils/index'
 
+
+
+export const defineViewStore = () => {
+    return (
+        [
+            0
+        ]
+    )
+}
 export default async function pagesQuery({ id }) {
 
     const { generatePage } = pagesUtils()

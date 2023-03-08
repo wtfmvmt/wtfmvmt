@@ -1,6 +1,13 @@
 import NotionService from '@services/notion'
 import pages from "@pages/index"
 
+import { defineService } from "blakprint/services"
+import { PageService } from "blakprint-page-service"
+
+export const testService = defineService(() => {
+
+})
+
 const PageService = () => {
 
     const serviceObject = {

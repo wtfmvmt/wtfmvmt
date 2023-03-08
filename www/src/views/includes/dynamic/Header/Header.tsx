@@ -56,7 +56,7 @@ export interface IHeader extends IComponent {
 }
 
 
-export default function Header({ links, favicon, cta }): IHeader {
+export default function Header({ links, favicon, cta }: IHeader) {
 
     const MobileBurgerButton = () => (
         <div className="w-auto lg:hidden">
