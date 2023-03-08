@@ -1,6 +1,6 @@
 import type { CallToActionProps } from "@models/typings/CallToAction";
 import type { ImageProps } from "@models/typings/Image";
-import { Carousel } from 'react-responsive-carousel';
+
 
 export interface IHero {
     heading?: string;
