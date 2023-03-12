@@ -1,8 +1,6 @@
 
 import { pages as pagesUtils } from '@utils/index'
 
-
-
 export const defineViewStore = () => {
     return (
         [
